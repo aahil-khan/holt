@@ -1,0 +1,9 @@
+{
+ "note": "Development set. Deliberately disjoint from eval/pool.json so that inspecting pipeline behaviour during development cannot tune the agent against scored repositories. Chosen for category spread, not for outcome.",
+ "repos": [
+  "microsoft/winget-pkgs",
+  "sindresorhus/awesome",
+  "pallets/flask",
+  "tensorflow/tensorflow"
+ ]
+}

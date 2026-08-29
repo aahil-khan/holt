@@ -34,6 +34,13 @@ MIN_DISTINCT_AUTHORS = 2
 # Below this share of ignored attempts, silence is noise rather than a policy.
 IGNORED_SHARE = 0.7
 
+# ...and below this many attempts there is no share worth speaking of. Four
+# ignored pull requests out of four is not evidence of hostility, it is four
+# data points. tensorflow/tensorflow reaches exactly that shape: 97% of its pull
+# request traffic is automation, leaving a handful of outsider threads. Without
+# this guard the rule turns a thin sample into a confident accusation.
+MIN_ATTEMPTS_FOR_HOSTILE = 8
+
 
 def classify(findings: Findings, signals: Signals) -> tuple[Verdict, list[str]]:
     """Return a verdict and the rule trace that produced it."""
@@ -57,7 +64,11 @@ def classify(findings: Findings, signals: Signals) -> tuple[Verdict, list[str]]:
         return Verdict.INSUFFICIENT_EVIDENCE, trace
 
     ignored_share = signals.outsider_ignored / signals.outsider_threads
-    if signals.outsider_merged == 0 and ignored_share > IGNORED_SHARE:
+    if (
+        signals.outsider_merged == 0
+        and ignored_share > IGNORED_SHARE
+        and signals.outsider_threads >= MIN_ATTEMPTS_FOR_HOSTILE
+    ):
         trace.append(
             f"{signals.outsider_ignored}/{signals.outsider_threads} outsider attempts "
             "drew no response and none merged"
@@ -85,6 +96,11 @@ def classify(findings: Findings, signals: Signals) -> tuple[Verdict, list[str]]:
             f"median first response {signals.median_first_response_hours}h "
             f"exceeds {SLOW_RESPONSE_HOURS}h"
         )
-    if signals.outsider_merged < MIN_MERGES:
+    if signals.outsider_merged == 0 and ignored_share > IGNORED_SHARE:
+        trace.append(
+            f"{signals.outsider_ignored}/{signals.outsider_threads} attempts ignored, "
+            f"but fewer than {MIN_ATTEMPTS_FOR_HOSTILE} attempts is too thin to call hostile"
+        )
+    elif signals.outsider_merged < MIN_MERGES:
         trace.append(f"only {signals.outsider_merged} outsider merges before the cutoff")
     return Verdict.INSUFFICIENT_EVIDENCE, trace

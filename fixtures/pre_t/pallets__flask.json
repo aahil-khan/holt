@@ -1,0 +1,5874 @@
+{
+ "captured_at": "2026-08-29T16:38:04.931066+00:00",
+ "content_sha256": "465d4b00f9322d2511374f2ebd5d0f0c927fb3b42a4cad6bbec50747dbe73098",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:pallets/flask:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "The Python micro framework for building web applications.",
+    "homepage_url": "https://flask.palletsprojects.com",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-16T18:35:35Z",
+    "stargazer_count": 72144
+   },
+   "source": "github",
+   "timestamp": "2010-04-06T11:11:59+00:00",
+   "url": "https://github.com/pallets/flask"
+  },
+  {
+   "evidence_id": "repo:pallets/flask:readme",
+   "payload": {
+    "commit_oid": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
+    "kind": "readme",
+    "text": "<div align=\"center\"><img src=\"https://raw.githubusercontent.com/pallets/flask/refs/heads/stable/docs/_static/flask-name.svg\" alt=\"\" height=\"150\"></div>\n\n# Flask\n\nFlask is a lightweight [WSGI] web application framework. It is designed\nto make getting started quick and easy, with the ability to scale up to\ncomplex applications. It began as a simple wrapper around [Werkzeug]\nand [Jinja], and has become one of the most popular Python web\napplication frameworks.\n\nFlask offers suggestions, but doesn't enforce any dependencies or\nproject layout. It is up to the developer to choose the tools and\nlibraries they want to use. There are many extensions provided by the\ncommunity that make adding new functionality easy.\n\n[WSGI]: https://wsgi.readthedocs.io/\n[Werkzeug]: https://werkzeug.palletsprojects.com/\n[Jinja]: https://jinja.palletsprojects.com/\n\n## A Simple Example\n\n```python\n# save this as app.py\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    return \"Hello, World!\"\n```\n\n```\n$ flask run\n  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)\n```\n\n## Donate\n\nThe Pallets organization develops and supports Flask and the libraries\nit uses. In order to grow the community of contributors and users, and\nallow the maintainers to devote more time to the projects, [please\ndonate today].\n\n[please donate today]: https://palletsprojects.com/donate\n\n## Contributing\n\nSee our [detailed contributing documentation][contrib] for many ways to\ncontribute, including reporting issues, requesting features, asking or answering\nquestions, and making PRs.\n\n[contrib]: https://palletsprojects.com/contributing/\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:42:46+00:00",
+   "url": "https://github.com/pallets/flask/blob/36e4a824f340fdee7ed50937ba8e7f6bc7d17f81/README.md"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6041:opened",
+   "payload": {
+    "additions": 10,
+    "author": "0x-aleph-phi-phi-conjugate-null",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "src/flask/typing.py"
+    ],
+    "title": "AI spam"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T07:55:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/6041"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6041:closed",
+   "payload": {
+    "author": "0x-aleph-phi-phi-conjugate-null",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:20:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/6041"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6040:opened",
+   "payload": {
+    "additions": 10,
+    "author": "0x-aleph-phi-phi-conjugate-null",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/signals.py"
+    ],
+    "title": "AI spam"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T07:54:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6040"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6040:closed",
+   "payload": {
+    "author": "0x-aleph-phi-phi-conjugate-null",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:21:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/6040"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6039:opened",
+   "payload": {
+    "additions": 5,
+    "author": "jiyujie2006",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/cli.py"
+    ],
+    "title": "AI spam"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T07:04:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/6039"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6039:closed",
+   "payload": {
+    "author": "jiyujie2006",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:22:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/6039"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6039:comment:0",
+   "payload": {
+    "author": "jiyujie2006",
+    "author_is_bot": false,
+    "body": "CI note: the remaining `Development Versions` failure appears unrelated to this PR. It is failing during test collection because Werkzeug main emits deprecation warnings for `parse_cache_control_header` and `parse_set_header`, while Flask treats warnings as errors. The relevant checks for this change are passing now, including normal Python/OS jobs, `Minimum Versions`, `typing`, pre-commit, docs, and the local targeted `tests-min` run."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T07:10:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/6039"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6037:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Architect8989",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/flask/cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:40:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/6037"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6037:closed",
+   "payload": {
+    "author": "Architect8989",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:47:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/6037"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6037:comment:0",
+   "payload": {
+    "author": "jwag956",
+    "author_is_bot": false,
+    "body": "Hi David... I am actually getting the exact same error running Flask-Security tests against latest main Flask...\r\nUsing python 3.13..."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:11:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/6037"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6037:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Ok, please report an issue and if you want open a human written pr."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:07:02+00:00",
+   "url": "https://github.com/pallets/flask/pull/6037"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6036:opened",
+   "payload": {
+    "additions": 1,
+    "author": "jaketanis",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/design.rst"
+    ],
+    "title": "edited 'a' to 'an' before 'SQL'"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T16:09:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/6036"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6036:closed",
+   "payload": {
+    "author": "jaketanis",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T19:48:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/6036"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6036:comment:0",
+   "payload": {
+    "author": "jaketanis",
+    "author_is_bot": false,
+    "body": "I was reading through the docs and this stood out to me, but I realize that SQL also has the \"sequel\" pronunciation, which is very common. So this pr didn't really do anything valuable for the docs. I'll be more mindful in the future before submitting a pr.\n\n@davidism, Is there anything else I should keep in mind for helpful documentation pull requests that I may have missed?"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:26:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/6036"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6035:opened",
+   "payload": {
+    "additions": 10,
+    "author": "JosefVacha",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "README.md",
+     "tests/test_apps/blueprintapp/__init__.py",
+     "tests/test_testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T23:40:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/6035"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6035:closed",
+   "payload": {
+    "author": "JosefVacha",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T23:41:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/6035"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6035:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "\"Reputation builder comment\"?!\r\n\r\nYou're just building negative reputation with such PRs. Stop it."
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T23:41:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/6035"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6034:opened",
+   "payload": {
+    "additions": 8,
+    "author": "JosefVacha",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "tests/test_apps/blueprintapp/__init__.py",
+     "tests/test_testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T23:39:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/6034"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6034:closed",
+   "payload": {
+    "author": "JosefVacha",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T23:40:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/6034"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6034:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "I'm not sure if this is AI junk or human-written junk, but it's junk... Did you even LOOK at the changes \"you\" made?!"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T23:40:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/6034"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6030:opened",
+   "payload": {
+    "additions": 4,
+    "author": "goingforstudying-ctrl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/sansio/scaffold.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T17:18:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/6030"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6030:closed",
+   "payload": {
+    "author": "goingforstudying-ctrl",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T17:26:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6030"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6029:opened",
+   "payload": {
+    "additions": 1,
+    "author": "adv0r",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/patterns/lazyloading.rst"
+    ],
+    "title": "docs(lazyloading): fix duplicate \"is\""
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T12:07:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/6029"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6029:closed",
+   "payload": {
+    "author": "adv0r",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T13:47:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/6029"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6028:opened",
+   "payload": {
+    "additions": 25,
+    "author": "Terrajlz",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/cli.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T17:37:58+00:00",
+   "url": "https://github.com/pallets/flask/pull/6028"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6028:closed",
+   "payload": {
+    "author": "Terrajlz",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T18:41:30+00:00",
+   "url": "https://github.com/pallets/flask/pull/6028"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6027:opened",
+   "payload": {
+    "additions": 64,
+    "author": "MervanPalmer",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 8,
+    "files": [
+     "docs/api.rst",
+     "docs/deploying/gunicorn.rst",
+     "docs/tutorial/database.rst",
+     "docs/tutorial/deploy.rst"
+    ],
+    "title": "Docs: Enhance deployment guides, tutorial warnings and API examples"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T14:46:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/6027"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6027:closed",
+   "payload": {
+    "author": "MervanPalmer",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T15:15:23+00:00",
+   "url": "https://github.com/pallets/flask/pull/6027"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6026:opened",
+   "payload": {
+    "additions": 64,
+    "author": "MervanPalmer",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 8,
+    "files": [
+     "docs/api.rst",
+     "docs/deploying/gunicorn.rst",
+     "docs/tutorial/database.rst",
+     "docs/tutorial/deploy.rst"
+    ],
+    "title": "Docs: Enhance deployment guides, tutorial warnings and API examples"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T14:07:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/6026"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6026:closed",
+   "payload": {
+    "author": "MervanPalmer",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T14:42:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/6026"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6024:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nileshpatil6",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/config.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T14:38:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/6024"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6024:closed",
+   "payload": {
+    "author": "nileshpatil6",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T15:00:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/6024"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6021:opened",
+   "payload": {
+    "additions": 1,
+    "author": "lphuc2250gma",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/patterns/lazyloading.rst"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T16:12:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/6021"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6021:closed",
+   "payload": {
+    "author": "lphuc2250gma",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T16:19:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6021"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6020:opened",
+   "payload": {
+    "additions": 1,
+    "author": "lphuc2250gma",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/patterns/lazyloading.rst"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T15:49:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6020"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6020:closed",
+   "payload": {
+    "author": "lphuc2250gma",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T15:58:02+00:00",
+   "url": "https://github.com/pallets/flask/pull/6020"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6019:opened",
+   "payload": {
+    "additions": 1,
+    "author": "martymcenroe",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/patterns/mongoengine.rst"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T13:06:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/6019"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6019:closed",
+   "payload": {
+    "author": "martymcenroe",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T14:29:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/6019"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6019:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Happy to update this, but please do not use genAI to generate or submit a PR."
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T14:29:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/6019"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6018:opened",
+   "payload": {
+    "additions": 17,
+    "author": "zinc-builds",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T23:38:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/6018"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6018:closed",
+   "payload": {
+    "author": "zinc-builds",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T23:54:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6018"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6018:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Not needed IMHO, and I have a strong feeling that this PR is LLM-generated."
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T23:54:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6018"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6018:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Have you ever run the dev server before? It shows a warning always, no need for another one. Do not submit LLM junk to projects. "
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T00:32:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/6018"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6017:opened",
+   "payload": {
+    "additions": 9,
+    "author": "HarsshA2660",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/installation.rst"
+    ],
+    "title": "Improve Git Bash virtual environment activation docsImprove Git Bash virtual environment activation docs"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T09:43:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6017"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6017:closed",
+   "payload": {
+    "author": "HarsshA2660",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T09:48:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6017"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6017:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "I think it's clear that bash-like environments use the linux version..."
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T09:48:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6017"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6016:opened",
+   "payload": {
+    "additions": 239,
+    "author": "virus-16",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/sansio/blueprints.py",
+     "test_nested_blueprint_prefix.py"
+    ],
+    "title": "spam"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T13:09:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/6016"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6016:closed",
+   "payload": {
+    "author": "virus-16",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T13:10:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/6016"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6016:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "What is this utter trash?"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T13:10:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/6016"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6015:opened",
+   "payload": {
+    "additions": 32,
+    "author": "harimsd07",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "LEGACYFIX.md"
+    ],
+    "title": "spam"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T14:56:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/6015"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6015:closed",
+   "payload": {
+    "author": "harimsd07",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T15:02:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/6015"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6014:opened",
+   "payload": {
+    "additions": 19,
+    "author": "mlmejo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/installation.rst"
+    ],
+    "title": "Document 'uv' package for project setup"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T08:21:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/6014"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6014:closed",
+   "payload": {
+    "author": "mlmejo",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T11:57:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/6014"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6014:comment:0",
+   "payload": {
+    "author": "mlmejo",
+    "author_is_bot": false,
+    "body": "Was confused why the PR was closed, and browsed through similar PRs and came to [this](https://github.com/pallets/flask/pull/5831#issuecomment-3423059261). Sorry I didn't do my research before hand. \r\n\r\nThank you so much for maintaining Flask!"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T07:21:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/6014"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6013:opened",
+   "payload": {
+    "additions": 6,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/app.py"
+    ],
+    "title": "autoescape selection uses case-insensitive comparison"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T03:56:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6013"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6013:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T03:58:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/6013"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6010:opened",
+   "payload": {
+    "additions": 47,
+    "author": "Devansh-66",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "test.sh",
+     "tests/test_session_access.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T09:20:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/6010"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6010:closed",
+   "payload": {
+    "author": "Devansh-66",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T09:57:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/6010"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6010:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Considering that you added some strange shell script to run tests and not just the actual test, I assume you used an LLM to generate this PR. We are not interested in such contributions."
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T09:57:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/6010"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6009:opened",
+   "payload": {
+    "additions": 3,
+    "author": "popeye-007",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".readthedocs.yaml"
+    ],
+    "title": "Stage"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T04:30:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/6009"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6009:closed",
+   "payload": {
+    "author": "popeye-007",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T04:34:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/6009"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6008:opened",
+   "payload": {
+    "additions": 10,
+    "author": "shr7q",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "<spam>"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T23:32:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/6008"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6008:closed",
+   "payload": {
+    "author": "shr7q",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T23:46:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6008"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6006:opened",
+   "payload": {
+    "additions": 1,
+    "author": "albert-cgai",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "test"
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T14:29:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/6006"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6006:closed",
+   "payload": {
+    "author": "albert-cgai",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T14:29:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/6006"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6006:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "DO NOT use other people's repos for this."
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T14:31:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/6006"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6005:opened",
+   "payload": {
+    "additions": 1,
+    "author": "albert-cgai",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "test"
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T14:25:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/6005"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6005:closed",
+   "payload": {
+    "author": "albert-cgai",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T14:27:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/6005"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6005:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Please do not use other people's repos for testing."
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T14:28:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6005"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6004:opened",
+   "payload": {
+    "additions": 10,
+    "author": "tboyila",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T13:21:23+00:00",
+   "url": "https://github.com/pallets/flask/pull/6004"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6004:closed",
+   "payload": {
+    "author": "tboyila",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T14:25:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/6004"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6003:opened",
+   "payload": {
+    "additions": 120,
+    "author": "sahilmalhotra1987",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 5,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/cli.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T06:57:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/6003"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6003:closed",
+   "payload": {
+    "author": "sahilmalhotra1987",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T08:08:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/6003"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6003:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "> \ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\r\n\r\nNo thanks. If we wanted AI-generated code, we could just use these tools ourselves."
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T08:08:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/6003"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5998:opened",
+   "payload": {
+    "additions": 81,
+    "author": "kolesnykovyurii",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/ai-review.yml",
+     "src/file_manager.py"
+    ],
+    "title": "<spam>"
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T13:25:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/5998"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5998:closed",
+   "payload": {
+    "author": "kolesnykovyurii",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T13:25:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5998"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5997:opened",
+   "payload": {
+    "additions": 87,
+    "author": "kolesnykovyurii",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/ai-review.yml",
+     "src/payment_service.py"
+    ],
+    "title": "<spam>"
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T12:56:16+00:00",
+   "url": "https://github.com/pallets/flask/pull/5997"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5997:closed",
+   "payload": {
+    "author": "kolesnykovyurii",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T12:59:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5997"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5996:opened",
+   "payload": {
+    "additions": 563,
+    "author": "WhitehatD",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 0,
+    "files": [
+     ".amazonq/rules/governance.md",
+     ".claude/governance.md",
+     ".clinerules",
+     ".continuerules",
+     ".cursor/rules/governance.mdc",
+     ".github/copilot-instructions.md",
+     ".rules",
+     ".windsurf/rules/governance.md",
+     "AGENTS.md",
+     "CLAUDE.md",
+     "GEMINI.md"
+    ],
+    "title": "<spam>"
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T00:47:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5996"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5996:closed",
+   "payload": {
+    "author": "WhitehatD",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T01:00:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/5996"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5994:opened",
+   "payload": {
+    "additions": 2,
+    "author": "samtang-oai",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "<spam>"
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T22:58:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5994"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5994:closed",
+   "payload": {
+    "author": "samtang-oai",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T22:59:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5994"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5994:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Do NOT use other people's repos for testing. Thanks."
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T22:59:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5994"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5992:opened",
+   "payload": {
+    "additions": 6,
+    "author": "AhsanSheraz",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "examples/celery/requirements.txt"
+    ],
+    "title": "<spam>"
+   },
+   "source": "github",
+   "timestamp": "2026-04-10T16:10:21+00:00",
+   "url": "https://github.com/pallets/flask/pull/5992"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5992:closed",
+   "payload": {
+    "author": "AhsanSheraz",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-10T16:12:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/5992"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5992:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This is an example project, the requirements are just there to have something reproducibly installable."
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T13:46:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5992"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5990:opened",
+   "payload": {
+    "additions": 45,
+    "author": "rharper105",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "AGENTS.md"
+    ],
+    "title": "<spam>"
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T21:58:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5990"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5990:closed",
+   "payload": {
+    "author": "rharper105",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T22:00:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5990"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5990:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "No thanks, we don't want even more AI slop PRs from people who feel encouraged by seeing such a file..."
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T22:00:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5990"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5989:opened",
+   "payload": {
+    "additions": 1,
+    "author": "pallabbabu",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/config.rst"
+    ],
+    "title": "docs: fix doubled word \"the\" in TESTING config description"
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T04:27:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5989"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5989:closed",
+   "payload": {
+    "author": "pallabbabu",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T04:30:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/5989"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5984:opened",
+   "payload": {
+    "additions": 65,
+    "author": "sowmiyaarunagiri01-design",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 7,
+    "files": [
+     "src/flask/config.py",
+     "src/flask/helpers.py",
+     "src/flask/sessions.py",
+     "src/flask/wrappers.py"
+    ],
+    "title": "test: plant bugs and vulnerabilities for code review tool comparison"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T16:17:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/5984"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5984:closed",
+   "payload": {
+    "author": "sowmiyaarunagiri01-design",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T16:23:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/5984"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5984:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Absolutely not. And do not use other people's repos for you tests."
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T16:23:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/5984"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5982:opened",
+   "payload": {
+    "additions": 4,
+    "author": "barttran2k",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/blueprints.py"
+    ],
+    "title": "Security: Path traversal risk in Blueprint.open_resource"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T00:18:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5982"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5982:closed",
+   "payload": {
+    "author": "barttran2k",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T01:11:58+00:00",
+   "url": "https://github.com/pallets/flask/pull/5982"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5982:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This is not how to report a security issue. It's also not a security issue. Do not rely on output generated by LLMs, understand the code yourself before working on or submitting anything to any project. "
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T01:13:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/5982"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5966:opened",
+   "payload": {
+    "additions": 4,
+    "author": "tang-vu",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "examples/celery/src/task_app/views.py"
+    ],
+    "title": "\u2728 Quality: Celery task result endpoint crashes on task failure"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T21:19:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/5966"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5966:closed",
+   "payload": {
+    "author": "tang-vu",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T21:21:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/5966"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5966:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Do not have AI tools open issues or create PRs. Thanks."
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T21:21:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/5966"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5964:opened",
+   "payload": {
+    "additions": 28,
+    "author": "pefia",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "src/flask/sessions.py",
+     "tests/test_session_interface.py"
+    ],
+    "title": "Handle missing secret key during session save"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T11:30:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/5964"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5964:closed",
+   "payload": {
+    "author": "pefia",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T11:37:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/5964"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5964:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "This feels AI-generated...\r\n\r\n`app.secret_key` becoming falsy is not something that makes any sense and would be a bug in the application doing it. Causing an error in Flask code in such a case doesn't feel like a problem to me."
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T11:37:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/5964"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5962:opened",
+   "payload": {
+    "additions": 0,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 21,
+    "files": [
+     "tests/test_reqctx.py"
+    ],
+    "title": "remove unicode host test"
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T13:54:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5962"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5962:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T13:55:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/5962"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5962:comment:0",
+   "payload": {
+    "author": "ap-wtioit",
+    "author_is_bot": false,
+    "body": "Would have been better to fix the test to test with the IDNA compatible host header."
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T14:40:30+00:00",
+   "url": "https://github.com/pallets/flask/pull/5962"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5962:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "That's the test below the one removed"
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T15:09:30+00:00",
+   "url": "https://github.com/pallets/flask/pull/5962"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5960:opened",
+   "payload": {
+    "additions": 0,
+    "author": "yurtzy",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "style: ensure trailing newline at EOF in README"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T11:57:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5960"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5960:closed",
+   "payload": {
+    "author": "yurtzy",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T12:01:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5960"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5959:opened",
+   "payload": {
+    "additions": 5,
+    "author": "yurtzy",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "OPENCLAW_CONTRIBUTION.md"
+    ],
+    "title": "test: add OpenClaw agent contribution marker"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T11:51:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5959"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5959:closed",
+   "payload": {
+    "author": "yurtzy",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T11:56:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/5959"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5959:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Do not pollute other people's repositories with this kind of slop."
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T12:40:21+00:00",
+   "url": "https://github.com/pallets/flask/pull/5959"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5959:comment:1",
+   "payload": {
+    "author": "zxcvgyhn",
+    "author_is_bot": false,
+    "body": "Don\u2019t be a dick dude\r\n\r\nOn Mon, Mar 23, 2026 at 7:43\u202fAM Adrian ***@***.***> wrote:\r\n\r\n> *ThiefMaster* left a comment (pallets/flask#5959)\r\n> <https://github.com/pallets/flask/pull/5959#issuecomment-4110323902>\r\n>\r\n> Do not pollute other people's repositories with this kind of slop.\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/pallets/flask/pull/5959?email_source=notifications&email_token=BLZOERKV23H2FOJ5NYKVQAT4SEWOTA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTIMJRGAZTEMZZGAZKM4TFMFZW63VKON2WE43DOJUWEZLEUVSXMZLOOSWGM33PORSXEX3DNRUWG2Y#issuecomment-4110323902>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/BLZOERPTUY6MHF7KECT57DD4SEWOTAVCNFSM6AAAAACW37PCXGVHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHM2DCMJQGMZDGOJQGI>\r\n> .\r\n> You are receiving this because you are subscribed to this thread.Message\r\n> ID: ***@***.***>\r\n>\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T12:56:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/5959"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5959:comment:2",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "This has nothing to do with being a dick, it' is rude towards maintainers to use their repos to learn how to use GitHub or to send test PRs that don't even make any sense. And we got 3 of them from the same person (or more likely bot)."
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T12:57:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/5959"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5959:comment:3",
+   "payload": {
+    "author": "zxcvgyhn",
+    "author_is_bot": false,
+    "body": "You\u2019ll be far more heard if you phrase it the latter way over the former.\r\nJust saying.\r\n\r\nOn Mon, Mar 23, 2026 at 7:58\u202fAM Adrian ***@***.***> wrote:\r\n\r\n> *ThiefMaster* left a comment (pallets/flask#5959)\r\n> <https://github.com/pallets/flask/pull/5959#issuecomment-4110423405>\r\n>\r\n> This has nothing to do with being a dick, it' is rude towards maintainers\r\n> to use their repos to learn how to use GitHub or to send test PRs that\r\n> don't even make any sense. And we got 3 of them from the same person (or\r\n> more likely bot).\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/pallets/flask/pull/5959?email_source=notifications&email_token=BLZOERNLGFAO4YFNZOIBZSL4SEYGVA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTIMJRGA2DEMZUGA22M4TFMFZW63VHMNXW23LFNZ2KKZLWMVXHJLDGN5XXIZLSL5RWY2LDNM#issuecomment-4110423405>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/BLZOERLSRWVKAGQEYF2VHEL4SEYGVAVCNFSM6AAAAACW37PCXGVHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHM2DCMJQGQZDGNBQGU>\r\n> .\r\n> You are receiving this because you commented.Message ID:\r\n> ***@***.***>\r\n>\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T13:00:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5959"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5958:opened",
+   "payload": {
+    "additions": 0,
+    "author": "yurtzy",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "docs: fix spacing in Python version requirement"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T11:43:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/5958"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5958:closed",
+   "payload": {
+    "author": "yurtzy",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T11:50:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5958"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5956:opened",
+   "payload": {
+    "additions": 1,
+    "author": "kodareef5",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "Default SESSION_COOKIE_SAMESITE to \"Lax\""
+   },
+   "source": "github",
+   "timestamp": "2026-03-22T23:51:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/5956"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5956:closed",
+   "payload": {
+    "author": "kodareef5",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T00:04:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5956"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5955:opened",
+   "payload": {
+    "additions": 14,
+    "author": "r266-tech",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/config.py",
+     "tests/test_config.py"
+    ],
+    "title": "Fix Config.from_file silent error handling to include ENOTDIR"
+   },
+   "source": "github",
+   "timestamp": "2026-03-22T18:17:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/5955"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5955:closed",
+   "payload": {
+    "author": "r266-tech",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-22T18:42:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/5955"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5954:opened",
+   "payload": {
+    "additions": 2,
+    "author": "vitali87",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "docs: add gitcgr code graph badge"
+   },
+   "source": "github",
+   "timestamp": "2026-03-22T14:34:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/5954"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5954:closed",
+   "payload": {
+    "author": "vitali87",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-22T14:37:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5954"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5954:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Opening this type of PR unsolicitely is quite spammy. Please don't do that."
+   },
+   "source": "github",
+   "timestamp": "2026-03-22T14:37:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5954"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5953:opened",
+   "payload": {
+    "additions": 142,
+    "author": "davehenton",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/tests.yaml",
+     "pyproject.toml",
+     "uv.lock"
+    ],
+    "title": "Add Qlty code coverage reporting to CI"
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T14:10:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/5953"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5953:closed",
+   "payload": {
+    "author": "davehenton",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T14:11:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5953"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5952:opened",
+   "payload": {
+    "additions": 4,
+    "author": "ahmet0033",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "Added comprehensive example to Html escaping "
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T13:20:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5952"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5952:closed",
+   "payload": {
+    "author": "ahmet0033",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T13:32:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/5952"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5951:opened",
+   "payload": {
+    "additions": 4,
+    "author": "ahmet0033",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "Added a real world html escaping example"
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T13:07:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5951"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5951:closed",
+   "payload": {
+    "author": "ahmet0033",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T13:17:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/5951"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5950:opened",
+   "payload": {
+    "additions": 4,
+    "author": "ahmet0033",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "Added a comprehensive real world example to the 'HTML Escaping'"
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T13:01:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/5950"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5950:closed",
+   "payload": {
+    "author": "ahmet0033",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T13:04:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5950"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5949:opened",
+   "payload": {
+    "additions": 12,
+    "author": "Yuki9814",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "examples/celery/README.md"
+    ],
+    "title": "docs: mention Redis requirement in Celery example README"
+   },
+   "source": "github",
+   "timestamp": "2026-03-15T17:25:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5949"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5949:closed",
+   "payload": {
+    "author": "Yuki9814",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-15T17:33:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/5949"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5949:comment:0",
+   "payload": {
+    "author": "Arjun7A",
+    "author_is_bot": false,
+    "body": "Preparing review..."
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T18:43:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/5949"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5949:comment:1",
+   "payload": {
+    "author": "Arjun7A",
+    "author_is_bot": false,
+    "body": "Preparing review..."
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T18:44:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/5949"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5949:comment:2",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "@Arjun7A what?"
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T18:45:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/5949"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5949:comment:3",
+   "payload": {
+    "author": "Arjun7A",
+    "author_is_bot": false,
+    "body": "Preparing review..."
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T18:49:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5949"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5949:comment:4",
+   "payload": {
+    "author": "Arjun7A",
+    "author_is_bot": false,
+    "body": "Preparing review..."
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T18:50:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5949"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5946:opened",
+   "payload": {
+    "additions": 0,
+    "author": "duriantaco",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 15,
+    "files": [
+     "src/flask/cli.py",
+     "src/flask/debughelpers.py",
+     "src/flask/typing.py"
+    ],
+    "title": "Remove dead code"
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T05:53:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/5946"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5946:closed",
+   "payload": {
+    "author": "duriantaco",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T13:16:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/5946"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5946:comment:0",
+   "payload": {
+    "author": "duriantaco",
+    "author_is_bot": false,
+    "body": "There is a failing test `test_environ_for_valid_idna_completes` is unrelated to this change. This PR only removes unused definitions. I think the test is prob a pre-existing flaky test."
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T06:01:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/5946"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5945:opened",
+   "payload": {
+    "additions": 51,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 9,
+    "files": [
+     ".github/workflows/lock.yaml",
+     ".github/workflows/pre-commit.yaml",
+     ".github/workflows/publish.yaml",
+     ".github/workflows/tests.yaml",
+     ".github/workflows/zizmor.yaml"
+    ],
+    "title": "add zizmor to scan workflows"
+   },
+   "source": "github",
+   "timestamp": "2026-03-08T23:11:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/5945"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5945:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-08T23:15:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5945"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5944:opened",
+   "payload": {
+    "additions": 18,
+    "author": "04cb",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/config.py",
+     "tests/test_config.py"
+    ],
+    "title": "Add ENOTDIR handling to Config.from_file with silent=True"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T05:41:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/5944"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5944:closed",
+   "payload": {
+    "author": "04cb",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T14:13:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/5944"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5939:opened",
+   "payload": {
+    "additions": 59,
+    "author": "dalekube",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "docs/async-await.rst",
+     "src/flask/app.py",
+     "tests/test_basic.py"
+    ],
+    "title": "Reduce dispatch_request processing time by 8%"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T01:23:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/5939"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5939:closed",
+   "payload": {
+    "author": "dalekube",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T02:56:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5939"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5938:opened",
+   "payload": {
+    "additions": 1,
+    "author": "haosenwang1018",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "fix: replace 1 bare except clauses with except Exception"
+   },
+   "source": "github",
+   "timestamp": "2026-02-27T01:24:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/5938"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5938:closed",
+   "payload": {
+    "author": "haosenwang1018",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-27T01:26:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/5938"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5938:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Did an LLM tell you to do this? Because if you read the code, we handle `except Exception` above, so *quite obviously* the bare except here is actually intentionel!"
+   },
+   "source": "github",
+   "timestamp": "2026-02-27T01:26:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/5938"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5938:comment:1",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "And I just noticed that #5937 was you as well. Do not reopen a new PR with the same change if your previous one got closed. Instead, ask for clarification if you do not understand why it was closed."
+   },
+   "source": "github",
+   "timestamp": "2026-02-27T01:31:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/5938"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5937:opened",
+   "payload": {
+    "additions": 1,
+    "author": "haosenwang1018",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "fix: replace bare except clause with except Exception"
+   },
+   "source": "github",
+   "timestamp": "2026-02-26T00:44:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/5937"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5937:closed",
+   "payload": {
+    "author": "haosenwang1018",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-26T00:51:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5937"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5931:opened",
+   "payload": {
+    "additions": 8,
+    "author": "Rohan5commit",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/pre-commit.yaml",
+     ".github/workflows/tests.yaml"
+    ],
+    "title": "ci: declare explicit read-only GITHUB_TOKEN permissions"
+   },
+   "source": "github",
+   "timestamp": "2026-02-21T10:35:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/5931"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5931:closed",
+   "payload": {
+    "author": "Rohan5commit",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-21T10:41:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5931"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5931:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Your AI slop machine did not even manage to format the description of your PR correctly... Do not send us AI-generated PRs."
+   },
+   "source": "github",
+   "timestamp": "2026-02-21T10:41:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5931"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5930:opened",
+   "payload": {
+    "additions": 8,
+    "author": "23f3003202",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "Add basic pip installation instruction to README"
+   },
+   "source": "github",
+   "timestamp": "2026-02-21T10:11:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/5930"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5930:closed",
+   "payload": {
+    "author": "23f3003202",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-21T10:40:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/5930"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5928:opened",
+   "payload": {
+    "additions": 194,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 80,
+    "files": [
+     "CHANGES.rst",
+     "docs/appcontext.rst",
+     "src/flask/app.py",
+     "src/flask/ctx.py",
+     "src/flask/helpers.py",
+     "tests/test_appctx.py",
+     "tests/test_basic.py",
+     "tests/test_blueprints.py",
+     "tests/test_helpers.py",
+     "tests/test_testing.py"
+    ],
+    "title": "all teardown callbacks are called despite errors"
+   },
+   "source": "github",
+   "timestamp": "2026-02-20T03:51:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/5928"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5928:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-20T04:00:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5928"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5927:opened",
+   "payload": {
+    "additions": 10,
+    "author": "bysiber",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "src/flask/ctx.py"
+    ],
+    "title": "ensure context cleanup runs even if teardown raises"
+   },
+   "source": "github",
+   "timestamp": "2026-02-20T00:49:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/5927"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5927:closed",
+   "payload": {
+    "author": "bysiber",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-20T01:07:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/5927"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5924:opened",
+   "payload": {
+    "additions": 3,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     "CHANGES.rst",
+     "pyproject.toml",
+     "uv.lock"
+    ],
+    "title": "release version 3.1.3"
+   },
+   "source": "github",
+   "timestamp": "2026-02-19T03:42:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5924"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5924:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-19T05:01:53+00:00",
+   "url": "https://github.com/pallets/flask/pull/5924"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5923:opened",
+   "payload": {
+    "additions": 14,
+    "author": "apoorvdarshan",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/config.py",
+     "tests/test_config.py"
+    ],
+    "title": "Fix ENOTDIR handling in Config.from_file() with silent=True"
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T15:51:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/5923"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5923:closed",
+   "payload": {
+    "author": "apoorvdarshan",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T16:02:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/5923"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5923:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "May I ask what made you open this PR (did an LLM tell you there is a bug? or did you actually encounter a problem yourself?), and whether you used AI for this or not?\r\n\r\nBecause we closed a [similar issue](https://github.com/pallets/flask/issues/5912) as \"not planned\" recently, and likewise the [associated PR](https://github.com/pallets/flask/pull/5914)."
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T15:54:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/5923"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5922:opened",
+   "payload": {
+    "additions": 17,
+    "author": "Mishradity",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "test.sh"
+    ],
+    "title": "Add test runner script with base and new modes"
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T11:23:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/5922"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5922:closed",
+   "payload": {
+    "author": "Mishradity",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T15:18:21+00:00",
+   "url": "https://github.com/pallets/flask/pull/5922"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5921:opened",
+   "payload": {
+    "additions": 1,
+    "author": "novavale",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/patterns/lazyloading.rst"
+    ],
+    "title": "docs: fix duplicated word in lazyloading guide"
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T17:15:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5921"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5921:closed",
+   "payload": {
+    "author": "novavale",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T17:38:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5921"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5920:opened",
+   "payload": {
+    "additions": 5,
+    "author": "suryakathyakeyaboddi-creator",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "Add contribution note to README for collaboration demo"
+   },
+   "source": "github",
+   "timestamp": "2026-02-14T04:10:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5920"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5920:closed",
+   "payload": {
+    "author": "suryakathyakeyaboddi-creator",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-14T05:03:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/5920"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5920:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Do not use other people's repositories for your demo. "
+   },
+   "source": "github",
+   "timestamp": "2026-02-14T05:08:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5920"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5918:opened",
+   "payload": {
+    "additions": 56,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 30,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/cli.py",
+     "src/flask/sansio/app.py",
+     "tests/test_basic.py",
+     "tests/test_cli.py"
+    ],
+    "title": "automatic options as separate route"
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T22:03:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/5918"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5917:opened",
+   "payload": {
+    "additions": 96,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 86,
+    "files": [
+     "CHANGES.rst",
+     "docs/config.rst",
+     "src/flask/sansio/app.py",
+     "tests/test_basic.py",
+     "tests/test_blueprints.py",
+     "tests/test_cli.py",
+     "tests/test_views.py"
+    ],
+    "title": "fix provide_automatic_options override"
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T21:06:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5917"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5917:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T21:07:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/5917"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5917:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Werkzeug dev is failing because the duplicate check still needs to be fixed there. This fix here is related to that ongoing work."
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T21:07:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5917"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5914:opened",
+   "payload": {
+    "additions": 17,
+    "author": "abdullahmujahidali",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/config.py",
+     "tests/test_config.py"
+    ],
+    "title": "add ENOTDIR to from_file silent error handling"
+   },
+   "source": "github",
+   "timestamp": "2026-02-09T02:34:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5914"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5914:closed",
+   "payload": {
+    "author": "abdullahmujahidali",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-09T03:59:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/5914"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5913:opened",
+   "payload": {
+    "additions": 26,
+    "author": "veeceey",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/config.py",
+     "tests/test_config.py"
+    ],
+    "title": "Fix Config.from_file() silent mode not handling ENOTDIR"
+   },
+   "source": "github",
+   "timestamp": "2026-02-08T23:04:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5913"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5913:closed",
+   "payload": {
+    "author": "veeceey",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-08T23:27:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5913"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5913:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "> \ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\r\n\r\nYou really had to use an LLM for a change this small?! \ud83d\ude48 "
+   },
+   "source": "github",
+   "timestamp": "2026-02-08T23:10:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/5913"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5911:opened",
+   "payload": {
+    "additions": 4,
+    "author": "THE-Amrit-mahto-05",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "src/flask/ctx.py"
+    ],
+    "title": "Fix request resource leak when teardown handlers raise"
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T21:12:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/5911"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5911:closed",
+   "payload": {
+    "author": "THE-Amrit-mahto-05",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T21:17:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/5911"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5911:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "From the docs: https://flask.palletsprojects.com/en/stable/reqcontext/#teardown-callbacks\r\n\r\n> Be sure to write these functions in a way that does not depend on other callbacks and will not fail.\r\n\r\nThere are a lot more places than this in `pop` that could result in leftover state, which is why we warn that teardown functions must not fail. For example, if a teardown function fails, any remaining are not run. In that sense, `close` is just another teardown function. As to why the existing `finally` is there in that case, no idea."
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T21:28:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/5911"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5911:comment:1",
+   "payload": {
+    "author": "THE-Amrit-mahto-05",
+    "author_is_bot": false,
+    "body": "@davidism \r\nI\u2019m not trying to make teardown callbacks safe to fail , only to ensure that framework owned cleanup (request.close()) is not skipped when they do"
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T21:44:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/5911"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5911:comment:2",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "What I'm saying is that adding a `finally` here doesn't really help, as any callback failing means that other resources are also potentially left dangling. In that case, the issue is with the callback, and needs to be fixed there.\r\n\r\nI've been working on closing resources over in Werkzeug's tests, maybe that's what prompted you to look at this. I'm also working on that here, just haven't pushed the changes yet. Thanks for pointing out this area, if nothing else I'll move the appcontext teardown out of the `finally` and into the `try` so that the context is always cleared. Perhaps there's also a case for `try/except pass` around every teardown function, to clean up as much as possible, I'll look into that."
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T22:06:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5911"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5910:opened",
+   "payload": {
+    "additions": 0,
+    "author": "manav363",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "\ud83e\udd16 Automated code quality improvements (5 fixes)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T08:23:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/5910"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5910:closed",
+   "payload": {
+    "author": "manav363",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T08:40:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/5910"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5910:comment:0",
+   "payload": {
+    "author": "manav363",
+    "author_is_bot": false,
+    "body": "Closing this PR - it was a test of my automated code quality improvement tool. \r\n   Thank you for the opportunity to test on Flask! \ud83d\ude4f"
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T08:40:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/5910"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5910:comment:1",
+   "payload": {
+    "author": "RonnyPfannschmidt",
+    "author_is_bot": false,
+    "body": "please create test prs against own repos, they waste attention and time of maintainers"
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T09:51:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/5910"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5908:opened",
+   "payload": {
+    "additions": 34,
+    "author": "jnvw",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 18,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "style: format response tuple unpacking (extract helper)"
+   },
+   "source": "github",
+   "timestamp": "2026-01-31T21:31:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5908"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5908:closed",
+   "payload": {
+    "author": "jnvw",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-31T22:17:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/5908"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5906:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Anusha0710",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "Added a return type annotation to an internal utility function in the Requests library to improve code readability and static analysis without affecting behavior."
+   },
+   "source": "github",
+   "timestamp": "2026-01-31T12:07:16+00:00",
+   "url": "https://github.com/pallets/flask/pull/5906"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5906:closed",
+   "payload": {
+    "author": "Anusha0710",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-31T16:09:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/5906"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5904:opened",
+   "payload": {
+    "additions": 2,
+    "author": "ANU5565",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "Clarify data correctness explanation in quickstart"
+   },
+   "source": "github",
+   "timestamp": "2026-01-27T13:46:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5904"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5904:closed",
+   "payload": {
+    "author": "ANU5565",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-27T14:51:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/5904"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5903:opened",
+   "payload": {
+    "additions": 2,
+    "author": "marcows",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "docs/tutorial/factory.rst",
+     "examples/tutorial/flaskr/__init__.py"
+    ],
+    "title": "Abort if the instance folder cannot be created"
+   },
+   "source": "github",
+   "timestamp": "2026-01-27T08:24:02+00:00",
+   "url": "https://github.com/pallets/flask/pull/5903"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5903:merged",
+   "payload": {
+    "author": "marcows",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-28T15:43:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/5903"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5903:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Make sure you update the code in the `examples` dir as well. Does any surrounding text need to be updated? Docs changes should be targetted at stable, so that they're available in the current docs."
+   },
+   "source": "github",
+   "timestamp": "2026-01-28T05:49:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/5903"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5903:comment:1",
+   "payload": {
+    "author": "marcows",
+    "author_is_bot": false,
+    "body": "My branch was already based on `stable`, but it got wrong in the PR. I fixed that.\r\n\r\nCode in `examples/` had already been updated, no further surrounding text needs changes, even the `os.makedirs` description further below fits better than before.\r\n\r\nThe surrounding code in `examples/` already wasn't in sync with the docs, though."
+   },
+   "source": "github",
+   "timestamp": "2026-01-28T06:54:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5903"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5900:opened",
+   "payload": {
+    "additions": 168,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 142,
+    "files": [
+     "docs/async-await.rst",
+     "docs/deploying/eventlet.rst",
+     "docs/deploying/gevent.rst",
+     "docs/deploying/gunicorn.rst",
+     "docs/deploying/index.rst",
+     "docs/deploying/uwsgi.rst",
+     "docs/gevent.rst",
+     "docs/index.rst",
+     "docs/installation.rst"
+    ],
+    "title": "document using gevent for async"
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T18:34:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5900"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5900:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T18:35:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5900"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5899:opened",
+   "payload": {
+    "additions": 27,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 9,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/app.py",
+     "src/flask/sansio/app.py"
+    ],
+    "title": "deprecate `should_ignore_error`"
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T03:51:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/5899"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5899:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T03:53:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5899"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5898:opened",
+   "payload": {
+    "additions": 14,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 3,
+    "files": [
+     "CHANGES.rst",
+     "docs/api.rst",
+     "src/flask/helpers.py",
+     "src/flask/sansio/app.py"
+    ],
+    "title": "redirect defaults to 303"
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T00:51:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/5898"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5898:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T01:18:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/5898"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5896:opened",
+   "payload": {
+    "additions": 147,
+    "author": "OptifinerAI",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/flask/templating.py",
+     "tests/test_templating.py"
+    ],
+    "title": "Cache compiled templates in render_template_string"
+   },
+   "source": "github",
+   "timestamp": "2026-01-24T08:39:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5896"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5896:closed",
+   "payload": {
+    "author": "OptifinerAI",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-24T15:17:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/5896"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5896:comment:0",
+   "payload": {
+    "author": "OptifinerAI",
+    "author_is_bot": false,
+    "body": "Hi @davidism!\r\n\r\nNoticed you edited out the link, totally fair, the plug was probably too aggressive. Though I'm unsure of the reason this PR was closed. I believe the performance gain are quite significant and universal, but this is also my first Flask PR, could you lmk whether I missed something? Would be very grateful.\r\n\r\nThanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T05:10:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5896"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5896:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Stop using AI"
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T05:21:04+00:00",
+   "url": "https://github.com/pallets/flask/pull/5896"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5892:opened",
+   "payload": {
+    "additions": 3,
+    "author": "raushan-oss",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "docs/patterns/appdispatch.rst"
+    ],
+    "title": "docs: improve wording in appdispatch"
+   },
+   "source": "github",
+   "timestamp": "2026-01-20T13:52:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/5892"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5892:closed",
+   "payload": {
+    "author": "raushan-oss",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-20T14:45:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5892"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5892:comment:0",
+   "payload": {
+    "author": "raushan-oss",
+    "author_is_bot": false,
+    "body": "Hi! This PR improves wording in the Application Dispatching documentation for clarity. Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-01-20T13:55:02+00:00",
+   "url": "https://github.com/pallets/flask/pull/5892"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5890:opened",
+   "payload": {
+    "additions": 95,
+    "author": "RellikSai",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 31,
+    "files": [
+     "docs/templating.rst"
+    ],
+    "title": "Improve templating documentation for clarity and readability"
+   },
+   "source": "github",
+   "timestamp": "2026-01-18T18:15:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/5890"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5890:closed",
+   "payload": {
+    "author": "RellikSai",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-18T18:42:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5890"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5889:opened",
+   "payload": {
+    "additions": 100,
+    "author": "RellikSai",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 28,
+    "files": [
+     "docs/templating.rst"
+    ],
+    "title": "Revise Jinja templating documentation for clarity and readability"
+   },
+   "source": "github",
+   "timestamp": "2026-01-17T17:10:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/5889"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5889:closed",
+   "payload": {
+    "author": "RellikSai",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-17T17:13:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5889"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5888:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Silence91169",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/api.rst"
+    ],
+    "title": "Docs: add context to Incoming Request Data section"
+   },
+   "source": "github",
+   "timestamp": "2026-01-15T21:33:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/5888"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5888:closed",
+   "payload": {
+    "author": "Silence91169",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-15T21:41:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5888"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5888:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR adds introductory context to the \"Incoming Request Data\" section in the Flask API documentation. The changes aim to help developers better understand what the section covers and the purpose of the `request` proxy object before diving into the detailed API reference.\n\n**Changes:**\n- Added an introductory paragraph to the \"Incoming Request Data\" section explaining its purpose\n- Enhanced the `request` proxy documentation with a clarifying sentence about its role in view functions\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/pallets/flask/new/main/.github/instructions?filename=*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-01-15T21:35:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/5888"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5888:review:1",
+   "payload": {
+    "author": "Silence91169",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-01-15T21:38:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/5888"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5888:comment:0",
+   "payload": {
+    "author": "Silence91169",
+    "author_is_bot": false,
+    "body": "Thanks for the thoughtful review!\r\n\r\nYou\u2019re right about the consistency across sections. My intention here was to\r\nimprove clarity for readers in a section that jumps directly into the API\r\nreference, similar to how the Sessions and Application Globals sections\r\nprovide\r\nbrief context.\r\n\r\nI wanted to keep the scope of this PR minimal as a first contribution, but\r\nI\u2019m\r\nhappy to adjust the wording to better match the existing style, or extend\r\nsimilar\r\nintroductory context to other major sections if that\u2019s preferred.\r\n\r\nPlease let me know what approach you\u2019d recommend.\r\n\r\nOn Fri, Jan 16, 2026 at 3:05\u202fAM Copilot ***@***.***> wrote:\r\n\r\n> ***@***.**** commented on this pull request.\r\n> Pull request overview\r\n>\r\n> This PR adds introductory context to the \"Incoming Request Data\" section\r\n> in the Flask API documentation. The changes aim to help developers better\r\n> understand what the section covers and the purpose of the request proxy\r\n> object before diving into the detailed API reference.\r\n>\r\n> *Changes:*\r\n>\r\n>    - Added an introductory paragraph to the \"Incoming Request Data\"\r\n>    section explaining its purpose\r\n>    - Enhanced the request proxy documentation with a clarifying sentence\r\n>    about its role in view functions\r\n>\r\n> ------------------------------\r\n>\r\n> \ud83d\udca1 Add Copilot custom instructions\r\n> <http:///pallets/flask/new/main/.github/instructions?filename=*.instructions.md>\r\n> for smarter, more guided reviews. Learn how to get started\r\n> <https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot>\r\n> .\r\n> ------------------------------\r\n>\r\n> In docs/api.rst\r\n> <https://github.com/pallets/flask/pull/5888#discussion_r2696041318>:\r\n>\r\n> > +This section describes how to access data sent by the client in an HTTP\r\n> +request, such as query parameters, form data, JSON payloads, and headers.\r\n>\r\n> Consider adding consistency with other sections. The 'Sessions' section\r\n> (lines 59-67) and 'Application Globals' section (lines 151-156) also have\r\n> introductory paragraphs. However, 'Application Object', 'Blueprint\r\n> Objects', and 'Response Objects' sections do not. While this addition is\r\n> helpful, it creates inconsistency. Consider either adding similar\r\n> introductions to other major sections or ensuring the current style aligns\r\n> with the documentation's overall approach.\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/pallets/flask/pull/5888#pullrequestreview-3667685341>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/BZY6ACYOVMCD6YE7YVTP7JT4HABZ3AVCNFSM6AAAAACR264P3WVHI2DSMVQWIX3LMV43YUDVNRWFEZLROVSXG5CSMV3GSZLXHMZTMNRXGY4DKMZUGE>\r\n> .\r\n> You are receiving this because you authored the thread.Message ID:\r\n> ***@***.***>\r\n>\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-01-15T21:36:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/5888"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5885:opened",
+   "payload": {
+    "additions": 56,
+    "author": "vizahat36",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/async-await.rst"
+    ],
+    "title": "clarify async view incompatibility with gevent monkey patching"
+   },
+   "source": "github",
+   "timestamp": "2026-01-10T20:02:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5885"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5885:closed",
+   "payload": {
+    "author": "vizahat36",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-10T21:58:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/5885"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5879:opened",
+   "payload": {
+    "additions": 21,
+    "author": "vedika-zangoh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/python-ci.yml"
+    ],
+    "title": "Add GitHub Actions CI workflow"
+   },
+   "source": "github",
+   "timestamp": "2026-01-05T09:51:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/5879"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5879:closed",
+   "payload": {
+    "author": "vedika-zangoh",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-05T10:44:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/5879"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5879:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Please stop abusing other people's repos for random tests or learning how to use GitHub, this is not a playground."
+   },
+   "source": "github",
+   "timestamp": "2026-01-05T10:44:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/5879"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5878:opened",
+   "payload": {
+    "additions": 1,
+    "author": "vedika-zangoh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "hello.py"
+    ],
+    "title": "Add hello.py for testing"
+   },
+   "source": "github",
+   "timestamp": "2026-01-05T09:45:16+00:00",
+   "url": "https://github.com/pallets/flask/pull/5878"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5878:closed",
+   "payload": {
+    "author": "vedika-zangoh",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-05T10:43:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/5878"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5878:comment:0",
+   "payload": {
+    "author": "RonnyPfannschmidt",
+    "author_is_bot": false,
+    "body": "Please stop abusing big public repos for random tests "
+   },
+   "source": "github",
+   "timestamp": "2026-01-05T10:42:23+00:00",
+   "url": "https://github.com/pallets/flask/pull/5878"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5877:opened",
+   "payload": {
+    "additions": 0,
+    "author": "harshitasurana",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "docs/lifecycle.rst"
+    ],
+    "title": "Minor documentation"
+   },
+   "source": "github",
+   "timestamp": "2026-01-03T16:43:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5877"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5877:closed",
+   "payload": {
+    "author": "harshitasurana",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-03T18:30:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/5877"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5877:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Do not use other's public repositories for practice. Also this change is in no way an improvement. "
+   },
+   "source": "github",
+   "timestamp": "2026-01-03T18:32:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/5877"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5876:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Aman071106",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "docs/patterns/mongoengine.rst",
+     "docs/web-security.rst"
+    ],
+    "title": "docs: Upgrade HTTP links to HTTPS"
+   },
+   "source": "github",
+   "timestamp": "2026-01-01T15:37:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/5876"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5876:closed",
+   "payload": {
+    "author": "Aman071106",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-01T16:35:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/5876"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5875:opened",
+   "payload": {
+    "additions": 12,
+    "author": "AnupojuRohit",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "docs: clarify 415 error when receiving JSON requests"
+   },
+   "source": "github",
+   "timestamp": "2026-01-01T10:24:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/5875"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5875:closed",
+   "payload": {
+    "author": "AnupojuRohit",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-01T13:21:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5875"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5874:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Soham-1616",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "docs/patterns/javascript.rst"
+    ],
+    "title": "Clarify 415 Unsupported Media in JSON docs"
+   },
+   "source": "github",
+   "timestamp": "2025-12-29T05:02:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5874"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5874:closed",
+   "payload": {
+    "author": "Soham-1616",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-29T05:06:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5874"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5873:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Soham-1616",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "docs/patterns/javascript.rst"
+    ],
+    "title": "Clarify 415 Unsupported Media Type in JSON docs"
+   },
+   "source": "github",
+   "timestamp": "2025-12-29T05:01:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/5873"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5873:closed",
+   "payload": {
+    "author": "Soham-1616",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-29T05:01:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5873"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5872:opened",
+   "payload": {
+    "additions": 3,
+    "author": "JasonBalayev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/patterns/javascript.rst"
+    ],
+    "title": "Fixed error code documentation for request.json"
+   },
+   "source": "github",
+   "timestamp": "2025-12-27T17:16:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/5872"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5872:closed",
+   "payload": {
+    "author": "JasonBalayev",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-27T17:36:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5872"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5872:comment:0",
+   "payload": {
+    "author": "JasonBalayev",
+    "author_is_bot": false,
+    "body": "Hi David, \r\n\r\nI wanted to verify whether the issue addressed in my PR has already been resolved somewhere else? I noticed the PR was closed and would appreciate any context or guidance on the reason."
+   },
+   "source": "github",
+   "timestamp": "2025-12-27T17:42:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/5872"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5872:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "There's already an open PR. You're approximately the 10th person not to notice that. You also asked an AI to do it for you, and it slopped out a huge unnecessary description. "
+   },
+   "source": "github",
+   "timestamp": "2025-12-27T18:21:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/5872"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5872:comment:2",
+   "payload": {
+    "author": "JasonBalayev",
+    "author_is_bot": false,
+    "body": "I just wanted to point that this is my first attempt to a contribution as an aspiring open source developer. My description was for the sole purpose of indicating the changes following the template that was given when creating the PR. I thoroughly reviewed the updated Flask API documentation before submitting my solution with the use of AI. \r\n\r\nAdditionally, It seems like the issue was already resolved in an open PR (#5827). Closing it would help prevent others like ```myself``` from continuing to work on it unintentionally. "
+   },
+   "source": "github",
+   "timestamp": "2025-12-27T18:35:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/5872"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5872:comment:3",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "From our [contributing guide](https://palletsprojects.com/contributing/#what-to-work-on):\r\n\r\n> Before starting, check if anyone else is assigned to the issue, or if there are any linked open pull requests. Look through the issue for that information as well as discussion and other linked issues for context.\r\n\r\nAlso, this was a one sentence change, and _that sentence was already written_ in the issue. There was absolutely no reason to waste resources using an LLM to do a copy paste."
+   },
+   "source": "github",
+   "timestamp": "2025-12-27T21:22:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5872"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5871:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Nitish-555",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "init"
+   },
+   "source": "github",
+   "timestamp": "2025-12-25T02:16:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5871"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5871:closed",
+   "payload": {
+    "author": "Nitish-555",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-25T02:18:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/5871"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5869:opened",
+   "payload": {
+    "additions": 6,
+    "author": "sunilkushwahaisgreat-jpg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/api.rst"
+    ],
+    "title": "Document 415 Unsupported Media Type for JSON requests"
+   },
+   "source": "github",
+   "timestamp": "2025-12-23T08:10:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5869"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5869:closed",
+   "payload": {
+    "author": "sunilkushwahaisgreat-jpg",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-23T14:48:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/5869"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5868:opened",
+   "payload": {
+    "additions": 4,
+    "author": "latifbaihaki",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "Improve exception handler in wsgi_app method"
+   },
+   "source": "github",
+   "timestamp": "2025-12-22T00:34:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5868"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5868:closed",
+   "payload": {
+    "author": "latifbaihaki",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-22T01:30:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/5868"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5867:opened",
+   "payload": {
+    "additions": 101,
+    "author": "ayushpatil0810",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/app.py",
+     "src/flask/sansio/app.py",
+     "tests/test_deprecations.py"
+    ],
+    "title": "Deprecate should_ignore_error method"
+   },
+   "source": "github",
+   "timestamp": "2025-12-18T12:19:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/5867"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5867:closed",
+   "payload": {
+    "author": "ayushpatil0810",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-18T12:30:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/5867"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5867:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "why do I have the feeling that you used an LLM to create this PR?"
+   },
+   "source": "github",
+   "timestamp": "2025-12-18T12:27:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/5867"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5866:opened",
+   "payload": {
+    "additions": 3,
+    "author": "ShakibCodes",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/patterns/javascript.rst"
+    ],
+    "title": "Clarify JSON request errors: 400 vs 415"
+   },
+   "source": "github",
+   "timestamp": "2025-12-18T07:04:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/5866"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5866:closed",
+   "payload": {
+    "author": "ShakibCodes",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-18T15:21:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5866"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5865:opened",
+   "payload": {
+    "additions": 1,
+    "author": "marcows",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "pyproject.toml"
+    ],
+    "title": "Increase required flit_core version to 3.11"
+   },
+   "source": "github",
+   "timestamp": "2025-12-17T15:22:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/5865"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5865:merged",
+   "payload": {
+    "author": "marcows",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T03:04:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/5865"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5864:opened",
+   "payload": {
+    "additions": 526,
+    "author": "sharoonthomas",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 21,
+    "files": [
+     "CHANGES.rst",
+     "docs/config.rst",
+     "docs/web-security.rst",
+     "src/flask/app.py",
+     "src/flask/sansio/app.py",
+     "src/flask/views.py",
+     "tests/test_csrf.py"
+    ],
+    "title": "Add built-in CSRF protection using Sec-Fetch-Site header"
+   },
+   "source": "github",
+   "timestamp": "2025-12-17T02:52:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/5864"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5864:closed",
+   "payload": {
+    "author": "sharoonthomas",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-17T15:07:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/5864"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5864:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Are you using an LLM tool to substantially generate your writing or code?"
+   },
+   "source": "github",
+   "timestamp": "2025-12-17T04:34:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/5864"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5864:comment:1",
+   "payload": {
+    "author": "sharoonthomas",
+    "author_is_bot": false,
+    "body": "> Are you using an LLM tool to substantially generate your writing or code?\r\n\r\nUsed claude code with opus 4.5 (substantially for the test cases)."
+   },
+   "source": "github",
+   "timestamp": "2025-12-17T12:06:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/5864"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5864:comment:2",
+   "payload": {
+    "author": "sharoonthomas",
+    "author_is_bot": false,
+    "body": "@ThiefMaster apologies if I've missed any contribution guidelines around tooling or process; happy to correct anything that's not aligned.\r\n\r\n@davidism and @ThiefMaster If you have concerns about the implementation or approach itself, I'd genuinely like to hear them."
+   },
+   "source": "github",
+   "timestamp": "2025-12-17T13:20:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/5864"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5864:comment:3",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "You didn't have time to understand or implement the feature, but you expect the maintainers to have that time to carefully review everything you asked an LLM to generate. That's not acceptable for anything, but especially for a security-related feature. \r\n\r\nIf I did want to use an AI, I have access to the same tools you do, so you saved me essentially no time at all in that case."
+   },
+   "source": "github",
+   "timestamp": "2025-12-17T15:34:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/5864"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5860:opened",
+   "payload": {
+    "additions": 3,
+    "author": "cotneok",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/patterns/javascript.rst"
+    ],
+    "title": "Fix documentation for JSON error codes"
+   },
+   "source": "github",
+   "timestamp": "2025-12-10T22:26:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/5860"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5860:closed",
+   "payload": {
+    "author": "cotneok",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-10T22:41:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/5860"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5859:opened",
+   "payload": {
+    "additions": 0,
+    "author": "bayraa16",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "examples/tutorial/test"
+    ],
+    "title": "Create test"
+   },
+   "source": "github",
+   "timestamp": "2025-12-10T09:30:23+00:00",
+   "url": "https://github.com/pallets/flask/pull/5859"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5859:closed",
+   "payload": {
+    "author": "bayraa16",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-10T10:12:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5859"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5859:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "do not use other people's repos for testing."
+   },
+   "source": "github",
+   "timestamp": "2025-12-10T10:12:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5859"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5858:opened",
+   "payload": {
+    "additions": 75,
+    "author": "ilmoruuu",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 39,
+    "files": [
+     "src/flask/__init__.py"
+    ],
+    "title": "Refactor __init__.py module to improve organization, readability and public API structure"
+   },
+   "source": "github",
+   "timestamp": "2025-12-08T01:10:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/5858"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5858:closed",
+   "payload": {
+    "author": "ilmoruuu",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-08T01:11:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/5858"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5858:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This is useless LLM junk. Do not waste maintainer time. "
+   },
+   "source": "github",
+   "timestamp": "2025-12-08T01:13:21+00:00",
+   "url": "https://github.com/pallets/flask/pull/5858"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5858:comment:1",
+   "payload": {
+    "author": "ilmoruuu",
+    "author_is_bot": false,
+    "body": "Hey! Sorry for the inconvenience. I was studying ways to improve Flask for a university assignment. I apologize again \u2014 it wasn\u2019t my intention to disrupt your progress. Best regards, and once again, sorry\u00a0about\u00a0that."
+   },
+   "source": "github",
+   "timestamp": "2025-12-08T01:53:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/5858"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5858:comment:2",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Then your professor failed you in not teaching you how to contribute. Please tell your professor that maintainers want them to stop assigning this."
+   },
+   "source": "github",
+   "timestamp": "2025-12-08T02:24:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/5858"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5857:opened",
+   "payload": {
+    "additions": 85,
+    "author": "paolotercerosdev",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "ISSUE.md",
+     "src/flask/app.py",
+     "src/flask/blueprints.py",
+     "src/flask/config.py"
+    ],
+    "title": "Add documentation and fix type safety bugs"
+   },
+   "source": "github",
+   "timestamp": "2025-11-30T06:53:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5857"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5857:closed",
+   "payload": {
+    "author": "paolotercerosdev",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-30T15:37:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5857"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5857:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "This kind of smells like AI-generated slop considering the `ISSUE.md` file you ended up committing...\r\n\r\nMixing unrelated changes in a single PR is also not a good idea."
+   },
+   "source": "github",
+   "timestamp": "2025-11-30T11:00:30+00:00",
+   "url": "https://github.com/pallets/flask/pull/5857"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5856:opened",
+   "payload": {
+    "additions": 102,
+    "author": "VaksHSE",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 76,
+    "files": [
+     "src/flask/sansio/blueprints.py"
+    ],
+    "title": "Refactor Blueprint.register to reduce cyclomatic complexity"
+   },
+   "source": "github",
+   "timestamp": "2025-11-29T08:21:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/5856"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5856:closed",
+   "payload": {
+    "author": "VaksHSE",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-29T14:18:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/5856"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5855:opened",
+   "payload": {
+    "additions": 1648,
+    "author": "stonelv",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 0,
+    "files": [
+     "examples/scheduler_example.py",
+     "scheduler_data.json",
+     "src/flask/__init__.py",
+     "src/flask/scheduler/__init__.py",
+     "src/flask/scheduler/blueprint.py",
+     "src/flask/scheduler/cron.py",
+     "src/flask/scheduler/decorators.py",
+     "src/flask/scheduler/examples.py",
+     "src/flask/scheduler/exceptions.py",
+     "src/flask/scheduler/scheduler.py",
+     "src/flask/scheduler/storage.py",
+     "src/flask/scheduler/tasks.py"
+    ],
+    "title": "kimi-v1"
+   },
+   "source": "github",
+   "timestamp": "2025-11-29T07:44:54+00:00",
+   "url": "https://github.com/pallets/flask/pull/5855"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5855:closed",
+   "payload": {
+    "author": "stonelv",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-29T07:45:23+00:00",
+   "url": "https://github.com/pallets/flask/pull/5855"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5854:opened",
+   "payload": {
+    "additions": 50,
+    "author": "akarshsinghal",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/flask/app.py",
+     "tests/test_should_ignore_error.py"
+    ],
+    "title": "Deprecate should_ignore_error method and add unit tests"
+   },
+   "source": "github",
+   "timestamp": "2025-11-29T04:46:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5854"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5854:closed",
+   "payload": {
+    "author": "akarshsinghal",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-29T05:15:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5854"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5853:opened",
+   "payload": {
+    "additions": 151,
+    "author": "txjas99",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/rate_limiter.py",
+     "tests/test_rate_limit.py"
+    ],
+    "title": "Added rate limiting functionality to Flask app"
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T16:43:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/5853"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5853:closed",
+   "payload": {
+    "author": "txjas99",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T16:46:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/5853"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5853:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "there are already extensions like flask-limiter for this..."
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T16:46:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/5853"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5853:comment:1",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Looking at the name of your branch: Is this some kind of university/school project where you were asked to make a contribution to a project on GitHub?"
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T19:23:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/5853"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5853:comment:2",
+   "payload": {
+    "author": "txjas99",
+    "author_is_bot": false,
+    "body": "> Looking at the name of your branch: Is this some kind of university/school project where you were asked to make a contribution to a project on GitHub?\n\nYes, and we were asked to contribute to a big library but I don't think any of us really know how to or what contributions to make. "
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T19:43:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/5853"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5853:comment:3",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Please convey to your teacher that this is not an acceptable way to promote open source contribution. They need to properly set you up for success, rather than hoping you figure it out. This was not a good use of maintainer time."
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T20:11:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/5853"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5853:comment:4",
+   "payload": {
+    "author": "txjas99",
+    "author_is_bot": false,
+    "body": "> Please convey to your teacher that this is not an acceptable way to promote open source contribution. They need to properly set you up for success, rather than hoping you figure it out. This was not a good use of maintainer time.\n\nYes I will do that, my sincere apologies."
+   },
+   "source": "github",
+   "timestamp": "2025-11-28T14:07:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/5853"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5852:opened",
+   "payload": {
+    "additions": 2,
+    "author": "manojalluri",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "Docs: Add WSGI documentation note to README"
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T16:36:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/5852"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5852:closed",
+   "payload": {
+    "author": "manojalluri",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T16:40:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/5852"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5852:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "thanks but this isn't really an improvement..."
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T16:40:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/5852"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5850:opened",
+   "payload": {
+    "additions": 102,
+    "author": "MOHITKOURAV01",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "CHANGES.rst",
+     "docs/conf.py",
+     "docs/contributing.rst",
+     "pyproject.toml",
+     "tests/test_docs_copybutton.py"
+    ],
+    "title": "Add copy-to-clipboard button for code blocks in Flask documentation."
+   },
+   "source": "github",
+   "timestamp": "2025-11-19T10:45:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5850"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5850:closed",
+   "payload": {
+    "author": "MOHITKOURAV01",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-19T14:30:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5850"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5849:opened",
+   "payload": {
+    "additions": 102,
+    "author": "MOHITKOURAV01",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "CHANGES.rst",
+     "docs/conf.py",
+     "docs/contributing.rst",
+     "pyproject.toml",
+     "tests/test_docs_copybutton.py"
+    ],
+    "title": "Add copy-to-clipboard button for code blocks in Flask documentation."
+   },
+   "source": "github",
+   "timestamp": "2025-11-19T09:37:58+00:00",
+   "url": "https://github.com/pallets/flask/pull/5849"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5849:closed",
+   "payload": {
+    "author": "MOHITKOURAV01",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-19T09:51:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/5849"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5847:opened",
+   "payload": {
+    "additions": 12,
+    "author": "waweruvincent146-afk",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "docs: Improve Quickstart example clarity for beginners"
+   },
+   "source": "github",
+   "timestamp": "2025-11-12T05:57:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5847"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5847:closed",
+   "payload": {
+    "author": "waweruvincent146-afk",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-12T06:52:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5847"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5847:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "I don't think this is a useful change. For example, `flask run` is a thing and thus the part of running the file directly isn't even needed in the code."
+   },
+   "source": "github",
+   "timestamp": "2025-11-12T06:52:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5847"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5846:opened",
+   "payload": {
+    "additions": 5,
+    "author": "krishnapramodsai",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/cli.py"
+    ],
+    "title": "Fix _validate_key to handle click 8.3.1 Sentinel values"
+   },
+   "source": "github",
+   "timestamp": "2025-11-10T16:17:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/5846"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5846:closed",
+   "payload": {
+    "author": "krishnapramodsai",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-10T19:17:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5846"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5846:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "The fix will be in Click, not here. UNSET is an internal symbol."
+   },
+   "source": "github",
+   "timestamp": "2025-11-10T19:17:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/5846"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5845:opened",
+   "payload": {
+    "additions": 51,
+    "author": "commitWithTisha",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "docs/quickstart.rst",
+     "docs/server.rst"
+    ],
+    "title": "docs: Add explanation of reloader types and terminal output"
+   },
+   "source": "github",
+   "timestamp": "2025-11-09T06:28:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5845"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5845:closed",
+   "payload": {
+    "author": "commitWithTisha",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T01:22:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5845"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5844:opened",
+   "payload": {
+    "additions": 13,
+    "author": "cclauss",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     ".pre-commit-config.yaml",
+     "pyproject.toml",
+     "src/flask/app.py",
+     "src/flask/sessions.py"
+    ],
+    "title": "pre-commit: Add codespell"
+   },
+   "source": "github",
+   "timestamp": "2025-11-05T17:14:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5844"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5844:merged",
+   "payload": {
+    "author": "cclauss",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T03:00:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5844"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5840:opened",
+   "payload": {
+    "additions": 356,
+    "author": "ARUSHIGULBHILE",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 26,
+    "files": [
+     "README.md"
+    ],
+    "title": "docs: enhance README with comprehensive examples and troubleshooting"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T14:08:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5840"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5840:closed",
+   "payload": {
+    "author": "ARUSHIGULBHILE",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T14:59:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/5840"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5838:opened",
+   "payload": {
+    "additions": 5,
+    "author": "bodduNaidu",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1498,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "Update app.py"
+   },
+   "source": "github",
+   "timestamp": "2025-10-29T20:59:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5838"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5838:closed",
+   "payload": {
+    "author": "bodduNaidu",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-10-29T21:01:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5838"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5838:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "This is not your playground. Stop sending garbage PRs to other people's repos to learn how to use GitHub."
+   },
+   "source": "github",
+   "timestamp": "2025-10-29T21:01:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5838"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5837:opened",
+   "payload": {
+    "additions": 72,
+    "author": "bodduNaidu",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "jenkinsfile"
+    ],
+    "title": "Create jenkinsfile"
+   },
+   "source": "github",
+   "timestamp": "2025-10-29T20:53:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5837"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5837:closed",
+   "payload": {
+    "author": "bodduNaidu",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-10-29T20:54:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5837"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5835:opened",
+   "payload": {
+    "additions": 1,
+    "author": "GeoSegun",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/deploying/index.rst"
+    ],
+    "title": "Add Seenode deployment instructions to documentation"
+   },
+   "source": "github",
+   "timestamp": "2025-10-23T10:30:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/5835"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5835:closed",
+   "payload": {
+    "author": "GeoSegun",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T01:35:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/5835"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5835:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Thanks, it's always great to see services supporting Flask.\r\n\r\nHowever, at this time we don't plan on adding more services to this list, as it is difficult to keep updated and fair. You'll notice that around that list, the docs say:\r\n\r\n> The links below are for some of the most common platforms\r\n\r\n> This list is not exhaustive, and you should evaluate these and other services based on your application\u2019s needs.\r\n\r\nI'll keep this in mind if I do change my mind."
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T01:35:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/5835"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5834:opened",
+   "payload": {
+    "additions": 2,
+    "author": "cclauss",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     ".pre-commit-config.yaml"
+    ],
+    "title": "`pre-commit autoupdate --freeze` 2025-10-23"
+   },
+   "source": "github",
+   "timestamp": "2025-10-22T08:30:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5834"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5834:closed",
+   "payload": {
+    "author": "cclauss",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-05T16:17:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/5834"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5833:opened",
+   "payload": {
+    "additions": 1184,
+    "author": "cclauss",
+    "author_is_bot": false,
+    "changed_files": 44,
+    "deletions": 1157,
+    "files": [
+     ".github/workflows/tests.yaml",
+     "docs/api.rst",
+     "docs/appcontext.rst",
+     "docs/design.rst",
+     "docs/extensiondev.rst",
+     "docs/index.rst",
+     "docs/installation.rst",
+     "docs/lifecycle.rst",
+     "docs/patterns/sqlalchemy.rst",
+     "docs/patterns/sqlite3.rst",
+     "docs/patterns/streaming.rst",
+     "docs/quickstart.rst",
+     "docs/reqcontext.rst",
+     "docs/shell.rst",
+     "docs/signals.rst",
+     "docs/testing.rst",
+     "docs/tutorial/blog.rst",
+     "docs/tutorial/database.rst",
+     "docs/tutorial/templates.rst",
+     "docs/tutorial/tests.rst"
+    ],
+    "title": "fix typos discovered by  codespell"
+   },
+   "source": "github",
+   "timestamp": "2025-10-22T08:19:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/5833"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5833:closed",
+   "payload": {
+    "author": "cclauss",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-05T16:10:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/5833"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5833:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "See our contributing guide about docs https://palletsprojects.com/contributing/docs, in particular\r\n\r\n> If you are fixing or improving existing docs, or writing about existing features, you want to branch off of the stable branch, as well as target the stable branch in the PR."
+   },
+   "source": "github",
+   "timestamp": "2025-11-05T15:23:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/5833"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5833:comment:1",
+   "payload": {
+    "author": "cclauss",
+    "author_is_bot": false,
+    "body": "Unfortunately, the three typos above are not on the `stable` branch, so let's get `codespell` in place to catch future typos.\r\n* #5844 "
+   },
+   "source": "github",
+   "timestamp": "2025-11-06T07:43:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5833"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5832:opened",
+   "payload": {
+    "additions": 150,
+    "author": "cclauss",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 105,
+    "files": [
+     ".github/workflows/tests.yaml",
+     "uv.lock"
+    ],
+    "title": "GitHub Actions: Add Python 3.14 and 3.14t to the testing"
+   },
+   "source": "github",
+   "timestamp": "2025-10-22T05:58:58+00:00",
+   "url": "https://github.com/pallets/flask/pull/5832"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5832:closed",
+   "payload": {
+    "author": "cclauss",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-05T16:17:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5832"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:opened",
+   "payload": {
+    "additions": 6,
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/installation.rst"
+    ],
+    "title": "Update installation instructions for Windows PowerShell"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T10:08:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:closed",
+   "payload": {
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-17T00:52:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:review:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T10:43:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:review:1",
+   "payload": {
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T10:51:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:review:2",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T10:52:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:review:3",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T10:53:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:review:4",
+   "payload": {
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T11:05:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:review:5",
+   "payload": {
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T12:31:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:comment:0",
+   "payload": {
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "body": "Just checked my build and the link is broken..."
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T12:32:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:comment:1",
+   "payload": {
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "body": "Fixed! Silly missing underscores."
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T12:37:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:comment:2",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "I don't think we need to go into this detail here. In fact, I really want to _reduce_ this page, and point people at official docs for uv, virtualenv, etc instead."
+   },
+   "source": "github",
+   "timestamp": "2025-10-20T17:25:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5831:comment:3",
+   "payload": {
+    "author": "MeowyCat1",
+    "author_is_bot": false,
+    "body": "I\u2019m not really sure how to link to that note in the docs as you have to scroll halfway down that page to actually find that note - it would probably be easier for a user to just read it straight from the flask docs, unless you can find a better link that I could use."
+   },
+   "source": "github",
+   "timestamp": "2025-10-20T18:17:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5831"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5829:opened",
+   "payload": {
+    "additions": 5,
+    "author": "hynek",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "docs/appcontext.rst",
+     "docs/design.rst"
+    ],
+    "title": "Docs typo/markup fixes"
+   },
+   "source": "github",
+   "timestamp": "2025-10-14T07:43:09+00:00",
+   "url": "https://github.com/pallets/flask/pull/5829"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5829:merged",
+   "payload": {
+    "author": "hynek",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-10-14T20:26:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/5829"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5828:opened",
+   "payload": {
+    "additions": 1,
+    "author": "sachintha180",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/patterns/flashing.rst"
+    ],
+    "title": "docs: fix missing quote in flashing example"
+   },
+   "source": "github",
+   "timestamp": "2025-10-13T15:33:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/5828"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5828:closed",
+   "payload": {
+    "author": "sachintha180",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-10-13T15:50:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/5828"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5828:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "It's valid as is"
+   },
+   "source": "github",
+   "timestamp": "2025-10-13T15:50:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5828"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5828:comment:1",
+   "payload": {
+    "author": "sachintha180",
+    "author_is_bot": false,
+    "body": "Sorry about that, I didn't know single class names without quotations were valid in HTML5. \r\n\r\nThank you so much for the review!"
+   },
+   "source": "github",
+   "timestamp": "2025-10-13T17:39:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/5828"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5827:opened",
+   "payload": {
+    "additions": 5,
+    "author": "adityasah104",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "docs/patterns/javascript.rst"
+    ],
+    "title": "clarify 415 vs 400 errors for request.json"
+   },
+   "source": "github",
+   "timestamp": "2025-10-09T07:06:09+00:00",
+   "url": "https://github.com/pallets/flask/pull/5827"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5827:merged",
+   "payload": {
+    "author": "adityasah104",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T02:46:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/5827"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5827:comment:0",
+   "payload": {
+    "author": "lonelyH3b",
+    "author_is_bot": false,
+    "body": "Hey @adityasah104, I see you have edited the line quite a bit. Why not to keep it as it is and just edit the error message?\r\n\r\nAs example:\r\nUse the [json](https://flask.palletsprojects.com/en/stable/api/#flask.Request.json) property of the [request](https://flask.palletsprojects.com/en/stable/api/#flask.request) object to decode the request\u2019s body as JSON. If the body is not valid JSON, or the Content-Type header is not set to application/json, a ~400 Bad Request~ 415 Unsupported Media Type error will be raised.\r\n\r\n\r\nHow about changing it this way? \ud83d\ude42"
+   },
+   "source": "github",
+   "timestamp": "2025-12-02T15:07:54+00:00",
+   "url": "https://github.com/pallets/flask/pull/5827"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5827:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "@lonelyH3b because that's not accurate, as described in the issue, in the PR description, and in the code."
+   },
+   "source": "github",
+   "timestamp": "2025-12-02T15:11:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/5827"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5827:comment:2",
+   "payload": {
+    "author": "lonelyH3b",
+    "author_is_bot": false,
+    "body": "Yes, got it \u2764\ufe0f"
+   },
+   "source": "github",
+   "timestamp": "2025-12-02T15:21:09+00:00",
+   "url": "https://github.com/pallets/flask/pull/5827"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5827:comment:3",
+   "payload": {
+    "author": "adityasah104",
+    "author_is_bot": false,
+    "body": "Thanks @davidism for clarifying! The PR is ready for review whenever you have time."
+   },
+   "source": "github",
+   "timestamp": "2025-12-03T10:04:55+00:00",
+   "url": "https://github.com/pallets/flask/pull/5827"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5827:comment:4",
+   "payload": {
+    "author": "adityasah104",
+    "author_is_bot": false,
+    "body": "@davidism Just wanted to gently follow up on this when you have a chance. Happy to make any additional changes if needed!"
+   },
+   "source": "github",
+   "timestamp": "2025-12-03T10:05:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/5827"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5826:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Samarthegde",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/patterns/javascript.rst"
+    ],
+    "title": "docs: clarify JSON parsing error conditions in Flask views"
+   },
+   "source": "github",
+   "timestamp": "2025-10-08T13:14:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/5826"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5826:closed",
+   "payload": {
+    "author": "Samarthegde",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-10-08T18:23:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5826"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5826:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This doesn't address the linked issue, which talks about a specific error code, whereas this only rewords the existing sentence. The linked issue even has the suggested wording. It only required copying a sentence from one place to another, no writing required, no reason to reach for AI."
+   },
+   "source": "github",
+   "timestamp": "2025-10-08T18:23:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5826"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5824:opened",
+   "payload": {
+    "additions": 11,
+    "author": "relu101",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/async-await.rst"
+    ],
+    "title": "Clarify asyncio and gevent incompatibility in docs (#5817)"
+   },
+   "source": "github",
+   "timestamp": "2025-09-29T17:11:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5824"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5824:closed",
+   "payload": {
+    "author": "relu101",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-05T18:19:35+00:00",
+   "url": "https://github.com/pallets/flask/pull/5824"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5821:opened",
+   "payload": {
+    "additions": 26,
+    "author": "SebaCry",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 17,
+    "files": [
+     "examples/javascript/js_example/views.py",
+     "examples/tutorial/flaskr/auth.py",
+     "examples/tutorial/flaskr/blog.py",
+     "examples/tutorial/flaskr/db.py"
+    ],
+    "title": "Add type hints to tutorial and Javascript examples"
+   },
+   "source": "github",
+   "timestamp": "2025-09-26T16:13:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5821"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5821:closed",
+   "payload": {
+    "author": "SebaCry",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-28T23:00:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/5821"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5821:comment:0",
+   "payload": {
+    "author": "rafaqat75",
+    "author_is_bot": false,
+    "body": "LGTM, follows other areas of the source in style, thanks for adding the type hints!"
+   },
+   "source": "github",
+   "timestamp": "2025-09-28T21:41:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/5821"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5821:comment:1",
+   "payload": {
+    "author": "SebaCry",
+    "author_is_bot": false,
+    "body": "Thanks!! I'll do it "
+   },
+   "source": "github",
+   "timestamp": "2025-09-28T23:04:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/5821"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5821:comment:2",
+   "payload": {
+    "author": "rafaqat75",
+    "author_is_bot": false,
+    "body": "@davidism This PR got closed but I don't see it merged back into main.  I'm still learning so was just wondering what that means.  The code changes have been deemed unnecessary or they will be merged back into main at som point?"
+   },
+   "source": "github",
+   "timestamp": "2025-09-29T10:45:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/5821"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5821:comment:3",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "IMHO the changes are not particularly useful and just make otherwise simple examples harder to understand, especially for beginners. Having type hints on view functions in an application do not add any rael benefit, unlike type hints on library code, utils, etc."
+   },
+   "source": "github",
+   "timestamp": "2025-09-29T10:50:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5821"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5821:comment:4",
+   "payload": {
+    "author": "SebaCry",
+    "author_is_bot": false,
+    "body": "Well said, an opinion hahaha"
+   },
+   "source": "github",
+   "timestamp": "2025-10-01T02:06:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/5821"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5818:opened",
+   "payload": {
+    "additions": 167,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 72,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/app.py",
+     "src/flask/ctx.py",
+     "src/flask/templating.py",
+     "tests/test_reqctx.py",
+     "tests/test_subclassing.py"
+    ],
+    "title": "pass context through dispatch methods"
+   },
+   "source": "github",
+   "timestamp": "2025-09-20T00:47:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5818"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5818:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-11-17T16:49:53+00:00",
+   "url": "https://github.com/pallets/flask/pull/5818"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5818:review:0",
+   "payload": {
+    "author": "pgjones",
+    "author_is_bot": false,
+    "body": "Looks good to me",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2025-09-20T10:11:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/5818"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5814:opened",
+   "payload": {
+    "additions": 47,
+    "author": "afzaal-ai-infra-engineer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/.gitlab-ci.yml",
+     ".github/workflows/codeql-analysis.yml"
+    ],
+    "title": "this is issue here"
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T07:03:30+00:00",
+   "url": "https://github.com/pallets/flask/pull/5814"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5814:closed",
+   "payload": {
+    "author": "afzaal-ai-infra-engineer",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T07:22:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/5814"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5814:comment:0",
+   "payload": {
+    "author": "afzaal-ai-infra-engineer",
+    "author_is_bot": false,
+    "body": "this new changing"
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T07:03:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5814"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5814:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Do not use public projects as your learning area. "
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T07:22:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5814"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5813:opened",
+   "payload": {
+    "additions": 34,
+    "author": "afzaal-ai-infra-engineer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/codeql-analysis.yml"
+    ],
+    "title": "Create codeql-analysis.yml"
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T06:39:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5813"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5813:closed",
+   "payload": {
+    "author": "afzaal-ai-infra-engineer",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T06:40:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5813"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5813:comment:0",
+   "payload": {
+    "author": "afzaal-ai-infra-engineer",
+    "author_is_bot": false,
+    "body": "here this add yam; file"
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T06:40:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/5813"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5813:comment:1",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Please share what exactly your teacher told you. it's either a misunderstanding on your side, or if he really asks students to open random PRs that are just noise in real projects, it's highly inappropriate and disrespectful towards maintainers on his side."
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T07:48:30+00:00",
+   "url": "https://github.com/pallets/flask/pull/5813"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5812:opened",
+   "payload": {
+    "additions": 779,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 36,
+    "deletions": 1007,
+    "files": [
+     "CHANGES.rst",
+     "docs/api.rst",
+     "docs/appcontext.rst",
+     "docs/design.rst",
+     "docs/extensiondev.rst",
+     "docs/index.rst",
+     "docs/lifecycle.rst",
+     "docs/patterns/sqlalchemy.rst",
+     "docs/patterns/sqlite3.rst",
+     "docs/patterns/streaming.rst",
+     "docs/quickstart.rst",
+     "docs/reqcontext.rst",
+     "docs/shell.rst",
+     "docs/signals.rst",
+     "docs/testing.rst",
+     "docs/tutorial/blog.rst",
+     "docs/tutorial/database.rst",
+     "docs/tutorial/templates.rst",
+     "docs/tutorial/tests.rst",
+     "docs/tutorial/views.rst"
+    ],
+    "title": "merge app and request context"
+   },
+   "source": "github",
+   "timestamp": "2025-09-12T22:45:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5812"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5812:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-09-19T23:45:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/5812"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5812:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Would be great if some people could test their apps with this branch. I'll plan to merge it a week from now."
+   },
+   "source": "github",
+   "timestamp": "2025-09-12T22:55:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/5812"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5812:comment:1",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "after `uv pip install 'git+https://github.com/pallets/flask@merge-contexts'` on [indico `master`](https://github.com/indico/indico):\r\n\r\n- no errors at import time\r\n- no errors when running the repl w/ all the indico stuff imported (`indico shell`)\r\n- no errors accessing it via web (custom wrapper running the flask dev server)\r\n- all tests still passing"
+   },
+   "source": "github",
+   "timestamp": "2025-09-17T14:21:02+00:00",
+   "url": "https://github.com/pallets/flask/pull/5812"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5812:comment:2",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Thanks to those who tested and left a \ud83d\ude80 or commented on Mastodon. Having a big app like Indico pass unchanged is a good sign as well. Time to merge this."
+   },
+   "source": "github",
+   "timestamp": "2025-09-19T23:36:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/5812"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5812:comment:3",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "06ea505ce2b2042af26e96d35ebf159af7c0869d updates `copy_current_request_context` to copy the context on each call to the decorated function. A single context copy used across threads was causing issues with the push counter."
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T03:37:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/5812"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5811:opened",
+   "payload": {
+    "additions": 8,
+    "author": "rutmananna",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 2,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/config.py",
+     "src/flask/helpers.py",
+     "src/flask/views.py",
+     "tests/test_basic.py"
+    ],
+    "title": "Add various bugs for BugBot demo"
+   },
+   "source": "github",
+   "timestamp": "2025-09-11T05:25:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/5811"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5811:closed",
+   "payload": {
+    "author": "rutmananna",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-11T05:27:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/5811"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5811:comment:0",
+   "payload": {
+    "author": "rutmananna",
+    "author_is_bot": false,
+    "body": "Sorry, I'm new to github and I create these two PRs by accident."
+   },
+   "source": "github",
+   "timestamp": "2025-09-11T06:19:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/5811"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5810:opened",
+   "payload": {
+    "additions": 8,
+    "author": "rutmananna",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 2,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/config.py",
+     "src/flask/helpers.py",
+     "src/flask/views.py",
+     "tests/test_basic.py"
+    ],
+    "title": "Add various bugs for BugBot demo"
+   },
+   "source": "github",
+   "timestamp": "2025-09-11T05:20:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/5810"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5810:closed",
+   "payload": {
+    "author": "rutmananna",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-11T05:21:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/5810"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5809:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Ujjwal0110",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "Added a line for first contributionme"
+   },
+   "source": "github",
+   "timestamp": "2025-09-10T13:20:16+00:00",
+   "url": "https://github.com/pallets/flask/pull/5809"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5809:closed",
+   "payload": {
+    "author": "Ujjwal0110",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-10T13:26:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/5809"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5809:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "This is not a playground."
+   },
+   "source": "github",
+   "timestamp": "2025-09-10T13:26:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/5809"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5808:opened",
+   "payload": {
+    "additions": 1,
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/sansio/app.py"
+    ],
+    "title": "fix annotation for select_jinja_autoescape"
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T16:33:44+00:00",
+   "url": "https://github.com/pallets/flask/pull/5808"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5808:merged",
+   "payload": {
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-25T02:25:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/5808"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5808:comment:0",
+   "payload": {
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "body": "Is there anything required from my end to close this particular pull request"
+   },
+   "source": "github",
+   "timestamp": "2025-09-22T18:40:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5808"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5808:comment:1",
+   "payload": {
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "body": "Hi Maintainers, is there anything I could do to get this PR resolved"
+   },
+   "source": "github",
+   "timestamp": "2025-10-29T01:47:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/5808"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5807:opened",
+   "payload": {
+    "additions": 499,
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 418,
+    "files": [
+     ".github/workflows/tests.yaml",
+     "CHANGES.rst",
+     "docs/extensiondev.rst",
+     "docs/installation.rst",
+     "docs/templating.rst",
+     "pyproject.toml",
+     "src/flask/__init__.py",
+     "src/flask/cli.py",
+     "src/flask/json/provider.py",
+     "src/flask/sansio/app.py",
+     "src/flask/sansio/blueprints.py",
+     "src/flask/typing.py",
+     "tests/test_blueprints.py",
+     "tests/test_cli.py",
+     "tests/test_templating.py",
+     "uv.lock"
+    ],
+    "title": "Changed the static annotated type of select_jinja_autoescape method in src/flask/sansio/app.py"
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T16:14:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/5807"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5807:closed",
+   "payload": {
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T16:18:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/5807"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5807:comment:0",
+   "payload": {
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "body": "Closing the pull request"
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T16:18:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/5807"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5806:opened",
+   "payload": {
+    "additions": 1,
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/sansio/app.py"
+    ],
+    "title": "Changed the static annotated type of select_jinja_autoescape method in src/flask/sansio/app.py"
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T15:30:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/5806"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5806:closed",
+   "payload": {
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T16:34:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/5806"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5806:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Please target this type of change at the stable branch. "
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T16:06:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/5806"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5806:comment:1",
+   "payload": {
+    "author": "subhajitsaha01",
+    "author_is_bot": false,
+    "body": "Closing this pull request as a corresponding pull request is raised in the stable branch\r\nhttps://github.com/pallets/flask/pull/5808"
+   },
+   "source": "github",
+   "timestamp": "2025-09-06T16:34:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/5806"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5805:opened",
+   "payload": {
+    "additions": 5,
+    "author": "ShubhamCodeWiz",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "examples/tutorial/flaskr/blog.py",
+     "notes.txt"
+    ],
+    "title": "feat(example/blog): Add flash messages for user feedback"
+   },
+   "source": "github",
+   "timestamp": "2025-09-03T13:36:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/5805"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5805:closed",
+   "payload": {
+    "author": "ShubhamCodeWiz",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-03T13:53:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/5805"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5805:comment:0",
+   "payload": {
+    "author": "ShubhamCodeWiz",
+    "author_is_bot": false,
+    "body": "Thank you for the review and I understand the goal of keeping the examples minimal. I appreciate you taking the time to look at my contribution!"
+   },
+   "source": "github",
+   "timestamp": "2025-09-03T14:12:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/5805"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5802:opened",
+   "payload": {
+    "additions": 33,
+    "author": "umarmir",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/codeql.yml"
+    ],
+    "title": "Add CodeQL scan workflow"
+   },
+   "source": "github",
+   "timestamp": "2025-08-27T15:56:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/5802"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5802:closed",
+   "payload": {
+    "author": "umarmir",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-08-27T16:03:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5802"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5802:comment:0",
+   "payload": {
+    "author": "github-advanced-security",
+    "author_is_bot": true,
+    "body": "This pull request sets up GitHub code scanning for this repository. Once the scans have completed and the checks have passed, the analysis results for this pull request branch will appear on [this overview](/pallets/flask/security/code-scanning?query=pr%3A5802+is%3Aopen). Once you merge this pull request, the 'Security' tab will show more code scanning analysis results (for example, for the default branch). Depending on your configuration and choice of analysis tool, future pull requests will be annotated with code scanning analysis results. For more information about GitHub code scanning, check out [the documentation](https://docs.github.com/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning). "
+   },
+   "source": "github",
+   "timestamp": "2025-08-27T16:00:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/5802"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5802:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Do not make unsolicited changes to our project configuration.\r\n\r\nAlso FYI, the analysis it produced is complete junk."
+   },
+   "source": "github",
+   "timestamp": "2025-08-27T16:03:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5802"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5801:opened",
+   "payload": {
+    "additions": 1,
+    "author": "MOSAUD22",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "DEVOPS_NOTES.txt"
+    ],
+    "title": "Add DEVOPS_NOTES.txt for practice"
+   },
+   "source": "github",
+   "timestamp": "2025-08-26T11:46:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/5801"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5801:closed",
+   "payload": {
+    "author": "MOSAUD22",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-08-26T11:49:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5801"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5801:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Do not use other people's repositories for learning how to use Git or GitHub. Create your own repo which is NOT a fork of someone else's repo to test PRs."
+   },
+   "source": "github",
+   "timestamp": "2025-08-26T11:49:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5801"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5800:opened",
+   "payload": {
+    "additions": 5,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 5,
+    "files": [
+     "CHANGES.rst",
+     "pyproject.toml",
+     "uv.lock"
+    ],
+    "title": "release version 3.1.2"
+   },
+   "source": "github",
+   "timestamp": "2025-08-19T20:42:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/5800"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5800:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-08-19T21:03:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/5800"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5799:opened",
+   "payload": {
+    "additions": 63,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 32,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/helpers.py",
+     "tests/test_helpers.py"
+    ],
+    "title": "refactor stream_with_context for async views"
+   },
+   "source": "github",
+   "timestamp": "2025-08-19T15:22:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/5799"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5799:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-08-19T15:23:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/5799"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5798:opened",
+   "payload": {
+    "additions": 21,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/web-security.rst"
+    ],
+    "title": "security docs for TRUSTED_HOSTS"
+   },
+   "source": "github",
+   "timestamp": "2025-08-18T18:44:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5798"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5798:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-08-18T18:44:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/5798"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5797:opened",
+   "payload": {
+    "additions": 15,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 23,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/testing.py",
+     "tests/test_testing.py"
+    ],
+    "title": "push preserved contexts in correct order"
+   },
+   "source": "github",
+   "timestamp": "2025-08-18T16:48:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/5797"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5797:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-08-18T16:56:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/5797"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5796:opened",
+   "payload": {
+    "additions": 8,
+    "author": "Vinayakakc-2004",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "docs/cli.rst"
+    ],
+    "title": "Fix typos and improve CLI documentation"
+   },
+   "source": "github",
+   "timestamp": "2025-08-10T19:11:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5796"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5796:closed",
+   "payload": {
+    "author": "Vinayakakc-2004",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-08-10T21:29:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/5796"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5795:opened",
+   "payload": {
+    "additions": 16,
+    "author": "GrantBirki",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     ".github/workflows/publish.yaml"
+    ],
+    "title": "Update GitHub Actions workflow for artifact handling"
+   },
+   "source": "github",
+   "timestamp": "2025-08-07T04:47:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/5795"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5795:merged",
+   "payload": {
+    "author": "GrantBirki",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-08-19T20:56:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/5795"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5795:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "I don't understand why this change is needed. We're not doing the thing you say is a vulnerability (and as you say, passing `run-id` would itself be the problem, not this)."
+   },
+   "source": "github",
+   "timestamp": "2025-08-18T17:01:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/5795"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5795:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Going to merge this since you work for GitHub security, but I'd still like to understand what vulnerability we're actually preventing here."
+   },
+   "source": "github",
+   "timestamp": "2025-08-19T20:56:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/5795"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5794:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Pouria-yvr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/helpers.py"
+    ],
+    "title": "Loosen send_file type annotation to include typing.IO[bytes]"
+   },
+   "source": "github",
+   "timestamp": "2025-08-06T00:51:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/5794"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5794:closed",
+   "payload": {
+    "author": "Pouria-yvr",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-08-06T00:59:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5794"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#5794:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Duplicate of #5777. Be sure to follow our contributing guide, which instructs you to look at existing open PRs on an issue before opening a PR."
+   },
+   "source": "github",
+   "timestamp": "2025-08-06T00:59:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/5794"
+  }
+ ],
+ "repo": "pallets/flask",
+ "window": "pre_t"
+}

@@ -87,3 +87,22 @@ def test_classify_is_pure():
     """Same inputs, same answer -- the property the reproduction claim rests on."""
     f, s = findings(repo_kind="real_software"), signals()
     assert classify(f, s) == classify(f, s)
+
+
+def test_a_handful_of_ignored_attempts_is_not_proof_of_hostility():
+    """Four ignored pull requests out of four is four data points, not a policy."""
+    v, trace = classify(
+        findings(repo_kind="real_software"),
+        signals(outsider_threads=4, outsider_merged=0, outsider_ignored=4,
+                median_first_response_hours=None, distinct_outsider_authors=3),
+    )
+    assert v is Verdict.INSUFFICIENT_EVIDENCE
+    assert any("too thin" in t for t in trace)
+
+
+def test_many_ignored_attempts_still_reads_as_hostile():
+    v, _ = classify(
+        findings(repo_kind="real_software"),
+        signals(outsider_threads=40, outsider_merged=0, outsider_ignored=36),
+    )
+    assert v is Verdict.NOT_VIABLE

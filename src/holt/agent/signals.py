@@ -25,6 +25,24 @@ def pr_key(evidence_id: str) -> str:
     return ":".join(evidence_id.split(":")[:2])
 
 
+# GitHub only marks an account as a Bot when it is a real GitHub App. Plenty of
+# automation runs on ordinary user accounts -- wingetbot on microsoft/winget-pkgs
+# posts every validation log as a normal user -- and counting those as human
+# engagement turns an auto-merge pipeline into a conversational project. Applied
+# at read time so fixtures stay as captured.
+_BOT_HINTS = ("dependabot", "renovate", "greenkeeper", "imgbot", "allcontributors",
+              "codecov", "sonarcloud", "netlify", "vercel", "mergify", "stale")
+
+
+def looks_like_bot(login: str, flagged: bool = False) -> bool:
+    if flagged:
+        return True
+    low = (login or "").lower()
+    if low.endswith("[bot]") or low.endswith("bot") or "-bot" in low:
+        return True
+    return any(hint in low for hint in _BOT_HINTS)
+
+
 @dataclass(slots=True)
 class Thread:
     """One pull request and everything that happened on it before the cutoff."""
@@ -68,7 +86,7 @@ def build_threads(records: Iterable[EvidenceRecord]) -> dict[str, Thread]:
             key=key,
             number=int(key.split("#")[-1]),
             author=p.get("author", ""),
-            author_is_bot=bool(p.get("author_is_bot")),
+            author_is_bot=looks_like_bot(p.get("author", ""), bool(p.get("author_is_bot"))),
             opened_at=r.timestamp,
             files=list(p.get("files") or []),
             changed_files=p.get("changed_files") or 0,
@@ -86,7 +104,9 @@ def build_threads(records: Iterable[EvidenceRecord]) -> dict[str, Thread]:
         elif r.evidence_id.endswith(":closed"):
             thread.closed_unmerged = True
         elif ":review:" in r.evidence_id or ":comment:" in r.evidence_id:
-            if not r.payload.get("author_is_bot"):
+            if not looks_like_bot(
+                r.payload.get("author", ""), bool(r.payload.get("author_is_bot"))
+            ):
                 thread.responses.append(
                     (r.timestamp, r.payload.get("author", ""), r.payload.get("body") or "")
                 )

@@ -6,6 +6,7 @@ import argparse
 import sys
 
 from holt import baseline, model
+from holt.agent import pipeline
 from holt.evidence.fixtures import FixtureProvider
 from holt.evidence.provider import EvidenceProvider
 from holt.types import Window
@@ -31,20 +32,25 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     provider = make_provider(args.live)
     client = model.build(repo, replay=args.replay)
 
-    if not args.baseline:
-        print(
-            "The full pipeline is not wired up yet; run with --baseline.",
-            file=sys.stderr,
-        )
-        return 2
-
-    assessment = baseline.assess(repo, provider, client)
+    if args.baseline:
+        assessment = baseline.assess(repo, provider, client)
+    else:
+        assessment, trace = pipeline.analyze(repo, provider, client)
+        if args.show_verification:
+            print(
+                f"<!-- findings before verification: {trace.before_verification}, "
+                f"after: {trace.after_verification}, dropped: {len(trace.dropped)} -->",
+                file=sys.stderr,
+            )
+            for d in trace.dropped:
+                print(f"<!-- DROPPED {d.field}={d.value!r} cited {list(d.evidence_ids)} -->",
+                      file=sys.stderr)
     print(assessment.render())
     if not args.replay:
         u = client.usage
         print(
             f"<!-- {u.input_tokens} in / {u.output_tokens} out tokens, "
-            f"${u.cost_usd():.4f} -->",
+            f"${u.cost_usd:.4f} -->",
             file=sys.stderr,
         )
     return 0
@@ -65,6 +71,11 @@ def main(argv: list[str] | None = None) -> int:
         "--replay",
         action="store_true",
         help="replay recorded model output; no API key, no spend",
+    )
+    analyze.add_argument(
+        "--show-verification",
+        action="store_true",
+        help="print the findings Stage D dropped and why",
     )
     analyze.add_argument(
         "--live",

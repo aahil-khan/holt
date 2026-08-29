@@ -1,0 +1,385 @@
+"""The stages that need a model.
+
+Each returns typed findings carrying evidence ids. Nothing here decides a
+verdict: that is verdict.py, and it runs no model. What these stages do is turn
+evidence into fields a rule can act on.
+"""
+
+from __future__ import annotations
+
+import random
+from collections.abc import Iterable
+
+from holt.agent.findings import Findings
+from holt.agent.signals import Thread
+from holt.model import ModelClient
+from holt.types import EvidenceRecord
+
+REPO_KINDS = [
+    "real_software",
+    "registry",
+    "awesome_list",
+    "portfolio",
+    "course_material",
+    "docs",
+    "mirror",
+    "unclear",
+]
+
+CLASSIFY_SYSTEM = """You identify what kind of GitHub repository you are looking at.
+
+The distinction that matters is what a merged pull request *is* here:
+
+  real_software    changes to code that runs: features, fixes, refactors
+  registry         entries in a catalogue -- package manifests, domain records,
+                   plugin listings, adapter stubs. Merges are easy and frequent
+                   and change no software.
+  awesome_list     a curated list of links
+  portfolio        someone's personal work, coursework, or a collection of demos
+  course_material  exercises or teaching material
+  docs             a documentation site
+  mirror           a read-only copy of a project developed elsewhere
+  unclear          the evidence does not settle it
+
+Registries are the common trap: they look extremely healthy on every activity
+metric precisely because contributing to them is trivial. Judge by what the
+merged diffs touch, not by how many there are.
+
+Cite evidence ids for what you claim. Only cite ids you were given. If the
+evidence does not settle the question, answer unclear rather than guessing."""
+
+CLASSIFY_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "repo_kind": {"type": "string", "enum": REPO_KINDS},
+        "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+        "rationale": {"type": "string"},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "governance_flags": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["cla_required", "corporate_controlled", "read_only", "none"],
+            },
+        },
+    },
+    "required": ["repo_kind", "confidence", "rationale", "evidence_ids", "governance_flags"],
+    "additionalProperties": False,
+}
+
+
+def _doc(records: Iterable[EvidenceRecord], suffix: str) -> tuple[str, str] | None:
+    for r in records:
+        if r.evidence_id.endswith(suffix):
+            return r.payload.get("text", ""), r.evidence_id
+    return None
+
+
+def _merged_path_sample(threads: dict[str, Thread], n: int = 25) -> list[tuple[str, list[str]]]:
+    """What merged contributions actually touched -- the registry tell."""
+    merged = [t for t in threads.values() if t.merged and t.files]
+    rng = random.Random(0)
+    sample = merged if len(merged) <= n else rng.sample(merged, n)
+    return [(t.key, t.files[:4]) for t in sorted(sample, key=lambda t: t.key)]
+
+
+def classify(
+    repo: str,
+    records: list[EvidenceRecord],
+    threads: dict[str, Thread],
+    model: ModelClient,
+    findings: Findings,
+) -> None:
+    meta = next((r for r in records if r.evidence_id.endswith(":meta")), None)
+    readme = _doc(records, ":readme")
+    contributing = _doc(records, ":contributing")
+    paths = _merged_path_sample(threads)
+
+    parts = [f"Repository: {repo}", ""]
+    if meta:
+        p = meta.payload
+        parts += [
+            f"Metadata (evidence id: {meta.evidence_id})",
+            f"  description: {p.get('description')!r}",
+            f"  primary language: {p.get('primary_language')!r}",
+            f"  homepage: {p.get('homepage_url')!r}",
+            f"  archived: {p.get('is_archived')}  fork: {p.get('is_fork')}  mirror: {p.get('is_mirror')}",
+            "",
+        ]
+    if readme:
+        parts += [f"README (evidence id: {readme[1]})", readme[0][:6000], ""]
+    if contributing:
+        parts += [f"CONTRIBUTING (evidence id: {contributing[1]})", contributing[0][:3000], ""]
+    if paths:
+        parts += ["Files touched by merged pull requests (evidence ids shown):"]
+        parts += [f"  {key}  {files}" for key, files in paths]
+    else:
+        parts += ["No merged pull requests with file information were available."]
+
+    result = model.complete(
+        label="classify",
+        system=CLASSIFY_SYSTEM,
+        prompt="\n".join(parts),
+        schema=CLASSIFY_SCHEMA,
+    )
+    findings.add(
+        "repo_kind",
+        result["repo_kind"],
+        evidence_ids=result.get("evidence_ids", ()),
+        note=result.get("rationale", ""),
+    )
+    flags = [f for f in result.get("governance_flags", []) if f != "none"]
+    if flags:
+        findings.add("governance_flags", flags, evidence_ids=result.get("evidence_ids", ()))
+    if meta is not None and meta.payload.get("is_archived"):
+        findings.add("is_archived", True, evidence_ids=(meta.evidence_id,))
+
+
+OUTCOMES_SYSTEM = """You read pull request threads and judge what each one reveals
+about an outsider's chances of landing meaningful work in this repository.
+
+This is not sentiment. A polite refusal and an impatient acceptance point in
+opposite directions from how they sound. Judge the path the contributor was left
+on, not the tone of the words.
+
+Two cases that are easy to get backwards:
+
+  "Thanks for taking the time. We're moving this into the new architecture, so
+   closing." -- warm words, but the contributor is told this class of work is not
+  wanted. That is discouraging.
+
+  "This isn't right yet. Change X and Y and I'll merge it." -- a rejection at
+  this moment, and strong evidence of a working contribution process. That is
+  welcoming.
+
+Outcomes:
+Cite the exact evidence id shown for each thread, in full, including the
+":opened" suffix. Do not abbreviate it to a number.
+
+  merged_after_review        merged, with substantive human feedback on the way
+  merged_without_engagement  merged, nobody said anything of substance
+  changes_requested          not merged yet, but a maintainer gave a route in
+  closed_with_guidance       closed, and the contributor was told where to go instead
+  closed_dismissive          closed with no route forward
+  ignored                    nobody replied at all
+
+Signal is what the thread tells a prospective contributor: welcoming, neutral,
+or discouraging. Quote the words you judged from, verbatim and short. Cite only
+pull request ids you were given."""
+
+OUTCOMES_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "threads": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "pr_id": {"type": "string"},
+                    "outcome": {
+                        "type": "string",
+                        "enum": [
+                            "merged_after_review",
+                            "merged_without_engagement",
+                            "changes_requested",
+                            "closed_with_guidance",
+                            "closed_dismissive",
+                            "ignored",
+                        ],
+                    },
+                    "signal": {
+                        "type": "string",
+                        "enum": ["welcoming", "neutral", "discouraging"],
+                    },
+                    "quote": {"type": "string"},
+                },
+                "required": ["pr_id", "outcome", "signal", "quote"],
+                "additionalProperties": False,
+            },
+        },
+        "posture": {"type": "string", "enum": ["welcoming", "mixed", "discouraging", "absent"]},
+        "posture_rationale": {"type": "string"},
+    },
+    "required": ["threads", "posture", "posture_rationale"],
+    "additionalProperties": False,
+}
+
+
+def cite_id(thread_key: str) -> str:
+    """A thread key is not itself an evidence id -- only its events are.
+
+    Stage C reasons about whole threads, but the provider holds `#12:opened`,
+    `#12:merged` and so on. Citing the bare key would make every Stage C finding
+    unresolvable and Stage D would correctly delete the entire stage's output.
+    """
+    return f"{thread_key}:opened"
+
+
+def normalise_citation(repo: str, cited: str) -> str:
+    """Repair the shapes a model reaches for when asked to quote an id.
+
+    Models shorten. Given `pr:owner/name#381843:opened` they will often answer
+    `381843`. Repairing the format is not the same as excusing the claim: the
+    repaired id is still resolved against real evidence, and still dropped if
+    nothing is there.
+    """
+    cited = (cited or "").strip()
+    if cited.isdigit():
+        return f"pr:{repo}#{cited}:opened"
+    if cited.startswith("pr:") and cited.count(":") == 1:
+        return f"{cited}:opened"
+    if cited.startswith("#") and cited[1:].isdigit():
+        return f"pr:{repo}#{cited[1:]}:opened"
+    return cited
+
+
+def _render_thread(t: Thread) -> str:
+    state = "merged" if t.merged else "closed unmerged" if t.closed_unmerged else "open"
+    lines = [
+        f"--- evidence id: {cite_id(t.key)}  ({state})",
+        f"    opened by {t.author}; {t.changed_files} files, +{t.additions}/-{t.deletions}",
+        f"    files: {t.files[:4]}",
+    ]
+    if not t.responses:
+        lines.append("    (no replies from anyone)")
+    for when, who, body in sorted(t.responses)[:6]:
+        speaker = "AUTHOR" if who == t.author else who
+        lines.append(f"    [{speaker}] {' '.join((body or '').split())[:600]}")
+    return "\n".join(lines)
+
+
+def read_outcomes(
+    repo: str,
+    threads: dict[str, Thread],
+    model: ModelClient,
+    findings: Findings,
+    sample: int = 12,
+) -> None:
+    """Read the threads with the most conversation -- silence is already counted."""
+    talkative = sorted(
+        (t for t in threads.values() if not t.author_is_bot),
+        key=lambda t: (len(t.responses), t.additions + t.deletions),
+        reverse=True,
+    )[:sample]
+    if not talkative:
+        findings.add("outsider_posture", "absent", note="no threads available to read")
+        return
+
+    prompt = "\n".join(
+        [f"Repository: {repo}", "", "Pull request threads:", ""]
+        + [_render_thread(t) for t in talkative]
+    )
+    result = model.complete(
+        label="outcomes",
+        system=OUTCOMES_SYSTEM,
+        prompt=prompt,
+        schema=OUTCOMES_SCHEMA,
+    )
+
+    per_thread = result.get("threads", [])
+    findings.add(
+        "outsider_posture",
+        result["posture"],
+        evidence_ids=tuple(normalise_citation(repo, t["pr_id"]) for t in per_thread),
+        note=result.get("posture_rationale", ""),
+    )
+    for entry in per_thread:
+        findings.add(
+            "thread_outcome",
+            {"outcome": entry["outcome"], "signal": entry["signal"], "quote": entry["quote"]},
+            evidence_ids=(normalise_citation(repo, entry["pr_id"]),),
+        )
+
+
+OPPORTUNITY_SYSTEM = """You judge whether a repository offers an outsider a real
+route in, using its own onboarding material.
+
+What counts as a real route: a documented setup that someone could follow, a
+described process for proposing work, named places where help is wanted, some
+indication of who to ask. What does not: a CONTRIBUTING file that only restates
+a code of conduct, a README that is purely marketing, or instructions that
+assume commit access.
+
+Answer from the material given. If there is no onboarding material at all, say
+so rather than inferring from the project's fame. Cite only evidence ids you
+were given."""
+
+OPPORTUNITY_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "onboarding": {
+            "type": "string",
+            "enum": ["substantive", "boilerplate", "absent", "assumes_insider"],
+        },
+        "rationale": {"type": "string"},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["onboarding", "rationale", "evidence_ids"],
+    "additionalProperties": False,
+}
+
+
+def assess_opportunity(
+    repo: str, records: list[EvidenceRecord], model: ModelClient, findings: Findings
+) -> None:
+    readme = _doc(records, ":readme")
+    contributing = _doc(records, ":contributing")
+    parts = [f"Repository: {repo}", ""]
+    if contributing:
+        parts += [f"CONTRIBUTING (evidence id: {contributing[1]})", contributing[0][:6000], ""]
+    else:
+        parts += ["No CONTRIBUTING file was present at the cutoff.", ""]
+    if readme:
+        parts += [f"README (evidence id: {readme[1]})", readme[0][:4000]]
+
+    result = model.complete(
+        label="opportunity",
+        system=OPPORTUNITY_SYSTEM,
+        prompt="\n".join(parts),
+        schema=OPPORTUNITY_SCHEMA,
+    )
+    findings.add(
+        "onboarding",
+        result["onboarding"],
+        evidence_ids=result.get("evidence_ids", ()),
+        note=result.get("rationale", ""),
+    )
+
+
+NARRATE_SYSTEM = """You write the short assessment a careful contributor would leave
+after an afternoon reading a repository's pull requests.
+
+You are given a verdict that has already been decided. You do not revisit it,
+soften it, or argue with it -- you explain what it rests on, in plain prose.
+
+Write like notes to a colleague: specific, unhurried, no headings, no bullet
+lists, no score. Where the evidence is thin, say it is thin. "I could not
+determine this" is a better sentence than a confident one that outruns what was
+read."""
+
+NARRATE_SCHEMA = {
+    "type": "object",
+    "properties": {"summary": {"type": "string"}},
+    "required": ["summary"],
+    "additionalProperties": False,
+}
+
+
+def narrate(
+    repo: str, verdict: str, trace: list[str], findings: Findings, signals_dict: dict,
+    model: ModelClient,
+) -> str:
+    lines = [f"Repository: {repo}", f"Verdict (already decided, do not change): {verdict}", ""]
+    lines += ["Why the rules landed there:"] + [f"  - {t}" for t in trace]
+    lines += ["", "Measured before the cutoff:"]
+    lines += [f"  {k}: {v}" for k, v in signals_dict.items()]
+    lines += ["", "Verified findings:"]
+    for item in findings:
+        note = f" -- {item.note}" if item.note else ""
+        lines.append(f"  {item.field} = {item.value}{note}")
+    return model.complete(
+        label="narrate",
+        system=NARRATE_SYSTEM,
+        prompt="\n".join(lines),
+        schema=NARRATE_SCHEMA,
+    )["summary"]

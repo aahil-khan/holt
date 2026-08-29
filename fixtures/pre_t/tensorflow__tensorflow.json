@@ -1,0 +1,3849 @@
+{
+ "captured_at": "2026-08-29T16:38:19.738829+00:00",
+ "content_sha256": "58d0bb8fe1ebb4d2861d46bebbe1000f71fcdfc4851b19d02e5a9482d5a36049",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:tensorflow/tensorflow:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "An Open Source Machine Learning Framework for Everyone",
+    "homepage_url": "https://tensorflow.org",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "C++",
+    "pushed_at": "2026-08-29T16:36:20Z",
+    "stargazer_count": 197774
+   },
+   "source": "github",
+   "timestamp": "2015-11-07T01:19:20+00:00",
+   "url": "https://github.com/tensorflow/tensorflow"
+  },
+  {
+   "evidence_id": "repo:tensorflow/tensorflow:readme",
+   "payload": {
+    "commit_oid": "24bebcfcc9ab196a3cb0d4440decb939cc04e870",
+    "kind": "readme",
+    "text": "<div align=\"center\">\n  <img src=\"https://www.tensorflow.org/images/tf_logo_horizontal.png\">\n</div>\n\n[![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg)](https://badge.fury.io/py/tensorflow)\n[![PyPI](https://badge.fury.io/py/tensorflow.svg)](https://badge.fury.io/py/tensorflow)\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4724125.svg)](https://doi.org/10.5281/zenodo.4724125)\n[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1486/badge)](https://bestpractices.coreinfrastructure.org/projects/1486)\n[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/tensorflow/tensorflow/badge)](https://securityscorecards.dev/viewer/?uri=github.com/tensorflow/tensorflow)\n[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/tensorflow.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:tensorflow)\n[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/tensorflow-py.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:tensorflow-py)\n[![OSSRank](https://shields.io/endpoint?url=https://ossrank.com/shield/44)](https://ossrank.com/p/44)\n[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)\n\n**`Documentation`** |\n------------------- |\n[![Documentation](https://img.shields.io/badge/api-reference-blue.svg)](https://www.tensorflow.org/api_docs/) |\n\n[TensorFlow](https://www.tensorflow.org/) is an end-to-end open source platform\nfor machine learning. It has a comprehensive, flexible ecosystem of\n[tools](https://www.tensorflow.org/resources/tools),\n[libraries](https://www.tensorflow.org/resources/libraries-extensions), and\n[community](https://www.tensorflow.org/community) resources that lets\nresearchers push the state-of-the-art in ML and developers easily build and\ndeploy ML-powered applications.\n\nTensorFlow was originally developed by researchers and engineers working within\nthe Machine Intelligence team at Google Brain to conduct research in machine\nlearning and neural networks. However, the framework is versatile enough to be\nused in other areas as well.\n\nTensorFlow provides stable [Python](https://www.tensorflow.org/api_docs/python)\nand [C++](https://www.tensorflow.org/api_docs/cc) APIs, as well as a\nnon-guaranteed backward compatible API for\n[other languages](https://www.tensorflow.org/api_docs).\n\nKeep up-to-date with release announcements and security updates by subscribing\nto\n[announce@tensorflow.org](https://groups.google.com/a/tensorflow.org/forum/#!forum/announce).\nSee all the [mailing lists](https://www.tensorflow.org/community/forums).\n\n## Install\n\nSee the [TensorFlow install guide](https://www.tensorflow.org/install) for the\n[pip package](https://www.tensorflow.org/install/pip), to\n[enable GPU support](https://www.tensorflow.org/install/gpu), use a\n[Docker container](https://www.tensorflow.org/install/docker), and\n[build from source](https://www.tensorflow.org/install/source).\n\nTo install the current release, which includes support for\n[CUDA-enabled GPU cards](https://www.tensorflow.org/install/gpu) *(Ubuntu and\nWindows)*:\n\n```\n pip install tensorflow\n```\n\nOther devices (DirectX and MacOS-metal) are supported using\n[Device Plugins](https://www.tensorflow.org/install/gpu_plugins#available_devices).\n\nA smaller CPU-only TensorFlow package is also available:\n\n```\n pip install tensorflow-cpu\n```\n\nTo update TensorFlow to the latest version, add the `--upgrade` flag to the\ncommands above.\n\n*Nightly binaries are available for testing using the\n[tf-nightly](https://pypi.python.org/pypi/tf-nightly) and\n[tf-nightly-cpu](https://pypi.python.org/pypi/tf-nightly-cpu) packages on PyPI.*\n\n#### *Try your first TensorFlow program*\n\n```shell\n$ python\n```\n\n```python\n>>> import tensorflow as tf\n>>> tf.add(1, 2).numpy()\n3\n>>> hello = tf.constant('Hello, TensorFlow!')\n>>> hello.numpy()\nb'Hello, TensorFlow!'\n```\n\nFor more examples, see the\n[TensorFlow Tutorials](https://www.tensorflow.org/tutorials/).\n\n## Contribution guidelines\n\n**If you want to contribute to TensorFlow, be sure to review the\n[Contribution Guidelines](CONTRIBUTING.md). This project adheres to TensorFlow's\n[Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to\nuphold this code.**\n\n**We use [GitHub Issues](https://github.com/tensorflow/tensorflow/issues) for\ntracking requests and bugs, please see\n[TensorFlow Forum](https://discuss.tensorflow.org/) for general questions and\ndiscussion, and please direct specific questions to\n[Stack Overflow](https://stackoverflow.com/questions/tagged/tensorflow).**\n\nThe TensorFlow project strives to abide by generally accepted best practices in\nopen-source software development.\n\n## Patching guidelines\n\nFollow these steps to patch a specific version of TensorFlow, for example, to\napply fixes to bugs or security vulnerabilities:\n\n*   Clone the TensorFlow repository and switch to the appropriate branch for\n    your desired version\u2014for example, `r2.8` for version 2.8.\n*   Apply the desired changes (i.e., cherry-pick them) and resolve any code\n    conflicts.\n*   Run TensorFlow tests and ensure they pass.\n*   [Build](https://www.tensorflow.org/install/source) the TensorFlow pip\n    package from source.\n\n## Continuous build status\n\nYou can find more community-supported platforms and configurations in the\n[TensorFlow SIG Build Community Builds Table](https://github.com/tensorflow/build#community-supported-tensorflow-builds).\n\n### Official Builds\n\nBuild Type                    | Status                                                                                                                                                                           | Artifacts\n----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------\n**Linux CPU**                 | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/ubuntu-cc.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/ubuntu-cc.html)           | [PyPI](https://pypi.org/project/tf-nightly/)\n**Linux GPU**                 | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/ubuntu-gpu-py3.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/ubuntu-gpu-py3.html) | [PyPI](https://pypi.org/project/tf-nightly-gpu/)\n**Linux XLA**                 | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/ubuntu-xla.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/ubuntu-xla.html)         | TBA\n**macOS**                     | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/macos-py2-cc.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/macos-py2-cc.html)     | [PyPI](https://pypi.org/project/tf-nightly/)\n**Windows CPU**               | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/windows-cpu.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/windows-cpu.html)       | [PyPI](https://pypi.org/project/tf-nightly/)\n**Windows GPU**               | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/windows-gpu.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/windows-gpu.html)       | [PyPI](https://pypi.org/project/tf-nightly-gpu/)\n**Android**                   | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/android.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/android.html)               | [Download](https://bintray.com/google/tensorflow/tensorflow/_latestVersion)\n**Raspberry Pi 0 and 1**      | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/rpi01-py3.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/rpi01-py3.html)           | [Py3](https://storage.googleapis.com/tensorflow-nightly/tensorflow-1.10.0-cp34-none-linux_armv6l.whl)\n**Raspberry Pi 2 and 3**      | [![Status](https://storage.googleapis.com/tensorflow-kokoro-build-badges/rpi23-py3.svg)](https://storage.googleapis.com/tensorflow-kokoro-build-badges/rpi23-py3.html)           | [Py3](https://storage.googleapis.com/tensorflow-nightly/tensorflow-1.10.0-cp34-none-linux_armv7l.whl)\n**Libtensorflow MacOS CPU**   | Status Temporarily Unavailable                                                                                                                                                   | [Nightly Binary](https://storage.googleapis.com/libtensorflow-nightly/prod/tensorflow/release/macos/latest/macos_cpu_libtensorflow_binaries.tar.gz) [Official GCS](https://storage.googleapis.com/tensorflow/)\n**Libtensorflow Linux CPU**   | Status Temporarily Unavailable                                                                                                                                                   | [Nightly Binary](https://storage.googleapis.com/libtensorflow-nightly/prod/tensorflow/release/ubuntu_16/latest/cpu/ubuntu_cpu_libtensorflow_binaries.tar.gz) [Official GCS](https://storage.googleapis.com/tensorflow/)\n**Libtensorflow Linux GPU**   | Status Temporarily Unavailable                                                                                                                                                   | [Nightly Binary](https://storage.googleapis.com/libtensorflow-nightly/prod/tensorflow/release/ubuntu_16/latest/gpu/ubuntu_gpu_libtensorflow_binaries.tar.gz) [Official GCS](https://storage.googleapis.com/tensorflow/)\n**Libtensorflow Windows CPU** | Status Temporarily Unavailable                                                                                                                                                   | [Nightly Binary](https://storage.googleapis.com/libtensorflow-nightly/prod/tensorflow/release/windows/latest/cpu/windows_cpu_libtensorflow_binaries.tar.gz) [Official GCS](https://storage.googleapis.com/tensorflow/)\n**Libtensorflow Windows GPU** | Status Temporarily Unavailable                                                                                                                                                   | [Nightly Binary](https://storage.googleapis.com/libtensorflow-nightly/prod/tensorflow/release/windows/latest/gpu/windows_gpu_libtensorflow_binaries.tar.gz) [Official GCS](https://storage.googleapis.com/tensorflow/)\n\n## Resources\n\n*   [TensorFlow.org](https://www.tensorflow.org)\n*   [TensorFlow Tutorials](https://www.tensorflow.org/tutorials/)\n*   [TensorFlow Official Models](https://github.com/tensorflow/models/tree/master/official)\n*   [TensorFlow Examples](https://github.com/tensorflow/examples)\n*   [TensorFlow Codelabs](https://codelabs.developers.google.com/?cat=TensorFlow)\n*   [TensorFlow Blog](https://blog.tensorflow.org)\n*   [Learn ML with TensorFlow](https://www.tensorflow.org/resources/learn-ml)\n*   [TensorFlow Twitter](https://twitter.com/tensorflow)\n*   [TensorFlow YouTube](https://www.youtube.com/channel/UC0rqucBdTuFTjJiefW5t-IQ)\n*   [TensorFlow model optimization roadmap](https://www.tensorflow.org/model_optimization/guide/roadmap)\n*   [TensorFlow White Papers](https://www.tensorflow.org/about/bib)\n*   [TensorBoard Visualization Toolkit](https://github.com/tensorflow/tensorboard)\n*   [TensorFlow Code Search](https://cs.opensource.google/tensorflow/tensorflow)\n\nLearn more about the\n[TensorFlow Community](https://www.tensorflow.org/community) and how to\n[Contribute](https://www.tensorflow.org/community/contribute).\n\n## Courses\n\n* [Coursera](https://www.coursera.org/search?query=TensorFlow)\n* [Udacity](https://www.udacity.com/courses/all?search=TensorFlow)\n* [Edx](https://www.edx.org/search?q=TensorFlow)\n\n## License\n\n[Apache License 2.0](LICENSE)\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:18:04+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/blob/24bebcfcc9ab196a3cb0d4440decb939cc04e870/README.md"
+  },
+  {
+   "evidence_id": "repo:tensorflow/tensorflow:contributing",
+   "payload": {
+    "commit_oid": "24bebcfcc9ab196a3cb0d4440decb939cc04e870",
+    "kind": "contributing",
+    "text": "# Contributing guidelines\n\n## Pull Request Checklist\n\nBefore sending your pull requests, make sure you do the following:\n\n-   Read the [contributing guidelines](CONTRIBUTING.md).\n-   Read the [Code of Conduct](CODE_OF_CONDUCT.md).\n-   Ensure you have signed the\n    [Contributor License Agreement (CLA)](https://cla.developers.google.com/).\n-   Check if your changes are consistent with the\n    [guidelines](#general-guidelines-and-philosophy-for-contribution).\n-   Changes are consistent with the [Coding Style](#c-coding-style).\n-   Run the [unit tests](#running-unit-tests).\n\n## How to become a contributor and submit your own code\n\n![Screen Shot 2022-08-30 at 7 27 04 PM](https://user-images.githubusercontent.com/42785357/187579207-9924eb32-da31-47bb-99f9-d8bf1aa238ad.png)\n\n### Typical Pull Request Workflow -\n\n**1. New PR**\n\n- As a contributor, you submit a New PR on GitHub.\n- We inspect every incoming PR and add certain labels to the PR such as `size:`,\n  `comp:` etc.  At this stage we check if the PR is valid and meets certain\n  quality requirements. For example, we check if the CLA is signed, PR has\n  sufficient description, if applicable unit tests are added, if it is a\n  reasonable contribution (meaning it is not a single liner cosmetic PR).\n\n**2. Valid?**\n\n-   If the PR passes all the quality checks then we go ahead and assign a\n    reviewer.\n-   If the PR didn't meet the validation criteria, we request for additional\n    changes to be made to PR to pass quality checks and send it back or on a\n    rare occasion we may reject it.\n\n**3. Review**\n\n-   For a valid PR, reviewer (person familiar with the code/functionality)\n    checks if the PR looks good or needs additional changes.\n-   If all looks good, the reviewer will approve the PR.\n-   If a change is needed, the contributor is requested to make the suggested\n    change.\n-   You make the change and submit it for the review again.\n-   This cycle repeats itself until the PR gets approved.\n-   Note: As a friendly reminder, we may reach out to you if the PR is awaiting\n    your response for more than 2 weeks.\n\n**4. Approved**\n\n-   Once the PR is approved, it gets `kokoro:force-run` label applied and it\n    initiates CI/CD tests.\n-   We can't move forward if these tests fail.\n-   In such situations, we may request you to make further changes to your PR\n    for the tests to pass.\n-   Once the tests pass, we now bring all the code into the internal code base,\n    using a job called \"copybara\".\n\n**5. Copy to Google Internal codebase and run internal CI**\n\n-   Once the PR is in the Google codebase, we make sure it integrates well with\n    its dependencies and the rest of the system.\n-   Rarely, If the tests fail at this stage, we cannot merge the code.\n-   If needed, we may come to you to make some changes. At times, it may not be\n    you, it may be us who may have hit a snag. Please be patient while we work\n    to fix this.\n-   Once the internal tests pass, we go ahead and merge the code internally as\n    well as externally on GitHub.\n\nIn a graphical form, the entire lifetime of a PR looks like\n\n![image](https://github.com/tensorflow/tensorflow/assets/52792999/3eea4ca5-daa0-4570-b0b5-2a2b03a724a3)\n\n### Contributor License Agreements\n\nWe'd love to accept your patches! Before we can take them, we have to jump a couple of legal hurdles.\n\nPlease fill out either the individual or corporate Contributor License Agreement (CLA).\n\n  * If you are an individual writing original source code and you're sure you own the intellectual property, then you'll need to sign an [individual CLA](https://code.google.com/legal/individual-cla-v1.0.html).\n  * If you work for a company that wants to allow you to contribute your work, then you'll need to sign a [corporate CLA](https://code.google.com/legal/corporate-cla-v1.0.html).\n\nFollow either of the two links above to access the appropriate CLA and instructions for how to sign and return it. Once we receive it, we'll be able to accept your pull requests.\n\n***NOTE***: Only original source code from you and other people that have signed the CLA can be accepted into the main repository.\n\n### Contributing code\n\nIf you have improvements to TensorFlow, send us your pull requests! For those\njust getting started, GitHub has a\n[how-to](https://help.github.com/articles/using-pull-requests/).\n\nTensorFlow team members will be assigned to review your pull requests. Once the\npull requests are approved and pass continuous integration checks, a TensorFlow\nteam member will apply `ready to pull` label to your change. This means we are\nworking on getting your pull request submitted to our internal repository. After\nthe change has been submitted internally, your pull request will be merged\nautomatically on GitHub.\n\nIf you want to contribute, start working through the TensorFlow codebase,\nnavigate to the\n[GitHub \"issues\" tab](https://github.com/tensorflow/tensorflow/issues) and start\nlooking through interesting issues. If you are not sure of where to start, then\nstart by trying one of the smaller/easier issues here i.e.\n[issues with the \"good first issue\" label](https://github.com/tensorflow/tensorflow/labels/good%20first%20issue)\nand then take a look at the\n[issues with the \"contributions welcome\" label](https://github.com/tensorflow/tensorflow/labels/stat%3Acontributions%20welcome).\nThese are issues that we believe are particularly well suited for outside\ncontributions, often because we probably won't get to them right now. If you\ndecide to start on an issue, leave a comment so that other people know that\nyou're working on it. If you want to help out, but not alone, use the issue\ncomment thread to coordinate.\n\n### Contribution guidelines and standards\n\nBefore sending your pull request for\n[review](https://github.com/tensorflow/tensorflow/pulls),\nmake sure your changes are consistent with the guidelines and follow the\nTensorFlow coding style.\n\n#### General guidelines and philosophy for contribution\n\n*   Include unit tests when you contribute new features, as they help to a)\n    prove that your code works correctly, and b) guard against future breaking\n    changes to lower the maintenance cost.\n*   Bug fixes also generally require unit tests, because the presence of bugs\n    usually indicates insufficient test coverage.\n*   Keep API compatibility in mind when you change code in core TensorFlow,\n    e.g., code in\n    [tensorflow/core](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core)\n    and\n    [tensorflow/python](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python).\n    TensorFlow has passed version 1.0 and hence cannot make\n    non-backward-compatible API changes without a major release. Reviewers of\n    your pull request will comment on any API compatibility issues\n    [following API review practices](https://github.com/tensorflow/community/blob/master/governance/api-reviews.md).\n*   When you contribute a new feature to TensorFlow, the maintenance burden is\n    (by default) transferred to the TensorFlow team. This means that the benefit\n    of the contribution must be compared against the cost of maintaining the\n    feature.\n*   Full new features (e.g., a new op implementing a cutting-edge algorithm)\n    typically will live in\n    [tensorflow/addons](https://github.com/tensorflow/addons) to get some\n    airtime before a decision is made regarding whether they are to be migrated\n    to the core.\n*   As every PR requires several CPU/GPU hours of CI testing, we discourage\n    submitting PRs to fix one typo, one warning,etc. We recommend fixing the\n    same issue at the file level at least (e.g.: fix all typos in a file, fix\n    all compiler warnings in a file, etc.)\n*   Tests should follow the\n    [testing best practices](https://www.tensorflow.org/community/contribute/tests)\n    guide.\n\n#### License\n\nInclude a license at the top of new files.\n\n*   [C/C++ license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/op.cc#L1)\n*   [Python license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/nn.py#L1)\n*   [Java license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/java/src/main/java/org/tensorflow/Graph.java#L1)\n*   [Go license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/go/operation.go#L1)\n*   [Bash license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/ci_build/ci_build.sh#L2)\n*   [JavaScript/TypeScript license example](https://github.com/tensorflow/tensorboard/blob/master/tensorboard/components/tf_backend/backend.ts#L1)\n\nBazel BUILD files also need to include a license section, e.g.,\n[BUILD example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/BUILD#L61).\n\n#### C++ coding style\n\nChanges to TensorFlow C++ code should conform to\n[Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html).\n\nUse `clang-tidy` to check your C/C++ changes. To install `clang-tidy` on ubuntu:16.04, do:\n\n```bash\napt-get install -y clang-tidy\n```\n\nYou can check a C/C++ file by doing:\n\n\n```bash\nclang-format <my_cc_file> --style=google > /tmp/my_cc_file.cc\ndiff <my_cc_file> /tmp/my_cc_file.cc\n```\n\n#### Python coding style\n\nChanges to TensorFlow Python code should conform to\n[Google Python Style Guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md)\n\nUse `pylint` to check your Python changes. To install `pylint` and check a file\nwith `pylint` against TensorFlow's custom style definition:\n\n```bash\npip install pylint\npylint --rcfile=tensorflow/tools/ci_build/pylintrc myfile.py\n```\n\nNote `pylint --rcfile=tensorflow/tools/ci_build/pylintrc` should run from the\ntop level tensorflow directory.\n\n#### Coding style for other languages\n\n*   [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)\n*   [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)\n*   [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html)\n*   [Google Objective-C Style Guide](https://google.github.io/styleguide/objcguide.html)\n\n#### Running sanity check\n\nIf you have Docker installed on your system, you can perform a sanity check on\nyour changes by running the command:\n\n```bash\ntensorflow/tools/ci_build/ci_build.sh CPU tensorflow/tools/ci_build/ci_sanity.sh\n```\n\nThis will catch most license, Python coding style and BUILD file issues that\nmay exist in your changes.\n\n#### Running unit tests\n\nThere are two ways to run TensorFlow unit tests.\n\n1.  Using tools and libraries installed directly on your system.\n\n    Refer to the\n    [CPU-only developer Dockerfile](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/dockerfiles/dockerfiles/devel-cpu.Dockerfile)\n    and\n    [GPU developer Dockerfile](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/dockerfiles/dockerfiles/devel-gpu.Dockerfile)\n    for the required packages. Alternatively, use the said\n    [tensorflow/build Docker images](https://hub.docker.com/r/tensorflow/build)\n    (`tensorflow/tensorflow:devel` and `tensorflow/tensorflow:devel-gpu` are no\n    longer supported for development). Use TF SIG Build Dockerfiles in\n    development to avoid installing the packages directly on your system (in\n    which case remember to change the directory from `/root` to `/tensorflow`\n    once you get into the running container so `bazel` can find the `tensorflow`\n    workspace).\n\n    you can do this by using the following command. As an example-\n\n    ```bash\n    docker run -it --rm -v $PWD:/tmp -w /tmp tensorflow/build:2.15-python3.10\n    ```\n\n    Once you have the packages installed, you can run a specific unit test in\n    bazel by doing as follows:\n\n    ```bash\n    export flags=\"--config=linux -k\"\n    ```\n\n    If the tests are to be run on the GPU:\n\n    *   For TensorFlow versions starting from v.2.18.0: Add the `cuda` option\n        flag.\n\n        ```bash\n        export flags=\"--config=linu",
+    "text_original_chars": 16239,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:18:04+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/blob/24bebcfcc9ab196a3cb0d4440decb939cc04e870/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119869:opened",
+   "payload": {
+    "additions": 32,
+    "author": "goingforstudying-ctrl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "tensorflow/python/ops/math_grad.py",
+     "tensorflow/python/ops/math_grad_test.py"
+    ],
+    "title": "fix(math): correct xlogy/xlog1py gradient w.r.t. x at x=0"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:19:27+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119869"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119869:review:0",
+   "payload": {
+    "author": "gemini-code-assist",
+    "author_is_bot": true,
+    "body": "## Code Review\n\nThis pull request corrects the gradient calculations for `xlogy` and `xlog1py` with respect to `x` when `x = 0`. Instead of applying a zero-mask that incorrectly zeroes out the gradient, the gradients are updated to `log(y)` and `log1p(y)` respectively, and the corresponding unit tests are updated to reflect this correct mathematical behavior. The reviewer suggests expanding the unit tests to cover critical edge cases where `y = 0.0` for `xlogy` and `y = -1.0` for `xlog1py` to ensure robust boundary coverage.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:20:43+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119869"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119869:comment:0",
+   "payload": {
+    "author": "google-cla",
+    "author_is_bot": true,
+    "body": "Thanks for your pull request! It looks like this may be your first contribution to a Google open source project. Before we can look at your pull request, you'll need to sign a Contributor License Agreement (CLA).\n\nView this [failed invocation](https://github.com/tensorflow/tensorflow/pull/119869/checks?check_run_id=78764910828) of the CLA check for more information.\n\nFor the most up to date status, view the checks section at the bottom of the pull request."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:19:38+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119869"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119868:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/compiler/mlir/tensorflow/ir/tf_generated_ops.td"
+    ],
+    "title": "[ #post-training-rl #CR-PT-sync-prob][4/4] CR calls post-process-prediction with predicted video probabilities"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:48:03+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119868"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119867:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/compiler/mlir/tensorflow/ir/tf_generated_ops.td"
+    ],
+    "title": "Add predicted_probability for PostProcessPrediction."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:44:12+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119867"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119866:opened",
+   "payload": {
+    "additions": 72,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 10,
+    "deletions": 9,
+    "files": [
+     "tensorflow/compiler/mlir/lite/ir/tfl_ops.cc",
+     "tensorflow/compiler/mlir/lite/ir/tfl_ops.td",
+     "tensorflow/compiler/mlir/lite/tools/versioning/op_version.cc",
+     "tensorflow/compiler/mlir/lite/tools/versioning/runtime_version.cc",
+     "tensorflow/lite/core/kernels/register.cc",
+     "tensorflow/lite/kernels/add.cc",
+     "tensorflow/lite/kernels/internal/BUILD",
+     "tensorflow/lite/kernels/internal/reference/add.h",
+     "tensorflow/lite/kernels/internal/types.h",
+     "tensorflow/lite/types/fp16.h"
+    ],
+    "title": "add fp16 support for TFL_AddOp"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:54:42+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119866"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119865:opened",
+   "payload": {
+    "additions": 257,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 28,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/hlo/analysis/hlo_dataflow_analysis.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_dataflow_analysis.h",
+     "third_party/xla/xla/hlo/analysis/hlo_value_semantics_analysis.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_value_semantics_analysis.h",
+     "third_party/xla/xla/hlo/analysis/logical_buffer_analysis.cc",
+     "third_party/xla/xla/hlo/analysis/logical_buffer_analysis.h",
+     "third_party/xla/xla/hlo/analysis/tuple_points_to_analysis.cc",
+     "third_party/xla/xla/hlo/analysis/tuple_points_to_analysis.h",
+     "third_party/xla/xla/hlo/evaluator/hlo_evaluator.cc",
+     "third_party/xla/xla/hlo/ir/dfs_hlo_visitor.h",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.h",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_test.cc",
+     "third_party/xla/xla/hlo/ir/hlo_opcode.h",
+     "third_party/xla/xla/hlo/parser/hlo_parser.cc",
+     "third_party/xla/xla/hlo/parser/hlo_parser_test.cc",
+     "third_party/xla/xla/python/_hlo.pyi",
+     "third_party/xla/xla/service/cpu/cpu_instruction_fusion.cc",
+     "third_party/xla/xla/service/hlo_cost_analysis.cc",
+     "third_party/xla/xla/service/hlo_cost_analysis.h"
+    ],
+    "title": "prototype: push inliner after layout assignment pass."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:01:36+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119865"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119864:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/core/framework/BUILD"
+    ],
+    "title": "Remove `tf_features_nolayering_check_if_ios()` and `if_android(['-layering_check'])` since the portable targets should now export all the headers needed."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:35:36+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119864"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119863:opened",
+   "payload": {
+    "additions": 85,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 5,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/backends/gpu/runtime/BUILD",
+     "third_party/xla/xla/backends/gpu/runtime/dynamic_slice_fusion_v2_thunk.cc",
+     "third_party/xla/xla/backends/gpu/runtime/dynamic_slice_fusion_v2_thunk.h",
+     "third_party/xla/xla/backends/gpu/runtime/dynamic_slice_fusion_v2_thunk_test.cc",
+     "third_party/xla/xla/service/gpu/thunk_emitter.cc"
+    ],
+    "title": "PR #43472: [xla:gpu] Add safety checks for DUS buffer aliasing"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:11:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119863"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119861:opened",
+   "payload": {
+    "additions": 3,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "third_party/xla/xla/tsl/platform/file_system.h",
+     "third_party/xla/xla/tsl/platform/file_system_helper.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:16:43+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119861"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119860:opened",
+   "payload": {
+    "additions": 104,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 98,
+    "files": [
+     "tensorflow/lite/kernels/internal/optimized/sse_tensor_utils.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T05:50:12+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119860"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119859:opened",
+   "payload": {
+    "additions": 3,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/stream_executor/sycl/restricted/BUILD",
+     "third_party/xla/xla/stream_executor/sycl/restricted/sycl_kernel_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T04:49:18+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119859"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119858:opened",
+   "payload": {
+    "additions": 5,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "tensorflow/core/kernels/rnn/BUILD",
+     "tensorflow/core/kernels/rnn/gru_ops.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T04:48:15+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119858"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119857:opened",
+   "payload": {
+    "additions": 270,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 33,
+    "deletions": 0,
+    "files": [
+     "tensorflow/core/grappler/optimizers/data/BUILD",
+     "tensorflow/core/grappler/optimizers/data/map_fusion.cc",
+     "tensorflow/core/grappler/optimizers/data/map_fusion.h",
+     "tensorflow/core/grappler/optimizers/data/map_fusion_test.cc",
+     "tensorflow/core/grappler/optimizers/data/map_parallelization.cc",
+     "tensorflow/core/grappler/optimizers/data/map_parallelization.h",
+     "tensorflow/core/grappler/optimizers/data/map_parallelization_test.cc",
+     "tensorflow/core/grappler/optimizers/data/meta_optimizer.cc",
+     "tensorflow/core/grappler/optimizers/data/meta_optimizer.h",
+     "tensorflow/core/grappler/optimizers/data/noop_elimination.cc",
+     "tensorflow/core/grappler/optimizers/data/noop_elimination.h",
+     "tensorflow/core/grappler/optimizers/data/noop_elimination_test.cc",
+     "tensorflow/core/grappler/optimizers/data/optimizer_base.cc",
+     "tensorflow/core/grappler/optimizers/data/remove_compression_map.cc",
+     "tensorflow/core/grappler/optimizers/data/remove_compression_map.h",
+     "tensorflow/core/grappler/optimizers/data/replicate_on_split.cc",
+     "tensorflow/core/grappler/optimizers/data/replicate_on_split.h",
+     "tensorflow/core/grappler/optimizers/data/replicate_on_split_test.cc",
+     "tensorflow/core/grappler/optimizers/data/seq_interleave_prefetch.cc",
+     "tensorflow/core/grappler/optimizers/data/seq_interleave_prefetch.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T04:45:18+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119857"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119856:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/python/grappler/item_wrapper.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T04:44:00+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119856"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119856:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:18:14+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119856"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119855:opened",
+   "payload": {
+    "additions": 6,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tensorflow/c/experimental/saved_model/core/BUILD",
+     "tensorflow/c/experimental/saved_model/core/object_graph_traversal_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T04:32:17+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119855"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119854:opened",
+   "payload": {
+    "additions": 5,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "third_party/xla/xla/tests/restricted/BUILD",
+     "third_party/xla/xla/tests/restricted/llvm_compiler_test.cc",
+     "third_party/xla/xla/tests/restricted/llvm_irgen_test_base.cc",
+     "third_party/xla/xla/tests/restricted/llvm_irgen_test_base.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T04:07:56+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119854"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119853:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "tensorflow/compiler/mlir/lite/transforms/legalize_tf.cc",
+     "tensorflow/compiler/mlir/lite/transforms/lower_static_tensor_list.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:51:46+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119853"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119852:opened",
+   "payload": {
+    "additions": 90,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 16,
+    "deletions": 83,
+    "files": [
+     "tensorflow/core/common_runtime/eager/attr_builder.cc",
+     "tensorflow/core/common_runtime/eager/attr_builder.h",
+     "tensorflow/core/common_runtime/eager/context.cc",
+     "tensorflow/core/common_runtime/eager/context_distributed_manager.cc",
+     "tensorflow/core/common_runtime/eager/custom_device.cc",
+     "tensorflow/core/common_runtime/eager/custom_device_test.cc",
+     "tensorflow/core/common_runtime/eager/eager_executor.cc",
+     "tensorflow/core/common_runtime/eager/eager_executor.h",
+     "tensorflow/core/common_runtime/eager/eager_executor_test.cc",
+     "tensorflow/core/common_runtime/eager/eager_op_rewrite_registry.cc",
+     "tensorflow/core/common_runtime/eager/execute_node.cc",
+     "tensorflow/core/common_runtime/eager/kernel_and_device.cc",
+     "tensorflow/core/common_runtime/eager/placement_utils.cc",
+     "tensorflow/core/common_runtime/eager/rendezvous_cache.h",
+     "tensorflow/core/common_runtime/eager/tensor_handle.cc",
+     "tensorflow/core/common_runtime/eager/tensor_handle_data.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:46:10+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119852"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119851:opened",
+   "payload": {
+    "additions": 29,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 28,
+    "files": [
+     "tensorflow/examples/custom_ops_doc/multiplex_3/multiplex_3_kernel.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:44:58+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119851"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119850:opened",
+   "payload": {
+    "additions": 0,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "third_party/xla/xla/backends/gpu/codegen/kernels/ptx_custom_kernel.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:42:13+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119850"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119849:opened",
+   "payload": {
+    "additions": 3,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     "tensorflow/core/grappler/costs/analytical_cost_estimator.cc",
+     "tensorflow/core/grappler/costs/graph_memory.cc",
+     "tensorflow/core/grappler/costs/virtual_scheduler.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:36:08+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119849"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119848:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "tensorflow/core/debug/debug_grpc_io_utils_test.cc",
+     "tensorflow/core/debug/debug_io_utils.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:30:55+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119848"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119847:opened",
+   "payload": {
+    "additions": 3,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "third_party/xla/xla/service/heap_simulator/heap_simulator.cc"
+    ],
+    "title": "Minor cleanups in heap_simulator.cc"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:10:50+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119847"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119846:opened",
+   "payload": {
+    "additions": 24,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 12,
+    "files": [
+     "third_party/xla/xla/stream_executor/BUILD",
+     "third_party/xla/xla/stream_executor/trace_command_buffer_factory.cc"
+    ],
+    "title": "[XLA:GPU] Add more logging to the trace_command_buffer_factory with the goal to catch an error we see in prod."
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:09:47+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119846"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119846:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:03:57+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119846"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119844:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "tensorflow/core/kernels/batch_kernels.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T11:28:35+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119844"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119843:opened",
+   "payload": {
+    "additions": 8,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 9,
+    "files": [
+     "tensorflow/c/tf_tensor.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T10:22:50+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119843"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119842:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "tensorflow/core/debug/debug_grpc_io_utils_test.cc",
+     "tensorflow/core/debug/debug_io_utils.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:59:15+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119842"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119841:opened",
+   "payload": {
+    "additions": 4,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "tensorflow/core/data/BUILD",
+     "tensorflow/core/data/hash_utils.cc",
+     "tensorflow/core/data/hash_utils_test.cc",
+     "tensorflow/core/data/name_utils.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:18:11+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119841"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119840:opened",
+   "payload": {
+    "additions": 5,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "tensorflow/core/lib/jpeg/BUILD",
+     "tensorflow/core/lib/jpeg/jpeg_mem.h",
+     "tensorflow/core/lib/jpeg/jpeg_mem_unittest.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:15:34+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119840"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119839:opened",
+   "payload": {
+    "additions": 4,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/tsl/distributed_runtime/preemption/BUILD",
+     "third_party/xla/xla/tsl/distributed_runtime/preemption/preemption_notifier.cc",
+     "third_party/xla/xla/tsl/distributed_runtime/preemption/preemption_notifier_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:09:59+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119839"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119838:opened",
+   "payload": {
+    "additions": 12,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 12,
+    "files": [
+     "tensorflow/compiler/mlir/lite/kernels/internal/runtime_shape.h",
+     "tensorflow/core/tpu/kernels/sparse_core_preprocess_ops.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:32:58+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119838"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119837:opened",
+   "payload": {
+    "additions": 46,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 46,
+    "files": [
+     "third_party/xla/xla/hlo/builder/value_inference.cc",
+     "third_party/xla/xla/hlo/builder/value_inference.h",
+     "third_party/xla/xla/hlo/builder/xla_builder.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:20:36+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119837"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119836:opened",
+   "payload": {
+    "additions": 274,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 38,
+    "deletions": 17,
+    "files": [
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eval_const_tensor.cc",
+     "tensorflow/core/common_runtime/eval_const_tensor.h",
+     "tensorflow/core/common_runtime/eval_const_tensor_test.cc",
+     "tensorflow/core/common_runtime/executor.cc",
+     "tensorflow/core/common_runtime/executor.h",
+     "tensorflow/core/common_runtime/executor_factory.cc",
+     "tensorflow/core/common_runtime/executor_factory.h",
+     "tensorflow/core/common_runtime/executor_test.cc",
+     "tensorflow/core/common_runtime/function.cc",
+     "tensorflow/core/common_runtime/function_def_utils.cc",
+     "tensorflow/core/common_runtime/function_def_utils.h",
+     "tensorflow/core/common_runtime/function_optimization_registration_test.cc",
+     "tensorflow/core/common_runtime/function_optimization_registry.cc",
+     "tensorflow/core/common_runtime/function_optimization_registry.h",
+     "tensorflow/core/common_runtime/function_optimization_registry_no_pass_test.cc",
+     "tensorflow/core/common_runtime/function_optimization_registry_pass_failure_test.cc",
+     "tensorflow/core/common_runtime/function_optimization_registry_test.cc",
+     "tensorflow/core/common_runtime/function_test.cc",
+     "tensorflow/core/common_runtime/function_testlib.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:13:50+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119836"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119835:opened",
+   "payload": {
+    "additions": 18,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "tensorflow/c/kernels/BUILD",
+     "tensorflow/c/kernels/summary_op.cc",
+     "tensorflow/c/kernels/summary_op_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:11:50+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119835"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119834:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/cc/gradients/linalg_grad.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:09:09+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119834"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119833:opened",
+   "payload": {
+    "additions": 142,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 21,
+    "deletions": 1,
+    "files": [
+     "tensorflow/core/distributed_runtime/BUILD",
+     "tensorflow/core/distributed_runtime/local_master.cc",
+     "tensorflow/core/distributed_runtime/local_master.h",
+     "tensorflow/core/distributed_runtime/master.cc",
+     "tensorflow/core/distributed_runtime/master.h",
+     "tensorflow/core/distributed_runtime/master_session.cc",
+     "tensorflow/core/distributed_runtime/master_session.h",
+     "tensorflow/core/distributed_runtime/master_session_oob_test.cc",
+     "tensorflow/core/distributed_runtime/master_test.cc",
+     "tensorflow/core/distributed_runtime/message_wrappers.cc",
+     "tensorflow/core/distributed_runtime/message_wrappers.h",
+     "tensorflow/core/distributed_runtime/message_wrappers_test.cc",
+     "tensorflow/core/distributed_runtime/partial_run_mgr.cc",
+     "tensorflow/core/distributed_runtime/partial_run_mgr.h",
+     "tensorflow/core/distributed_runtime/partial_run_mgr_test.cc",
+     "tensorflow/core/distributed_runtime/recent_request_ids.cc",
+     "tensorflow/core/distributed_runtime/recent_request_ids.h",
+     "tensorflow/core/distributed_runtime/recent_request_ids_test.cc",
+     "tensorflow/core/distributed_runtime/remote_device.cc",
+     "tensorflow/core/distributed_runtime/remote_device.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:08:08+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119833"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119832:opened",
+   "payload": {
+    "additions": 48,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 7,
+    "deletions": 11,
+    "files": [
+     "tensorflow/lite/toco/BUILD",
+     "tensorflow/lite/toco/allocate_transient_arrays.cc",
+     "tensorflow/lite/toco/args.cc",
+     "tensorflow/lite/toco/dump_graphviz.cc",
+     "tensorflow/lite/toco/export_tensorflow.cc",
+     "tensorflow/lite/toco/import_tensorflow.cc",
+     "tensorflow/lite/toco/import_tensorflow_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:07:36+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119832"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119831:opened",
+   "payload": {
+    "additions": 94,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 18,
+    "deletions": 9,
+    "files": [
+     "tensorflow/core/data/service/BUILD",
+     "tensorflow/core/data/service/test_util.cc",
+     "tensorflow/core/data/service/test_util.h",
+     "tensorflow/core/data/service/test_util_test.cc",
+     "tensorflow/core/data/service/thread_safe_buffer_test.cc",
+     "tensorflow/core/data/service/url.cc",
+     "tensorflow/core/data/service/utils.cc",
+     "tensorflow/core/data/service/utils.h",
+     "tensorflow/core/data/service/utils_test.cc",
+     "tensorflow/core/data/service/validate_utils.cc",
+     "tensorflow/core/data/service/validate_utils.h",
+     "tensorflow/core/data/service/validate_utils_test.cc",
+     "tensorflow/core/data/service/worker_client.cc",
+     "tensorflow/core/data/service/worker_client.h",
+     "tensorflow/core/data/service/worker_client_test.cc",
+     "tensorflow/core/data/service/worker_impl.cc",
+     "tensorflow/core/data/service/worker_impl.h",
+     "tensorflow/core/data/service/worker_impl_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:07:05+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119831"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119830:opened",
+   "payload": {
+    "additions": 3,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/service/restricted/BUILD",
+     "third_party/xla/xla/service/restricted/hlo_runner_legacy.cc",
+     "third_party/xla/xla/service/restricted/hlo_runner_legacy.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:05:34+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119830"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119829:opened",
+   "payload": {
+    "additions": 11,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "tensorflow/core/lib/gif/BUILD",
+     "tensorflow/core/lib/gif/gif_io.cc",
+     "tensorflow/core/lib/gif/gif_io_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:03:53+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119829"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119828:opened",
+   "payload": {
+    "additions": 316,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 44,
+    "deletions": 32,
+    "files": [
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/framework/resource_var.cc",
+     "tensorflow/core/framework/resource_var.h",
+     "tensorflow/core/framework/resource_var_test.cc",
+     "tensorflow/core/framework/run_handler.cc",
+     "tensorflow/core/framework/run_handler_test.cc",
+     "tensorflow/core/framework/run_handler_util.cc",
+     "tensorflow/core/framework/run_handler_util_test.cc",
+     "tensorflow/core/framework/shape_inference.cc",
+     "tensorflow/core/framework/shape_inference.h",
+     "tensorflow/core/framework/shape_inference_test.cc",
+     "tensorflow/core/framework/shape_inference_testutil.cc",
+     "tensorflow/core/framework/shape_inference_testutil.h",
+     "tensorflow/core/framework/shape_inference_testutil_test.cc",
+     "tensorflow/core/framework/tensor_fuzz.cc",
+     "tensorflow/core/framework/tensor_matcher.cc",
+     "tensorflow/core/framework/tensor_shape.cc",
+     "tensorflow/core/framework/tensor_shape.h",
+     "tensorflow/core/framework/tensor_shape_fuzz.cc",
+     "tensorflow/core/framework/tensor_shape_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:02:43+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119828"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119827:opened",
+   "payload": {
+    "additions": 9,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/hlo/ir/hlo_module.cc",
+     "third_party/xla/xla/hlo/ir/hlo_module_test.cc"
+    ],
+    "title": "[XLA] Stop adding empty metadata during CanonicalizeStackFrameIds"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T02:42:07+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119827"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119826:opened",
+   "payload": {
+    "additions": 53751,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 567,
+    "deletions": 5348,
+    "files": [
+     "README.md",
+     "RELEASE.md",
+     "ci/official/envs/installer_wheel_tensorflow",
+     "ci/official/envs/installer_wheel_tensorflow_cpu",
+     "ci/official/envs/linux_x86_cuda",
+     "ci/official/envs/nightly_upload",
+     "ci/official/installer_wheel.sh",
+     "ci/official/libtensorflow.sh",
+     "ci/official/utilities/repack_libtensorflow.sh",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/c_api_internal.h",
+     "tensorflow/c/c_api_test.cc",
+     "tensorflow/c/experimental/ops/BUILD",
+     "tensorflow/c/experimental/ops/array_ops.cc",
+     "tensorflow/c/experimental/ops/array_ops.h",
+     "tensorflow/c/experimental/ops/io_ops.cc",
+     "tensorflow/c/experimental/ops/io_ops.h",
+     "tensorflow/c/experimental/ops/math_ops.cc",
+     "tensorflow/c/experimental/ops/resource_variable_ops.cc",
+     "tensorflow/c/experimental/ops/resource_variable_ops.h"
+    ],
+    "title": "[IFRT] Add a `LoadedExecutableExecuteBundle` as simple portable `Bundle` support for `LoadedExecutable::ExecuteBundle`"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:39:35+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119826"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119825:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "third_party/xla/xla/tests/BUILD"
+    ],
+    "title": "Extend visibility of xla_test_backend_predicates"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:28:07+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119825"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119824:opened",
+   "payload": {
+    "additions": 4,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 21,
+    "files": [
+     "tensorflow/python/distribute/integration_test/tpu_memory_test.py",
+     "tensorflow/python/distribute/tpu_strategy_test.py"
+    ],
+    "title": "Prune legacy TPU StreamExecutor conditionals from Python Distribute tests."
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:23:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119824"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119824:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:04:41+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119824"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119823:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 19,
+    "files": [
+     "third_party/xla/xla/debug_options_flags.cc",
+     "third_party/xla/xla/stream_executor/cuda/assemble_compilation_provider.cc"
+    ],
+    "title": "disable driver_compilation by default"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:01:18+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119823"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119822:opened",
+   "payload": {
+    "additions": 151,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/service/cost_modelling/op_cost.cc",
+     "third_party/xla/xla/service/cost_modelling/op_cost.h",
+     "third_party/xla/xla/service/cost_modelling/op_cost_test.cc"
+    ],
+    "title": "Add a generic OpcodeMetricOverrideCalculator."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:59:34+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119822"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119821:opened",
+   "payload": {
+    "additions": 0,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "third_party/xla/xla/debug_options_flags.cc"
+    ],
+    "title": "remove no-op xla_gpu_enable_shared_constants flag"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:35:29+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119821"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119820:opened",
+   "payload": {
+    "additions": 52,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 19,
+    "files": [
+     "third_party/xla/xla/service/gpu/BUILD",
+     "third_party/xla/xla/service/gpu/compile_module_to_llvm_ir.cc",
+     "third_party/xla/xla/service/gpu/kernel_reuse_cache.cc",
+     "third_party/xla/xla/service/gpu/kernel_reuse_cache_test.cc"
+    ],
+    "title": "fix KernelReuseCache serialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:55:31+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119820"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119819:opened",
+   "payload": {
+    "additions": 763,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 7,
+    "deletions": 7,
+    "files": [
+     "third_party/xla/xla/python/ifrt/BUILD",
+     "third_party/xla/xla/python/ifrt/basic_bundle.cc",
+     "third_party/xla/xla/python/ifrt/basic_bundle.h",
+     "third_party/xla/xla/python/ifrt/bundle_impl_test_lib.cc",
+     "third_party/xla/xla/python/pjrt_ifrt/BUILD",
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_bundle_impl_test_cpu.cc",
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_client.cc"
+    ],
+    "title": "[IFRT] Add a `BasicBundle` as a simple portable `Bundle` implementation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:50:26+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119819"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119818:opened",
+   "payload": {
+    "additions": 52,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 6,
+    "deletions": 71,
+    "files": [
+     "third_party/xla/third_party/llvm/generated.patch",
+     "third_party/xla/third_party/llvm/workspace.bzl",
+     "third_party/xla/third_party/shardy/temporary.patch",
+     "third_party/xla/third_party/shardy/workspace.bzl",
+     "third_party/xla/third_party/triton/common/llvm_cl923586920.patch",
+     "third_party/xla/third_party/triton/common/series.bzl"
+    ],
+    "title": "Integrate LLVM at llvm/llvm-project@2520a9bcd091"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:40:32+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119818"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119817:opened",
+   "payload": {
+    "additions": 25,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 9,
+    "deletions": 8,
+    "files": [
+     "RELEASE.md",
+     "tensorflow/compiler/mlir/lite/ir/tfl_ops.td",
+     "tensorflow/compiler/mlir/lite/tools/versioning/op_version.cc",
+     "tensorflow/compiler/mlir/lite/tools/versioning/op_version_test.cc",
+     "tensorflow/compiler/mlir/lite/tools/versioning/runtime_version.cc",
+     "tensorflow/lite/core/kernels/register.cc",
+     "tensorflow/lite/kernels/internal/types.h",
+     "tensorflow/lite/kernels/transpose.cc",
+     "tensorflow/lite/kernels/transpose_test.cc"
+    ],
+    "title": "Extending TFLite Transpose handler to support upto rank 8 tensors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:11:13+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119817"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119817:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:00:19+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119817"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119816:opened",
+   "payload": {
+    "additions": 3,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/side_effect_util.cc",
+     "third_party/xla/xla/side_effect_util.h"
+    ],
+    "title": "Add TPU embedding execution thread annotation pass early and modify the ShardyXLA to retain the function execution thread."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:07:41+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119816"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119815:opened",
+   "payload": {
+    "additions": 4061,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 28,
+    "deletions": 307,
+    "files": [
+     "third_party/xla/xla/hlo/analysis/BUILD",
+     "third_party/xla/xla/hlo/analysis/alias_info.cc",
+     "third_party/xla/xla/hlo/analysis/alias_info_test.cc",
+     "third_party/xla/xla/hlo/analysis/async_update_dataflow_test.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_alias_analysis_test.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_dataflow_analysis.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_dataflow_analysis_test.cc",
+     "third_party/xla/xla/hlo/ir/BUILD",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.h",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_test.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_utils.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_utils.h",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_utils_test.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instructions.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instructions.h",
+     "third_party/xla/xla/hlo/ir/hlo_opcode.h",
+     "third_party/xla/xla/hlo/parser/hlo_parser.cc",
+     "third_party/xla/xla/hlo/parser/hlo_parser_test.cc",
+     "third_party/xla/xla/service/BUILD"
+    ],
+    "title": "[XLA:MSA] Fix MSA to support late binding [2]"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:57:39+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119815"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119814:opened",
+   "payload": {
+    "additions": 319,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 11,
+    "deletions": 57,
+    "files": [
+     "third_party/xla/xla/backends/gpu/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/tests/gpu_copy_test.cc",
+     "third_party/xla/xla/hlo/analysis/alias_info.cc",
+     "third_party/xla/xla/hlo/analysis/alias_info.h",
+     "third_party/xla/xla/hlo/analysis/alias_info_test.cc",
+     "third_party/xla/xla/pjrt/gpu/se_gpu_pjrt_client.cc",
+     "third_party/xla/xla/service/gpu/alias_info.cc",
+     "third_party/xla/xla/service/gpu/alias_info.h",
+     "third_party/xla/xla/service/gpu/gpu_compiler.cc",
+     "third_party/xla/xla/service/gpu/gpu_copy_insertion_test.cc",
+     "third_party/xla/xla/tsl/util/onednn_threadpool.h"
+    ],
+    "title": "PR #43452: [xla:gpu] Add support for aliasing through no-op HLOs"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:40:52+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119814"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119813:opened",
+   "payload": {
+    "additions": 23,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     "tensorflow/compiler/mlir/lite/ir/tfl_ops.cc",
+     "tensorflow/compiler/mlir/lite/ir/tfl_ops.td",
+     "tensorflow/compiler/mlir/lite/tests/const-fold.mlir"
+    ],
+    "title": "Add constant folder for TFLite LogisticOp."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:57:47+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119813"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119812:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/tsl/util/memfile_embed_data.bzl"
+    ],
+    "title": "Rename _gen_source in tsl_embed_data to _memfile_embed_data_gen_source to make the rule kind name unique"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:50:01+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119812"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119811:opened",
+   "payload": {
+    "additions": 12,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "tensorflow/core/example/BUILD",
+     "third_party/xla/xla/tsl/platform/default/BUILD"
+    ],
+    "title": "fix(tensorflow): fix missing targets in OSS build"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:57:49+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119811"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119811:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:17:37+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119811"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119810:opened",
+   "payload": {
+    "additions": 4458,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 34,
+    "deletions": 396,
+    "files": [
+     "third_party/xla/xla/hlo/analysis/BUILD",
+     "third_party/xla/xla/hlo/analysis/alias_info.cc",
+     "third_party/xla/xla/hlo/analysis/alias_info_test.cc",
+     "third_party/xla/xla/hlo/analysis/async_update_dataflow_test.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_alias_analysis_test.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_dataflow_analysis.cc",
+     "third_party/xla/xla/hlo/analysis/hlo_dataflow_analysis_test.cc",
+     "third_party/xla/xla/hlo/ir/BUILD",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.h",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_test.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_utils.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_utils.h",
+     "third_party/xla/xla/hlo/ir/hlo_instruction_utils_test.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instructions.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instructions.h",
+     "third_party/xla/xla/hlo/ir/hlo_opcode.h",
+     "third_party/xla/xla/hlo/parser/hlo_parser.cc",
+     "third_party/xla/xla/hlo/parser/hlo_parser_test.cc",
+     "third_party/xla/xla/service/BUILD"
+    ],
+    "title": "[XLA:MSA] Fix MSA to support late binding [3]"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:49:07+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119810"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119809:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/third_party/tsl/tsl/platform/ml_dtypes.h"
+    ],
+    "title": "Add float6_e3m2fn and float6_e2m3fn aliases to tsl/platform/ml_dtypes.h."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:38:49+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119809"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119808:opened",
+   "payload": {
+    "additions": 18,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/pjrt/common_pjrt_client.cc"
+    ],
+    "title": "Annotate the executable name in execution dispatch events"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:34:14+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119808"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119808:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:13:32+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119808"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119807:opened",
+   "payload": {
+    "additions": 7,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tensorflow/core/example/BUILD",
+     "third_party/xla/xla/tsl/platform/default/BUILD"
+    ],
+    "title": "Fix missing definition of additional_mobile_hdrs_no_runtime"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:22:13+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119807"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119806:opened",
+   "payload": {
+    "additions": 4,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "tensorflow/core/tpu/BUILD",
+     "tensorflow/core/tpu/tpu_api_dlsym_initializer.cc",
+     "tensorflow/core/tpu/tpu_model_server_initializer.cc",
+     "third_party/xla/xla/stream_executor/tpu/tpu_initialize_util.cc"
+    ],
+    "title": "Improve TPU argument handling robustness by using standard conventions for argument arrays."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:06:47+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119806"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119803:opened",
+   "payload": {
+    "additions": 19,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "third_party/xla/xla/literal.cc",
+     "third_party/xla/xla/literal_test.cc"
+    ],
+    "title": "Remove backwards compatibility dynamic size logic in LiteralBase::Piece::CopyFromProto and enforce validation."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:48:02+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119803"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119803:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:00:20+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119803"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119802:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/python/profiler/BUILD"
+    ],
+    "title": "Internal build change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:31:04+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119802"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119801:opened",
+   "payload": {
+    "additions": 142,
+    "author": "Mogalina",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "tensorflow/core/grappler/op_types.cc",
+     "tensorflow/core/grappler/op_types.h",
+     "tensorflow/core/grappler/optimizers/arithmetic_optimizer.cc",
+     "tensorflow/core/grappler/optimizers/arithmetic_optimizer_test.cc"
+    ],
+    "title": "Grappler: avoid ArgMin/ArgMax optimization for non-strict monotonic ops"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:31:00+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119801"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119801:review:0",
+   "payload": {
+    "author": "gemini-code-assist",
+    "author_is_bot": true,
+    "body": "## Code Review\n\nThis pull request introduces `IsElementWiseStrictlyMonotonic` to identify strictly monotonic unary elementwise functions, preventing incorrect optimizations of `ArgMin`/`ArgMax` with non-strictly monotonic functions like `ReLU`. However, applying this strictly monotonic check unconditionally to all reduction nodes introduces a performance regression by disabling valid optimizations for standard reductions like `MaxPool` on `ReLU`; it should only be applied to `ArgMin` and `ArgMax`. Additionally, the new `ArgMinReluTieBreakingPreserved` test is incomplete as it lacks execution and assertions, and the docstring for `IsElementWiseStrictlyMonotonic` incorrectly lists `inv` as an example of a strictly decreasing function.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:32:28+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119801"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119801:comment:0",
+   "payload": {
+    "author": "google-cla",
+    "author_is_bot": true,
+    "body": "Thanks for your pull request! It looks like this may be your first contribution to a Google open source project. Before we can look at your pull request, you'll need to sign a Contributor License Agreement (CLA).\n\nView this [failed invocation](https://github.com/tensorflow/tensorflow/pull/119801/checks?check_run_id=78553168251) of the CLA check for more information.\n\nFor the most up to date status, view the checks section at the bottom of the pull request."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:31:06+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119801"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119800:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/python/eager/BUILD"
+    ],
+    "title": "Enable lazy imports for `third_party/tensorflow/python/eager:context`"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:55:19+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119800"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119799:opened",
+   "payload": {
+    "additions": 50,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/service/latency_hiding_scheduler.cc",
+     "third_party/xla/xla/service/latency_hiding_scheduler_test.cc"
+    ],
+    "title": "Optimize the scheduler's rerun loop when memory limit is exceeded."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:46:02+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119799"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119798:opened",
+   "payload": {
+    "additions": 12,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_buffer_hash_util.cc"
+    ],
+    "title": "[PjRt-IFRT] Fix data race in `HashPjRtBuffers`"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:07:00+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119798"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119798:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:51:56+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119798"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119797:opened",
+   "payload": {
+    "additions": 19,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/service/spmd/shardy/sdy_round_trip/export_ops.cc",
+     "third_party/xla/xla/service/spmd/shardy/test/sdy_round_trip_export_pipeline.mlir"
+    ],
+    "title": "mark sharding constraints with unreduced axes as side effecting"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:07:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119797"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119797:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:56:07+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119797"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119796:opened",
+   "payload": {
+    "additions": 65,
+    "author": "0xASTRA",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "tensorflow/lite/kernels/embedding_lookup_sparse.cc",
+     "tensorflow/lite/kernels/embedding_lookup_sparse_test.cc"
+    ],
+    "title": "[TFLite][Security] Add bounds check to EMBEDDING_LOOKUP_SPARSE FinalizeAggregation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:28:59+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119796"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119796:review:0",
+   "payload": {
+    "author": "gemini-code-assist",
+    "author_is_bot": true,
+    "body": "## Code Review\n\nThis pull request adds bounds checks to prevent out-of-bounds memory access when calling `FinalizeAggregation` in `embedding_lookup_sparse.cc`. The reviewer recommends that instead of silently skipping the aggregation when the offset is out of bounds, the code should return an error status using `TF_LITE_ENSURE` to fail fast and avoid silent failures.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:29:55+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119796"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119795:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "third_party/xla/xla/service/gpu/autotuning/autotune_cache_key.h"
+    ],
+    "title": "Bump autotune cache key version to 43."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:07:51+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119795"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119795:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:55:08+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119795"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119794:opened",
+   "payload": {
+    "additions": 173,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 13,
+    "deletions": 76,
+    "files": [
+     "tensorflow/c/kernels/BUILD",
+     "tensorflow/compiler/mlir/lite/delegates/flex/BUILD",
+     "tensorflow/compiler/mlir/lite/delegates/flex/build_def.bzl",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/kernels/image/BUILD",
+     "tensorflow/core/lib/gif/BUILD",
+     "tensorflow/core/lib/jpeg/BUILD",
+     "tensorflow/core/lib/jxl/BUILD",
+     "tensorflow/core/lib/png/BUILD",
+     "tensorflow/core/lib/webp/BUILD",
+     "tensorflow/core/tfrt/fallback/BUILD",
+     "tensorflow/lite/delegates/flex/build_def.bzl",
+     "tensorflow/lite/special_rules.bzl"
+    ],
+    "title": "Remove `tf_features_nolayering_check_if_ios()` and `if_android(['-layering_check'])` since the portable targets should now export all the headers needed."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T13:46:59+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119794"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119793:opened",
+   "payload": {
+    "additions": 2270,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 29,
+    "deletions": 60,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/core/debug/debug_grpc_io_utils_test.cc",
+     "tensorflow/core/debug/debug_io_utils.cc",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_kernels.cu.cc",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.h",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_execution_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:46:38+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119793"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119792:opened",
+   "payload": {
+    "additions": 2268,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 27,
+    "deletions": 57,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_kernels.cu.cc",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.h",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_execution_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_test.cc",
+     "third_party/xla/xla/debug_options_flags.cc",
+     "third_party/xla/xla/hlo/utils/hlo_query.cc"
+    ],
+    "title": "PR #42808: [GPU] Eliminate redundant DUS-accumulator initialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:40:43+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119792"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119791:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "PR #43435: [ROCm] Remove post commit pipeline for jax/xla rocm"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:38:42+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119791"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119791:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:53+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119791"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119790:opened",
+   "payload": {
+    "additions": 2931,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 46,
+    "deletions": 101,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_kernels.cu.cc",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.h",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_execution_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_test.cc",
+     "third_party/xla/xla/debug_options_flags.cc",
+     "third_party/xla/xla/hlo/ir/hlo_computation.cc"
+    ],
+    "title": "[XLA] Implement and integrate MetadataInterner HLO transformation pass"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:29:27+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119790"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119789:opened",
+   "payload": {
+    "additions": 483,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 13,
+    "deletions": 68,
+    "files": [
+     "third_party/xla/xla/hlo/ir/hlo_computation.cc",
+     "third_party/xla/xla/hlo/ir/hlo_computation.h",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.cc",
+     "third_party/xla/xla/hlo/ir/hlo_instruction.h",
+     "third_party/xla/xla/hlo/ir/hlo_module.cc",
+     "third_party/xla/xla/hlo/ir/hlo_module.h",
+     "third_party/xla/xla/hlo/ir/hlo_module_test.cc",
+     "third_party/xla/xla/hlo/ir/hlo_op_metadata.cc",
+     "third_party/xla/xla/hlo/parser/hlo_parser.cc",
+     "third_party/xla/xla/service/gpu/gpu_executable.cc",
+     "third_party/xla/xla/service/hlo_proto_util.cc",
+     "third_party/xla/xla/service/hlo_proto_util_test.cc",
+     "third_party/xla/xla/xla_data.proto"
+    ],
+    "title": "[XLA] Add storage-deduplicated interned metadata payloads to HLO "
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:26:48+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119789"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119788:opened",
+   "payload": {
+    "additions": 53751,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 567,
+    "deletions": 5348,
+    "files": [
+     "README.md",
+     "RELEASE.md",
+     "ci/official/envs/installer_wheel_tensorflow",
+     "ci/official/envs/installer_wheel_tensorflow_cpu",
+     "ci/official/envs/linux_x86_cuda",
+     "ci/official/envs/nightly_upload",
+     "ci/official/installer_wheel.sh",
+     "ci/official/libtensorflow.sh",
+     "ci/official/utilities/repack_libtensorflow.sh",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/c_api_internal.h",
+     "tensorflow/c/c_api_test.cc",
+     "tensorflow/c/experimental/ops/BUILD",
+     "tensorflow/c/experimental/ops/array_ops.cc",
+     "tensorflow/c/experimental/ops/array_ops.h",
+     "tensorflow/c/experimental/ops/io_ops.cc",
+     "tensorflow/c/experimental/ops/io_ops.h",
+     "tensorflow/c/experimental/ops/math_ops.cc",
+     "tensorflow/c/experimental/ops/resource_variable_ops.cc",
+     "tensorflow/c/experimental/ops/resource_variable_ops.h"
+    ],
+    "title": "[XLA:GPU] Remove RaggedAllToAllKernel variant that passes peer pointers in device memory."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:24:29+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119788"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119787:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "[XLA:GPU] Force multi-gpu tests to run one after another to prevent timeouts"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:48:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119787"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119787:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:53+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119787"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119786:opened",
+   "payload": {
+    "additions": 26,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 34,
+    "files": [
+     "third_party/xla/xla/stream_executor/cuda/BUILD",
+     "third_party/xla/xla/stream_executor/cuda/ragged_all_to_all_kernel_cuda.cc",
+     "third_party/xla/xla/stream_executor/gpu/ragged_all_to_all_kernel_lib.cu.h"
+    ],
+    "title": "[XLA:GPU] Move RaggedAllToAllWithSymmetricMemoryKernelImpl to cc file."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:22:44+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119786"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119786:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:43:17+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119786"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119785:opened",
+   "payload": {
+    "additions": 2327,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 33,
+    "deletions": 67,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_kernels.cu.cc",
+     "third_party/xla/xla/backends/gpu/tests/collective_ops_ffi_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination.h",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_execution_test.cc",
+     "third_party/xla/xla/backends/gpu/transforms/dus_accumulator_zero_init_elimination_test.cc",
+     "third_party/xla/xla/debug_options_flags.cc",
+     "third_party/xla/xla/hlo/utils/hlo_query.cc"
+    ],
+    "title": "Pre-compute debug_summary of the buffer allocations during compilation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:20:08+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119785"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119784:opened",
+   "payload": {
+    "additions": 43,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 7,
+    "deletions": 115,
+    "files": [
+     "third_party/xla/xla/service/gpu/BUILD",
+     "third_party/xla/xla/service/gpu/compile_module_to_llvm_ir.cc",
+     "third_party/xla/xla/service/gpu/gpu_compiler.cc",
+     "third_party/xla/xla/service/gpu/gpu_compiler_test.cc",
+     "third_party/xla/xla/service/gpu/gpu_memory_space_assignment.cc",
+     "third_party/xla/xla/service/gpu/gpu_memory_space_assignment.h",
+     "third_party/xla/xla/service/gpu/gpu_memory_space_assignment_test.cc"
+    ],
+    "title": "[XLA:GPU] Remove topology usage for Mosaic collectives."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:18:10+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119784"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119783:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "[XLA:GPU] Fix race conditions in multi-gpu tests."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:02:31+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119783"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119783:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:53+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119783"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119782:opened",
+   "payload": {
+    "additions": 11,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "third_party/xla/xla/python/_hlo.pyi",
+     "third_party/xla/xla/python/hlo.cc"
+    ],
+    "title": "Add sharding conversions in JAX to convert `HloShardingV3` to v2 as JAX relies on tiled based sharding for shardings returned from XLA, whereas with `HloShardingV3` enabled XLA use this new sharding representation throughout."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:56:43+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119782"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119781:opened",
+   "payload": {
+    "additions": 845,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 13,
+    "deletions": 43,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/pjrt/gpu/BUILD"
+    ],
+    "title": "[XLA:GPU] Add repro test for the out-of-bounds crash in TiledHloInstruction::runtime_variables()"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:50:47+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119781"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119780:opened",
+   "payload": {
+    "additions": 845,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 13,
+    "deletions": 43,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/pjrt/gpu/BUILD"
+    ],
+    "title": "[XLA:GPU] Add repro test for the out-of-bounds crash in TiledHloInstruction::runtime_variables()"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:48:40+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119780"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119779:opened",
+   "payload": {
+    "additions": 847,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 15,
+    "deletions": 46,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/core/debug/debug_grpc_io_utils_test.cc",
+     "tensorflow/core/debug/debug_io_utils.cc",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/pjrt/gpu/BUILD"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:45:29+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119779"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119778:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "PR #42808: [GPU] Eliminate redundant DUS-accumulator initialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:40:22+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119778"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119778:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119778"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119777:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "Add missing copyright header to workflow file."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:13:32+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119777"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119777:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119777"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119776:opened",
+   "payload": {
+    "additions": 11,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "third_party/xla/xla/service/spmd/dot_handler.cc"
+    ],
+    "title": "Refactor V3 to V2 sharding conversion in dot_handler.cc"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:09:19+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119776"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119775:opened",
+   "payload": {
+    "additions": 84,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 77,
+    "files": [
+     "third_party/xla/xla/hlo/analysis/shape_tracker.cc",
+     "third_party/xla/xla/hlo/analysis/shape_tracker.h"
+    ],
+    "title": "[XLA:GPU] Cleanup of ShapeTracker::BufferView"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:31:00+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119775"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119774:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "Disable test sharding for XLA GPU H100 builds."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:50:43+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119774"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119774:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119774"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119773:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "tensorflow/compiler/mlir/lite/quantization/device_target.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:28:08+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119773"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119772:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "[XLA:PJRT] Disable in OSS since it takes to long to run."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:26:17+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119772"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119772:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119772"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119770:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/backends/cpu/tests/BUILD",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:19:35+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119770"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119771:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/hlo/analysis/BUILD",
+     "third_party/xla/xla/hlo/analysis/shape_tracker_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:19:35+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119771"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119769:opened",
+   "payload": {
+    "additions": 47,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 11,
+    "deletions": 15,
+    "files": [
+     "tensorflow/c/experimental/saved_model/core/BUILD",
+     "tensorflow/c/experimental/saved_model/core/saved_model_utils.cc",
+     "tensorflow/c/experimental/saved_model/core/saved_model_utils.h",
+     "tensorflow/c/experimental/saved_model/core/saved_variable_loading_test.cc",
+     "tensorflow/c/experimental/saved_model/core/signature_def_function_metadata.cc",
+     "tensorflow/c/experimental/saved_model/core/test_utils.cc",
+     "tensorflow/c/experimental/saved_model/core/tf_concrete_function_test_protos.cc",
+     "tensorflow/c/experimental/saved_model/core/tf_saved_model_api.cc",
+     "third_party/xla/xla/backends/gpu/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/tests/gpu_copy_test.cc",
+     "third_party/xla/xla/service/gpu/gpu_compiler.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:19:19+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119769"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119768:opened",
+   "payload": {
+    "additions": 12,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 12,
+    "files": [
+     "tensorflow/core/runtime_fallback/runtime/runtime_fallback_kernels.cc",
+     "third_party/xla/xla/backends/gpu/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/tests/gpu_copy_test.cc",
+     "third_party/xla/xla/service/gpu/gpu_compiler.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:17:02+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119768"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119767:opened",
+   "payload": {
+    "additions": 7,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "tensorflow/examples/custom_ops_doc/multiplex_4/multiplex_4_kernel.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:15:02+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119767"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119766:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "tensorflow/core/grappler/utils/graph_view_internal.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:14:42+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119766"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119765:opened",
+   "payload": {
+    "additions": 849,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 14,
+    "deletions": 47,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/experimental/gradients/tape/tape_operation.cc",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/pjrt/gpu/BUILD"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:14:20+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119765"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119764:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "third_party/xla/xla/pjrt/cpu/raw_buffer.cc",
+     "third_party/xla/xla/pjrt/cpu/tracked_cpu_device_buffer.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:12:24+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119764"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119763:opened",
+   "payload": {
+    "additions": 1098,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 57,
+    "deletions": 52,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/graph/algorithm.cc",
+     "tensorflow/core/graph/algorithm.h",
+     "tensorflow/core/graph/algorithm_test.cc",
+     "tensorflow/core/graph/collective_order.cc",
+     "tensorflow/core/graph/collective_order.h",
+     "tensorflow/core/graph/collective_order_test.cc",
+     "tensorflow/core/graph/control_flow.cc",
+     "tensorflow/core/graph/control_flow.h",
+     "tensorflow/core/graph/control_flow_test.cc",
+     "tensorflow/core/graph/costmodel.cc",
+     "tensorflow/core/graph/costmodel.h",
+     "tensorflow/core/graph/costmodel_test.cc",
+     "tensorflow/core/graph/edgeset.cc",
+     "tensorflow/core/graph/edgeset_test.cc",
+     "tensorflow/core/graph/graph.cc",
+     "tensorflow/core/graph/graph.h",
+     "tensorflow/core/graph/graph_debug_info_builder.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:10:01+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119763"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119762:opened",
+   "payload": {
+    "additions": 857,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 16,
+    "deletions": 55,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "third_party/xla/build_tools/ci/build.py",
+     "third_party/xla/build_tools/ci/golden_commands.txt",
+     "third_party/xla/xla/backends/cpu/tests/ynn_fusion_test.cc",
+     "third_party/xla/xla/backends/cpu/ynn_emitter.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.cc",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling.h",
+     "third_party/xla/xla/backends/gpu/transforms/double_buffer_loop_unrolling_test.cc",
+     "third_party/xla/xla/pjrt/gpu/BUILD",
+     "third_party/xla/xla/stream_executor/gpu/gpu_test_kernels_lib.cu.h",
+     "third_party/xla/xla/stream_executor/gpu/redzone_allocator_kernel_lib.cu.h",
+     "third_party/xla/xla/stream_executor/gpu/repeat_buffer_kernel.cu.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:09:49+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119762"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119761:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/core/util/ctc/ctc_loss_calculator.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:08:44+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119761"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119760:opened",
+   "payload": {
+    "additions": 15,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "tensorflow/dtensor/mlir/sparse_expansions/dynamic_enqueue_sparse_expander.cc",
+     "third_party/xla/xla/tools/hlo_bisect/BUILD",
+     "third_party/xla/xla/tools/hlo_bisect/hlo_bisect_state.cc",
+     "third_party/xla/xla/tools/hlo_bisect/hlo_bisect_state_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:08:23+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119760"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119759:opened",
+   "payload": {
+    "additions": 35,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 32,
+    "files": [
+     "tensorflow/core/ops/image_ops.cc",
+     "tensorflow/core/ops/tpu_cross_replica_ops.cc",
+     "tensorflow/core/ops/tpu_embedding_ops.cc",
+     "tensorflow/core/ops/tpu_outfeed_ops.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:08:15+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119759"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119758:opened",
+   "payload": {
+    "additions": 52,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 44,
+    "files": [
+     "tensorflow/core/util/quantization/uniform_quant_ops_params.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:07:57+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119758"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119757:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/hlo/transforms/expanders/BUILD",
+     "third_party/xla/xla/hlo/transforms/expanders/permutation_sort_expander_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:03:58+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119757"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119756:opened",
+   "payload": {
+    "additions": 8,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "tensorflow/core/platform/env_test.cc",
+     "tensorflow/core/platform/protobuf_internal.h"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:02:59+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119756"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119755:opened",
+   "payload": {
+    "additions": 60,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 60,
+    "files": [
+     "tensorflow/core/kernels/concat_op.cc",
+     "tensorflow/core/kernels/debug_ops_gpu.cu.cc",
+     "tensorflow/core/kernels/fill_functor.cc",
+     "tensorflow/core/kernels/transpose_functor_gpu.cu.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:02:32+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119755"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119753:opened",
+   "payload": {
+    "additions": 35,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 9,
+    "files": [
+     "third_party/xla/xla/stream_executor/cuda/cuda_command_buffer.cc",
+     "third_party/xla/xla/stream_executor/gpu/gpu_command_buffer_test.cc",
+     "third_party/xla/xla/stream_executor/rocm/rocm_command_buffer.cc"
+    ],
+    "title": "PR #43406: [xla:gpu] Handle empty traced command buffers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:01:59+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119753"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119754:opened",
+   "payload": {
+    "additions": 6,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/service/BUILD",
+     "third_party/xla/xla/service/gpu_topology_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:01:59+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119754"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119752:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "tensorflow/core/debug/debug_grpc_io_utils_test.cc",
+     "tensorflow/core/debug/debug_io_utils.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:59:51+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119752"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119751:opened",
+   "payload": {
+    "additions": 53,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 52,
+    "files": [
+     "tensorflow/examples/custom_ops_doc/simple_hash_table/simple_hash_table_kernel.cc",
+     "tensorflow/examples/custom_ops_doc/simple_hash_table/simple_hash_table_op.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:59:07+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119751"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119750:opened",
+   "payload": {
+    "additions": 44,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "third_party/xla/xla/backends/cpu/transforms/library_rewriter.cc",
+     "third_party/xla/xla/backends/cpu/transforms/library_rewriter.h",
+     "third_party/xla/xla/backends/cpu/transforms/library_rewriter_test.cc"
+    ],
+    "title": "[XLA:CPU] Fix multiple uses of the same fusion in LibraryRewriter"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:57:05+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119750"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119750:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:52:00+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119750"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119749:opened",
+   "payload": {
+    "additions": 3,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "tensorflow/c/kernels.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:56:29+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119749"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119748:opened",
+   "payload": {
+    "additions": 17,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "tensorflow/core/grappler/BUILD",
+     "tensorflow/core/grappler/utils_test.cc"
+    ],
+    "title": "Automated Code Change"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:55:55+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119748"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119747:opened",
+   "payload": {
+    "additions": 68,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 11,
+    "deletions": 37,
+    "files": [
+     "third_party/xla/xla/backends/gpu/codegen/triton/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/xtile_compiler.cc",
+     "third_party/xla/xla/backends/gpu/codegen/triton/xtile_test_base.cc",
+     "third_party/xla/xla/backends/gpu/transforms/BUILD",
+     "third_party/xla/xla/backends/gpu/transforms/convert_triton_gemm_config.cc",
+     "third_party/xla/xla/service/BUILD",
+     "third_party/xla/xla/service/decision.h",
+     "third_party/xla/xla/service/gpu/model/BUILD",
+     "third_party/xla/xla/service/gpu/model/triton_emitter_constraints.cc",
+     "third_party/xla/xla/service/gpu/model/triton_emitter_constraints.h",
+     "third_party/xla/xla/service/gpu/model/triton_emitter_constraints_test.cc"
+    ],
+    "title": "[XLA:GPU] use Decision as a replacement for statusor"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:45:04+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119747"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119746:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "PR #43396: [xla:gpu] Update DynamicSlice configs when unrolling while loops"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:44:50+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119746"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119746:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119746"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119745:opened",
+   "payload": {
+    "additions": 11,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 11,
+    "files": [
+     "third_party/xla/xla/backends/gpu/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/tests/gpu_copy_test.cc",
+     "third_party/xla/xla/service/gpu/gpu_compiler.cc"
+    ],
+    "title": "[XLA:GPU] Guard DynamicSliceAnnotator with the existing flag."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:14:09+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119745"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119745:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:15:15+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119745"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119744:opened",
+   "payload": {
+    "additions": 3,
+    "author": "0xASTRA",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "tensorflow/lite/kernels/internal/reference/resize_nearest_neighbor.h"
+    ],
+    "title": "Fix ResizeNearestNeighbor reference offset overflow"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:42:10+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119744"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119744:review:0",
+   "payload": {
+    "author": "gemini-code-assist",
+    "author_is_bot": true,
+    "body": "## Code Review\n\nThis pull request updates the `ResizeNearestNeighbor` implementation in `resize_nearest_neighbor.h` to use `int64_t` for offset calculations (`col_offset`, `row_offset`, and `batch_offset`) and casts dimensions to `int64_t` to prevent potential integer overflow issues. There are no review comments to evaluate, so no additional feedback is provided.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:42:36+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119744"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119743:opened",
+   "payload": {
+    "additions": 3095,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 89,
+    "deletions": 386,
+    "files": [
+     ".gemini/styleguide.md",
+     ".github/workflows/gemini.yml",
+     "tensorflow/c/BUILD",
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/cc/BUILD",
+     "tensorflow/compiler/jit/BUILD",
+     "tensorflow/core/BUILD",
+     "tensorflow/core/common_runtime/BUILD",
+     "tensorflow/core/common_runtime/eager/BUILD",
+     "tensorflow/core/config/BUILD",
+     "tensorflow/core/framework/BUILD",
+     "tensorflow/core/graph/BUILD",
+     "tensorflow/core/kernels/BUILD",
+     "tensorflow/core/lib/core/BUILD",
+     "tensorflow/core/lib/gtl/BUILD",
+     "tensorflow/core/lib/hash/BUILD",
+     "tensorflow/core/lib/histogram/BUILD",
+     "tensorflow/core/lib/io/BUILD",
+     "tensorflow/core/lib/math/BUILD",
+     "tensorflow/core/lib/monitoring/BUILD"
+    ],
+    "title": "Fix iota implementation in YNNPACK"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:04:15+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119743"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119743:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:53:54+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119743"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119742:opened",
+   "payload": {
+    "additions": 114,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 9,
+    "files": [
+     "third_party/xla/xla/tools/BUILD",
+     "third_party/xla/xla/tools/run_hlo_module.cc",
+     "third_party/xla/xla/tools/run_hlo_module.h",
+     "third_party/xla/xla/tools/run_hlo_module_test.cc"
+    ],
+    "title": "Add support for execution seed in run_hlo_module"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:02:34+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119742"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119742:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T01:32:25+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119742"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119741:opened",
+   "payload": {
+    "additions": 7,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "third_party/xla/xla/debug_options_flags.cc",
+     "third_party/xla/xla/service/gpu/gpu_compiler_test.cc"
+    ],
+    "title": "Enable zero-copy for ragged all-to-all by default."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:56:09+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119741"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119741:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:02:13+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119741"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119740:opened",
+   "payload": {
+    "additions": 9,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 316,
+    "files": [
+     "third_party/xla/third_party/llvm/workspace.bzl",
+     "third_party/xla/third_party/shardy/temporary.patch",
+     "third_party/xla/third_party/shardy/workspace.bzl"
+    ],
+    "title": "Integrate LLVM at llvm/llvm-project@0eb28e6de265"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:14:06+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119740"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119739:opened",
+   "payload": {
+    "additions": 9,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 316,
+    "files": [
+     "third_party/xla/third_party/llvm/workspace.bzl",
+     "third_party/xla/third_party/shardy/temporary.patch",
+     "third_party/xla/third_party/shardy/workspace.bzl"
+    ],
+    "title": "Integrate LLVM at llvm/llvm-project@0eb28e6de265"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:13:09+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119739"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119738:opened",
+   "payload": {
+    "additions": 104,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 7,
+    "deletions": 29,
+    "files": [
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/c/eager/gradients.cc",
+     "tensorflow/c/eager/gradients.h",
+     "tensorflow/c/eager/parallel_device/BUILD",
+     "tensorflow/c/eager/parallel_device/parallel_device_lib.cc",
+     "tensorflow/c/eager/parallel_device/parallel_device_lib.h",
+     "tensorflow/c/eager/tape.h"
+    ],
+    "title": "Resolved memory safety, out-of-bounds, and concurrency issues in the eager/tape framework."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:03:57+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119738"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119737:opened",
+   "payload": {
+    "additions": 58,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 11,
+    "files": [
+     "tensorflow/c/experimental/ops/array_ops.cc",
+     "tensorflow/c/experimental/ops/nn_ops.cc"
+    ],
+    "title": "Add checks for the number of return values from op execution."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:36:28+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119737"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119736:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "third_party/xla/xla/service/gpu/gpu_compiler.cc"
+    ],
+    "title": "Enables the optimization to fold trailing transposes into scatter operations for the GPU backend."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:59:36+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119736"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119735:opened",
+   "payload": {
+    "additions": 56,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "tensorflow/c/BUILD",
+     "tensorflow/c/kernels_experimental.cc",
+     "tensorflow/c/kernels_test.cc"
+    ],
+    "title": "Add DT_VARIANT type validation to EnsureSparseVariableAccess and PrepareToUpdateVariable in C-API kernels."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:50:14+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119735"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119735:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:07:10+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119735"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119734:opened",
+   "payload": {
+    "additions": 21,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 5,
+    "deletions": 14,
+    "files": [
+     "tensorflow/c/BUILD",
+     "tensorflow/c/kernels/BUILD",
+     "tensorflow/c/kernels/summary_op.cc",
+     "tensorflow/c/tf_buffer.cc",
+     "tensorflow/python/ops/nn_grad_test.py"
+    ],
+    "title": "Fix various integer safety issues (overflow, underflow, truncation) in TensorFlow C-APIs."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:48:55+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119734"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119733:opened",
+   "payload": {
+    "additions": 53,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 17,
+    "deletions": 2,
+    "files": [
+     "tensorflow/lite/acceleration/configuration/c/nnapi_plugin.h",
+     "tensorflow/lite/delegates/nnapi/acceleration_test_util.h",
+     "tensorflow/lite/delegates/nnapi/nnapi_delegate.h",
+     "tensorflow/lite/delegates/nnapi/nnapi_delegate_c_api.h",
+     "tensorflow/lite/delegates/nnapi/nnapi_delegate_kernel.h",
+     "tensorflow/lite/delegates/nnapi/nnapi_delegate_mock_test.h",
+     "tensorflow/lite/delegates/nnapi/nnapi_delegate_plugin.h",
+     "tensorflow/lite/nnapi/NeuralNetworksShim.h",
+     "tensorflow/lite/nnapi/NeuralNetworksTypes.h",
+     "tensorflow/lite/nnapi/nnapi_handler.h",
+     "tensorflow/lite/nnapi/nnapi_implementation.h",
+     "tensorflow/lite/nnapi/nnapi_util.h",
+     "tensorflow/lite/nnapi/sl/include/SupportLibrary.h",
+     "tensorflow/lite/nnapi/sl/include/SupportLibrarySymbols.h",
+     "tensorflow/lite/nnapi/sl/public/NeuralNetworksSupportLibraryImpl.h",
+     "tensorflow/lite/tools/delegates/compatibility/nnapi/nnapi_compatibility_lib.h",
+     "tensorflow/lite/tools/delegates/compatibility/nnapi/nnapi_delegate_compatibility_checker.h"
+    ],
+    "title": "Explicitly deprecate all the NNAPI-related headers."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:34:53+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119733"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119732:opened",
+   "payload": {
+    "additions": 43,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     "tensorflow/c/experimental/filesystem/plugins/gcs/BUILD",
+     "tensorflow/c/experimental/filesystem/plugins/gcs/gcs_filesystem.cc",
+     "tensorflow/c/experimental/filesystem/plugins/gcs/gcs_filesystem_test.cc"
+    ],
+    "title": "Fix integer underflow in GCS buffered read."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:15:05+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119732"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119731:opened",
+   "payload": {
+    "additions": 289,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 6,
+    "deletions": 5,
+    "files": [
+     "third_party/xla/xla/pjrt/c/pjrt_c_api_xla_transform_extension.h",
+     "third_party/xla/xla/pjrt/c/pjrt_c_api_xla_transform_internal.cc",
+     "third_party/xla/xla/service/BUILD",
+     "third_party/xla/xla/service/xla_transform.cc",
+     "third_party/xla/xla/service/xla_transform.h",
+     "third_party/xla/xla/service/xla_transform_test.cc"
+    ],
+    "title": "Add XLA transform PJRT extension method to return HLO pass pipeline trace."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:30:37+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119731"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119730:opened",
+   "payload": {
+    "additions": 185,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 5,
+    "deletions": 331,
+    "files": [
+     "third_party/xla/xla/layout_util.cc",
+     "third_party/xla/xla/layout_util_test.cc",
+     "third_party/xla/xla/service/latency_hiding_scheduler.cc",
+     "third_party/xla/xla/service/latency_hiding_scheduler.h",
+     "third_party/xla/xla/service/latency_hiding_scheduler_test.cc"
+    ],
+    "title": "Reverts 84f868c8d91686c2f050382b2b432571064cb065"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:15:47+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119730"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119729:opened",
+   "payload": {
+    "additions": 107,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 10,
+    "deletions": 52,
+    "files": [
+     "third_party/xla/xla/pjrt/c/BUILD",
+     "third_party/xla/xla/pjrt/c/pjrt_c_api_cpu_internal.cc",
+     "third_party/xla/xla/pjrt/c/pjrt_c_api_xla_transform_internal.cc",
+     "third_party/xla/xla/python/_hlo.pyi",
+     "third_party/xla/xla/python/hlo.cc",
+     "third_party/xla/xla/python/version.h",
+     "third_party/xla/xla/service/cpu/BUILD",
+     "third_party/xla/xla/service/cpu/cpu_compiler.cc",
+     "third_party/xla/xla/service/xla_transform.cc",
+     "third_party/xla/xla/service/xla_transform.h"
+    ],
+    "title": "XLA changes to prepare for adding a jax.extend.xla.register_hlo_module_transformation API."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:15:23+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119729"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119729:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:55:05+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119729"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119728:opened",
+   "payload": {
+    "additions": 16,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 10,
+    "files": [
+     "third_party/xla/xla/python/ifrt/ir/BUILD",
+     "third_party/xla/xla/python/ifrt/ir/compiled_ifrt_ir_program.cc",
+     "third_party/xla/xla/python/ifrt/ir/compiled_ifrt_ir_program.h",
+     "third_party/xla/xla/python/ifrt/ir/ifrt_ir_loaded_executable.cc"
+    ],
+    "title": "[IFRT IR] Add method to get the number of executable calls from an IFRT IR program."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:10:35+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119728"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119728:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:04:16+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119728"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119727:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "tensorflow/c/kernels/histogram_summary_op.cc"
+    ],
+    "title": "Initialize TF_Tensor pointers to nullptr in HistogramSummaryOp_Compute."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:38:07+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119727"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119726:opened",
+   "payload": {
+    "additions": 6,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 17,
+    "files": [
+     "third_party/xla/xla/backends/gpu/codegen/triton/xtile_compiler.h",
+     "third_party/xla/xla/service/gpu/compile_module_to_llvm_ir.cc",
+     "third_party/xla/xla/service/gpu/gpu_compiler.cc",
+     "third_party/xla/xla/service/gpu/ir_emitter_context.h"
+    ],
+    "title": "remove no longer used emit_kernels arg"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:30:41+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119726"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119726:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:31:08+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119726"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119725:opened",
+   "payload": {
+    "additions": 407,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 13,
+    "deletions": 9,
+    "files": [
+     "third_party/xla/xla/pjrt/c/CHANGELOG.md",
+     "third_party/xla/xla/pjrt/c/pjrt_c_api.h",
+     "third_party/xla/xla/pjrt/c/pjrt_c_api_wrapper_impl.cc",
+     "third_party/xla/xla/pjrt/c_api_client/pjrt_c_api_client.cc",
+     "third_party/xla/xla/pjrt/c_api_client/pjrt_c_api_client.h",
+     "third_party/xla/xla/pjrt/host_callback.h",
+     "third_party/xla/xla/pjrt/pjrt_executable.h",
+     "third_party/xla/xla/python/pjrt_ifrt/BUILD",
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_executable.cc",
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_executable.h",
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_executable_impl_test_lib.cc",
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_host_callback.cc",
+     "third_party/xla/xla/python/pjrt_ifrt/pjrt_host_callback.h"
+    ],
+    "title": "[XLA] Core infrastructure for HloOutputCallback"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:05:06+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119725"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119724:opened",
+   "payload": {
+    "additions": 225,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 27,
+    "deletions": 112,
+    "files": [
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/c/eager/gradient_checker_test.cc",
+     "tensorflow/c/experimental/gradients/BUILD",
+     "tensorflow/c/experimental/gradients/math_grad.cc",
+     "tensorflow/c/experimental/gradients/math_grad_test.cc",
+     "tensorflow/c/experimental/ops/BUILD",
+     "tensorflow/c/experimental/ops/array_ops.cc",
+     "tensorflow/c/experimental/ops/array_ops.h",
+     "tensorflow/c/experimental/ops/gen/cpp/golden/testing_ops.cc.golden",
+     "tensorflow/c/experimental/ops/gen/cpp/golden/testing_ops.h.golden",
+     "tensorflow/c/experimental/ops/gen/cpp/renderers/cpp_file_renderer.cc",
+     "tensorflow/c/experimental/ops/gen/cpp/renderers/include_renderer.cc",
+     "tensorflow/c/experimental/ops/gen/cpp/renderers/include_renderer.h",
+     "tensorflow/c/experimental/ops/gen/cpp/renderers/op_implementation_renderer.cc",
+     "tensorflow/c/experimental/ops/gen/cpp/renderers/op_renderer.cc",
+     "tensorflow/c/experimental/ops/gen/cpp/views/attr_view.cc",
+     "tensorflow/c/experimental/ops/gen/cpp/views/op_argument_view.cc",
+     "tensorflow/c/experimental/ops/gen/cpp/views/op_argument_view.h",
+     "tensorflow/c/experimental/ops/io_ops.cc",
+     "tensorflow/c/experimental/ops/io_ops.h"
+    ],
+    "title": "Fix uninitialized stack memory disclosure and crashes in generated C++ Eager Ops."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:02:55+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119724"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119723:opened",
+   "payload": {
+    "additions": 65,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "tensorflow/c/eager/BUILD",
+     "tensorflow/c/eager/gradient_checker.cc",
+     "tensorflow/c/eager/gradient_checker_test.cc"
+    ],
+    "title": "Add error handling and tests for CalcNumericalGrad."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T18:30:18+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119723"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119723:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:43:29+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119723"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119722:opened",
+   "payload": {
+    "additions": 2,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "tensorflow/c/kernels/summary_op.cc"
+    ],
+    "title": "Change loop variable type to int64_t in summary_op.cc."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T18:12:28+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119722"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119721:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "third_party/xla/xla/service/spmd/spmd_partitioner.h"
+    ],
+    "title": "[ReplicaGroupV3] re-enable rgv3 opportunistic creation in xla by default."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T18:01:16+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119721"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119721:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:36:09+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119721"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119720:opened",
+   "payload": {
+    "additions": 17,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "third_party/xla/xla/python/ifrt_proxy/client/global_flags.h",
+     "third_party/xla/xla/python/ifrt_proxy/client/global_flags_oss.cc",
+     "third_party/xla/xla/python/ifrt_proxy/client/registry.cc"
+    ],
+    "title": "IFRT proxy: Introduce crash_on_disconnect option."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:49:45+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119720"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119720:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:52:30+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119720"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119719:opened",
+   "payload": {
+    "additions": 1,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tensorflow/compiler/mlir/tensorflow/ir/tf_generated_ops.td"
+    ],
+    "title": "Add timestamp for `PostProcessPrediction`."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:31:20+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119719"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119719:merged",
+   "payload": {
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:36:38+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119719"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119718:opened",
+   "payload": {
+    "additions": 53,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "third_party/xla/xla/service/latency_hiding_scheduler.cc",
+     "third_party/xla/xla/service/latency_hiding_scheduler_test.cc"
+    ],
+    "title": "Remove redundant async handling in MemoryPressureTracker as"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:29:06+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119718"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119717:opened",
+   "payload": {
+    "additions": 107,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 10,
+    "deletions": 52,
+    "files": [
+     "third_party/xla/xla/pjrt/c/BUILD",
+     "third_party/xla/xla/pjrt/c/pjrt_c_api_cpu_internal.cc",
+     "third_party/xla/xla/pjrt/c/pjrt_c_api_xla_transform_internal.cc",
+     "third_party/xla/xla/python/_hlo.pyi",
+     "third_party/xla/xla/python/hlo.cc",
+     "third_party/xla/xla/python/version.h",
+     "third_party/xla/xla/service/cpu/BUILD",
+     "third_party/xla/xla/service/cpu/cpu_compiler.cc",
+     "third_party/xla/xla/service/xla_transform.cc",
+     "third_party/xla/xla/service/xla_transform.h"
+    ],
+    "title": "Add a jax.extend.xla.register_hlo_module_transformation API."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:10:11+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119717"
+  },
+  {
+   "evidence_id": "pr:tensorflow/tensorflow#119716:opened",
+   "payload": {
+    "additions": 24,
+    "author": "copybara-service",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 5,
+    "files": [
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/BUILD",
+     "third_party/xla/xla/backends/gpu/codegen/triton/tests/slice/boundary_dynamic_slice.hlo",
+     "third_party/xla/xla/codegen/tiling/experimental/tiled_hlo.cc"
+    ],
+    "title": "[XLA:GPU] Fix out-of-bounds crash on boundary DynamicSlice"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:49:45+00:00",
+   "url": "https://github.com/tensorflow/tensorflow/pull/119716"
+  }
+ ],
+ "repo": "tensorflow/tensorflow",
+ "window": "pre_t"
+}

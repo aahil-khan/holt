@@ -132,3 +132,62 @@ which is exactly the kind of move that has to be visible.
   contribution is a genuine judgement call, and the rule does not resolve it.
 - The one-line-single-file rule cannot distinguish a manifest entry from a real
   one-line bugfix. It is measured separately for that reason.
+
+---
+
+## Iteration 2 — the agent pipeline, and per-stage model selection (2026-08-29)
+
+**Tried.** A → B → C → D → verdict → E, with the model used only where
+interpretation is needed. Signals (counts, latencies, first-contribution rates)
+and Stage D verification run no model at all. Model choice was made **per stage
+and empirically**, starting everything on the small model and promoting only on
+evidence.
+
+**Why.** Two stages need judgement arithmetic cannot reach: what kind of
+repository this is, and what a pull request thread reveals about an outsider's
+odds. The rest is counting, lookup, or prose.
+
+**Evidence — pilot on a development set disjoint from the scored pool.**
+`microsoft/winget-pkgs`, `sindresorhus/awesome`, `pallets/flask`,
+`tensorflow/tensorflow`. Chosen for category spread; deliberately *not* pool
+repositories, so inspecting behaviour during development cannot tune the agent
+against scored cases.
+
+| Repo | Verdict | Rule that fired | Findings kept |
+|---|---|---|---|
+| `pallets/flask` | viable | 7 outsider merges from 111 people, median response 0.4h | 15/15 |
+| `microsoft/winget-pkgs` | not_viable | `repo_kind=registry` | 16/16 |
+| `sindresorhus/awesome` | not_viable | `repo_kind=awesome_list` | 14/15 |
+| `tensorflow/tensorflow` | insufficient_evidence | 4/4 ignored is too thin to call hostile | 8/8 |
+
+All four correct. **`gpt-5-mini` is sufficient for every stage, including thread
+interpretation.** On `winget-pkgs` it wrote, unprompted, that "most interaction
+is automated (wingetbot/validation logs). Maintainers rarely provide substantive
+human [feedback]" — the exact distinction the stage exists to make. The Anthropic
+credit stays unspent; per-stage promotion is available if the full pool shows a
+stage failing.
+
+**Cost: $0.0484 for four full pipeline runs**, about $0.012 a repository.
+
+**Two bugs the pilot caught, neither visible without running it:**
+
+*Bot detection was too narrow.* GitHub only flags accounts that are real GitHub
+Apps. `wingetbot` posts every validation log as an ordinary user, so automated
+traffic was being counted as human engagement — turning an auto-merge pipeline
+into a conversational project. Detection is now applied at read time, so
+fixtures stay as captured.
+
+*Stage C citations were structurally unresolvable.* Stage C reasons about whole
+threads, but only thread *events* (`#12:opened`, `#12:merged`) exist as evidence
+ids. Citing the bare key meant Stage D correctly deleted 13 of 16 findings on the
+first run. Threads are now presented with a real id, and shortened citations are
+repaired before resolution — repairing a format is not excusing a claim, and an
+id that resolves to nothing is still dropped.
+
+*A guard added, not a tune.* `tensorflow/tensorflow` is 97% bot traffic, leaving
+four outsider threads, all ignored. The hostility rule fired on four data points.
+It now requires at least eight attempts before calling a repository hostile, and
+returns insufficient evidence below that. Caught on the development set, which is
+what the development set is for.
+
+**Decision.** Kept. Small model everywhere, pending the full pool run.
