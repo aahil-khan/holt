@@ -1,158 +1,128 @@
-# Holt — where we stand, and where we could go
+# Holt — honest assessment
 
-Written 2026-08-30. Deadline 2026-08-31 23:30.
+Revised 2026-08-30, after the metric reframe, the variance runs, the
+pre-registered Stage C experiment, and the positive control.
+Deadline 2026-08-31 23:30.
 
 ---
 
 ## 1. What exists
 
-12 commits, 46 tests, ~3,000 lines. Reproduces from a clean clone with no
-credentials, verified by actually doing it.
+17 commits, 46 tests, ~3,000 lines. Reproduces from a clean clone with no
+credentials, verified by actually doing it. Total spend across the entire
+project: **$1.48**.
 
 | Deliverable | State |
 |---|---|
-| Code + Improvement Changelog | done — 319-line changelog, entry per experiment including removed ones |
+| Code + Improvement Changelog | done — 7 iterations, including 2 experiments that failed and were removed |
 | Reproduction guide | done — every command run with all keys unset before being written down |
-| Agent trajectories | done — 3 rendered walkthroughs + 29 raw JSONL records |
+| Agent trajectories | done — 3 rendered walkthroughs + 29 raw records |
 | Video ≤5 min | **not started** (yours) |
 
-The pipeline: evidence chokepoint enforcing a temporal holdout → arithmetic
-signals → three model stages → verification that drops unsupported claims →
-a deterministic verdict function → narration that cannot change the verdict.
+---
+
+## 2. The numbers
+
+Mean ± half-range over **three independent live runs**, 22 gradable repositories
+from a pool of 30 hash-committed before any method ran, against ground truth
+computed only from post-cutoff evidence.
+
+| Method | MCC | Balanced acc. | Sensitivity | Specificity |
+|---|---|---|---|---|
+| always "viable" | 0.00 ±0.00 | 0.50 | 1.00 | 0.00 |
+| name-only probe | 0.16 ±0.07 | 0.58 | 0.40 | 0.75 |
+| baseline solution | 0.28 ±0.07 | 0.64 | 0.62 | 0.67 |
+| **Holt** | **0.46 ±0.05** | **0.70 ±0.02** | 0.90 ±0.04 | 0.50 ±0.00 |
+
+**Holt's worst run (0.39) beats the baseline's best (0.33).** No overlap.
+
+Three supporting results:
+
+- **Trap rejection.** Repositories with 100+ inbound attempts and zero
+  qualifying contributions: Holt rejects 4 of 5, baseline 0 of 5.
+- **Positive control.** Three verified-genuine repositories outside the pool:
+  Holt recovers 3 of 3, baseline 1 of 3.
+- **Stability.** Across three runs, Holt returns identical verdicts on 21 of 22
+  repositories; the baseline on 13 of 22.
 
 ---
 
-## 2. What the numbers actually say
+## 3. Rubric estimate
 
-Ground truth is L1: at least two distinct people landing a qualifying
-contribution *after* a cutoff neither method could see. 22 of 30 pool
-repositories are gradable (3 deleted, 5 had no post-cutoff attempts).
+My own scoring, stated so it can be argued with. Previous estimate in brackets.
 
-| Method | F1 | Balanced acc. | **MCC** | Sensitivity | Specificity |
-|---|---|---|---|---|---|
-| always answer "viable" | 0.78 | 0.50 | **0.00** | 1.00 | 0.00 |
-| name-only probe | 0.48 | 0.55 | 0.11 | 0.36 | 0.75 |
-| baseline solution | 0.74 | 0.67 | 0.33 | 0.71 | 0.62 |
-| **Holt** | 0.84 | **0.71** | **0.49** | 0.93 | 0.50 |
-
-**The most important line in this document:** a constant classifier that answers
-"viable" to everything scores **F1 0.78** — beating our baseline solution's 0.74.
-F1 is degenerate on a pool that is 64% positive. Anyone from an evaluation lab
-will notice this in under a minute, and if we ship F1 as the headline they will
-notice it before we do.
-
-MCC is the honest metric here: it is 0.00 for any constant classifier. **Holt 0.49
-against the baseline's 0.33** is a genuine 48% relative improvement that no
-trivial strategy can fake.
-
-**Ablation — what is actually doing the work:**
-
-| Configuration | F1 |
-|---|---|
-| full Holt | 0.84 |
-| without Stage A's repository-kind rules | 0.82 |
-| without the arithmetic signal thresholds | 0.79 |
-| neither (everything viable) | 0.78 |
-
-On F1 the whole pipeline buys 0.06 over answering yes to everything. On MCC it
-buys 0.49 over 0.00. Same system, same data — the metric was the problem, and
-we have to say so ourselves.
-
----
-
-## 3. Honest rubric estimate
-
-My own scoring, stated so it can be argued with.
-
-| Criterion | Points | Estimate | Why not full marks |
+| Criterion | Points | Estimate | Reasoning |
 |---|---:|---:|---|
-| Agent Solution & Engineering | 30 | ~22 | Stage C is decorative — see §4 |
-| End-to-End Quality | 20 | ~16 | Reports read well; no video yet |
-| Problem & User Value | 15 | ~13 | Clear user, real bottleneck, measured |
-| Measured Improvement | 15 | ~10 | Single run, no variance; margins thin |
-| Reproducibility | 15 | ~14 | Clean-clone verified, zero-credential |
-| Hot Take / Insights | 5 | ~4 | Genuine, unglamorous, measured |
-| | **100** | **~79** | |
+| Agent Solution & Engineering | 30 | ~26 (was 22) | Determinism is now measured, not asserted: 21/22 vs 13/22 stability. Stage C's exclusion is justified by a pre-registered experiment rather than left unexplained. |
+| End-to-End Quality | 20 | ~16 | Reports read like a person wrote them. No video yet. |
+| Problem & User Value | 15 | ~13 | Clear user, real bottleneck, measured. Not a novel problem. |
+| Measured Improvement | 15 | ~14 (was 10) | Non-overlapping intervals over three runs, floor published, positive control, two failed experiments recorded. |
+| Reproducibility | 15 | ~14 | Clean-clone verified, zero-credential, pinned dated model ids. |
+| Hot Take / Insights | 5 | ~5 (was 4) | Two independent measurements converging on one non-obvious conclusion. |
+| | **100** | **~88** (was ~79) | |
 
 ---
 
-## 4. The three real weaknesses
+## 4. Remaining weaknesses, honestly
 
-### 4.1 The flagship stage does not affect the answer
+### 4.1 Holt over-recommends
 
-Holt's pitch is that it *reads pull request threads*. Stage C does read them, and
-its output appears in every report. But `verdict.py` never consults it — because
-when measured, its signals were **inverted**: repositories that are not genuine
-opportunities showed a *higher* share of threads offering a real route in (0.75
-against 0.54), since registries read as welcoming precisely by being easy.
+**Specificity 0.50 against the baseline's 0.67.** Of 22 repositories it calls 17
+viable and is wrong on 4. Its entire advantage is sensitivity (0.90 vs 0.62) plus
+the extreme cases. A user following Holt tries more repositories than they need
+to; they just do not waste a week on a registry.
 
-Excluding it was the right call on the evidence. But it leaves the most expensive
-stage, and the one the story leans on hardest, decorative. A judge who reads
-`verdict.py` will see three model stages feeding a function that reads one of
-them. That is the single largest gap between what the project claims and what it
-demonstrably does.
+This was attacked directly and the attack failed — the pre-registered review
+ratio rule improved specificity to 0.62 and cost five genuine opportunities to do
+it. It is a real limitation with a documented failed remedy, which is a better
+position than an undocumented one, but it is still a limitation.
 
-There is one thread-derived feature that *does* separate the classes:
-**review ratio** — the share of merges that received substantive review rather
-than sailing through (0.68 for genuine opportunities against 0.50 for the rest).
-Structural rather than sentimental. It is the obvious candidate for making Stage
-C load-bearing, and it is untested.
+### 4.2 The flagship stage does not drive the verdict
 
-### 4.2 Holt over-recommends
+Holt's pitch is that it reads pull request threads, and `verdict.py` does not
+consult what Stage C concluded. This is now defensible rather than accidental:
+**two independent measurements** say thread signals do not predict viability —
+sentiment came out inverted (registries read as welcoming *because they are
+easy*), and review ratio failed a pre-registered test.
 
-Specificity 0.50 against the baseline's 0.62. It calls 17 of 22 viable and is
-wrong on 4. Its advantage is entirely in *finding* opportunities (sensitivity
-0.93 vs 0.71), not in rejecting bad ones — except on the extreme cases, where it
-rejects 4 of 5 traps and the baseline rejects none.
+A judge may still count it against the pitch. The honest framing, which the
+README uses, is that Stage C informs the report a human reads and does not decide
+anything — and that we measured that rather than assumed it.
 
-### 4.3 Single run, and a quarter of the pool ungraded
+### 4.3 Small sample, and one model
 
-Every number is one run; the plan itself said report variance rather than one
-lucky number. 22 of 30 graded: 3 repositories were deleted, 5 had no post-cutoff
-attempts. Both are honestly disclosed, neither is fixable, but together they mean
-the sample supporting every claim is small.
+22 of 30 graded: 3 repositories deleted before the run, 5 with no post-cutoff
+attempts. Both disclosed, neither fixable. Every claim rests on 22 cases.
+
+Everything also rides on one small model (`gpt-5-mini-2025-08-07`). Per-stage
+model choice was measured, but only against itself — we never tested whether a
+stronger model changes the conclusions.
+
+### 4.4 Not done
+
+- **Video** — required deliverable, yours.
+- **Human time per task** — the brief's own metric table asks for it. Holt takes
+  69 seconds per repository. The manual figure can only come from you timing
+  yourself reading twenty threads.
 
 ---
 
-## 5. Where this could go, ranked by payoff per hour
+## 5. What I would spend remaining time on
 
-| # | Move | Effort | Payoff |
+47 hours to deadline; roughly 1–2 hours of work left on my side.
+
+| Priority | Item | Effort | Why |
 |---|---|---|---|
-| 1 | **Reframe the metric, and publish the trivial baselines** | 2h | High — turns the biggest vulnerability into an honesty credential |
-| 2 | **Variance across three runs** | 40m | High — closes a stated expectation for ~$1 |
-| 3 | **Make Stage C load-bearing via review ratio** | 3h | High but uncertain — could lift specificity and close §4.1 |
-| 4 | **Positive control** | 1h | Medium — guards against a detector that rejects everything |
-| 5 | **Human-time measurement** | yours | Medium — the brief asks for it and only you can produce it |
-| 6 | **Video** | yours | Required |
+| 1 | Video | yours | Required. Without it the submission is incomplete. |
+| 2 | Human-time measurement | ~30m, yours | The brief asks for it and it is the most legible number in the submission. |
+| 3 | Anything else | — | Optional. The submission is complete without it. |
 
-### On #1, which I would do first regardless
+**My recommendation is to stop building.** Everything the rubric asks for exists
+and is measured. Two failed experiments are documented. The floor is published.
+Further changes risk breaking a working, reproducible submission for marginal
+gain — and every change now invalidates recorded trajectories and needs a re-run.
 
-Replace F1 with MCC as the headline, and publish the constant-classifier row in
-the README. "Our original primary metric was degenerate; here is the trivial
-strategy that beats our own baseline on it; here is the metric that cannot be
-gamed and the result under it" is a stronger position than any number we could
-report, in front of judges whose profession is measurement validity.
-
-### On #3, the one with real upside
-
-If review ratio makes Stage C load-bearing, three things improve at once: the
-flagship stage stops being decorative, specificity likely rises, and the
-changelog gains its best arc — *tried sentiment, it inverted, refined to a
-structural signal, it worked*. If it does not help, that is also publishable and
-costs one entry.
-
-**Risk to manage:** the feature is measured on the same 22 repositories we score
-on. Fitting it there and then reporting the improvement would be tuning on the
-test set. It has to be justified on the dev set or on a stated principle, and the
-fitting has to be disclosed either way.
-
----
-
-## 6. What I need from you
-
-1. **Which of #1–#4 to run**, and in what order. My recommendation: 1, 2, 3, 4.
-2. **The human-time number** — time yourself reading twenty pull request threads
-   on one pool repository. Holt takes 69 seconds. That comparison is the most
-   legible thing in the submission and only you can produce it.
-3. **Whether to spend anything further.** Total spend so far is $0.35. Variance
-   runs cost about $1. Nothing else needs money.
+If you want one more thing, the highest-value candidate is testing whether a
+stronger model on Stage A changes the conclusions (§4.3), because it is the one
+claim that rests on a single untested assumption. It costs about $2 and an hour,
+and it could go either way — which is the point.
