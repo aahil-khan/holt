@@ -1,0 +1,216 @@
+{
+ "captured_at": "2026-08-29T19:48:39.502802+00:00",
+ "content_sha256": "2ea50e50a17ca97dce60312f991cbc6733d0decc1bd5324a103a5e7ef98c2acc",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:alejandrofc2709/EQUIPO-FRONTEND:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Desarrollo de las plantillas ",
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-05-28T08:50:12Z",
+    "stargazer_count": 0
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T21:48:25+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND"
+  },
+  {
+   "evidence_id": "repo:alejandrofc2709/EQUIPO-FRONTEND:readme",
+   "payload": {
+    "commit_oid": "6030b149279176e034c70b22a1b84387d1081b65",
+    "kind": "readme",
+    "text": "Equipo Frontend\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:50:11+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/blob/6030b149279176e034c70b22a1b84387d1081b65/README.md"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#5:opened",
+   "payload": {
+    "additions": 152,
+    "author": "Dayliangel",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 54,
+    "files": [
+     "MIKROTIK/appMikrotik/apps/core/views.py",
+     "MIKROTIK/appMikrotik/static/css/custom.css",
+     "MIKROTIK/appMikrotik/templates/includes/sideBar.html"
+    ],
+    "title": "aporte"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:49:22+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/5"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#5:merged",
+   "payload": {
+    "author": "Dayliangel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:50:12+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/5"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#4:opened",
+   "payload": {
+    "additions": 51,
+    "author": "JoseDanielRodrigueez",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 2,
+    "files": [
+     "MIKROTIK/appMikrotik/static/images/clientes.svg",
+     "MIKROTIK/appMikrotik/static/images/inicio.svg",
+     "MIKROTIK/appMikrotik/static/images/logs.svg",
+     "MIKROTIK/appMikrotik/static/images/morosidad.svg",
+     "MIKROTIK/appMikrotik/static/images/pagos.svg",
+     "MIKROTIK/appMikrotik/static/images/reportes.svg",
+     "MIKROTIK/appMikrotik/templates/includes/header.html"
+    ],
+    "title": "nuevos iconos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T05:28:43+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/4"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#4:merged",
+   "payload": {
+    "author": "JoseDanielRodrigueez",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T05:30:09+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/4"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#3:opened",
+   "payload": {
+    "additions": 186,
+    "author": "Dayliangel",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 4,
+    "files": [
+     "MIKROTIK/appMikrotik/apps/core/forms.py",
+     "MIKROTIK/appMikrotik/apps/core/templates/login.html",
+     "MIKROTIK/appMikrotik/apps/core/views.py",
+     "MIKROTIK/appMikrotik/apps/gestion_pago/views.py",
+     "MIKROTIK/appMikrotik/static/css/login.css"
+    ],
+    "title": "Implementacion login"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:41:11+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/3"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#3:merged",
+   "payload": {
+    "author": "Dayliangel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T04:07:57+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/3"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#2:opened",
+   "payload": {
+    "additions": 76,
+    "author": "JoseDanielRodrigueez",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 8,
+    "files": [
+     "MIKROTIK/.vscode/settings.json",
+     "MIKROTIK/appMikrotik/appMikrotik/settings.py",
+     "MIKROTIK/appMikrotik/apps/core/urls.py",
+     "MIKROTIK/appMikrotik/apps/core/views.py",
+     "MIKROTIK/appMikrotik/static/css/custom.css",
+     "MIKROTIK/appMikrotik/static/fonts/Poppins-Bold.ttf",
+     "MIKROTIK/appMikrotik/static/fonts/Poppins-Medium.ttf",
+     "MIKROTIK/appMikrotik/static/fonts/Poppins-Regular.ttf",
+     "MIKROTIK/appMikrotik/templates/includes/header.html"
+    ],
+    "title": "Personalizacion hader"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:30:40+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/2"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#2:merged",
+   "payload": {
+    "author": "JoseDanielRodrigueez",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:31:21+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/2"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#1:opened",
+   "payload": {
+    "additions": 1586,
+    "author": "JoseDanielRodrigueez",
+    "author_is_bot": false,
+    "changed_files": 63,
+    "deletions": 0,
+    "files": [
+     "MIKROTIK/.gitignore",
+     "MIKROTIK/.idea/PROYECTO-MIKROTIK.iml",
+     "MIKROTIK/.idea/inspectionProfiles/Project_Default.xml",
+     "MIKROTIK/.idea/inspectionProfiles/profiles_settings.xml",
+     "MIKROTIK/.idea/vcs.xml",
+     "MIKROTIK/.idea/workspace.xml",
+     "MIKROTIK/README.md",
+     "MIKROTIK/appMikrotik/appMikrotik/__init__.py",
+     "MIKROTIK/appMikrotik/appMikrotik/asgi.py",
+     "MIKROTIK/appMikrotik/appMikrotik/settings.py",
+     "MIKROTIK/appMikrotik/appMikrotik/urls.py",
+     "MIKROTIK/appMikrotik/appMikrotik/wsgi.py",
+     "MIKROTIK/appMikrotik/apps/core/__init__.py",
+     "MIKROTIK/appMikrotik/apps/core/admin.py",
+     "MIKROTIK/appMikrotik/apps/core/apps.py",
+     "MIKROTIK/appMikrotik/apps/core/migrations/0001_initial.py",
+     "MIKROTIK/appMikrotik/apps/core/migrations/0002_alter_pago_fecha.py",
+     "MIKROTIK/appMikrotik/apps/core/migrations/0003_remove_pago_pagousd_pago_metodo_alter_cliente_estado.py",
+     "MIKROTIK/appMikrotik/apps/core/migrations/0004_alter_pago_tasa.py",
+     "MIKROTIK/appMikrotik/apps/core/migrations/__init__.py"
+    ],
+    "title": "Adelanto estructura base"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:49:06+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/1"
+  },
+  {
+   "evidence_id": "pr:alejandrofc2709/EQUIPO-FRONTEND#1:merged",
+   "payload": {
+    "author": "JoseDanielRodrigueez",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:49:39+00:00",
+   "url": "https://github.com/alejandrofc2709/EQUIPO-FRONTEND/pull/1"
+  }
+ ],
+ "repo": "alejandrofc2709/EQUIPO-FRONTEND",
+ "window": "pre_t"
+}

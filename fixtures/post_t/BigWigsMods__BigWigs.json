@@ -1,0 +1,4156 @@
+{
+ "captured_at": "2026-08-29T19:33:33.607812+00:00",
+ "content_sha256": "9e614f748fc30ea3f086637168174fb2c2544125f7f06b352581a68b1fe707c8",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2755:opened",
+   "payload": {
+    "additions": 1178,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 1386,
+    "files": [
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Tabulated sub-options and more"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T02:49:19+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2755"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2754:opened",
+   "payload": {
+    "additions": 4,
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Options/Libs/AceGUIWidget-SharedDropdown.lua"
+    ],
+    "title": "BugFix: Uncap unfiltered sound dropdown list"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:52:38+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2754"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2754:merged",
+   "payload": {
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T17:23:41+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2754"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2753:opened",
+   "payload": {
+    "additions": 39,
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Options/Libs/AceGUIWidget-SharedDropdown.lua"
+    ],
+    "title": "ScrollBar: Use Blizzard's own scrollbar style in the dropdown pullout"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:39:58+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2753"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2752:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T20:18:56+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2752"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2752:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T20:34:34+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2752"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2751:opened",
+   "payload": {
+    "additions": 6,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "Locales/koKR.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T14:33:06+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2751"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2751:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T14:35:16+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2751"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2749:opened",
+   "payload": {
+    "additions": 10,
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 10,
+    "files": [
+     "Locales/zhTW.lua",
+     "Locales/zhTW_bosses.lua"
+    ],
+    "title": "Update zhTW"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T04:17:20+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2749"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2749:closed",
+   "payload": {
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T04:53:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2749"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2748:opened",
+   "payload": {
+    "additions": 2,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T00:29:11+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2748"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2748:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T00:32:40+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2748"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2747:opened",
+   "payload": {
+    "additions": 11,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 10,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Fix error when no test icons exist"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T22:05:01+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2747"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2747:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T22:22:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2747"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2746:opened",
+   "payload": {
+    "additions": 10,
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 10,
+    "files": [
+     "Locales/zhTW.lua",
+     "Locales/zhTW_bosses.lua"
+    ],
+    "title": "Update zhTW"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T19:41:12+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2746"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2746:merged",
+   "payload": {
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:28:07+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2746"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2745:opened",
+   "payload": {
+    "additions": 4,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/frFR.lua"
+    ],
+    "title": "update frFR"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T18:09:43+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2745"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2745:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T18:12:12+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2745"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2744:opened",
+   "payload": {
+    "additions": 7,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Let test auras reset themselves"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T12:27:23+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2744"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2744:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T17:07:46+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2744"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2742:opened",
+   "payload": {
+    "additions": 2,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Fix cooldown duration getting stuck"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T11:04:21+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2742"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2742:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T11:06:51+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2742"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2741:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T08:36:25+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2741"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2741:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T11:08:15+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2741"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2740:opened",
+   "payload": {
+    "additions": 4,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T04:38:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2740"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2740:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T04:52:49+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2740"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2738:opened",
+   "payload": {
+    "additions": 273,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 197,
+    "files": [
+     ".luacheckrc",
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Use a single anchor, rewrite test auras, and add support for centered growing"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T00:45:52+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2738"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2738:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T01:52:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2738"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2737:opened",
+   "payload": {
+    "additions": 9,
+    "author": "ntowle",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 7,
+    "files": [
+     "Core/BossPrototype.lua",
+     "Core/BossPrototype_Classic.lua",
+     "Core/Constants.lua"
+    ],
+    "title": "Core/BossPrototype: Fix `AddAutoTalkOption` and `AddMarkerOption` with new locale system"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T20:44:29+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2737"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2737:closed",
+   "payload": {
+    "author": "ntowle",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T23:13:17+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2737"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2736:opened",
+   "payload": {
+    "additions": 228,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 37,
+    "files": [
+     ".luacheckrc",
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Add emphasize option for cooldown text"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T20:37:36+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2736"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2736:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T21:20:26+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2736"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2735:opened",
+   "payload": {
+    "additions": 65,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 23,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Add option for icon zoom"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T13:57:18+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2735"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2735:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T16:03:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2735"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2734:opened",
+   "payload": {
+    "additions": 115,
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 12,
+    "files": [
+     "Options/Libs/AceGUIWidget-SharedDropdown.lua",
+     "Plugins/BattleRes.lua",
+     "Plugins/Pull.lua",
+     "Plugins/Sound.lua",
+     "Plugins/Victory.lua",
+     "Plugins/Wipe.lua",
+     "Tools/Keystones.lua"
+    ],
+    "title": "Add a search box to sound selection dropdowns"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:01:51+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2734"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2734:merged",
+   "payload": {
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T21:42:43+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2734"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2734:comment:0",
+   "payload": {
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "body": "First commit resulted in the sounds being rendered on every search, which gave fps issues. "
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:02:48+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2734"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2734:comment:1",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Nice work!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T21:42:49+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2734"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2733:opened",
+   "payload": {
+    "additions": 101,
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "BigWigs.toc",
+     "Plugins/BigWigs_Plugins.toc",
+     "Plugins/General.lua"
+    ],
+    "title": "Options: Add a General tab to easier master general font and sound settings"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:28:15+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2733"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2733:closed",
+   "payload": {
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T21:44:16+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2733"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2733:comment:0",
+   "payload": {
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "body": "I added the sounds, just to make it easier generally to view. \r\nI know they're still under the left side tab called _Sounds_.\r\nAny opinions on this? \r\n\r\n<img width=\"755\" height=\"477\" alt=\"{5FBA9757-5437-4573-B0D7-F1E57546C832}\" src=\"https://github.com/user-attachments/assets/7b680c7a-511e-4403-8889-06973e3d6ec4\" />\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:32:15+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2733"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2733:comment:1",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Not really feeling the concept of this right now. Gonna close it, but might revisit in future."
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T21:44:16+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2733"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2732:opened",
+   "payload": {
+    "additions": 20,
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "Locales/enUS.lua",
+     "Plugins/Colors.lua"
+    ],
+    "title": "Colors: Add Tank Buster and Healer Check color categories"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:21:34+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2732"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2732:closed",
+   "payload": {
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:28:51+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2732"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2732:comment:0",
+   "payload": {
+    "author": "Justw8",
+    "author_is_bot": false,
+    "body": "Purple is already our tank ability warning colour. Healer warnings are not just for healers as the whole raid cares usually and uses the others based on importance."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:28:01+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2732"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2732:comment:1",
+   "payload": {
+    "author": "Mahmud17",
+    "author_is_bot": false,
+    "body": "After your comment I just realised - I will close this down, thank you very much :) "
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:28:51+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2732"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2731:opened",
+   "payload": {
+    "additions": 13,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 13,
+    "files": [
+     "Locales/frFR.lua",
+     "Locales/frFR_bosses.lua",
+     "Locales/frFR_common.lua"
+    ],
+    "title": "update 3 french translation files"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:23:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2731"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2731:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T19:36:19+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2731"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2730:opened",
+   "payload": {
+    "additions": 2,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "Locales/koKR.lua",
+     "Locales/koKR_bosses.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T07:49:33+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2730"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2730:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T16:32:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2730"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2730:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thank you!\r\nYou can now use <https://github.com/BigWigsMods/BigWigs/wiki/Missing-Localization> to keep track of when anything is missing."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T16:40:49+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2730"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2729:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T05:25:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2729"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2729:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T16:30:14+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2729"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2728:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T04:45:12+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2728"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2728:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T16:29:57+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2728"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2728:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thank you!\r\nYou can now use <https://github.com/BigWigsMods/BigWigs/wiki/Missing-Localization> to keep track of when anything is missing."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T16:41:50+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2728"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2727:opened",
+   "payload": {
+    "additions": 15,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 15,
+    "files": [
+     "Locales/deDE_bosses.lua",
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T21:16:22+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2727"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2727:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T21:32:10+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2727"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2726:opened",
+   "payload": {
+    "additions": 85,
+    "author": "ntowle",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 92,
+    "files": [
+     "Core/BossPrototype.lua",
+     "Core/BossPrototype_Classic.lua",
+     "Core/Core.lua",
+     "Loader.lua",
+     "Options/Options.lua",
+     "Plugins/Statistics.lua"
+    ],
+    "title": "Improve LittleWigs detection and chat prints"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T18:40:00+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2726"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2726:merged",
+   "payload": {
+    "author": "ntowle",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T18:55:02+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2726"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2725:opened",
+   "payload": {
+    "additions": 52,
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 52,
+    "files": [
+     "Locales/esES.lua",
+     "Locales/esES_bosses.lua",
+     "Locales/esES_common.lua"
+    ],
+    "title": "Update Locale es es"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T18:04:15+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2725"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2725:merged",
+   "payload": {
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T19:05:30+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2725"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2725:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thanks. We automatically update this page that tells you if anything is ever missing:\r\nhttps://github.com/BigWigsMods/BigWigs/wiki/Missing-Localization"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T19:06:54+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2725"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2724:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/zhCN_bosses.lua"
+    ],
+    "title": "Update zhCN_bosses.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T11:46:07+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2724"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2724:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T12:37:45+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2724"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2723:opened",
+   "payload": {
+    "additions": 20,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 20,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update debuff notes for clarity in Chinese localization"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T23:55:07+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2723"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2723:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T23:58:09+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2723"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2722:opened",
+   "payload": {
+    "additions": 2,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/zhCN_bosses.lua"
+    ],
+    "title": "Update zhCN_bosses.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T23:42:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2722"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2722:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T23:48:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2722"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2721:opened",
+   "payload": {
+    "additions": 12,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 12,
+    "files": [
+     "Locales/koKR_bosses.lua",
+     "Locales/koKR_common.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T17:21:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2721"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2721:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T17:23:11+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2721"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2720:opened",
+   "payload": {
+    "additions": 5,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "Locales/koKR.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T14:05:47+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2720"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2720:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T16:59:37+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2720"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2719:opened",
+   "payload": {
+    "additions": 14,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 14,
+    "files": [
+     "Locales/frFR.lua",
+     "Locales/frFR_bosses.lua",
+     "Locales/frFR_common.lua"
+    ],
+    "title": "update 3 french translation files"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T12:51:41+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2719"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2719:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T17:01:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2719"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2718:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T04:46:26+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2718"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2718:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:37:51+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2718"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2717:opened",
+   "payload": {
+    "additions": 110,
+    "author": "ntowle",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 33,
+    "files": [
+     "Locales/deDE_common.lua",
+     "Locales/enUS_common.lua",
+     "Locales/esES_common.lua",
+     "Locales/esMX_common.lua",
+     "Locales/frFR_common.lua",
+     "Locales/itIT_common.lua",
+     "Locales/koKR_common.lua",
+     "Locales/ptBR_common.lua",
+     "Locales/ruRU_common.lua",
+     "Locales/zhCN_common.lua",
+     "Locales/zhTW_common.lua"
+    ],
+    "title": "Locales: Add more common locale"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T04:20:47+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2717"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2717:merged",
+   "payload": {
+    "author": "ntowle",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T17:11:02+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2717"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2716:opened",
+   "payload": {
+    "additions": 3,
+    "author": "0xjc",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "Plugins/Auras.lua",
+     "Plugins/Sound.lua"
+    ],
+    "title": "Fix aura filter and removed sound typos"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T01:22:52+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2716"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2716:merged",
+   "payload": {
+    "author": "0xjc",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T01:32:10+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2716"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2716:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thanks! Luckily this specific one was only ever in alpha and didn't hit release, appreciate it!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T01:32:45+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2716"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2715:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T00:36:48+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2715"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2715:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T01:42:01+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2715"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2714:opened",
+   "payload": {
+    "additions": 67,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 5,
+    "files": [
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Add option to set static border color"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T20:04:59+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2714"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2714:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T20:07:24+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2714"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2713:opened",
+   "payload": {
+    "additions": 1,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Correctly enable container with unit"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T19:48:52+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2713"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2713:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T19:50:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2713"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2712:opened",
+   "payload": {
+    "additions": 9,
+    "author": "KogasaPls",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Auras: fix the border backdrop width still being secret"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T18:01:00+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2712"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2712:merged",
+   "payload": {
+    "author": "KogasaPls",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T18:45:57+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2712"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2712:comment:0",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "body": "The template/mixin should account for this but doesn't, I've notified Blizzard about it, but for now I suppose this is a necessary ugly workaround."
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T18:13:17+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2712"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2712:comment:1",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "body": "Although I think generating anonymous functions on every update should be avoided, you can set it up once in initializeFrame and return an attribute on the frame that gets changed in the update logic."
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T18:16:40+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2712"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2712:comment:2",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "body": "Much better, thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T18:41:17+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2712"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2712:comment:3",
+   "payload": {
+    "author": "KogasaPls",
+    "author_is_bot": false,
+    "body": "> Although I think generating anonymous functions on every update should be avoided, you can set it up once in initializeFrame and return an attribute on the frame that gets changed in the update logic.\r\n\r\nAgreed, I've amended the PR."
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T18:41:29+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2712"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2711:opened",
+   "payload": {
+    "additions": 26,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 10,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Add tooltip option"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:30:44+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2711"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2711:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:33:06+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2711"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2710:opened",
+   "payload": {
+    "additions": 7,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Fix for invalid tank units and tanks by player name"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:22:40+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2710"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2710:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:25:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2710"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2709:opened",
+   "payload": {
+    "additions": 14,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 14,
+    "files": [
+     "Locales/koKR.lua",
+     "Locales/koKR_bosses.lua",
+     "MidnightLairs/BigWigs_MidnightLairs_Mainline.toc"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:19:11+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2709"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2709:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:24:20+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2709"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2708:opened",
+   "payload": {
+    "additions": 5,
+    "author": "KogasaPls",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Auras: fix secret width error when setting the border backdrop"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:11:53+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2708"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2708:merged",
+   "payload": {
+    "author": "KogasaPls",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:21:56+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2708"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2708:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T17:22:02+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2708"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2707:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:58:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2707"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2707:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T16:02:29+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2707"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2706:opened",
+   "payload": {
+    "additions": 1,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Zoom icon texture"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:57:14+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2706"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2706:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:58:02+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2706"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2705:opened",
+   "payload": {
+    "additions": 2,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Pass through validation first"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:51:54+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2705"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2705:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:57:33+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2705"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2704:opened",
+   "payload": {
+    "additions": 90,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Add color options to texts"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:47:26+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2704"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2704:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:53:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2704"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2703:opened",
+   "payload": {
+    "additions": 321,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 88,
+    "files": [
+     ".luacheckrc",
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: more border and dispel indicator customization"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:12:15+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2703"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2703:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:29:07+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2703"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2701:opened",
+   "payload": {
+    "additions": 1,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Plugins/Auras: Fix taint"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T11:32:37+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2701"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2701:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T13:23:13+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2701"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2700:opened",
+   "payload": {
+    "additions": 4,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/deDE_bosses.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T04:31:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2700"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2700:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T13:17:20+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2700"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2699:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/zhCN_bosses.lua"
+    ],
+    "title": "Update zhCN_bosses.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T01:41:55+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2699"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2699:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T13:22:38+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2699"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2698:opened",
+   "payload": {
+    "additions": 10,
+    "author": "p3lim",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Plugins/Auras.lua"
+    ],
+    "title": "Various auras fixes"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T23:28:14+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2698"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2698:merged",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T23:49:33+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2698"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2698:comment:0",
+   "payload": {
+    "author": "p3lim",
+    "author_is_bot": false,
+    "body": "For 005ab9256829d4b7f158376486a8223ee9710c67, this was the error without the fix:\r\n\r\n```\r\n1x BigWigs_Plugins/Auras.lua:1786: calling 'SetSize' on bad self (Attempt to access forbidden object from code tainted by an AddOn - Usage: self:SetSize(x, y))\r\n[BigWigs_Plugins/Auras.lua]:1786: in function <BigWigs_Plugins/Auras.lua:1785>\r\n[BigWigs_Plugins/Auras.lua]:1898: in function <BigWigs_Plugins/Auras.lua:1868>\r\n[BigWigs_Plugins/Auras.lua]:1660: in function 'UpdateAnchors'\r\n[BigWigs_Plugins/Auras.lua]:1612: in function '?'\r\n[BigWigs_Core/Core.lua]:53: in function <BigWigs_Core/Core.lua:47>\r\n```\r\n\r\nThis can probably be improved upon if you intend to allow all the other customization during combat, or if not, some user feedback ought to be provided."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T23:38:56+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2698"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2697:opened",
+   "payload": {
+    "additions": 55,
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 55,
+    "files": [
+     "Locales/zhTW.lua",
+     "Locales/zhTW_bosses.lua",
+     "Locales/zhTW_common.lua"
+    ],
+    "title": "Update zhTW"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T07:19:43+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2697"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2697:merged",
+   "payload": {
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T07:41:31+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2697"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2696:opened",
+   "payload": {
+    "additions": 6,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T01:39:38+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2696"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2696:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T03:20:27+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2696"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2695:opened",
+   "payload": {
+    "additions": 14,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 14,
+    "files": [
+     "Locales/frFR.lua",
+     "Locales/frFR_bosses.lua"
+    ],
+    "title": "update frFR and frFR_bosses"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:13:16+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2695"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2695:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:17:23+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2695"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2694:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T18:54:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2694"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2694:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T18:55:47+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2694"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2693:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T17:05:00+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2693"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2693:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T17:13:48+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2693"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2691:opened",
+   "payload": {
+    "additions": 4,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T03:47:54+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2691"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2691:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T13:59:34+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2691"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2690:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T01:00:44+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2690"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2690:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T02:06:19+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2690"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2689:opened",
+   "payload": {
+    "additions": 352,
+    "author": "nebularg",
+    "author_is_bot": false,
+    "changed_files": 47,
+    "deletions": 114,
+    "files": [
+     ".luacheckrc",
+     "Core/BossPrototype.lua",
+     "Core/Core.lua",
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Media/Sounds/AuraCountdowns/Amy/Amy_Countdown1.ogg",
+     "Media/Sounds/AuraCountdowns/Amy/Amy_Countdown10.ogg",
+     "Media/Sounds/AuraCountdowns/Amy/Amy_Countdown11.ogg",
+     "Media/Sounds/AuraCountdowns/Amy/Amy_Countdown12.ogg",
+     "Media/Sounds/AuraCountdowns/Amy/Amy_Countdown13.ogg",
+     "Media/Sounds/AuraCountdowns/Amy/Amy_Countdown14.ogg"
+    ],
+    "title": "Aura countdowns"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T22:39:59+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2689"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2689:merged",
+   "payload": {
+    "author": "nebularg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T00:20:33+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2689"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2688:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nebularg",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 28,
+    "files": [
+     "Options/Options.lua",
+     "Plugins/Sound.lua"
+    ],
+    "title": "Boss sound aura fixes"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T13:44:45+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2688"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2688:merged",
+   "payload": {
+    "author": "nebularg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T19:30:13+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2688"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2687:opened",
+   "payload": {
+    "additions": 2,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T00:21:31+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2687"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2687:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T00:29:41+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2687"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2686:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:46:17+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2686"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2686:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:47:00+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2686"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2685:opened",
+   "payload": {
+    "additions": 32,
+    "author": "Justw8",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 38,
+    "files": [
+     "Core/BossPrototype.lua",
+     "Options/Options.lua"
+    ],
+    "title": "BossPrototype: Fix registration of aura sounds"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T13:43:51+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2685"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2685:closed",
+   "payload": {
+    "author": "Justw8",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T20:42:08+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2685"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2684:opened",
+   "payload": {
+    "additions": 18,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 18,
+    "files": [
+     "Locales/frFR.lua",
+     "Locales/frFR_common.lua"
+    ],
+    "title": "update frFR and frFR_common"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:33:25+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2684"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2684:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T20:46:36+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2684"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2683:opened",
+   "payload": {
+    "additions": 18,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 18,
+    "files": [
+     "Locales/koKR.lua",
+     "Locales/koKR_common.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T08:20:25+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2683"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2683:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T20:45:43+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2683"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2682:opened",
+   "payload": {
+    "additions": 5,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "Locales/zhCN.lua",
+     "MidnightLairs/BigWigs_MidnightLairs_Mainline.toc"
+    ],
+    "title": "Update BigWigs_MidnightLairs_Mainline.toc"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T23:15:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2682"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2682:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T20:43:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2682"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2681:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T19:37:18+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2681"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2681:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T20:42:34+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2681"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2680:opened",
+   "payload": {
+    "additions": 12,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 12,
+    "files": [
+     "Locales/deDE.lua",
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T06:19:50+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2680"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2680:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T17:59:14+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2680"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2679:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T23:21:45+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2679"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2679:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T17:59:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2679"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2678:opened",
+   "payload": {
+    "additions": 13,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 13,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T01:08:46+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2678"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2678:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T15:42:14+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2678"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2677:opened",
+   "payload": {
+    "additions": 6,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T14:45:22+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2677"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2677:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T17:12:06+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2677"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2676:opened",
+   "payload": {
+    "additions": 6,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T00:02:36+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2676"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2676:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T17:12:29+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2676"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2675:opened",
+   "payload": {
+    "additions": 82,
+    "author": "Justw8",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 41,
+    "files": [
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Options/InstanceSharing.lua",
+     "Options/Sharing.lua"
+    ],
+    "title": "Sharing: Add aura settings to our exports and imports"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T18:00:17+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2675"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2675:merged",
+   "payload": {
+    "author": "Justw8",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T20:48:01+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2675"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2673:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/deDE_bosses.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T03:32:52+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2673"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2673:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T16:09:56+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2673"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2672:opened",
+   "payload": {
+    "additions": 335,
+    "author": "Justw8",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 99,
+    "files": [
+     "Core/BossPrototype.lua",
+     "Core/BossPrototype_Classic.lua",
+     "Core/Core.lua",
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Options/InstanceSharing.lua",
+     "Options/Options.lua",
+     "TheVenomousAbyss/TwinFangs.lua",
+     "TheVenomousAbyss/Vashnik.lua"
+    ],
+    "title": "Options: Aura Sound Options"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T20:03:10+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2672"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2672:merged",
+   "payload": {
+    "author": "Justw8",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T16:09:21+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2672"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2671:opened",
+   "payload": {
+    "additions": 3,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/koKR_bosses.lua"
+    ],
+    "title": "Update koKR_bosses.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T11:47:43+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2671"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2671:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T19:35:17+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2671"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2670:opened",
+   "payload": {
+    "additions": 24,
+    "author": "ntowle",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "Core/BossPrototype.lua",
+     "Core/BossPrototype_Classic.lua",
+     "gen_option_values.lua"
+    ],
+    "title": "Core/BossPrototype: Add `SecretMessage`"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T20:38:08+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2670"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2670:merged",
+   "payload": {
+    "author": "ntowle",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T19:51:45+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2670"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2669:opened",
+   "payload": {
+    "additions": 3,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/zhCN_bosses.lua"
+    ],
+    "title": "Update zhCN_bosses.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T01:39:40+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2669"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2669:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T19:35:49+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2669"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2668:opened",
+   "payload": {
+    "additions": 6,
+    "author": "gufo179",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "Locales/itIT.lua"
+    ],
+    "title": "Update itIT.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T15:18:26+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2668"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2668:merged",
+   "payload": {
+    "author": "gufo179",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T19:39:01+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2668"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2668:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T19:38:50+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2668"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2666:opened",
+   "payload": {
+    "additions": 119,
+    "author": "Pipin90",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 119,
+    "files": [
+     "Locales/esMX.lua"
+    ],
+    "title": "esMX: Full localization update and terminology cleanup"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T02:32:45+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2666"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2666:merged",
+   "payload": {
+    "author": "Pipin90",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T19:49:56+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2666"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2666:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T19:50:02+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2666"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2664:opened",
+   "payload": {
+    "additions": 2280,
+    "author": "nebularg",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 34,
+    "files": [
+     ".luacheckrc",
+     "BigWigs.toc",
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Options/Options.lua",
+     "Plugins/Auras.lua",
+     "Plugins/BigWigs_Plugins.toc",
+     "Plugins/PrivateAuras.lua"
+    ],
+    "title": "Add Auras module to supersede PrivateAuras"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T23:13:09+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2664"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2664:merged",
+   "payload": {
+    "author": "nebularg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T17:54:39+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2664"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2663:opened",
+   "payload": {
+    "additions": 47,
+    "author": "ikappas",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     ".luacheckrc",
+     "Plugins/Pull.lua"
+    ],
+    "title": "Plugins/Pull: Fix Auto Combat Log for Mythic+"
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T08:25:46+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2663"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2663:merged",
+   "payload": {
+    "author": "ikappas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T14:49:53+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2663"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2663:comment:0",
+   "payload": {
+    "author": "ikappas",
+    "author_is_bot": false,
+    "body": "I have tested this with several mythic+ keys and works as expected"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T20:48:10+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2663"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2663:comment:1",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T14:50:01+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2663"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2662:opened",
+   "payload": {
+    "additions": 1,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/koKR.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T05:19:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2662"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2662:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T14:42:47+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2662"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2660:opened",
+   "payload": {
+    "additions": 12,
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "Locales/esES.lua"
+    ],
+    "title": "Update esES.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T19:45:22+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2660"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2660:merged",
+   "payload": {
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T03:33:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2660"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2660:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T03:33:47+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2660"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2659:opened",
+   "payload": {
+    "additions": 1,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/koKR.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T09:06:15+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2659"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2659:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T16:56:53+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2659"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2658:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/frFR.lua"
+    ],
+    "title": "update frFR"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T05:14:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2658"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2658:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T16:57:19+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2658"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2657:opened",
+   "payload": {
+    "additions": 16,
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 16,
+    "files": [
+     "Locales/esES.lua"
+    ],
+    "title": "Update esES.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T11:34:00+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2657"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2657:closed",
+   "payload": {
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T16:57:36+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2657"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2657:comment:0",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "I'm not sure where you are looking, but if you look here, you can see your changes have been applied:\r\n<https://github.com/BigWigsMods/BigWigs/blob/master/Locales/esES.lua#L562>"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T13:26:44+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2657"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2655:opened",
+   "payload": {
+    "additions": 96,
+    "author": "Justw8",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 94,
+    "files": [
+     "Core/BossPrototype.lua",
+     "Core/BossPrototype_Classic.lua",
+     "Core/Core.lua",
+     "Options/InstanceSharing.lua",
+     "Options/Options.lua",
+     "Options/Sharing.lua",
+     "gen_option_values.lua"
+    ],
+    "title": "Options: Early plumbing for `Private Aura` to `Aura Sound` settings"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T20:12:27+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2655"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2655:closed",
+   "payload": {
+    "author": "Justw8",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T16:09:40+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2655"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2654:opened",
+   "payload": {
+    "additions": 138,
+    "author": "Justw8",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 49,
+    "files": [
+     "API.lua",
+     "Options/Options.lua",
+     "Options/Sharing.lua"
+    ],
+    "title": "API: Expand `RequestProfile` to include boss options"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T16:56:02+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2654"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2654:merged",
+   "payload": {
+    "author": "Justw8",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T20:05:50+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2654"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2653:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T06:06:19+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2653"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2653:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T12:27:04+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2653"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2652:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T00:22:37+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2652"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2652:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T00:49:20+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2652"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2651:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T11:57:06+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2651"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2651:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T14:25:19+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2651"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2650:opened",
+   "payload": {
+    "additions": 28,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 28,
+    "files": [
+     "Locales/frFR.lua",
+     "Locales/frFR_common.lua"
+    ],
+    "title": "update frFR and common"
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T13:05:10+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2650"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2650:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T13:17:18+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2650"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2648:opened",
+   "payload": {
+    "additions": 23,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 23,
+    "files": [
+     "Locales/koKR.lua"
+    ],
+    "title": "Update koKR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T00:55:41+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2648"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2648:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T03:58:38+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2648"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2646:opened",
+   "payload": {
+    "additions": 7,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T01:17:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2646"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2646:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T10:38:33+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2646"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2645:opened",
+   "payload": {
+    "additions": 7,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T20:40:57+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2645"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2645:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T21:27:09+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2645"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2643:opened",
+   "payload": {
+    "additions": 80,
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 80,
+    "files": [
+     "Locales/esES.lua",
+     "Locales/esES_bosses.lua",
+     "Locales/esES_common.lua"
+    ],
+    "title": "Update locale esES"
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T14:26:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2643"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2643:merged",
+   "payload": {
+    "author": "VhegaWoW",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:19:12+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2643"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2642:opened",
+   "payload": {
+    "additions": 13,
+    "author": "anon1231823",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 13,
+    "files": [
+     "Locales/esMX_common.lua"
+    ],
+    "title": "Update esMX_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T03:10:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2642"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2642:merged",
+   "payload": {
+    "author": "anon1231823",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:57:26+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2642"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2641:opened",
+   "payload": {
+    "additions": 16,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 16,
+    "files": [
+     "Locales/deDE.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T20:30:23+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2641"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2641:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:55:38+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2641"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2640:opened",
+   "payload": {
+    "additions": 16,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 16,
+    "files": [
+     "Locales/zhCN.lua"
+    ],
+    "title": "Update zhCN.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T00:49:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2640"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2640:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T02:11:01+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2640"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2639:opened",
+   "payload": {
+    "additions": 18,
+    "author": "Meruski",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 18,
+    "files": [
+     "Locales/esES_bosses.lua"
+    ],
+    "title": "Update esES_bosses.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T22:29:24+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2639"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2639:merged",
+   "payload": {
+    "author": "Meruski",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T02:12:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2639"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:opened",
+   "payload": {
+    "additions": 103,
+    "author": "Aumaeva",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 103,
+    "files": [
+     "Locales/ruRU.lua",
+     "Locales/ruRU_common.lua"
+    ],
+    "title": "Update ruRU"
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T20:47:43+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:merged",
+   "payload": {
+    "author": "Aumaeva",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T16:30:56+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:review:0",
+   "payload": {
+    "author": "m33shoq",
+    "author_is_bot": false,
+    "body": "",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T00:24:56+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:review:1",
+   "payload": {
+    "author": "m33shoq",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T01:11:55+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:review:2",
+   "payload": {
+    "author": "m33shoq",
+    "author_is_bot": false,
+    "body": "",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T09:42:24+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:review:3",
+   "payload": {
+    "author": "Aumaeva",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T19:54:02+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:review:4",
+   "payload": {
+    "author": "m33shoq",
+    "author_is_bot": false,
+    "body": "Looks good to me",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T19:56:23+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:review:5",
+   "payload": {
+    "author": "Aumaeva",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T20:05:12+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:comment:0",
+   "payload": {
+    "author": "Aumaeva",
+    "author_is_bot": false,
+    "body": "ty for helping with mistakes!"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T19:55:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2638:comment:1",
+   "payload": {
+    "author": "funkydude",
+    "author_is_bot": false,
+    "body": "Thank you for your work!"
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T16:30:36+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2638"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2636:opened",
+   "payload": {
+    "additions": 2,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "TheVenomousAbyss/BigWigs_TheVenomousAbyss_Mainline.toc"
+    ],
+    "title": "Update koKR"
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T15:11:15+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2636"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2636:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T15:55:33+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2636"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2635:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "TheVenomousAbyss/BigWigs_TheVenomousAbyss_Mainline.toc"
+    ],
+    "title": "Update zhCN/zhTW"
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T11:46:25+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2635"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2635:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T15:55:13+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2635"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2634:opened",
+   "payload": {
+    "additions": 2,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/koKR_common.lua"
+    ],
+    "title": "Update koKR_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T16:47:19+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2634"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2634:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T00:49:23+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2634"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2633:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T05:28:38+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2633"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2633:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T00:48:08+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2633"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2632:opened",
+   "payload": {
+    "additions": 3,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T00:34:52+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2632"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2632:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T00:47:16+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2632"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2631:opened",
+   "payload": {
+    "additions": 38,
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 38,
+    "files": [
+     "Locales/zhTW.lua",
+     "Locales/zhTW_bosses.lua",
+     "Locales/zhTW_common.lua"
+    ],
+    "title": "Update zhTW"
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T11:05:00+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2631"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2631:merged",
+   "payload": {
+    "author": "EKE00372",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T16:30:50+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2631"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2630:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "Locales/zhCN_bosses.lua"
+    ],
+    "title": "Update zhCN_bosses.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T12:56:51+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2630"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2630:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T13:12:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2630"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2629:opened",
+   "payload": {
+    "additions": 6,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "Locales/frFR_common.lua"
+    ],
+    "title": "Update frFR_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T17:19:42+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2629"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2629:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T19:24:06+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2629"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2628:opened",
+   "payload": {
+    "additions": 11,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 11,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T12:33:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2628"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2628:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T16:53:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2628"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2627:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T17:31:32+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2627"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2627:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T18:56:43+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2627"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2626:opened",
+   "payload": {
+    "additions": 1,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Locales/koKR_common.lua"
+    ],
+    "title": "Update koKR_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T16:43:32+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2626"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2626:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T16:47:44+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2626"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2624:opened",
+   "payload": {
+    "additions": 15,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 15,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T11:46:38+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2624"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2624:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T15:01:41+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2624"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2623:opened",
+   "payload": {
+    "additions": 8,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "Locales/koKR_common.lua"
+    ],
+    "title": "Update koKR_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T01:51:03+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2623"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2623:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T15:00:13+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2623"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2622:opened",
+   "payload": {
+    "additions": 6,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T20:24:57+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2622"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2622:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T14:59:20+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2622"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2621:opened",
+   "payload": {
+    "additions": 523,
+    "author": "Justw8",
+    "author_is_bot": false,
+    "changed_files": 15,
+    "deletions": 33,
+    "files": [
+     "API.lua",
+     "Loader.lua",
+     "Locales/deDE.lua",
+     "Locales/enUS.lua",
+     "Locales/esES.lua",
+     "Locales/esMX.lua",
+     "Locales/frFR.lua",
+     "Locales/itIT.lua",
+     "Locales/koKR.lua",
+     "Locales/ptBR.lua",
+     "Locales/ruRU.lua",
+     "Locales/zhCN.lua",
+     "Locales/zhTW.lua",
+     "Options/Options.lua",
+     "Options/Sharing.lua"
+    ],
+    "title": "Options: Add boss export for multiple instances at the same time"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T20:08:34+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2621"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2621:merged",
+   "payload": {
+    "author": "Justw8",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T17:07:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2621"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2620:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T20:33:55+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2620"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2620:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T21:25:36+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2620"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2619:opened",
+   "payload": {
+    "additions": 2,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:14:18+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2619"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2619:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:20:54+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2619"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2616:opened",
+   "payload": {
+    "additions": 3,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/koKR_common.lua"
+    ],
+    "title": "Update koKR_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T06:54:53+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2616"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2616:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T15:17:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2616"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2615:opened",
+   "payload": {
+    "additions": 31,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 31,
+    "files": [
+     "Locales/zhCN.lua",
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T23:28:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2615"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2615:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T15:18:05+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2615"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2614:opened",
+   "payload": {
+    "additions": 38,
+    "author": "asophiel2129",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 38,
+    "files": [
+     "Locales/esMX_common.lua"
+    ],
+    "title": "Update esMX_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:56:21+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2614"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2614:merged",
+   "payload": {
+    "author": "asophiel2129",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:24:31+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2614"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2613:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:17:10+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2613"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2613:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:18:59+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2613"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2612:opened",
+   "payload": {
+    "additions": 52,
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 52,
+    "files": [
+     "Locales/frFR.lua",
+     "Locales/frFR_common.lua"
+    ],
+    "title": "update frFR.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:37:45+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2612"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2612:merged",
+   "payload": {
+    "author": "Alyndel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:02:28+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2612"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2611:opened",
+   "payload": {
+    "additions": 15,
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 15,
+    "files": [
+     "Locales/zhCN_common.lua"
+    ],
+    "title": "Update zhCN_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:34:40+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2611"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2611:merged",
+   "payload": {
+    "author": "nanjuekaien1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:07:12+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2611"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2610:opened",
+   "payload": {
+    "additions": 10,
+    "author": "007bbb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 10,
+    "files": [
+     "Locales/koKR_common.lua"
+    ],
+    "title": "Update koKR_common.lua"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:56:27+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2610"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2610:merged",
+   "payload": {
+    "author": "007bbb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:04:35+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2610"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2609:opened",
+   "payload": {
+    "additions": 10,
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 10,
+    "files": [
+     "Locales/deDE_common.lua"
+    ],
+    "title": "Update deDE"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:12:53+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2609"
+  },
+  {
+   "evidence_id": "pr:BigWigsMods/BigWigs#2609:merged",
+   "payload": {
+    "author": "Dynaletik",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:03:20+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/pull/2609"
+  }
+ ],
+ "repo": "BigWigsMods/BigWigs",
+ "window": "post_t"
+}

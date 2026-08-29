@@ -1,0 +1,554 @@
+{
+ "captured_at": "2026-08-29T19:46:29.802787+00:00",
+ "content_sha256": "beae634a76c469ec68c8988526328953bf656cff5594ac6ccdaf6cbae5bc5a86",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:Signban/Signban-client:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": null,
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "JavaScript",
+    "pushed_at": "2026-05-29T04:42:42Z",
+    "stargazer_count": 0
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T11:06:44+00:00",
+   "url": "https://github.com/Signban/Signban-client"
+  },
+  {
+   "evidence_id": "repo:Signban/Signban-client:readme",
+   "payload": {
+    "commit_oid": "bcdfbc5ee1c5808c80c275f81f66586a6f6e600a",
+    "kind": "readme",
+    "text": "# React + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.\n\nCurrently, two official plugins are available:\n\n- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)\n- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)\n\n## React Compiler\n\nThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).\n\n## Expanding the ESLint configuration\n\nIf you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:42:42+00:00",
+   "url": "https://github.com/Signban/Signban-client/blob/bcdfbc5ee1c5808c80c275f81f66586a6f6e600a/README.md"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#16:opened",
+   "payload": {
+    "additions": 9268,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 64,
+    "deletions": 1,
+    "files": [
+     ".env.example",
+     ".gitignore",
+     "README.md",
+     "eslint.config.js",
+     "index.html",
+     "package-lock.json",
+     "package.json",
+     "public/android-chrome-192x192.png",
+     "public/android-chrome-512x512.png",
+     "public/apple-touch-icon.png",
+     "public/favicon-16x16.png",
+     "public/favicon-32x32.png",
+     "public/favicon.ico",
+     "public/favicon.svg",
+     "public/icons.svg",
+     "public/site.webmanifest",
+     "src/App.jsx",
+     "src/assets/logo-dark.png",
+     "src/assets/logo-light.png",
+     "src/components/board/AvatarGroup.jsx"
+    ],
+    "title": "Development"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:25:55+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/16"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#16:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:36:23+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/16"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#16:review:0",
+   "payload": {
+    "author": "brahmantiodiaz",
+    "author_is_bot": false,
+    "body": "Good job guys",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:35:49+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/16"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#16:review:1",
+   "payload": {
+    "author": "brahmantiodiaz",
+    "author_is_bot": false,
+    "body": "nice",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:36:07+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/16"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#15:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     ".env.example",
+     "src/services/Socket.js"
+    ],
+    "title": "fix: socket from diaz"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:21:51+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/15"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#15:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:22:01+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/15"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#14:opened",
+   "payload": {
+    "additions": 406,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 283,
+    "files": [
+     "src/components/board/BoardHeader.jsx",
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/components/modals/CreateBoardModalContent.jsx",
+     "src/pages/BoardDetail.jsx"
+    ],
+    "title": "add: editable card title"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:59:29+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/14"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#14:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:41:56+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/14"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#13:opened",
+   "payload": {
+    "additions": 479,
+    "author": "ramaatha",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 29,
+    "files": [
+     "src/App.jsx",
+     "src/index.css",
+     "src/pages/LandingPage.jsx"
+    ],
+    "title": "feat: add landing page"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:51:58+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/13"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#13:merged",
+   "payload": {
+    "author": "ramaatha",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:47:06+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/13"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#12:opened",
+   "payload": {
+    "additions": 198,
+    "author": "brahmantiodiaz",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 66,
+    "files": [
+     "src/components/modals/AddBoardMemberModalContent.jsx",
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/hooks/useBoardSocket.js",
+     "src/pages/BoardDetail.jsx"
+    ],
+    "title": "Feat/socket card detail"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:58:40+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/12"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#12:merged",
+   "payload": {
+    "author": "brahmantiodiaz",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:59:20+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/12"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#11:opened",
+   "payload": {
+    "additions": 532,
+    "author": "lluthfiamalia14",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 35,
+    "files": [
+     "src/App.jsx",
+     "src/pages/SettingsPage.jsx",
+     "src/services/AuthService.js",
+     "src/services/api.js"
+    ],
+    "title": "Feat/settings page"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:55:29+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/11"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#11:merged",
+   "payload": {
+    "author": "lluthfiamalia14",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:41:59+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/11"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#10:opened",
+   "payload": {
+    "additions": 663,
+    "author": "brahmantiodiaz",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 645,
+    "files": [
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/services/BoardService.js"
+    ],
+    "title": "Feat/cover image"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:45:40+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/10"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#10:merged",
+   "payload": {
+    "author": "brahmantiodiaz",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:45:49+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/10"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#9:opened",
+   "payload": {
+    "additions": 39,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/services/BoardService.js"
+    ],
+    "title": "feat: implement AI generated checklist"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:22:06+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/9"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#9:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:28:56+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/9"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#8:opened",
+   "payload": {
+    "additions": 59,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/services/BoardService.js"
+    ],
+    "title": "feat: delete card"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:43:51+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/8"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#8:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:59:59+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/8"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#7:opened",
+   "payload": {
+    "additions": 111,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/components/modals/AddListModalContent.jsx",
+     "src/pages/BoardDetail.jsx"
+    ],
+    "title": "feat: add List modal"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:18:21+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/7"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#7:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:25:36+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/7"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#6:opened",
+   "payload": {
+    "additions": 359,
+    "author": "ramaatha",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 194,
+    "files": [
+     "src/components/navbar.jsx",
+     "src/hooks/useNotification.js",
+     "src/services/NotificationService.js"
+    ],
+    "title": "feat: add notification message and badges"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:10:35+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/6"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#6:merged",
+   "payload": {
+    "author": "ramaatha",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:10:45+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/6"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#5:opened",
+   "payload": {
+    "additions": 379,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 43,
+    "files": [
+     "src/components/modals/AddCardModalContent.jsx",
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/pages/BoardDetail.jsx",
+     "src/services/BoardService.js"
+    ],
+    "title": "Feat/card detail"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T12:28:58+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/5"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#5:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:55:41+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/5"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#4:opened",
+   "payload": {
+    "additions": 92,
+    "author": "lluthfiamalia14",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/App.jsx",
+     "src/pages/ResetPasswordPage.jsx"
+    ],
+    "title": "feat: reset password page"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T12:16:57+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/4"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#4:merged",
+   "payload": {
+    "author": "lluthfiamalia14",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T12:23:54+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/4"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#3:opened",
+   "payload": {
+    "additions": 413,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 210,
+    "files": [
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/pages/BoardDetail.jsx",
+     "src/services/BoardService.js"
+    ],
+    "title": "feat: comment post, description post, checklist wiring"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T11:22:47+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/3"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#3:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T11:23:41+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/3"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#2:opened",
+   "payload": {
+    "additions": 68,
+    "author": "lluthfiamalia14",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 14,
+    "files": [
+     "src/pages/RegisterPage.jsx"
+    ],
+    "title": "Feat/register page"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T11:06:10+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/2"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#2:merged",
+   "payload": {
+    "author": "lluthfiamalia14",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T11:08:33+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/2"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#1:opened",
+   "payload": {
+    "additions": 1041,
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 796,
+    "files": [
+     "src/App.jsx",
+     "src/components/modals/CardDetailModalContent.jsx",
+     "src/pages/BoardDetail.jsx"
+    ],
+    "title": "Feat/card detail"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T09:53:32+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/1"
+  },
+  {
+   "evidence_id": "pr:Signban/Signban-client#1:merged",
+   "payload": {
+    "author": "Behrliebe",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T09:55:15+00:00",
+   "url": "https://github.com/Signban/Signban-client/pull/1"
+  }
+ ],
+ "repo": "Signban/Signban-client",
+ "window": "pre_t"
+}

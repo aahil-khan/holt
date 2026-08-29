@@ -507,3 +507,59 @@ measurement of it.
 
 **Decision.** Kept. All headline figures are now reported as mean ± half-range,
 and the single-run numbers in earlier entries are left as they were written.
+
+---
+
+## Iteration 8 — an adversarial review, and what it broke (2026-08-30)
+
+**Tried.** A reviewer given the rubric and told to attack the submission
+aggressively, with read-only access and instructions to verify every number
+itself rather than trust the docs.
+
+**Why.** Everything measured so far had been measured by the people who built
+it. "Attack our own metric before a judge does" only works if someone actually
+attacks it.
+
+**What it found, verified independently before acting on any of it:**
+
+**The uncertainty was reported on the wrong axis.** The README said Holt's worst
+run beat the baseline's best and that the intervals did not overlap. Those
+intervals measure how much the model wobbles between runs. They say nothing
+about whether 22 repositories support the difference. Measured over
+*repositories* — 20,000 bootstrap resamples plus exact McNemar:
+
+| Run | McNemar p | Bootstrap MCC difference | P(difference ≤ 0) |
+|---|---|---|---|
+| 1 | 0.39 | +0.30 [−0.37, +0.93] | 0.18 |
+| 2 | 0.55 | +0.18 [−0.41, +0.76] | 0.27 |
+| 3 | 1.00 | +0.05 [−0.62, +0.71] | 0.44 |
+
+**At 22 repositories the aggregate difference is not statistically
+distinguishable.** The README now says so, and `eval/stats.py` prints it. What
+the sample does carry is trap rejection (4/5 against 0/5, Fisher exact p =
+0.048) and the positive control (3/3 against 1/3), both stable across all runs.
+
+**The arithmetic gate never binds.** Setting `MIN_MERGES` and
+`MIN_DISTINCT_AUTHORS` to zero leaves all 22 verdicts and the confusion matrix
+identical. One of the four design choices the README calls load-bearing does
+nothing on this pool.
+
+**A user-visible claim was false.** `verdict.py` printed "15 outsider merges from
+72 people" for nixpkgs; `distinct_outsider_authors` counts everyone who
+*attempted*, not everyone who *landed*. The correct figure is 15 merges by 15
+people out of 100 attempts by 72. Fixed, with a test, and a separate
+`distinct_merged_authors` signal added.
+
+**The reproduction guide had drifted.** It promised `42 passed` (actual 47) and
+called F1 the primary metric, contradicting the README. Both are the first things
+a reproducibility grader checks. Expected outputs are now pasted from actual runs,
+and `eval/aggregate.py` gives the headline means a documented reproduction path —
+previously the most prominent figures were the least checkable ones.
+
+**Decision.** All of the above corrected. The reviewer's score was 68 against our
+own estimate of 88; the gap was mostly these four items plus label sensitivity,
+which is the next entry.
+
+**Not everything it reported was right.** It flagged a stale "single run" line in
+the README that had already been removed. Findings were verified before being
+acted on, which is the same rule this project applies to its own claims.

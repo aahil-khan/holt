@@ -50,9 +50,26 @@ temporal cutoff neither method could see. 22 are gradable.
 | baseline solution (one prompt over README + metadata) | 0.28 ±0.07 | 0.64 | 0.68 | 0.62 | 0.67 |
 | **Holt** | **0.46 ±0.05** | **0.70 ±0.02** | 0.83 ±0.02 | 0.90 ±0.04 | 0.50 ±0.00 |
 
-Mean and half-range over **three independent live runs**, not one lucky number.
-**Holt's worst run (0.46 − 0.07 = 0.39) still beats the baseline's best (0.33).**
-The intervals do not overlap.
+Mean and half-range over **three independent live runs**.
+
+**That interval measures the wrong thing, and we are saying so.** ±0.05 is how
+much the language model wobbles between runs. It is not how much a
+22-repository sample can tell you. Measured over repositories instead —
+bootstrap resampling, 20,000 draws — the difference between Holt and the
+baseline is **+0.05 to +0.30 depending on the run, with a 95% interval that
+spans zero in all three** (`P(difference ≤ 0)` = 0.18, 0.27, 0.44). Exact
+McNemar on per-repository correctness gives p = 0.39, 0.55, 1.00.
+
+**At this sample size the aggregate difference is not statistically
+distinguishable.** Run `PYTHONPATH=. uv run python eval/stats.py` to see it.
+
+Two results the sample *can* carry, both robust across all three runs:
+
+- **Trap rejection.** Repositories with 100+ inbound outsider attempts and zero
+  qualifying contributions: Holt rejects 4 of 5, the baseline 0 of 5 (Fisher
+  exact p = 0.048).
+- **Positive control.** Three verified-genuine repositories outside the pool:
+  Holt recovers 3 of 3, the baseline 1 of 3.
 
 **The constant answers are in that table on purpose.** F1 was this project's
 original primary metric, and on a pool that is 64% positive it is degenerate:
@@ -64,14 +81,12 @@ Matthews correlation is the honest headline, because it is **0.00 for any
 constant strategy**. Holt reaches 0.49 against the baseline's 0.33 — a 48%
 relative improvement no trivial answer can fake.
 
-**Where the advantage is, and where it is not.** Holt finds 13 of 14 genuine
-opportunities against the baseline's 10 (sensitivity 0.93 vs 0.71). Its
-specificity is *worse* — 0.50 against 0.62 — so it over-recommends on ordinary
-repositories. What it does not do is fall for the extreme cases: among
-repositories with a hundred or more inbound outsider attempts and **zero**
-qualifying contributions, Holt rejects four of five and the baseline none of
-five, while the baseline recommends `is-a-dev/register` and
-`SecureBananaLabs/bug-bounty` outright.
+**Where the advantage is, and where it is not.** Averaged over three runs Holt
+recovers 12.7 of 14 genuine opportunities against the baseline's 8.7
+(sensitivity 0.90 vs 0.62). Its **specificity is worse** — 0.50 against 0.67 —
+so it over-recommends on ordinary repositories. A user following Holt tries more
+repositories than they need to; what they do not do is spend a week on a
+registry.
 
 **Positive control.** A detector that answers "not viable" to everything would
 reject every trap in the table above and look excellent doing it. So three

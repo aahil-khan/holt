@@ -1,0 +1,249 @@
+{
+ "captured_at": "2026-08-29T19:48:56.359381+00:00",
+ "content_sha256": "144fe62e2932de5bbbb5ef413f244e520cc3649cf2efa81b975691eda909b939",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#126:opened",
+   "payload": {
+    "additions": 9,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "academiapp/apps/treinos/serializers.py"
+    ],
+    "title": "adi\u00e7\u00e3o do get_exercicios no json dos treinos para consumir no reactna\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T19:03:43+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/126"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#126:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T19:03:51+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/126"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#125:opened",
+   "payload": {
+    "additions": 2,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "academiapp/apps/anamneses/serializer.py"
+    ],
+    "title": "adi\u00e7\u00e3o do id no serializers do anamneses"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T19:32:04+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/125"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#125:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T19:32:13+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/125"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#124:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/templates/base.html"
+    ],
+    "title": "Corre\u00e7\u00e3o bot\u00e3o de login na home"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:15:34+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/124"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#124:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:16:31+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/124"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#123:opened",
+   "payload": {
+    "additions": 30,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 29,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/apps/contas/urls.py",
+     "academiapp/templates/base.html"
+    ],
+    "title": "Ajustes contas(accounts)"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:06:08+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/123"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#123:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:06:16+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/123"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#122:opened",
+   "payload": {
+    "additions": 14,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/contas/urls.py"
+    ],
+    "title": "criacao das urls app contas"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:51:41+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/122"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#122:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:51:49+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/122"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#121:opened",
+   "payload": {
+    "additions": 155,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/alunos/views.py",
+     "academiapp/templates/base.html",
+     "academiapp/templates/contas/add_user.html",
+     "academiapp/templates/contas/user_change_information.html",
+     "academiapp/templates/contas/user_change_password.html",
+     "academiapp/templates/contas/user_login.html"
+    ],
+    "title": "Templates contas"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:51:18+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/121"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#121:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:51:26+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/121"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#120:opened",
+   "payload": {
+    "additions": 70,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "academiapp/apps/contas/views.py"
+    ],
+    "title": "criado as views do app contas"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:57:49+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/120"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#120:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:57:58+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/120"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#119:opened",
+   "payload": {
+    "additions": 32,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/contas/__init__.py",
+     "academiapp/apps/contas/admin.py",
+     "academiapp/apps/contas/apps.py",
+     "academiapp/apps/contas/forms.py",
+     "academiapp/apps/contas/migrations/__init__.py",
+     "academiapp/apps/contas/models.py",
+     "academiapp/apps/contas/tests.py",
+     "academiapp/apps/contas/views.py"
+    ],
+    "title": "declarado o projeto contas."
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:56:16+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/119"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#119:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:56:50+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/119"
+  }
+ ],
+ "repo": "anleaes/2026-1-SDM-Segunda-Noite-ZS-08",
+ "window": "post_t"
+}

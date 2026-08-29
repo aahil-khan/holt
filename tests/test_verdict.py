@@ -17,6 +17,7 @@ def signals(**over) -> Signals:
         median_first_response_hours=12.0,
         bot_share=0.1,
         distinct_outsider_authors=4,
+        distinct_merged_authors=4,
     )
     base.update(over)
     return Signals(**base)

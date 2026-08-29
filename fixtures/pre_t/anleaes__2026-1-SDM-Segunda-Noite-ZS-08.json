@@ -1,0 +1,3693 @@
+{
+ "captured_at": "2026-08-29T19:48:53.156005+00:00",
+ "content_sha256": "6b7ad4011853f2e5190608ad7141759154e12a98a4f17f7dd37493192ef1355f",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:anleaes/2026-1-SDM-Segunda-Noite-ZS-08:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": null,
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-06-08T19:03:51Z",
+    "stargazer_count": 1
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T23:28:39+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08"
+  },
+  {
+   "evidence_id": "repo:anleaes/2026-1-SDM-Segunda-Noite-ZS-08:readme",
+   "payload": {
+    "commit_oid": "765f483429933f5adf9425e5ae940d80c1175c4d",
+    "kind": "readme",
+    "text": "# 2026-1-SDM-Segunda-Noite-ZS-08\n. trabalho\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:15:31+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/blob/765f483429933f5adf9425e5ae940d80c1175c4d/README.md"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#118:opened",
+   "payload": {
+    "additions": 5,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "academiapp/academiapp/settings.py"
+    ],
+    "title": "Adi\u00e7\u00e3o cors rn"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:09:19+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/118"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#118:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:15:32+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/118"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#117:opened",
+   "payload": {
+    "additions": 70,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 7,
+    "files": [
+     "academiapp/apps/planosalimentares/urls.py",
+     "academiapp/apps/refeicoes/views.py",
+     "academiapp/templates/base.html",
+     "academiapp/templates/planosalimentares/add_planoalimentar.html",
+     "academiapp/templates/planosalimentares/list_planosalimentares.html",
+     "academiapp/templates/refeicoes/add_refeicao.html"
+    ],
+    "title": "Ajuste views refeicoes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:36:32+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/117"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#117:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:36:40+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/117"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#116:opened",
+   "payload": {
+    "additions": 65,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 3,
+    "files": [
+     "academiapp/apps/planosalimentares/urls.py",
+     "academiapp/templates/base.html",
+     "academiapp/templates/planosalimentares/add_planoalimentar.html",
+     "academiapp/templates/planosalimentares/list_planosalimentares.html"
+    ],
+    "title": "Planosalimentares urls monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:28:31+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/116"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#116:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:36:42+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/116"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#115:opened",
+   "payload": {
+    "additions": 57,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "academiapp/apps/planosalimentares/forms.py",
+     "academiapp/apps/planosalimentares/views.py"
+    ],
+    "title": "Planosalimentares views monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:14:19+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/115"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#115:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:14:28+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/115"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#114:opened",
+   "payload": {
+    "additions": 298,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 15,
+    "files": [
+     "academiapp/apps/treinos/urls.py",
+     "academiapp/apps/treinos/views.py",
+     "academiapp/templates/base.html",
+     "academiapp/templates/treinos/finalizar_treino.html",
+     "academiapp/templates/treinos/list_exercicios_add.html",
+     "academiapp/templates/treinos/list_treinos.html",
+     "academiapp/templates/treinos/montar_treino.html",
+     "academiapp/templates/treinos/view_treino.html"
+    ],
+    "title": "Ajustes treino itemtreino exercicios"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:36:17+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/114"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#114:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:36:27+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/114"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#113:opened",
+   "payload": {
+    "additions": 41,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/templates/exercicios/add_exercicio.html",
+     "academiapp/templates/exercicios/list_exercicios.html"
+    ],
+    "title": "Exercicios templates monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:39:42+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/113"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#113:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:39:54+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/113"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#112:opened",
+   "payload": {
+    "additions": 6,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/exercicios/urls.py",
+     "academiapp/templates/base.html"
+    ],
+    "title": "Exercicios urls monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:34:47+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/112"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#112:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:34:56+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/112"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#111:opened",
+   "payload": {
+    "additions": 52,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/exercicios/forms.py",
+     "academiapp/apps/exercicios/views.py"
+    ],
+    "title": "Exercicios views monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:31:52+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/111"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#111:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:32:02+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/111"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#110:opened",
+   "payload": {
+    "additions": 50,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/templates/treinos/add_treino.html",
+     "academiapp/templates/treinos/list_treinos.html"
+    ],
+    "title": "Treinos templates monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:25:51+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/110"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#110:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:26:00+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/110"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#109:opened",
+   "payload": {
+    "additions": 5,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/treinos/urls.py"
+    ],
+    "title": "feat(treinos): adi\u00e7\u00e3o das urls do CRUD"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:19:48+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/109"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#109:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:19:59+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/109"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#108:opened",
+   "payload": {
+    "additions": 54,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "academiapp/apps/treinos/forms.py",
+     "academiapp/apps/treinos/views.py"
+    ],
+    "title": "Treinos views monoliticos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:12:58+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/108"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#108:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:13:09+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/108"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#107:opened",
+   "payload": {
+    "additions": 5,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "academiapp/apps/refeicoes/views.py",
+     "academiapp/templates/refeicoes/add_refeicao.html",
+     "academiapp/templates/refeicoes/list_refeicoes.html"
+    ],
+    "title": "Refeicoes correcoes monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T13:55:25+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/107"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#106:opened",
+   "payload": {
+    "additions": 15,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 16,
+    "files": [
+     "academiapp/apps/alimentos/views.py",
+     "academiapp/templates/alimentos/list_alimentos.html",
+     "academiapp/templates/base.html"
+    ],
+    "title": "Alimentos correcoes monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T13:47:22+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/106"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#106:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T13:47:30+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/106"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#105:opened",
+   "payload": {
+    "additions": 229,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 23,
+    "files": [
+     "academiapp/apps/alimentos/forms.py",
+     "academiapp/apps/alimentos/urls.py",
+     "academiapp/apps/alimentos/views.py",
+     "academiapp/apps/refeicoes/urls.py",
+     "academiapp/apps/refeicoes/views.py",
+     "academiapp/templates/alimentos/add_alimento.html",
+     "academiapp/templates/alimentos/list_alimentos.html",
+     "academiapp/templates/base.html",
+     "academiapp/templates/refeicoes/list_refeicoes.html"
+    ],
+    "title": "Alimentos views monoliticos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:59:48+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/105"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#105:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T13:41:23+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/105"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#104:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 170,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alimentos/forms.py",
+     "academiapp/apps/refeicoes/urls.py",
+     "academiapp/apps/refeicoes/views.py",
+     "academiapp/templates/alimentos/add_alimento.html",
+     "academiapp/templates/alimentos/list_alimentos.html",
+     "academiapp/templates/base.html",
+     "academiapp/templates/refeicoes/add_refeicoes.html",
+     "academiapp/templates/refeicoes/list_refeicoes.html"
+    ],
+    "title": "Revert \"Alimentos templates monolitico\""
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:08:03+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/104"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#104:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:08:12+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/104"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#103:opened",
+   "payload": {
+    "additions": 170,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 7,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alimentos/forms.py",
+     "academiapp/apps/refeicoes/urls.py",
+     "academiapp/apps/refeicoes/views.py",
+     "academiapp/templates/alimentos/add_alimento.html",
+     "academiapp/templates/alimentos/list_alimentos.html",
+     "academiapp/templates/base.html",
+     "academiapp/templates/refeicoes/add_refeicao.html",
+     "academiapp/templates/refeicoes/list_refeicoes.html"
+    ],
+    "title": "Alimentos templates monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:00:22+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/103"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#103:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:01:43+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/103"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#102:opened",
+   "payload": {
+    "additions": 54,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 46,
+    "files": [
+     "academiapp/templates/refeicoes/add_refeicoes.html",
+     "academiapp/templates/refeicoes/list_refeicoes.html"
+    ],
+    "title": "alterado conteudo de add_refeicoes e list_refeicoes."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:26:22+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/102"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#102:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:26:32+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/102"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#101:opened",
+   "payload": {
+    "additions": 104,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/refeicoes/forms.py",
+     "academiapp/templates/refeicoes/add_refeicoes.html",
+     "academiapp/templates/refeicoes/list_refeicoes.html"
+    ],
+    "title": "Refeicao templates monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:25:49+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/101"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#101:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:25:58+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/101"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#100:opened",
+   "payload": {
+    "additions": 14,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/planosmensalidade/models.py",
+     "academiapp/templates/planosmensalidade/list_planos.html"
+    ],
+    "title": "feat(planosmensalidade e alunos): ajuste listagem dos planos (adi\u00e7\u00e3o \u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:47:48+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/100"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#100:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:47:56+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/100"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#99:opened",
+   "payload": {
+    "additions": 8,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/planosmensalidade/urls.py",
+     "academiapp/templates/base.html"
+    ],
+    "title": "Planosmensalidade urls monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:30:32+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/99"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#99:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:30:41+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/99"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#98:opened",
+   "payload": {
+    "additions": 61,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/templates/planosmensalidade/add_plano.html",
+     "academiapp/templates/planosmensalidade/list_planos.html"
+    ],
+    "title": "Planosmensalidade templates monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:27:08+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/98"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#98:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:27:17+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/98"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#97:opened",
+   "payload": {
+    "additions": 49,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 3,
+    "files": [
+     "academiapp/apps/anamneses/models.py",
+     "academiapp/apps/planosmensalidade/forms.py",
+     "academiapp/apps/planosmensalidade/views.py",
+     "academiapp/templates/anamnese/add_anamnese.html",
+     "academiapp/templates/anamnese/list_anamneses.html"
+    ],
+    "title": "Planosmensalidade views monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:23:29+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/97"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#97:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:23:39+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/97"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#96:opened",
+   "payload": {
+    "additions": 6,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "academiapp/templates/base.html"
+    ],
+    "title": "Personaliza\u00e7\u00e3o homebase"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:01:27+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/96"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#96:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:01:41+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/96"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#95:opened",
+   "payload": {
+    "additions": 12,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/anamneses/urls.py",
+     "academiapp/templates/base.html",
+     "academiapp/templates/core/home.html"
+    ],
+    "title": "Anamneses urls monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:45:29+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/95"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#95:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:45:38+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/95"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#94:opened",
+   "payload": {
+    "additions": 61,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/templates/anamneses/add_anamnese.html",
+     "academiapp/templates/anamneses/list_anamneses.html"
+    ],
+    "title": "Anamneses template monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:39:33+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/94"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#94:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:39:41+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/94"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#93:opened",
+   "payload": {
+    "additions": 48,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/anamneses/forms.py",
+     "academiapp/apps/anamneses/views.py"
+    ],
+    "title": "Anamneses views monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:35:27+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/93"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#93:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:35:43+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/93"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#92:opened",
+   "payload": {
+    "additions": 8,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/instrutores/urls.py",
+     "academiapp/templates/base.html"
+    ],
+    "title": "Instrutores urls monoliticos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:35:01+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/92"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#92:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:35:11+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/92"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#91:opened",
+   "payload": {
+    "additions": 61,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/templates/instrutores/add_instrutor.html",
+     "academiapp/templates/instrutores/list_instrutores.html"
+    ],
+    "title": "Instrutores templates monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:13:17+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/91"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#91:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:13:25+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/91"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#90:opened",
+   "payload": {
+    "additions": 48,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/instrutores/forms.py",
+     "academiapp/apps/instrutores/views.py"
+    ],
+    "title": "Instrutores view monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:10:19+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/90"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#90:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:10:28+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/90"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#89:opened",
+   "payload": {
+    "additions": 9,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/alunos/urls.py",
+     "academiapp/templates/alunos/list_alunos.html",
+     "academiapp/templates/base.html"
+    ],
+    "title": "Alunos urls monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:59:27+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/89"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#89:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:59:35+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/89"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#88:opened",
+   "payload": {
+    "additions": 75,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/templates/alunos/add_aluno.html",
+     "academiapp/templates/alunos/list_alunos.html"
+    ],
+    "title": "Alunos templates monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:40:24+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/88"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#88:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:40:34+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/88"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#87:opened",
+   "payload": {
+    "additions": 3,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "academiapp/apps/alunos/forms.py",
+     "academiapp/apps/alunos/views.py"
+    ],
+    "title": "Alunos views monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:20:45+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/87"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#87:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:20:55+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/87"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#86:opened",
+   "payload": {
+    "additions": 66,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 3,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/core/__init__.py",
+     "academiapp/apps/core/admin.py",
+     "academiapp/apps/core/apps.py",
+     "academiapp/apps/core/migrations/__init__.py",
+     "academiapp/apps/core/models.py",
+     "academiapp/apps/core/tests.py",
+     "academiapp/apps/core/urls.py",
+     "academiapp/apps/core/views.py",
+     "academiapp/templates/base.html",
+     "academiapp/templates/core/home.html"
+    ],
+    "title": "Estruturacao monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:09:11+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/86"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#86:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:09:22+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/86"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#85:opened",
+   "payload": {
+    "additions": 51,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/alunos/forms.py",
+     "academiapp/apps/alunos/views.py"
+    ],
+    "title": "Alunos views monolitico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:37:44+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/85"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#85:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:37:51+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/85"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#84:opened",
+   "payload": {
+    "additions": 13,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/itemtreino/urls.py"
+    ],
+    "title": "Itemtreino urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:25:01+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/84"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#84:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:25:07+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/84"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#83:opened",
+   "payload": {
+    "additions": 10,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "academiapp/apps/itemtreino/serializers.py",
+     "academiapp/apps/itemtreino/views.py"
+    ],
+    "title": "Itemtreino views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:20:45+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/83"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#83:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:20:53+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/83"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#82:opened",
+   "payload": {
+    "additions": 5,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/itemtreino/serializers.py"
+    ],
+    "title": "feat(itemtreino): cria estrutura inicial do serializer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:18:09+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/82"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#82:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:18:17+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/82"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#81:opened",
+   "payload": {
+    "additions": 16,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/itemtreino/models.py"
+    ],
+    "title": "Itemtreino models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:14:07+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/81"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#81:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:14:14+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/81"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#80:opened",
+   "payload": {
+    "additions": 19,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/itemtreino/__init__.py",
+     "academiapp/apps/itemtreino/admin.py",
+     "academiapp/apps/itemtreino/apps.py",
+     "academiapp/apps/itemtreino/models.py",
+     "academiapp/apps/itemtreino/tests.py",
+     "academiapp/apps/itemtreino/views.py"
+    ],
+    "title": "feat(itemtreino): cria estrutura base da app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:12:07+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/80"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#80:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:12:14+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/80"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#79:opened",
+   "payload": {
+    "additions": 13,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/treinos/urls.py"
+    ],
+    "title": "Treinos urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:00:13+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/79"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#79:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:00:21+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/79"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#78:opened",
+   "payload": {
+    "additions": 7,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/treinos/views.py"
+    ],
+    "title": "Treinos views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:56:12+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/78"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#78:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:56:19+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/78"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#77:opened",
+   "payload": {
+    "additions": 8,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/treinos/serializers.py"
+    ],
+    "title": "Treinos serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:53:27+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/77"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#77:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:53:36+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/77"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#76:opened",
+   "payload": {
+    "additions": 16,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/treinos/models.py"
+    ],
+    "title": "Treinos models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:38:44+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/76"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#76:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:38:51+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/76"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#75:opened",
+   "payload": {
+    "additions": 0,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "academiapp/apps/treinos/urls.py"
+    ],
+    "title": "erro no vscode"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:20:18+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/75"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#75:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:20:25+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/75"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#74:opened",
+   "payload": {
+    "additions": 7,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/itemtreino/views.py"
+    ],
+    "title": "Itemtreino views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:15:05+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/74"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#74:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:15:12+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/74"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#73:opened",
+   "payload": {
+    "additions": 8,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/itemtreino/serializers.py"
+    ],
+    "title": "Itemtreino serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:13:16+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/73"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#73:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:13:24+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/73"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#72:opened",
+   "payload": {
+    "additions": 19,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/itemtreino/models.py",
+     "academiapp/apps/treinos/models.py"
+    ],
+    "title": "Itemtreino models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:11:08+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/72"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#72:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:11:15+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/72"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#71:opened",
+   "payload": {
+    "additions": 16,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/treinos/models.py",
+     "academiapp/apps/treinos/urls.py"
+    ],
+    "title": "Treinos urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:06:35+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/71"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#71:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:06:49+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/71"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#70:opened",
+   "payload": {
+    "additions": 9,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/treinos/models.py",
+     "academiapp/apps/treinos/views.py"
+    ],
+    "title": "Treinos views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:01:45+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/70"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#70:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:01:52+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/70"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#69:opened",
+   "payload": {
+    "additions": 56,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "academiapp/apps/treinos/models.py",
+     "academiapp/apps/treinos/serializers.py"
+    ],
+    "title": "Treino serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:57:55+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/69"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#69:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:58:02+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/69"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#68:opened",
+   "payload": {
+    "additions": 16,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/treinos/models.py"
+    ],
+    "title": "Treinos models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:51:54+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/68"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#68:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:52:01+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/68"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#67:opened",
+   "payload": {
+    "additions": 19,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/treinos/__init__.py",
+     "academiapp/apps/treinos/admin.py",
+     "academiapp/apps/treinos/apps.py",
+     "academiapp/apps/treinos/models.py",
+     "academiapp/apps/treinos/tests.py",
+     "academiapp/apps/treinos/views.py"
+    ],
+    "title": "feat(treinos): cria estrutura base do app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:50:06+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/67"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#67:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:50:14+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/67"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#66:opened",
+   "payload": {
+    "additions": 13,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/exercicios/urls.py"
+    ],
+    "title": "Exercicios urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:46:25+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/66"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#66:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:46:33+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/66"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#65:opened",
+   "payload": {
+    "additions": 6,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/exercicios/views.py"
+    ],
+    "title": "Exercicios views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:43:24+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/65"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#65:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:43:35+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/65"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#64:opened",
+   "payload": {
+    "additions": 8,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/exercicios/serializers.py"
+    ],
+    "title": "Exercicios serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:40:20+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/64"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#64:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:40:27+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/64"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#63:opened",
+   "payload": {
+    "additions": 38,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/exercicios/models.py"
+    ],
+    "title": "Exercicios models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:36:30+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/63"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#63:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:36:37+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/63"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#62:opened",
+   "payload": {
+    "additions": 19,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/exercicios/__init__.py",
+     "academiapp/apps/exercicios/admin.py",
+     "academiapp/apps/exercicios/apps.py",
+     "academiapp/apps/exercicios/models.py",
+     "academiapp/apps/exercicios/tests.py",
+     "academiapp/apps/exercicios/views.py"
+    ],
+    "title": "feat(exercicios): cria estrutura base do app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:32:02+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/62"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#62:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:32:09+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/62"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#61:opened",
+   "payload": {
+    "additions": 13,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/refeicoes/urls.py"
+    ],
+    "title": "Refeicoes urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T21:03:48+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/61"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#61:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T21:03:56+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/61"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#60:opened",
+   "payload": {
+    "additions": 6,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/refeicoes/views.py"
+    ],
+    "title": "Refeicoes views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T21:00:05+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/60"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#60:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T21:00:12+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/60"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#59:opened",
+   "payload": {
+    "additions": 8,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/refeicoes/serializers.py"
+    ],
+    "title": "Refeicoes serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:52:50+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/59"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#59:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:52:57+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/59"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#58:opened",
+   "payload": {
+    "additions": 17,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/refeicoes/models.py"
+    ],
+    "title": "Refeicoes models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:50:06+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/58"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#58:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:50:13+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/58"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#57:opened",
+   "payload": {
+    "additions": 13,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/planosalimentares/urls.py"
+    ],
+    "title": "Planosalimentares urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:46:16+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/57"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#57:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:46:24+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/57"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#56:opened",
+   "payload": {
+    "additions": 9,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "academiapp/apps/planosalimentares/views.py"
+    ],
+    "title": "Planosalimentares views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:38:23+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/56"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#56:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:38:30+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/56"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#55:opened",
+   "payload": {
+    "additions": 8,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/planosalimentares/serializers.py"
+    ],
+    "title": "Planosalimentares serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:31:55+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/55"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#55:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:32:03+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/55"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#54:opened",
+   "payload": {
+    "additions": 0,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/planosalimentares/serializers.py"
+    ],
+    "title": "feat(planosalimentares): cria estrutura inicial do serializer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:19:56+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/54"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#54:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:20:21+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/54"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#53:opened",
+   "payload": {
+    "additions": 17,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/planosalimentares/models.py"
+    ],
+    "title": "Planosalimentares models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:07:47+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/53"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#53:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T20:08:02+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/53"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#52:opened",
+   "payload": {
+    "additions": 21,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/planosalimentares/__init__.py",
+     "academiapp/apps/planosalimentares/admin.py",
+     "academiapp/apps/planosalimentares/apps.py",
+     "academiapp/apps/planosalimentares/models.py",
+     "academiapp/apps/planosalimentares/tests.py",
+     "academiapp/apps/planosalimentares/views.py"
+    ],
+    "title": "Planosalimentares criacao app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:35:34+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/52"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#52:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:35:42+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/52"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#51:opened",
+   "payload": {
+    "additions": 19,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/refeicoes/__init__.py",
+     "academiapp/apps/refeicoes/admin.py",
+     "academiapp/apps/refeicoes/apps.py",
+     "academiapp/apps/refeicoes/models.py",
+     "academiapp/apps/refeicoes/tests.py",
+     "academiapp/apps/refeicoes/views.py"
+    ],
+    "title": "Refeicoes cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:07:09+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/51"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#51:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:07:25+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/51"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#50:opened",
+   "payload": {
+    "additions": 13,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alimentos/urls.py"
+    ],
+    "title": "Alimentos urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:37:00+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/50"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#50:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:37:10+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/50"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#49:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/alimentos/apps.py",
+     "academiapp/apps/alimentos/views.py"
+    ],
+    "title": "Alimentos views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:34:34+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/49"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#49:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:34:44+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/49"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#48:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/alimentos/serializer.py"
+    ],
+    "title": "Alimentos serializer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:32:00+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/48"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#48:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:32:11+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/48"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#47:opened",
+   "payload": {
+    "additions": 15,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/alimentos/models.py"
+    ],
+    "title": "Alimentos models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:29:23+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/47"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#47:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T14:29:33+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/47"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#46:opened",
+   "payload": {
+    "additions": 18,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/alimentos/__init__.py",
+     "academiapp/apps/alimentos/admin.py",
+     "academiapp/apps/alimentos/apps.py",
+     "academiapp/apps/alimentos/models.py",
+     "academiapp/apps/alimentos/tests.py",
+     "academiapp/apps/alimentos/views.py"
+    ],
+    "title": "Alimentos cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T13:58:39+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/46"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#46:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T13:59:26+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/46"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#45:opened",
+   "payload": {
+    "additions": 13,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/anamneses/urls.py"
+    ],
+    "title": "Anamneses urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T13:01:30+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/45"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#45:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T13:01:47+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/45"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#44:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "academiapp/apps/anamneses/apps.py",
+     "academiapp/apps/anamneses/views.py"
+    ],
+    "title": "Anamneses views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T12:59:20+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/44"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#44:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T13:01:06+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/44"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#43:opened",
+   "payload": {
+    "additions": 21,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/anamneses/models.py"
+    ],
+    "title": "Anamneses models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T12:39:16+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/43"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#43:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T12:39:23+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/43"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#42:opened",
+   "payload": {
+    "additions": 18,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/anamneses/__init__.py",
+     "academiapp/apps/anamneses/admin.py",
+     "academiapp/apps/anamneses/apps.py",
+     "academiapp/apps/anamneses/models.py",
+     "academiapp/apps/anamneses/tests.py",
+     "academiapp/apps/anamneses/views.py"
+    ],
+    "title": "Anamneses cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T12:38:47+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/42"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#42:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T12:39:03+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/42"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#41:opened",
+   "payload": {
+    "additions": 12,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/refeicoes/urls.py"
+    ],
+    "title": "Refeicoes urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:30:43+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/41"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#41:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:30:51+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/41"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#40:opened",
+   "payload": {
+    "additions": 7,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/refeicoes/views.py"
+    ],
+    "title": "Refeicoes views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:30:20+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/40"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#40:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:30:29+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/40"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#39:opened",
+   "payload": {
+    "additions": 44,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/alimentos/models.py",
+     "academiapp/apps/alimentos/serializer.py",
+     "academiapp/apps/alimentos/urls.py",
+     "academiapp/apps/alimentos/views.py"
+    ],
+    "title": "Alimentos urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:29:59+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/39"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#39:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:30:08+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/39"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#38:opened",
+   "payload": {
+    "additions": 43,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/planosalimentares/models.py",
+     "academiapp/apps/planosalimentares/serializer.py",
+     "academiapp/apps/planosalimentares/urls.py",
+     "academiapp/apps/planosalimentares/views.py"
+    ],
+    "title": "Planosalimentares urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:29:37+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/38"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#38:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:29:47+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/38"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#37:opened",
+   "payload": {
+    "additions": 26,
+    "author": "crixspr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/refeicoes/models.py",
+     "academiapp/apps/refeicoes/serializer.py"
+    ],
+    "title": "Refeicoes serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:28:44+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/37"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#37:merged",
+   "payload": {
+    "author": "crixspr",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:29:12+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/37"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#36:opened",
+   "payload": {
+    "additions": 18,
+    "author": "aragon292",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/exercicios/__init__.py",
+     "academiapp/exercicios/admin.py",
+     "academiapp/exercicios/apps.py",
+     "academiapp/exercicios/migrations/__init__.py",
+     "academiapp/exercicios/models.py",
+     "academiapp/exercicios/tests.py",
+     "academiapp/exercicios/views.py"
+    ],
+    "title": "Exercicios-cria\u00e7\u00e3o-app "
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:48:32+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/36"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#36:merged",
+   "payload": {
+    "author": "aragon292",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:59:52+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/36"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#35:opened",
+   "payload": {
+    "additions": 13,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/instrutores/urls.py"
+    ],
+    "title": "Instrutores urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:44:20+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/35"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#35:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:44:30+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/35"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#34:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/instrutores/apps.py",
+     "academiapp/apps/instrutores/views.py"
+    ],
+    "title": "Instrutores views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:40:56+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/34"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#34:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:41:07+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/34"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#33:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/instrutores/serializer.py"
+    ],
+    "title": "Instrutores serializer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:36:20+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/33"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#33:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:36:29+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/33"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#32:opened",
+   "payload": {
+    "additions": 26,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/instrutores/models.py"
+    ],
+    "title": "Instrutores models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:24:03+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/32"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#32:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:24:11+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/32"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#31:opened",
+   "payload": {
+    "additions": 18,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/instrutores/__init__.py",
+     "academiapp/apps/instrutores/admin.py",
+     "academiapp/apps/instrutores/apps.py",
+     "academiapp/apps/instrutores/models.py",
+     "academiapp/apps/instrutores/tests.py",
+     "academiapp/apps/instrutores/views.py"
+    ],
+    "title": "Instrutores cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:15:54+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/31"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#31:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:16:01+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/31"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#30:opened",
+   "payload": {
+    "additions": 14,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/alunos/urls.py"
+    ],
+    "title": "Alunos urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:07:01+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/30"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#30:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:07:09+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/30"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#29:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "academiapp/apps/alunos/apps.py",
+     "academiapp/apps/alunos/views.py"
+    ],
+    "title": "Alunos views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:50:24+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/29"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#29:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:50:34+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/29"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#28:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/alunos/serializer.py"
+    ],
+    "title": "Alunos serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:48:18+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/28"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#28:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:48:28+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/28"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#27:opened",
+   "payload": {
+    "additions": 1,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "academiapp/apps/alunos/models.py"
+    ],
+    "title": "feat(alunos): atualiza\u00e7\u00e3o models com fk de planosmensalidade"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:44:38+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/27"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#27:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:44:47+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/27"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#26:opened",
+   "payload": {
+    "additions": 13,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/planosmensalidade/urls.py"
+    ],
+    "title": "Planosmensalidade urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:24:49+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/26"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#26:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:24:57+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/26"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#25:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/planosmensalidade/apps.py",
+     "academiapp/apps/planosmensalidade/views.py"
+    ],
+    "title": "Planosmensalidade views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:24:20+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/25"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#25:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:24:30+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/25"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#24:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/planosmensalidade/serializer.py"
+    ],
+    "title": "Planosmensalidade serializers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:23:28+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/24"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#24:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:23:36+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/24"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#23:opened",
+   "payload": {
+    "additions": 21,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/planosmensalidade/models.py"
+    ],
+    "title": "Planosmensalidade models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:22:49+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/23"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#23:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:22:57+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/23"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#22:opened",
+   "payload": {
+    "additions": 54,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/alunos/__init__.py",
+     "academiapp/apps/alunos/admin.py",
+     "academiapp/apps/alunos/apps.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/alunos/tests.py",
+     "academiapp/apps/alunos/views.py",
+     "academiapp/apps/planosmensalidade/__init__.py",
+     "academiapp/apps/planosmensalidade/admin.py",
+     "academiapp/apps/planosmensalidade/apps.py",
+     "academiapp/apps/planosmensalidade/models.py",
+     "academiapp/apps/planosmensalidade/tests.py",
+     "academiapp/apps/planosmensalidade/views.py"
+    ],
+    "title": "Planosmensalidade cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:22:09+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/22"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#22:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:22:27+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/22"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#21:opened",
+   "payload": {
+    "additions": 27,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/planosmensalidade/apps.py",
+     "academiapp/apps/planosmensalidade/serializer.py",
+     "academiapp/apps/planosmensalidade/urls.py",
+     "academiapp/apps/planosmensalidade/views.py"
+    ],
+    "title": "Planosmensalidade urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:08:55+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/21"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#21:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:09:04+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/21"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#20:opened",
+   "payload": {
+    "additions": 56,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/planosmensalidade/__init__.py",
+     "academiapp/apps/planosmensalidade/admin.py",
+     "academiapp/apps/planosmensalidade/apps.py",
+     "academiapp/apps/planosmensalidade/models.py",
+     "academiapp/apps/planosmensalidade/tests.py",
+     "academiapp/apps/planosmensalidade/views.py"
+    ],
+    "title": "Planosmensalidade models"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:53:44+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/20"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#20:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:53:53+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/20"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#19:opened",
+   "payload": {
+    "additions": 36,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/planosmensalidade/__init__.py",
+     "academiapp/apps/planosmensalidade/admin.py",
+     "academiapp/apps/planosmensalidade/apps.py",
+     "academiapp/apps/planosmensalidade/models.py",
+     "academiapp/apps/planosmensalidade/tests.py",
+     "academiapp/apps/planosmensalidade/views.py"
+    ],
+    "title": "Planosmensalidade cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:29:26+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/19"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#19:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:53:55+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/19"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#18:opened",
+   "payload": {
+    "additions": 18,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/apps/alunos/__init__.py",
+     "academiapp/apps/alunos/admin.py",
+     "academiapp/apps/alunos/apps.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/alunos/tests.py",
+     "academiapp/apps/alunos/views.py"
+    ],
+    "title": "Alunos cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T19:01:11+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/18"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#18:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T19:01:20+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/18"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#17:opened",
+   "payload": {
+    "additions": 16,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/pessoas/models.py",
+     "academiapp/apps/pessoas/urls.py"
+    ],
+    "title": "Pessoas urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:37:58+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/17"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#17:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:38:09+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/17"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#16:opened",
+   "payload": {
+    "additions": 7,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/pessoas/serializer.py"
+    ],
+    "title": "Pessoas serializer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:37:06+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/16"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#16:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:37:15+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/16"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#15:opened",
+   "payload": {
+    "additions": 23,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "academiapp/apps/pessoas/apps.py",
+     "academiapp/apps/pessoas/models.py",
+     "academiapp/apps/pessoas/views.py"
+    ],
+    "title": "Pessoas apps views"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:35:26+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/15"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#15:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:35:37+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/15"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#14:opened",
+   "payload": {
+    "additions": 41,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 1,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/pessoas/__init__.py",
+     "academiapp/apps/pessoas/admin.py",
+     "academiapp/apps/pessoas/apps.py",
+     "academiapp/apps/pessoas/models.py",
+     "academiapp/apps/pessoas/tests.py",
+     "academiapp/apps/pessoas/views.py"
+    ],
+    "title": "Pessoas cria\u00e7\u00e3o app"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T14:32:45+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/14"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#14:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T14:32:54+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/14"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#13:opened",
+   "payload": {
+    "additions": 65,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 1,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/itemtreino/__init__.py",
+     "academiapp/apps/itemtreino/admin.py",
+     "academiapp/apps/itemtreino/apps.py",
+     "academiapp/apps/itemtreino/models.py",
+     "academiapp/apps/itemtreino/serializer.py",
+     "academiapp/apps/itemtreino/tests.py",
+     "academiapp/apps/itemtreino/urls.py",
+     "academiapp/apps/itemtreino/views.py",
+     "academiapp/apps/treinos/models.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o item treino"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T22:05:22+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/13"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#13:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T22:06:04+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/13"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#12:opened",
+   "payload": {
+    "additions": 63,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 0,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/treinos/__init__.py",
+     "academiapp/apps/treinos/admin.py",
+     "academiapp/apps/treinos/apps.py",
+     "academiapp/apps/treinos/models.py",
+     "academiapp/apps/treinos/serializer.py",
+     "academiapp/apps/treinos/tests.py",
+     "academiapp/apps/treinos/urls.py",
+     "academiapp/apps/treinos/views.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe treino"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T22:04:24+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/12"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#12:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T22:05:10+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/12"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#11:opened",
+   "payload": {
+    "additions": 84,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 0,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/anamneses/__pycache__/__init__.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/admin.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/apps.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/models.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/serializer.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/urls.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/views.cpython-314.pyc",
+     "academiapp/apps/exercicios/__init__.py",
+     "academiapp/apps/exercicios/admin.py",
+     "academiapp/apps/exercicios/apps.py",
+     "academiapp/apps/exercicios/models.py",
+     "academiapp/apps/exercicios/serializer.py",
+     "academiapp/apps/exercicios/tests.py",
+     "academiapp/apps/exercicios/urls.py",
+     "academiapp/apps/exercicios/views.py"
+    ],
+    "title": "implementa\u00e7\u00e3o-classe-exercicio"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T22:03:01+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/11"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#11:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T22:04:05+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/11"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#10:opened",
+   "payload": {
+    "additions": 73,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 6,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/anamneses/migrations/__pycache__/0001_initial.cpython-314.pyc",
+     "academiapp/apps/anamneses/migrations/__pycache__/__init__.cpython-314.pyc",
+     "academiapp/apps/pessoas/models.py",
+     "academiapp/apps/planosalimentares/__init__.py",
+     "academiapp/apps/planosalimentares/admin.py",
+     "academiapp/apps/planosalimentares/apps.py",
+     "academiapp/apps/planosalimentares/models.py",
+     "academiapp/apps/planosalimentares/serializer.py",
+     "academiapp/apps/planosalimentares/tests.py",
+     "academiapp/apps/planosalimentares/urls.py",
+     "academiapp/apps/planosalimentares/views.py",
+     "academiapp/apps/planosmensalidade/models.py",
+     "academiapp/apps/refeicoes/models.py"
+    ],
+    "title": "Corre\u00e7\u00f5es gerais"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T20:22:12+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/10"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#10:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T20:22:22+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/10"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#9:opened",
+   "payload": {
+    "additions": 64,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 1,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/refeicoes/__init__.py",
+     "academiapp/apps/refeicoes/admin.py",
+     "academiapp/apps/refeicoes/apps.py",
+     "academiapp/apps/refeicoes/models.py",
+     "academiapp/apps/refeicoes/serializer.py",
+     "academiapp/apps/refeicoes/tests.py",
+     "academiapp/apps/refeicoes/urls.py",
+     "academiapp/apps/refeicoes/views.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe refei\u00e7\u00e3o"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T19:30:30+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/9"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#9:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T19:30:51+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/9"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#8:opened",
+   "payload": {
+    "additions": 65,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 3,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alimentos/__init__.py",
+     "academiapp/apps/alimentos/admin.py",
+     "academiapp/apps/alimentos/apps.py",
+     "academiapp/apps/alimentos/models.py",
+     "academiapp/apps/alimentos/serializer.py",
+     "academiapp/apps/alimentos/tests.py",
+     "academiapp/apps/alimentos/urls.py",
+     "academiapp/apps/alimentos/views.py",
+     "academiapp/apps/anamneses/__pycache__/__init__.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/admin.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/apps.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/models.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/serializer.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/urls.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/views.cpython-314.pyc"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe alimentos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T19:30:03+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/8"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#8:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T19:30:11+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/8"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#7:opened",
+   "payload": {
+    "additions": 122,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 24,
+    "deletions": 2,
+    "files": [
+     ".vscode/settings.json",
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/anamneses/__init__.py",
+     "academiapp/apps/anamneses/__pycache__/__init__.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/admin.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/apps.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/models.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/serializer.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/urls.cpython-314.pyc",
+     "academiapp/apps/anamneses/__pycache__/views.cpython-314.pyc",
+     "academiapp/apps/anamneses/admin.py",
+     "academiapp/apps/anamneses/apps.py",
+     "academiapp/apps/anamneses/migrations/0001_initial.py",
+     "academiapp/apps/anamneses/migrations/__init__.py",
+     "academiapp/apps/anamneses/migrations/__pycache__/0001_initial.cpython-314.pyc",
+     "academiapp/apps/anamneses/migrations/__pycache__/__init__.cpython-314.pyc",
+     "academiapp/apps/anamneses/models.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe anamnese"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T22:19:36+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/7"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#7:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T22:19:47+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/7"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#6:opened",
+   "payload": {
+    "additions": 69,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 1,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/planosmensalidade/__init__.py",
+     "academiapp/apps/planosmensalidade/admin.py",
+     "academiapp/apps/planosmensalidade/apps.py",
+     "academiapp/apps/planosmensalidade/models.py",
+     "academiapp/apps/planosmensalidade/serializer.py",
+     "academiapp/apps/planosmensalidade/tests.py",
+     "academiapp/apps/planosmensalidade/urls.py",
+     "academiapp/apps/planosmensalidade/views.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe plano mensalidade"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T00:05:00+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/6"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#6:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T00:05:11+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/6"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#5:opened",
+   "payload": {
+    "additions": 74,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 1,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/instrutores/__init__.py",
+     "academiapp/apps/instrutores/admin.py",
+     "academiapp/apps/instrutores/apps.py",
+     "academiapp/apps/instrutores/models.py",
+     "academiapp/apps/instrutores/serializer.py",
+     "academiapp/apps/instrutores/tests.py",
+     "academiapp/apps/instrutores/urls.py",
+     "academiapp/apps/instrutores/views.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe instrutor"
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T00:47:42+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/5"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#5:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T00:47:50+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/5"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#4:opened",
+   "payload": {
+    "additions": 73,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 1,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/alunos/__init__.py",
+     "academiapp/apps/alunos/admin.py",
+     "academiapp/apps/alunos/apps.py",
+     "academiapp/apps/alunos/models.py",
+     "academiapp/apps/alunos/serializer.py",
+     "academiapp/apps/alunos/tests.py",
+     "academiapp/apps/alunos/urls.py",
+     "academiapp/apps/alunos/views.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe aluno"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T23:32:26+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/4"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#4:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T23:32:35+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/4"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#3:opened",
+   "payload": {
+    "additions": 138,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "academiapp/academia.puml"
+    ],
+    "title": "adi\u00e7\u00e3o academia.puml"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T21:47:48+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/3"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#3:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T21:47:58+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/3"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#2:opened",
+   "payload": {
+    "additions": 62,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 1,
+    "files": [
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/apps/pessoas/__init__.py",
+     "academiapp/apps/pessoas/admin.py",
+     "academiapp/apps/pessoas/apps.py",
+     "academiapp/apps/pessoas/models.py",
+     "academiapp/apps/pessoas/serializer.py",
+     "academiapp/apps/pessoas/tests.py",
+     "academiapp/apps/pessoas/urls.py",
+     "academiapp/apps/pessoas/views.py"
+    ],
+    "title": "Implementa\u00e7\u00e3o classe pessoa"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T02:15:51+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/2"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#2:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T02:16:03+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/2"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#1:opened",
+   "payload": {
+    "additions": 194,
+    "author": "naafedev",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "academiapp/.gitignore",
+     "academiapp/academiapp/__init__.py",
+     "academiapp/academiapp/asgi.py",
+     "academiapp/academiapp/settings.py",
+     "academiapp/academiapp/urls.py",
+     "academiapp/academiapp/wsgi.py",
+     "academiapp/manage.py"
+    ],
+    "title": "configura\u00e7\u00e3o do django"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T23:19:21+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/1"
+  },
+  {
+   "evidence_id": "pr:anleaes/2026-1-SDM-Segunda-Noite-ZS-08#1:merged",
+   "payload": {
+    "author": "naafedev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T23:19:37+00:00",
+   "url": "https://github.com/anleaes/2026-1-SDM-Segunda-Noite-ZS-08/pull/1"
+  }
+ ],
+ "repo": "anleaes/2026-1-SDM-Segunda-Noite-ZS-08",
+ "window": "pre_t"
+}

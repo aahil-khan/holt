@@ -35,7 +35,7 @@ uv sync
 uv run pytest -rs
 ```
 
-**Expected:** `42 passed`, no skips. The `-rs` flag reports skipped tests
+**Expected:** `47 passed`, no skips. The `-rs` flag reports skipped tests
 explicitly — a skipped test is not a passing one.
 
 Two of these are load-bearing rather than incidental: `eval/test_independence.py`
@@ -55,25 +55,36 @@ PYTHONPATH=. uv run python eval/harness.py --replay
 This scores every method from committed evidence fixtures and committed model
 trajectories. No network call is made and no model runs.
 
-**Expected output** (the last five lines):
+**Expected output** (the results table):
 
 ```
-method         P@10   prec  recall  rec.d
-baseline       0.70   0.77    0.71     13
-holt           0.70   0.76    0.93     17
-name_only      0.60   0.71    0.36      7
-popularity     0.70      -       -   None
+method             MCC  balAcc     F1   sens   spec   P@10
+always_viable     0.00    0.50   0.78   1.00   0.00   0.60
+never_viable      0.00    0.50   0.00   0.00   1.00   0.60
+name_only         0.11    0.55   0.48   0.36   0.75   0.60
+popularity           -       -      -      -      -   0.70
+baseline          0.33    0.67   0.74   0.71   0.62   0.70
+holt              0.49    0.71   0.84   0.93   0.50   0.70
 
 spend: $0.353   graded 22/30 pool repos   positives: 14   ungraded (no post-cutoff attempts): 5
+```
+
+Those are **one run**. The headline figures in the README are means over three
+runs; reproduce them with:
+
+```sh
+PYTHONPATH=. uv run python eval/aggregate.py    # mean +/- half-range over runs 1-3
+PYTHONPATH=. uv run python eval/stats.py        # uncertainty over repositories
 ```
 
 The `spend` figure is what the recorded run cost when it was made; replaying it
 costs nothing.
 
-F1 is the primary metric — 0.84 for Holt against 0.74 for the baseline. Precision@10
-is reported alongside it and reads 0.70 for three methods at once, which is the
-point: with 14 positives among 22 repositories a random top ten scores about 0.64,
-so that metric is saturated. See the changelog.
+**Matthews correlation is the primary metric**, because it is 0.00 for any
+constant answer. F1 and precision@10 are reported alongside it precisely because
+they are not: answering "viable" to everything scores F1 0.78, above the baseline
+solution. The constant strategies are scored as methods so the floor is visible.
+See the changelog.
 
 ## 4. Run both solutions on one repository — still no key
 

@@ -85,8 +85,10 @@ def classify(findings: Findings, signals: Signals) -> tuple[Verdict, list[str]]:
         and not slow
     ):
         trace.append(
-            f"{signals.outsider_merged} outsider merges from "
-            f"{signals.distinct_outsider_authors} people, median first response "
+            f"{signals.outsider_merged} first-time merges by "
+            f"{signals.distinct_merged_authors} distinct people, out of "
+            f"{signals.outsider_threads} attempts by "
+            f"{signals.distinct_outsider_authors}; median first response "
             f"{signals.median_first_response_hours}h"
         )
         return Verdict.VIABLE, trace

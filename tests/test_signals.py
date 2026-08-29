@@ -16,6 +16,19 @@ def rec(eid, offset_h, author, extra=None):
     return EvidenceRecord(eid, "github", "https://x", T0 + timedelta(hours=offset_h), payload)
 
 
+def test_merge_authors_are_counted_separately_from_attempters():
+    """Conflating them printed "15 merges from 72 people" in a user-visible report."""
+    threads = build_threads([
+        rec("pr:a/b#1:opened", 0, "sam"),
+        rec("pr:a/b#1:merged", 2, "sam"),
+        rec("pr:a/b#2:opened", 4, "kim"),
+        rec("pr:a/b#3:opened", 6, "lee"),
+    ])
+    s = compute(threads)
+    assert s.distinct_outsider_authors == 3
+    assert s.distinct_merged_authors == 1
+
+
 def test_a_second_contribution_is_not_a_first_one():
     """The bug this replaced: defining outsider as 'has not merged' makes
     outsider-merge counts zero by construction."""

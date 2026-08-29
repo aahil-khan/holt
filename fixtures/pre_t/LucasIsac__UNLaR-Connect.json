@@ -1,0 +1,2455 @@
+{
+ "captured_at": "2026-08-29T19:37:59.896569+00:00",
+ "content_sha256": "45f8c6f6cb6c66b657e2ec19795f70322659585da97b7f998bd677652b6bee28",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:LucasIsac/UNLaR-Connect:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": null,
+    "homepage_url": "https://unlar-connect.vercel.app",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "TypeScript",
+    "pushed_at": "2026-05-30T16:37:33Z",
+    "stargazer_count": 2
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T15:44:14+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect"
+  },
+  {
+   "evidence_id": "repo:LucasIsac/UNLaR-Connect:readme",
+   "payload": {
+    "commit_oid": "beb278ec70f8b710e244903dc7b0d1888574d442",
+    "kind": "readme",
+    "text": "# UNLaR-Connect\n\n**UNLaR-Connect** es una plataforma web monol\u00edtica de alta fidelidad dise\u00f1ada espec\u00edficamente para estudiantes y tutores de la **Universidad Nacional de La Rioja (UNLaR)**. El proyecto fue desarrollado para resolver los desaf\u00edos planteados en el **Eje 3: Red Colaborativa Estudiantil (Intercambio de Conocimientos y Recursos)** de la Hackathon UNLaR.\n\n---\n\n## La Problem\u00e1tica (Eje 3 de la Hackathon)\n\nA lo largo de su trayectoria universitaria, los estudiantes se enfrentan a dos grandes barreras estructurales:\n1.  **Dificultad acad\u00e9mica en materias filtro**: Asignaturas complejas donde la tasa de recursado es alta y la falta de apoyo continuo genera deserci\u00f3n.\n2.  **Falta de acceso a insumos tecnol\u00f3gicos costosos**: La necesidad de equipamiento especializado (como placas Arduino, c\u00e1maras r\u00e9flex, herramientas f\u00edsicas, instrumental de laboratorio o licencias de software caras) que los estudiantes no siempre pueden costear.\n3.  **El caos de los grupos masivos de WhatsApp**: Aunque en la comunidad universitaria abunda la buena voluntad de compa\u00f1eros dispuestos a dar tutor\u00edas o prestar/alquilar el equipamiento que tienen guardado, la falta de un canal seguro, organizado e indexado hace que este flujo de ayuda se pierda por completo en el ruido diario de las redes sociales informales.\n\n---\n\n## La Soluci\u00f3n: \u00bfC\u00f3mo lo resuelve UNLaR-Connect?\n\nUNLaR-Connect transforma la interacci\u00f3n informal en una red acad\u00e9mica estructurada, segura y gamificada:\n\n### 1. Consultas Express y Tutor\u00edas en Vivo (Peer-to-Peer)\n*   **Enlace de Audio/Video por WebRTC**: Los estudiantes con dificultades acad\u00e9micas pueden ver qu\u00e9 tutores certificados est\u00e1n en l\u00ednea y solicitar una \"Consulta Express\" al instante. La plataforma inicia una llamada 1-on-1 segura, directa y con fallback inteligente para redes m\u00f3viles.\n*   **Descarga Contextual e Interacci\u00f3n**: Durante la llamada, los estudiantes chatean en tiempo real y acceden a los apuntes de la materia seleccionada sin salir de la sala.\n\n### 2. Biblioteca Compartida e Inteligencia Artificial Localizada (RAG)\n*   **Chat Interactivo con Apuntes**: Los estudiantes suben recursos de estudio (PDF, TXT, MD) que son segmentados y vectorizados en una base de datos local (`pgvector`). Un asistente de IA integrado permite \"chatear\" directamente con los apuntes utilizando terminolog\u00eda y **voseo argentino rioplatense** (\"mir\u00e1\", \"ten\u00e9s\", \"comentame\").\n*   **Filtros Inteligentes**: B\u00fasquedas contextuales por carrera, materia y eje tem\u00e1tico para encontrar apuntes de manera inmediata.\n\n### 3. Red Organizada de Intercambio de Insumos y Recursos\n*   **Foro Acad\u00e9mico Estructurado**: Un espacio categorizado por materias y temas, reemplazando el desorden de WhatsApp. Los estudiantes pueden publicar dudas, responder hilos y coordinar pr\u00e9stamos o alquileres de insumos y herramientas tecnol\u00f3gicas que tienen guardadas.\n*   **Seguridad e Indexaci\u00f3n**: Cada recurso y publicaci\u00f3n est\u00e1 asociado a un perfil verificado de la UNLaR, con trazabilidad completa.\n\n### 4. Sistema de Reputaci\u00f3n y Gamificaci\u00f3n (Karma Ledger)\n*   **Incentivo Real a la Colaboraci\u00f3n**: Para motivar el intercambio de apuntes, la resoluci\u00f3n de dudas en el foro y la disponibilidad para tutor\u00edas, la plataforma implementa un sistema transaccional de **Karma**.\n*   **Niveles e Insignias**: Los estudiantes ganan puntos y desbloquean insignias reales (*Mentor Colaborativo*, *Participante Activo*) visibles en el ranking universitario, transformando el altruismo en un m\u00e9rito acad\u00e9mico reconocido.\n\n---\n\n## Stack Tecnol\u00f3gico y Arquitectura\n\nUNLaR-Connect se concibe como un monolito altamente eficiente y con tipado estricto:\n*   **Frontend**: Next.js 14 (App Router, React 18, TypeScript) con estilos Tailwind CSS y efecto *Glassmorphism* premium (Lumina Amber / Warm Obsidian).\n*   **Backend Invisible**: Next.js Server Actions (`src/actions/`) para transacciones directas y seguras sin la latencia de APIs REST tradicionales.\n*   **Base de Datos y Seguridad**: Supabase (PostgreSQL, seguridad Row-Level Security (RLS) y suscripciones en tiempo real).\n*   **Procesamiento de IA (RAG)**: B\u00fasqueda vectorial mediante `pgvector` combinando embeddings de **Google Gemini** (`text-embedding-004`) y procesamiento ling\u00fc\u00edstico con **Groq** (`llama-3.1-8b-instant`).\n\n---\n\n## Documentaci\u00f3n del Sistema\n\nToda la estructura t\u00e9cnica y de directorios detallada est\u00e1 documentada en la carpeta [/docs](file:///c:/Users/Leo/Documents/Programming/github/repositories/UNLaR-Connect/docs):\n\n*   **[Arquitectura y Estructura](file:///c:/Users/Leo/Documents/Programming/github/repositories/UNLaR-Connect/docs/architecture.md)**: Detalle del dise\u00f1o monol\u00edtico de Server Actions, estructura de carpetas y directrices de dise\u00f1o responsive m\u00f3vil.\n*   **[Esquema de Base de Datos y Seguridad](file:///c:/Users/Leo/Documents/Programming/github/repositories/UNLaR-Connect/docs/database_schema.md)**: Glosario de tablas de Supabase, triggers PostgreSQL automatizados para el karma y pol\u00edticas RLS.\n*   **[Procesamiento Vectorial y RAG](file:///c:/Users/Leo/Documents/Programming/github/repositories/UNLaR-Connect/docs/rag_ai_pipeline.md)**: Flujos de ingesta de archivos, divisi\u00f3n sem\u00e1ntica (*sliding-window chunking*), embeddings y b\u00fasquedas de similitud.\n*   **[Gu\u00eda de Pruebas y Verificaci\u00f3n](file:///c:/Users/Leo/Documents/Programming/github/repositories/UNLaR-Connect/docs/testing_and_verification.md)**: Instrucciones detalladas de control de calidad para probar llamadas WebRTC, chatbot RAG y sistema de karma.\n\n---\n\n## Directrices e Inducci\u00f3n para Agentes de IA\n\nEste repositorio est\u00e1 optimizado para el trabajo asistido por inteligencia artificial. Consulte [AGENTS.md](file:///c:/Users/Leo/Documents/Programming/github/repositories/UNLaR-Connect/AGENTS.md) para alinearse con los est\u00e1ndares de desarrollo.\n\n---\n\n## Primeros Pasos\n\nSiga estos pasos para ejecutar UNLaR-Connect localmente en modo de desarrollo:\n\n### 1. Requisitos Previos\nAseg\u00farese de tener instalado en su entorno:\n*   Node.js (versi\u00f3n 18.x o superior)\n*   npm (versi\u00f3n 9.x o superior)\n\n### 2. Instalaci\u00f3n\nClone el repositorio e instale las dependencias del proyecto:\n```bash\ngit clone https://github.com/repositories/UNLaR-Connect.git\ncd UNLaR-Connect\nnpm install\n```\n\n### 3. Configuraci\u00f3n de Variables de Entorno\nCree un archivo `.env.local` en la ra\u00edz del proyecto con los par\u00e1metros de conexi\u00f3n de sus servicios:\n```env\nNEXT_PUBLIC_SUPABASE_URL=tu_url_de_proyecto_supabase\nNEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima_supabase\nFREELLMAPI_ENDPOINT=tu_punto_de_conexion_local_llm_api\n```\n\n### 4. Ejecuci\u00f3n del Servidor de Desarrollo\nInicie el servidor de desarrollo local:\n```bash\nnpm run dev\n```\nAbra [http://localhost:3000](http://localhost:3000) en su navegador para ver la p\u00e1gina en funcionamiento.\n\n### 5. Compilaci\u00f3n para Producci\u00f3n\nVerifique la compilaci\u00f3n y el cumplimiento de ESLint:\n```bash\nnpm run build\n```\n\n---\n\n> [!NOTE]\n> Toda contribuci\u00f3n debe respetar los est\u00e1ndares de dise\u00f1o m\u00f3vil detallados en [.agents/rules/03-components.md](file:///.agents/rules/03-components.md). Mantenga la coherencia visual y funcional en dispositivos m\u00f3viles y de escritorio.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:23:33+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/blob/beb278ec70f8b710e244903dc7b0d1888574d442/README.md"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#56:opened",
+   "payload": {
+    "additions": 70,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 77,
+    "files": [
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/app/tutorias/sala/[roomId]/page.tsx",
+     "src/components/consultas/CallControls.tsx"
+    ],
+    "title": "feat: implement video call interface with WebRTC support and real-tim\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:22:06+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/56"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#56:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:22:19+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/56"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#56:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #iAZdsxd6py8mzYJXLqEoaDe5AEWZbYLQMjjUDgcsrpU=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS12aWRlb2xsYW1kLTE1YWY4Ni1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC84VkZMQUV3UVZzWmhjdUhQRk5ONGlXWVpSbVE4IiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWZlYXR1cmUtdmlkZW9sbGFtZC0xNWFmODYtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/8VFLAEwQVsZhcuHPFNN4iWYZRmQ8) | [Preview](https://unlar-connect-git-feature-videollamd-15af86-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-videollamd-15af86-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 4:22pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:22:13+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/56"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#55:opened",
+   "payload": {
+    "additions": 96,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 80,
+    "files": [
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/app/tutorias/sala/[roomId]/page.tsx",
+     "src/components/consultas/CallControls.tsx",
+     "src/components/layout/Header.tsx"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:01:14+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/55"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#55:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:23:33+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/55"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#55:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #LsDudF2kS4Zsfs6JoQYz1VPV/Ouy2wjWgdz7NKbGqtw=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0VlWTdOTGlxWFJ0R2dvcWNKZExmMlJHYXlSbnMiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/EeY7NLiqXRtGgoqcJdLf2RGayRns) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 4:23pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:01:23+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/55"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#54:opened",
+   "payload": {
+    "additions": 26,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/components/layout/Header.tsx"
+    ],
+    "title": "feat: move ThemeToggle into profile dropdown on mobile dashboard navbar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:00:26+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/54"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#54:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:00:40+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/54"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#54:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #XyevdlSTT2gd0xGc1lmF65u+JOBhe2v7GEQKZErJhaY=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdC1tb2JpbGUtdGhlbWUtNGIxN2JiLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9LCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzZWSkZWbnFlUFdOdGlneEVaV01uMTU1aVVpaXMiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdC1tb2JpbGUtdGhlbWUtNGIxN2JiLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJERVBMT1lFRCJ9XX0=\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/6VJFVnqePWNtigxEZWMn155iUiis) | [Preview](https://unlar-connect-git-feat-mobile-theme-4b17bb-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feat-mobile-theme-4b17bb-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 3:00pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:00:31+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/54"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#53:opened",
+   "payload": {
+    "additions": 406,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 44,
+    "files": [
+     "scratch/check_room.js",
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/components/consultas/ResourcesPanel.tsx"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:23:23+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/53"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#53:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:24:16+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/53"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#53:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #4S6FW+vcSCmJh+PJxGnVPiYneQ1MitWpAUC8oPddqhA=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0Lzk5ZFhtRndTeXFFVjJKdzVUbXR2ZmRaTVFOeVAiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/99dXmFwSyqEV2Jw5TmtvfdZMQNyP) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 2:23pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:23:28+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/53"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#52:opened",
+   "payload": {
+    "additions": 10,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 28,
+    "files": [
+     "src/app/chat/AsistenteClient.tsx",
+     "src/app/tutorias/TutoriasClient.tsx"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:17:51+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/52"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#52:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:18:04+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/52"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#52:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #LrFq4V/gSH8Tq0P6UINtKgLMZvD8AcK/bevBRyVPxi0=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0E1VEp1d1lHVjJQRWFDVWExZllVcHFzVXV5N2EiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1kZXZlbG9wLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/A5TJuwYGV2PEaCUa1fYUpqsUuy7a) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 2:17pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:17:57+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/52"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#51:opened",
+   "payload": {
+    "additions": 406,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 44,
+    "files": [
+     "scratch/check_room.js",
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/components/consultas/ResourcesPanel.tsx"
+    ],
+    "title": "Feature/videollamda arreglo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:17:49+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/51"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#51:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:22:56+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/51"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#51:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #OuIOJxmtW44Oz3ZF1pBn+3wsCer92DmNbetPaiL4YsU=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0dQTE41WnhVSkhNcjdGazNuR3c1Q0o4YWc0SGsiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS12aWRlb2xsYW1kLTE1YWY4Ni1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS12aWRlb2xsYW1kLTE1YWY4Ni1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/GPLN5ZxUJHMr7Fk3nGw5CJ8ag4Hk) | [Preview](https://unlar-connect-git-feature-videollamd-15af86-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-videollamd-15af86-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 2:19pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:17:55+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/51"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#50:opened",
+   "payload": {
+    "additions": 10,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 28,
+    "files": [
+     "src/app/chat/AsistenteClient.tsx",
+     "src/app/tutorias/TutoriasClient.tsx"
+    ],
+    "title": "Feat/remove clip button chat"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:16:55+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/50"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#50:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:17:23+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/50"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#50:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #YAqKQ/JEEsAVFUsPGCpyFmOUH1j9zd4q/Pj/Ufvu6W4=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdC1yZW1vdmUtY2xpcC1iLTUzMzkzYy1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC81dGlaTGhERDJ0ejI5bkVvaWFlY2pBWktrTkg0IiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWZlYXQtcmVtb3ZlLWNsaXAtYi01MzM5M2MtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/5tiZLhDD2tz29nEoiaecjAZKkNH4) | [Preview](https://unlar-connect-git-feat-remove-clip-b-53393c-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feat-remove-clip-b-53393c-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 2:17pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:17:00+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/50"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#49:opened",
+   "payload": {
+    "additions": 585,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 36,
+    "files": [
+     "src/hooks/useGroupWebRTC.ts"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:02:16+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/49"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#49:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:02:27+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/49"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#49:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #PhFc0qQ94GcYBl7JpqU2LKzvaLUHS9yBkrY2QnZs8jY=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzZCNGI3Y3lybXVQelZkRnFud3hFNHZ3amtTdDQiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1kZXZlbG9wLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/6B4b7cyrmuPzVdFqnwxE4vwjkSt4) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 6:02am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:02:21+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/49"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#48:opened",
+   "payload": {
+    "additions": 585,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 36,
+    "files": [
+     "src/hooks/useGroupWebRTC.ts"
+    ],
+    "title": "Correcci\u00f3n de renegociaci\u00f3n WebRTC en tutor\u00edas grupales"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:01:47+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/48"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#48:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:02:00+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/48"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#48:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #PmpE+cp4Rj2jJJxGVfYKe1HUfS/DI5N+rrB6f6B6g4A=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0ZWS2JlenVvU3NVRVA2VWZydGJmYTRwUzNwNTMiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LXR1dG9yaWFzLXdlYnJ0LWVkMWRkMS1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZml4LXR1dG9yaWFzLXdlYnJ0LWVkMWRkMS1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/FVKbezuoSsUEP6Ufrtbfa4pS3p53) | [Preview](https://unlar-connect-git-fix-tutorias-webrt-ed1dd1-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-tutorias-webrt-ed1dd1-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 6:01am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:01:52+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/48"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#47:opened",
+   "payload": {
+    "additions": 119,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 100,
+    "files": [
+     "src/hooks/useGroupWebRTC.ts"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:34:36+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/47"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#47:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:34:42+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/47"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#47:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #WVtpp6sWSjSLDIidpMm4xOmawdMCRY4agZ73FeQ4IqE=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0R0NVFRRzZTdmgxem9Fa3FQY1E4RlJ0TFBHbmYiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1kZXZlbG9wLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/Dt5QQG6Svh1zoEkqPcQ8FRtLPGnf) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 5:34am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:34:41+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/47"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#46:opened",
+   "payload": {
+    "additions": 119,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 100,
+    "files": [
+     "src/hooks/useGroupWebRTC.ts"
+    ],
+    "title": "fix(webrtc): serialize incoming signaling events to eliminate race conditions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:31:21+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/46"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#46:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:34:19+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/46"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#46:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #payGXIvDb4xdxi7wFyZghEHLdS0IIryAv38/B/5Uk18=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzJjM0VpUDc3NENYckRVMlN0WVY0aGo2VXBlQ3AiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LXdlYnJ0Yy1zaWduYWxpLWU0OGE5OC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZml4LXdlYnJ0Yy1zaWduYWxpLWU0OGE5OC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/2c3EiP774CXrDU2StYV4hj6UpeCp) | [Preview](https://unlar-connect-git-fix-webrtc-signali-e48a98-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-webrtc-signali-e48a98-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 5:35am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:31:26+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/46"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#45:opened",
+   "payload": {
+    "additions": 3,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:23:39+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/45"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#45:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:23:46+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/45"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#45:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #geIJOJcxbsCGjdk4eFMZqMcGLCgUrK7c5Nlo6R+Cpxw=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L3Z3anczVTdmS0ZEWDdNMTRMZDVIR3g4Slh1b2ciLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1kZXZlbG9wLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/vwjw3U7fKFDX7M14Ld5HGx8JXuog) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 5:23am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:23:44+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/45"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#44:opened",
+   "payload": {
+    "additions": 3,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx"
+    ],
+    "title": "fix(webrtc): conditional mount HTML5 video element on camera toggles"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:22:47+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/44"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#44:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:23:07+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/44"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#44:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #TNHdSWOXGEU4kMRVE6T8mqU7dPHHZZD2jbe+isL9izk=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0I0Nlhha1luR29BV2s4U0ZwNTkxaHNqdm1YVmQiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LXdlYnJ0Yy12aWRlby1tLTFhZDVmZC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1maXgtd2VicnRjLXZpZGVvLW0tMWFkNWZkLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/B46XakYnGoAWk8SFp591hsjvmXVd) | [Preview](https://unlar-connect-git-fix-webrtc-video-m-1ad5fd-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-webrtc-video-m-1ad5fd-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 5:22am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:22:52+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/44"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#43:opened",
+   "payload": {
+    "additions": 10,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/hooks/useGroupWebRTC.ts"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:10:18+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/43"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#43:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:11:33+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/43"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#43:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #w+bcK6c4CO2T//v3dKr1TdJbn29gBvmouMpNTesbbXE=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzRUeXd5dkc5VTljRVJ6b0JlUkNWY2lVZlN3ckgiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/4TywyvG9U9cERzoBeRCVciUfSwrH) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 5:10am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:10:23+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/43"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#42:opened",
+   "payload": {
+    "additions": 10,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/hooks/useGroupWebRTC.ts"
+    ],
+    "title": "fix(webrtc): renegociar conexion de forma automatica al encender camara o microfono"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:09:24+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/42"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#42:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:09:42+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/42"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#42:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #4kyuuW4GcBkOwsvUEbcjGSyXlmJvo7hIfGi/OtIfgbA=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZml4LXdlYnJ0Yy1yZW1vdGUtMzM1YzE3LWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9LCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0dlSkJmRGtxSG5UNW4zNG54OGpCY0UzODluazUiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LXdlYnJ0Yy1yZW1vdGUtMzM1YzE3LWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJERVBMT1lFRCJ9XX0=\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/GeJBfDkqHnT5n34nx8jBcE389nk5) | [Preview](https://unlar-connect-git-fix-webrtc-remote-335c17-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-webrtc-remote-335c17-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 5:09am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:09:29+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/42"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#41:opened",
+   "payload": {
+    "additions": 3868,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 53,
+    "deletions": 933,
+    "files": [
+     ".agents/workflows/glassmorphism.md",
+     "public/favicon.ico",
+     "public/favicon.png",
+     "public/icons/icon-128x128.png",
+     "public/icons/icon-144x144.png",
+     "public/icons/icon-152x152.png",
+     "public/icons/icon-192x192.png",
+     "public/icons/icon-384x384.png",
+     "public/icons/icon-512x512.png",
+     "public/icons/icon-72x72.png",
+     "public/icons/icon-96x96.png",
+     "scripts/generate-icons.js",
+     "src/actions/consultas.ts",
+     "src/app/chat/AsistenteClient.tsx",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/dashboard/page.tsx",
+     "src/app/eventos/page.tsx",
+     "src/app/favicon.ico",
+     "src/app/foro/page.tsx",
+     "src/app/icon.png"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:46:18+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/41"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#41:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:46:26+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/41"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#41:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #8vhzUn8kBO2f7HPRKB1JSmLrPwKJyAiNXrLCCczuUQw=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC9HZm04aXlHUVhRWGlvTjhMWXdXYnJ2azliaHoyIiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWRldmVsb3AtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/Gfm8iyGQXQXioN8LYwWbrvk9bhz2) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 4:46am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:46:24+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/41"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#40:opened",
+   "payload": {
+    "additions": 29,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 3,
+    "files": [
+     "public/favicon.ico",
+     "public/favicon.png",
+     "public/icons/icon-128x128.png",
+     "public/icons/icon-144x144.png",
+     "public/icons/icon-152x152.png",
+     "public/icons/icon-192x192.png",
+     "public/icons/icon-384x384.png",
+     "public/icons/icon-512x512.png",
+     "public/icons/icon-72x72.png",
+     "public/icons/icon-96x96.png",
+     "scripts/generate-icons.js",
+     "src/app/favicon.ico",
+     "src/app/icon.png"
+    ],
+    "title": "Reemplazo de logo de Vercel por el logo oficial de la aplicaci\u00f3n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:43:37+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/40"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#40:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:44:10+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/40"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#40:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #Qf0r0OQq/lxC2RpIszbrzDaL2BcFij66WF+jcehKxPs=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS11cGRhdGUtdGFiLWxvZ28tbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIn0sImluc3BlY3RvclVybCI6Imh0dHBzOi8vdmVyY2VsLmNvbS9sdWNhc2lzYWNzLXByb2plY3RzL3VubGFyLWNvbm5lY3QvQkdaV1F2MWdnQXdNZFlGb1B2Z2VDRHgzeVFUaCIsInByZXZpZXdVcmwiOiJ1bmxhci1jb25uZWN0LWdpdC1mZWF0dXJlLXVwZGF0ZS10YWItbG9nby1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQifV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/BGZWQv1ggAwMdYFoPvgeCDx3yQTh) | [Preview](https://unlar-connect-git-feature-update-tab-logo-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-update-tab-logo-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 4:43am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:43:42+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/40"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#39:opened",
+   "payload": {
+    "additions": 3109,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 23,
+    "deletions": 656,
+    "files": [
+     "src/actions/consultas.ts",
+     "src/app/tutorias/TutoriasClient.tsx",
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/app/tutorias/sala/[roomId]/page.tsx",
+     "src/components/consultas/CallChat.tsx",
+     "src/components/consultas/TutorCard.tsx",
+     "src/hooks/useGroupWebRTC.ts",
+     "src/lib/supabase/client.ts",
+     "src/types/database.ts",
+     "supabase/migrations/20260528133339_supabase_auth_sync_and_seed.sql",
+     "supabase/migrations/20260528141230_supabase_rls_policies.sql",
+     "supabase/migrations/20260528141635_supabase_security_advisor_fixes.sql",
+     "supabase/migrations/20260528142457_add_avatar_url_and_notifications.sql",
+     "supabase/migrations/20260528144608_20260528000500_cache_webhook_system.sql",
+     "supabase/migrations/20260528160637_add_user_insert_rls_policy.sql",
+     "supabase/migrations/20260528224000_upgrade_foro_table.sql",
+     "supabase/migrations/20260528225821_seed_foro_realistic_data.sql",
+     "supabase/migrations/20260528233930_add_post_votes.sql",
+     "supabase/migrations/20260529172627_cleanup_legacy_tables_and_add_vector_rpc.sql",
+     "supabase/migrations/20260529172733_fix_vector_operator_search_path.sql"
+    ],
+    "title": "feat(tutorias): resolver deadlock de senalizacion WebRTC y optimizar diseno responsivo de la sala"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:32:40+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/39"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#39:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:33:49+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/39"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#39:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #CzqNp38KrJmYZv8Sk5OCK9nHerUnfw/Lb5GJTk/XV3g=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0ZDekxRSkF1eTZjMkdWYll6dFRzMUZlMk12Mm4iLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZ3JvdXAtbGl2ZS10dXRvcmlhcy1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZ3JvdXAtbGl2ZS10dXRvcmlhcy1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/FCzLQJAuy6c2GVbYztTs1Fe2Mv2n) | [Preview](https://unlar-connect-git-group-live-tutorias-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-group-live-tutorias-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 4:33am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:32:45+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/39"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#38:opened",
+   "payload": {
+    "additions": 720,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 274,
+    "files": [
+     ".agents/workflows/glassmorphism.md",
+     "src/app/chat/AsistenteClient.tsx",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/page.tsx",
+     "src/components/assistant/FloatingAssistant.tsx",
+     "src/components/landing/ScreenShowcase.tsx",
+     "src/components/landing/UniConnectHero.tsx",
+     "src/components/landing/mocks/ChatbotMock.tsx",
+     "src/components/landing/mocks/ForumMock.tsx",
+     "src/components/landing/mocks/ResourcesMock.tsx",
+     "src/components/layout/Header.tsx",
+     "src/components/layout/Sidebar.tsx"
+    ],
+    "title": "Mejoras de UI/UX y adaptabilidad responsive para landing, dashboard y chat"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T02:49:35+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/38"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#38:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T02:49:57+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/38"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#38:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #+en1xJbUrXDp9xkGxjUvH7rTEMReWj7Tx3Izg9W0bsU=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1yZXNwb25zaXZlLTM3YjFkOC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC9HOEdENjlucDVEaEZXa3djcUtnUU41N3NhTm5CIiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWZlYXR1cmUtcmVzcG9uc2l2ZS0zN2IxZDgtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/G8GD69np5DhFWkwcqKgQN57saNnB) | [Preview](https://unlar-connect-git-feature-responsive-37b1d8-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-responsive-37b1d8-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 2:49am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T02:49:41+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/38"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#37:opened",
+   "payload": {
+    "additions": 10,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "src/app/dashboard/page.tsx",
+     "src/app/eventos/page.tsx",
+     "src/app/foro/page.tsx",
+     "src/app/ranking/page.tsx",
+     "src/app/tutorias/configuracion/page.tsx"
+    ],
+    "title": "fix: force-dynamic en p\u00e1ginas con cookies"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:26:07+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/37"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#37:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:26:26+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/37"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#37:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #u34x1F1Q9RMZlV/14kPaeP56L9KFCw4sdJM7I5gNmr0=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0ZMR0pUSkREdHdiU3d1b05VU2VNUTZqcW5RRm8iLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LXZlcmNlbC1keW5hbWljLXJvdXRlcy1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1maXgtdmVyY2VsLWR5bmFtaWMtcm91dGVzLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/FLGJTJDDtwbSwuoNUSeMQ6jqnQFo) | [Preview](https://unlar-connect-git-fix-vercel-dynamic-routes-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-vercel-dynamic-routes-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 1:26am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:26:13+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/37"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#36:opened",
+   "payload": {
+    "additions": 616,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 14,
+    "files": [
+     "src/actions/karma.ts",
+     "src/actions/perfil.ts",
+     "src/app/karma/KarmaClient.tsx",
+     "src/app/karma/page.tsx",
+     "src/app/perfil/[userId]/UserProfileClient.tsx",
+     "src/app/perfil/[userId]/page.tsx",
+     "src/app/ranking/RankingClient.tsx",
+     "src/components/ui/FormattedNumber.tsx"
+    ],
+    "title": "feat(profile): Perfiles p\u00fablicos + actividad en karma page"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:45:16+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/36"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#36:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:53:54+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/36"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#36:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #PQ+m82fV+o+QxqQFTZWwX7eCGkccZ9LQIVop9nQC6aA=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0F0cmRyVjlKdEszdWFUVmdkOURSaXlZOTZOQmMiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1wcm9maWxlLWFuLWZiNzBhNS1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1wcm9maWxlLWFuLWZiNzBhNS1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/AtrdrV9JtK3uaTVgd9DRiyY96NBc) | [Preview](https://unlar-connect-git-feature-profile-an-fb70a5-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-profile-an-fb70a5-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 12:45am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:45:21+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/36"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#35:opened",
+   "payload": {
+    "additions": 398,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 63,
+    "files": [
+     "package.json",
+     "pnpm-lock.yaml",
+     "pnpm-workspace.yaml",
+     "src/app/(auth)/login/page.tsx",
+     "src/app/(auth)/register/page.tsx",
+     "src/app/eventos/[eventId]/inscribir/InscribirClient.tsx",
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/components/consultas/RequestTutoringModal.tsx",
+     "src/components/consultas/ScheduledTutorCard.tsx",
+     "src/components/consultas/SessionChatModal.tsx",
+     "src/components/consultas/TutorCard.tsx",
+     "src/components/consultas/TutorProfileModal.tsx",
+     "src/components/events/CreateEventModal.tsx",
+     "src/components/events/EventCard.tsx",
+     "src/components/events/EventDetailModal.tsx",
+     "src/components/landing/ThreeHeroCanvas.tsx",
+     "src/components/ui/Logo.tsx"
+    ],
+    "title": "Optimize Vercel demo with sharp, next/image, and tree-shaking"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:32:12+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/35"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#35:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:32:59+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/35"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#35:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #RLaH+Kxdi2L+Act4J/+nVkFb1HLULkjrRz4T3tyLN/A=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJyb290RGlyZWN0b3J5IjpudWxsLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1wZXJmLWhvdGZpLTQ4YjQxZC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC9DNkhYZEhzbWFIMXJjV2lxdDZwcGtQZXJ6NE16IiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWZlYXR1cmUtcGVyZi1ob3RmaS00OGI0MWQtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/C6HXdHsmaH1rcWiqt6ppkPerz4Mz) | [Preview](https://unlar-connect-git-feature-perf-hotfi-48b41d-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-perf-hotfi-48b41d-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 12:32am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:32:31+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/35"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#34:opened",
+   "payload": {
+    "additions": 398,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 63,
+    "files": [
+     "package.json",
+     "pnpm-lock.yaml",
+     "pnpm-workspace.yaml",
+     "src/app/(auth)/login/page.tsx",
+     "src/app/(auth)/register/page.tsx",
+     "src/app/eventos/[eventId]/inscribir/InscribirClient.tsx",
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/components/consultas/RequestTutoringModal.tsx",
+     "src/components/consultas/ScheduledTutorCard.tsx",
+     "src/components/consultas/SessionChatModal.tsx",
+     "src/components/consultas/TutorCard.tsx",
+     "src/components/consultas/TutorProfileModal.tsx",
+     "src/components/events/CreateEventModal.tsx",
+     "src/components/events/EventCard.tsx",
+     "src/components/events/EventDetailModal.tsx",
+     "src/components/landing/ThreeHeroCanvas.tsx",
+     "src/components/ui/Logo.tsx"
+    ],
+    "title": "perf: optimizations for Vercel demo - sharp, next/image, tree-shake t\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:31:29+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/34"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#34:closed",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:31:43+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/34"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#34:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #HrqaOofzq+ucHHB6IyqeS0JVcTSmjOCt3Jb7v9q90Po=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0M2SFhkSHNtYUgxcmNXaXF0NnBwa1Blcno0TXoiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1wZXJmLWhvdGZpLTQ4YjQxZC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1mZWF0dXJlLXBlcmYtaG90ZmktNDhiNDFkLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/C6HXdHsmaH1rcWiqt6ppkPerz4Mz) | [Preview](https://unlar-connect-git-feature-perf-hotfi-48b41d-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-perf-hotfi-48b41d-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 30, 2026 12:31am |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:31:34+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/34"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#33:opened",
+   "payload": {
+    "additions": 2377,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 22,
+    "deletions": 500,
+    "files": [
+     "src/actions/consultas.ts",
+     "src/actions/perfil.ts",
+     "src/actions/reviews.ts",
+     "src/actions/tutoring-custom.ts",
+     "src/actions/tutoring-scheduled.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/foro/ForoClient.tsx",
+     "src/app/perfil/PerfilClient.tsx",
+     "src/app/tutorias/TutoriasClient.tsx",
+     "src/app/tutorias/configuracion/ConfiguracionTutorClient.tsx",
+     "src/app/tutorias/configuracion/page.tsx",
+     "src/components/consultas/CreateCustomTutoringModal.tsx",
+     "src/components/consultas/RequestTutoringModal.tsx",
+     "src/components/consultas/ReviewTutorModal.tsx",
+     "src/components/consultas/ScheduledTutorCard.tsx",
+     "src/components/consultas/SessionChatModal.tsx",
+     "src/components/consultas/TutorCard.tsx",
+     "src/components/consultas/TutorProfileModal.tsx",
+     "src/components/consultas/TutoringCalendar.tsx",
+     "src/hooks/useCallPresence.ts"
+    ],
+    "title": "Implement comprehensive tutoring management system and save config"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:49:12+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/33"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#33:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:50:34+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/33"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#33:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #xUykVHUE+jHTeegmLaDe3+b1/NVBOLa2J5s4wpfqhrw=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0NpYTJOczhOaG56dTF2ckNrOXZGMlZITHk3N3YiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/Cia2Ns8Nhnzu1vrCk9vF2VHLy77v) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 11:49pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:49:18+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/33"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#32:opened",
+   "payload": {
+    "additions": 1,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/components/assistant/FloatingAssistant.tsx"
+    ],
+    "title": "fix(assistant): Ocultar burbuja en login y register"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:32:43+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/32"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#32:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:33:00+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/32"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#32:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #enG8kXRpivmJhOTquG4hmkE+N7BcBTGlSJMwuSDQ+Rw=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzhrcU44WGV3UENXZ1hmUmZLUDdpeUxyTGJNM24iLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LWFzc2lzdGFudC1sb2dpbi1wYWdlLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJQRU5ESU5HIiwibGl2ZUZlZWRiYWNrIjp7InJlc29sdmVkIjowLCJ1bnJlc29sdmVkIjowLCJ0b3RhbCI6MCwibGluayI6InVubGFyLWNvbm5lY3QtZ2l0LWZpeC1hc3Npc3RhbnQtbG9naW4tcGFnZS1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifX1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/8kqN8XewPCWgXfRfKP7iyLrLbM3n) | [Preview](https://unlar-connect-git-fix-assistant-login-page-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-assistant-login-page-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 11:32pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:32:48+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/32"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#31:opened",
+   "payload": {
+    "additions": 2377,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 22,
+    "deletions": 500,
+    "files": [
+     "src/actions/consultas.ts",
+     "src/actions/perfil.ts",
+     "src/actions/reviews.ts",
+     "src/actions/tutoring-custom.ts",
+     "src/actions/tutoring-scheduled.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/foro/ForoClient.tsx",
+     "src/app/perfil/PerfilClient.tsx",
+     "src/app/tutorias/TutoriasClient.tsx",
+     "src/app/tutorias/configuracion/ConfiguracionTutorClient.tsx",
+     "src/app/tutorias/configuracion/page.tsx",
+     "src/components/consultas/CreateCustomTutoringModal.tsx",
+     "src/components/consultas/RequestTutoringModal.tsx",
+     "src/components/consultas/ReviewTutorModal.tsx",
+     "src/components/consultas/ScheduledTutorCard.tsx",
+     "src/components/consultas/SessionChatModal.tsx",
+     "src/components/consultas/TutorCard.tsx",
+     "src/components/consultas/TutorProfileModal.tsx",
+     "src/components/consultas/TutoringCalendar.tsx",
+     "src/hooks/useCallPresence.ts"
+    ],
+    "title": "Implement comprehensive tutoring management system and save config"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:32:30+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/31"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#31:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:48:40+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/31"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#31:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #VN8TCwbxYwt4xl8z3FqQ68pGk8dqjpEgZzJfhGn3k/w=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS10dXRvcmlhcy1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC8zY1J0WkZ3Y284b0RxZzV1ekFETjZCcEUzNWt3IiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWZlYXR1cmUtdHV0b3JpYXMtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIiwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/3cRtZFwco8oDqg5uzADN6BpE35kw) | [Preview](https://unlar-connect-git-feature-tutorias-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-tutorias-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 11:47pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:32:35+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/31"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#30:opened",
+   "payload": {
+    "additions": 9,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/components/assistant/FloatingAssistant.tsx"
+    ],
+    "title": "fix(assistant): Ocultar burbuja en landing y auth"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:14:16+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/30"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#30:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:14:52+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/30"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#30:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #Dxi0uz/cwZkFG3fbw9nZHlxtqrRiO8sdIReO/KavWKI=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzNUcnFxNmp4bkY1Qmh2NTZ3dWhTU01UMTJ2aUoiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LWZsb2F0aW5nLWFzc2lzLTFiMTM1Ny1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiUEVORElORyIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1maXgtZmxvYXRpbmctYXNzaXMtMWIxMzU3LWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9fV19\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Building](https://vercel.com/static/status/building.svg) [Building](https://vercel.com/lucasisacs-projects/unlar-connect/3Trqq6jxnF5Bhv56wuhSSMT12viJ) | [Preview](https://unlar-connect-git-fix-floating-assis-1b1357-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-floating-assis-1b1357-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 11:14pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:14:23+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/30"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#29:opened",
+   "payload": {
+    "additions": 8,
+    "author": "jor1196",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     ".devcontainer/devcontainer.json",
+     "src/app/perfil/PerfilClient.tsx"
+    ],
+    "title": "Bug - Profile - Courses:"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:05:54+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/29"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#29:closed",
+   "payload": {
+    "author": "jor1196",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:08:01+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/29"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#29:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #1xSyljIxSUg3uM+Ii01LGVp9l7dhgwj/ZUgRshmFdQ8=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtYnVnLXByb2ZpbGVub3NlbGVjLWZkYjljOC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC80bW43QkJOQnZjNEJQb3VUVFBHZ3FKWG05cHJpIiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWJ1Zy1wcm9maWxlbm9zZWxlYy1mZGI5YzgtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/4mn7BBNBvc4BPouTTPGgqJXm9pri) | [Preview](https://unlar-connect-git-bug-profilenoselec-fdb9c8-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-bug-profilenoselec-fdb9c8-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 11:05pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:05:55+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/29"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#28:opened",
+   "payload": {
+    "additions": 541,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/app/layout.tsx",
+     "src/components/assistant/FloatingAssistant.tsx"
+    ],
+    "title": "feat(assistant): Burbuja flotante de ayuda contextual"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:35:26+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/28"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#28:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:45:27+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/28"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#28:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #FevHI0J1VJPuD+7I2Av/lYTugDiXLbqiDpkVab+Ox4I=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzVVOTg2ejJzUEZ4aEFLSllBUEVSMnlON2RIWjMiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1mbG9hdGluZy1hLTdiYjQ1MC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1mbG9hdGluZy1hLTdiYjQ1MC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/5U986z2sPFxhAKJYAPER2yN7dHZ3) | [Preview](https://unlar-connect-git-feature-floating-a-7bb450-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-floating-a-7bb450-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 10:35pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:35:32+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/28"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#27:opened",
+   "payload": {
+    "additions": 45,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 58,
+    "files": [
+     "public/sw.js"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:02:46+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/27"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#27:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:02:55+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/27"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#27:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #QKxqwTGBxWv74qdzORbvVL7Veahieed2A8dIrWpaEzQ=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC9CS21IMm9TWGVLd3dNYTRtdEg0RUVFUFBLMWdDIiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWRldmVsb3AtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/BKmH2oSXeKwwMa4mtH4EEEPPK1gC) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 8:02pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:02:50+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/27"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#26:opened",
+   "payload": {
+    "additions": 45,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 58,
+    "files": [
+     "public/sw.js"
+    ],
+    "title": "Corregir almacenamiento en cache de rutas dinamicas en Service Worker"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:00:33+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/26"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#26:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:02:04+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/26"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#26:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #Mi+Lk/xDNOTGHHVkOXi/n216WgUD9YLgCKtqQHf/5X0=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0FzUTdtVzl4cDF0QnVlOHRzaDhEeUdGd2lmV1EiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LXB3YS1zdy1jYWNoaW5nLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJERVBMT1lFRCIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1maXgtcHdhLXN3LWNhY2hpbmctbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIn0sInJvb3REaXJlY3RvcnkiOm51bGx9XX0=\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/AsQ7mW9xp1tBue8tsh8DyGFwifWQ) | [Preview](https://unlar-connect-git-fix-pwa-sw-caching-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-pwa-sw-caching-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 8:01pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:00:39+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/26"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#25:opened",
+   "payload": {
+    "additions": 1852,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 32,
+    "deletions": 901,
+    "files": [
+     ".env.example",
+     "README.md",
+     "docs/architecture.md",
+     "docs/database_schema.md",
+     "docs/rag_ai_pipeline.md",
+     "docs/testing_and_verification.md",
+     "emiliano.svg",
+     "emiliano_variant2.svg",
+     "jorge.svg",
+     "jorge_variant2.svg",
+     "leo.svg",
+     "lucas.svg",
+     "lucas_variant2.svg",
+     "package.json",
+     "pnpm-lock.yaml",
+     "public/manifest.json",
+     "src/actions/chat.ts",
+     "src/actions/ingest.ts",
+     "src/actions/recursos.ts",
+     "src/app/asistente/AsistenteClient.tsx"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:45:25+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/25"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#25:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:45:46+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/25"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#25:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #SNV7WPTCC8Czt+Qdp8QlIZo05Xd/fkEy/NUDGlaWOJA=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwiaW5zcGVjdG9yVXJsIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2x1Y2FzaXNhY3MtcHJvamVjdHMvdW5sYXItY29ubmVjdC83YnNHY3gzbjZ1Uzd0dWJXZ3ZVdTJYcjJ0d2pQIiwicHJldmlld1VybCI6InVubGFyLWNvbm5lY3QtZ2l0LWRldmVsb3AtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIiwibmV4dENvbW1pdFN0YXR1cyI6IkRFUExPWUVEIn1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/7bsGcx3n6uS7tubWgvUu2Xr2twjP) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 7:45pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:45:30+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/25"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#24:opened",
+   "payload": {
+    "additions": 462,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 559,
+    "files": [
+     "README.md",
+     "docs/architecture.md",
+     "docs/database_schema.md",
+     "docs/rag_ai_pipeline.md",
+     "docs/testing_and_verification.md",
+     "emiliano.svg",
+     "emiliano_variant2.svg",
+     "jorge.svg",
+     "jorge_variant2.svg",
+     "leo.svg",
+     "lucas.svg",
+     "lucas_variant2.svg"
+    ],
+    "title": "docs: Documentaci\u00f3n t\u00e9cnica del sistema y enfoque del README en el Eje 3 de la Hackathon"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:20:32+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/24"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#24:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:22:10+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/24"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#24:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #71YGinDZGsFdBqDfcila3f5atHcqXlHZVv6s70OcopI=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzNqMWhORjh0dGN2b29CNWVNZ1hVSEZWRzlyc1YiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1kb2NzLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJERVBMT1lFRCIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1mZWF0dXJlLWRvY3MtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIn0sInJvb3REaXJlY3RvcnkiOm51bGx9XX0=\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/3j1hNF8ttcvooB5eMgXUHFVG9rsV) | [Preview](https://unlar-connect-git-feature-docs-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-docs-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 7:21pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:20:37+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/24"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#23:opened",
+   "payload": {
+    "additions": 5,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 14,
+    "files": [
+     "public/manifest.json"
+    ],
+    "title": "fix(pwa): clean manifest for production deploy"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:54:52+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/23"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#23:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:55:29+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/23"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#23:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #A/7nSLbphUZIWlx2E7OLboHNFnkFfFCwo2GFtYDzg3Q=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0LzgxMW1UZGpqQWI2R1lVSlE4VHR3aDQxVFVKUUsiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZml4LXB3YS1tYW5pZmVzdC1jbGVhbnVwLWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJERVBMT1lFRCIsImxpdmVGZWVkYmFjayI6eyJyZXNvbHZlZCI6MCwidW5yZXNvbHZlZCI6MCwidG90YWwiOjAsImxpbmsiOiJ1bmxhci1jb25uZWN0LWdpdC1maXgtcHdhLW1hbmlmZXN0LWNsZWFudXAtbHVjYXNpc2Fjcy1wcm9qZWN0cy52ZXJjZWwuYXBwIn0sInJvb3REaXJlY3RvcnkiOm51bGx9XX0=\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/811mTdjjAb6GYUJQ8Ttwh41TUJQK) | [Preview](https://unlar-connect-git-fix-pwa-manifest-cleanup-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-fix-pwa-manifest-cleanup-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 6:55pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:54:58+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/23"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#22:opened",
+   "payload": {
+    "additions": 1385,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 19,
+    "deletions": 328,
+    "files": [
+     ".env.example",
+     "package.json",
+     "pnpm-lock.yaml",
+     "src/actions/chat.ts",
+     "src/actions/ingest.ts",
+     "src/actions/recursos.ts",
+     "src/app/asistente/AsistenteClient.tsx",
+     "src/app/asistente/page.tsx",
+     "src/app/chat/AsistenteClient.tsx",
+     "src/app/chat/page.tsx",
+     "src/components/layout/DashboardLayout.tsx",
+     "src/components/layout/Sidebar.tsx",
+     "src/components/ui/Select.tsx",
+     "src/lib/ai.ts",
+     "src/lib/freellmapi.ts",
+     "src/lib/parser.ts",
+     "src/middleware.ts",
+     "supabase/migrations/20260529110000_cleanup_legacy_tables_and_add_vector_rpc.sql",
+     "supabase/migrations/20260529120000_add_filtering_to_vector_rpc.sql"
+    ],
+    "title": "feat(chat): implementar filtros de contexto RAG y mejoras de interfaz del asistente"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:48:00+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/22"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#22:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:49:03+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/22"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#22:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #lDDQAJG9wkYwtsaWpK67/A5JznRItQdtGnDeYMgiqeo=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdC1jaGF0Ym90LWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCJ9LCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0U2OUNFQ2hxM0ozVlRTUmNObUhmQjZrTWEzQkEiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdC1jaGF0Ym90LWx1Y2FzaXNhY3MtcHJvamVjdHMudmVyY2VsLmFwcCIsIm5leHRDb21taXRTdGF0dXMiOiJERVBMT1lFRCJ9XX0=\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/E69CEChq3J3VTSRcNmHfB6kMa3BA) | [Preview](https://unlar-connect-git-feat-chatbot-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feat-chatbot-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 6:48pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:48:05+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/22"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#21:opened",
+   "payload": {
+    "additions": 26461,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 150,
+    "deletions": 11767,
+    "files": [
+     ".agents/rules/02-architecture.md",
+     ".agents/skills/supabase.md",
+     ".agents/testing_guide.md",
+     ".agents/workflows/get-context.md",
+     ".agents/workflows/safe-pr-integration.md",
+     ".env.example",
+     ".gitignore",
+     ".npmrc",
+     "next.config.mjs",
+     "package-lock.json",
+     "package.json",
+     "pnpm-lock.yaml",
+     "public/emiliano.svg",
+     "public/emiliano_variant2.svg",
+     "public/favicon.png",
+     "public/icons/icon-128x128.png",
+     "public/icons/icon-144x144.png",
+     "public/icons/icon-152x152.png",
+     "public/icons/icon-192x192.png",
+     "public/icons/icon-384x384.png"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:42:16+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/21"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#21:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:45:06+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/21"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#21:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #Er0KdhZPTRJD3MHbioSlJWNdQABm6/DjzZp4m5cktY4=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJyb290RGlyZWN0b3J5IjpudWxsLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0ZrY2FONUh5YzkzdXM0bnhwRnloR2tudm9tY0EiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZGV2ZWxvcC1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifX1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/FkcaN5Hyc93us4nxpFyhGknvomcA) | [Preview](https://unlar-connect-git-develop-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-develop-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 6:44pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:42:20+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/21"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#20:opened",
+   "payload": {
+    "additions": 1015,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 62,
+    "files": [
+     "src/actions/events.ts",
+     "src/actions/foro.ts",
+     "src/actions/reputation.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/eventos/[eventId]/inscribir/InscribirClient.tsx",
+     "src/app/eventos/[eventId]/inscribir/page.tsx",
+     "src/app/foro/ForoClient.tsx",
+     "src/app/karma/KarmaClient.tsx",
+     "src/app/karma/page.tsx",
+     "src/app/perfil/PerfilClient.tsx",
+     "src/app/ranking/RankingClient.tsx",
+     "src/components/events/EventCard.tsx",
+     "src/components/events/EventDetailModal.tsx",
+     "src/components/layout/Sidebar.tsx",
+     "src/lib/cache.ts",
+     "src/lib/reputation-constants.ts",
+     "src/types/database.ts",
+     "supabase/migrations/20260529120000_reputation_system_revamp.sql"
+    ],
+    "title": "feat(reputation): Sistema de reputaci\u00f3n centralizado + fotos en foro"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:50:00+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/20"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#20:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:43:24+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/20"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#20:comment:0",
+   "payload": {
+    "author": "vercel",
+    "author_is_bot": true,
+    "body": "[vc]: #538zaAdRMBHTCk0w7Skw9aQTn3A52NNDtevfB8Jiv0A=:eyJpc01vbm9yZXBvIjp0cnVlLCJ0eXBlIjoiZ2l0aHViIiwicHJvamVjdHMiOlt7Im5hbWUiOiJ1bmxhci1jb25uZWN0IiwicHJvamVjdElkIjoicHJqX0Nab0JkZnJpWVAyN2hGeG9nZWlVdWhNMHdoU1oiLCJpbnNwZWN0b3JVcmwiOiJodHRwczovL3ZlcmNlbC5jb20vbHVjYXNpc2Fjcy1wcm9qZWN0cy91bmxhci1jb25uZWN0L0VoQVF0MTlyNHhIM3FKUTRWcWd1NW5aeTJYQksiLCJwcmV2aWV3VXJsIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1yZXB1dGF0aW9uLXN5c3RlbS1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAiLCJuZXh0Q29tbWl0U3RhdHVzIjoiREVQTE9ZRUQiLCJsaXZlRmVlZGJhY2siOnsicmVzb2x2ZWQiOjAsInVucmVzb2x2ZWQiOjAsInRvdGFsIjowLCJsaW5rIjoidW5sYXItY29ubmVjdC1naXQtZmVhdHVyZS1yZXB1dGF0aW9uLXN5c3RlbS1sdWNhc2lzYWNzLXByb2plY3RzLnZlcmNlbC5hcHAifSwicm9vdERpcmVjdG9yeSI6bnVsbH1dfQ==\nThe latest updates on your projects. Learn more about [Vercel for GitHub](https://vercel.link/github-learn-more).\n\n| Project | Deployment | Actions | Updated (UTC) |\n| :--- | :----- | :------ | :------ |\n| [unlar-connect](https://vercel.com/lucasisacs-projects/unlar-connect) | ![Ready](https://vercel.com/static/status/ready.svg) [Ready](https://vercel.com/lucasisacs-projects/unlar-connect/EhAQt19r4xH3qJQ4Vqgu5nZy2XBK) | [Preview](https://unlar-connect-git-feature-reputation-system-lucasisacs-projects.vercel.app), [Comment](https://vercel.live/open-feedback/unlar-connect-git-feature-reputation-system-lucasisacs-projects.vercel.app?via=pr-comment-feedback-link) | May 29, 2026 5:50pm |\n\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:50:08+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/20"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#19:opened",
+   "payload": {
+    "additions": 579,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 422,
+    "files": [
+     "src/actions/perfil.ts",
+     "src/actions/recursos.ts",
+     "src/app/recursos/page.tsx",
+     "src/components/events/CreateEventModal.tsx",
+     "src/components/layout/DashboardLayout.tsx",
+     "src/components/layout/Header.tsx",
+     "src/lib/supabase/client.ts",
+     "supabase/migrations/20260529010000_gamification_system.sql"
+    ],
+    "title": "Implement resource management system with dashboard and voting"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:05:16+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/19"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#19:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:05:25+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/19"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#18:opened",
+   "payload": {
+    "additions": 371,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 21,
+    "deletions": 393,
+    "files": [
+     "src/actions/foro.ts",
+     "src/actions/recursos.ts",
+     "src/app/asistente/AsistenteClient.tsx",
+     "src/app/asistente/page.tsx",
+     "src/app/eventos/EventosClient.tsx",
+     "src/app/eventos/page.tsx",
+     "src/app/foro/ForoClient.tsx",
+     "src/app/foro/page.tsx",
+     "src/app/foros/page.tsx",
+     "src/app/karma/KarmaClient.tsx",
+     "src/app/page.tsx",
+     "src/app/perfil/PerfilClient.tsx",
+     "src/app/perfil/page.tsx",
+     "src/app/ranking/RankingClient.tsx",
+     "src/app/recursos/page.tsx",
+     "src/app/tutorias/TutoriasClient.tsx",
+     "src/components/consultas/TutoringCalendar.tsx",
+     "src/components/layout/Header.tsx",
+     "src/components/layout/Sidebar.tsx",
+     "src/lib/constants.ts"
+    ],
+    "title": "Estandarizaci\u00f3n de rutas y dise\u00f1o de encabezados"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:37:22+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/18"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#18:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:38:09+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/18"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#17:opened",
+   "payload": {
+    "additions": 22733,
+    "author": "jor1196",
+    "author_is_bot": false,
+    "changed_files": 102,
+    "deletions": 11670,
+    "files": [
+     ".agents/rules/02-architecture.md",
+     ".agents/skills/supabase.md",
+     ".agents/testing_guide.md",
+     ".env.example",
+     ".npmrc",
+     "next.config.mjs",
+     "package-lock.json",
+     "package.json",
+     "pnpm-lock.yaml",
+     "src/actions/auth.ts",
+     "src/actions/consultas.ts",
+     "src/actions/dashboard.ts",
+     "src/actions/foros.ts",
+     "src/actions/karma.ts",
+     "src/actions/notifications.ts",
+     "src/actions/perfil.ts",
+     "src/actions/recursos.ts",
+     "src/actions/tutoring-scheduled.ts",
+     "src/app/(auth)/login/page.tsx",
+     "src/app/(auth)/register/page.tsx"
+    ],
+    "title": "Peer-to-Peer tutoring module"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:17:45+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/17"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#17:closed",
+   "payload": {
+    "author": "jor1196",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:20:08+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/17"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#16:opened",
+   "payload": {
+    "additions": 33,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 31,
+    "files": [
+     "src/actions/events.ts",
+     "src/app/dashboard/eventos/EventosClient.tsx",
+     "src/app/layout.tsx",
+     "src/components/events/CreateEventModal.tsx"
+    ],
+    "title": "fix: event edit + PWA viewport warnings"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:08:53+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/16"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#16:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:10:12+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/16"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#15:opened",
+   "payload": {
+    "additions": 256,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 0,
+    "files": [
+     "public/favicon.png",
+     "public/icons/icon-128x128.png",
+     "public/icons/icon-144x144.png",
+     "public/icons/icon-152x152.png",
+     "public/icons/icon-192x192.png",
+     "public/icons/icon-384x384.png",
+     "public/icons/icon-512x512.png",
+     "public/icons/icon-72x72.png",
+     "public/icons/icon-96x96.png",
+     "public/manifest.json",
+     "public/sw.js",
+     "scripts/generate-icons.js",
+     "src/app/layout.tsx"
+    ],
+    "title": "feat(pwa): Progressive Web App para instalaci\u00f3n en Android"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:47:12+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/15"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#15:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:50:58+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/15"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#14:opened",
+   "payload": {
+    "additions": 1703,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 2,
+    "files": [
+     "src/actions/events.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/dashboard/eventos/EventosClient.tsx",
+     "src/app/dashboard/eventos/page.tsx",
+     "src/app/dashboard/page.tsx",
+     "src/components/events/CreateEventModal.tsx",
+     "src/components/events/EventCard.tsx",
+     "src/components/events/EventDetailModal.tsx",
+     "src/components/events/EventsSection.tsx",
+     "src/components/layout/Sidebar.tsx",
+     "src/types/database.ts",
+     "supabase/migrations/20260529100000_add_events_system.sql"
+    ],
+    "title": "feat(events): Sistema de eventos universitarios con CRUD e inscripciones"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:16:40+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/14"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#14:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:27:21+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/14"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#13:opened",
+   "payload": {
+    "additions": 96,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 831,
+    "files": [
+     "public/emiliano.svg",
+     "public/emiliano_variant2.svg",
+     "public/jorge.svg",
+     "public/jorge_variant2.svg",
+     "public/leo.svg",
+     "public/logo.svg",
+     "public/lucas.svg",
+     "public/lucas_variant2.svg",
+     "src/actions/recursos.ts",
+     "src/app/dashboard/recursos/page.tsx",
+     "src/app/layout.tsx",
+     "src/components/ui/Logo.tsx",
+     "src/components/ui/LogoSwitcher.tsx"
+    ],
+    "title": "Implementacion de logo final y limpieza de switcher"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:57:12+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/13"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#13:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:25:55+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/13"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#12:opened",
+   "payload": {
+    "additions": 680,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 324,
+    "files": [
+     "src/actions/foros.ts",
+     "src/app/dashboard/error.tsx",
+     "src/app/dashboard/foros/ForosClient.tsx",
+     "src/app/dashboard/foros/page.tsx"
+    ],
+    "title": "fix(foros): merge conflicts, error boundary fix, userId from server"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:16:38+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/12"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#12:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:28:52+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/12"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#11:opened",
+   "payload": {
+    "additions": 1427,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 1030,
+    "files": [
+     ".agents/skills/supabase.md",
+     ".gitignore",
+     "next.config.mjs",
+     "src/actions/dashboard.ts",
+     "src/actions/notifications.ts",
+     "src/actions/recursos.ts",
+     "src/app/apuntes/page.tsx",
+     "src/app/dashboard/recursos/RecursosClient.tsx",
+     "src/app/dashboard/recursos/page.tsx",
+     "src/components/documents/README.md",
+     "supabase/migrations/20260528222126_create_apuntes_bucket.sql",
+     "supabase/migrations/20260529002825_fix_documents_delete_policy.sql"
+    ],
+    "title": "Implement resource management page with AI chat and upload features"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:41:21+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/11"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#11:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:41:33+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/11"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#10:opened",
+   "payload": {
+    "additions": 1699,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 15,
+    "deletions": 236,
+    "files": [
+     "src/actions/dashboard.ts",
+     "src/actions/foros.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/dashboard/foros/ForosClient.tsx",
+     "src/app/dashboard/perfil/PerfilClient.tsx",
+     "src/app/globals.css",
+     "src/app/page.tsx",
+     "src/components/landing/DashboardMaterialization.tsx",
+     "src/components/layout/DashboardLayout.tsx",
+     "src/components/layout/Header.tsx",
+     "src/components/ui/Select.tsx",
+     "src/types/database.ts",
+     "supabase/migrations/20260528000900_upgrade_foro_table.sql",
+     "supabase/migrations/20260528001000_add_post_votes.sql",
+     "supabase/seed_foro.sql"
+    ],
+    "title": "A\u00f1adir pr\u00e9stamos y compra/alquiler al foro"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:53:56+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/10"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#10:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:07:28+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/10"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#9:opened",
+   "payload": {
+    "additions": 5109,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 37,
+    "deletions": 91,
+    "files": [
+     ".agents/testing_guide.md",
+     ".agents/workflows/get-context.md",
+     ".env.example",
+     "public/sw.js",
+     "src/actions/consultas.ts",
+     "src/actions/tutoring-scheduled.ts",
+     "src/app/layout.tsx",
+     "src/app/tutorias/TutoriasClient.tsx",
+     "src/app/tutorias/page.tsx",
+     "src/app/tutorias/sala/[roomId]/SalaClient.tsx",
+     "src/app/tutorias/sala/[roomId]/page.tsx",
+     "src/components/consultas/CallChat.tsx",
+     "src/components/consultas/CallControls.tsx",
+     "src/components/consultas/IncomingCallBanner.tsx",
+     "src/components/consultas/RequestTutoringModal.tsx",
+     "src/components/consultas/ResourcesPanel.tsx",
+     "src/components/consultas/ScheduledTutorCard.tsx",
+     "src/components/consultas/TutorCard.tsx",
+     "src/components/consultas/TutoringCalendar.tsx",
+     "src/components/events/CreateEventModal.tsx"
+    ],
+    "title": "Implementacion de Consultas Express (Videollamadas 1-on-1)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:32:16+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/9"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#9:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:16:49+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/9"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#8:opened",
+   "payload": {
+    "additions": 369,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 76,
+    "files": [
+     "src/actions/auth.ts",
+     "src/actions/dashboard.ts",
+     "src/actions/perfil.ts",
+     "src/app/(auth)/login/page.tsx",
+     "src/app/auth/callback/route.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/dashboard/page.tsx",
+     "src/app/globals.css",
+     "src/app/page.tsx",
+     "src/components/layout/DashboardLayout.tsx",
+     "src/components/layout/Header.tsx",
+     "src/components/layout/Sidebar.tsx",
+     "src/components/ui/PlaceholderPage.tsx",
+     "src/components/ui/ThemeToggle.tsx",
+     "src/lib/supabase/server.ts",
+     "src/middleware.ts",
+     "supabase/migrations/20260528000800_capture_auth_avatar_url.sql"
+    ],
+    "title": "Mejora de la interfaz de usuario de la barra de navegaci\u00f3n y el men\u00fa lateral"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:02:22+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/8"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#8:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:50:28+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/8"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#7:opened",
+   "payload": {
+    "additions": 339,
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 44,
+    "files": [
+     "src/app/dashboard/asistente/AsistenteClient.tsx",
+     "src/app/dashboard/asistente/page.tsx",
+     "src/middleware.ts"
+    ],
+    "title": "feat(chatbot): Front-end del Asistente IA"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:50:28+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/7"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#7:merged",
+   "payload": {
+    "author": "martinprlt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:48:11+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/7"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#6:opened",
+   "payload": {
+    "additions": 1153,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 31,
+    "files": [
+     "src/actions/karma.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/dashboard/perfil/PerfilClient.tsx",
+     "src/app/karma/KarmaClient.tsx",
+     "src/app/karma/page.tsx",
+     "src/app/ranking/RankingClient.tsx",
+     "src/app/ranking/page.tsx",
+     "src/components/layout/Header.tsx",
+     "src/components/layout/Sidebar.tsx"
+    ],
+    "title": "feat(gamification): implementar dashboard de karma, medallas y ranking"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:21:41+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/6"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#6:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:24:57+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/6"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#5:opened",
+   "payload": {
+    "additions": 14840,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 61,
+    "deletions": 11575,
+    "files": [
+     ".agents/rules/02-architecture.md",
+     ".agents/skills/supabase.md",
+     ".env.example",
+     ".npmrc",
+     "next.config.mjs",
+     "package-lock.json",
+     "package.json",
+     "pnpm-lock.yaml",
+     "src/actions/auth.ts",
+     "src/actions/dashboard.ts",
+     "src/actions/foros.ts",
+     "src/actions/notifications.ts",
+     "src/actions/perfil.ts",
+     "src/actions/recursos.ts",
+     "src/app/(auth)/login/page.tsx",
+     "src/app/(auth)/register/page.tsx",
+     "src/app/api/cache/revalidate/route.ts",
+     "src/app/auth/callback/route.ts",
+     "src/app/dashboard/DashboardClient.tsx",
+     "src/app/dashboard/error.tsx"
+    ],
+    "title": "feat: mejoras en landing page, migraci\u00f3n a pnpm y scrollbars globales"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T12:43:15+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/5"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#5:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:32:41+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/5"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#4:opened",
+   "payload": {
+    "additions": 9288,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 57,
+    "deletions": 165,
+    "files": [
+     "emiliano.svg",
+     "emiliano_variant2.svg",
+     "jorge.svg",
+     "jorge_variant2.svg",
+     "leo.svg",
+     "lucas.svg",
+     "lucas_variant2.svg",
+     "package-lock.json",
+     "package.json",
+     "public/emiliano.svg",
+     "public/emiliano_variant2.svg",
+     "public/jorge.svg",
+     "public/jorge_variant2.svg",
+     "public/leo.svg",
+     "public/logo.svg",
+     "public/lucas.svg",
+     "public/lucas_variant2.svg",
+     "src/actions/dashboard.ts",
+     "src/actions/foros.ts",
+     "src/actions/perfil.ts"
+    ],
+    "title": "feat(layout): implement responsive layout base, dynamic logo rebranding, and interactive logo switcher"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:30:18+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/4"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#4:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:09:17+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/4"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#3:opened",
+   "payload": {
+    "additions": 7485,
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "changed_files": 35,
+    "deletions": 41,
+    "files": [
+     ".agents/design/dark-theme.md",
+     ".agents/design/light-theme.md",
+     ".agents/rules/00-context.md",
+     ".agents/rules/01-localization.md",
+     ".agents/rules/02-architecture.md",
+     ".agents/rules/03-components.md",
+     ".agents/skills/rag-pdf.md",
+     ".agents/skills/supabase.md",
+     ".agents/workflows/auth-flow.md",
+     ".agents/workflows/rag-feature-integration.md",
+     ".eslintrc.json",
+     ".gitignore",
+     "AGENTS.md",
+     "README.md",
+     "next.config.mjs",
+     "package-lock.json",
+     "package.json",
+     "postcss.config.mjs",
+     "src/actions/auth.ts",
+     "src/app/favicon.ico"
+    ],
+    "title": "Develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:47:30+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/3"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#3:merged",
+   "payload": {
+    "author": "LucasIsac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:47:39+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/3"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#2:opened",
+   "payload": {
+    "additions": 7485,
+    "author": "leo01102",
+    "author_is_bot": false,
+    "changed_files": 35,
+    "deletions": 41,
+    "files": [
+     ".agents/design/dark-theme.md",
+     ".agents/design/light-theme.md",
+     ".agents/rules/00-context.md",
+     ".agents/rules/01-localization.md",
+     ".agents/rules/02-architecture.md",
+     ".agents/rules/03-components.md",
+     ".agents/skills/rag-pdf.md",
+     ".agents/skills/supabase.md",
+     ".agents/workflows/auth-flow.md",
+     ".agents/workflows/rag-feature-integration.md",
+     ".eslintrc.json",
+     ".gitignore",
+     "AGENTS.md",
+     "README.md",
+     "next.config.mjs",
+     "package-lock.json",
+     "package.json",
+     "postcss.config.mjs",
+     "src/actions/auth.ts",
+     "src/app/favicon.ico"
+    ],
+    "title": "Setup inicial de Next.js 14, Tailwind CSS y estructura monol\u00edtica"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:23:26+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/2"
+  },
+  {
+   "evidence_id": "pr:LucasIsac/UNLaR-Connect#2:merged",
+   "payload": {
+    "author": "leo01102",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:43:12+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/pull/2"
+  }
+ ],
+ "repo": "LucasIsac/UNLaR-Connect",
+ "window": "pre_t"
+}

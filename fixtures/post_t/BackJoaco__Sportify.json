@@ -1,0 +1,1273 @@
+{
+ "captured_at": "2026-08-29T19:33:05.286869+00:00",
+ "content_sha256": "02baaaa08f0d594b1e4260eb61e1654de4fb8b8d63ff94900091853910b48300",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#75:opened",
+   "payload": {
+    "additions": 10637,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 116,
+    "deletions": 1155,
+    "files": [
+     ".gitignore",
+     "backend/package.json",
+     "backend/src/app.js",
+     "backend/src/controllers/actividad.controller.js",
+     "backend/src/controllers/auth.controller.js",
+     "backend/src/controllers/credito.controller.js",
+     "backend/src/controllers/demo.controller.js",
+     "backend/src/controllers/estadistica.controller.js",
+     "backend/src/controllers/notificacion.controller.js",
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/controllers/usuario.controller.js",
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/auth/register.flow.js",
+     "backend/src/flows/auth/registerEmployee.flow.js",
+     "backend/src/flows/notificacion/notificacion.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/flows/turnos/turno.flow.js"
+    ],
+    "title": "Demo 2"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T23:19:38+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/75"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#75:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T23:19:48+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/75"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#74:opened",
+   "payload": {
+    "additions": 128,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 15,
+    "files": [
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/seed.js",
+     "backend/src/seeds/seeders.js",
+     "backend/src/services/pago.service.js"
+    ],
+    "title": "Feature/historial pagos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T23:18:17+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/74"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#74:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T23:18:24+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/74"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#73:opened",
+   "payload": {
+    "additions": 292,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 19,
+    "deletions": 51,
+    "files": [
+     "backend/src/controllers/demo.controller.js",
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/notificacion/notificacion.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/repositories/abonadoTurno.repository.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/routes/demo.route.js",
+     "backend/src/seed.js",
+     "backend/src/seeds/seeders.js",
+     "backend/src/services/abonadoTurno.service.js",
+     "backend/src/services/pago.service.js",
+     "backend/src/utils/abonado.validator.js",
+     "frontend/src/api/demo.api.js",
+     "frontend/src/pages/DemoPanel/DemoPanel.css",
+     "frontend/src/pages/DemoPanel/DemoPanel.jsx",
+     "frontend/src/pages/DetailTurn/DetailTurn.jsx"
+    ],
+    "title": "Feature/historial pagos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T22:21:50+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/73"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#73:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T22:25:03+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/73"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#72:opened",
+   "payload": {
+    "additions": 165,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 167,
+    "files": [
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/services/pago.service.js",
+     "frontend/src/pages/Home/ClientHome/ClientHome.jsx",
+     "frontend/src/pages/Payments/Payments.jsx"
+    ],
+    "title": "Feature/historial pagos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T19:08:12+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/72"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#72:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T19:08:24+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/72"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#71:opened",
+   "payload": {
+    "additions": 1382,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 27,
+    "deletions": 624,
+    "files": [
+     "backend/src/controllers/demo.controller.js",
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/controllers/usuario.controller.js",
+     "backend/src/flows/notificacion/notificacion.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/flows/turnos/turno.flow.js",
+     "backend/src/models/abonadoTurno.model.js",
+     "backend/src/repositories/abonadoTurno.repository.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/repositories/reserva.repository.js",
+     "backend/src/routes/demo.route.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/routes/usuario.route.js",
+     "backend/src/seed.js",
+     "backend/src/seeds/data.js",
+     "backend/src/seeds/seeders.js",
+     "backend/src/services/abonadoTurno.service.js",
+     "backend/src/services/pago.service.js"
+    ],
+    "title": "Feature/seed demo"
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T15:09:27+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/71"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#71:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T15:09:35+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/71"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#70:opened",
+   "payload": {
+    "additions": 772,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 79,
+    "files": [
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/flows/turnos/turno.flow.js",
+     "backend/src/repositories/reserva.repository.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/routes/turno.route.js",
+     "backend/src/services/reserva.service.js",
+     "frontend/package-lock.json",
+     "frontend/package.json",
+     "frontend/src/api/reservas.api.js",
+     "frontend/src/api/turno.api.js",
+     "frontend/src/components/QRModal/QRModal.css",
+     "frontend/src/components/QRModal/QRModal.jsx",
+     "frontend/src/components/QRScannerModal/QRScannerModal.css",
+     "frontend/src/components/QRScannerModal/QRScannerModal.jsx",
+     "frontend/src/pages/DetailTurn/DetailTurn.jsx",
+     "frontend/src/pages/Home/EmployeeHome/EmployeeHome.jsx"
+    ],
+    "title": "Feature/presente"
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T19:55:17+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/70"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#70:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T19:55:34+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/70"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#69:opened",
+   "payload": {
+    "additions": 802,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 36,
+    "deletions": 215,
+    "files": [
+     "backend/src/app.js",
+     "backend/src/controllers/actividad.controller.js",
+     "backend/src/controllers/credito.controller.js",
+     "backend/src/controllers/demo.controller.js",
+     "backend/src/controllers/notificacion.controller.js",
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/notificacion/notificacion.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/flows/turnos/turno.flow.js",
+     "backend/src/repositories/credito.repository.js",
+     "backend/src/repositories/listaEsperaAbonado.repository.js",
+     "backend/src/repositories/listaEsperaNoAbonado.repository.js",
+     "backend/src/repositories/notificacion.repository.js",
+     "backend/src/repositories/reserva.repository.js",
+     "backend/src/routes/demo.route.js",
+     "backend/src/routes/notificacion.route.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/seeds/seeders.js"
+    ],
+    "title": "Feature/notificaciones"
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T19:49:21+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/69"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#69:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T19:49:37+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/69"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#68:opened",
+   "payload": {
+    "additions": 261,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 40,
+    "files": [
+     "backend/src/controllers/auth.controller.js",
+     "backend/src/routes/auth.route.js",
+     "frontend/src/api/auth.api.js",
+     "frontend/src/pages/Login/Login.jsx"
+    ],
+    "title": "Feature/recuperar contrasena"
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T00:04:36+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/68"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#68:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T00:04:44+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/68"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#67:opened",
+   "payload": {
+    "additions": 3,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/services/pago.service.js"
+    ],
+    "title": "actualizacion en estado del pago cuando se realiza una se\u00f1a"
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T23:33:30+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/67"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#67:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T23:33:38+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/67"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#66:opened",
+   "payload": {
+    "additions": 80,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 34,
+    "files": [
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/repositories/abonadoTurno.repository.js",
+     "backend/src/repositories/listaEsperaNoAbonado.repository.js",
+     "backend/src/services/abonadoTurno.service.js",
+     "backend/src/services/listaEsperaNoAbonado.service.js",
+     "backend/src/services/notificacion.service.js"
+    ],
+    "title": "Feature/seed"
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T23:08:57+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/66"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#66:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T23:09:03+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/66"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#65:opened",
+   "payload": {
+    "additions": 290,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 351,
+    "files": [
+     "backend/src/app.js",
+     "backend/src/controllers/devolucion.controller.js",
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/repositories/devolucion.repository.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/routes/devolucion.route.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/services/devolucion.service.js",
+     "backend/src/services/pago.service.js",
+     "frontend/src/api/devolucion.api.js",
+     "frontend/src/api/pago.api.js",
+     "frontend/src/pages/Devolution/Devolution.css",
+     "frontend/src/pages/Devolution/Devolution.jsx",
+     "frontend/src/pages/Home/AdminHome/AdminHome.jsx",
+     "frontend/src/pages/ListTransaction/ListTransaction.css",
+     "frontend/src/pages/ListTransaction/ListTransaction.jsx",
+     "frontend/src/routes/AppRoutes.jsx"
+    ],
+    "title": "se cambio de listar deudores a listar todos los movimientos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T22:47:44+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/65"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#65:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T22:47:56+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/65"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#64:opened",
+   "payload": {
+    "additions": 560,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 296,
+    "files": [
+     "backend/src/seed.js",
+     "backend/src/seeds/data.js",
+     "backend/src/seeds/seeders.js"
+    ],
+    "title": "Seed refactorizado y agregue para ver historial de reservas"
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T03:28:51+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/64"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#64:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T03:28:58+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/64"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#63:opened",
+   "payload": {
+    "additions": 387,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 3,
+    "files": [
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/seed.js",
+     "backend/src/services/pago.service.js",
+     "frontend/src/api/pago.api.js",
+     "frontend/src/pages/Home/AdminHome/AdminHome.jsx",
+     "frontend/src/pages/ListDebtors/ListDebtors.css",
+     "frontend/src/pages/ListDebtors/ListDebtors.jsx",
+     "frontend/src/routes/AppRoutes.jsx"
+    ],
+    "title": "Feature/listar deudores"
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T19:18:36+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/63"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#63:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T19:18:52+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/63"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#62:opened",
+   "payload": {
+    "additions": 385,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 77,
+    "files": [
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/repositories/credito.repository.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/seed.js",
+     "backend/src/services/pago.service.js",
+     "frontend/src/api/pago.api.js",
+     "frontend/src/api/reservas.api.js",
+     "frontend/src/components/PaymentModal/PaymentModal.jsx",
+     "frontend/src/pages/DetailTurn/DetailTurn.jsx"
+    ],
+    "title": "Feature/usar creditos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T18:31:46+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/62"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#62:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T18:31:55+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/62"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#61:opened",
+   "payload": {
+    "additions": 18,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 3,
+    "files": [
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/services/notificacion.service.js",
+     "frontend/src/pages/DetailTurn/DetailTurn.jsx"
+    ],
+    "title": "Algunos arreglitos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T03:52:44+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/61"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#61:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T03:52:55+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/61"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#60:opened",
+   "payload": {
+    "additions": 276,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 15,
+    "deletions": 68,
+    "files": [
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/repositories/abonadoTurno.repository.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/routes/turno.route.js",
+     "backend/src/services/abonadoTurno.service.js",
+     "backend/src/utils/date.utils.js",
+     "frontend/src/api/reservas.api.js",
+     "frontend/src/api/turno.api.js",
+     "frontend/src/pages/DetailTurn/DetailTurn.jsx",
+     "frontend/src/pages/ListTurn/ListTurn.jsx"
+    ],
+    "title": "Fix/lista espera"
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T03:14:59+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/60"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#60:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T03:15:07+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/60"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#59:opened",
+   "payload": {
+    "additions": 48,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     "backend/src/seed.js",
+     "backend/src/services/devolucion.service.js"
+    ],
+    "title": "Fix/models"
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T18:56:27+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/59"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#59:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T18:57:06+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/59"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#58:opened",
+   "payload": {
+    "additions": 706,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 38,
+    "deletions": 670,
+    "files": [
+     "backend/src/controllers/demo.controller.js",
+     "backend/src/controllers/notificacion.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/notificacion/notificacion.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/flows/turnos/turno.flow.js",
+     "backend/src/models/abonadoTurno.model.js",
+     "backend/src/models/index.model.js",
+     "backend/src/models/listaEspera.model.js",
+     "backend/src/models/listaEsperaAbonado.model.js",
+     "backend/src/models/listaEsperaNoAbonado.model.js",
+     "backend/src/models/notificacion.model.js",
+     "backend/src/models/pago.model.js",
+     "backend/src/models/suscripcionAbonado.model.js",
+     "backend/src/repositories/abonadoTurno.repository.js",
+     "backend/src/repositories/credito.repository.js",
+     "backend/src/repositories/listaEspera.repository.js",
+     "backend/src/repositories/listaEsperaNoAbonado.repository.js"
+    ],
+    "title": "Fix/models"
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T17:52:15+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/58"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#58:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T17:52:27+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/58"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#57:opened",
+   "payload": {
+    "additions": 339,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 2,
+    "files": [
+     "backend/src/app.js",
+     "backend/src/controllers/devolucion.controller.js",
+     "backend/src/repositories/devolucion.repository.js",
+     "backend/src/routes/devolucion.route.js",
+     "backend/src/services/devolucion.service.js",
+     "frontend/src/api/devolucion.api.js",
+     "frontend/src/pages/Devolution/Devolution.css",
+     "frontend/src/pages/Devolution/Devolution.jsx",
+     "frontend/src/pages/Home/AdminHome/AdminHome.jsx",
+     "frontend/src/routes/AppRoutes.jsx"
+    ],
+    "title": "listar devoluciones pendientes"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T00:54:40+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/57"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#57:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T00:54:48+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/57"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#56:opened",
+   "payload": {
+    "additions": 0,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "backend/src/app.js"
+    ],
+    "title": "soy una boluda"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T17:27:23+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/56"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#56:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T17:27:39+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/56"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#55:opened",
+   "payload": {
+    "additions": 417,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 20,
+    "files": [
+     "backend/src/app.js",
+     "backend/src/controllers/credito.controller.js",
+     "backend/src/repositories/credito.repository.js",
+     "backend/src/routes/credito.route.js",
+     "backend/src/seed.js",
+     "backend/src/services/credito.service.js",
+     "frontend/src/api/credito.api.js",
+     "frontend/src/pages/Home/ClientHome/ClientHome.jsx",
+     "frontend/src/pages/SeeCredits/SeeCredits.css",
+     "frontend/src/pages/SeeCredits/SeeCredits.jsx",
+     "frontend/src/routes/AppRoutes.jsx"
+    ],
+    "title": "Feature/historial creditos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T17:12:24+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/55"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#55:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T17:12:35+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/55"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#54:opened",
+   "payload": {
+    "additions": 2012,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 32,
+    "deletions": 26,
+    "files": [
+     ".gitignore",
+     "backend/src/app.js",
+     "backend/src/controllers/demo.controller.js",
+     "backend/src/controllers/notificacion.controller.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/models/index.model.js",
+     "backend/src/models/notificacion.model.js",
+     "backend/src/repositories/listaEsperaAbonado.repository.js",
+     "backend/src/repositories/listaEsperaNoAbonado.repository.js",
+     "backend/src/repositories/notificacion.repository.js",
+     "backend/src/repositories/usuario.repository.js",
+     "backend/src/routes/demo.route.js",
+     "backend/src/routes/notificacion.route.js",
+     "backend/src/seed.js",
+     "backend/src/services/listaEsperaAbonado.service.js",
+     "backend/src/services/listaEsperaNoAbonado.service.js",
+     "backend/src/services/notificacion.service.js",
+     "backend/src/services/usuario.service.js",
+     "frontend/src/api/demo.api.js",
+     "frontend/src/api/notificacion.api.js"
+    ],
+    "title": "Feature/notificaciones"
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T22:23:08+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/54"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#54:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T22:23:16+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/54"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#53:opened",
+   "payload": {
+    "additions": 338,
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 1,
+    "files": [
+     "backend/src/app.js",
+     "backend/src/controllers/estadistica.controller.js",
+     "backend/src/repositories/estadistica.repository.js",
+     "backend/src/routes/estadistica.route.js",
+     "backend/src/services/estadistica.service.js",
+     "frontend/src/api/estadistica.api.js",
+     "frontend/src/pages/Home/AdminHome/AdminHome.jsx",
+     "frontend/src/pages/Statistics/Statistics.css",
+     "frontend/src/pages/Statistics/Statistics.jsx",
+     "frontend/src/routes/AppRoutes.jsx"
+    ],
+    "title": "ver dia de mayor concurrencia"
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T21:20:56+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/53"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#53:merged",
+   "payload": {
+    "author": "andradecristal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T21:21:28+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/53"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#52:opened",
+   "payload": {
+    "additions": 895,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 272,
+    "files": [
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/models/abonadoTurno.model.js",
+     "backend/src/models/suscripcionAbonado.model.js",
+     "backend/src/models/usuario.model.js",
+     "backend/src/repositories/abonadoTurno.repository.js",
+     "backend/src/repositories/suscripcionAbonado.repository.js",
+     "backend/src/repositories/turno.repository.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/seed.js",
+     "backend/src/services/abonadoTurno.service.js",
+     "backend/src/services/pago.service.js",
+     "backend/src/services/suscripcionAbonado.service.js",
+     "frontend/src/api/pago.api.js",
+     "frontend/src/components/PaymentModal/PaymentModal.css",
+     "frontend/src/components/PaymentModal/PaymentModal.jsx",
+     "frontend/src/pages/DetailTurn/DetailTurn.jsx",
+     "frontend/src/pages/Home/ClientHome/ClientHome.jsx"
+    ],
+    "title": "Fix/pagos"
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T03:54:32+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/52"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#52:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T03:54:48+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/52"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#51:opened",
+   "payload": {
+    "additions": 368,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 59,
+    "files": [
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/repositories/listaEsperaAbonado.repository.js",
+     "backend/src/repositories/listaEsperaNoAbonado.repository.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/routes/turno.route.js",
+     "backend/src/services/listaEsperaAbonado.service.js",
+     "backend/src/services/listaEsperaNoAbonado.service.js",
+     "frontend/src/api/reservas.api.js",
+     "frontend/src/api/turno.api.js",
+     "frontend/src/pages/DetailTurn/DetailTurn.jsx"
+    ],
+    "title": "Inscripcion a lista de espera"
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T23:40:40+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/51"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#51:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T23:40:50+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/51"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#50:opened",
+   "payload": {
+    "additions": 65,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     ".gitignore",
+     "frontend/src/pages/ListTurn/ListTurn.css",
+     "frontend/src/pages/ListTurn/ListTurn.jsx"
+    ],
+    "title": "Fix/calendario"
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T21:12:01+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/50"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#50:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T21:12:11+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/50"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#49:opened",
+   "payload": {
+    "additions": 64,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 46,
+    "files": [
+     "backend/src/flows/auth/register.flow.js",
+     "backend/src/flows/auth/registerEmployee.flow.js",
+     "backend/src/repositories/usuario.repository.js",
+     "backend/src/services/usuario.service.js"
+    ],
+    "title": "Recuperacion de cuentas eliminadas"
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T19:38:00+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/49"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#49:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T19:38:32+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/49"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#48:opened",
+   "payload": {
+    "additions": 1866,
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "changed_files": 41,
+    "deletions": 737,
+    "files": [
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/controllers/usuario.controller.js",
+     "backend/src/flows/abonadoTurno/abonadoTurno.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/flows/turnos/turno.flow.js",
+     "backend/src/flows/usuario/deleteClientAccount.flow.js",
+     "backend/src/models/abonadoTurno.model.js",
+     "backend/src/models/index.model.js",
+     "backend/src/models/listaEsperaAbonado.model.js",
+     "backend/src/models/listaEsperaNoAbonado.model.js",
+     "backend/src/models/reserva.model.js",
+     "backend/src/models/turno.model.js",
+     "backend/src/repositories/abonadoTurno.repository.js",
+     "backend/src/repositories/listaEsperaAbonado.repository.js",
+     "backend/src/repositories/listaEsperaNoAbonado.repository.js",
+     "backend/src/repositories/reserva.repository.js",
+     "backend/src/repositories/turno.repository.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/routes/turno.route.js"
+    ],
+    "title": "Fix/turnos"
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T01:42:09+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/48"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#48:merged",
+   "payload": {
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T01:42:17+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/48"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#47:opened",
+   "payload": {
+    "additions": 257,
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 17,
+    "files": [
+     "backend/src/controllers/usuario.controller.js",
+     "backend/src/flows/usuario/deleteClientAccount.flow.js",
+     "backend/src/repositories/credito.repository.js",
+     "backend/src/repositories/listaEspera.repository.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/repositories/reserva.repository.js",
+     "backend/src/repositories/suscripcionAbonado.repository.js",
+     "backend/src/repositories/usuario.repository.js",
+     "backend/src/routes/usuario.route.js",
+     "backend/src/services/credito.service.js",
+     "backend/src/services/listaEspera.service.js",
+     "backend/src/services/pago.service.js",
+     "backend/src/services/reserva.service.js",
+     "backend/src/services/suscripcionAbonado.service.js",
+     "backend/src/services/usuario.service.js",
+     "frontend/src/api/usuario.api.js",
+     "frontend/src/pages/Profile/Profile.css",
+     "frontend/src/pages/Profile/Profile.jsx"
+    ],
+    "title": "Subo eliminar cliente para merge a dev"
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T22:20:12+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/47"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#47:merged",
+   "payload": {
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T22:20:24+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/47"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#46:opened",
+   "payload": {
+    "additions": 10484,
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "changed_files": 109,
+    "deletions": 259,
+    "files": [
+     "backend/.env.example",
+     "backend/package-lock.json",
+     "backend/package.json",
+     "backend/src/app.js",
+     "backend/src/config/emailConfig.js",
+     "backend/src/controllers/actividad.controller.js",
+     "backend/src/controllers/auth.controller.js",
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/turnos.controller.js",
+     "backend/src/controllers/user.controller.js",
+     "backend/src/controllers/usuario.controller.js",
+     "backend/src/flows/actividad/actividad.flow.js",
+     "backend/src/flows/auth/login.flow.js",
+     "backend/src/flows/auth/register.flow.js",
+     "backend/src/flows/auth/registerEmployee.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/flows/turnos/turno.flow.js",
+     "backend/src/middleware/auth.middleware.js"
+    ],
+    "title": "Demo 1"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T20:34:47+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/46"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#46:merged",
+   "payload": {
+    "author": "BackJoaco",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T20:35:02+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/46"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#45:opened",
+   "payload": {
+    "additions": 1441,
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "changed_files": 34,
+    "deletions": 124,
+    "files": [
+     "backend/src/controllers/pago.controller.js",
+     "backend/src/controllers/reserva.controller.js",
+     "backend/src/controllers/usuario.controller.js",
+     "backend/src/flows/auth/registerEmployee.flow.js",
+     "backend/src/flows/payment/pago.flow.js",
+     "backend/src/flows/reserva/reserva.flow.js",
+     "backend/src/flows/turnos/turno.flow.js",
+     "backend/src/repositories/pago.repository.js",
+     "backend/src/repositories/reserva.repository.js",
+     "backend/src/repositories/turno.repository.js",
+     "backend/src/routes/pago.route.js",
+     "backend/src/routes/reserva.route.js",
+     "backend/src/routes/turno.route.js",
+     "backend/src/server.js",
+     "backend/src/services/actividad.service.js",
+     "backend/src/services/pago.service.js",
+     "backend/src/services/turno.service.js",
+     "backend/src/utils/validators.js",
+     "frontend/src/api/pago.api.js",
+     "frontend/src/api/reservas.api.js"
+    ],
+    "title": "Fix/predemo"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T12:55:02+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/45"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#45:merged",
+   "payload": {
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T12:57:25+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/45"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#44:opened",
+   "payload": {
+    "additions": 5,
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "backend/src/services/actividad.service.js"
+    ],
+    "title": "cambio para registrar actividad"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:47:44+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/44"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#44:merged",
+   "payload": {
+    "author": "gabrielguas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:47:52+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/44"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#43:opened",
+   "payload": {
+    "additions": 31,
+    "author": "CastroMartina",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "frontend/src/pages/RegisterEmployee/RegisterEmployee.jsx",
+     "frontend/src/pages/SetPassword/SetPassword.jsx"
+    ],
+    "title": "Feature/modificar actividad"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T02:44:12+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/43"
+  },
+  {
+   "evidence_id": "pr:BackJoaco/Sportify#43:merged",
+   "payload": {
+    "author": "CastroMartina",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T02:44:24+00:00",
+   "url": "https://github.com/BackJoaco/Sportify/pull/43"
+  }
+ ],
+ "repo": "BackJoaco/Sportify",
+ "window": "post_t"
+}

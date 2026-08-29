@@ -148,6 +148,7 @@ class Signals:
     median_first_response_hours: float | None
     bot_share: float
     distinct_outsider_authors: int
+    distinct_merged_authors: int
 
     def as_dict(self) -> dict:
         return {
@@ -158,6 +159,7 @@ class Signals:
             "median_first_response_hours": self.median_first_response_hours,
             "bot_share": round(self.bot_share, 3),
             "distinct_outsider_authors": self.distinct_outsider_authors,
+            "distinct_merged_authors": self.distinct_merged_authors,
         }
 
 
@@ -174,4 +176,9 @@ def compute(threads: dict[str, Thread]) -> Signals:
         median_first_response_hours=round(statistics.median(latencies), 1) if latencies else None,
         bot_share=(bots / len(threads)) if threads else 0.0,
         distinct_outsider_authors=len({t.author for t in outsiders}),
+        # People who actually landed something, as distinct from people who
+        # tried. Conflating the two produced a user-visible falsehood: a repo
+        # with 15 merges and 72 first-time attempters was reported as "15
+        # merges from 72 people".
+        distinct_merged_authors=len({t.author for t in outsiders if t.merged}),
     )
