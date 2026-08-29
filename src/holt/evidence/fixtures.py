@@ -1,0 +1,128 @@
+"""Committed evidence, so the eval runs with no token and no rate limits.
+
+Fixtures are the reason a judge can reproduce the headline number from a clean
+clone with no credentials. They are also where the holdout is easiest to break
+by accident — a hand-edited file, a re-capture against the wrong window — so the
+loader re-asserts the date bounds on every read rather than trusting the file.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from collections.abc import Iterable
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
+from holt.evidence.provider import EvidenceProvider
+from holt.types import T_CUTOFF, EvidenceRecord, Window
+
+FIXTURE_ROOT = Path("fixtures")
+
+
+def slug_to_filename(repo_slug: str) -> str:
+    return repo_slug.replace("/", "__") + ".json"
+
+
+def record_to_dict(record: EvidenceRecord) -> dict[str, Any]:
+    return {
+        "evidence_id": record.evidence_id,
+        "source": record.source,
+        "url": record.url,
+        "timestamp": record.timestamp.isoformat(),
+        "payload": record.payload,
+    }
+
+
+def record_from_dict(data: dict[str, Any]) -> EvidenceRecord:
+    return EvidenceRecord(
+        evidence_id=data["evidence_id"],
+        source=data["source"],
+        url=data["url"],
+        timestamp=datetime.fromisoformat(data["timestamp"]),
+        payload=data["payload"],
+    )
+
+
+def content_hash(records: Iterable[EvidenceRecord]) -> str:
+    """Stable over evidence content, independent of capture order or metadata."""
+    blob = json.dumps(
+        sorted((record_to_dict(r) for r in records), key=lambda d: d["evidence_id"]),
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    return hashlib.sha256(blob.encode()).hexdigest()
+
+
+def write_fixture(
+    repo_slug: str,
+    window: Window,
+    records: Iterable[EvidenceRecord],
+    root: Path = FIXTURE_ROOT,
+    cutoff: datetime = T_CUTOFF,
+) -> Path:
+    records = list(records)
+    path = root / window.value / slug_to_filename(repo_slug)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "repo": repo_slug,
+                "window": window.value,
+                "cutoff": cutoff.isoformat(),
+                "captured_at": datetime.now(UTC).isoformat(),
+                "content_sha256": content_hash(records),
+                "records": [record_to_dict(r) for r in records],
+            },
+            indent=1,
+            sort_keys=True,
+        )
+        + "\n"
+    )
+    return path
+
+
+class FixtureProvider(EvidenceProvider):
+    """Reads committed evidence. No network, no token, no rate limit."""
+
+    def __init__(
+        self,
+        window: Window,
+        root: Path = FIXTURE_ROOT,
+        cutoff: datetime = T_CUTOFF,
+    ) -> None:
+        super().__init__(window, cutoff)
+        self.root = Path(root)
+        self._loaded: dict[str, EvidenceRecord] = {}
+
+    def path_for(self, repo_slug: str) -> Path:
+        return self.root / self.window.value / slug_to_filename(repo_slug)
+
+    def _fetch_raw(self, request: str, /, **params: object) -> Iterable[EvidenceRecord]:
+        path = self.path_for(request)
+        if not path.exists():
+            raise FileNotFoundError(
+                f"No {self.window.value} fixture for {request} at {path}. "
+                "Capture it in live mode first; fixture mode never reaches the network."
+            )
+        data = json.loads(path.read_text())
+
+        if data["window"] != self.window.value:
+            raise ValueError(
+                f"{path} holds {data['window']} evidence but was opened as "
+                f"{self.window.value}; the holdout sides must not be mixed"
+            )
+
+        records = [record_from_dict(r) for r in data["records"]]
+        expected = data.get("content_sha256")
+        if expected and (actual := content_hash(records)) != expected:
+            raise ValueError(
+                f"{path} content hash mismatch: recorded {expected[:12]}, "
+                f"computed {actual[:12]}. The fixture was edited after capture."
+            )
+        self._loaded.update({r.evidence_id: r for r in records})
+        return records
+
+    def _resolve_raw(self, evidence_id: str) -> EvidenceRecord | None:
+        return self._loaded.get(evidence_id)
