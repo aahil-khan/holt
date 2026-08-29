@@ -19,9 +19,12 @@ from holt.evidence.github_graphql import GitHubGraphQL, LiveGitHubProvider
 from holt.types import Window
 
 POOL = Path("eval/pool.json")
-# Pre-T is what the agent reads: recent threads before the cutoff. Post-T is what
-# labels are computed from, so it wants fuller coverage of the window.
-PAGES = {Window.PRE_T: 8, Window.POST_T: 20}
+# Asymmetric on purpose. Pre-T is what the agent reads, and it will never read
+# two hundred threads, so a sample is fine. Post-T is what labels are computed
+# from, where truncation biases the measurement -- three repositories hit the
+# previous cap, and they were the high-volume ones the argument turns on. Forty
+# pages of twenty-five is 1000, which is GitHub search's own ceiling.
+PAGES = {Window.PRE_T: 8, Window.POST_T: 40}
 
 
 def main() -> None:

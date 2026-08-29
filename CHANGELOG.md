@@ -63,3 +63,72 @@ page cap (`is-a-dev/register`, `SecureBananaLabs/bug-bounty`,
 `google-test/signclav2-probe-repo`), so their figures are the most recent 500
 attempts rather than a census. `is-a-dev/register` is one of them, which means
 its true rank is measured on a sample. Raising the cap before L1 is on the list.
+
+---
+
+## Iteration 1 — L1, the qualifying label (2026-08-29)
+
+**Tried.** Keep an outsider merge only if the author is not a bot, the diff is
+not docs-only or data-file-only or a one-line change to a single file, and a
+human other than the author reviewed or commented. Built as a five-stage funnel
+counted per repository, so each filter's effect is inspectable instead of folded
+into one number.
+
+**Why.** L0 ranked three registries in its top five and put `NixOS/nixpkgs` at
+17. The missing discriminator is what a merged contribution actually *was*.
+
+**Evidence — the two filters do different work.** Aggregate over 22 scored
+repositories:
+
+| Stage | Remaining | Removed |
+|---|---|---|
+| human attempts | 7,059 | — |
+| merged | 2,302 | −67% |
+| substantive (diff shape) | 1,211 | −47% |
+| reviewed (human engagement) | 619 | −49% |
+
+They are not redundant, and they do not catch the same repositories:
+
+| Removed by diff shape | Removed by review | Repo |
+|---|---|---|
+| 392 | 0 | `runelite/plugin-hub` |
+| 367 | 0 | `is-a-dev/register` |
+| 16 | 277 | `Pasta-Devs/Marinara-Engine` |
+| 25 | 114 | `anurag3407/career-pilot` |
+
+Diff shape catches registries — manifest entries that merge cleanly and change
+no software. Review catches auto-merge farms — real-looking diffs that no human
+ever engaged with. **Either filter alone leaves half the problem standing.** The
+prior going in was that review would dominate; it does not.
+
+**Rank movement, L0 to L1:**
+
+| Repo | L0 | L1 | Merged → qualifying |
+|---|---|---|---|
+| `runelite/plugin-hub` | 1 | **22** | 392 → 0 |
+| `is-a-dev/register` | 15 | **20** | 367 → 0 |
+| `Homebrew/homebrew-cask` | 5 | 6 | 25 → 11 |
+| `NixOS/nixpkgs` | 17 | **12** | 67 → 14 |
+| `space-wizards/space-station-14` | 12 | 8 | 144 → 53 |
+
+**Removed and replaced: the first diff-shape rule.** Written as "exactly one
+changed data file", it let 99 of `is-a-dev/register`'s 368 merges through and the
+repo *rose* to 9. Inspecting the survivors showed why: a domain registration
+there touches two files, the entry and a provider verification record. Counting
+files was the wrong test — what matters is whether any changed file is source.
+Widened to "every changed file is a data file", is-a.dev goes to 0 qualifying
+merges and 20th. Recorded because the rule was changed after seeing its output,
+which is exactly the kind of move that has to be visible.
+
+**Decision.** Kept, both filters. L1 is the label the agent is scored against.
+
+**Known limitations.**
+- `is-a-dev/register`, `SecureBananaLabs/bug-bounty` and
+  `google-test/signclav2-probe-repo` sit at GitHub search's own 1000-result
+  ceiling, so their figures remain a sample. Raising the cap from 500 to 1000
+  fixed what was fixable; the rest is an API boundary, not a choice.
+- `Homebrew/homebrew-cask` keeps 11 qualifying merges because casks are Ruby
+  files and pass the source test. Whether writing a cask is a software
+  contribution is a genuine judgement call, and the rule does not resolve it.
+- The one-line-single-file rule cannot distinguish a manifest entry from a real
+  one-line bugfix. It is measured separately for that reason.
