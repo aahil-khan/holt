@@ -317,3 +317,59 @@ remembering.
 **Known limitations.** 22 of 30 graded: 3 repositories were deleted between the
 cutoff and the run, and 5 had no post-cutoff outsider attempts to grade against.
 Single run; variance across repeated runs is not measured.
+
+---
+
+## Iteration 4 — attacking our own metric (2026-08-30)
+
+**Tried.** Before shipping, score the trivial strategies against our own ground
+truth: answer "viable" to everything, and answer "not viable" to everything.
+
+**Why.** The plan said to attack our own metric before a judge does. Perfect
+agreement is a smell; so is a metric nobody has tried to break.
+
+**Evidence.** It broke immediately.
+
+| Method | MCC | Balanced acc. | F1 |
+|---|---|---|---|
+| always "viable" | 0.00 | 0.50 | **0.78** |
+| always "not viable" | 0.00 | 0.50 | 0.00 |
+| baseline solution | 0.33 | 0.67 | 0.74 |
+| **Holt** | **0.49** | **0.71** | 0.84 |
+
+**A constant answer scores F1 0.78 and beats our own baseline solution.** The
+graded pool is 14 positive against 8 negative, so F1 rewards a method for
+recommending everything. Precision@10 is nearly as bad: the constants score 0.60
+against 0.70 for every real method.
+
+An ablation says the same thing from the other side:
+
+| Configuration | F1 |
+|---|---|
+| full Holt | 0.84 |
+| without Stage A's repository-kind rules | 0.82 |
+| without the arithmetic signal thresholds | 0.79 |
+| neither — everything viable | 0.78 |
+
+On F1 the entire pipeline is worth 0.06 over answering yes to everything.
+
+**Decision.** Matthews correlation becomes the primary metric, with balanced
+accuracy alongside it. Both are 0.00 and 0.50 respectively for any constant
+strategy, so neither can be gamed by a method that has no opinion. Under MCC the
+same system, on the same data, scores 0.49 against the baseline's 0.33 — the
+pipeline is worth 0.49 over a constant rather than 0.06.
+
+The constant strategies stay in the results table permanently, scored as methods.
+A reader should be able to see the floor rather than take our word for where it
+is.
+
+**What this cost us.** F1 0.84 against 0.74 was the headline for a day. It was
+not wrong, it was uninformative, and we would not have noticed by staring at it.
+The only reason we caught it is that scoring a constant answer takes four lines
+and we wrote them before shipping rather than after being asked.
+
+**Related finding, published rather than buried.** Holt's specificity is 0.50
+against the baseline's 0.62: it over-recommends. Its whole advantage is
+sensitivity, 0.93 against 0.71, plus the extreme cases where it rejects four of
+five traps and the baseline none. That is a narrower claim than "better at
+judging repositories" and it is the one the evidence supports.

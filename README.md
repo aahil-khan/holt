@@ -41,26 +41,39 @@ One says a newcomer can land work here. The other says don't bother.
 
 Measured over a pool of 30 repositories drawn and hash-committed **before any
 method ran**, against ground truth computed only from evidence *after* a
-temporal cutoff neither method could see.
+temporal cutoff neither method could see. 22 are gradable.
 
-| Method | Precision | Recall | F1 | Opportunities found |
-|---|---|---|---|---|
-| baseline solution (one prompt over README + metadata) | 0.77 | 0.71 | 0.74 | 10 / 14 |
-| **Holt** | 0.76 | **0.93** | **0.84** | **13 / 14** |
-| name-only probe (memorisation control) | 0.71 | 0.36 | 0.48 | 5 / 14 |
+| Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
+|---|---|---|---|---|---|
+| always answer "viable" | 0.00 | 0.50 | **0.78** | 1.00 | 0.00 |
+| always answer "not viable" | 0.00 | 0.50 | 0.00 | 0.00 | 1.00 |
+| name-only probe (memorisation control) | 0.11 | 0.55 | 0.48 | 0.36 | 0.75 |
+| baseline solution (one prompt over README + metadata) | 0.33 | 0.67 | 0.74 | 0.71 | 0.62 |
+| **Holt** | **0.49** | **0.71** | 0.84 | 0.93 | 0.50 |
 
-**At the same precision, Holt surfaces 13 of 14 genuine opportunities where the
-baseline surfaces 10.** The four it finds and the baseline does not are projects
-whose README does not advertise how workable they are.
+**The constant answers are in that table on purpose.** F1 was this project's
+original primary metric, and on a pool that is 64% positive it is degenerate:
+answering "viable" to everything scores **F1 0.78**, beating our own baseline
+solution. We found that by attacking our own metric before shipping it, and the
+row stays in so a reader can see the floor rather than take our word for it.
 
-On repositories with heavy inbound activity and *zero* qualifying contributions —
-the failure case this project exists to catch — Holt rejects four of five and the
-baseline none of five, while the baseline actively recommends
-`is-a-dev/register` and `SecureBananaLabs/bug-bounty`.
+Matthews correlation is the honest headline, because it is **0.00 for any
+constant strategy**. Holt reaches 0.49 against the baseline's 0.33 — a 48%
+relative improvement no trivial answer can fake.
+
+**Where the advantage is, and where it is not.** Holt finds 13 of 14 genuine
+opportunities against the baseline's 10 (sensitivity 0.93 vs 0.71). Its
+specificity is *worse* — 0.50 against 0.62 — so it over-recommends on ordinary
+repositories. What it does not do is fall for the extreme cases: among
+repositories with a hundred or more inbound outsider attempts and **zero**
+qualifying contributions, Holt rejects four of five and the baseline none of
+five, while the baseline recommends `is-a-dev/register` and
+`SecureBananaLabs/bug-bounty` outright.
 
 Full numbers, every iteration including the ones that were removed, and the
 results that went against us: [CHANGELOG.md](CHANGELOG.md).
 Exact commands: [REPRODUCTION.md](REPRODUCTION.md).
+An honest self-assessment of what is weak: [ASSESSMENT.md](ASSESSMENT.md).
 
 ---
 

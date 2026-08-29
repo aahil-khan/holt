@@ -10,43 +10,65 @@
  ],
  "results": [
   {
-   "method": "baseline",
+   "method": "always_viable",
    "judged": 22,
-   "recommended": 13,
-   "precision": 0.7692307692307693,
-   "recall": 0.7142857142857143,
-   "precision_at_10": 0.7,
-   "top10": [
-    "Homebrew/homebrew-cask",
-    "NixOS/nixpkgs",
-    "Pasta-Devs/Marinara-Engine",
-    "SecureBananaLabs/bug-bounty",
-    "anurag3407/career-pilot",
-    "esengine/DeepSeek-Reasonix",
-    "is-a-dev/register",
-    "netwrix/docs",
-    "open-jarvis/OpenJarvis",
-    "opencollective/opencollective-frontend"
-   ]
-  },
-  {
-   "method": "holt",
-   "judged": 22,
-   "recommended": 17,
-   "precision": 0.7647058823529411,
-   "recall": 0.9285714285714286,
-   "precision_at_10": 0.7,
+   "recommended": 22,
+   "precision": 0.6363636363636364,
+   "recall": 1.0,
+   "f1": 0.7777777777777778,
+   "mcc": 0.0,
+   "balanced_accuracy": 0.5,
+   "sensitivity": 1.0,
+   "specificity": 0.0,
+   "confusion": {
+    "tp": 14,
+    "fp": 8,
+    "tn": 0,
+    "fn": 0
+   },
+   "precision_at_10": 0.6,
    "top10": [
     "AseemPrasad/Legalassist-AI",
     "DefiLlama/dimension-adapters",
+    "Homebrew/homebrew-cask",
     "NixOS/nixpkgs",
     "NousResearch/hermes-agent",
     "Pasta-Devs/Marinara-Engine",
     "PerryTS/perry",
+    "SecureBananaLabs/bug-bounty",
     "anurag3407/career-pilot",
-    "esengine/DeepSeek-Reasonix",
-    "netwrix/docs",
-    "open-jarvis/OpenJarvis"
+    "esengine/DeepSeek-Reasonix"
+   ]
+  },
+  {
+   "method": "never_viable",
+   "judged": 22,
+   "recommended": 0,
+   "precision": null,
+   "recall": 0.0,
+   "f1": 0.0,
+   "mcc": 0.0,
+   "balanced_accuracy": 0.5,
+   "sensitivity": 0.0,
+   "specificity": 1.0,
+   "confusion": {
+    "tp": 0,
+    "fp": 0,
+    "tn": 8,
+    "fn": 14
+   },
+   "precision_at_10": 0.6,
+   "top10": [
+    "AseemPrasad/Legalassist-AI",
+    "DefiLlama/dimension-adapters",
+    "Homebrew/homebrew-cask",
+    "NixOS/nixpkgs",
+    "NousResearch/hermes-agent",
+    "Pasta-Devs/Marinara-Engine",
+    "PerryTS/perry",
+    "SecureBananaLabs/bug-bounty",
+    "anurag3407/career-pilot",
+    "esengine/DeepSeek-Reasonix"
    ]
   },
   {
@@ -55,6 +77,17 @@
    "recommended": 7,
    "precision": 0.7142857142857143,
    "recall": 0.35714285714285715,
+   "f1": 0.4761904761904762,
+   "mcc": 0.11065666703449763,
+   "balanced_accuracy": 0.5535714285714286,
+   "sensitivity": 0.35714285714285715,
+   "specificity": 0.75,
+   "confusion": {
+    "tp": 5,
+    "fp": 2,
+    "tn": 6,
+    "fn": 9
+   },
    "precision_at_10": 0.6,
    "top10": [
     "DefiLlama/dimension-adapters",
@@ -87,6 +120,68 @@
     "open-jarvis/OpenJarvis",
     "PerryTS/perry",
     "space-wizards/space-station-14"
+   ]
+  },
+  {
+   "method": "baseline",
+   "judged": 22,
+   "recommended": 13,
+   "precision": 0.7692307692307693,
+   "recall": 0.7142857142857143,
+   "f1": 0.7407407407407408,
+   "mcc": 0.33195686496194077,
+   "balanced_accuracy": 0.6696428571428572,
+   "sensitivity": 0.7142857142857143,
+   "specificity": 0.625,
+   "confusion": {
+    "tp": 10,
+    "fp": 3,
+    "tn": 5,
+    "fn": 4
+   },
+   "precision_at_10": 0.7,
+   "top10": [
+    "Homebrew/homebrew-cask",
+    "NixOS/nixpkgs",
+    "Pasta-Devs/Marinara-Engine",
+    "SecureBananaLabs/bug-bounty",
+    "anurag3407/career-pilot",
+    "esengine/DeepSeek-Reasonix",
+    "is-a-dev/register",
+    "netwrix/docs",
+    "open-jarvis/OpenJarvis",
+    "opencollective/opencollective-frontend"
+   ]
+  },
+  {
+   "method": "holt",
+   "judged": 22,
+   "recommended": 17,
+   "precision": 0.7647058823529411,
+   "recall": 0.9285714285714286,
+   "f1": 0.8387096774193549,
+   "mcc": 0.49195203701447265,
+   "balanced_accuracy": 0.7142857142857143,
+   "sensitivity": 0.9285714285714286,
+   "specificity": 0.5,
+   "confusion": {
+    "tp": 13,
+    "fp": 4,
+    "tn": 4,
+    "fn": 1
+   },
+   "precision_at_10": 0.7,
+   "top10": [
+    "AseemPrasad/Legalassist-AI",
+    "DefiLlama/dimension-adapters",
+    "NixOS/nixpkgs",
+    "NousResearch/hermes-agent",
+    "Pasta-Devs/Marinara-Engine",
+    "PerryTS/perry",
+    "anurag3407/career-pilot",
+    "esengine/DeepSeek-Reasonix",
+    "netwrix/docs",
+    "open-jarvis/OpenJarvis"
    ]
   }
  ],
@@ -162,6 +257,54 @@
    "utksh1/SecuScan": "insufficient_evidence",
    "vellum-ai/vellum-assistant": "insufficient_evidence",
    "volcengine/OpenViking": "viable"
+  },
+  "always_viable": {
+   "AseemPrasad/Legalassist-AI": "viable",
+   "DefiLlama/dimension-adapters": "viable",
+   "Homebrew/homebrew-cask": "viable",
+   "NixOS/nixpkgs": "viable",
+   "NousResearch/hermes-agent": "viable",
+   "Pasta-Devs/Marinara-Engine": "viable",
+   "PerryTS/perry": "viable",
+   "SecureBananaLabs/bug-bounty": "viable",
+   "anurag3407/career-pilot": "viable",
+   "esengine/DeepSeek-Reasonix": "viable",
+   "google-test/signclav2-probe-repo": "viable",
+   "is-a-dev/register": "viable",
+   "netwrix/docs": "viable",
+   "open-jarvis/OpenJarvis": "viable",
+   "opencollective/opencollective-frontend": "viable",
+   "runelite/plugin-hub": "viable",
+   "space-wizards/space-station-14": "viable",
+   "stablyai/orca": "viable",
+   "tscircuit/kicad-to-circuit-json": "viable",
+   "utksh1/SecuScan": "viable",
+   "vellum-ai/vellum-assistant": "viable",
+   "volcengine/OpenViking": "viable"
+  },
+  "never_viable": {
+   "AseemPrasad/Legalassist-AI": "not_viable",
+   "DefiLlama/dimension-adapters": "not_viable",
+   "Homebrew/homebrew-cask": "not_viable",
+   "NixOS/nixpkgs": "not_viable",
+   "NousResearch/hermes-agent": "not_viable",
+   "Pasta-Devs/Marinara-Engine": "not_viable",
+   "PerryTS/perry": "not_viable",
+   "SecureBananaLabs/bug-bounty": "not_viable",
+   "anurag3407/career-pilot": "not_viable",
+   "esengine/DeepSeek-Reasonix": "not_viable",
+   "google-test/signclav2-probe-repo": "not_viable",
+   "is-a-dev/register": "not_viable",
+   "netwrix/docs": "not_viable",
+   "open-jarvis/OpenJarvis": "not_viable",
+   "opencollective/opencollective-frontend": "not_viable",
+   "runelite/plugin-hub": "not_viable",
+   "space-wizards/space-station-14": "not_viable",
+   "stablyai/orca": "not_viable",
+   "tscircuit/kicad-to-circuit-json": "not_viable",
+   "utksh1/SecuScan": "not_viable",
+   "vellum-ai/vellum-assistant": "not_viable",
+   "volcengine/OpenViking": "not_viable"
   }
  },
  "spend_usd": 0.3528
