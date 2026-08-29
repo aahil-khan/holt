@@ -425,3 +425,41 @@ welcoming because they are easy; mature projects look unreviewed because their
 review is elsewhere. Two experiments, two directions, one conclusion — and it is
 why Stage C informs the report a human reads while the verdict rests on
 repository kind and arithmetic.
+
+---
+
+## Iteration 6 — a positive control (2026-08-30)
+
+**Tried.** Three repositories nobody would argue about —
+`home-assistant/core`, `rust-lang/rust`, `astral-sh/uv` — assessed as a declared,
+hand-picked control outside the scored pool.
+
+**Why.** Every result so far measures the ability to *reject*: registries, traps,
+contribution-dead repositories. A detector that answered "not viable" to
+everything would ace all of it. Nothing in the evaluation distinguished a working
+detector from a broken pessimistic one.
+
+**Verified before use, not assumed.** Each was labelled by the same L1 pipeline
+used on the pool, from post-cutoff evidence:
+
+| Repo | Qualifying merges | Distinct contributors |
+|---|---|---|
+| `home-assistant/core` | 152 | 62 |
+| `rust-lang/rust` | 66 | 44 |
+| `astral-sh/uv` | 35 | 13 |
+
+**Evidence.**
+
+| | Recovered |
+|---|---|
+| **Holt** | **3 / 3** |
+| baseline solution | 1 / 3 |
+
+The baseline returns *insufficient evidence* for `home-assistant/core` and
+`astral-sh/uv`. Both are among the most contributor-friendly projects in open
+source; neither README says so. That is the same failure the project is built
+around, seen from the positive side: the landing page does not carry the
+information, and only the contribution history does.
+
+**Decision.** Kept, reported as a declared diagnostic and never mixed into the
+scored pool. Hand-picked cases belong in a table labelled hand-picked.

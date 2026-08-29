@@ -70,6 +70,22 @@ qualifying contributions, Holt rejects four of five and the baseline none of
 five, while the baseline recommends `is-a-dev/register` and
 `SecureBananaLabs/bug-bounty` outright.
 
+**Positive control.** A detector that answers "not viable" to everything would
+reject every trap in the table above and look excellent doing it. So three
+repositories nobody would dispute — `home-assistant/core` (152 qualifying
+contributions from 62 people after the cutoff), `rust-lang/rust` (66 from 44) and
+`astral-sh/uv` (35 from 13) — are assessed as a declared, hand-picked control,
+separate from the scored pool.
+
+| | Recovered |
+|---|---|
+| **Holt** | **3 / 3** |
+| baseline solution | 1 / 3 |
+
+The baseline calls `home-assistant/core` and `astral-sh/uv` *insufficient
+evidence*, because their READMEs do not advertise how contributable they are.
+That is the failure this project is about, in the positive direction.
+
 Full numbers, every iteration including the ones that were removed, and the
 results that went against us: [CHANGELOG.md](CHANGELOG.md).
 Exact commands: [REPRODUCTION.md](REPRODUCTION.md).

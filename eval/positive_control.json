@@ -1,0 +1,20 @@
+{
+ "note": "Hand-picked, declared. Verified genuine by the same L1 label used for the scored pool, then assessed. Guards against a detector that reaches not_viable by rejecting everything. NOT part of the scored pool.",
+ "repos": {
+  "home-assistant/core": {
+   "holt": "viable",
+   "baseline": "insufficient_evidence",
+   "rule": "28 outsider merges from 81 people, median first response 2.3h"
+  },
+  "astral-sh/uv": {
+   "holt": "viable",
+   "baseline": "insufficient_evidence",
+   "rule": "14 outsider merges from 48 people, median first response 4.0h"
+  },
+  "rust-lang/rust": {
+   "holt": "viable",
+   "baseline": "viable",
+   "rule": "51 outsider merges from 90 people, median first response 0.6h"
+  }
+ }
+}
