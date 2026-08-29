@@ -1,0 +1,192 @@
+{
+ "captured_at": "2026-08-29T14:40:28.467141+00:00",
+ "content_sha256": "0ec8adcc45b1f31f0cfebb130d87b1c4a2fc79856f0f2c277ab7b16e464147d3",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#101:opened",
+   "payload": {
+    "additions": 1,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 1,
+    "files": [
+     "assets/Audio/encerrar.mp3",
+     "assets/Audio/musica_combate.mp3",
+     "assets/Audio/musica_tablero.mp3",
+     "assets/Audio/tp.mp3",
+     "codigo_completo.txt",
+     "src/juego.cpp"
+    ],
+    "title": "Feature/sonidosflojos"
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T18:31:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/101"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#100:opened",
+   "payload": {
+    "additions": 41,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 56,
+    "files": [
+     "README.md",
+     "include/animal.h",
+     "include/cursor.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cursor.cpp",
+     "src/hechizos.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Release1.3"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:01:33+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/100"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#100:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:00:48+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/100"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#100:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Vuelta a una versi\u00f3n anterior. No se a\u00f1ade nada, solo se recupera una versi\u00f3n estable.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:00:24+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/100"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#99:opened",
+   "payload": {
+    "additions": 39,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 56,
+    "files": [
+     "include/animal.h",
+     "include/cursor.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cursor.cpp",
+     "src/hechizos.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Release/1.3"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:54:48+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/99"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#99:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:39:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/99"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#99:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "bugfix: cursor e intercambio",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:39:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/99"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#98:opened",
+   "payload": {
+    "additions": 22,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "src/tablero.cpp"
+    ],
+    "title": "1.3 a partir de 1.0"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:35:20+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/98"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#98:closed",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:37:02+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/98"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#97:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "Imagenes en Readme"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:02:19+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/97"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#97:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:09:44+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/97"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#97:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Fotos readme.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:09:31+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/97"
+  }
+ ],
+ "repo": "AlvarOnce/rancho",
+ "window": "post_t"
+}

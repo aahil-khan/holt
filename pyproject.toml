@@ -23,3 +23,5 @@ packages = ["src/holt"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests", "eval"]
+# eval/ lives at the repo root, outside the installed src/holt package.
+pythonpath = ["."]

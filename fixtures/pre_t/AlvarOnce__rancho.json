@@ -1,0 +1,4169 @@
+{
+ "captured_at": "2026-08-29T14:40:26.797690+00:00",
+ "content_sha256": "38bdb81232f7d9b895ee0bf4d6a9321a4f43b7ee1c8120d2c0871d321a5c4e8a",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:AlvarOnce/rancho:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Desarrollo del videojuego Archon como proyecto de Inform\u00e1tica Industrial [Visual Studio 2026]",
+    "homepage_url": "",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "C++",
+    "pushed_at": "2026-06-09T18:30:44Z",
+    "stargazer_count": 1
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T21:47:22+00:00",
+   "url": "https://github.com/AlvarOnce/rancho"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#96:opened",
+   "payload": {
+    "additions": 3,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "docs/CHANGELOG",
+     "src/tablero.cpp"
+    ],
+    "title": "Release/v1.2"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:32:10+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/96"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#96:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:33:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/96"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#96:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:33:21+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/96"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#95:opened",
+   "payload": {
+    "additions": 2,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/CHANGELOG"
+    ],
+    "title": "bugfix: hechizo intercambio"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:31:07+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/95"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#95:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:31:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/95"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#95:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:31:21+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/95"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#94:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/tablero.cpp"
+    ],
+    "title": "Solucion intercambio"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:27:59+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/94"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#94:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:29:07+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/94"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#94:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Parece seguro.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:28:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/94"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#93:opened",
+   "payload": {
+    "additions": 68,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 49,
+    "files": [
+     "docs/CHANGELOG",
+     "include/animal.h",
+     "include/cursor.h",
+     "include/estructuras.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cursor.cpp",
+     "src/hechizos.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Release/v1.1"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:26:39+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/93"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#93:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:28:22+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/93"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#93:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:28:12+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/93"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#92:opened",
+   "payload": {
+    "additions": 5,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "docs/CHANGELOG"
+    ],
+    "title": "Parametros definitivos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:26:17+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/92"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#92:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:27:31+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/92"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#92:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:27:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/92"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#91:opened",
+   "payload": {
+    "additions": 63,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 45,
+    "files": [
+     "include/animal.h",
+     "include/cursor.h",
+     "include/estructuras.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cursor.cpp",
+     "src/hechizos.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/tablero final"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:16:59+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/91"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#91:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:18:24+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/91"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#90:opened",
+   "payload": {
+    "additions": 7,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 20,
+    "files": [
+     "archon.vcxproj",
+     "docs/CHANGELOG",
+     "docs/CHANGELOG.md",
+     "include/cerdo.h",
+     "include/granjero.h",
+     "include/llama.h"
+    ],
+    "title": "Realease/1.0"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:30:46+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/90"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#90:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:33:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/90"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#90:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Cambio parametros animales",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:33:09+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/90"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#89:opened",
+   "payload": {
+    "additions": 487,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 54,
+    "deletions": 169,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Audio/intercambio.mp3",
+     "assets/Audio/menu.mp3",
+     "assets/Audio/musica_combate.mp3",
+     "assets/Audio/musica_tablero.mp3",
+     "assets/Audio/seleccion_menu.mp3",
+     "assets/Audio/sonido_mover menu.mp3",
+     "assets/Audio/transiciodevueltatablero.mp3",
+     "assets/Audio/transicioncombate.mp3",
+     "assets/Sprites/batalla/oficial.png",
+     "assets/Sprites/controles/controles.png",
+     "assets/Sprites/creditos/creditos.png",
+     "assets/Sprites/llama/llamaSpritesheet1.png",
+     "assets/Sprites/menu/opciones.png",
+     "assets/Sprites/tablero/casillaPosible.ase",
+     "assets/Sprites/tablero/casillaPosible2.png",
+     "assets/Sprites/tablero/casillaPosible3.png",
+     "assets/Sprites/tablero/casillas.png",
+     "assets/Sprites/tablero/hechizos.png"
+    ],
+    "title": "Realease/1.0"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:28:22+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/89"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#89:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:31:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/89"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#89:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Entrega  a master",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:31:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/89"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#88:opened",
+   "payload": {
+    "additions": 96,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 22,
+    "files": [
+     "assets/Sprites/controles/controles.png",
+     "assets/Sprites/menu/opciones.png",
+     "assets/Sprites/tablero/hechizos.png",
+     "include/controles.h",
+     "src/animal.cpp",
+     "src/arena.cpp",
+     "src/controles.cpp",
+     "src/juego.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Maaaaas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:20:12+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/88"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#88:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:21:34+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/88"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#88:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "check",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:21:21+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/88"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#87:opened",
+   "payload": {
+    "additions": 95,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 29,
+    "files": [
+     "include/animal.h",
+     "include/arena.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/estructuras.h",
+     "include/gallina.h",
+     "include/granjero.h",
+     "include/llama.h",
+     "include/oveja.h",
+     "src/arena.cpp",
+     "src/hechizos.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/ultimos detalles alvaro"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:45:23+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/87"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#87:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:04:39+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/87"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#87:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Final de entrega",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:04:33+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/87"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#86:opened",
+   "payload": {
+    "additions": 19,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "include/interaccion.h",
+     "src/interaccion.cpp"
+    ],
+    "title": "Feature/arreglobugsdesdedevelop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:44:09+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/86"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#86:merged",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:22:03+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/86"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#86:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Colisiones",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:21:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/86"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#85:opened",
+   "payload": {
+    "additions": 21,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     "include/ataque.h",
+     "src/interaccion.cpp"
+    ],
+    "title": "He arreglado un peque\u00f1o bug que hab\u00eda a la hora de hacer el ataque"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:53:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/85"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#85:merged",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:09:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/85"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#84:opened",
+   "payload": {
+    "additions": 43,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 42,
+    "files": [
+     "assets/Sprites/creditos/creditos.png",
+     "include/arena.h",
+     "src/animal.cpp",
+     "src/arena.cpp",
+     "src/juego.cpp"
+    ],
+    "title": "Feature/cambios finales"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:49:10+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/84"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#84:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:06:35+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/84"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#84:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Okey",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:06:23+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/84"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#83:opened",
+   "payload": {
+    "additions": 158,
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 52,
+    "files": [
+     "include/animal.h",
+     "include/cursor.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cursor.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/fusion con develop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:48:05+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/83"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#83:closed",
+   "payload": {
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:16:19+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/83"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#82:opened",
+   "payload": {
+    "additions": 55,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 39,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Audio/menu.mp3",
+     "assets/Audio/musica_combate.mp3",
+     "assets/Audio/musica_tablero.mp3",
+     "assets/Audio/transiciodevueltatablero.mp3",
+     "assets/Audio/transicioncombate.mp3",
+     "include/RenderizadorAudio.h",
+     "include/arena.h",
+     "include/juego.h",
+     "include/tablero.h",
+     "src/RenderizadorAudio.cpp",
+     "src/arena.cpp",
+     "src/hechizos.cpp",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "cambios en el tam\u00f1o de los archivos de audio, cambio de los nombres d\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:36:50+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/82"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#82:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:18:06+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/82"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#81:opened",
+   "payload": {
+    "additions": 22,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 33,
+    "files": [
+     "include/ataque.h",
+     "include/granjero.h",
+     "include/interaccion.h",
+     "src/arena.cpp",
+     "src/interaccion.cpp",
+     "src/juego.cpp"
+    ],
+    "title": "Ahora los ataques se ven aunque estes cerca del rival,y en las transi\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T10:29:22+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/81"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#81:merged",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:11:45+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/81"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#81:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Conflictos solucionados",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:11:38+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/81"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#80:opened",
+   "payload": {
+    "additions": 20,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 3,
+    "files": [
+     "assets/Audio/intercambio.mp3",
+     "assets/Audio/seleccion_menu.mp3",
+     "assets/Audio/sonido_mover menu.mp3",
+     "include/RenderizadorAudio.h",
+     "include/tablero.h",
+     "src/RenderizadorAudio.cpp",
+     "src/hechizos.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/ultimos sonidos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T10:25:42+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/80"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#80:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:47:54+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/80"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#80:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Check.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:47:48+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/80"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#80:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Ultimos sonidos",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:47:48+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/80"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#79:opened",
+   "payload": {
+    "additions": 147,
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 37,
+    "files": [
+     "include/animal.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/piezas no saltan"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:58:03+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/79"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#79:closed",
+   "payload": {
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:49:00+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/79"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#78:opened",
+   "payload": {
+    "additions": 205,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 30,
+    "deletions": 36,
+    "files": [
+     "assets/Sprites/batalla/oficial.png",
+     "assets/Sprites/llama/llamaSpritesheet1.png",
+     "assets/Sprites/tablero/casillaPosible.ase",
+     "assets/Sprites/tablero/casillaPosible2.png",
+     "assets/Sprites/tablero/casillaPosible3.png",
+     "assets/Sprites/tablero/casillas.png",
+     "assets/Sprites/tablero/vallaAbajo.ase",
+     "assets/Sprites/tablero/vallaAbajo.png",
+     "assets/Sprites/tablero/vallas.png",
+     "assets/Sprites/vida/ataque.png",
+     "assets/Sprites/vida/vida.png",
+     "docs/CHANGELOG",
+     "docs/CHANGELOG.md",
+     "docs/memoriaRanchov8.pdf",
+     "docs/memoriaRanchov9.pdf",
+     "include/animal.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/estructuras.h",
+     "include/gallina.h"
+    ],
+    "title": "Feature/ventaja casillas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T02:34:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/78"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#78:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:37:30+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/78"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#78:review:0",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "body": "Se incluye un sistema de rotaci\u00f3n de colores de casillas a nivel l\u00f3gico, se establece que si un animal se localiza en una casilla de su mismo color, a la hora de iniciar el combate, la figura la cual haya comenzado la pelea en una casilla que es perteneciente a su paleta de colores recibir\u00e1 un bonus de vida, el cual le permitir\u00e1 poder aguantar m\u00e1s ataques pues sus puntos de vida han aumentado, se ha establecido tambi\u00e9n que si un animal se encuentra sobre una casilla de poder, este no tendr\u00e1 permitido realizar hechizos hasta que se localiza en una casilla distinta a la ya mencionada antes.. Por otro lado se ha declarado la forma inicial que toma el mapa de tablero al inicio de la partida, y se ha establecido que un ciclo de rotaci\u00f3n de colores de casillas se produce cuando el jugador 1 y el jugador dos han finalizado ambos una jugada dentro de tablero",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T07:40:01+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/78"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#78:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Casillas alternantes",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:37:25+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/78"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#78:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "@Jooleean falta:\r\n\r\nCrear spritesheet casillas.png y sustituirlo por el temporal de ahora, tiene que tener casilla por este orden: claro, neutro, oscuro.\r\nQuiz\u00e1 uno extra de color neutro pero con alguna se\u00f1al de que es un punto de poder."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T02:36:35+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/78"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#76:opened",
+   "payload": {
+    "additions": 19,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "docs/CHANGELOG",
+     "docs/CHANGELOG.md"
+    ],
+    "title": "Realease/v0.2"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:30:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/76"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#76:closed",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:32:51+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/76"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#75:opened",
+   "payload": {
+    "additions": 1345,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 89,
+    "deletions": 498,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Audio/ataquecerdo.mp3",
+     "assets/Audio/ataqueoveja.mp3",
+     "assets/Audio/cabra.mp3",
+     "assets/Audio/cerdo.mp3",
+     "assets/Audio/curar.mp3",
+     "assets/Audio/damage_cerdo.mp3",
+     "assets/Audio/damage_hombre.mp3",
+     "assets/Audio/damage_llama.mp3",
+     "assets/Audio/damage_oveja.mp3",
+     "assets/Audio/embestida.mp3",
+     "assets/Audio/encerrar.mp3",
+     "assets/Audio/escupidaLlama.mp3",
+     "assets/Audio/gallina.mp3",
+     "assets/Audio/golpe.mp3",
+     "assets/Audio/granjero.mp3",
+     "assets/Audio/granjeroataque.mp3",
+     "assets/Audio/huevoroto.mp3",
+     "assets/Audio/impactobabas.mp3"
+    ],
+    "title": "Realease/v0.2"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:12:02+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/75"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#75:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:29:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/75"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#75:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:29:07+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/75"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#74:opened",
+   "payload": {
+    "additions": 60,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 3,
+    "files": [
+     "include/tablero.h",
+     "src/juego.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Animales muertos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:09:42+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/74"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#74:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:20:34+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/74"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#74:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Perdedores afuera",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:20:29+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/74"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#74:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "NO ACEPTAR\r\n\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:20:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/74"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#73:opened",
+   "payload": {
+    "additions": 3,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/hechizos.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "fix compilacion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:31:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/73"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#73:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:32:17+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/73"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#73:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Se solucionan conflictos",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:32:11+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/73"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#72:opened",
+   "payload": {
+    "additions": 144,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 24,
+    "deletions": 80,
+    "files": [
+     "assets/Sprites/batalla/obstaculos.png",
+     "assets/Sprites/batalla/oficial.ase",
+     "assets/Sprites/batalla/oficial.png",
+     "assets/Sprites/granjero/granjeroSpritesheet.png",
+     "assets/Sprites/granjero/granjeroSpritesheet1.png",
+     "assets/Sprites/tablero/cursor.png",
+     "assets/Sprites/tablero/pato.png",
+     "assets/Sprites/tablero/tableroFondo.png",
+     "assets/Sprites/tarjetas/tarjetas.png",
+     "assets/Sprites/vida/ataque.png",
+     "assets/Sprites/vida/vida.png",
+     "include/animal.h",
+     "include/arena.h",
+     "include/ataque.h",
+     "include/cabra.h",
+     "include/cursor.h",
+     "include/gallina.h",
+     "include/llama.h",
+     "include/tablero.h",
+     "src/arena.cpp"
+    ],
+    "title": "Feature/mas cosas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T20:33:34+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/72"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#72:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:29:08+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/72"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#72:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "M\u00e1s cosas.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:28:45+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/72"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#71:opened",
+   "payload": {
+    "additions": 338,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 40,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "docs/CHANGELOG",
+     "docs/memoriaRanchov5.pdf",
+     "docs/memoriaRanchov8.pdf",
+     "include/animal.h",
+     "include/tablero.h",
+     "src/hechizos.cpp",
+     "src/juego.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/hechizos granjero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T19:18:12+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/71"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#71:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:08:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/71"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#71:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Ahora existen cuatro hechizos en tablero, que permiten la modificaci\u00f3n de atributos de los animales en las casillas.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:07:58+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/71"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#68:opened",
+   "payload": {
+    "additions": 87,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 33,
+    "deletions": 24,
+    "files": [
+     "assets/Audio/ataquecerdo.mp3",
+     "assets/Audio/ataqueoveja.mp3",
+     "assets/Audio/cabra.mp3",
+     "assets/Audio/cerdo.mp3",
+     "assets/Audio/curar.mp3",
+     "assets/Audio/damage_cerdo.mp3",
+     "assets/Audio/damage_hombre.mp3",
+     "assets/Audio/damage_llama.mp3",
+     "assets/Audio/damage_oveja.mp3",
+     "assets/Audio/embestida.mp3",
+     "assets/Audio/encerrar.mp3",
+     "assets/Audio/escupidaLlama.mp3",
+     "assets/Audio/gallina.mp3",
+     "assets/Audio/golpe.mp3",
+     "assets/Audio/granjero.mp3",
+     "assets/Audio/granjeroataque.mp3",
+     "assets/Audio/huevoroto.mp3",
+     "assets/Audio/impactobabas.mp3",
+     "assets/Audio/lanzarhuevo.mp3",
+     "assets/Audio/llama.mp3"
+    ],
+    "title": "cambios en los sonidos, inclusi\u00f3n de sonidos los cuales vayan acordes\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:05:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/68"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#68:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:53:39+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/68"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#68:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Sonidos.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:39:29+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/68"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#68:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "CUIDADO, NO ACEPTAR TODAV\u00cdA"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:40:23+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/68"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#67:opened",
+   "payload": {
+    "additions": 96,
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 11,
+    "files": [
+     "include/animal.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/juego.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/fusion develop y miguel"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:11:57+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/67"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#67:closed",
+   "payload": {
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:18:32+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/67"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#67:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "muy buena",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:01:28+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/67"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#66:opened",
+   "payload": {
+    "additions": 186,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 98,
+    "files": [
+     "archon.vcxproj",
+     "include/arena.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/embestida.h",
+     "include/gallina.h",
+     "include/golpe.h",
+     "include/granjero.h",
+     "include/interaccion.h",
+     "include/llama.h",
+     "include/oveja.h",
+     "src/arena.cpp",
+     "src/interaccion.cpp",
+     "src/renderizador.cpp"
+    ],
+    "title": "He puesto ataques en todos los animales y he a\u00f1adido interacciones en\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:44:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/66"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#66:merged",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:00:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/66"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#66:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se implementan los diferentes tipos de ataque a los nuevos animales.\nAhora la clase Interacci\u00f3n detecta colisiones con ataques, barreras, limites de la arena.\nAhora parece que ya no parpadean las barreras.\n\nFaltan sprites de los ataques y que el dibujo del fango del cerdo en \u00e1rea se mantenga un rato en vez de desaparecer cuando impacta con el rival. @JaimeLadero-etsidi @Jooleean ",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:50:44+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/66"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#65:opened",
+   "payload": {
+    "additions": 7,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "include/arena.h",
+     "src/juego.cpp"
+    ],
+    "title": "Feature/back to tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:51:42+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/65"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#65:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T09:32:50+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/65"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#65:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Ahora es posible realizar batallas consecutivas.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T09:32:43+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/65"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#64:opened",
+   "payload": {
+    "additions": 400,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 43,
+    "deletions": 226,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Sprites/batalla/fondo.png",
+     "assets/Sprites/batalla/fondoBatalla.png",
+     "assets/Sprites/batalla/obstaculos.png",
+     "assets/Sprites/cabra/cabraSpritesheet1.png",
+     "assets/Sprites/cerdo/cerdoSpritesheet.png",
+     "assets/Sprites/cerdo/cerdoSpritesheet1.png",
+     "assets/Sprites/gallina/gallinaSpritesheet1.png",
+     "assets/Sprites/gallina/huevo.png",
+     "assets/Sprites/granjero/granjero.ase",
+     "assets/Sprites/granjero/granjeroSpritesheet.png",
+     "assets/Sprites/granjero/granjeroSpritesheet1.png",
+     "assets/Sprites/llama/llamaSpritesheet.png",
+     "assets/Sprites/llama/llamaSpritesheet1.png",
+     "assets/Sprites/oveja/ovejaSpritesheet.png",
+     "assets/Sprites/oveja/ovejaSpritesheet1.png",
+     "assets/Sprites/pantallaGanador/ganador.png",
+     "include/animal.h",
+     "include/arena.h"
+    ],
+    "title": "Final tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:19:25+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/64"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#64:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:38:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/64"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#64:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Tablero final",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T06:38:35+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/64"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#63:opened",
+   "payload": {
+    "additions": 281,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 197,
+    "files": [
+     "archon.vcxproj",
+     "include/animal.h",
+     "include/arena.h",
+     "include/ataque.h",
+     "include/cabra.h",
+     "include/disparo.h",
+     "include/gallina.h",
+     "include/golpe.h",
+     "include/interaccion.h",
+     "include/onda.h",
+     "src/arena.cpp",
+     "src/interaccion.cpp",
+     "src/juego.cpp",
+     "src/jugador.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Implementaci\u00f3n de l\u00f3gica definitva"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:54:21+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/63"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#63:merged",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:53:00+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/63"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#63:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Apruebo el pull request con inclusi\u00f3n de nuevos ataques",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:09:23+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/63"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#62:opened",
+   "payload": {
+    "additions": 3447,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 143,
+    "deletions": 287,
+    "files": [
+     "README.md",
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Audio/damage_Cabra.mp3",
+     "assets/Audio/damage_Gallina.mp3",
+     "assets/Audio/golpe.mp3",
+     "assets/Audio/menu.mp3",
+     "assets/Audio/musica_combate.mp3",
+     "assets/Audio/musica_tablero.mp3",
+     "assets/Audio/sonidoPickeoCabra.mp3",
+     "assets/Audio/sonidoPickeoGallina.mp3",
+     "assets/Audio/transicion.mp3",
+     "assets/Sprites/Pruebas/Image.png",
+     "assets/Sprites/Pruebas/Sprite-0003.png",
+     "assets/Sprites/Pruebas/Sprite-0004.png",
+     "assets/Sprites/Pruebas/Sprite-0005.png",
+     "assets/Sprites/Pruebas/aaa1.png",
+     "assets/Sprites/Pruebas/art.gif",
+     "assets/Sprites/Pruebas/borrar20-Sheet.png",
+     "assets/Sprites/Pruebas/fondoo.ase"
+    ],
+    "title": "Realease/v0.1"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:59:33+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/62"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#62:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:15:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/62"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#62:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:08:48+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/62"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#61:opened",
+   "payload": {
+    "additions": 3445,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 143,
+    "deletions": 287,
+    "files": [
+     "README.md",
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Audio/damage_Cabra.mp3",
+     "assets/Audio/damage_Gallina.mp3",
+     "assets/Audio/golpe.mp3",
+     "assets/Audio/menu.mp3",
+     "assets/Audio/musica_combate.mp3",
+     "assets/Audio/musica_tablero.mp3",
+     "assets/Audio/sonidoPickeoCabra.mp3",
+     "assets/Audio/sonidoPickeoGallina.mp3",
+     "assets/Audio/transicion.mp3",
+     "assets/Sprites/Pruebas/Image.png",
+     "assets/Sprites/Pruebas/Sprite-0003.png",
+     "assets/Sprites/Pruebas/Sprite-0004.png",
+     "assets/Sprites/Pruebas/Sprite-0005.png",
+     "assets/Sprites/Pruebas/aaa1.png",
+     "assets/Sprites/Pruebas/art.gif",
+     "assets/Sprites/Pruebas/borrar20-Sheet.png",
+     "assets/Sprites/Pruebas/fondoo.ase"
+    ],
+    "title": "Rama develop a master"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:39:25+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/61"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#61:closed",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:50:58+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/61"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#60:opened",
+   "payload": {
+    "additions": 124,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 42,
+    "files": [
+     "include/RenderizadorAudio.h",
+     "include/animal.h",
+     "src/RenderizadorAudio.cpp",
+     "src/arena.cpp",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "separaci\u00f3n audio l\u00f3gica, sin embargo el develop actual no permite la \u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:05:16+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/60"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#60:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:40:12+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/60"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#60:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:40:06+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/60"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#59:opened",
+   "payload": {
+    "additions": 604,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 20,
+    "deletions": 605,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "include/animal.h",
+     "include/arena.h",
+     "include/ataque.h",
+     "include/cabra.h",
+     "include/disparo.h",
+     "include/gallina.h",
+     "include/golpe.h",
+     "include/interaccion.h",
+     "include/llama.h",
+     "include/onda.h",
+     "include/tablero.h",
+     "src/arena.cpp",
+     "src/ataque.cpp",
+     "src/juego.cpp",
+     "src/jugador.cpp",
+     "src/menu.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/ataque3"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:54:09+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/59"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#59:closed",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:56:51+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/59"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#59:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "PELIGRO, revisar antes de aprobar\r\n<img width=\"329\" height=\"209\" alt=\"image\" src=\"https://github.com/user-attachments/assets/9366098c-fe59-4df1-91d3-05a5ec50fb45\" />\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T20:18:53+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/59"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#58:opened",
+   "payload": {
+    "additions": 531,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 463,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "include/animal.h",
+     "include/arena.h",
+     "include/ataque.h",
+     "include/cabra.h",
+     "include/disparoo.h",
+     "include/gallina.h",
+     "include/golpe.h",
+     "include/interaccionn.h",
+     "include/onda.h",
+     "include/tablero.h",
+     "src/arenaa.cpp",
+     "src/ataque.cpp",
+     "src/juego.cpp",
+     "src/jugadorr.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/ataque"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:08:10+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/58"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#58:closed",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T18:28:32+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/58"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#57:opened",
+   "payload": {
+    "additions": 67,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 11,
+    "files": [
+     "archon.vcxproj",
+     "assets/Audio/damage_Cabra.mp3",
+     "assets/Audio/damage_Gallina.mp3",
+     "assets/Audio/golpe.mp3",
+     "assets/Audio/menu.mp3",
+     "assets/Audio/musica_combate.mp3",
+     "assets/Audio/musica_tablero.mp3",
+     "assets/Audio/sonidoPickeoCabra.mp3",
+     "assets/Audio/sonidoPickeoGallina.mp3",
+     "assets/Audio/transicion.mp3",
+     "include/RenderizadorAudio.h",
+     "include/arena.h",
+     "include/juego.h",
+     "include/tablero.h",
+     "src/RenderizadorAudio.cpp",
+     "src/arena.cpp",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "inclusi\u00f3n de renderizador de audio, musica de tablero, menu y arena, \u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T10:47:16+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/57"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#57:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:05:07+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/57"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#57:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Primer audio y sonidos en Rancho.\nSe crea un renderizadorAudio para las funciones playMusica, stopMusica y playSonido.\nQuiz\u00e1s habr\u00eda que desacoplarlo integralmente como el renderizador gr\u00e1fico pero de momento funciona perfectamente. Ya preguntaremos a psanse.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:04:45+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/57"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#57:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:18:29+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/57"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#56:opened",
+   "payload": {
+    "additions": 14,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "assets/Audio/menu.mp3",
+     "include/menu.h",
+     "src/juego.cpp",
+     "src/menu.cpp"
+    ],
+    "title": "inclusi\u00f3n de musica para el menu"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:24:43+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/56"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#56:closed",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:05:22+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/56"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#56:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "@liboo500 poner ETSIDI.h dentro de menu o juego rompe un poco el desacople logico-grafico. Lo mejor ser\u00eda que las librer\u00edas de imagen y sonido est\u00e9n solo dentro de la clase Renderizador.\n\nPuedes hacer que la m\u00fasica y sonido los emita el renderizador que ahora puede pasar a no solo ser renderizador gr\u00e1fico sino tambi\u00e9n de sonido. \n\nQuiz\u00e1 una funci\u00f3n `Renderizador::sonar(menu)` que se llame dentro de juego. \n\nY cambiar `Juego:: renderizarGraficos()` por `Juego::renderizar()` donde dibuje y suene.\n\n@Jooleean @liboo500 ",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:54:18+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/56"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:opened",
+   "payload": {
+    "additions": 582,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 39,
+    "deletions": 539,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "include/animal.h",
+     "include/arena.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/controles.h",
+     "include/creditos.h",
+     "include/cursor.h",
+     "include/estructuras.h",
+     "include/gallina.h",
+     "include/granjero.h",
+     "include/juego.h",
+     "include/jugador.h",
+     "include/llama.h",
+     "include/menu.h",
+     "include/oveja.h",
+     "include/renderizador.h",
+     "include/tablero.h",
+     "include/tarjetaID.h"
+    ],
+    "title": "Feature/desacople logico grafico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:15:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:34:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:06:32+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:07:06+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:review:2",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:13:10+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:review:3",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Se pasa de objeto->dibujar(renderizador) a renderizador->dibujar(objeto)\nEsto permite que los objetos solo se encarguen de su actualizaci\u00f3n l\u00f3gica, mientras el renderizador dibuja en pantalla obteniendo sus datos con getters.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:24:28+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Falta tambi\u00e9n el resto de animales. He eliminado todas las clases de animales que no sean gallina y cabra para que sea m\u00e1s f\u00e1cil del desacople logico-grafico. "
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:16:51+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#55:comment:1",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Hab\u00eda un error: pon\u00eda posX pero era posY. \r\nYa solucionado por @Jooleean "
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:33:51+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/55"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#54:opened",
+   "payload": {
+    "additions": 96,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 21,
+    "deletions": 32,
+    "files": [
+     "assets/Sprites/cabra/cabraSpritesheet.png",
+     "assets/Sprites/gallina/gallinaSpritesheet.png",
+     "assets/Sprites/tablero/casillaPosible.ase",
+     "assets/Sprites/tablero/casillaPosible.png",
+     "assets/Sprites/tablero/tableroFondo.png",
+     "include/animal.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/gallina.h",
+     "include/granjero.h",
+     "include/llama.h",
+     "include/oveja.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cabra.cpp",
+     "src/cursor.cpp",
+     "src/gallina.cpp",
+     "src/juego.cpp",
+     "src/jugador.cpp",
+     "src/oveja.cpp"
+    ],
+    "title": "Cambios en tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T17:07:24+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/54"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#54:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T18:21:03+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/54"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#54:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Falta que la arena no solo dibuje gallinas y se puedan ver otros animales.\nEs buen momento para cambiar el renderizado de sprites haciendo la separaci\u00f3n final l\u00f3gico-gr\u00e1fica: que la clase renderizador reciba el tablero y la arena y los sepa dibujar. Y no al rev\u00e9s, como est\u00e1 ahora, que el tablero y arena reciben al renderizador.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T18:20:38+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/54"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#52:opened",
+   "payload": {
+    "additions": 250,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 87,
+    "files": [
+     "docs/ESTILO.md",
+     "docs/memoriaRanchov5.pdf",
+     "include/animal.h",
+     "include/estructuras.h",
+     "include/gallina.h",
+     "include/oveja.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/arena.cpp",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Movimiento legal en el tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T00:42:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/52"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#52:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T13:16:02+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/52"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#52:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Se modifica el sistema de direcciones por su descomposici\u00f3n en direcciones dx y dy. Adem\u00e1s se comprueban los movimientos realizados en el tablero, siendo una propiedad general de cada animal.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T13:15:51+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/52"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#52:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Falta:\r\n- Interacci\u00f3n entre animales en el tablero para pasar a la Arena\r\n- Interfaz de casillas a las que te puedes mover resalt\u00e1ndose con color\r\n- Condiciones de victoria\r\n- Transici\u00f3n tablero - arena. Que le pase dos personajes y que el que gana se quede en la casilla. \r\n\r\n@Jooleean "
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T00:44:28+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/52"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#51:opened",
+   "payload": {
+    "additions": 782,
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "changed_files": 35,
+    "deletions": 734,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "docs/cuadernoBitacora.md",
+     "include/animal.h",
+     "include/arena.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/controles.h",
+     "include/creditos.h",
+     "include/cursor.h",
+     "include/estructuras.h",
+     "include/gallina.h",
+     "include/granjero.h",
+     "include/juego.h",
+     "include/jugador.h",
+     "include/llama.h",
+     "include/menu.h",
+     "include/oveja.h",
+     "include/renderizador.h",
+     "include/tablero.h"
+    ],
+    "title": "Feature/interacciones batalla"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T22:48:35+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/51"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#51:merged",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T20:47:45+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/51"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#51:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Creaci\u00f3n de la clase Jugador, creaci\u00f3n del archivo estructuras.h y planteamiento de las propuestas de Pablo en tutor\u00eda.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T20:47:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/51"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#50:opened",
+   "payload": {
+    "additions": 342,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 80,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "include/arena.h",
+     "include/gallina.h",
+     "include/renderizador.h",
+     "src/arena.cpp",
+     "src/juego.cpp",
+     "src/renderizador.cpp"
+    ],
+    "title": "inclusi\u00f3n de arena, simulaci\u00f3n de combate, recibe el c\u00f3digo qui\u00e9n ha \u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T22:17:19+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/50"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#50:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T22:24:03+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/50"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#50:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se a\u00f1ade la arena.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T22:22:30+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/50"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#48:opened",
+   "payload": {
+    "additions": 101,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 42,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "docs/cuadernoBitacora.md",
+     "include/animal.h",
+     "include/controles.h",
+     "include/estructuras.h",
+     "include/tablero.h",
+     "src/controles.cpp",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Visual 2026 y estructuras.h"
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T23:11:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/48"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#48:closed",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T20:48:43+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/48"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#47:opened",
+   "payload": {
+    "additions": 250,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 33,
+    "files": [
+     "archon.vcxproj",
+     "assets/Sprites/controles/fondo.png",
+     "assets/Sprites/controles/palomaControles.png",
+     "assets/Sprites/creditos/botella.png",
+     "assets/Sprites/creditos/creditos.png",
+     "assets/Sprites/tablero/cursor.png",
+     "assets/Sprites/tablero/turnos.png",
+     "include/controles.h",
+     "include/creditos.h",
+     "include/juego.h",
+     "include/menu.h",
+     "include/tablero.h",
+     "src/controles.cpp",
+     "src/creditos.cpp",
+     "src/juego.cpp",
+     "src/menu.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/turnos tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T13:39:44+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/47"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#47:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T18:11:30+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/47"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#47:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Primera versi\u00f3n funcional de la pesta\u00f1a de controles dentro del men\u00fa principal. De momento la idea es que sirva a modo de tutorial explicando para que sirve cada tecla aunque para _further investigations_ se propone que se puedan modificar los controles.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T18:11:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/47"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#46:opened",
+   "payload": {
+    "additions": 138,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 15,
+    "deletions": 83,
+    "files": [
+     "assets/Sprites/tablero/turno.png",
+     "assets/Sprites/tablero/turnos.png",
+     "include/animal.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/gallina.h",
+     "include/granjero.h",
+     "include/juego.h",
+     "include/llama.h",
+     "include/oveja.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cursor.cpp",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/turnos tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T01:11:12+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/46"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#46:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:50:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/46"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#46:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Implementaci\u00f3n de los turnos del tablero. \nFalta tener en cuenta el movimiento de las piezas como una casilla de origen y otra de final como nos dijo Pablo. Esto adem\u00e1s facilitar\u00eda impedir que sume turnos al volver a la casilla de origen que actualmente se desconoce.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:48:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/46"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#45:opened",
+   "payload": {
+    "additions": 264,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 209,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "docs/cuadernoBitacora.md",
+     "docs/memoriaRanchov3.pdf",
+     "include/animal.h",
+     "include/arena.h",
+     "include/juego.h",
+     "include/renderizador.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/arena.cpp",
+     "src/juego.cpp",
+     "src/main.cpp",
+     "src/old/zzz.txt",
+     "src/renderizador.cpp",
+     "src/tablero.cpp",
+     "src/transicion.cpp"
+    ],
+    "title": "Conexi\u00f3n movimiento por teclado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T15:03:43+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/45"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#45:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T14:03:02+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/45"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#45:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Se implementa el control de teclado asignado a juego, y pasando los movimientos correspondientes al tablero.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T14:02:43+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/45"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#43:opened",
+   "payload": {
+    "additions": 197,
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "changed_files": 20,
+    "deletions": 135,
+    "files": [
+     "codigo_completo.txt",
+     "include/animal.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/cursor.h",
+     "include/gallina.h",
+     "include/granjero.h",
+     "include/llama.h",
+     "include/oveja.h",
+     "include/tablero.h",
+     "src/animal.cpp",
+     "src/cabra.cpp",
+     "src/cerdo.cpp",
+     "src/cursor.cpp",
+     "src/gallina.cpp",
+     "src/granjero.cpp",
+     "src/juego.cpp",
+     "src/llama.cpp",
+     "src/oveja.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/rama tablero miguel"
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T11:09:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/43"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#43:merged",
+   "payload": {
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T12:32:17+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/43"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#43:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Dejo algunos comentarios que anot\u00e9 ayer:\n\nvoid Juego::renderizarGraficos() {\nmiTablero->cursor.dibujar(motorGrafico); // deber\u00eda ir dentro del tablero y que en la clase Juego solo se llame a miTablero->dibujar(motorGrafico); y dentro de esta si que venga lo de dibujar el cursor, los animales y la tarjetaID\n\nvoid Juego::procesarTeclaPresionada(unsigned char key)\nmiTablero->moverCursor(key); // de nuevo aqu\u00ed habr\u00eda que llamar a algo como miTablero->mover(J1, dir);\n\nvoid Tablero::moverCursor(int key) // ahora est\u00e1n los ifs de las teclas dentro de la clase tablero para moverCursor, esta traducci\u00f3n de teclas a direcciones la tiene que hacer la clase Juego. Dentro de Tablero::mover(jugador, dir) deber\u00eda de hacerse la l\u00f3gica de diferenciar if(animal_seleccionado_) pero pasando simpelmente animal_seleccionado_->mover(TABLERO, dir); de forma que no haga falta poner los ifs, porque ya se hicieron en Juego, ahora en una sola linea si hay pieza seleccionada se le pasa la direccion.\n// adem\u00e1s molar\u00eda que cuando seleccionas una pieza, el cursor se queda fijo donde estaba el animal mientras lo mueves.\n\nclass Animal{\nAnimal(float posx, float posy, float capa, int vida, float xinicial)\n\t: posx_(posx), posy_(posy), capaz_(capa), vida_(vida), xinicial_(xinicial) {}\n// el constructor en formato lista deber\u00eda ir as\u00ed, en el .h no en el .cpp como est\u00e1 ahora\n\nactualizar(25); // cambiar por actualizar(dt); en varios sitios // supongo que es as\u00ed\n\nif (dirX != 0 && dirY != 0) { dirX *= 0.7071f; dirY *= 0.7071f;} // esto y algo m\u00e1s est\u00e1 en zzz.txt para solucionar el movimiento en diagonal con booleanos de teclas presionadas para detectar cuando moverse en diagonal y variaciones en direcciones de forma que si varian las dos direcciones se corrige el movimiento con raiz de 2.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T12:10:17+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/43"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#43:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Cambios respecto al tablero, se permite la selecci\u00f3n de animales y su movimiento a casillas permitidas.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T12:31:58+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/43"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#40:opened",
+   "payload": {
+    "additions": 358,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 18,
+    "files": [
+     "include/arena.h",
+     "include/juego.h",
+     "src/arena.cpp",
+     "src/juego.cpp"
+    ],
+    "title": "inclusion de multiples funciones dentro de la logica de arena, junto \u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-04-18T12:29:15+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/40"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#40:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T11:48:08+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/40"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#40:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Se incorpora la clase arena, destinada al modo batalla.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T11:47:45+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/40"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#40:review:1",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Primera vez que el propio creador de la rama, resuelve sus propios conflictos llevando develop a su rama y luego haciendo un commit de resolve conflicts tras comprobar que compila",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T11:47:45+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/40"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#39:opened",
+   "payload": {
+    "additions": 645,
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 371,
+    "files": [
+     "archon.vcxproj",
+     "cabecera.txt",
+     "codigo_completo.txt",
+     "include/cursor.h",
+     "include/juego.h",
+     "include/tablero.h",
+     "src/cabra.cpp",
+     "src/cursor.cpp",
+     "src/juego.cpp",
+     "src/old/CopiaDibujoAnterior",
+     "src/old/Funciones tablero david.txt",
+     "src/old/zzz.txt",
+     "src/tablero.cpp",
+     "src/zzz.txt"
+    ],
+    "title": "Feature/rama crazy"
+   },
+   "source": "github",
+   "timestamp": "2026-04-16T20:35:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/39"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#39:merged",
+   "payload": {
+    "author": "vazquezmiguel447",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-17T09:49:59+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/39"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#39:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Acepto el pull request con objeto de incluir al \u00faltimo colaborador en la actividad del repositorio.\r\nSin embargo, los commits son carentes de contenido significativo m\u00e1s all\u00e1 del constructor del tablero.\r\nSe limpian funciones del tablero que habr\u00e1 que recuperar, aunque de momento s\u00ed que parece m\u00e1s limpio empezar por la base para despu\u00e9s ir a\u00f1adiendo funciones de jugabilidad.\r\n\r\nIMPORTANTE: el movimiento por teclado se rompe completamente. Falta recuperar que la clase Juego ejerza de coordinadora de teclado."
+   },
+   "source": "github",
+   "timestamp": "2026-04-17T09:49:00+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/39"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#38:opened",
+   "payload": {
+    "additions": 390,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 27,
+    "deletions": 58,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Sprites/cabra/cabraSpritesheet.png",
+     "assets/Sprites/cerdo/cerdo.ase",
+     "assets/Sprites/cerdo/cerdoSpritesheet.png",
+     "assets/Sprites/creditos/creditos.png",
+     "assets/Sprites/creditos/gallinaCreditos.png",
+     "assets/Sprites/gallina/gallinaSpritesheet.png",
+     "assets/Sprites/oveja/ovejaSpritesheet.png",
+     "include/animal.h",
+     "include/cabra.h",
+     "include/cerdo.h",
+     "include/creditos.h",
+     "include/gallina.h",
+     "include/granjero.h",
+     "include/juego.h",
+     "include/llama.h",
+     "include/oveja.h",
+     "src/animal.cpp",
+     "src/cabra.cpp"
+    ],
+    "title": "Feature/animales"
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T21:11:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/38"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#38:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-17T09:11:17+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/38"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#38:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Nuevos animales. Los cr\u00e9ditos se ven muy bien. Ya se mueve la gallina y vuelve al men\u00fa.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-17T09:10:37+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/38"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#35:opened",
+   "payload": {
+    "additions": 35,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 79,
+    "files": [
+     "include/tablero.h",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Cambios en la clase tablero para evitar redundancias."
+   },
+   "source": "github",
+   "timestamp": "2026-04-14T10:54:03+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/35"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#35:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-14T11:08:45+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/35"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#34:opened",
+   "payload": {
+    "additions": 45,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 80,
+    "files": [
+     "include/tablero.h",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Idea de tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T21:23:44+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/34"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#34:closed",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-14T10:47:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/34"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#33:opened",
+   "payload": {
+    "additions": 261,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 32,
+    "deletions": 69,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Sprites/cabra/cabra.ase",
+     "assets/Sprites/cabra/cabraSpritesheet.png",
+     "assets/Sprites/exportador(ignorar)/256x256.ase",
+     "assets/Sprites/menu/opciones.png",
+     "assets/Sprites/menu/transicion.png",
+     "assets/Sprites/menu/transicionAgujero.ase",
+     "assets/Sprites/menu/transicionAgujero.png",
+     "assets/Sprites/menu/transicionFondo.png",
+     "assets/Sprites/tablero y escenario/tableroOficial.png",
+     "assets/Sprites/tablero/cursor.png",
+     "assets/Sprites/tablero/tablero.png",
+     "assets/Sprites/tablero/tableroFondo.png",
+     "assets/Sprites/tablero/tarjetasID.png",
+     "assets/Sprites/tablero/vallas.png",
+     "include/animal.h",
+     "include/cabra.h",
+     "include/cursor.h",
+     "include/juego.h"
+    ],
+    "title": "1. Transici\u00f3n, 2. Objetos en Tablero y 3. Animales (leer descripci\u00f3n)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T21:21:59+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/33"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#33:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T17:42:48+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/33"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#33:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T21:31:53+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/33"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#33:review:1",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se ve muy bien esa transici\u00f3n y por fin hay animales correteando por el Rancho.\n\nFalta implementar que la decisi\u00f3n de mover el cursor o el animal la tome su verdadero \"Experto en Informaci\u00f3n\", el Tablero. Revisar los patrones GRASP.\nActualmente, tanto en la versi\u00f3n obsoleta `moverCursorJ2(0, 1)`, como en la reci\u00e9n planteada, `miTablero->cursor.mover(0, 1);` se propone que la clase coordinadora Juego sea la que directamente ordene mover el cursor, cuando deber\u00eda ser el Tablero qui\u00e9n lo decida si todav\u00eda no hay una pieza seleccionada. Delegaci\u00f3n de Responsabilidades al Tablero.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T17:41:07+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/33"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#32:opened",
+   "payload": {
+    "additions": 13,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 10,
+    "files": [
+     "include/menu.h",
+     "src/juego.cpp",
+     "src/renderizador.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Cambio centro tablero express"
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T17:21:17+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/32"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#32:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T17:23:35+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/32"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#32:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T17:23:30+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/32"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#30:opened",
+   "payload": {
+    "additions": 79,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 27,
+    "files": [
+     "include/menu.h",
+     "include/tablero.h",
+     "src/juego.cpp",
+     "src/menu.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Selector del men\u00fa principal"
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T21:50:27+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/30"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#30:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T17:10:28+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/30"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#30:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T22:24:39+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/30"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#30:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Implementaci\u00f3n funcional de selecci\u00f3n de modo en men\u00fa prinicipal. ",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T17:09:52+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/30"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#30:review:2",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T17:10:16+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/30"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#28:opened",
+   "payload": {
+    "additions": 381,
+    "author": "liboo500",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 27,
+    "files": [
+     "archon.vcxproj.filters",
+     "include/juego.h",
+     "include/tablero.h",
+     "src/juego.cpp",
+     "src/tablero.cpp"
+    ],
+    "title": "Feature/mayor desarollo tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T14:53:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/28"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#28:merged",
+   "payload": {
+    "author": "liboo500",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T18:34:58+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/28"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#28:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se crea la clase Tablero diferenciando los animales y los colores que hay en cada casilla como dos matrices l\u00f3gicas independientes:\n`Animal* casillas[9][9];`\n`int color_casilla[9][9];`\nPrimeras funciones para mover el cursor, las piezas, cambiar los colores y hacer comprobaciones.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T16:50:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/28"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#28:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Se realiza primera incorporaci\u00f3n del manejo del tablero, con m\u00faltiples funciones que permiten determinar las caracter\u00edsticas de cada casilla.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T18:34:46+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/28"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#26:opened",
+   "payload": {
+    "additions": 242,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 42,
+    "deletions": 56,
+    "files": [
+     "archon.vcxproj",
+     "assets/Sprites/Pruebas/Image.png",
+     "assets/Sprites/Pruebas/Sprite-0003.png",
+     "assets/Sprites/Pruebas/Sprite-0004.png",
+     "assets/Sprites/Pruebas/Sprite-0005.png",
+     "assets/Sprites/Pruebas/aaa1.png",
+     "assets/Sprites/Pruebas/art.gif",
+     "assets/Sprites/Pruebas/borrar20-Sheet.png",
+     "assets/Sprites/Pruebas/foto2.png",
+     "assets/Sprites/menu/fondo.png",
+     "assets/Sprites/menu/granerovallas.png",
+     "assets/Sprites/menu/nube.png",
+     "assets/Sprites/menu/nube1.png",
+     "assets/Sprites/menu/nube2.png",
+     "assets/Sprites/menu/opciones.png",
+     "assets/Sprites/menu/paloma.png",
+     "assets/Sprites/menu/palomaSpritesheet.png",
+     "assets/Sprites/menu/selector.png",
+     "assets/Sprites/menu/titulo0.png",
+     "assets/Sprites/menu/titulo1.png"
+    ],
+    "title": "Feature/cambios generales"
+   },
+   "source": "github",
+   "timestamp": "2026-04-02T18:50:18+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/26"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#26:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T11:40:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/26"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#26:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se agregan nubes y primeras animaciones como la de la paloma o el tractor.\nEs importante tambi\u00e9n la inclusi\u00f3n de la variaci\u00f3n temporal en actualizarLogica.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T11:40:37+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/26"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#25:opened",
+   "payload": {
+    "additions": 176,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 32,
+    "files": [
+     "archon.vcxproj",
+     "include/animal.h",
+     "include/juego.h",
+     "include/menu.h",
+     "include/renderizador.h",
+     "src/CopiaDibujoAnterior",
+     "src/animal.cpp",
+     "src/juego.cpp",
+     "src/main.cpp",
+     "src/menu.cpp",
+     "src/renderizador.cpp"
+    ],
+    "title": "Cambios generales (clases, resoluci\u00f3n ventana, dibujado en pantalla)"
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T20:25:27+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/25"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#25:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T21:47:37+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/25"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#25:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Revisar commit 5, donde se modifican cambios de commit 2.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T20:43:55+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/25"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#25:review:1",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Buena idea encapsular todo lo posible, hasta la resoluci\u00f3n dentro de Juego en vez del main.\n\nLas letras del men\u00fa ahora aparecen respecto a la ventana.\n\nLa clase animal con sus atributos y m\u00e9todos base. Interesante el puntero a SpriteSequence de ETSIDI para hacer las animaciones como movimientos de animales.\n\nGran optimizaci\u00f3n del renderizador al dibujar moviendo el origen de coordenadas guardando con glPushMatrix.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T21:45:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/25"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#25:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Me preocupa el desacople de lo l\u00f3gico y lo visual con SpriteSequence."
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T21:47:03+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/25"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#24:opened",
+   "payload": {
+    "additions": 407,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 244,
+    "files": [
+     "archon.vcxproj",
+     "docs/memoria.md",
+     "include/arena.h",
+     "include/dibujar.h",
+     "include/juego.h",
+     "include/menu.h",
+     "include/placeholder.h",
+     "include/renderizador.h",
+     "include/tablero.h",
+     "src/arena.cpp",
+     "src/dibujar.cpp",
+     "src/juego.cpp",
+     "src/main.cpp",
+     "src/menu.cpp",
+     "src/pendientes.txt",
+     "src/renderizador.cpp",
+     "src/tablero.cpp",
+     "src/zzz.txt"
+    ],
+    "title": "Creaci\u00f3n del coordinador de teclado Juego"
+   },
+   "source": "github",
+   "timestamp": "2026-03-28T19:02:38+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/24"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#24:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T17:38:28+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/24"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#24:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T16:23:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/24"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#24:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T17:06:12+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/24"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#24:review:2",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Se reduce significativamente la carga en el main.cpp, creando un Juego \"rancho\" que act\u00faa como due\u00f1o de cada objeto (men\u00fa, tablero, personajes). Es desde aqu\u00ed donde se controla la actualizaci\u00f3n de los elementos del juego seg\u00fan el estado en el que se encuentre (men\u00fa, cr\u00e9ditos, batalla)",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-29T17:38:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/24"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#23:opened",
+   "payload": {
+    "additions": 11,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "archon.vcxproj",
+     "include/cerdo.h",
+     "src/cerdo.cpp"
+    ],
+    "title": "Ejemplo de c\u00f3mo a\u00f1adir .cpp y .h"
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T22:47:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/23"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#23:closed",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T22:47:53+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/23"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#23:comment:0",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "author_is_bot": false,
+    "body": "a fuera"
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T22:47:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/23"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#22:opened",
+   "payload": {
+    "additions": 24,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 36,
+    "deletions": 33,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Sprites/Pruebas/aaa1.png",
+     "assets/Sprites/Pruebas/fondoo.ase",
+     "assets/Sprites/Pruebas/tituloCompleto.ase",
+     "assets/Sprites/cabra/cabraAbajo.ase",
+     "assets/Sprites/cabra/cabraArriba.ase",
+     "assets/Sprites/cabra/cabraAtaque.ase",
+     "assets/Sprites/cabra/cabraDerecha.ase",
+     "assets/Sprites/cabra/cabraIzquierda.ase",
+     "assets/Sprites/cerdo/cerdoAbajo.ase",
+     "assets/Sprites/cerdo/cerdoArriba.ase",
+     "assets/Sprites/cerdo/cerdoDerecha.ase",
+     "assets/Sprites/cerdo/cerdoIzquierda.ase",
+     "assets/Sprites/cerdo/cerdocorriendoejemploarriba.ase",
+     "assets/Sprites/cerdo/cerdogif.gif",
+     "assets/Sprites/cerdo/escenarioBatalla.ase",
+     "assets/Sprites/cerdo/lodo.ase",
+     "assets/Sprites/gallina/animacion disparo gallina prueba.ase",
+     "assets/Sprites/gallina/gallinaAbajo.ase"
+    ],
+    "title": "Feature/carpetas sprites"
+   },
+   "source": "github",
+   "timestamp": "2026-03-21T23:10:59+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/22"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#22:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T21:46:42+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/22"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#22:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Muy bien Julian",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-24T21:46:37+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/22"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#20:opened",
+   "payload": {
+    "additions": 2,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/main.cpp"
+    ],
+    "title": "cambio para sergio"
+   },
+   "source": "github",
+   "timestamp": "2026-03-20T10:48:54+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/20"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#20:closed",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-20T11:13:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/20"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#18:opened",
+   "payload": {
+    "additions": 58,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 23,
+    "files": [
+     "archon.vcxproj",
+     "docs/ETSIDIlib.pdf",
+     "docs/GitFlow Workflow.pdf",
+     "docs/memoria.md",
+     "include/ETSIDI.h",
+     "include/dibujar.h",
+     "include/freeglut.h",
+     "include/menu.h",
+     "lib/ETSIDI.exp",
+     "src/main.cpp"
+    ],
+    "title": "Movimiento diagonal y GitFlow Workflow"
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T23:14:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/18"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#18:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T22:48:11+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/18"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#18:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T23:25:46+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/18"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#18:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Movimiento diagonal funcional\nHacer clase teclado para encapsular el c\u00f3digo y que el bucle principal llame a su comprobaci\u00f3n\n",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T22:48:02+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/18"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#18:comment:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "@Jooleean ES MUY IMPORTANTE refrescar y extraer (\"fetch\") las ramas del proyecto. ELIMINAR localmente todas las ramas que ten\u00edamos hasta ahora menos: master, develop y las feature/... As\u00ed es como est\u00e1 ahora en GitHub. \r\n\r\nPor ejemplo ahora he creado feature/tecladoRaton pero al hacer merge con develop, habr\u00e1 que borrar esta rama. \r\n\r\nPara crear una nueva rama feature, dar a crear nueva rama basada en develop y nombrarla como feature/nombreFeature porque as\u00ed se agrupan en una carpeta y queda muy ordenado.\r\n\r\n<img width=\"384\" height=\"218\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c8f184fa-4bd6-4643-8d23-cea68cea8ab5\" />\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T23:19:00+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/18"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#17:opened",
+   "payload": {
+    "additions": 62,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 14,
+    "files": [
+     "assets/Sprites/Pruebas/fondoo.ase",
+     "assets/Sprites/menu/titulo0.png",
+     "src/dibujar.cpp",
+     "src/main.cpp",
+     "src/menu.cpp",
+     "src/pendientes.txt"
+    ],
+    "title": "Imagenes centradas"
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T20:44:57+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/17"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#17:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T21:43:06+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/17"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#17:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Centrar las im\u00e1genes en la pantalla.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T21:42:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/17"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#16:opened",
+   "payload": {
+    "additions": 146,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 30,
+    "deletions": 53,
+    "files": [
+     "archon.vcxproj",
+     "assets/Sprites/Pruebas/Sprite-0003.png",
+     "assets/Sprites/Pruebas/Sprite-0004.png",
+     "assets/Sprites/Pruebas/Sprite-0005.png",
+     "assets/Sprites/Pruebas/aaa1.png",
+     "assets/Sprites/Pruebas/borrar20-Sheet.png",
+     "assets/Sprites/Pruebas/fondoo.ase",
+     "assets/Sprites/Pruebas/tituloCompleto.ase",
+     "assets/Sprites/menu/fondo1.png",
+     "assets/Sprites/menu/fondo2.png",
+     "assets/Sprites/menu/fondo3.png",
+     "assets/Sprites/menu/fondo4.png",
+     "assets/Sprites/menu/paloma.png",
+     "assets/Sprites/menu/titulo0.png",
+     "assets/Sprites/menu/titulo1.png",
+     "assets/Sprites/menu/titulo2.png",
+     "assets/Sprites/menu/titulo3.png",
+     "assets/Sprites/menu/titulo4.png",
+     "assets/Sprites/menu/titulo5.png",
+     "assets/Sprites/menu/transicion.png"
+    ],
+    "title": "menu.cpp y menu.h"
+   },
+   "source": "github",
+   "timestamp": "2026-03-13T21:57:37+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/16"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#16:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-14T22:20:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/16"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#16:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Consolidaci\u00f3n de dibujar.cpp y menu.cpp para la primera versi\u00f3n animada del men\u00fa principal.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-14T22:18:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/16"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#15:opened",
+   "payload": {
+    "additions": 64,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 15,
+    "files": [
+     "archon.vcxproj",
+     "assets/Sprites/Pruebas/Sprite-0003.png",
+     "assets/Sprites/Pruebas/Sprite-0004.png",
+     "assets/Sprites/Pruebas/Sprite-0005.png",
+     "assets/Sprites/Pruebas/borrar20-Sheet.png",
+     "assets/Sprites/menu/fondo1.png",
+     "assets/Sprites/menu/fondo2.png",
+     "assets/Sprites/menu/fondo3.png",
+     "assets/Sprites/menu/fondo4.png",
+     "lib/dibujar.h",
+     "lib/menu.h",
+     "src/dibujar.cpp",
+     "src/main.cpp",
+     "src/menu.cpp"
+    ],
+    "title": "Solucionando problemas de resoluciones no m\u00faltiplas"
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T21:00:31+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/15"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#15:closed",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T21:01:28+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/15"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#15:comment:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "No est\u00e1 terminado, cancelo pull request"
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T21:02:04+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/15"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#15:comment:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Tengo problemas con las texturas NPOT, que no son potencias de dos. con GL_TEXTURE_2D se mapean las texturas de 0 a 1 y a pesar de usar NEAREST no se ve pixel por pixel.\r\nSoluciones posibles:\r\n- Usar POT mas cercana para vertices y la textura ajustarla abajo a la izquierda\r\n- Usar extensi\u00f3n GL_TEXTURE_RECTANGLE\r\n- Hacer spritesheet POT\r\n- Exportar png con resolucion alta"
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T23:09:54+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/15"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#14:opened",
+   "payload": {
+    "additions": 103,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 39,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "assets/Sprites/Pruebas/Image.png",
+     "assets/Sprites/Pruebas/art.gif",
+     "assets/Sprites/Pruebas/borrar20-Sheet.png",
+     "assets/Sprites/Pruebas/cabraDerecha.gif",
+     "assets/Sprites/Pruebas/foto2.png",
+     "assets/Sprites/Pruebas/prueba20x20resolucion.png",
+     "assets/Sprites/cabraArriba.ase",
+     "assets/Sprites/cabraDerecha.ase",
+     "assets/Sprites/cabraIzquierda.ase",
+     "lib/otro.h",
+     "src/main.cpp",
+     "src/otro.cpp"
+    ],
+    "title": "Cambios importantes"
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T16:57:27+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/14"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#14:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T18:24:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/14"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#14:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T18:00:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/14"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#14:review:1",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Primer paso hacia el \"Encapsulamiento\" en C++ de la funci\u00f3n Dibujar();\nVista 2D y primer control por teclado de un personaje.\n\nSe propone conseguir que el personaje (en un futuro tambi\u00e9n ser\u00e1 el selector de personajes cuadrado) se pueda mover en **diagonal**, ya que ahora solo se permite un tipo de movimiento a la vez.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T18:23:43+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/14"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#13:opened",
+   "payload": {
+    "additions": 21,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 14,
+    "files": [
+     "src/main.cpp"
+    ],
+    "title": "Configuraci\u00f3n de pantalla completa. Bot\u00f3n de \"Esc\"."
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T11:19:21+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/13"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#13:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T14:06:53+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/13"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#13:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T14:06:46+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/13"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#12:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/memoria.md"
+    ],
+    "title": "Update memoria"
+   },
+   "source": "github",
+   "timestamp": "2026-03-08T15:15:34+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/12"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#12:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-09T13:21:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/12"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#12:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Ok",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-09T13:21:09+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/12"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#11:opened",
+   "payload": {
+    "additions": 20,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "src/main.cpp"
+    ],
+    "title": "Primer pol\u00edgono con textura (imagen png)"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:50:42+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/11"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#11:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:55:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/11"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#11:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se a\u00f1ade un pol\u00edgono con la textura del tablero.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:55:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/11"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#10:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/main.cpp"
+    ],
+    "title": "Inclusi\u00f3n de primera m\u00fasica mediante la funci\u00f3n playMusica();"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:26:30+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/10"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#10:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:39:34+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/10"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#10:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se a\u00f1ade playMusica para reproducir el mainTheme. Pulso el bot\u00f3n \"Viewed\".",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:38:09+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/10"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#9:opened",
+   "payload": {
+    "additions": 0,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "archon.vcxproj"
+    ],
+    "title": "Soluci\u00f3n de problemas al a\u00f1adir codeowners."
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:10:15+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/9"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#9:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:11:41+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/9"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#9:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T20:11:34+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/9"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#8:opened",
+   "payload": {
+    "additions": 34,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 16,
+    "files": [
+     "CODEOWNERS",
+     "archon.vcxproj",
+     "archon.vcxproj.filters"
+    ],
+    "title": "Establecimiento de codeowners."
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T15:34:18+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/8"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#8:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T19:43:55+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/8"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#8:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T19:43:46+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/8"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#7:opened",
+   "payload": {
+    "additions": 733,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 5,
+    "files": [
+     "archon.vcxproj",
+     "bin/freeglut.dll",
+     "lib/freeglut.h",
+     "lib/freeglut.lib",
+     "rancho.sln",
+     "src/main.cpp"
+    ],
+    "title": "Inclusi\u00f3n de librer\u00eda freeglut.h y creaci\u00f3n de primera ventana"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T14:46:32+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/7"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#7:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T14:53:12+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/7"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#7:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "Se a\u00f1ade freeglut para empezar a probarlo, tiene buena pinta",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T14:52:54+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/7"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#6:opened",
+   "payload": {
+    "additions": 17,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 1,
+    "files": [
+     "archon.vcxproj",
+     "archon.vcxproj.filters",
+     "bin/ETSIDI.dll",
+     "bin/fmodL.dll",
+     "lib/ETSIDI.h",
+     "lib/ETSIDI.lib",
+     "lib/READMElib.txt",
+     "src/main.cpp"
+    ],
+    "title": "configuraci\u00f3n de ETSIDIlib"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T22:20:32+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/6"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#6:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-06T19:25:09+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/6"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#6:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "ETSIDI.dll y fmodL.dll aparecen como eliminados",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T22:26:02+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/6"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#6:review:1",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-06T19:24:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/6"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#5:opened",
+   "payload": {
+    "additions": 188,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 1,
+    "files": [
+     "ETSIDI/ETSIDI.dll",
+     "ETSIDI/ETSIDI.exp",
+     "ETSIDI/ETSIDI.h",
+     "ETSIDI/ETSIDI.lib",
+     "ETSIDI/ETSIDIlib.pdf",
+     "ETSIDI/fmodL.dll",
+     "archon.vcxproj.filters",
+     "src/main.cpp"
+    ],
+    "title": "agregar carpeta ETSIDI"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T20:57:53+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/5"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#5:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T21:40:14+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/5"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#5:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "se a\u00f1ade la carpeta ETSIDI a modo de prueba correctamente.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T21:39:05+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/5"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#4:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 40,
+    "deletions": 0,
+    "files": [
+     "assets/Sprites/Obstaculos/roca.ase",
+     "assets/Sprites/cabra/cabra.ase",
+     "assets/Sprites/cabra/cabraAbajo.ase",
+     "assets/Sprites/cabra/cabraArriba.ase",
+     "assets/Sprites/cabra/cabraAtaque.ase",
+     "assets/Sprites/cabra/cabraDerecha.ase",
+     "assets/Sprites/cabra/cabraIzquierda.ase",
+     "assets/Sprites/cabraArriba.ase",
+     "assets/Sprites/cabraDerecha.ase",
+     "assets/Sprites/cabraDerecha.gif",
+     "assets/Sprites/cabraIzquierda.ase",
+     "assets/Sprites/cerdo/cerdo.ase",
+     "assets/Sprites/cerdo/cerdoAbajo.ase",
+     "assets/Sprites/cerdo/cerdoArriba.ase",
+     "assets/Sprites/cerdo/cerdoDerecha.ase",
+     "assets/Sprites/cerdo/cerdoIzquierda.ase",
+     "assets/Sprites/cerdo/cerdocorriendoejemploarriba.ase",
+     "assets/Sprites/cerdo/cerdogif.gif",
+     "assets/Sprites/cerdo/escenarioBatalla.ase",
+     "assets/Sprites/cerdo/lodo.ase"
+    ],
+    "title": "Carpetas con todos los personajes creados hasta ahora"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T20:24:11+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/4"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#4:merged",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T21:49:40+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/4"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#4:review:0",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "me parece bien lo que propones, sin embargo es redundante poner Sprites/Sprites",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T21:35:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/4"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#4:review:1",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "body": "se ha corregido la redundancia, ahora se acepta el commit.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T21:49:05+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/4"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#3:opened",
+   "payload": {
+    "additions": 2,
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "anotar el uso de visual studio 2022"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T18:43:15+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/3"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#3:merged",
+   "payload": {
+    "author": "AlvarOnce",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T20:27:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/3"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#3:review:0",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "body": "Veo el cambio agregado en la pesta\u00f1a Files Changed de la Pull Request y hago Submit Review",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-05T20:26:22+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/3"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#2:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 40,
+    "deletions": 0,
+    "files": [
+     "assets/Sprites/Sprites/Obstaculos/roca.ase",
+     "assets/Sprites/Sprites/cabra/cabra.ase",
+     "assets/Sprites/Sprites/cabra/cabraAbajo.ase",
+     "assets/Sprites/Sprites/cabra/cabraArriba.ase",
+     "assets/Sprites/Sprites/cabra/cabraAtaque.ase",
+     "assets/Sprites/Sprites/cabra/cabraDerecha.ase",
+     "assets/Sprites/Sprites/cabra/cabraIzquierda.ase",
+     "assets/Sprites/Sprites/cabraArriba.ase",
+     "assets/Sprites/Sprites/cabraDerecha.ase",
+     "assets/Sprites/Sprites/cabraDerecha.gif",
+     "assets/Sprites/Sprites/cabraIzquierda.ase",
+     "assets/Sprites/Sprites/cerdo/cerdo.ase",
+     "assets/Sprites/Sprites/cerdo/cerdoAbajo.ase",
+     "assets/Sprites/Sprites/cerdo/cerdoArriba.ase",
+     "assets/Sprites/Sprites/cerdo/cerdoDerecha.ase",
+     "assets/Sprites/Sprites/cerdo/cerdoIzquierda.ase",
+     "assets/Sprites/Sprites/cerdo/cerdocorriendoejemploarriba.ase",
+     "assets/Sprites/Sprites/cerdo/cerdogif.gif",
+     "assets/Sprites/Sprites/cerdo/escenarioBatalla.ase",
+     "assets/Sprites/Sprites/cerdo/lodo.ase"
+    ],
+    "title": "Carpetas con todos los personajes creados hasta ahora"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T21:38:56+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/2"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#2:closed",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T20:13:47+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/2"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#1:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "assets/Sprites/Cabra/.gitKeep"
+    ],
+    "title": "Creaci\u00f3n de carpeta de primer personaje"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T21:28:25+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/1"
+  },
+  {
+   "evidence_id": "pr:AlvarOnce/rancho#1:closed",
+   "payload": {
+    "author": "Jooleean",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T21:40:49+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/pull/1"
+  }
+ ],
+ "repo": "AlvarOnce/rancho",
+ "window": "pre_t"
+}
