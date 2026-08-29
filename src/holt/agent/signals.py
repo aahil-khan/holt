@@ -1,0 +1,157 @@
+"""Pre-cutoff signals computed from evidence, with no model involved.
+
+The split matters. Counting merges and measuring how long a maintainer took to
+reply are arithmetic; asking a language model to do them adds cost, variance and
+a chance of being wrong about a number that was sitting right there. What the
+model is for is judgement -- what kind of project is this, what does the tone of
+that thread mean -- which is the part arithmetic cannot reach.
+
+Note what is deliberately absent: this module has no diff-shape rules. L1 has
+those, and if the agent shared them it would agree with the label by
+construction on the dimension that matters most. The agent judges what a
+contribution *was* by reading, not by re-running the grader's arithmetic.
+"""
+
+from __future__ import annotations
+
+import statistics
+from collections.abc import Iterable
+from dataclasses import dataclass, field
+
+from holt.types import EvidenceRecord
+
+
+def pr_key(evidence_id: str) -> str:
+    return ":".join(evidence_id.split(":")[:2])
+
+
+@dataclass(slots=True)
+class Thread:
+    """One pull request and everything that happened on it before the cutoff."""
+
+    key: str
+    number: int
+    author: str
+    author_is_bot: bool
+    opened_at: object
+    files: list[str] = field(default_factory=list)
+    changed_files: int = 0
+    additions: int = 0
+    deletions: int = 0
+    merged: bool = False
+    closed_unmerged: bool = False
+    responses: list[tuple[object, str, str]] = field(default_factory=list)
+
+    @property
+    def first_response_hours(self) -> float | None:
+        """Hours until someone other than the author first said anything."""
+        others = [t for t, who, _ in self.responses if who != self.author]
+        if not others:
+            return None
+        return (min(others) - self.opened_at).total_seconds() / 3600
+
+    @property
+    def engaged(self) -> bool:
+        return any(who != self.author for _, who, _ in self.responses)
+
+
+def build_threads(records: Iterable[EvidenceRecord]) -> dict[str, Thread]:
+    threads: dict[str, Thread] = {}
+    records = list(records)
+
+    for r in records:
+        if not r.evidence_id.endswith(":opened"):
+            continue
+        p = r.payload
+        key = pr_key(r.evidence_id)
+        threads[key] = Thread(
+            key=key,
+            number=int(key.split("#")[-1]),
+            author=p.get("author", ""),
+            author_is_bot=bool(p.get("author_is_bot")),
+            opened_at=r.timestamp,
+            files=list(p.get("files") or []),
+            changed_files=p.get("changed_files") or 0,
+            additions=p.get("additions") or 0,
+            deletions=p.get("deletions") or 0,
+        )
+
+    for r in records:
+        key = pr_key(r.evidence_id)
+        thread = threads.get(key)
+        if thread is None:
+            continue
+        if r.evidence_id.endswith(":merged"):
+            thread.merged = True
+        elif r.evidence_id.endswith(":closed"):
+            thread.closed_unmerged = True
+        elif ":review:" in r.evidence_id or ":comment:" in r.evidence_id:
+            if not r.payload.get("author_is_bot"):
+                thread.responses.append(
+                    (r.timestamp, r.payload.get("author", ""), r.payload.get("body") or "")
+                )
+    return threads
+
+
+def newcomer_threads(threads: dict[str, Thread]) -> list[Thread]:
+    """Threads opened by someone who had not yet landed anything here.
+
+    The obvious definition -- an outsider is anyone without a merged pull
+    request -- is circular inside a single window: merging is what stops you
+    being an outsider, so "outsider merges" is always zero. That bug produced a
+    column of zeros across the whole pool before it was caught.
+
+    Asked properly, the question is per-thread and time-ordered: at the moment
+    this pull request was opened, had its author ever landed anything here
+    before? That is also the question a newcomer actually has, which is the
+    point of the project.
+    """
+    merged_opens: dict[str, list] = {}
+    for t in threads.values():
+        if t.merged and not t.author_is_bot:
+            merged_opens.setdefault(t.author, []).append(t.opened_at)
+
+    return [
+        t
+        for t in threads.values()
+        if not t.author_is_bot
+        and not any(earlier < t.opened_at for earlier in merged_opens.get(t.author, []))
+    ]
+
+
+@dataclass(slots=True)
+class Signals:
+    total_threads: int
+    outsider_threads: int
+    outsider_merged: int
+    outsider_ignored: int
+    median_first_response_hours: float | None
+    bot_share: float
+    distinct_outsider_authors: int
+
+    def as_dict(self) -> dict:
+        return {
+            "total_threads": self.total_threads,
+            "outsider_threads": self.outsider_threads,
+            "outsider_merged": self.outsider_merged,
+            "outsider_ignored": self.outsider_ignored,
+            "median_first_response_hours": self.median_first_response_hours,
+            "bot_share": round(self.bot_share, 3),
+            "distinct_outsider_authors": self.distinct_outsider_authors,
+        }
+
+
+def compute(threads: dict[str, Thread]) -> Signals:
+    outsiders = newcomer_threads(threads)
+    latencies = [h for t in outsiders if (h := t.first_response_hours) is not None]
+    bots = sum(1 for t in threads.values() if t.author_is_bot)
+
+    return Signals(
+        total_threads=len(threads),
+        outsider_threads=len(outsiders),
+        outsider_merged=sum(1 for t in outsiders if t.merged),
+        outsider_ignored=sum(1 for t in outsiders if not t.engaged and not t.merged),
+        median_first_response_hours=round(statistics.median(latencies), 1) if latencies else None,
+        bot_share=(bots / len(threads)) if threads else 0.0,
+        distinct_outsider_authors=len({t.author for t in outsiders}),
+    )

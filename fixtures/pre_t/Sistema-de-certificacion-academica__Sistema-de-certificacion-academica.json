@@ -1,0 +1,1766 @@
+{
+ "captured_at": "2026-08-29T16:05:52.743597+00:00",
+ "content_sha256": "0c4ad4e960666d35c62d738a891667f339508869fe46aef384371d72ad66c458",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": null,
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": null,
+    "pushed_at": "2026-06-07T05:15:40Z",
+    "stargazer_count": 0
+   },
+   "source": "github",
+   "timestamp": "2026-03-28T16:35:56+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#78:opened",
+   "payload": {
+    "additions": 159,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 129,
+    "files": [
+     "app/certificados/api/certificados_router.py",
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py"
+    ],
+    "title": "fix: corrigiendo estructura del modulo certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:27:29+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/78"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#78:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:58:08+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/78"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#77:opened",
+   "payload": {
+    "additions": 161,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 194,
+    "files": [
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/solicitudes/repository/solicitudes_repo.py",
+     "app/solicitudes/services/solicitudes_service.py",
+     "main.py"
+    ],
+    "title": "merge testing: correcciones modulo solicitudes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:23:24+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/77"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#77:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:23:32+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/77"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#76:opened",
+   "payload": {
+    "additions": 161,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 194,
+    "files": [
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/solicitudes/repository/solicitudes_repo.py",
+     "app/solicitudes/services/solicitudes_service.py",
+     "main.py"
+    ],
+    "title": "merge staging: correcciones modulo solicitudes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:21:52+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/76"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#76:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:22:01+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/76"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#75:opened",
+   "payload": {
+    "additions": 161,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 194,
+    "files": [
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/solicitudes/repository/solicitudes_repo.py",
+     "app/solicitudes/services/solicitudes_service.py",
+     "main.py"
+    ],
+    "title": "fix: correcciones modulo solicitudes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:20:22+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/75"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#75:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T06:20:33+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/75"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#74:opened",
+   "payload": {
+    "additions": 88,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 110,
+    "files": [
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py"
+    ],
+    "title": "merge testing: correcciones modulo plantillas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:53:47+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/74"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#74:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:55:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/74"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#73:opened",
+   "payload": {
+    "additions": 88,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 110,
+    "files": [
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py"
+    ],
+    "title": "merge staging: correcciones modulo plantillas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:50:07+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/73"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#73:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:50:18+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/73"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#72:opened",
+   "payload": {
+    "additions": 88,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 110,
+    "files": [
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py"
+    ],
+    "title": "fix: correccion arquitectura modulo plantillas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:38:48+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/72"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#72:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:39:03+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/72"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#71:opened",
+   "payload": {
+    "additions": 7130,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 90,
+    "deletions": 0,
+    "files": [
+     ".gitignore",
+     "Documentacion/HU-01-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-02-Cierre de sesi\u00f3n e invalidaci\u00f3n del token.md",
+     "Documentacion/HU-03-Validaci\u00f3n de permisos y niveles de acceso por rol.md",
+     "Documentacion/HU-04-Registrar usuario.md",
+     "Documentacion/HU-05-Actualizar perfil usuario.md",
+     "Documentacion/HU-06-Consultar usuario.md",
+     "Documentacion/HU-07-Eliminar usuario.md",
+     "Documentacion/HU-08-Listar usuarios del sistema.md",
+     "Documentacion/HU-09-Consultar el estado actual de la solicitud.md",
+     "Documentacion/HU-10-Cancelar solicitud de certificado.md",
+     "Documentacion/HU-11-Aprobar o rechazar solicitudes de certificados.md",
+     "Documentacion/HU-12-Crear solicitud de certificado.md",
+     "Documentacion/HU-13-Listar solicitudes por estado.md",
+     "Documentacion/HU-14-Crear plantilla certificado.md",
+     "Documentacion/HU-15-Editar plantilla certificado.md",
+     "Documentacion/HU-16-Listar plantillas certificados.md",
+     "Documentacion/HU-17-Generacion de certificado.md",
+     "Documentacion/HU-18-Anular certificado.md",
+     "Documentacion/HU-19-Buscar certificado en el repositorio.md"
+    ],
+    "title": "merge testing: pase a testing para pruebas formales"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:33:09+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/71"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#71:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:33:31+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/71"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#70:opened",
+   "payload": {
+    "additions": 7130,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 90,
+    "deletions": 0,
+    "files": [
+     ".gitignore",
+     "Documentacion/HU-01-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-02-Cierre de sesi\u00f3n e invalidaci\u00f3n del token.md",
+     "Documentacion/HU-03-Validaci\u00f3n de permisos y niveles de acceso por rol.md",
+     "Documentacion/HU-04-Registrar usuario.md",
+     "Documentacion/HU-05-Actualizar perfil usuario.md",
+     "Documentacion/HU-06-Consultar usuario.md",
+     "Documentacion/HU-07-Eliminar usuario.md",
+     "Documentacion/HU-08-Listar usuarios del sistema.md",
+     "Documentacion/HU-09-Consultar el estado actual de la solicitud.md",
+     "Documentacion/HU-10-Cancelar solicitud de certificado.md",
+     "Documentacion/HU-11-Aprobar o rechazar solicitudes de certificados.md",
+     "Documentacion/HU-12-Crear solicitud de certificado.md",
+     "Documentacion/HU-13-Listar solicitudes por estado.md",
+     "Documentacion/HU-14-Crear plantilla certificado.md",
+     "Documentacion/HU-15-Editar plantilla certificado.md",
+     "Documentacion/HU-16-Listar plantillas certificados.md",
+     "Documentacion/HU-17-Generacion de certificado.md",
+     "Documentacion/HU-18-Anular certificado.md",
+     "Documentacion/HU-19-Buscar certificado en el repositorio.md"
+    ],
+    "title": "merge staging: integraci\u00f3n inicial todos los m\u00f3dulos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:25:56+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/70"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#70:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:26:25+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/70"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#69:opened",
+   "payload": {
+    "additions": 147,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 260,
+    "files": [
+     "app/autenticacion/api/auth_router.py",
+     "app/autenticacion/domain/auth.py",
+     "app/autenticacion/repository/auth_repository.py",
+     "app/autenticacion/services/auth_service.py",
+     "app/core/database.py",
+     "app/core/dependencies.py",
+     "app/core/responses.py",
+     "app/usuarios/api/router.py",
+     "main.py"
+    ],
+    "title": "fix: correccion de formatos json autenticacion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:03:32+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/69"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#69:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:03:50+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/69"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#68:opened",
+   "payload": {
+    "additions": 224,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 226,
+    "files": [
+     "app/autenticacion/api/auth_router.py",
+     "app/autenticacion/domain/auth.py",
+     "app/autenticacion/repository/auth_repository.py",
+     "app/autenticacion/services/auth_service.py",
+     "app/core/responses.py",
+     "app/usuarios/api/router.py",
+     "app/usuarios/domain/usuarios.py",
+     "app/usuarios/repository/usuario_repo.py",
+     "app/usuarios/services/usuario_service.py",
+     "main.py"
+    ],
+    "title": "fix: correcion arquitectura y respuestas json usuarios"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T03:50:40+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/68"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#68:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T03:51:04+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/68"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#67:opened",
+   "payload": {
+    "additions": 11,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 73,
+    "files": [
+     "app/autenticacion/api/auth_router.py",
+     "app/autenticacion/domain/auth.py",
+     "app/autenticacion/services/auth_service.py"
+    ],
+    "title": "fix: correciones modulo autenticacion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:41:11+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/67"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#67:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:41:27+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/67"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#66:opened",
+   "payload": {
+    "additions": 314,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     "app/repositorio/__init__.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py",
+     "main.py"
+    ],
+    "title": "feat: HU descargar certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:23:40+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/66"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#66:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:40:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/66"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#65:opened",
+   "payload": {
+    "additions": 264,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     "app/repositorio/__init__.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py",
+     "main.py"
+    ],
+    "title": "feat: HU consultar metadatos de certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:10:10+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/65"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#65:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:39:36+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/65"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#64:opened",
+   "payload": {
+    "additions": 215,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     "app/repositorio/__init__.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py",
+     "main.py"
+    ],
+    "title": "feat: HU consultar historial certificados "
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:09:37+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/64"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#64:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:36:40+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/64"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#63:opened",
+   "payload": {
+    "additions": 143,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     "app/repositorio/__init__.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py",
+     "main.py"
+    ],
+    "title": "feat: HU buscar certificado por UUID"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:32:33+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/63"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#63:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:35:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/63"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#62:opened",
+   "payload": {
+    "additions": 111,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "app/certificados/api/certificados_router.py",
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py"
+    ],
+    "title": "feat: HU anular certificados "
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:50:21+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/62"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#62:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:33:07+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/62"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#61:opened",
+   "payload": {
+    "additions": 65,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 653,
+    "files": [
+     "app/certificados/services/certificados_service.py",
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "tests/README_TESTS.md",
+     "tests/__init__.py",
+     "tests/conftest.py",
+     "tests/test_solicitudes.py"
+    ],
+    "title": "fix: refactorizacion modulo plantillas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:33:18+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/61"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#61:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:33:36+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/61"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#60:opened",
+   "payload": {
+    "additions": 749,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 0,
+    "files": [
+     "app/certificados/api/certificados_router.py",
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py",
+     "main.py",
+     "tests/README_TESTS.md",
+     "tests/__init__.py",
+     "tests/conftest.py",
+     "tests/test_solicitudes.py"
+    ],
+    "title": "feat: HU generaci\u00f3n de certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:42:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/60"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#60:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:42:54+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/60"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#59:opened",
+   "payload": {
+    "additions": 5,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "app/solicitudes/domain/solicitudes.py"
+    ],
+    "title": "fix: conectar validacion de tipo certificado con modulo plantillas"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:00:48+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/59"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#59:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:00:57+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/59"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#58:opened",
+   "payload": {
+    "additions": 114,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 3,
+    "files": [
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py"
+    ],
+    "title": "feat: HU listar plantillas certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:39:47+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/58"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#58:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:42:42+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/58"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#57:opened",
+   "payload": {
+    "additions": 83,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 3,
+    "files": [
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py"
+    ],
+    "title": "feat: HU editar plantillas de certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:38:45+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/57"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#57:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:41:24+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/57"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#56:opened",
+   "payload": {
+    "additions": 6625,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 106,
+    "deletions": 153,
+    "files": [
+     ".gitignore",
+     "Documentacion/HU-04-Cierre de sesi\u00f3n e invalidaci\u00f3n del token.md",
+     "Documentacion/HU-05-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-06-Editar plantilla certificado.md",
+     "Documentacion/HU-07-Listar plantillas certificados.md",
+     "Documentacion/HU-08-Validaci\u00f3n de permisos y niveles de acceso por rol.md",
+     "Documentacion/HU-1-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-10-Crear solicitud de certificado adjuntando comprobante de pago.md",
+     "Documentacion/HU-10-Generacion de certificado.md",
+     "Documentacion/HU-11-Anular certificado.md",
+     "Documentacion/HU-11-Consultar el estado actual de la solicitud.md",
+     "Documentacion/HU-12-Cancelar solicitud de certificado.md",
+     "Documentacion/HU-12-Registrar usuario.md",
+     "Documentacion/HU-13-Actualizar perfil usuario.md",
+     "Documentacion/HU-13-Aprobar o rechazar solicitudes por parte de la universidad.md",
+     "Documentacion/HU-14-Buscar certificado en el repositorio.md",
+     "Documentacion/HU-15-Consultar usuario.md",
+     "Documentacion/HU-16-Consultar historial certificados.md",
+     "Documentacion/HU-17-Eliminar usuario.md",
+     "Documentacion/HU-18-Consultar metadatos del certificado.md"
+    ],
+    "title": "Hu 16 listar plantillas certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:36:42+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/56"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#56:closed",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:39:02+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/56"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#55:opened",
+   "payload": {
+    "additions": 6594,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 106,
+    "deletions": 153,
+    "files": [
+     ".gitignore",
+     "Documentacion/HU-04-Cierre de sesi\u00f3n e invalidaci\u00f3n del token.md",
+     "Documentacion/HU-05-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-06-Editar plantilla certificado.md",
+     "Documentacion/HU-07-Listar plantillas certificados.md",
+     "Documentacion/HU-08-Validaci\u00f3n de permisos y niveles de acceso por rol.md",
+     "Documentacion/HU-1-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-10-Crear solicitud de certificado adjuntando comprobante de pago.md",
+     "Documentacion/HU-10-Generacion de certificado.md",
+     "Documentacion/HU-11-Anular certificado.md",
+     "Documentacion/HU-11-Consultar el estado actual de la solicitud.md",
+     "Documentacion/HU-12-Cancelar solicitud de certificado.md",
+     "Documentacion/HU-12-Registrar usuario.md",
+     "Documentacion/HU-13-Actualizar perfil usuario.md",
+     "Documentacion/HU-13-Aprobar o rechazar solicitudes por parte de la universidad.md",
+     "Documentacion/HU-14-Buscar certificado en el repositorio.md",
+     "Documentacion/HU-15-Consultar usuario.md",
+     "Documentacion/HU-16-Consultar historial certificados.md",
+     "Documentacion/HU-17-Eliminar usuario.md",
+     "Documentacion/HU-18-Consultar metadatos del certificado.md"
+    ],
+    "title": "feat: HU editar plantilla certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:24:17+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/55"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#55:closed",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:33:51+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/55"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#54:opened",
+   "payload": {
+    "additions": 55,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py",
+     "app/verificaciones/repository/verificaciones_repo.py",
+     "app/verificaciones/services/verificaciones_service.py"
+    ],
+    "title": "feat: HU validar integridad del certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:14:44+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/54"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#54:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:14:57+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/54"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#53:opened",
+   "payload": {
+    "additions": 105,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     ".gitignore",
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py",
+     "main.py"
+    ],
+    "title": "feat: HU crear plantillas de certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:08:19+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/53"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#53:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:17:27+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/53"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#52:opened",
+   "payload": {
+    "additions": 50,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py",
+     "app/verificaciones/domain/verificaciones.py",
+     "app/verificaciones/services/verificaciones_service.py"
+    ],
+    "title": "feat: HU verificar validez del certificado con UUID"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:49:13+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/52"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#52:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:49:34+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/52"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#51:opened",
+   "payload": {
+    "additions": 162,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 9,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py",
+     "app/verificaciones/domain/verificaciones.py",
+     "app/verificaciones/repository/verificaciones_repo.py",
+     "app/verificaciones/services/verificaciones_service.py",
+     "main.py"
+    ],
+    "title": "feat: HU registrar consulta de verificacion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:10:29+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/51"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#51:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:10:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/51"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#50:opened",
+   "payload": {
+    "additions": 44,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "app/usuarios/api/router.py",
+     "app/usuarios/repository/usuario_repo.py",
+     "app/usuarios/services/usuario_service.py"
+    ],
+    "title": "feat: HU listar usuarios del sistema"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T01:48:31+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/50"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#50:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T01:48:46+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/50"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#49:opened",
+   "payload": {
+    "additions": 33,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 18,
+    "files": [
+     "app/usuarios/api/router.py",
+     "app/usuarios/services/usuario_service.py"
+    ],
+    "title": "feat: HU consultar usuario"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T05:58:09+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/49"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#49:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:07:32+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/49"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#48:opened",
+   "payload": {
+    "additions": 1,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "app/usuarios/api/router.py"
+    ],
+    "title": "fix: correcion de import, nombre de clase incorrecto"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T05:18:27+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/48"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#48:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T05:18:35+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/48"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#47:opened",
+   "payload": {
+    "additions": 50,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 24,
+    "files": [
+     "app/usuarios/api/router.py",
+     "app/usuarios/services/usuario_service.py"
+    ],
+    "title": "feat: HU eliminar usuario del sistema"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:52:28+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/47"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#47:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:52:41+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/47"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#46:opened",
+   "payload": {
+    "additions": 102,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "app/usuarios/api/router.py",
+     "app/usuarios/domain/usuarios.py",
+     "app/usuarios/repository/usuario_repo.py",
+     "app/usuarios/services/usuario_service.py"
+    ],
+    "title": "feat: HU actualizar perfil de usuario"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:47:55+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/46"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#46:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T05:10:29+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/46"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#45:opened",
+   "payload": {
+    "additions": 41,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/services/solicitudes_service.py"
+    ],
+    "title": "feat: HU listar solicitudes por estado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:28:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/45"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#45:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:29:35+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/45"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#44:opened",
+   "payload": {
+    "additions": 69,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/solicitudes/services/solicitudes_service.py"
+    ],
+    "title": "feat: HU aprobar o rechazar solicitud de certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:15:06+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/44"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#44:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:15:15+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/44"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#43:opened",
+   "payload": {
+    "additions": 47,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/services/solicitudes_service.py"
+    ],
+    "title": "feat: HU cancelar solicitud de certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:41:23+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/43"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#43:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:41:37+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/43"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#42:opened",
+   "payload": {
+    "additions": 62,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 15,
+    "files": [
+     "app/core/dependencies.py",
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/solicitudes/services/solicitudes_service.py"
+    ],
+    "title": "feat: HU consultar estado actual de la solicitud"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:22:14+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/42"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#42:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:22:26+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/42"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#41:opened",
+   "payload": {
+    "additions": 181,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/solicitudes/repository/solicitudes_repo.py",
+     "app/solicitudes/services/solicitudes_service.py",
+     "main.py"
+    ],
+    "title": "feat: HU crear solicitud de certificado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T02:50:37+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/41"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#41:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T02:50:47+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/41"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#40:opened",
+   "payload": {
+    "additions": 99,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 15,
+    "files": [
+     "app/autenticacion/domain/auth.py",
+     "app/core/dependencies.py"
+    ],
+    "title": "feat: HU validacion de permisos y niveles de acceso por rol"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T03:53:06+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/40"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#40:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T03:53:18+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/40"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#39:opened",
+   "payload": {
+    "additions": 0,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 57,
+    "files": [
+     "app/usuarios/api/router.py",
+     "app/usuarios/domain/schemas.py"
+    ],
+    "title": "fix: unificar domain usuarios en un solo archivo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T03:12:30+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/39"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#39:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T03:12:39+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/39"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#38:opened",
+   "payload": {
+    "additions": 152,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 58,
+    "files": [
+     "Documentacion/HU-05-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-12-Registrar usuario.md",
+     "app/autenticacion/api/auth_router.py",
+     "app/autenticacion/domain/auth.py",
+     "app/autenticacion/repository/auth_repository.py",
+     "app/autenticacion/services/auth_service.py",
+     "app/core/dependencies.py"
+    ],
+    "title": "feat: HU cierre de sesion e invalidacion del token"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T02:46:02+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/38"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#38:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T02:46:30+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/38"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#37:opened",
+   "payload": {
+    "additions": 116,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 191,
+    "files": [
+     "app/core/security.py",
+     "app/usuarios/api/router.py",
+     "app/usuarios/domain/models.py",
+     "app/usuarios/domain/schemas.py",
+     "app/usuarios/repository/usuario_repo.py",
+     "app/usuarios/services/usuario_service.py",
+     "main.py",
+     "requirements.txt",
+     "tests/test_uvicorn_usuario.py"
+    ],
+    "title": "feat: HU registrar usuario sistema"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T02:24:25+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/37"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#37:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T02:42:31+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/37"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#36:opened",
+   "payload": {
+    "additions": 4,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "app/autenticacion/services/auth_service.py",
+     "app/core/dependencies.py"
+    ],
+    "title": "feat: HU autenticacion de usuario mediante credenciales"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T06:51:01+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/36"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#36:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T06:51:17+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/36"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#35:opened",
+   "payload": {
+    "additions": 174,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 185,
+    "files": [
+     "app/autenticacion/api/auth_router.py",
+     "app/autenticacion/repository/auth_repository.py",
+     "app/autenticacion/services/auth_service.py",
+     "app/core/dependencies.py",
+     "app/usuarios/api/router.py",
+     "app/usuarios/domain/usuarios.py",
+     "app/usuarios/repository/usuario_repo.py",
+     "app/usuarios/services/usuario_service.py",
+     "main.py",
+     "requirements.txt"
+    ],
+    "title": "#HU autenticacion de usuarios mediante credenciales"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T01:48:21+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/35"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#35:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T01:50:29+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/35"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#34:opened",
+   "payload": {
+    "additions": 134,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 135,
+    "files": [
+     "app/core/security.py",
+     "app/usuarios/api/router.py",
+     "app/usuarios/domain/schemas.py",
+     "app/usuarios/repository/usuario_repo.py",
+     "main.py",
+     "requirements.txt",
+     "tests/test_uvicorn_usuario.py"
+    ],
+    "title": "Consolidando usuarios y flexibilizar validaci\u00f3n de correos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T00:20:55+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/34"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#34:closed",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T01:46:01+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/34"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#33:opened",
+   "payload": {
+    "additions": 362,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 21,
+    "deletions": 103,
+    "files": [
+     "app/autenticacion/api/auth_router.py",
+     "app/autenticacion/domain/auth.py",
+     "app/autenticacion/repository/auth_repository.py",
+     "app/autenticacion/services/auth_service.py",
+     "app/certificados/api/certificados_router.py",
+     "app/certificados/domain/certificados.py",
+     "app/core/dependencies.py",
+     "app/core/security.py",
+     "app/plantillas/api/plantillas_router.py",
+     "app/plantillas/domain/plantillas.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/models.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/verificaciones/api/router.py",
+     "app/verificaciones/api/verificaciones_router.py",
+     "app/verificaciones/domain/models.py",
+     "app/verificaciones/domain/verificaciones.py",
+     "main.py"
+    ],
+    "title": "HU-Autenticacion de usuarios mediante credenciales"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T16:32:59+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/33"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#33:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T16:37:32+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/33"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#32:opened",
+   "payload": {
+    "additions": 406,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 18,
+    "files": [
+     "app/__init__.py",
+     "app/core/dependencies.py",
+     "app/usuarios/api/router.py",
+     "app/usuarios/domain/models.py",
+     "app/usuarios/domain/schemas.py",
+     "app/usuarios/repository/usuario_repo.py",
+     "app/usuarios/services/usuario_service.py",
+     "main.py",
+     "tests/test_uvicorn_usuario.py"
+    ],
+    "title": "Hu 04 registrar usuario sistema"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T15:44:24+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/32"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#32:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T15:46:05+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/32"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#31:opened",
+   "payload": {
+    "additions": 5652,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 107,
+    "deletions": 153,
+    "files": [
+     ".gitignore",
+     "Documentacion/HU-04-Cierre de sesi\u00f3n e invalidaci\u00f3n del token.md",
+     "Documentacion/HU-05-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-06-Editar plantilla certificado.md",
+     "Documentacion/HU-07-Listar plantillas certificados.md",
+     "Documentacion/HU-08-Validaci\u00f3n de permisos y niveles de acceso por rol.md",
+     "Documentacion/HU-1-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-10-Crear solicitud de certificado adjuntando comprobante de pago.md",
+     "Documentacion/HU-10-Generacion de certificado.md",
+     "Documentacion/HU-11-Anular certificado.md",
+     "Documentacion/HU-11-Consultar el estado actual de la solicitud.md",
+     "Documentacion/HU-12-Cancelar solicitud de certificado.md",
+     "Documentacion/HU-12-Registrar usuario.md",
+     "Documentacion/HU-13-Actualizar perfil usuario.md",
+     "Documentacion/HU-13-Aprobar o rechazar solicitudes por parte de la universidad.md",
+     "Documentacion/HU-14-Buscar certificado en el repositorio.md",
+     "Documentacion/HU-15-Consultar usuario.md",
+     "Documentacion/HU-16-Consultar historial certificados.md",
+     "Documentacion/HU-17-Eliminar usuario.md",
+     "Documentacion/HU-18-Consultar metadatos del certificado.md"
+    ],
+    "title": "Hu 04 registrar usuario sistema"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T04:25:27+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/31"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#31:closed",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T01:46:31+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/31"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#30:opened",
+   "payload": {
+    "additions": 125,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "app/core/database.py",
+     "app/core/dependencies.py",
+     "app/core/security.py"
+    ],
+    "title": "core completo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T00:11:48+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/30"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#30:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T00:16:31+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/30"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#29:opened",
+   "payload": {
+    "additions": 0,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 35,
+    "deletions": 0,
+    "files": [
+     "app/autenticacion/api/router.py",
+     "app/autenticacion/domain/models.py",
+     "app/autenticacion/repository/auth_repo.py",
+     "app/autenticacion/services/auth_service.py",
+     "app/certificados/api/router.py",
+     "app/certificados/domain/models.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py",
+     "app/plantillas/api/router.py",
+     "app/plantillas/domain/models.py",
+     "app/plantillas/repository/plantillas_repo.py",
+     "app/plantillas/services/plantillas_service.py",
+     "app/repositorio/api/router.py",
+     "app/repositorio/domain/models.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py",
+     "app/repository/repositories/__init__.py",
+     "app/services/__init__.py",
+     "app/services/events/__init__.py",
+     "app/services/mappers/__init__.py"
+    ],
+    "title": "arquitectura completa"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T01:00:32+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/29"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#29:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T01:04:04+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/29"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#1:opened",
+   "payload": {
+    "additions": 153,
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 0,
+    "files": [
+     "Documentacion/HU-1-Autenticaci\u00f3n de usuario mediante credenciales.md",
+     "Documentacion/HU-10-Crear solicitud de certificado adjuntando comprobante de pago.md",
+     "Documentacion/HU-11-Consultar el estado actual de la solicitud.md",
+     "Documentacion/HU-12-Cancelar solicitud de certificado.md",
+     "Documentacion/HU-13-Aprobar o rechazar solicitudes por parte de la universidad.md",
+     "Documentacion/HU-19-Unir datos del estudiante con la plantilla seleccionada.md",
+     "Documentacion/HU-2-Generaci\u00f3n y validaci\u00f3n de tokens JWT de sesi\u00f3n.md",
+     "Documentacion/HU-20-Asignar c\u00f3digo UUID \u00fanico para verificar autenticidad.md",
+     "Documentacion/HU-21-Generar documento en formato PDF.md",
+     "Documentacion/HU-22-Asignar firma digital al certificado.md",
+     "Documentacion/HU-23-Registrar los certificados emitidos.md",
+     "Documentacion/HU-28-Verificar validez del certificado mediante su c\u00f3digo UUID.md",
+     "Documentacion/HU-29-Mostrar informaci\u00f3n b\u00e1sica del certificado al verificador.md",
+     "Documentacion/HU-3-Cierre de sesi\u00f3n e invalidaci\u00f3n del token.md",
+     "Documentacion/HU-30-Validar que el documento no ha sido alterado desde su emisi\u00f3n.md",
+     "Documentacion/HU-31-Registrar qui\u00e9n y cu\u00e1ndo consult\u00f3 un certificado.md",
+     "Documentacion/HU-4- Validaci\u00f3n de permisos y niveles de acceso por rol.md",
+     "Documentacion/HU-5- RegistrarUsuario.md"
+    ],
+    "title": "Development"
+   },
+   "source": "github",
+   "timestamp": "2026-04-18T17:01:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/1"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#1:merged",
+   "payload": {
+    "author": "Hansel-Pan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-18T17:02:34+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/1"
+  }
+ ],
+ "repo": "Sistema-de-certificacion-academica/Sistema-de-certificacion-academica",
+ "window": "pre_t"
+}
