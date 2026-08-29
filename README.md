@@ -129,25 +129,89 @@ pre-cutoff evidence ──┬─► signals          arithmetic, no model
                                                 cannot change
 ```
 
-Four design choices carry the system:
+Four design choices, and what measurement says about each:
 
-**The model never owns the decision.** `src/holt/agent/verdict.py` is the only
-path from findings to a verdict, and it runs no model. A judge rerunning Holt
-gets our numbers rather than a resample of them.
-
-**Verification can only subtract.** Stage D resolves every evidence id a finding
-cites. Anything that does not resolve is **dropped, not softened**. Run
-`--show-verification` to see what was removed and why.
+**The model never owns the decision — and this is the one that measurably pays.**
+`src/holt/agent/verdict.py` is the only path from findings to a verdict and runs
+no model. Across three runs Holt returns identical verdicts on **21 of 22**
+repositories; the baseline, which puts the whole decision inside one model call,
+on **13 of 22**.
 
 **Arithmetic where arithmetic works.** Counting landings and measuring reply
-latency are not model problems. The model is used for what it alone can do:
-judging what kind of project this is, and what a thread reveals.
+latency are not model problems. *But the arithmetic thresholds never bind on this
+pool*: setting `MIN_MERGES` and `MIN_DISTINCT_AUTHORS` to zero leaves all 22
+verdicts and the confusion matrix unchanged. They are guardrails that this
+sample never tested.
 
-**The holdout is structural, not procedural.** Every fact passes through one
-`EvidenceProvider`, whose base class asserts the cutoff on every record. A
-subclass cannot return evidence from the wrong side of it.
+**Verification can only subtract — and on this pool it subtracts nothing.**
+Stage D resolves every evidence id a finding cites and drops what does not
+resolve. Across three runs and 22 repositories it examined **1,402 findings and
+dropped 0**. That is the correct outcome of citations that resolve, not evidence
+that the mechanism works; the mechanism is covered by tests
+(`tests/test_verify.py`) rather than by the pool. It also checks only that an id
+*exists*, not that the evidence supports the claim.
+
+**The holdout is structural for timestamps, procedural for payloads.** Every fact
+passes through one `EvidenceProvider` whose base class asserts the cutoff on
+every record, and a subclass cannot return a record with a post-cutoff
+*timestamp*. Repository metadata is timestamped at repository creation, so its
+*payload* — `pushed_at`, `is_archived`, `stargazer_count` — is as of fetch. No
+pool repository is archived, so nothing leaked here, but the guarantee is
+narrower than "structural" suggests.
+
+**Stage B (`onboarding`) reaches the report and not the verdict**, like Stage C.
+Only Stage A's `repo_kind` and the arithmetic signals are consulted by
+`verdict.py`.
+
+## What this result depends on
+
+Two sensitivities a reader would otherwise have to find themselves. Both are
+reproducible with `PYTHONPATH=. uv run python eval/sensitivity.py`.
+
+**The ground truth is our own definition, and the headline turns on one half of
+it.** L1 keeps an outsider merge only if the diff is *substantive* and a human
+*reviewed* it. Mean MCC over three runs under each variant:
+
+| Ground truth | Positives | Holt | Baseline |
+|---|---|---|---|
+| L1 as shipped | 14/22 | **+0.46** | +0.28 |
+| drop the `reviewed` filter | 16/22 | **+0.61** | +0.16 |
+| **drop the `substantive` filter** | 16/22 | +0.13 | **+0.43** |
+| drop both (≈ the naive L0) | 18/22 | +0.28 | +0.33 |
+
+**Remove the diff-shape filter and the baseline wins.** Holt's advantage exists
+only against a ground truth that counts *what a merged contribution changed*.
+
+We think that is the right definition, and it is the first claim this README
+makes rather than one introduced afterwards: a merged pull request that appends a
+line to a JSON manifest is not a software contribution. A reader who rejects that
+premise should reject the project, not just the number. But the dependency is
+real, it is not hidden, and it is one filter deep.
+
+The honest tension: Stage A's prompt tells the model to judge a repository by
+what its merged diffs touch, which is the same concept the `substantive` filter
+encodes mechanically. Label and agent operationalise one construct two ways —
+one by rule, one by judgement. That is not code sharing, and the temporal split
+is intact, but it is closer than "the agent shares no diff-shape rules" implies.
+
+**The pipeline's measurable contribution is small.** In MCC, holding recorded
+model output fixed and varying only `verdict.py`:
+
+| Configuration | MCC |
+|---|---|
+| full pipeline | +0.46 |
+| Stage A repository-kind rules disabled | +0.42 |
+| arithmetic thresholds set to zero | +0.46 |
+| both disabled | +0.42 |
+
+Three model stages and a verification pass are worth **+0.04 MCC** over a rule
+that answers "insufficient evidence if nobody tried, otherwise viable". What they
+*are* worth is the trap rejection — 4 of 5 against the baseline's 0 of 5 — which
+is the one comparison in this project that reaches significance.
 
 ---
+
+## Read-only---
 
 ## Read-only, and about time rather than people
 

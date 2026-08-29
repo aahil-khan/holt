@@ -1,0 +1,1852 @@
+{
+ "captured_at": "2026-08-29T19:52:24.410552+00:00",
+ "content_sha256": "6fb278c5006037f46c3a3fa8f555b7b64008904752bdd0f109f40c6824556008",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#72:opened",
+   "payload": {
+    "additions": 3896,
+    "author": "jacobvigliotti",
+    "author_is_bot": false,
+    "changed_files": 70,
+    "deletions": 221,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/Exceptions.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/MediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SearchRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/LibraryItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/PriorityItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt"
+    ],
+    "title": "Week 13"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T02:25:53+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/72"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#72:closed",
+   "payload": {
+    "author": "jacobvigliotti",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T02:27:45+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/72"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#71:opened",
+   "payload": {
+    "additions": 3937,
+    "author": "ahassan5557-jpg",
+    "author_is_bot": false,
+    "changed_files": 73,
+    "deletions": 379,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ErrorResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Favorite.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/LibraryItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaDetail.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaType.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Review.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/quote.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AddToFavoritesRequest.kt\u200e.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AddToLibraryRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt"
+    ],
+    "title": "Week 10"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T21:33:36+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/71"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#70:opened",
+   "payload": {
+    "additions": 6196,
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "changed_files": 66,
+    "deletions": 530,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ActivityEvent.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Favorite.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/LibraryItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Priority.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Review.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AddFavoriteRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AddToLibraryRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/PriorityRequest.kt"
+    ],
+    "title": "Week 12"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T19:54:37+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/70"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#70:closed",
+   "payload": {
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T19:59:07+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/70"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#69:opened",
+   "payload": {
+    "additions": 2491,
+    "author": "ahassan5557-jpg",
+    "author_is_bot": false,
+    "changed_files": 51,
+    "deletions": 219,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaDetail.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt"
+    ],
+    "title": "Week 07"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T22:57:11+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/69"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#68:opened",
+   "payload": {
+    "additions": 3664,
+    "author": "BrianWill2026",
+    "author_is_bot": false,
+    "changed_files": 78,
+    "deletions": 334,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ErrorResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Favorite.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/LibraryItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaDetail.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaType.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Review.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt"
+    ],
+    "title": "Week 11"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T02:37:14+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/68"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#68:closed",
+   "payload": {
+    "author": "BrianWill2026",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T02:37:42+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/68"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#67:opened",
+   "payload": {
+    "additions": 316,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 116,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ErrorResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UpdateLibraryStatusRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/detail/MediaDetailScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/detail/MediaDetailViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/res/values/strings.xml",
+     "app/src/test/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModelTest.kt",
+     "gradle/libs.versions.toml"
+    ],
+    "title": "10 (pt2) Make Media Detail and Library actions optimistic"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T03:10:21+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/67"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#66:opened",
+   "payload": {
+    "additions": 248,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 78,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ErrorResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Favorite.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AddToFavoritesRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/detail/MediaDetailScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/detail/MediaDetailViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "10 Wire Media Detail actions to the API"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T03:10:05+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/66"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#65:opened",
+   "payload": {
+    "additions": 2634,
+    "author": "dgodinez227",
+    "author_is_bot": false,
+    "changed_files": 65,
+    "deletions": 97,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AddToFavoritesRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AddToLibraryRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaDetail.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaNotFoundException.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt"
+    ],
+    "title": "Week 10"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T01:05:21+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/65"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#65:closed",
+   "payload": {
+    "author": "dgodinez227",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T01:33:09+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/65"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#64:opened",
+   "payload": {
+    "additions": 3238,
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "changed_files": 68,
+    "deletions": 300,
+    "files": [
+     ".gitignore",
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ActivityEvent.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/LibraryItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaType.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Review.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AddLibraryItemRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiError.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultLibraryRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultReviewRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LibraryApiService.kt"
+    ],
+    "title": "Week 08"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:45:07+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/64"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#64:closed",
+   "payload": {
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:45:22+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/64"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#63:opened",
+   "payload": {
+    "additions": 525,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 20,
+    "deletions": 215,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ErrorResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/LibraryItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaDetail.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaType.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Review.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AddToLibraryRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/activity/ActivityFeedScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/detail/MediaDetailScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/detail/MediaDetailViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/UserProfileScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/search/SearchComponents.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/search/SearchScreen.kt",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "08 Wire media detail screen to API; replace stringly-typed mediaType wit\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:39:30+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/63"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#62:opened",
+   "payload": {
+    "additions": 2262,
+    "author": "dgodinez227",
+    "author_is_bot": false,
+    "changed_files": 56,
+    "deletions": 87,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt"
+    ],
+    "title": "Week 08"
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:15:44+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/62"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#62:closed",
+   "payload": {
+    "author": "dgodinez227",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:17:47+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/62"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#61:opened",
+   "payload": {
+    "additions": 2373,
+    "author": "jacobvigliotti",
+    "author_is_bot": false,
+    "changed_files": 52,
+    "deletions": 81,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SearchRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt"
+    ],
+    "title": "Week 07"
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T22:37:15+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/61"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#61:closed",
+   "payload": {
+    "author": "jacobvigliotti",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:41:45+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/61"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#60:opened",
+   "payload": {
+    "additions": 1415,
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "changed_files": 40,
+    "deletions": 160,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ActivityEvent.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/LibraryItem.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Review.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserRepository.kt"
+    ],
+    "title": "Week 08"
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T22:35:00+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/60"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#60:closed",
+   "payload": {
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T22:38:25+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/60"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#59:opened",
+   "payload": {
+    "additions": 2958,
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "changed_files": 58,
+    "deletions": 282,
+    "files": [
+     ".gitignore",
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ActivityEvent.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenStore.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt"
+    ],
+    "title": "Extra credit/design alignment"
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T18:48:30+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/59"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#59:closed",
+   "payload": {
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T18:49:12+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/59"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#58:opened",
+   "payload": {
+    "additions": 2755,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 60,
+    "deletions": 236,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/FakeUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt"
+    ],
+    "title": "week-07"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T21:02:01+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/58"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#58:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T21:04:00+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/58"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#57:opened",
+   "payload": {
+    "additions": 2366,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 59,
+    "deletions": 217,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/FakeUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt"
+    ],
+    "title": "Extra credit work"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T03:16:48+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/57"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#57:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:41:49+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/57"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#56:opened",
+   "payload": {
+    "additions": 492,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 14,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaDetail.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/detail/MediaDetailScreen.kt",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "07 Media details screen."
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T02:52:51+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/56"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#55:opened",
+   "payload": {
+    "additions": 1846,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 39,
+    "deletions": 146,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/MediaDetail.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt"
+    ],
+    "title": "07 media details screen"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T02:51:03+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/55"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#55:closed",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T02:52:31+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/55"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#54:opened",
+   "payload": {
+    "additions": 2526,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 60,
+    "deletions": 217,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/FakeUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt"
+    ],
+    "title": "extra credit/design alignment"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T22:44:05+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/54"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#54:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:41:52+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/54"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#53:opened",
+   "payload": {
+    "additions": 2226,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 56,
+    "deletions": 207,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/FakeUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt"
+    ],
+    "title": "Week 06"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T14:53:07+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/53"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#53:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:41:55+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/53"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#52:opened",
+   "payload": {
+    "additions": 2501,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 59,
+    "deletions": 207,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/FakeUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt"
+    ],
+    "title": "Week-06"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T08:56:46+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/52"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#52:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T08:59:24+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/52"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#51:opened",
+   "payload": {
+    "additions": 1661,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 45,
+    "deletions": 207,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/FakeUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt"
+    ],
+    "title": "Week 06"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T07:12:07+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/51"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#51:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T08:55:32+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/51"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#51:comment:0",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "body": "recommint"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T07:30:47+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/51"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#50:opened",
+   "payload": {
+    "additions": 987,
+    "author": "BrianWill2026",
+    "author_is_bot": false,
+    "changed_files": 29,
+    "deletions": 18,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt"
+    ],
+    "title": "Week 06"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T02:26:44+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/50"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#50:closed",
+   "payload": {
+    "author": "BrianWill2026",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T02:26:50+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/50"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#49:opened",
+   "payload": {
+    "additions": 1354,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 36,
+    "deletions": 132,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Media.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthInterceptor.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultMediaRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/MediaApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt"
+    ],
+    "title": "06 search media api"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T02:08:36+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/49"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#48:opened",
+   "payload": {
+    "additions": 1293,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 33,
+    "deletions": 132,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/FakeSearchResults.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/theme/Color.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt"
+    ],
+    "title": "05 search media column"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T00:22:20+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/48"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#47:opened",
+   "payload": {
+    "additions": 903,
+    "author": "jacobvigliotti",
+    "author_is_bot": false,
+    "changed_files": 27,
+    "deletions": 23,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/theme/Color.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt"
+    ],
+    "title": "Week 05"
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T22:46:53+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/47"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#47:closed",
+   "payload": {
+    "author": "jacobvigliotti",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T22:47:01+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/47"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#46:opened",
+   "payload": {
+    "additions": 93,
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "reflections/week-01-reflection.md"
+    ],
+    "title": "Week 01"
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T20:59:03+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/46"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#46:closed",
+   "payload": {
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T21:28:51+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/46"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#45:opened",
+   "payload": {
+    "additions": 987,
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "changed_files": 28,
+    "deletions": 31,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenStore.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt"
+    ],
+    "title": "Week 05"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T02:20:23+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/45"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#45:closed",
+   "payload": {
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T02:23:52+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/45"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#44:opened",
+   "payload": {
+    "additions": 987,
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "changed_files": 28,
+    "deletions": 31,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/TokenStore.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt"
+    ],
+    "title": "Week 05"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T02:09:07+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/44"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#44:closed",
+   "payload": {
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T02:09:37+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/44"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#43:opened",
+   "payload": {
+    "additions": 310,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 15,
+    "deletions": 120,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/SessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/datastore/DefaultSessionRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/User.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/LoginRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "04 login user with api call"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T02:05:46+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/43"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#42:opened",
+   "payload": {
+    "additions": 152,
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 108,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/remote/MediaTrackerApi.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/repository/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "reflections/reflection-template.md",
+     "reflections/week-05-reflection.md"
+    ],
+    "title": "week-05"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T02:02:25+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/42"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#42:closed",
+   "payload": {
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T21:29:05+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/42"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#41:opened",
+   "payload": {
+    "additions": 910,
+    "author": "JamaRufai",
+    "author_is_bot": false,
+    "changed_files": 28,
+    "deletions": 30,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "app/src/main/res/drawable/smart_display.xml"
+    ],
+    "title": "Week 05"
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T01:30:04+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/41"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#41:closed",
+   "payload": {
+    "author": "JamaRufai",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T01:31:04+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/41"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#40:opened",
+   "payload": {
+    "additions": 174,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 23,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/ApiConstants.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/DefaultUserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RegisterRequest.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/RetrofitInstance.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/network/UserApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/res/values/strings.xml",
+     "gradle/libs.versions.toml"
+    ],
+    "title": "03 Create account API call reference implementation."
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T00:35:00+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/40"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#39:opened",
+   "payload": {
+    "additions": 222,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 10,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "reflections/week-01-reflection.md",
+     "reflections/week-02-reflection.md"
+    ],
+    "title": "Week 02"
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T19:33:45+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/39"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#39:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T02:41:58+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/39"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#39:comment:0",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "body": "did not merge the begining"
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T19:35:12+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/39"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#39:comment:1",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "body": "did not merge in the begining"
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T19:38:22+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/39"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#38:opened",
+   "payload": {
+    "additions": 308,
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 84,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/res/values/strings.xml",
+     "reflections/reflection-template.md",
+     "reflections/week-04-reflection.md"
+    ],
+    "title": "week-04"
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T03:34:59+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/38"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#38:closed",
+   "payload": {
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T21:28:36+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/38"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#37:opened",
+   "payload": {
+    "additions": 608,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 21,
+    "deletions": 19,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/CreateUserResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/TokenResponse.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "gradle/libs.versions.toml",
+     "reflections/week-01-reflection.md",
+     "reflections/week-02-reflection.md",
+     "reflections/week-03"
+    ],
+    "title": "Week 04"
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T02:53:16+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/37"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#37:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T03:07:35+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/37"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#36:opened",
+   "payload": {
+    "additions": 380,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 11,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/res/values/strings.xml",
+     "reflections/week-01-reflection.md"
+    ],
+    "title": "02 register screen with viewmodel"
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T02:14:47+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/36"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#35:opened",
+   "payload": {
+    "additions": 308,
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 84,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/res/values/strings.xml",
+     "reflections/reflection-template.md",
+     "reflections/week-04-reflection.md"
+    ],
+    "title": "week-04"
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T01:38:02+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/35"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#35:closed",
+   "payload": {
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T03:07:31+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/35"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#35:comment:0",
+   "payload": {
+    "author": "Issa-Ismail-Ali",
+    "author_is_bot": false,
+    "body": "Register Screen appears to be functional and well organized."
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T02:39:57+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/35"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#34:opened",
+   "payload": {
+    "additions": 574,
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 23,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/Authmodels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "app/src/main/res/drawable/smart_display.xml",
+     "app/src/main/res/values/strings.xml",
+     "gradle/libs.versions.toml",
+     "reflections/week-01-reflection.md",
+     "reflections/week-02-reflection.md"
+    ],
+    "title": "Week 04"
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T01:12:17+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/34"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#34:closed",
+   "payload": {
+    "author": "Zabzar22",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T01:13:12+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/34"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#33:opened",
+   "payload": {
+    "additions": 301,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 10,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/res/values/strings.xml",
+     "reflections/week-01-reflection.md"
+    ],
+    "title": "01 basic register screen"
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T00:27:02+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/33"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#32:opened",
+   "payload": {
+    "additions": 454,
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 19,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "gradle/libs.versions.toml",
+     "reflections/week 03",
+     "reflections/week-01-reflection.md",
+     "reflections/week-02-reflection.md"
+    ],
+    "title": "week 03"
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T19:49:43+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/32"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#32:closed",
+   "payload": {
+    "author": "Maii2025",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T00:28:03+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/32"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#31:opened",
+   "payload": {
+    "additions": 198,
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 6,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/res/drawable/smart_display.xml",
+     "reflections/week-03-reflection.md"
+    ],
+    "title": "Week 03"
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T05:04:06+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/31"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#31:closed",
+   "payload": {
+    "author": "fascineh1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T00:28:30+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/31"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#30:opened",
+   "payload": {
+    "additions": 152,
+    "author": "BrianWill2026",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 9,
+    "files": [
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/NavGraph.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "reflections/week-01-reflection.md",
+     "reflections/week-02-reflection.md"
+    ],
+    "title": "Week 03"
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T02:33:39+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/30"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#30:closed",
+   "payload": {
+    "author": "BrianWill2026",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T02:34:13+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/30"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#29:opened",
+   "payload": {
+    "additions": 1034,
+    "author": "Ilyas9805",
+    "author_is_bot": false,
+    "changed_files": 38,
+    "deletions": 40,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/MainActivity.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/AuthViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/LoginScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "app/src/main/res/drawable/arrow_back.xml",
+     "app/src/main/res/drawable/bookmark_add.xml",
+     "app/src/main/res/drawable/check_circle.xml",
+     "app/src/main/res/drawable/close.xml",
+     "app/src/main/res/drawable/favorite.xml",
+     "app/src/main/res/drawable/feed.xml"
+    ],
+    "title": "Week 03"
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T02:14:07+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/29"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#29:closed",
+   "payload": {
+    "author": "Ilyas9805",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T00:28:33+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/29"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#28:opened",
+   "payload": {
+    "additions": 228,
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 17,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/ApiService.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/UserRepository.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/data/model/AuthModels.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/BottomNavBar.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/navigation/Routes.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/auth/RegisterViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryScreen.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/library/LibraryViewModel.kt",
+     "app/src/main/java/edu/metrostate/ics342/mediatracker/ui/profile/MyProfileScreen.kt",
+     "app/src/main/res/drawable/smart_display.xml",
+     "app/src/main/res/values/strings.xml",
+     "gradle/libs.versions.toml"
+    ],
+    "title": "Week 03 WIP."
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:30:52+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/28"
+  },
+  {
+   "evidence_id": "pr:benjamincassidymetro/media-tracker-android#28:closed",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T00:28:36+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/pull/28"
+  }
+ ],
+ "repo": "benjamincassidymetro/media-tracker-android",
+ "window": "post_t"
+}

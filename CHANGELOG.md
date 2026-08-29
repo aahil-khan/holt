@@ -563,3 +563,68 @@ which is the next entry.
 **Not everything it reported was right.** It flagged a stale "single run" line in
 the README that had already been removed. Findings were verified before being
 acted on, which is the same rule this project applies to its own claims.
+
+---
+
+## Iteration 9 — publishing what the result depends on (2026-08-30)
+
+**Tried.** Measure how much the headline depends on choices we made ourselves,
+and publish both answers whether or not they flatter the project.
+
+**Ground-truth sensitivity.** L1 keeps an outsider merge only if the diff is
+*substantive* and a human *reviewed* it. Both filters are ours. Mean MCC over
+three runs:
+
+| Ground truth | Positives | Holt | Baseline |
+|---|---|---|---|
+| L1 as shipped | 14/22 | **+0.46** | +0.28 |
+| drop `reviewed` | 16/22 | **+0.61** | +0.16 |
+| **drop `substantive`** | 16/22 | +0.13 | **+0.43** |
+| drop both (≈ L0) | 18/22 | +0.28 | +0.33 |
+
+**Remove the diff-shape filter and the baseline wins outright.** Holt's advantage
+exists only against a ground truth that counts what a merged contribution
+changed.
+
+That definition is defensible and it is the project's opening claim rather than
+one introduced later: appending a line to a JSON manifest is not a software
+contribution. But the dependency is one filter deep, and Stage A's prompt asks
+the model to judge a repository by what its merged diffs touch — the same
+concept the filter encodes mechanically. Label and agent operationalise one
+construct two ways, one by rule and one by judgement. `signals.py` claims the
+agent shares no diff-shape rules with the label; that is true of the code and
+looser than it sounds about the concept. Now stated in the README.
+
+**Pipeline ablation, in MCC rather than the F1 this project calls degenerate:**
+
+| Configuration | MCC |
+|---|---|
+| full pipeline | +0.46 |
+| Stage A repository-kind rules disabled | +0.42 |
+| arithmetic thresholds set to zero | +0.46 |
+| both disabled | +0.42 |
+
+Three model stages and a verification pass are worth **+0.04 MCC** over a rule
+that says "insufficient evidence if nobody tried, otherwise viable". What they
+buy that this table cannot show is the trap rejection, 4 of 5 against 0 of 5,
+which is the only comparison here that reaches significance.
+
+**Two components measured and found inert on this pool, now disclosed:**
+
+- **Stage D dropped 0 of 1,402 findings** across three runs and 22 repositories.
+  That is the correct outcome of citations that resolve, not evidence the
+  mechanism works — the mechanism is covered by `tests/test_verify.py`, not by
+  the pool. It also only checks that an id *exists*, never that the evidence
+  supports the claim. The README described it as load-bearing; it now says this.
+- **Stage B (`onboarding`) reaches the report and not the verdict**, like Stage C,
+  and was mentioned in no user-facing document. Now it is.
+
+**Also corrected:** the holdout is structural for timestamps and procedural for
+payloads. Repository metadata is timestamped at repository *creation*, so its
+payload carries `pushed_at`, `is_archived` and `stargazer_count` as of fetch. No
+pool repository is archived so nothing leaked, but "a subclass cannot return
+evidence from the wrong side" was a wider claim than the code makes good.
+
+**Decision.** All published in the README under "What this result depends on".
+None of it improves the score. A reader finding these unaided would discount
+everything else; a reader finding them declared has one fewer reason to.
