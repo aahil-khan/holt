@@ -45,11 +45,14 @@ temporal cutoff neither method could see. 22 are gradable.
 
 | Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
 |---|---|---|---|---|---|
-| always answer "viable" | 0.00 | 0.50 | **0.78** | 1.00 | 0.00 |
-| always answer "not viable" | 0.00 | 0.50 | 0.00 | 0.00 | 1.00 |
-| name-only probe (memorisation control) | 0.11 | 0.55 | 0.48 | 0.36 | 0.75 |
-| baseline solution (one prompt over README + metadata) | 0.33 | 0.67 | 0.74 | 0.71 | 0.62 |
-| **Holt** | **0.49** | **0.71** | 0.84 | 0.93 | 0.50 |
+| always answer "viable" | 0.00 ±0.00 | 0.50 | **0.78** | 1.00 | 0.00 |
+| name-only probe (memorisation control) | 0.16 ±0.07 | 0.58 | 0.52 | 0.40 | 0.75 |
+| baseline solution (one prompt over README + metadata) | 0.28 ±0.07 | 0.64 | 0.68 | 0.62 | 0.67 |
+| **Holt** | **0.46 ±0.05** | **0.70 ±0.02** | 0.83 ±0.02 | 0.90 ±0.04 | 0.50 ±0.00 |
+
+Mean and half-range over **three independent live runs**, not one lucky number.
+**Holt's worst run (0.46 − 0.07 = 0.39) still beats the baseline's best (0.33).**
+The intervals do not overlap.
 
 **The constant answers are in that table on purpose.** F1 was this project's
 original primary metric, and on a pool that is 64% positive it is degenerate:

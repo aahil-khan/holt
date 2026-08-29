@@ -463,3 +463,47 @@ information, and only the contribution history does.
 
 **Decision.** Kept, reported as a declared diagnostic and never mixed into the
 scored pool. Hand-picked cases belong in a table labelled hand-picked.
+
+---
+
+## Iteration 7 — variance across three runs (2026-08-30)
+
+**Tried.** Three complete, independent live runs of every method over the pool,
+recorded into separate trajectory sets. $1.08 total.
+
+**Why.** Every number until now came from one run. The plan said report variance
+rather than one lucky number, and it was first in the cut order only because we
+expected to be short of time. We were not.
+
+**Evidence.** Mean ± half-range over three runs:
+
+| Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
+|---|---|---|---|---|---|
+| always "viable" | 0.00 ±0.00 | 0.50 | 0.78 | 1.00 | 0.00 |
+| name-only probe | 0.16 ±0.07 | 0.58 | 0.52 | 0.40 | 0.75 |
+| baseline solution | 0.28 ±0.07 | 0.64 | 0.68 | 0.62 | 0.67 |
+| **Holt** | **0.46 ±0.05** | **0.70 ±0.02** | 0.83 ±0.02 | 0.90 ±0.04 | 0.50 ±0.00 |
+
+Per-run MCC — baseline `0.19, 0.31, 0.33`; Holt `0.49, 0.49, 0.39`.
+
+**Holt's worst run beats the baseline's best run.** 0.39 against 0.33, no
+overlap. That is a claim a single run could not have supported, and the earlier
+single-run figure of 0.49 turns out to have been Holt's *good* day.
+
+**The second result is about the architecture.** Verdict stability across the
+three runs:
+
+| Method | Repositories identical in all three runs |
+|---|---|
+| baseline solution | 13 / 22 |
+| **Holt** | **21 / 22** |
+
+The baseline puts the entire decision inside one model call, so it wobbles on
+nine of twenty-two repositories between runs. Holt puts the decision in
+`verdict.py`, which is a plain function; model variance can only enter through
+the stage classifications, and those are mostly stable. The determinism argument
+was made on principle in the first commit of this project. This is the
+measurement of it.
+
+**Decision.** Kept. All headline figures are now reported as mean ± half-range,
+and the single-run numbers in earlier entries are left as they were written.
