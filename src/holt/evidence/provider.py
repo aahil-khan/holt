@@ -35,11 +35,15 @@ class EvidenceProvider(ABC):
     def __init__(self, window: Window, cutoff: datetime = T_CUTOFF) -> None:
         self.window = window
         self.cutoff = cutoff
+        # Every access, in order. The trajectory deliverable asks what the agent
+        # did and how its tools responded; the model calls are only half of that.
+        self.call_log: list[tuple[str, str, int]] = []
 
     def fetch(self, request: str, /, **params: object) -> list[EvidenceRecord]:
         records = list(self._fetch_raw(request, **params))
         for record in records:
             self._assert_in_window(record)
+        self.call_log.append(("fetch", request, len(records)))
         return records
 
     def resolve(self, evidence_id: str) -> EvidenceRecord | None:
@@ -50,6 +54,7 @@ class EvidenceProvider(ABC):
         record = self._resolve_raw(evidence_id)
         if record is not None:
             self._assert_in_window(record)
+        self.call_log.append(("resolve", evidence_id, 1 if record else 0))
         return record
 
     def _assert_in_window(self, record: EvidenceRecord) -> None:

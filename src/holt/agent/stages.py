@@ -122,15 +122,19 @@ def classify(
         prompt="\n".join(parts),
         schema=CLASSIFY_SCHEMA,
     )
+    # Stage A cites pull requests too, and shortens them the same way Stage C
+    # does. Normalising here as well means a real citation is not thrown away
+    # for being written in the wrong shape.
+    cited = tuple(normalise_citation(repo, e) for e in result.get("evidence_ids", ()))
     findings.add(
         "repo_kind",
         result["repo_kind"],
-        evidence_ids=result.get("evidence_ids", ()),
+        evidence_ids=cited,
         note=result.get("rationale", ""),
     )
     flags = [f for f in result.get("governance_flags", []) if f != "none"]
     if flags:
-        findings.add("governance_flags", flags, evidence_ids=result.get("evidence_ids", ()))
+        findings.add("governance_flags", flags, evidence_ids=cited)
     if meta is not None and meta.payload.get("is_archived"):
         findings.add("is_archived", True, evidence_ids=(meta.evidence_id,))
 
@@ -341,7 +345,9 @@ def assess_opportunity(
     findings.add(
         "onboarding",
         result["onboarding"],
-        evidence_ids=result.get("evidence_ids", ()),
+        evidence_ids=tuple(
+            normalise_citation(repo, e) for e in result.get("evidence_ids", ())
+        ),
         note=result.get("rationale", ""),
     )
 
