@@ -1,6 +1,6 @@
 {
- "captured_at": "2026-08-29T14:45:14.965012+00:00",
- "content_sha256": "48b2402a49581b48e6982f7b4bc6086fc23b4172272d4a89fa997af6803ecf5b",
+ "captured_at": "2026-08-29T16:03:08.947900+00:00",
+ "content_sha256": "1cc3543614b1af2fc684ec176e860679720b55cb876819d997e94e41a297de1a",
  "cutoff": "2026-06-01T00:00:00+00:00",
  "records": [
   {
@@ -19,6 +19,17 @@
    "source": "github",
    "timestamp": "2026-05-24T14:22:11+00:00",
    "url": "https://github.com/GregoIribarren94/Lendly-android-client"
+  },
+  {
+   "evidence_id": "repo:GregoIribarren94/Lendly-android-client:readme",
+   "payload": {
+    "commit_oid": "811d39b4a8751a38a7f1cc90e6c54f32d190a95c",
+    "kind": "readme",
+    "text": "# LendlyApp \ud83d\udcf1\n\nAplicaci\u00f3n Android desarrollada como Parcial Domiciliario para la materia **TP3** \u2014 Universidad ORT Argentina, A\u00f1o Acad\u00e9mico 2026.\n\n---\n\n## \ud83d\udc65 Integrantes\n\n| Nombre | Apellido |\n|--------|----------|\n| Gina | Sammarone |\n| Gregorio | Iribarren |\n| Joaqu\u00edn | Darquier |\n| Mart\u00edn | Carrera |\n| Alen | Carbajal |\n\n**Curso:** BE-TP3A\n\n**Profesor:** Mart\u00edn Rivas\n\n---\n\n## \ud83d\udccb Descripci\u00f3n\n\nLendlyApp es una aplicaci\u00f3n m\u00f3vil Android orientada a la gesti\u00f3n de pr\u00e9stamos, pagos y servicios financieros. Permite a los usuarios:\n\n- Iniciar sesi\u00f3n y registrarse con verificaci\u00f3n SMS\n- Solicitar y gestionar pr\u00e9stamos activos\n- Realizar compras en el Shop integrado\n- Ver el historial de transacciones\n- Administrar el perfil y puntaje crediticio (gauge/barra)\n\n---\n\n## \u2699\ufe0f Stack T\u00e9cnico\n\n| Categor\u00eda | Tecnolog\u00eda |\n|-----------|-----------|\n| Lenguaje | Kotlin |\n| UI | Jetpack Compose (Material 3) |\n| Arquitectura | MVVM + LiveData / StateFlow |\n| Networking | Retrofit (Gson) |\n| Navegaci\u00f3n | Navigation Component |\n| Inyecci\u00f3n de dependencias | Hilt / Koin |\n| Im\u00e1genes | Glide / Coil |\n| Persistencia local | Room |\n\n---\n\n## \ud83c\udf10 API\n\n**URL base:** `https://6d710e79-f4ca-4651-909f-7dd13bd29968.mock.pstmn.io`\n\nTodas las llamadas incluyen el header: `x-api-key: 123456789`\n\n| M\u00e9todo | Endpoint | Descripci\u00f3n |\n|--------|----------|-------------|\n| POST | `/auth/login` | Inicio de sesi\u00f3n, retorna token |\n| POST | `/auth/create` | Registro de nuevo usuario |\n| GET | `/users/{id}` | Perfil del usuario autenticado |\n| GET | `/loans` | Pr\u00e9stamos activos e historial |\n| POST | `/loans/apply` | Solicitud de nuevo pr\u00e9stamo |\n| GET | `/transactions` | Historial de transacciones |\n| GET | `/products` | Cat\u00e1logo de productos del Shop |\n\n---\n\n## \ud83d\uddc2\ufe0f Estructura del proyecto\n\n(A modificar)\n```\nLendlyApp/\n\u251c\u2500\u2500 app/\n\u2502   \u251c\u2500\u2500 data/\n\u2502   \u2502   \u251c\u2500\u2500 api/          # Retrofit services & endpoints\n\u2502   \u2502   \u251c\u2500\u2500 model/        # Data classes\n\u2502   \u2502   \u2514\u2500\u2500 repository/   # Repositorios\n\u2502   \u251c\u2500\u2500 ui/\n\u2502   \u2502   \u251c\u2500\u2500 auth/         # Login y Registro\n\u2502   \u2502   \u251c\u2500\u2500 home/         # Pantalla principal\n\u2502   \u2502   \u251c\u2500\u2500 loans/        # Pr\u00e9stamos\n\u2502   \u2502   \u251c\u2500\u2500 shop/         # Tienda\n\u2502   \u2502   \u251c\u2500\u2500 history/      # Historial\n\u2502   \u2502   \u2514\u2500\u2500 manage/       # Perfil y configuraci\u00f3n\n\u2502   \u2514\u2500\u2500 di/               # M\u00f3dulos de inyecci\u00f3n de dependencias\n\u2514\u2500\u2500 README.md\n```\n\n---\n(A modificar)\n## \ud83d\ude80 C\u00f3mo ejecutar\n\n1. Clonar el repositorio\n2. Abrir en Android Studio\n3. Sincronizar dependencias (Gradle)\n4. Ejecutar en emulador o dispositivo f\u00edsico (API 26+)\n\n> La app debe compilar y ejecutarse sin errores.\n\n---\n\n## \ud83e\udd16 Uso de IA Generativa\n\n<!-- Completar con las herramientas de IA utilizadas y en qu\u00e9 partes -->\n\nDurante el desarrollo se utilizaron las siguientes herramientas de IA generativa:\n\n- **[Herramienta]:** utilizada para [descripci\u00f3n del uso]\n\n> *Declaraci\u00f3n obligatoria seg\u00fan condiciones de entrega del parcial.*\n\n---\n\n## \ud83d\udcc5 Entrega\n\n**Fecha l\u00edmite:** Mi\u00e9rcoles 3 de Junio de 2026 \u2014 18:30 hs.  \n**Formato:** Repositorio GitHub entregado por Aula Virtual.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:39:23+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/blob/811d39b4a8751a38a7f1cc90e6c54f32d190a95c/README.md"
   },
   {
    "evidence_id": "pr:GregoIribarren94/Lendly-android-client#22:opened",

@@ -1,6 +1,6 @@
 {
- "captured_at": "2026-08-29T14:44:15.499671+00:00",
- "content_sha256": "a68731a5ab9f069ca3a080af8f2efaa7c52b2d6dbe0a6ba317537f9a7f09c4af",
+ "captured_at": "2026-08-29T16:03:05.961915+00:00",
+ "content_sha256": "e8077c62cc7929746a8cfb2fc439abbf6005bf6ca1f8969edba7842779ac6ae3",
  "cutoff": "2026-06-01T00:00:00+00:00",
  "records": [
   {
@@ -19,6 +19,17 @@
    "source": "github",
    "timestamp": "2022-09-27T10:25:00+00:00",
    "url": "https://github.com/DefiLlama/dimension-adapters"
+  },
+  {
+   "evidence_id": "repo:DefiLlama/dimension-adapters:readme",
+   "payload": {
+    "commit_oid": "06635bccd25d507c143f06423cccfdd653b253e9",
+    "kind": "readme",
+    "text": "# Adapters\n\nFind the instructions to list, write, test and submit an adapter [here](https://docs.llama.fi/list-your-project/other-dashboards)\n\n## Install dependencies\n\n`pnpm i`\n\n## test adapter commands\n\n`pnpm test fees bitcoin`\n\n`pnpm test fees bitcoin 2025-10-10`\n\n## Adding custom RPC URLs\n\nCreate an `.env` file and add custom RPC URLs using the `{CHAIN}_RPC` format (use uppercase chain name):\n\n```\nETHEREUM_RPC=\"https://yourcustomrpc.com\"\n```\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T10:42:37+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/blob/06635bccd25d507c143f06423cccfdd653b253e9/README.md"
   },
   {
    "evidence_id": "pr:DefiLlama/dimension-adapters#7351:opened",

@@ -1,6 +1,6 @@
 {
- "captured_at": "2026-08-29T14:43:14.023998+00:00",
- "content_sha256": "38bdb81232f7d9b895ee0bf4d6a9321a4f43b7ee1c8120d2c0871d321a5c4e8a",
+ "captured_at": "2026-08-29T16:02:22.118095+00:00",
+ "content_sha256": "03fc1b5661ce7e20a562ed6df37ab22b52c1a5a86ccb4af80f09fb3e8b62a747",
  "cutoff": "2026-06-01T00:00:00+00:00",
  "records": [
   {
@@ -19,6 +19,17 @@
    "source": "github",
    "timestamp": "2026-02-12T21:47:22+00:00",
    "url": "https://github.com/AlvarOnce/rancho"
+  },
+  {
+   "evidence_id": "repo:AlvarOnce/rancho:readme",
+   "payload": {
+    "commit_oid": "567a80848e2206a5c032dbdf49daa2a25abb676a",
+    "kind": "readme",
+    "text": "# Rancho\n\nEste proyecto es Rancho, un videojuego altamente inspirado en el cl\u00e1sico Archon: The Light and the Dark.\nAd\u00e9ntrate en un rancho, donde los animales batallar\u00e1n para encontrar al lado ganador.\nExplota huevos, lanza p\u00faas y controla el clima para derrotar al rival, todo est\u00e1 en tus manos.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:31:26+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/blob/567a80848e2206a5c032dbdf49daa2a25abb676a/README.md"
   },
   {
    "evidence_id": "pr:AlvarOnce/rancho#96:opened",

@@ -35,11 +35,30 @@ API = "https://api.github.com/graphql"
 MAX_BODY_CHARS = 4000
 
 REPO_META = """
-query($owner:String!, $name:String!) {
+query($owner:String!, $name:String!, $until:GitTimestamp!) {
   rateLimit { remaining resetAt }
   repository(owner:$owner, name:$name) {
     createdAt pushedAt isArchived isMirror isFork stargazerCount
     description homepageUrl primaryLanguage { name }
+    defaultBranchRef {
+      name
+      target {
+        ... on Commit { history(until:$until, first:1) { nodes { oid committedDate } } }
+      }
+    }
+  }
+}
+"""
+
+# The README as it stood at the cutoff, not as it stands today. Reading HEAD
+# would hand the agent a document rewritten months after the window it is
+# supposed to be reasoning about -- a leak that would never announce itself.
+REPO_DOCS = """
+query($owner:String!, $name:String!, $readme:String!, $contributing:String!) {
+  rateLimit { remaining resetAt }
+  repository(owner:$owner, name:$name) {
+    readme: object(expression:$readme) { ... on Blob { text } }
+    contributing: object(expression:$contributing) { ... on Blob { text } }
   }
 }
 """
@@ -125,11 +144,23 @@ class GitHubGraphQL:
             self.remaining = limit["remaining"]
         return data
 
-    def repo_meta(self, owner: str, name: str) -> dict[str, Any]:
-        repo = self.query(REPO_META, owner=owner, name=name)["repository"]
+    def repo_meta(self, owner: str, name: str, until: datetime) -> dict[str, Any]:
+        repo = self.query(
+            REPO_META, owner=owner, name=name, until=until.isoformat()
+        )["repository"]
         if repo is None:
             raise RuntimeError(f"{owner}/{name} not found or not public")
         return repo
+
+    def docs_at(self, owner: str, name: str, oid: str) -> dict[str, Any]:
+        """README and CONTRIBUTING at a specific commit."""
+        return self.query(
+            REPO_DOCS,
+            owner=owner,
+            name=name,
+            readme=f"{oid}:README.md",
+            contributing=f"{oid}:CONTRIBUTING.md",
+        )["repository"]
 
     def search_pull_requests(self, q: str, max_pages: int = 8) -> Iterator[dict[str, Any]]:
         cursor: str | None = None
@@ -269,6 +300,35 @@ def project_repo_meta(repo_slug: str, repo: dict[str, Any]) -> EvidenceRecord:
     )
 
 
+MAX_DOC_CHARS = 12000
+
+
+def project_docs(repo_slug: str, docs: dict[str, Any], commit: dict[str, Any]) -> Iterator[EvidenceRecord]:
+    """README and CONTRIBUTING as they stood at the cutoff commit."""
+    when = _ts(commit["committedDate"])
+    for kind in ("readme", "contributing"):
+        blob = docs.get(kind)
+        text = (blob or {}).get("text")
+        if not text:
+            continue
+        truncated = len(text) > MAX_DOC_CHARS
+        payload: dict[str, Any] = {
+            "kind": kind,
+            "text": text[:MAX_DOC_CHARS],
+            "commit_oid": commit["oid"],
+        }
+        if truncated:
+            payload["text_truncated"] = True
+            payload["text_original_chars"] = len(text)
+        yield EvidenceRecord(
+            evidence_id=f"repo:{repo_slug}:{kind}",
+            source="github",
+            url=f"https://github.com/{repo_slug}/blob/{commit['oid']}/{kind.upper()}.md",
+            timestamp=when,
+            payload=payload,
+        )
+
+
 class LiveGitHubProvider(EvidenceProvider):
     """Crawls GitHub, then hands every record to the base-class window check."""
 
@@ -286,9 +346,14 @@ class LiveGitHubProvider(EvidenceProvider):
 
     def _fetch_raw(self, request: str, /, **params: object) -> Iterable[EvidenceRecord]:
         owner, _, name = request.partition("/")
-        records: list[EvidenceRecord] = [
-            project_repo_meta(request, self.transport.repo_meta(owner, name))
-        ]
+        meta = self.transport.repo_meta(owner, name, self.cutoff)
+        records: list[EvidenceRecord] = [project_repo_meta(request, meta)]
+
+        branch = meta.get("defaultBranchRef") or {}
+        history = ((branch.get("target") or {}).get("history") or {}).get("nodes") or []
+        if history:
+            docs = self.transport.docs_at(owner, name, history[0]["oid"])
+            records.extend(project_docs(request, docs, history[0]))
         nodes = self.transport.search_pull_requests(
             search_query(request, self.window, self.cutoff), self.max_pages
         )
