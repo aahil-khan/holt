@@ -45,24 +45,33 @@ def main() -> None:
         raise SystemExit(f"No archives in {ARCHIVE_DIR}; run scripts/fetch_gharchive.sh first")
 
     scanned = 0
+    unreadable: list[str] = []
     for path in files:
-        with gzip.open(path, "rb") as handle:
-            for line in handle:
-                if MARKER not in line:
-                    continue
-                event = json.loads(line)
-                if event.get("type") != "PullRequestEvent":
-                    continue
-                if event.get("payload", {}).get("action") != "opened":
-                    continue
-                scanned += 1
-                repo = event["repo"]["name"]
-                login = (event.get("actor") or {}).get("login", "")
-                if is_bot(login):
-                    bot_opened[repo] += 1
-                    continue
-                opened[repo] += 1
-                actors[repo].add(login)
+        try:
+            with gzip.open(path, "rb") as handle:
+                for line in handle:
+                    if MARKER not in line:
+                        continue
+                    event = json.loads(line)
+                    if event.get("type") != "PullRequestEvent":
+                        continue
+                    if event.get("payload", {}).get("action") != "opened":
+                        continue
+                    scanned += 1
+                    repo = event["repo"]["name"]
+                    login = (event.get("actor") or {}).get("login", "")
+                    if is_bot(login):
+                        bot_opened[repo] += 1
+                        continue
+                    opened[repo] += 1
+                    actors[repo].add(login)
+        except (EOFError, OSError) as exc:
+            # An archive that is bad as served would otherwise kill a run several
+            # minutes in. Record it in the frame so the gap is auditable rather
+            # than silently narrowing the universe.
+            unreadable.append(path.name)
+            print(f"  UNREADABLE {path.name}: {type(exc).__name__}", flush=True)
+            continue
         print(f"  scanned {path.name}: running total {scanned} opened-PR events", flush=True)
 
     frame = {
@@ -73,8 +82,21 @@ def main() -> None:
         }
         for repo, count in opened.items()
     }
-    OUT.write_text(json.dumps({"source_files": [f.name for f in files], "repos": frame}) + "\n")
+    readable = [f.name for f in files if f.name not in unreadable]
+    OUT.write_text(
+        json.dumps(
+            {
+                "source_files": readable,
+                "unreadable_files": unreadable,
+                "opened_pr_events": scanned,
+                "repos": frame,
+            }
+        )
+        + "\n"
+    )
     print(f"frame: {len(frame)} repos with >=1 human-opened PR, from {scanned} events")
+    if unreadable:
+        print(f"WARNING: {len(unreadable)} archives unreadable and excluded: {unreadable}")
 
 
 if __name__ == "__main__":

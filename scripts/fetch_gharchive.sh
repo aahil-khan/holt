@@ -11,7 +11,8 @@ for day in "$@"; do
   for hr in $(seq 0 23); do
     f="$day-$hr.json.gz"
     [ -s "$out/$f" ] && continue
-    curl -sfS -o "$out/$f" "https://data.gharchive.org/$f" || echo "FAILED $f"
+    curl -sfS --max-time 120 --connect-timeout 20 --retry 3 --retry-delay 2 \
+      -o "$out/$f" "https://data.gharchive.org/$f" || { rm -f "$out/$f"; echo "FAILED $f"; }
   done
   echo "  $day done ($(find $out -name '*.json.gz' | wc -l) files so far)"
 done
