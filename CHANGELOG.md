@@ -373,3 +373,55 @@ against the baseline's 0.62: it over-recommends. Its whole advantage is
 sensitivity, 0.93 against 0.71, plus the extreme cases where it rejects four of
 five traps and the baseline none. That is a narrower claim than "better at
 judging repositories" and it is the one the evidence supports.
+
+---
+
+## Iteration 5 — a pre-registered experiment that failed (2026-08-30)
+
+**Tried.** Make Stage C load-bearing. Its sentiment signals had already been
+measured and found inverted, but one structural feature did separate the
+classes: **review ratio**, the share of merges that received substantive review
+rather than being waved through — 0.68 for genuine opportunities against 0.50 for
+the rest.
+
+**Why the experiment was pre-registered.** The feature was chosen *after* seeing
+it separate on the scored pool. Fitting a threshold there as well would have made
+any reported gain a measurement of our own hindsight. So the rule, the threshold,
+the direction it could act in, and three numeric predictions were written to
+[`eval/PREREGISTRATION.md`](eval/PREREGISTRATION.md) and committed before a line
+of it was implemented. Threshold 0.5, the natural midpoint, not a searched value.
+The rule could only ever *withhold* a recommendation, never create one.
+
+**Evidence.**
+
+| | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
+|---|---|---|---|---|---|
+| without the rule | **0.49** | 0.71 | 0.84 | 0.93 | 0.50 |
+| with the rule | 0.19 | 0.60 | 0.64 | 0.57 | 0.62 |
+
+Specificity improved exactly as predicted. It was bought at roughly five good
+recommendations per bad one avoided: of six changed verdicts, **five were genuine
+opportunities withheld** — including `NixOS/nixpkgs`.
+
+| Prediction, recorded in advance | Outcome | |
+|---|---|---|
+| Specificity rises above 0.50 | 0.62 | held |
+| Sensitivity falls | 0.93 → 0.57 | held |
+| MCC moves by less than ±0.15 | −0.30 | **failed** |
+
+**Decision: removed.** `verdict.py` is byte-identical to before the experiment.
+The pre-registration file stays, with the result appended — a pre-registration
+quietly deleted when it fails is worse than none.
+
+**What it taught us, which is the point.** Absence of in-thread review is not
+absence of engagement. `nixpkgs` merges a great deal of outsider work with no
+visible review comment because the review happened in the issue, on a mailing
+list, or between people who already trust each other. **The pull request thread
+records the merge, not the conversation that produced it.**
+
+That is the same lesson as the inverted-sentiment finding, reached independently:
+*what a thread displays is a poor proxy for what a project does.* Registries look
+welcoming because they are easy; mature projects look unreviewed because their
+review is elsewhere. Two experiments, two directions, one conclusion — and it is
+why Stage C informs the report a human reads while the verdict rests on
+repository kind and arithmetic.

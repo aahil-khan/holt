@@ -1,0 +1,2593 @@
+{
+ "captured_at": "2026-08-29T18:39:03.975214+00:00",
+ "content_sha256": "bd9772ea4925534fe43c04aa6fed27342c1169596e0a3c8334ded70d1ff0d9e6",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:pallets/flask#6144:opened",
+   "payload": {
+    "additions": 31,
+    "author": "amtbsl",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/app.py",
+     "src/flask/sansio/scaffold.py",
+     "tests/test_basic.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:28:21+00:00",
+   "url": "https://github.com/pallets/flask/pull/6144"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6144:closed",
+   "payload": {
+    "author": "amtbsl",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:00:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6144"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6144:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:00:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/6144"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6142:opened",
+   "payload": {
+    "additions": 8,
+    "author": "YeshwanthRajSelvaraj",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/flask/config.py",
+     "tests/test_config.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T15:13:58+00:00",
+   "url": "https://github.com/pallets/flask/pull/6142"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6142:closed",
+   "payload": {
+    "author": "YeshwanthRajSelvaraj",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T17:14:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/6142"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6142:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T17:14:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6142"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:opened",
+   "payload": {
+    "additions": 3,
+    "author": "sebbASF",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/json/provider.py"
+    ],
+    "title": "[invalid] Add support for custom JSON serialization with `__json__`"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:12:02+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:closed",
+   "payload": {
+    "author": "sebbASF",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:04:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:04:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:comment:1",
+   "payload": {
+    "author": "tisonkun",
+    "author_is_bot": false,
+    "body": "@davidism This should be a false positive. Would you do a human review?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T23:38:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:comment:2",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This was unasked for, has little explanation and doesn't follow the template or contributing guide, and the account is private. Nowadays, that all points to a user asking AI tools to output stuff that looks like a contribution. It looks like you're invloved with ASF, and the username suggests association with ASF too, so I guess I'll reverse the AI marking. However, it also looks like you're heavily using AI tools, so please be aware of our AI policy as well."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T01:59:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:comment:3",
+   "payload": {
+    "author": "tisonkun",
+    "author_is_bot": false,
+    "body": "@davidism Thanks for your reply!\r\n\r\nI think then if @sebbASF wants to continue this PR, he should start with an issue to describe why it is needed?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T02:01:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:comment:4",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "We have an extensive contributing guide.\r\n\r\nRegardless, I don't want this feature. I've responded as such for other proposed extensions to our JSON types, a search of previous issues would reveal. Use a serialization library like Marshmallow, cattrs, Pydantic, etc to get data prepared for JSON serialization."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T02:03:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6138:comment:5",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "I suggest @sebbASF make their account activity public and read contributing guides to projects before contributing. Not doing either of those are huge red flags."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T02:04:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/6138"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6137:opened",
+   "payload": {
+    "additions": 12,
+    "author": "loulanyue",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/json/provider.py",
+     "tests/test_json.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:43:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/6137"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6137:closed",
+   "payload": {
+    "author": "loulanyue",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:51:53+00:00",
+   "url": "https://github.com/pallets/flask/pull/6137"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6137:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T13:32:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/6137"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6136:opened",
+   "payload": {
+    "additions": 7,
+    "author": "aoright",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tests/test_config.py"
+    ],
+    "title": "tests: add test for config.from_file missing file with silent option"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T04:29:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/6136"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6136:closed",
+   "payload": {
+    "author": "aoright",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T04:37:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/6136"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6135:opened",
+   "payload": {
+    "additions": 1,
+    "author": "adivx",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/helpers.py"
+    ],
+    "title": "DOC: fix typo in src/flask/helpers.py"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T17:19:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/6135"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6135:closed",
+   "payload": {
+    "author": "adivx",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T17:26:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/6135"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6135:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "\"seek\" is a technical term here (`man fseek` is your friend, use this opportunity to actually learn something instead of just running some tool to look for supposed typos - you are not the first one to open this exact PR - w/o understanding the context)."
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T18:20:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6135"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6135:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This is the correct edit: d318b683. Rather than blindly changing grammar without context, clarify the technical sentence."
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T18:35:54+00:00",
+   "url": "https://github.com/pallets/flask/pull/6135"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6133:opened",
+   "payload": {
+    "additions": 14,
+    "author": "davidism",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/scaffold.py",
+     "tests/test_basic.py"
+    ],
+    "title": "add `app.query` route decorator"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T20:17:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/6133"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6133:merged",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T20:19:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6133"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6132:opened",
+   "payload": {
+    "additions": 1,
+    "author": "BruceWae",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/helpers.py"
+    ],
+    "title": "\u4fee\u6b63\u6587\u4ef6\u6307\u9488\u6587\u6863\u62fc\u5199"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T09:26:58+00:00",
+   "url": "https://github.com/pallets/flask/pull/6132"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6132:closed",
+   "payload": {
+    "author": "BruceWae",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T09:32:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/6132"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6132:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "\"seek\" is a technical term in this context, and it makes sense to use a slightly incorrect english tense for it.\r\n\r\nAlso, write your contributions in English, clearly you speak and understand english when making fixes to english wording..."
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T09:32:51+00:00",
+   "url": "https://github.com/pallets/flask/pull/6132"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6132:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This is the correct edit: d318b683. Rather than blindly changing grammar without context, clarify the technical sentence."
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T18:36:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6132"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6131:opened",
+   "payload": {
+    "additions": 36,
+    "author": "ameerhmz",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/testing.py",
+     "tests/test_basic.py",
+     "tests/test_testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T15:21:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/6131"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6131:closed",
+   "payload": {
+    "author": "ameerhmz",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T15:28:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6131"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6131:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T15:28:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6131"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6130:opened",
+   "payload": {
+    "additions": 14,
+    "author": "waterWang",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/helpers.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T14:58:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/6130"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6130:closed",
+   "payload": {
+    "author": "waterWang",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T15:07:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6130"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6130:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T15:07:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6130"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6129:opened",
+   "payload": {
+    "additions": 9,
+    "author": "RokibatOyeranmi",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "tests/test_helpers.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T13:27:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/6129"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6129:closed",
+   "payload": {
+    "author": "RokibatOyeranmi",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T16:49:28+00:00",
+   "url": "https://github.com/pallets/flask/pull/6129"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6129:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T16:49:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/6129"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6127:opened",
+   "payload": {
+    "additions": 43,
+    "author": "aryansk",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/scaffold.py",
+     "src/flask/views.py",
+     "tests/test_views.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T20:48:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/6127"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6127:closed",
+   "payload": {
+    "author": "aryansk",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:04:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/6127"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6127:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:04:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/6127"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6125:opened",
+   "payload": {
+    "additions": 26,
+    "author": "vo3pal",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/testing.py",
+     "tests/test_basic.py",
+     "tests/test_testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:43:54+00:00",
+   "url": "https://github.com/pallets/flask/pull/6125"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6125:closed",
+   "payload": {
+    "author": "vo3pal",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:56:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6125"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6124:opened",
+   "payload": {
+    "additions": 60,
+    "author": "rowkav09",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 11,
+    "files": [
+     "src/flask/helpers.py",
+     "tests/test_helpers.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T16:55:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/6124"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6124:closed",
+   "payload": {
+    "author": "rowkav09",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T17:33:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6124"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6124:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Besides being AI generated, which is against our policy, this introduces extreme inefficiency due to pushing and popping the context on every loop. "
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T17:38:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/6124"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6118:opened",
+   "payload": {
+    "additions": 3,
+    "author": "fyrsta7",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/wrappers.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T15:46:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/6118"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6118:closed",
+   "payload": {
+    "author": "fyrsta7",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T16:18:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6118"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6118:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T16:18:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6118"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6117:opened",
+   "payload": {
+    "additions": 1,
+    "author": "latent-9",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/config.rst"
+    ],
+    "title": "docs: fix wrong Request attribute for MAX_FORM_MEMORY_SIZE"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T13:49:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/6117"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6117:closed",
+   "payload": {
+    "author": "latent-9",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T13:52:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/6117"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6117:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T13:52:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/6117"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6116:opened",
+   "payload": {
+    "additions": 25,
+    "author": "Omacrow",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/json/provider.py",
+     "tests/test_json.py"
+    ],
+    "title": "Add allow_nan attribute to DefaultJSONProvider"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T12:01:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/6116"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6116:closed",
+   "payload": {
+    "author": "Omacrow",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T13:45:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/6116"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6116:comment:0",
+   "payload": {
+    "author": "Omacrow",
+    "author_is_bot": false,
+    "body": "The failing \"Development Versions\" check looks unrelated to this change \r\nit's failing on a DeprecationWarning from Werkzeug's `main` branch\r\n(`parse_cache_control_header` / `parse_set_header`) inside test_blueprints.py\r\nand test_views.py, neither of which this PR touches."
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T12:04:54+00:00",
+   "url": "https://github.com/pallets/flask/pull/6116"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6116:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Duplicate of https://github.com/pallets/flask/pull/2832"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T13:45:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/6116"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6115:opened",
+   "payload": {
+    "additions": 17,
+    "author": "DijieDeng",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/flask/testing.py",
+     "tests/test_testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T08:05:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/6115"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6115:closed",
+   "payload": {
+    "author": "DijieDeng",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T10:16:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/6115"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6115:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "This appears LLM-generated.\r\n\r\nhttps://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T10:16:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/6115"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6113:opened",
+   "payload": {
+    "additions": 16,
+    "author": "alaramartin",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 157,
+    "files": [
+     "src/flask/testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T03:20:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/6113"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6113:closed",
+   "payload": {
+    "author": "alaramartin",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T03:23:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/6113"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6113:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T04:10:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/6113"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6112:opened",
+   "payload": {
+    "additions": 19,
+    "author": "(ghost)",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/json/provider.py",
+     "tests/test_json.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T18:53:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/6112"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6112:closed",
+   "payload": {
+    "author": "(ghost)",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T19:47:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/6112"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6112:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T19:47:39+00:00",
+   "url": "https://github.com/pallets/flask/pull/6112"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6111:opened",
+   "payload": {
+    "additions": 7,
+    "author": "Tarunjit45",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 9,
+    "files": [
+     "src/flask/views.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T14:37:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/6111"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6111:closed",
+   "payload": {
+    "author": "Tarunjit45",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T14:42:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/6111"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6111:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T14:42:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/6111"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6110:opened",
+   "payload": {
+    "additions": 7,
+    "author": "Tarunjit45",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 9,
+    "files": [
+     "src/flask/views.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T14:28:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/6110"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6110:closed",
+   "payload": {
+    "author": "Tarunjit45",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T14:42:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/6110"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6110:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T14:42:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/6110"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6108:opened",
+   "payload": {
+    "additions": 4,
+    "author": "amir-rezaei",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T20:04:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/6108"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6108:closed",
+   "payload": {
+    "author": "amir-rezaei",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T20:15:16+00:00",
+   "url": "https://github.com/pallets/flask/pull/6108"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6108:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T20:15:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/6108"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6106:opened",
+   "payload": {
+    "additions": 1,
+    "author": "saitejabandaru-in",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T14:51:53+00:00",
+   "url": "https://github.com/pallets/flask/pull/6106"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6106:closed",
+   "payload": {
+    "author": "saitejabandaru-in",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T14:52:49+00:00",
+   "url": "https://github.com/pallets/flask/pull/6106"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6105:opened",
+   "payload": {
+    "additions": 3,
+    "author": "sbisl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "examples/celery/requirements.txt"
+    ],
+    "title": "modofied requirement"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T14:43:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/6105"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6105:closed",
+   "payload": {
+    "author": "sbisl",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T14:53:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/6105"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6104:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Akankshaaaa-01",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "[Draft] hello"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T10:30:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/6104"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6104:closed",
+   "payload": {
+    "author": "Akankshaaaa-01",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T10:31:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/6104"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6104:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "This is not a playground for testing how to use GitHub."
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T10:31:18+00:00",
+   "url": "https://github.com/pallets/flask/pull/6104"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6103:opened",
+   "payload": {
+    "additions": 1,
+    "author": "ARYANatGIT",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "Fix grammar in quickstart documentation"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T15:50:23+00:00",
+   "url": "https://github.com/pallets/flask/pull/6103"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6103:closed",
+   "payload": {
+    "author": "ARYANatGIT",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T16:06:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/6103"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6102:opened",
+   "payload": {
+    "additions": 15,
+    "author": "vtino17",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 15,
+    "files": [
+     "docs/deploying/index.rst",
+     "docs/server.rst",
+     "src/flask/app.py",
+     "src/flask/cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T07:55:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6102"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6102:closed",
+   "payload": {
+    "author": "vtino17",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T13:22:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/6102"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6101:opened",
+   "payload": {
+    "additions": 73,
+    "author": "darkhpk",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 19,
+    "files": [
+     "src/flask/sansio/app.py",
+     "tests/conftest.py",
+     "tests/test_basic.py",
+     "tests/test_blueprints.py",
+     "tests/test_cli.py",
+     "tests/test_views.py"
+    ],
+    "title": "Fixed monkeypatch and werkzeug deprecation"
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T00:42:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/6101"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6101:closed",
+   "payload": {
+    "author": "darkhpk",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T02:14:54+00:00",
+   "url": "https://github.com/pallets/flask/pull/6101"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6101:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Duplicate of #6095.\r\nAlso you say you copied a PR that was AI generated. We don't accept AI generated output: https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T02:17:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/6101"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6100:opened",
+   "payload": {
+    "additions": 31,
+    "author": "(ghost)",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/app.py",
+     "tests/test_basic.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T20:28:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/6100"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6100:closed",
+   "payload": {
+    "author": "(ghost)",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T22:05:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6100"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6099:opened",
+   "payload": {
+    "additions": 20,
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 27,
+    "files": [
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T01:51:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/6099"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6099:closed",
+   "payload": {
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T02:08:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/6099"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6098:opened",
+   "payload": {
+    "additions": 1315,
+    "author": "Ibrahimibrahimi",
+    "author_is_bot": false,
+    "changed_files": 25,
+    "deletions": 0,
+    "files": [
+     "src/flask/cli.py",
+     "src/flask/cli_templates/admin_panel/admin.py.j2",
+     "src/flask/cli_templates/admin_user/auth.py.j2",
+     "src/flask/cli_templates/api/api.py.j2",
+     "src/flask/cli_templates/base/.env.j2",
+     "src/flask/cli_templates/base/app.py.j2",
+     "src/flask/cli_templates/base/config.py.j2",
+     "src/flask/cli_templates/base/requirements.txt.j2",
+     "src/flask/cli_templates/base/routes.py.j2",
+     "src/flask/cli_templates/base/run.py.j2",
+     "src/flask/cli_templates/base/setup.sh.j2",
+     "src/flask/cli_templates/sqlite/extensions.py.j2",
+     "src/flask/cli_templates/sqlite/models.py.j2",
+     "src/flask/cli_templates/static/style.css.j2",
+     "src/flask/cli_templates/templates/admin/dashboard.html",
+     "src/flask/cli_templates/templates/admin/items.html",
+     "src/flask/cli_templates/templates/admin/users.html",
+     "src/flask/cli_templates/templates/base.html",
+     "src/flask/cli_templates/templates/create_item.html",
+     "src/flask/cli_templates/templates/edit_item.html"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T21:16:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/6098"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6098:closed",
+   "payload": {
+    "author": "Ibrahimibrahimi",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T21:21:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/6098"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:opened",
+   "payload": {
+    "additions": 23,
+    "author": "lkk7",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/testing.py",
+     "tests/test_basic.py",
+     "tests/test_testing.py"
+    ],
+    "title": "Fix `.partition(\":\")` usage on potential IPv6 addresses"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T15:30:46+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:merged",
+   "payload": {
+    "author": "lkk7",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T19:48:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:review:0",
+   "payload": {
+    "author": "lkk7",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T15:31:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:review:1",
+   "payload": {
+    "author": "lkk7",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T15:32:40+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:review:2",
+   "payload": {
+    "author": "lkk7",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T15:37:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:review:3",
+   "payload": {
+    "author": "lkk7",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T15:38:07+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:review:4",
+   "payload": {
+    "author": "Samielakkad",
+    "author_is_bot": false,
+    "body": "Retracted.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:27:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:comment:0",
+   "payload": {
+    "author": "lkk7",
+    "author_is_bot": false,
+    "body": "Not sure about the reason of \"Development Versions\" fail..."
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T15:40:09+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Dev tests are not updated for Werkzeug main yet, they're expected to fail until next Werkzeug release."
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T17:30:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6096:comment:2",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "All looks good, thanks. I'll target this at main since I don't think there will be another bug fix release, and this isn't anything critical."
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T19:47:04+00:00",
+   "url": "https://github.com/pallets/flask/pull/6096"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6095:opened",
+   "payload": {
+    "additions": 17,
+    "author": "mgorny",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 34,
+    "files": [
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "Replace the use of private `monkeypatch` fixture API"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T10:21:31+00:00",
+   "url": "https://github.com/pallets/flask/pull/6095"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6095:merged",
+   "payload": {
+    "author": "mgorny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T17:05:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/6095"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6095:review:0",
+   "payload": {
+    "author": "RonnyPfannschmidt",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T10:27:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/6095"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6095:review:1",
+   "payload": {
+    "author": "mgorny",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T10:43:23+00:00",
+   "url": "https://github.com/pallets/flask/pull/6095"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6095:review:2",
+   "payload": {
+    "author": "mgorny",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T10:47:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/6095"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6095:comment:0",
+   "payload": {
+    "author": "mgorny",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T18:53:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6095"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6094:opened",
+   "payload": {
+    "additions": 8,
+    "author": "abhi-0203",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/flask/app.py",
+     "src/flask/testing.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T04:41:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/6094"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6094:closed",
+   "payload": {
+    "author": "abhi-0203",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T12:47:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/6094"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6091:opened",
+   "payload": {
+    "additions": 33,
+    "author": "usamashehab",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 24,
+    "files": [
+     "CHANGES.rst",
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T01:11:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/6091"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6091:closed",
+   "payload": {
+    "author": "usamashehab",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T01:24:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/6091"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6091:comment:0",
+   "payload": {
+    "author": "usamashehab",
+    "author_is_bot": false,
+    "body": "The two failing CI jobs (\"Development Versions\" and \"Minimum Versions\") are pre-existing failures on `main`, not caused by this PR.\n\nI verified by checking the latest CI run on `main` (run [#28060561775](https://github.com/pallets/flask/actions/runs/28060561775)) \u2014 the exact same two jobs fail there with the same errors:\n\n- **Development Versions**: `werkzeug` main deprecated `parse_cache_control_header` and `parse_set_header`, causing `DeprecationWarning`-as-error on collection (`test_blueprints.py`, `test_views.py`).\n- **Minimum Versions**: `click==8.1.3` doesn't support `ParamType[t.Any]` subscripting on Python 3.14 (`TypeError: type 'ParamType' is not subscriptable`).\n\nAll other jobs pass (3.10, 3.11, 3.12, 3.13, 3.14, 3.14t, PyPy, Windows, Mac, typing, docs).\n"
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T01:16:57+00:00",
+   "url": "https://github.com/pallets/flask/pull/6091"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6090:opened",
+   "payload": {
+    "additions": 31,
+    "author": "aouxwoux",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 4,
+    "files": [
+     "docs/views.rst",
+     "src/flask/sansio/scaffold.py",
+     "src/flask/views.py",
+     "tests/test_basic.py",
+     "tests/test_views.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T11:42:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6090"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6090:closed",
+   "payload": {
+    "author": "aouxwoux",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T12:31:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/6090"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6089:opened",
+   "payload": {
+    "additions": 36,
+    "author": "M0nd0R",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sessions.py",
+     "tests/test_basic.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T21:58:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/6089"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6089:closed",
+   "payload": {
+    "author": "M0nd0R",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T22:19:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/6089"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6089:comment:0",
+   "payload": {
+    "author": "M0nd0R",
+    "author_is_bot": false,
+    "body": "I checked the two failing CI jobs. They appear unrelated to this patch:\n\n- `Development Versions` fails during collection because current Werkzeug dev emits deprecation warnings for existing test imports of `parse_cache_control_header` and `parse_set_header`.\n- `Minimum Versions` fails during Flask import before tests run because existing `CertParamType(click.ParamType[t.Any])` is not compatible with the pinned minimum Click 8.1.3.\n\nThe jobs that exercise the supported Python/OS matrix, style, docs, and typing passed. I kept this PR scoped to the session fallback validation rather than mixing in dependency/test-suite maintenance changes.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T21:59:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/6089"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6088:opened",
+   "payload": {
+    "additions": 27,
+    "author": "Muhtasim-Munif-Fahim",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 43,
+    "files": [
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T21:04:58+00:00",
+   "url": "https://github.com/pallets/flask/pull/6088"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6088:closed",
+   "payload": {
+    "author": "Muhtasim-Munif-Fahim",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T21:06:09+00:00",
+   "url": "https://github.com/pallets/flask/pull/6088"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6087:opened",
+   "payload": {
+    "additions": 16,
+    "author": "mohamedjaazeer4-sketch",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T09:35:50+00:00",
+   "url": "https://github.com/pallets/flask/pull/6087"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6087:closed",
+   "payload": {
+    "author": "mohamedjaazeer4-sketch",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T12:59:09+00:00",
+   "url": "https://github.com/pallets/flask/pull/6087"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6086:opened",
+   "payload": {
+    "additions": 1,
+    "author": "koppularoshitha",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "Add hardcoded secret key to app.py"
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T05:25:30+00:00",
+   "url": "https://github.com/pallets/flask/pull/6086"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6086:closed",
+   "payload": {
+    "author": "koppularoshitha",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T06:26:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6086"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6085:opened",
+   "payload": {
+    "additions": 14,
+    "author": "Nagendraprasad-hub",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 29,
+    "files": [
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T16:29:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6085"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6085:closed",
+   "payload": {
+    "author": "Nagendraprasad-hub",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T18:19:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6085"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6083:opened",
+   "payload": {
+    "additions": 14,
+    "author": "Hasnaathussain",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T12:58:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6083"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6083:closed",
+   "payload": {
+    "author": "Hasnaathussain",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T14:09:26+00:00",
+   "url": "https://github.com/pallets/flask/pull/6083"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6081:opened",
+   "payload": {
+    "additions": 13,
+    "author": "iammcoding",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/blueprints.py",
+     "tests/test_blueprints.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T13:20:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/6081"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6081:closed",
+   "payload": {
+    "author": "iammcoding",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T13:29:01+00:00",
+   "url": "https://github.com/pallets/flask/pull/6081"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6080:opened",
+   "payload": {
+    "additions": 4,
+    "author": "webdevdot",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/flask/cli.py",
+     "src/flask/sansio/app.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T04:57:59+00:00",
+   "url": "https://github.com/pallets/flask/pull/6080"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6080:closed",
+   "payload": {
+    "author": "webdevdot",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T12:37:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6080"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6079:opened",
+   "payload": {
+    "additions": 5,
+    "author": "dhruvatr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "docs/api.rst"
+    ],
+    "title": "docs: improve wording and grammar in API documentation"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T05:16:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6079"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6079:closed",
+   "payload": {
+    "author": "dhruvatr",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T16:36:06+00:00",
+   "url": "https://github.com/pallets/flask/pull/6079"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6078:opened",
+   "payload": {
+    "additions": 42,
+    "author": "ishaanlabs-gg",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 12,
+    "files": [
+     "src/flask/cli.py",
+     "tests/conftest.py",
+     "tests/test_blueprints.py",
+     "tests/test_cli.py",
+     "tests/test_views.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T15:55:08+00:00",
+   "url": "https://github.com/pallets/flask/pull/6078"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6078:closed",
+   "payload": {
+    "author": "ishaanlabs-gg",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T17:10:05+00:00",
+   "url": "https://github.com/pallets/flask/pull/6078"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6077:opened",
+   "payload": {
+    "additions": 34,
+    "author": "Akshay4527",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "examples/tutorial/Dockerfile",
+     "examples/tutorial/deploy.sh"
+    ],
+    "title": "Dockerize Flask Tutorial Application"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T15:06:45+00:00",
+   "url": "https://github.com/pallets/flask/pull/6077"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6077:closed",
+   "payload": {
+    "author": "Akshay4527",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T15:10:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/6077"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6077:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "See my comment here: https://github.com/pallets/flask/pull/6076#issuecomment-4865283941\r\n\r\nIt is not acceptable that whoever is supervising your internship/course/whatever is making their students dump this noise into other people's repos."
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T15:10:10+00:00",
+   "url": "https://github.com/pallets/flask/pull/6077"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6077:comment:1",
+   "payload": {
+    "author": "nasifabdulrahman",
+    "author_is_bot": false,
+    "body": "Hi Adrian,\r\n\r\nI'm the mentor who assigned this exercise to the interns, and I wanted to reach out personally.\r\n\r\nFirst, I'm sorry for the unnecessary PRs that ended up in the Flask repository. Our intention was to teach them the Git workflow\u2014forking, branching, committing, and creating pull requests\u2014not to create extra work for your team.\r\n\r\nI had instructed them to work on their own forks, but it appears there was a misunderstanding and some PRs were opened against the upstream repository instead. I've already asked them to close those PRs and will make sure future assignments use a company-owned repository or explicitly keep all PRs within internal forks.\r\n\r\nThank you for pointing this out. I appreciate the work you and the Flask maintainers put into the project, and I apologize for the inconvenience caused.\r\n\r\nBest,\r\nNasif\r\nOmega Solutions"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T00:13:43+00:00",
+   "url": "https://github.com/pallets/flask/pull/6077"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6076:opened",
+   "payload": {
+    "additions": 48,
+    "author": "gasalabi",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     "examples/tutorial/Dockerfile",
+     "examples/tutorial/README.md",
+     "examples/tutorial/deploy.sh",
+     "examples/tutorial/screenshots/container-logs.png",
+     "examples/tutorial/screenshots/container-running.png",
+     "examples/tutorial/screenshots/register-page.png"
+    ],
+    "title": "Containerize and deploy Flask tutorial app with Docker"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T11:13:36+00:00",
+   "url": "https://github.com/pallets/flask/pull/6076"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6076:closed",
+   "payload": {
+    "author": "gasalabi",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T11:15:52+00:00",
+   "url": "https://github.com/pallets/flask/pull/6076"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6076:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "> as part of the Omega Solutions DevOps internship assignment\r\n\r\nI have no idea who or what Omega Solutions is, but you need to tell your supervisor/lecturer/whatever that it is NOT acceptable to ask students/interns to randomly open PRs to other people's projects when it should be quite obvious that these PRs are not welcome in these projects.\r\n\r\nIf they want to teach students how to use GitHub that's fine, but then THEY should provide a repo to fork and make a contribution to.\r\n\r\nWe have received 5 of these PRs today, two from you (who seems to have realized they should not have been opened here since you closed them), and three from assuming someone else doing the same assignment."
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T11:40:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/6076"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6075:opened",
+   "payload": {
+    "additions": 48,
+    "author": "gasalabi",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     "examples/tutorial/Dockerfile",
+     "examples/tutorial/README.md",
+     "examples/tutorial/deploy.sh",
+     "examples/tutorial/screenshots/container-logs.png",
+     "examples/tutorial/screenshots/container-running.png",
+     "examples/tutorial/screenshots/register-page.png"
+    ],
+    "title": "Containerize and deploy Flask tutorial app with Docker"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T11:06:03+00:00",
+   "url": "https://github.com/pallets/flask/pull/6075"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6075:closed",
+   "payload": {
+    "author": "gasalabi",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T11:07:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/6075"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6074:opened",
+   "payload": {
+    "additions": 166,
+    "author": "sunis2005",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 4,
+    "files": [
+     "examples/tutorial/Dockerfile",
+     "examples/tutorial/README.md",
+     "examples/tutorial/deploy.sh",
+     "examples/tutorial/requirements.txt",
+     "examples/tutorial/screenshots/deploy-script.png.png",
+     "examples/tutorial/screenshots/docker-ps.png.png",
+     "examples/tutorial/screenshots/flask-app.png.png",
+     "tests/test_blueprints.py",
+     "tests/test_views.py"
+    ],
+    "title": "Dockerize Flask tutorial application"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T10:19:13+00:00",
+   "url": "https://github.com/pallets/flask/pull/6074"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6074:closed",
+   "payload": {
+    "author": "sunis2005",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T10:23:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6074"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6073:opened",
+   "payload": {
+    "additions": 166,
+    "author": "sunis2005",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 4,
+    "files": [
+     "examples/tutorial/Dockerfile",
+     "examples/tutorial/README.md",
+     "examples/tutorial/deploy.sh",
+     "examples/tutorial/requirements.txt",
+     "tests/test_blueprints.py",
+     "tests/test_views.py"
+    ],
+    "title": "Dockerize Flask tutorial application"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T07:56:41+00:00",
+   "url": "https://github.com/pallets/flask/pull/6073"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6073:closed",
+   "payload": {
+    "author": "sunis2005",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T07:58:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/6073"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6073:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "No thanks. I closed your previous PR, why did you open a new one?"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T07:58:56+00:00",
+   "url": "https://github.com/pallets/flask/pull/6073"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6072:opened",
+   "payload": {
+    "additions": 16,
+    "author": "hrnciar",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "tests/conftest.py",
+     "tests/test_cli.py"
+    ],
+    "title": "Fix pytest >= 9.1 compatibility"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T07:39:47+00:00",
+   "url": "https://github.com/pallets/flask/pull/6072"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6072:closed",
+   "payload": {
+    "author": "hrnciar",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T12:44:00+00:00",
+   "url": "https://github.com/pallets/flask/pull/6072"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6070:opened",
+   "payload": {
+    "additions": 161,
+    "author": "sunis2005",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "examples/tutorial/Dockerfile",
+     "examples/tutorial/README.md",
+     "examples/tutorial/deploy.sh",
+     "examples/tutorial/requirements.txt"
+    ],
+    "title": "Dockerize Flask tutorial application"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T06:56:14+00:00",
+   "url": "https://github.com/pallets/flask/pull/6070"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6070:closed",
+   "payload": {
+    "author": "sunis2005",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T06:58:04+00:00",
+   "url": "https://github.com/pallets/flask/pull/6070"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6069:opened",
+   "payload": {
+    "additions": 17,
+    "author": "arib06",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/app.py"
+    ],
+    "title": "ignore jinja suffix when selecting autoescape"
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T05:23:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/6069"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6069:closed",
+   "payload": {
+    "author": "arib06",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T11:15:42+00:00",
+   "url": "https://github.com/pallets/flask/pull/6069"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6069:comment:0",
+   "payload": {
+    "author": "arib06",
+    "author_is_bot": false,
+    "body": "Was this closed on purpose? The extension check still misses templates using the standard Jinja suffix (page.html.jinja, icon.svg.j2, data.xml.jinja2), so those render with autoescaping off while the equivalent .html/.svg name gets escaped. Seemed like a natural follow-up to the case-insensitive change in #6012. Happy to rework it if the concern is the approach rather than the fix itself."
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T12:04:24+00:00",
+   "url": "https://github.com/pallets/flask/pull/6069"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6067:opened",
+   "payload": {
+    "additions": 11,
+    "author": "azhvanko",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/flask/app.py"
+    ],
+    "title": "Add is_json_response hook for custom JSON response types"
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T10:29:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/6067"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6067:closed",
+   "payload": {
+    "author": "azhvanko",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T14:13:37+00:00",
+   "url": "https://github.com/pallets/flask/pull/6067"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6067:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "You can override make_response already, or return json.response directly. "
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T14:13:32+00:00",
+   "url": "https://github.com/pallets/flask/pull/6067"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6066:opened",
+   "payload": {
+    "additions": 42,
+    "author": "aliunsal",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/scaffold.py",
+     "src/flask/views.py",
+     "tests/test_basic.py",
+     "tests/test_views.py"
+    ],
+    "title": "Add query() route shortcut and MethodView support for HTTP QUERY"
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T06:41:20+00:00",
+   "url": "https://github.com/pallets/flask/pull/6066"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6066:closed",
+   "payload": {
+    "author": "aliunsal",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T15:33:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6066"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6066:review:0",
+   "payload": {
+    "author": "DTiming24",
+    "author_is_bot": false,
+    "body": "The API symmetry makes sense. One compatibility edge I'd keep in mind is making sure QUERY stays just another method string at the Flask/Werkzeug boundary so existing routing and method lists don't need any special casing beyond Scaffold.query() and MethodView dispatch. Otherwise this looks nicely scoped.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T18:25:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/6066"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6066:review:1",
+   "payload": {
+    "author": "FarmerChillax",
+    "author_is_bot": false,
+    "body": "LGTM",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T02:30:27+00:00",
+   "url": "https://github.com/pallets/flask/pull/6066"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6066:review:2",
+   "payload": {
+    "author": "Samielakkad",
+    "author_is_bot": false,
+    "body": "Retracted.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:27:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/6066"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6066:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "This isn't a standard yet, it's only a proposed standard. That said, I've been following this for years and already have a branch with it.\r\n\r\nPlease review https://palletsprojects.com/contributing/llm-ai as well."
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T15:33:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6066"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6064:opened",
+   "payload": {
+    "additions": 42,
+    "author": "aliunsal",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 1,
+    "files": [
+     "CHANGES.rst",
+     "src/flask/sansio/scaffold.py",
+     "src/flask/views.py",
+     "tests/test_basic.py",
+     "tests/test_views.py"
+    ],
+    "title": "Add query() route shortcut and MethodView support for HTTP QUERY"
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T21:12:53+00:00",
+   "url": "https://github.com/pallets/flask/pull/6064"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6064:closed",
+   "payload": {
+    "author": "aliunsal",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T06:41:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6064"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6064:comment:0",
+   "payload": {
+    "author": "aliunsal",
+    "author_is_bot": false,
+    "body": "Superseded by #6066, which opens the same change from a topic branch (`feat/http-query-method`) instead of `main`."
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T06:41:38+00:00",
+   "url": "https://github.com/pallets/flask/pull/6064"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6062:opened",
+   "payload": {
+    "additions": 14,
+    "author": "AdviSriv",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tests/test_request_id.py"
+    ],
+    "title": "Add request id response header"
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T09:13:29+00:00",
+   "url": "https://github.com/pallets/flask/pull/6062"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6062:closed",
+   "payload": {
+    "author": "AdviSriv",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T09:14:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/6062"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6062:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "You can do that in your own code, this does not belong in the flask core.\r\n\r\n(also, general advice, don't open incomplete PRs)"
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T09:14:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/6062"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6061:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Rfannn",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/quickstart.rst"
+    ],
+    "title": "docs: Fix grammar and capitalization in quickstart.rst"
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T09:40:33+00:00",
+   "url": "https://github.com/pallets/flask/pull/6061"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6061:closed",
+   "payload": {
+    "author": "Rfannn",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T12:01:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/6061"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6060:opened",
+   "payload": {
+    "additions": 17,
+    "author": "JSap0914",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/flask/config.py",
+     "tests/test_config.py"
+    ],
+    "title": "AI spam"
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T06:30:12+00:00",
+   "url": "https://github.com/pallets/flask/pull/6060"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6060:closed",
+   "payload": {
+    "author": "JSap0914",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T12:45:34+00:00",
+   "url": "https://github.com/pallets/flask/pull/6060"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6060:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot was unable to review this pull request because the user who requested the review has reached their quota limit.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T06:30:19+00:00",
+   "url": "https://github.com/pallets/flask/pull/6060"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6053:opened",
+   "payload": {
+    "additions": 8,
+    "author": "mulkymalikuldhrs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "AI spam"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T22:54:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/6053"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6053:closed",
+   "payload": {
+    "author": "mulkymalikuldhrs",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T23:43:11+00:00",
+   "url": "https://github.com/pallets/flask/pull/6053"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6046:opened",
+   "payload": {
+    "additions": 8,
+    "author": "fstanno",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "docs: adiciona marca\u00e7\u00e3o para futura melhoria"
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T18:02:17+00:00",
+   "url": "https://github.com/pallets/flask/pull/6046"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6046:closed",
+   "payload": {
+    "author": "fstanno",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T18:26:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/6046"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6046:comment:0",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "Please tell your professor that it is not appropriate to ask students to make this type of contribution (which is just noise in the end) to other people's open source projects.\r\n\r\nIf he wants to teach you how to use GitHub, then he should provide a repo to which to make a Pull Request."
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T18:26:25+00:00",
+   "url": "https://github.com/pallets/flask/pull/6046"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6045:opened",
+   "payload": {
+    "additions": 3,
+    "author": "riyatyagi123",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "docs/errorhandling.rst"
+    ],
+    "title": "docs: fix request args examples in errorhandling"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T17:05:15+00:00",
+   "url": "https://github.com/pallets/flask/pull/6045"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6045:closed",
+   "payload": {
+    "author": "riyatyagi123",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T17:38:48+00:00",
+   "url": "https://github.com/pallets/flask/pull/6045"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6043:opened",
+   "payload": {
+    "additions": 4,
+    "author": "OmerHaider82",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "docs/errorhandling.rst",
+     "docs/views.rst"
+    ],
+    "title": "docs: fix typos in errorhandling.rst and views.rst"
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T02:48:22+00:00",
+   "url": "https://github.com/pallets/flask/pull/6043"
+  },
+  {
+   "evidence_id": "pr:pallets/flask#6043:closed",
+   "payload": {
+    "author": "OmerHaider82",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T17:52:09+00:00",
+   "url": "https://github.com/pallets/flask/pull/6043"
+  }
+ ],
+ "repo": "pallets/flask",
+ "window": "post_t"
+}
