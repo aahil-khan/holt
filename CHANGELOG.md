@@ -267,3 +267,53 @@ ordering is exactly when a reader should be most suspicious.
 - The name-only probe reaches 0.50 precision@10 knowing nothing but repository
   names. Some of every method's performance is recognition rather than reading,
   and that figure is the honest measure of it.
+
+---
+
+## Final — the complete sweep (2026-08-29)
+
+**What changed.** Iteration 3's table was computed over 17 repositories, because
+an OpenAI spend limit stopped the sweep at 22 of 27. With the limit raised and
+the run resumed, all 22 gradable repositories are scored. The earlier partial
+was not wrong, it was underpowered, and it pointed the wrong way.
+
+**Result over the full graded pool (22 repositories, 14 genuine opportunities):**
+
+| Method | Precision | Recall | F1 | Opportunities found |
+|---|---|---|---|---|
+| baseline solution | 0.77 | 0.71 | 0.74 | 10 / 14 |
+| **holt** | 0.76 | **0.93** | **0.84** | **13 / 14** |
+| popularity (stars) | — | — | — | — |
+| name-only probe | 0.71 | 0.36 | 0.48 | 5 / 14 |
+
+**Precision is a tie; recall is not.** At the same precision Holt surfaces
+thirteen of fourteen genuine opportunities where the baseline surfaces ten. The
+four the baseline misses are `DefiLlama/dimension-adapters`, `stablyai/orca`,
+`tscircuit/kicad-to-circuit-json` and `volcengine/OpenViking` — projects whose
+README does not advertise how workable they are. Holt misses one,
+`Homebrew/homebrew-cask`, which it calls a registry; casks are Ruby files, and
+whether writing one is a software contribution is a genuine judgement call the
+label and the agent answer differently.
+
+**And it still rejects the traps.** Among repositories with at least a hundred
+inbound outsider attempts and zero qualifying contributions, Holt rejects four of
+five and the baseline none of five, while the baseline recommends
+`is-a-dev/register` and `SecureBananaLabs/bug-bounty` outright.
+
+**Primary metric changed, and why.** Precision@10 reads 0.70 for Holt, the
+baseline *and* popularity. With 14 positives among 22 repositories, a random
+top-ten scores about 0.64: the metric is saturated and cannot separate anything.
+It was chosen when the pool was expected to be larger and more lopsided. F1 over
+the graded pool is reported as primary instead, with precision@10 retained so the
+saturation is visible rather than quietly dropped.
+
+**The probe result is the one to keep in view.** Knowing nothing but repository
+names, it reaches 0.71 precision — recognising famous projects gets you most of
+the way to being right about which are worth contributing to. Its recall is 0.36,
+so recognition alone finds barely a third of the opportunities. That gap is a
+fair statement of how much of any method's score here is reading rather than
+remembering.
+
+**Known limitations.** 22 of 30 graded: 3 repositories were deleted between the
+cutoff and the run, and 5 had no post-cutoff outsider attempts to grade against.
+Single run; variance across repeated runs is not measured.
