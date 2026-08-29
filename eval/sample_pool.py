@@ -53,11 +53,12 @@ def load_universe() -> dict[str, dict]:
     }
 
 
-def stratify(universe: dict[str, dict]) -> dict[str, list[str]]:
-    strata: dict[str, list[str]] = {label: [] for label, *_ in BANDS}
+def stratify(universe: dict[str, dict], bands=None) -> dict[str, list[str]]:
+    bands = bands or BANDS
+    strata: dict[str, list[str]] = {label: [] for label, *_ in bands}
     for name, stats in universe.items():
         n = stats["prs_opened"]
-        for label, low, high, _ in BANDS:
+        for label, low, high, _ in bands:
             if low <= n < high:
                 strata[label].append(name)
                 break
@@ -65,11 +66,12 @@ def stratify(universe: dict[str, dict]) -> dict[str, list[str]]:
     return {label: sorted(names) for label, names in strata.items()}
 
 
-def draw(strata: dict[str, list[str]]) -> tuple[list[str], list[str]]:
-    rng = random.Random(SEED)
+def draw(strata, bands=None, seed: int = SEED) -> tuple[list[str], list[str]]:
+    bands = bands or BANDS
+    rng = random.Random(seed)
     pool: list[str] = []
     shortfalls: list[str] = []
-    for label, _, _, want in BANDS:
+    for label, _, _, want in bands:
         available = strata[label]
         take = min(want, len(available))
         if take < want:
@@ -80,15 +82,35 @@ def draw(strata: dict[str, list[str]]) -> tuple[list[str], list[str]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--write", action="store_true", help="commit the pool to eval/pool.json")
+    parser.add_argument("--write", action="store_true", help="commit the pool")
+    parser.add_argument("--seed", type=int, default=SEED)
+    parser.add_argument("--out", default=str(OUT))
+    parser.add_argument(
+        "--exclude",
+        default="",
+        help="path to an existing pool whose repositories must not be drawn again",
+    )
+    parser.add_argument(
+        "--bands",
+        default="",
+        help="override draw sizes, e.g. 15,16,12,2 -- the upper bands run out",
+    )
     args = parser.parse_args()
 
+    bands = BANDS
+    if args.bands:
+        sizes = [int(x) for x in args.bands.split(",")]
+        bands = [(lbl, lo, hi, n) for (lbl, lo, hi, _), n in zip(BANDS, sizes)]
+
     universe = load_universe()
-    strata = stratify(universe)
-    pool, shortfalls = draw(strata)
+    if args.exclude:
+        taken = set(json.loads(Path(args.exclude).read_text())["repos"])
+        universe = {k: v for k, v in universe.items() if k not in taken}
+    strata = stratify(universe, bands)
+    pool, shortfalls = draw(strata, bands, args.seed)
 
     print(f"universe: {len(universe)} repos (>= {MIN_OPENERS} distinct human openers)")
-    for label, _, _, want in BANDS:
+    for label, _, _, want in bands:
         print(f"  {label:16s} available {len(strata[label]):5d}   drawing {want}")
     for note in shortfalls:
         print(f"  SHORTFALL  {note}")
@@ -104,17 +126,19 @@ def main() -> None:
         raise SystemExit("refusing to write a pool with unfilled strata; widen the frame first")
 
     body = {
-        "seed": SEED,
+        "seed": args.seed,
         "min_distinct_openers": MIN_OPENERS,
-        "bands": [[label, low, high, want] for label, low, high, want in BANDS],
+        "bands": [[label, low, high, want] for label, low, high, want in bands],
+        "excluded_pool": args.exclude or None,
         "source_frame_files": json.loads(FRAME.read_text())["source_files"],
         "repos": pool,
     }
     digest = hashlib.sha256(
         json.dumps(body, sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
-    OUT.write_text(json.dumps({**body, "sha256": digest}, indent=1, sort_keys=True) + "\n")
-    print(f"\nwrote {OUT}  sha256={digest[:16]}")
+    out = Path(args.out)
+    out.write_text(json.dumps({**body, "sha256": digest}, indent=1, sort_keys=True) + "\n")
+    print(f"\nwrote {out}  sha256={digest[:16]}")
     print("This pool is now fixed. Do not edit it after seeing results.")
 
 
