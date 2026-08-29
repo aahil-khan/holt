@@ -1,0 +1,157 @@
+{
+ "captured_at": "2026-08-29T14:51:18.310446+00:00",
+ "content_sha256": "2400a764904d9b0c0650a9652ad15a3a83e5c3da35251570a021a8d096f6575e",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:opened",
+   "payload": {
+    "additions": 485,
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 104,
+    "files": [
+     "README.md",
+     "bin/cmd",
+     "bin/cmd-context",
+     "bin/cmd-new",
+     "bin/cmd-question",
+     "bin/cmd-record",
+     "bin/cmd-trash-auto-off",
+     "bin/cmd-trash-auto-on",
+     "bin/cmd-trash-auto-status",
+     "bin/cmdx",
+     "install.sh",
+     "lib/copilot-cmd-context.sh",
+     "lib/copilot-cmd-platform.sh",
+     "uninstall.sh"
+    ],
+    "title": "Add cmd-git assistant and enhance cross-platform compatibility"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:08:38+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:merged",
+   "payload": {
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:15:58+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:0",
+   "payload": {
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:10:07+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:1",
+   "payload": {
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:10:44+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:2",
+   "payload": {
+    "author": "copilot-swe-agent",
+    "author_is_bot": true,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:11:21+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:3",
+   "payload": {
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:11:46+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:4",
+   "payload": {
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "body": "@copilot fix!",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:12:26+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:5",
+   "payload": {
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:14:25+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:6",
+   "payload": {
+    "author": "Silver-Zhang",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:14:41+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:review:7",
+   "payload": {
+    "author": "copilot-swe-agent",
+    "author_is_bot": true,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:15:28+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  },
+  {
+   "evidence_id": "pr:Silver-Zhang/linux-cmd-helper#17:comment:0",
+   "payload": {
+    "author": "copilot-swe-agent",
+    "author_is_bot": true,
+    "body": "\n> @copilot fix!\n\n\u8bf7\u95ee\u9700\u8981 fix \u54ea\u91cc\uff1f\u80fd\u5426\u8bf4\u660e\u5177\u4f53\u662f\u54ea\u4e2a\u6587\u4ef6\u3001\u54ea\u4e2a\u884c\u4e3a\u6216\u54ea\u4e2a\u95ee\u9898\u9700\u8981\u4fee\u590d\uff1f\u4f8b\u5982\uff1a\n- \u67d0\u4e2a\u811a\u672c\u7684\u903b\u8f91\u95ee\u9898\n- `copilot-cmd-platform.sh` \u76f8\u5173\u7684\u6539\u52a8\u9700\u8981\u64a4\u56de\n- \u5176\u4ed6\u5177\u4f53\u529f\u80fd\u95ee\u9898\n\n\u6709\u4e86\u660e\u786e\u63cf\u8ff0\u540e\u6211\u53ef\u4ee5\u7acb\u5373\u5904\u7406\u3002"
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:13:27+00:00",
+   "url": "https://github.com/Silver-Zhang/linux-cmd-helper/pull/17"
+  }
+ ],
+ "repo": "Silver-Zhang/linux-cmd-helper",
+ "window": "post_t"
+}

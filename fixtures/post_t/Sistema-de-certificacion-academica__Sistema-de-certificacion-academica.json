@@ -1,0 +1,567 @@
+{
+ "captured_at": "2026-08-29T14:51:26.438895+00:00",
+ "content_sha256": "784a211fd9073437c195709cb95ad4209d6f8aa78dc39b95613cf250eef47f43",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#96:opened",
+   "payload": {
+    "additions": 23,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py"
+    ],
+    "title": "merge testing: correccion test verificaciones"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T05:15:29+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/96"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#96:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T05:15:40+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/96"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#95:opened",
+   "payload": {
+    "additions": 23,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py"
+    ],
+    "title": "merge staging: correccion test verificaciones"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T05:12:41+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/95"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#95:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T05:13:17+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/95"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#94:opened",
+   "payload": {
+    "additions": 23,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py"
+    ],
+    "title": "fix: correccion test verificaciones"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T05:03:55+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/94"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#94:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T05:04:56+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/94"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#93:opened",
+   "payload": {
+    "additions": 34,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 21,
+    "files": [
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py"
+    ],
+    "title": "merge testing: correccion test certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:07:11+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/93"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#93:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:07:18+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/93"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#92:opened",
+   "payload": {
+    "additions": 34,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 21,
+    "files": [
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py"
+    ],
+    "title": "merge staging: correccion test certificados "
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:06:35+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/92"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#92:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:06:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/92"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#91:opened",
+   "payload": {
+    "additions": 34,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 21,
+    "files": [
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py"
+    ],
+    "title": "fix: correccion test certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:39:08+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/91"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#91:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:39:24+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/91"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#90:opened",
+   "payload": {
+    "additions": 1,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "app/usuarios/domain/usuarios.py"
+    ],
+    "title": "merge testing: correcciones test usuarios"
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:36:03+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/90"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#90:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:36:27+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/90"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#89:opened",
+   "payload": {
+    "additions": 1,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "app/usuarios/domain/usuarios.py"
+    ],
+    "title": "merge staging: correcciones test usuarios"
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:35:12+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/89"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#89:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:35:28+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/89"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#88:opened",
+   "payload": {
+    "additions": 1,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "app/usuarios/domain/usuarios.py"
+    ],
+    "title": "fix: correccion test usuarios"
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:31:18+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/88"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#88:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:32:07+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/88"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#87:opened",
+   "payload": {
+    "additions": 164,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 163,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py",
+     "app/verificaciones/domain/verificaciones.py",
+     "app/verificaciones/repository/verificaciones_repo.py",
+     "app/verificaciones/services/verificaciones_service.py"
+    ],
+    "title": "merge testing: correcciones modulo verificaciones "
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:22:19+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/87"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#87:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:22:26+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/87"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#86:opened",
+   "payload": {
+    "additions": 164,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 163,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py",
+     "app/verificaciones/domain/verificaciones.py",
+     "app/verificaciones/repository/verificaciones_repo.py",
+     "app/verificaciones/services/verificaciones_service.py"
+    ],
+    "title": "merge staging: correcciones modulo verificaciones"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:21:38+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/86"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#86:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:21:46+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/86"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#85:opened",
+   "payload": {
+    "additions": 164,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 163,
+    "files": [
+     "app/verificaciones/api/verificaciones_router.py",
+     "app/verificaciones/domain/verificaciones.py",
+     "app/verificaciones/repository/verificaciones_repo.py",
+     "app/verificaciones/services/verificaciones_service.py"
+    ],
+    "title": "fix: correcciones modulo verificaciones"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:20:47+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/85"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#85:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:20:58+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/85"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#84:opened",
+   "payload": {
+    "additions": 186,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 172,
+    "files": [
+     "app/certificados/services/certificados_service.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py"
+    ],
+    "title": "merge testing: correcciones modulo repositorio"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:16:48+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/84"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#84:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:16:55+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/84"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#83:opened",
+   "payload": {
+    "additions": 186,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 172,
+    "files": [
+     "app/certificados/services/certificados_service.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py"
+    ],
+    "title": "merge staging: correcciones modulo repositorio"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:16:09+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/83"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#83:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:16:16+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/83"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#82:opened",
+   "payload": {
+    "additions": 186,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 172,
+    "files": [
+     "app/certificados/services/certificados_service.py",
+     "app/repositorio/api/repositorio_router.py",
+     "app/repositorio/domain/repositorio.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/repositorio/services/repositorio_service.py"
+    ],
+    "title": "fix: correcciones modulo respositorio"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:14:22+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/82"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#82:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:14:50+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/82"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#81:opened",
+   "payload": {
+    "additions": 196,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 204,
+    "files": [
+     "app/certificados/api/certificados_router.py",
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py",
+     "app/repositorio/__init__.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/usuarios/domain/usuarios.py",
+     "app/usuarios/repository/usuario_repo.py"
+    ],
+    "title": "merge testing: correcciones modulo certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:49:38+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/81"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#81:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:49:49+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/81"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#80:opened",
+   "payload": {
+    "additions": 196,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 204,
+    "files": [
+     "app/certificados/api/certificados_router.py",
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py",
+     "app/repositorio/__init__.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/usuarios/domain/usuarios.py",
+     "app/usuarios/repository/usuario_repo.py"
+    ],
+    "title": "merge staging: correccion modulo certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:48:52+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/80"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#80:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:49:01+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/80"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#79:opened",
+   "payload": {
+    "additions": 62,
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 100,
+    "files": [
+     "app/certificados/api/certificados_router.py",
+     "app/certificados/domain/certificados.py",
+     "app/certificados/repository/certificados_repo.py",
+     "app/certificados/services/certificados_service.py",
+     "app/repositorio/__init__.py",
+     "app/repositorio/repository/repositorio_repo.py",
+     "app/solicitudes/api/solicitudes_router.py",
+     "app/solicitudes/domain/solicitudes.py",
+     "app/usuarios/domain/usuarios.py",
+     "app/usuarios/repository/usuario_repo.py"
+    ],
+    "title": "fix: correccion integracion modulo repositorio con certificados"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:47:18+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/79"
+  },
+  {
+   "evidence_id": "pr:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#79:merged",
+   "payload": {
+    "author": "eriiick11",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:47:28+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/pull/79"
+  }
+ ],
+ "repo": "Sistema-de-certificacion-academica/Sistema-de-certificacion-academica",
+ "window": "post_t"
+}

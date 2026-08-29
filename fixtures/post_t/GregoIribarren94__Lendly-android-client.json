@@ -1,0 +1,603 @@
+{
+ "captured_at": "2026-08-29T14:45:16.726265+00:00",
+ "content_sha256": "b57271fccc1f8ad51db3212bc4105bfc7e6c7f7c5e21cb9cace76e530756897b",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#38:opened",
+   "payload": {
+    "additions": 92,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 285,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/ShopScreen.kt"
+    ],
+    "title": "fix(KAN-70): restaurar ShopScreen basada en componentes"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T22:51:11+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/38"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#37:opened",
+   "payload": {
+    "additions": 2195,
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "changed_files": 53,
+    "deletions": 229,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/LendlyAppRoot.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/buttons/AuthBottomBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/buttons/FixedBottomBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/feedback/SuccessfulTransaction.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/navigation/AppTopBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/navigation/AuthTopBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/navigation/BottomNavBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/navigation/MainTopBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/LendlyNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/Routes.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/home/HomeScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/ActiveLoanScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/LoanFormScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/LoanInfoScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/LoanScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/OnlineCashInFormScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/OtcCashInFormScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/SuccessTxScreen.kt"
+    ],
+    "title": "kan 58"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:38:05+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/37"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#37:merged",
+   "payload": {
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:39:28+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/37"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#36:opened",
+   "payload": {
+    "additions": 25,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 18,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/components/navigation/BottomNavBar.kt"
+    ],
+    "title": "fix: KAN-26 navbar con fondo blanco y divisor superior"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:25:32+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/36"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#36:merged",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:33:02+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/36"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#35:opened",
+   "payload": {
+    "additions": 683,
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 5,
+    "files": [
+     ".kotlin/sessions/kotlin-compiler-16100176050233665595.salive",
+     "app/src/main/java/com/lendly/fintech/data/api/UserApi.kt",
+     "app/src/main/java/com/lendly/fintech/data/model/UpdateUserRequest.kt",
+     "app/src/main/java/com/lendly/fintech/data/repository/UserRepository.kt",
+     "app/src/main/java/com/lendly/fintech/data/repository/UserRepositoryImpl.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/inputs/AppTextField.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/Routes.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/auth/DoneScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/DonePageScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/EditProfileScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/EditProfileViewModel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ManageScreen.kt",
+     "app/src/main/res/drawable/ic_close.xml",
+     "app/src/main/res/drawable/illu_check_mark.webp",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "finished edit and done screen"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:13:23+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/35"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#35:merged",
+   "payload": {
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:13:33+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/35"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#34:opened",
+   "payload": {
+    "additions": 1138,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 20,
+    "deletions": 285,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/ShopScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/BrandsRow.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/CategoriesRow.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/GridProductCard.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/HeroBanner.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/ProductEmoji.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/ProductInstallmentText.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/ProductsRow.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/RowProductCard.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/SearchBarRow.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/SectionHeader.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/components/ShopTopBar.kt",
+     "app/src/main/res/drawable-nodpi/ic_laptop_surface.png",
+     "app/src/main/res/drawable-nodpi/ic_logo_jordan.png",
+     "app/src/main/res/drawable-nodpi/ic_shirt.png",
+     "app/src/main/res/drawable-nodpi/img_brand_apple.png",
+     "app/src/main/res/drawable-nodpi/img_brand_jordan.png",
+     "app/src/main/res/drawable/img_brand_adidas.png",
+     "app/src/main/res/drawable/img_shop_shoes.png",
+     "design/Shop page.svg"
+    ],
+    "title": "Style/kan 70 pantalla shop"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T20:04:21+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/34"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#34:merged",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T20:04:31+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/34"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#33:opened",
+   "payload": {
+    "additions": 90,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 152,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/components/navigation/MainTopBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/history/HistoryScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/home/HomeScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/LoanInfoScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanInfoTopBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ManageScreen.kt"
+    ],
+    "title": "Refactor/main topbar component"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T15:48:24+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/33"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#33:merged",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T15:48:37+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/33"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#32:opened",
+   "payload": {
+    "additions": 217,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 3,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/home/HomeScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/home/components/AvailableBalanceLabel.kt",
+     "app/src/main/res/drawable/ic_headphones.png",
+     "app/src/main/res/drawable/ic_iphone_12_pro.png",
+     "app/src/main/res/drawable/ic_nike_shoe.png",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "Style/kan 65 pantalla home"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T12:42:37+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/32"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#32:merged",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:00:12+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/32"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#32:comment:0",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "body": "Se arregl\u00f3 la pantalla Home, incorpor\u00e9 iconos de porductos que faltaban y descripciones de los mismos. Se sum\u00f3 alineamiento de textos y veficiaci\u00f3n de colores"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:00:11+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/32"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#31:opened",
+   "payload": {
+    "additions": 58,
+    "author": "GregoIribarren94",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 85,
+    "files": [
+     ".kotlin/errors/errors-1780445133560.log",
+     ".kotlin/sessions/kotlin-compiler-16100176050233665595.salive",
+     "app/src/main/java/com/lendly/fintech/ui/screens/home/HomeScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/ActiveLoanScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/CreditScoreScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ProfileDetailScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ProfileScreen.kt"
+    ],
+    "title": "ordenamiento de carpetas y archivos"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:01:25+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/31"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#31:merged",
+   "payload": {
+    "author": "GregoIribarren94",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:08:55+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/31"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#30:opened",
+   "payload": {
+    "additions": 952,
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 44,
+    "files": [
+     "app/build.gradle.kts",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ManageScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ManageViewModel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ProfileDetailScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/ProfileScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/manage/components/ManageMenuItem.kt",
+     "app/src/main/res/drawable/ic_add_a_photo.xml",
+     "app/src/main/res/drawable/ic_description.xml",
+     "app/src/main/res/drawable/ic_event.xml",
+     "app/src/main/res/drawable/ic_manage_accounts.xml",
+     "app/src/main/res/drawable/ic_markunread_mailbox.xml",
+     "app/src/main/res/drawable/ic_move_item.xml",
+     "app/src/main/res/drawable/ic_question_mark.xml",
+     "app/src/main/res/drawable/ic_readiness_score.xml",
+     "app/src/main/res/drawable/ic_settings.xml",
+     "gradle.properties"
+    ],
+    "title": "Kan 58 pantalla profile manage logout"
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T00:58:25+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/30"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#30:merged",
+   "payload": {
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T00:58:33+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/30"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#29:opened",
+   "payload": {
+    "additions": 290,
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 0,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/data/auth/FirebaseAuthManager.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/LendlyDatabase.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/Mappers.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/dao/LoanDao.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/dao/TransactionDao.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/dao/UserDao.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/entities/LoanEntity.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/entities/TransactionEntity.kt",
+     "app/src/main/java/com/lendly/fintech/data/local/db/entities/UserEntity.kt",
+     "app/src/main/java/com/lendly/fintech/di/DatabaseModule.kt"
+    ],
+    "title": "fix(data): agregar capa de datos local (Room) y FirebaseAuthManager"
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T20:53:28+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/29"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#29:closed",
+   "payload": {
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T21:22:19+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/29"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#28:opened",
+   "payload": {
+    "additions": 824,
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 7,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/LoanFormScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/LoanFormViewModel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/InstallmentPlanSelector.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanAmountField.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanFormTopBar.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanPurposeDropdown.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanSummaryCard.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/StepHeader.kt",
+     "app/src/main/res/drawable/ic_keyboard_arrow_down.xml",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "KAN-50 \u00b7 Loan Form Screen"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:25:44+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/28"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#28:merged",
+   "payload": {
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:28:30+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/28"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#27:opened",
+   "payload": {
+    "additions": 34,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 31,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/components/feedback/SuccessfulTransaction.kt",
+     "app/src/main/java/com/lendly/fintech/ui/theme/Color.kt"
+    ],
+    "title": "Refactor/successful transaction color tokens"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:38:05+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/27"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#27:merged",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:38:14+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/27"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#26:opened",
+   "payload": {
+    "additions": 548,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 268,
+    "files": [
+     ".gitignore",
+     "app/src/main/design/Online-Cash-in page.svg",
+     "app/src/main/design/Over-the-counter-Cash-in page.svg",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/history/TxDetailsScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/history/TxDetailsViewModel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/theme/Color.kt",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "Kan 57 transaction details"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:15:27+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/26"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#26:merged",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:15:39+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/26"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#25:opened",
+   "payload": {
+    "additions": 546,
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 112,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/data/api/TransactionsApi.kt",
+     "app/src/main/java/com/lendly/fintech/data/model/Transaction.kt",
+     "app/src/main/java/com/lendly/fintech/data/model/TransactionsResponse.kt",
+     "app/src/main/java/com/lendly/fintech/data/repository/TransactionRepositoryImpl.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/brand/LendlyLogoMark.kt",
+     "app/src/main/java/com/lendly/fintech/ui/components/feedback/EmptyState.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/history/HistoryScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/history/HistoryViewModel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/history/components/HistoryTransactionRow.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanInfoTopBar.kt",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "KAN-56: Pantalla History con GET de transacciones"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:21:09+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/25"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#25:merged",
+   "payload": {
+    "author": "martinc1292ORT",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:23:16+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/25"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#24:opened",
+   "payload": {
+    "additions": 715,
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 14,
+    "files": [
+     "app/src/main/java/com/lendly/fintech/ui/navigation/LendlyNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/Routes.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/LoanInfoScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/HeroCard.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/HowItWorksCard.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanDetailsCard.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/loan/components/LoanInfoTopBar.kt",
+     "app/src/main/res/drawable/ic_alarm.xml",
+     "app/src/main/res/drawable/img_undraw_confirmation_re_b6q5_1.xml",
+     "app/src/main/res/drawable/img_undraw_join_re_w1lh_1.xml",
+     "app/src/main/res/values/strings.xml"
+    ],
+    "title": "KAN-49 \u2014 Loan Info Screen"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:51:27+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/24"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#24:merged",
+   "payload": {
+    "author": "JoacoDarquier",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:34:39+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/24"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#23:opened",
+   "payload": {
+    "additions": 938,
+    "author": "GregoIribarren94",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 395,
+    "files": [
+     "app/src/main/AndroidManifest.xml",
+     "app/src/main/java/com/lendly/fintech/data/api/ProductsApi.kt",
+     "app/src/main/java/com/lendly/fintech/data/model/Product.kt",
+     "app/src/main/java/com/lendly/fintech/data/repository/ProductRepositoryImpl.kt",
+     "app/src/main/java/com/lendly/fintech/ui/navigation/MainNavHost.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/Filterscreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/Filterviewmodel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/ProductScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/Productdetailsviewmodel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/SearchScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/Searchviewmodel.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/ShopScreen.kt",
+     "app/src/main/java/com/lendly/fintech/ui/screens/shop/ShopViewModel.kt"
+    ],
+    "title": "funcionamiento de la pagina consumiendo una api"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T01:28:31+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/23"
+  },
+  {
+   "evidence_id": "pr:GregoIribarren94/Lendly-android-client#23:merged",
+   "payload": {
+    "author": "GregoIribarren94",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T01:30:04+00:00",
+   "url": "https://github.com/GregoIribarren94/Lendly-android-client/pull/23"
+  }
+ ],
+ "repo": "GregoIribarren94/Lendly-android-client",
+ "window": "post_t"
+}

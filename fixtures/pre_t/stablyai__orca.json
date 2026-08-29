@@ -1,0 +1,5975 @@
+{
+ "captured_at": "2026-08-29T15:01:23.483199+00:00",
+ "content_sha256": "a14e6dd0dfbf712e572b62ccf0b6a0c5a3860d22ea75ff468a52246883ff386e",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:stablyai/orca:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS.",
+    "homepage_url": "https://onOrca.dev",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "TypeScript",
+    "pushed_at": "2026-08-29T14:36:06Z",
+    "stargazer_count": 56610
+   },
+   "source": "github",
+   "timestamp": "2026-03-17T03:28:57+00:00",
+   "url": "https://github.com/stablyai/orca"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4331:opened",
+   "payload": {
+    "additions": 235,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 37,
+    "files": [
+     "src/main/index.ts",
+     "src/renderer/src/hooks/useIpcEvents.test.ts",
+     "src/renderer/src/hooks/useIpcEvents.ts",
+     "src/renderer/src/lib/agent-status-terminal-title.test.ts",
+     "src/renderer/src/lib/agent-status-terminal-title.ts",
+     "src/shared/synthetic-agent-title.ts"
+    ],
+    "title": "Fix Cursor CLI completion spinner status"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:44:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4331"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4331:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "Manual evidence from Electron + Cursor CLI:\n\n```json\n{\n  \"beforeFix\": {\n    \"prompt\": \"Reply exactly ORCA_CURSOR_DONE_4319 and then stop.\",\n    \"lastAssistantMessage\": \"ORCA_CURSOR_DONE_4319\",\n    \"state\": \"done\",\n    \"terminalTitle\": \"\u2839 Cursor Agent\"\n  },\n  \"afterFix\": {\n    \"prompt\": \"Reply exactly ORCA_CURSOR_DONE_4319_FIXED and then stop.\",\n    \"lastAssistantMessage\": \"ORCA_CURSOR_DONE_4319_FIXED\",\n    \"state\": \"done\",\n    \"tabTitle\": \"Cursor ready\",\n    \"paneTitle\": \"Cursor ready\",\n    \"terminalTitle\": \"Cursor ready\"\n  }\n}\n```"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:44:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4331"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4331:comment:1",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "Screenshot evidence from the Electron reproduction and verification runs.\n\n**Before fix** \u2014 Cursor printed the final answer, while Orca still showed the active Cursor task/loading-style status in the worktree row.\n\n**After fix** \u2014 Cursor printed the final answer and Orca shows the agents done/ready state.\n\n| Before fix | After fix |\n|---|---|\n| ![Before fix: Cursor CLI final output present while Orca still shows active Cursor task status](https://github.com/stablyai/orca/blob/ea4a2e7ffb2e3cb94e735830c7b27006f4fde211/orca4319-before-cursor-stuck-loading.png?raw=true) | ![After fix: Cursor CLI final output present and Orca shows agents done](https://github.com/stablyai/orca/blob/ea4a2e7ffb2e3cb94e735830c7b27006f4fde211/orca4319-after-cursor-ready.png?raw=true) |\n\nBacking state from the same after-fix Electron run: `state: \"done\"`, `tabTitle: \"Cursor ready\"`, `paneTitle: \"Cursor ready\"`, `terminalTitle: \"Cursor ready\"`.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:52:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4331"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4330:opened",
+   "payload": {
+    "additions": 258,
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "src/main/daemon/daemon-init.test.ts",
+     "src/main/daemon/daemon-init.ts",
+     "tests/e2e/daemon-live-session-preservation.spec.ts"
+    ],
+    "title": "Preserve live daemon PTYs across app updates"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:42:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4330"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4330:comment:0",
+   "payload": {
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "body": "E2E verification update:\n\n- Added `tests/e2e/daemon-live-session-preservation.spec.ts` to exercise the real Electron restart path with an isolated userData dir.\n- Reproduced the bug on `origin/main` by spoofing the daemon pid file `entryPath` after first launch, then relaunching against the same profile. The test failed as expected because the daemon PID changed (`Expected: 14455`, `Received: 16601`), proving the live daemon was replaced.\n- Ran the same E2E on this branch and it passed: daemon PID stayed stable and terminal content did not include `--- session restored ---`.\n\nValidation run on this branch:\n- `npx playwright test tests/e2e/daemon-live-session-preservation.spec.ts --config tests/playwright.config.ts --project=electron-headless`\n- `pnpm vitest run src/main/daemon/daemon-init.test.ts`\n- `pnpm exec oxlint tests/e2e/daemon-live-session-preservation.spec.ts`\n- `pnpm run typecheck:node`"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:59:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4330"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4329:opened",
+   "payload": {
+    "additions": 268,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 121,
+    "files": [
+     "src/renderer/src/store/slices/worktree-helpers.ts",
+     "src/renderer/src/store/slices/worktrees.test.ts",
+     "src/renderer/src/store/slices/worktrees.ts"
+    ],
+    "title": "Require branch confirmation before terminal PR auto-link"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:39:58+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4329"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4329:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:48:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4329"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4328:opened",
+   "payload": {
+    "additions": 142,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 10,
+    "files": [
+     "src/main/github/client.test.ts",
+     "src/main/github/client.ts",
+     "src/main/github/pr-refresh-coordinator.test.ts",
+     "src/main/github/pr-refresh-coordinator.ts",
+     "src/renderer/src/components/github-pr-merge-state.test.ts",
+     "src/renderer/src/components/github-pr-merge-state.ts"
+    ],
+    "title": "Fix transient PR mergeability after reopen"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:34:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4328"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4328:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:42:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4328"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4327:opened",
+   "payload": {
+    "additions": 553,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 154,
+    "files": [
+     "src/main/github/client-pr-check-details.test.ts",
+     "src/main/github/client.ts",
+     "src/renderer/src/components/pr-checks-fix-prompt.test.ts",
+     "src/renderer/src/components/pr-checks-fix-prompt.ts",
+     "src/renderer/src/components/right-sidebar/ChecksPanel.tsx",
+     "src/renderer/src/components/right-sidebar/checks-panel-content.test.tsx",
+     "src/renderer/src/components/right-sidebar/checks-panel-content.tsx",
+     "src/shared/types.ts"
+    ],
+    "title": "Improve checks panel failure details"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:09:36+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4327"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4327:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:17:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4327"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4326:opened",
+   "payload": {
+    "additions": 7,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "src/renderer/src/components/right-sidebar/GitHistoryPanel.tsx",
+     "src/renderer/src/components/right-sidebar/SourceControl.tsx"
+    ],
+    "title": "Rename git graph panel to commits"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:03:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4326"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4326:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:06:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4326"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4325:opened",
+   "payload": {
+    "additions": 495,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 12,
+    "files": [
+     "src/main/git/remove-worktree.test.ts",
+     "src/main/git/worktree.ts",
+     "src/relay/git-handler-branch-cleanup.test.ts",
+     "src/relay/git-handler-branch-cleanup.ts",
+     "src/relay/git-handler-worktree-ops.ts",
+     "src/shared/git-branch-cleanup.ts"
+    ],
+    "title": "Fix worktree branch cleanup after squash merge"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:55:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4325"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4325:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T23:03:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4325"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4324:opened",
+   "payload": {
+    "additions": 168,
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 3,
+    "files": [
+     "src/main/codex-accounts/runtime-home-service.ts",
+     "src/main/codex/config-toml-trust.ts",
+     "src/main/codex/hook-service.test.ts",
+     "src/main/codex/hook-service.ts"
+    ],
+    "title": "Trust Codex launch-home hooks"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:41:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4324"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4324:merged",
+   "payload": {
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:48:12+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4324"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4323:opened",
+   "payload": {
+    "additions": 306,
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "src/main/codex-accounts/runtime-home-service.test.ts",
+     "src/main/codex/codex-launch-home-paths.ts"
+    ],
+    "title": "Share Codex SQLite state across launch homes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:36:11+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4323"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4323:merged",
+   "payload": {
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:43:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4323"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4322:opened",
+   "payload": {
+    "additions": 63,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 14,
+    "files": [
+     "src/main/ipc/worktrees.test.ts",
+     "src/main/ipc/worktrees.ts",
+     "src/main/runtime/orca-runtime.test.ts",
+     "src/main/runtime/orca-runtime.ts"
+    ],
+    "title": "Fix stale worktree delete cleanup"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:25:23+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4322"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4322:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:33:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4322"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4321:opened",
+   "payload": {
+    "additions": 342,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 70,
+    "files": [
+     "src/renderer/src/components/sidebar/WorktreeList.tsx",
+     "src/renderer/src/components/sidebar/runtime-pane-title-leaf-id.ts",
+     "src/renderer/src/components/sidebar/smart-attention.ts",
+     "src/renderer/src/components/sidebar/use-worktree-activity-status.test.tsx",
+     "src/renderer/src/components/sidebar/use-worktree-activity-status.ts",
+     "src/renderer/src/components/sidebar/worktree-agent-activity-summary.ts",
+     "src/renderer/src/components/sidebar/worktree-section-activity.test.ts",
+     "src/renderer/src/components/sidebar/worktree-section-activity.ts",
+     "src/renderer/src/components/sidebar/worktree-title-derived-agent-rows.test.ts",
+     "src/renderer/src/components/sidebar/worktree-title-derived-agent-rows.ts",
+     "src/renderer/src/lib/worktree-status.test.ts",
+     "src/renderer/src/lib/worktree-status.ts"
+    ],
+    "title": "Fix stale terminal pane activity status"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:13:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4321"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4321:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:21:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4321"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4320:opened",
+   "payload": {
+    "additions": 14,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/components/floating-terminal/FloatingTerminalPanel.test.tsx",
+     "src/renderer/src/components/floating-terminal/FloatingTerminalPanel.tsx"
+    ],
+    "title": "Show notifications above floating terminal"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:04:59+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4320"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4320:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:05:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4320"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4320:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "Review pass: no in-scope issues found in the layer change. Verified with the focused FloatingTerminalPanel test and an Electron CDP visual check: opened the floating workspace, forced an Update Available notification, and confirmed document.elementFromPoint at the notification center resolves to the notification card rather than the floating terminal."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:05:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4320"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4318:opened",
+   "payload": {
+    "additions": 706,
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 162,
+    "files": [
+     "src/main/codex-accounts/runtime-home-service.test.ts",
+     "src/main/codex-accounts/runtime-home-service.ts",
+     "src/main/codex-accounts/service.ts",
+     "src/main/codex/codex-launch-home-paths.ts",
+     "src/main/ipc/pty.test.ts"
+    ],
+    "title": "Support WSL Codex launch homes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:18:24+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4318"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4318:merged",
+   "payload": {
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:29:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4318"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4317:opened",
+   "payload": {
+    "additions": 224,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 44,
+    "files": [
+     "src/renderer/src/hooks/useComposerState.ts",
+     "src/renderer/src/hooks/useIpcEvents.test.ts",
+     "src/renderer/src/hooks/useIpcEvents.ts",
+     "src/renderer/src/lib/linear-issue-context-snapshot.test.ts",
+     "src/renderer/src/lib/linear-linked-work-item.test.ts",
+     "src/renderer/src/lib/linear-linked-work-item.ts",
+     "src/renderer/src/lib/linked-work-item-context.test.ts",
+     "src/renderer/src/lib/linked-work-item-context.ts",
+     "src/renderer/src/lib/new-workspace.test.ts",
+     "src/renderer/src/lib/new-workspace.ts"
+    ],
+    "title": "fix: preserve Linear context for workspace creation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:15:49+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4317"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4317:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:25:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4317"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4316:opened",
+   "payload": {
+    "additions": 15,
+    "author": "hsmnzaydn",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "mobile/app.json",
+     "mobile/app/_layout.tsx"
+    ],
+    "title": "[Mobile] Add horizontal screen support"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:48:06+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4316"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4316:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nEnables multi-orientation (portrait + landscape) support for the mobile app, primarily on iOS.\n\n**Changes:**\n- Allows all orientations at the navigation stack level.\n- Updates iOS Info.plist settings to declare supported orientations for iPhone and iPad.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated no comments.\n\n| File | Description |\n| ---- | ----------- |\n| mobile/app/_layout.tsx | Sets the stack\u2019s `orientation` option to allow rotation. |\n| mobile/app.json | Declares iOS supported interface orientations for both iPhone and iPad. |\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/stablyai/orca/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:48:38+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4316"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4315:opened",
+   "payload": {
+    "additions": 317,
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "src/main/index.ts",
+     "src/main/startup/single-instance-lock.test.ts",
+     "src/main/startup/single-instance-lock.ts"
+    ],
+    "title": "Fix macOS startup false single-instance lock"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:36:58+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4315"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4314:opened",
+   "payload": {
+    "additions": 30,
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 430,
+    "files": [
+     "src/main/index.ts",
+     "src/main/ipc/pty.test.ts",
+     "src/main/ipc/pty.ts",
+     "src/main/ssh/ssh-relay-session-terminal-error.test.ts",
+     "src/main/ssh/ssh-relay-session.test.ts",
+     "src/main/ssh/ssh-relay-session.ts",
+     "src/preload/api-types.ts",
+     "src/preload/index.ts",
+     "src/renderer/src/components/terminal-pane/pty-connection.test.ts",
+     "src/renderer/src/components/terminal-pane/pty-connection.ts",
+     "src/renderer/src/components/terminal-pane/use-terminal-pane-lifecycle.ts",
+     "src/renderer/src/web/web-preload-api.ts"
+    ],
+    "title": "Revert pause hidden terminal renderer output"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:21:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4314"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4314:merged",
+   "payload": {
+    "author": "Jinwoo-H",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T20:24:35+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4314"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4313:opened",
+   "payload": {
+    "additions": 15,
+    "author": "buf0-bot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "mobile/app/pair-scan.tsx"
+    ],
+    "title": "fix: pr-bug-scan validated finding from #4243"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:10:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4313"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4312:opened",
+   "payload": {
+    "additions": 1,
+    "author": "buf0-bot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "src/shared/git-history-log-parser.ts"
+    ],
+    "title": "fix: pr-bug-scan validated finding from #4299"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:10:05+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4312"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4311:opened",
+   "payload": {
+    "additions": 98,
+    "author": "buf0-bot",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 12,
+    "files": [
+     "src/main/ghostty/index.test.ts",
+     "src/main/ghostty/index.ts"
+    ],
+    "title": "fix: pr-bug-scan validated finding from #4213"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:09:50+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4311"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4310:opened",
+   "payload": {
+    "additions": 3,
+    "author": "buf0-bot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/main/pty/windows-environment-path.ts"
+    ],
+    "title": "fix: pr-bug-scan validated finding from #4284"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:09:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4310"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4309:opened",
+   "payload": {
+    "additions": 31,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/runtime/rpc/methods/speech.test.ts",
+     "src/main/runtime/rpc/methods/speech.ts"
+    ],
+    "title": "perf: cap mobile dictation audio chunks"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:55:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4309"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4309:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:55:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4309"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4308:opened",
+   "payload": {
+    "additions": 51800,
+    "author": "Nikolatesla-lj",
+    "author_is_bot": false,
+    "changed_files": 250,
+    "deletions": 179,
+    "files": [
+     ".github/workflows/e2e.yml",
+     ".github/workflows/pr.yml",
+     ".gitignore",
+     ".npmrc",
+     "AGENTS.md",
+     "CLAUDE.md",
+     "config/scripts/ensure-native-runtime.mjs",
+     "config/scripts/rebuild-node-native-deps.mjs",
+     "config/scripts/verify-node-version.mjs",
+     "config/tsconfig.cli.json",
+     "docs/architecture/2026-05-26-scryer-diagram-library-architecture.md",
+     "docs/contracts/2026-05-26-scryer-diagram-library-contracts.md",
+     "docs/contracts/2026-05-26-scryer-diagram-library-error-codes.md",
+     "docs/contracts/2026-05-26-scryer-diagram-library-implementation-contracts.md",
+     "docs/contracts/2026-05-26-scryer-diagram-library-terminology.md",
+     "docs/contracts/2026-05-26-scryer-diagram-library-traceability.md",
+     "docs/orca-scryer-migration.md",
+     "docs/orca-scryer-sync.md",
+     "docs/orca-scryer-uml-gap-analysis.md",
+     "docs/prd/2026-05-26-scryer-diagram-library-prd.md"
+    ],
+    "title": "Add Scryer diagram library"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:53:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4308"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4307:opened",
+   "payload": {
+    "additions": 77,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "src/main/browser/agent-browser-bridge.test.ts",
+     "src/main/browser/agent-browser-bridge.ts"
+    ],
+    "title": "fix: cleanup pending agent browser sessions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:51:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4307"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4307:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:52:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4307"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4306:opened",
+   "payload": {
+    "additions": 37,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/runtime/orca-runtime-files.test.ts",
+     "src/main/runtime/orca-runtime-files.ts"
+    ],
+    "title": "perf: collapse large runtime file watch batches"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:47:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4306"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4306:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:47:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4306"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4305:opened",
+   "payload": {
+    "additions": 61,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 23,
+    "files": [
+     "src/main/repo-icon-autodetect.test.ts",
+     "src/main/repo-icon-autodetect.ts",
+     "src/main/repo-icon-href-candidates.ts"
+    ],
+    "title": "fix: resolve nested repo icon hrefs"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:45:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4305"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4305:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:46:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4305"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4304:opened",
+   "payload": {
+    "additions": 195,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 21,
+    "files": [
+     "src/renderer/src/components/settings/GeneralPane.test.ts",
+     "src/renderer/src/components/settings/GeneralPane.tsx"
+    ],
+    "title": "perf: sync proxy drafts during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:43:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4304"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4304:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:43:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4304"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4303:opened",
+   "payload": {
+    "additions": 19,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/runtime/e2ee-keypair.ts",
+     "src/main/runtime/runtime-metadata.test.ts"
+    ],
+    "title": "perf: cap e2ee keypair startup reads"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:42:09+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4303"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4303:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:42:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4303"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4302:opened",
+   "payload": {
+    "additions": 1,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/components/sidebar/WorktreeCard.tsx"
+    ],
+    "title": "Increase worktree card bottom padding"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:36:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4302"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4302:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:36:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4302"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4301:opened",
+   "payload": {
+    "additions": 206,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/renderer/src/components/pet/pet-blob-cache.test.ts",
+     "src/renderer/src/components/pet/pet-blob-cache.ts"
+    ],
+    "title": "fix: cleanup custom pet blob loads"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:35:23+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4301"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4301:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:35:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4301"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4300:opened",
+   "payload": {
+    "additions": 31,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/main/repo-icon-autodetect.test.ts",
+     "src/main/repo-icon-autodetect.ts"
+    ],
+    "title": "perf: cap repo icon source scans"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:34:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4300"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4300:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:35:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4300"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4299:opened",
+   "payload": {
+    "additions": 32,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/shared/git-history-log-parser.ts",
+     "src/shared/git-history.test.ts"
+    ],
+    "title": "fix: preserve comma git history refs"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:33:38+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4299"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4299:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:35:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4299"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4298:opened",
+   "payload": {
+    "additions": 146,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 621,
+    "files": [
+     "src/renderer/src/components/sidebar/RemoveFolderDialog.test.tsx",
+     "src/renderer/src/components/sidebar/RemoveFolderDialog.tsx",
+     "src/renderer/src/components/sidebar/WorktreeList.tsx"
+    ],
+    "title": "Revert sidebar bulk close selection"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:33:33+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4298"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4298:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:35:59+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4298"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4297:opened",
+   "payload": {
+    "additions": 73,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 20,
+    "files": [
+     "src/renderer/src/components/GitHubItemDialog.tsx",
+     "src/renderer/src/components/PullRequestPage.tsx",
+     "src/renderer/src/components/github-body-draft-state.test.ts",
+     "src/renderer/src/components/github-body-draft-state.ts"
+    ],
+    "title": "perf: sync github body drafts during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:30:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4297"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4297:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:30:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4297"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4296:opened",
+   "payload": {
+    "additions": 29,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "src/renderer/src/components/tab-group/TabGroupSplitLayout.tsx"
+    ],
+    "title": "fix: cleanup tab split resize listeners"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:23:24+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4296"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4296:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:23:36+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4296"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4295:opened",
+   "payload": {
+    "additions": 15,
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 31,
+    "files": [
+     "src/renderer/src/components/feature-wall/FeatureWallBody.tsx"
+    ],
+    "title": "Remove onboarding demo label from feature wall setup UI"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:21:40+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4295"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4295:merged",
+   "payload": {
+    "author": "AmethystLiang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:21:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4295"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4294:opened",
+   "payload": {
+    "additions": 105,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 18,
+    "files": [
+     "src/renderer/src/components/GitHubItemDialog.tsx",
+     "src/renderer/src/components/PullRequestPage.tsx",
+     "src/renderer/src/components/github-link-copy-state.test.ts",
+     "src/renderer/src/components/github-link-copy-state.ts"
+    ],
+    "title": "perf: reset github link copy state during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:21:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4294"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4294:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:21:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4294"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4293:opened",
+   "payload": {
+    "additions": 174,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 17,
+    "files": [
+     "src/renderer/src/components/editor/CombinedDiffViewer.tsx",
+     "src/renderer/src/components/editor/combined-diff-scrollbar-drag.test.ts",
+     "src/renderer/src/components/editor/combined-diff-scrollbar-drag.ts"
+    ],
+    "title": "fix: cleanup combined diff scrollbar drag listeners"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:20:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4293"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4293:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:20:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4293"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4292:opened",
+   "payload": {
+    "additions": 109,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 11,
+    "files": [
+     "src/main/ipc/filesystem-auth.test.ts",
+     "src/main/ipc/filesystem-auth.ts"
+    ],
+    "title": "Fix nested missing authorized file paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:19:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4292"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4292:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:22:00+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4292"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4291:opened",
+   "payload": {
+    "additions": 88,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/renderer/src/components/terminal-pane/pty-connection.test.ts",
+     "src/renderer/src/components/terminal-pane/pty-connection.ts"
+    ],
+    "title": "fix: clear pending serializer on disposed reattach"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:13:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4291"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4291:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:13:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4291"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4290:opened",
+   "payload": {
+    "additions": 95,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 26,
+    "files": [
+     "src/renderer/src/components/linear-api-key-dialog-state.test.ts",
+     "src/renderer/src/components/linear-api-key-dialog-state.ts",
+     "src/renderer/src/components/linear-api-key-dialog.tsx"
+    ],
+    "title": "perf: reset linear api key dialog state during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:12:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4290"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4290:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:13:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4290"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4289:opened",
+   "payload": {
+    "additions": 88,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/main/rate-limits/codex-fetcher-pty-settle.test.ts",
+     "src/main/rate-limits/codex-fetcher.ts"
+    ],
+    "title": "perf: coalesce codex status settle timers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:12:12+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4289"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4289:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:13:50+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4289"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4288:opened",
+   "payload": {
+    "additions": 75,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/runtime/orca-runtime.test.ts",
+     "src/main/runtime/orca-runtime.ts"
+    ],
+    "title": "fix: bound disconnected runtime pty records"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:05:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4288"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4288:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:05:58+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4288"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4287:opened",
+   "payload": {
+    "additions": 187,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 68,
+    "files": [
+     "src/renderer/src/components/GitHubItemDialog.tsx",
+     "src/renderer/src/components/PullRequestPage.tsx",
+     "src/renderer/src/components/github-checks-tab-state.test.ts",
+     "src/renderer/src/components/github-checks-tab-state.ts"
+    ],
+    "title": "perf: reset github checks tab state during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:01:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4287"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4287:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:01:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4287"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4286:opened",
+   "payload": {
+    "additions": 48,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 2,
+    "files": [
+     "src/main/azure-devops/repository-ref.test.ts",
+     "src/main/azure-devops/repository-ref.ts",
+     "src/main/bitbucket/repository-ref.test.ts",
+     "src/main/bitbucket/repository-ref.ts",
+     "src/main/gitea/repository-ref.test.ts",
+     "src/main/gitea/repository-ref.ts"
+    ],
+    "title": "fix: normalize provider remote git suffixes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:01:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4286"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4286:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:02:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4286"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4284:opened",
+   "payload": {
+    "additions": 65,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/pty/windows-environment-path.test.ts",
+     "src/main/pty/windows-environment-path.ts"
+    ],
+    "title": "perf: cache Windows PATH registry probes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:58:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4284"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4284:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:05:08+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4284"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4283:opened",
+   "payload": {
+    "additions": 124,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     "src/relay/agent-exec-handler.test.ts",
+     "src/relay/agent-exec-handler.ts"
+    ],
+    "title": "fix: cancel superseded relay exec children"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:54:06+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4283"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4283:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:54:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4283"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4282:opened",
+   "payload": {
+    "additions": 55,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 27,
+    "files": [
+     "src/renderer/src/web/web-pairing.test.ts",
+     "src/renderer/src/web/web-pairing.ts",
+     "src/shared/pairing.test.ts",
+     "src/shared/pairing.ts"
+    ],
+    "title": "Fix pairing URL route validation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:53:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4282"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4282:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:55:36+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4282"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4281:opened",
+   "payload": {
+    "additions": 45,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 12,
+    "files": [
+     "src/renderer/src/components/GitHubItemDialog.tsx",
+     "src/renderer/src/components/PullRequestPage.tsx",
+     "src/renderer/src/components/comment-reply-target-state.test.ts",
+     "src/renderer/src/components/comment-reply-target-state.ts"
+    ],
+    "title": "perf: sync comment reply target during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:53:13+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4281"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4281:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:53:23+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4281"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4279:opened",
+   "payload": {
+    "additions": 106,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 10,
+    "files": [
+     "src/renderer/src/components/agent/AgentCombobox.tsx",
+     "src/renderer/src/components/agent/agent-combobox-command-state.test.ts",
+     "src/renderer/src/components/agent/agent-combobox-command-state.ts"
+    ],
+    "title": "perf: sync agent combobox command state during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:47:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4279"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4279:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:47:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4279"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4278:opened",
+   "payload": {
+    "additions": 64,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/relay/external-automations-handler.test.ts",
+     "src/relay/external-automations-handler.ts"
+    ],
+    "title": "fix: bound relay hermes run count cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:47:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4278"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4278:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:48:16+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4278"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4277:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/gitlab/gl-utils.test.ts",
+     "src/main/gitlab/gl-utils.ts"
+    ],
+    "title": "Fix GitLab remote paths ending in .git/"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:45:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4277"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4277:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:48:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4277"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4276:opened",
+   "payload": {
+    "additions": 20,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/main/project-groups/nested-repo-discovery.test.ts",
+     "src/main/project-groups/nested-repo-discovery.ts"
+    ],
+    "title": "perf: avoid stat fanout in nested repo scans"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:45:12+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4276"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4276:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:51:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4276"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4275:opened",
+   "payload": {
+    "additions": 47,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/shared/mcp-config.test.ts",
+     "src/shared/mcp-config.ts"
+    ],
+    "title": "fix: flag incomplete mcp server transports"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:38:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4275"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4275:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:39:17+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4275"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4274:opened",
+   "payload": {
+    "additions": 111,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "src/main/ports/local-workspace-port-scanner.test.ts",
+     "src/main/ports/local-workspace-port-scanner.ts"
+    ],
+    "title": "perf: reuse port scan worktree attribution"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:35:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4274"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4274:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:42:03+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4274"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4273:opened",
+   "payload": {
+    "additions": 215,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 27,
+    "files": [
+     "src/renderer/src/components/automations/ExternalAutomationRunTable.tsx",
+     "src/renderer/src/components/automations/external-automation-run-table-state.test.ts",
+     "src/renderer/src/components/automations/external-automation-run-table-state.ts"
+    ],
+    "title": "perf: reset external automation runs during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:32:35+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4273"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4273:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:32:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4273"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4272:opened",
+   "payload": {
+    "additions": 102,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 6,
+    "files": [
+     "src/main/crash-reporting/process-gone-dedupe.test.ts",
+     "src/main/crash-reporting/process-gone-dedupe.ts",
+     "src/main/index.ts"
+    ],
+    "title": "fix: bound process-gone crash dedupe"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:24:21+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4272"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4272:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:24:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4272"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4271:opened",
+   "payload": {
+    "additions": 195,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 12,
+    "files": [
+     "src/renderer/src/components/GitHubItemDialog.tsx",
+     "src/renderer/src/components/PullRequestPage.tsx",
+     "src/renderer/src/components/comment-code-context-state.test.ts",
+     "src/renderer/src/components/comment-code-context-state.ts"
+    ],
+    "title": "perf: reset comment code context during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:24:03+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4271"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4271:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:24:09+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4271"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4270:opened",
+   "payload": {
+    "additions": 17,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/components/settings/ssh-target-draft.test.ts",
+     "src/renderer/src/components/settings/ssh-target-draft.ts"
+    ],
+    "title": "fix: tolerate malformed ssh url usernames"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:22:15+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4270"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4270:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:25:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4270"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4269:opened",
+   "payload": {
+    "additions": 118,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 16,
+    "files": [
+     "src/main/pi/titlebar-extension-overlay-path.test.ts",
+     "src/main/pi/titlebar-extension-service.test.ts",
+     "src/main/pi/titlebar-extension-service.ts"
+    ],
+    "title": "perf: hash Pi overlay directories"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:21:53+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4269"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4269:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:25:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4269"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4268:opened",
+   "payload": {
+    "additions": 121,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "src/renderer/src/components/TaskPage.tsx",
+     "src/renderer/src/components/task-page-github-status-state.test.ts",
+     "src/renderer/src/components/task-page-github-status-state.ts"
+    ],
+    "title": "perf: sync task status state during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:18:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4268"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4268:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:19:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4268"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4267:opened",
+   "payload": {
+    "additions": 83,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "src/renderer/src/store/slices/github.test.ts",
+     "src/renderer/src/store/slices/github.ts"
+    ],
+    "title": "fix: bound github pr issue caches"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:14:36+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4267"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4267:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:14:44+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4267"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4266:opened",
+   "payload": {
+    "additions": 35,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/components/tab-bar/tab-create-entry-classifier.test.ts",
+     "src/renderer/src/components/tab-bar/tab-create-entry-classifier.ts"
+    ],
+    "title": "fix: open localhost tab entry suffix urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:11:17+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4266"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4266:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:13:11+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4266"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4265:opened",
+   "payload": {
+    "additions": 110,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 24,
+    "files": [
+     "src/main/computer/desktop-script-provider-client.test.ts",
+     "src/main/computer/desktop-script-provider-client.ts"
+    ],
+    "title": "fix: bound desktop snapshot cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:10:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4265"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4265:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:10:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4265"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4264:opened",
+   "payload": {
+    "additions": 7,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/shared/browser-url.test.ts",
+     "src/shared/browser-url.ts"
+    ],
+    "title": "fix: normalize localhost query urls"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:07:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4264"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4264:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:11:33+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4264"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4263:opened",
+   "payload": {
+    "additions": 77,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 15,
+    "files": [
+     "src/main/codex-usage/scanner.ts",
+     "src/main/opencode-usage/scanner.ts",
+     "src/main/usage-worktree-canonicalizer.test.ts",
+     "src/main/usage-worktree-canonicalizer.ts"
+    ],
+    "title": "perf: cap usage worktree canonicalization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:07:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4263"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4263:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:11:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4263"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4262:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "src/renderer/src/components/sidebar/worktree-card-compact-agents.tsx"
+    ],
+    "title": "perf: latch compact agent expansion during render"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:03:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4262"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4262:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:03:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4262"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4261:opened",
+   "payload": {
+    "additions": 56,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 4,
+    "files": [
+     "src/renderer/src/components/editor/markdown-internal-links.test.ts",
+     "src/renderer/src/components/editor/markdown-internal-links.ts",
+     "src/renderer/src/components/editor/markdown-preview-links.test.ts",
+     "src/renderer/src/components/editor/markdown-preview-links.ts",
+     "src/shared/file-uri-path.ts"
+    ],
+    "title": "fix: preserve windows markdown link fragments"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:01:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4261"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4261:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:03:00+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4261"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4260:opened",
+   "payload": {
+    "additions": 11,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "src/renderer/src/components/GitHubItemDialog.tsx"
+    ],
+    "title": "perf: move github item link copy cleanup to button ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:59:21+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4260"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4260:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:59:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4260"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4259:opened",
+   "payload": {
+    "additions": 37,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/components/editor/markdown-internal-links.test.ts",
+     "src/renderer/src/components/editor/markdown-internal-links.ts",
+     "src/renderer/src/components/editor/markdown-preview-links.test.ts",
+     "src/renderer/src/components/editor/markdown-preview-links.ts"
+    ],
+    "title": "fix: resolve windows markdown drive links"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:55:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4259"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4259:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:56:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4259"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4258:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/main/memory/hydrate-local-pty-registry.test.ts",
+     "src/main/memory/hydrate-local-pty-registry.ts"
+    ],
+    "title": "perf: skip ssh repos during pty hydration"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:52:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4258"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4258:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:55:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4258"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4257:opened",
+   "payload": {
+    "additions": 55,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/shared/remote-runtime-client.test.ts",
+     "src/shared/remote-runtime-client.ts"
+    ],
+    "title": "fix: close remote runtime subscriptions after protocol errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:49:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4257"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4257:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:49:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4257"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4256:opened",
+   "payload": {
+    "additions": 57,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/renderer/src/web/web-runtime-client.test.ts",
+     "src/renderer/src/web/web-runtime-client.ts"
+    ],
+    "title": "fix: ignore stale web runtime socket messages"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:49:01+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4256"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4256:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:51:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4256"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4255:opened",
+   "payload": {
+    "additions": 11,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "src/renderer/src/components/PullRequestPage.tsx"
+    ],
+    "title": "perf: move pr link copy cleanup to button ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:48:26+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4255"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4255:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:48:35+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4255"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4254:opened",
+   "payload": {
+    "additions": 46,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/renderer/src/runtime/remote-runtime-terminal-multiplexer.ts",
+     "src/renderer/src/runtime/runtime-terminal-stream.test.ts"
+    ],
+    "title": "fix: drop late remote terminal subscription handles"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:46:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4254"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4254:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:46:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4254"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4253:opened",
+   "payload": {
+    "additions": 10,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 13,
+    "files": [
+     "src/renderer/src/components/sidebar/WorktreeList.tsx"
+    ],
+    "title": "perf: move worktree reveal cleanup to scroll root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:41:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4253"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4253:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:41:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4253"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4252:opened",
+   "payload": {
+    "additions": 75,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 29,
+    "files": [
+     "src/main/rate-limits/claude-pty.test.ts",
+     "src/main/rate-limits/claude-pty.ts"
+    ],
+    "title": "fix: clear claude usage pty timers on exit"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:41:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4252"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4252:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:41:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4252"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4251:opened",
+   "payload": {
+    "additions": 151,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 55,
+    "files": [
+     "src/main/ipc/worktrees.test.ts",
+     "src/main/ipc/worktrees.ts"
+    ],
+    "title": "perf: cap worktree listAll repo scans"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:40:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4251"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4251:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:47:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4251"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4250:opened",
+   "payload": {
+    "additions": 53,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/preload/runtime-environment-subscriptions.test.ts",
+     "src/preload/runtime-environment-subscriptions.ts"
+    ],
+    "title": "fix: detach runtime subscription listener on close"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:38:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4250"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4250:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:38:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4250"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4249:opened",
+   "payload": {
+    "additions": 53,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "mobile/src/transport/rpc-client.test.ts",
+     "mobile/src/transport/rpc-client.ts"
+    ],
+    "title": "fix: ignore stale mobile socket events"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:37:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4249"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4249:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:43:36+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4249"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4248:opened",
+   "payload": {
+    "additions": 5,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 14,
+    "files": [
+     "mobile/app/h/[hostId]/session/[worktreeId].tsx"
+    ],
+    "title": "perf: move mobile session cache cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:35:50+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4248"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4248:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:35:57+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4248"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4247:opened",
+   "payload": {
+    "additions": 5,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/main/browser/browser-grab-session-controller.ts"
+    ],
+    "title": "fix: unref browser grab timeout"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:33:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4247"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4247:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:33:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4247"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4246:opened",
+   "payload": {
+    "additions": 5,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/main/browser/browser-manager.ts"
+    ],
+    "title": "fix: unref browser download approval timeout"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:31:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4246"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4246:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:31:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4246"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4245:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/main/runtime/orca-runtime.ts"
+    ],
+    "title": "fix: unref mobile fit cleanup timers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:29:17+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4245"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4245:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:29:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4245"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4244:opened",
+   "payload": {
+    "additions": 23,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/components/editor/RichMarkdownLinkBubble.test.ts",
+     "src/renderer/src/components/editor/RichMarkdownLinkBubble.tsx"
+    ],
+    "title": "fix: respect platform link edit shortcut"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:29:11+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4244"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4244:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:31:03+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4244"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4243:opened",
+   "payload": {
+    "additions": 13,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 9,
+    "files": [
+     "mobile/app/pair-scan.tsx"
+    ],
+    "title": "perf: move pair scan cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:28:23+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4243"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4243:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:28:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4243"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4242:opened",
+   "payload": {
+    "additions": 48,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 20,
+    "files": [
+     "src/main/ipc/workspace-ports.test.ts",
+     "src/main/ipc/workspace-ports.ts",
+     "src/main/ports/workspace-port-ownership.ts"
+    ],
+    "title": "perf: clean workspace port registration"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:28:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4242"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4242:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:29:44+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4242"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4241:opened",
+   "payload": {
+    "additions": 60,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/runtime/rpc/methods/terminal.ts",
+     "src/main/runtime/rpc/terminal-subscribe-buffer.test.ts"
+    ],
+    "title": "fix: avoid late terminal stream listener registration"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:27:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4241"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4241:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:27:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4241"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4240:opened",
+   "payload": {
+    "additions": 51,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/main/runtime/rpc/unix-socket-transport.ts",
+     "src/main/runtime/runtime-rpc.test.ts"
+    ],
+    "title": "fix: close runtime sockets during stop"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:24:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4240"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4240:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:24:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4240"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4239:opened",
+   "payload": {
+    "additions": 83,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 34,
+    "files": [
+     "mobile/app/troubleshoot.tsx",
+     "mobile/src/diagnostics/host-reachability.test.ts",
+     "mobile/src/diagnostics/host-reachability.ts"
+    ],
+    "title": "fix: handle malformed mobile diagnostic endpoints"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:23:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4239"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4239:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:24:08+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4239"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4238:opened",
+   "payload": {
+    "additions": 16,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 15,
+    "files": [
+     "mobile/app/h/[hostId]/session/[worktreeId].tsx"
+    ],
+    "title": "perf: move mobile session timer cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:18:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4238"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4238:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:18:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4238"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4237:opened",
+   "payload": {
+    "additions": 125,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 51,
+    "files": [
+     "src/main/ipc/workspace-cleanup.test.ts",
+     "src/main/ipc/workspace-cleanup.ts"
+    ],
+    "title": "perf: avoid focused cleanup metadata scan"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:16:51+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4237"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4237:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:23:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4237"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4236:opened",
+   "payload": {
+    "additions": 81,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     "src/main/browser/cdp-bridge-integration.test.ts",
+     "src/main/browser/cdp-bridge.ts"
+    ],
+    "title": "fix: stop cdp load polling after timeout"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:16:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4236"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4236:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:16:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4236"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4235:opened",
+   "payload": {
+    "additions": 74,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "mobile/src/transport/rpc-client.test.ts",
+     "mobile/src/transport/rpc-client.ts"
+    ],
+    "title": "fix: honor mobile rpc timeout while reconnecting"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:14:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4235"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4235:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:15:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4235"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4234:opened",
+   "payload": {
+    "additions": 10,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "mobile/app/h/[hostId]/source-control/[worktreeId].tsx"
+    ],
+    "title": "perf: move mobile source control cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:13:09+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4234"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4234:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:13:26+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4234"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4233:opened",
+   "payload": {
+    "additions": 120,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "src/main/window/attach-main-window-services.test.ts",
+     "src/main/window/attach-main-window-services.ts"
+    ],
+    "title": "fix: release main-window service closures on close"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:12:21+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4233"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4233:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:12:35+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4233"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4232:opened",
+   "payload": {
+    "additions": 14,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "mobile/app/troubleshoot.tsx"
+    ],
+    "title": "perf: move troubleshoot cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:09:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4232"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4232:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:09:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4232"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4231:opened",
+   "payload": {
+    "additions": 28,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/web/web-runtime-client.test.ts",
+     "src/renderer/src/web/web-runtime-client.ts"
+    ],
+    "title": "fix: reject web runtime waiters on close"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:05:16+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4231"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4231:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:05:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4231"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4230:opened",
+   "payload": {
+    "additions": 33,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/renderer/src/store/slices/browser.test.ts",
+     "src/renderer/src/store/slices/browser.ts"
+    ],
+    "title": "fix: restore duplicate browser pages by index"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:03:35+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4230"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4230:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:05:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4230"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4229:opened",
+   "payload": {
+    "additions": 202,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 7,
+    "files": [
+     "src/main/ipc/speech.test.ts",
+     "src/main/ipc/speech.ts",
+     "src/main/speech/model-manager-progress-callback.test.ts",
+     "src/main/speech/model-manager.ts"
+    ],
+    "title": "fix: clear speech progress callbacks"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:02:26+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4229"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4229:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:04:13+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4229"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4228:opened",
+   "payload": {
+    "additions": 11,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "mobile/app/pair-confirm.tsx"
+    ],
+    "title": "perf: move pair confirm cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:01:26+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4228"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4228:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:01:50+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4228"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4227:opened",
+   "payload": {
+    "additions": 32,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/ipc/filesystem-watcher-local-unsubscribe.test.ts",
+     "src/main/ipc/filesystem-watcher.ts"
+    ],
+    "title": "fix: dedupe filesystem watcher teardown timer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:00:51+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4227"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4227:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:01:15+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4227"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4226:opened",
+   "payload": {
+    "additions": 252,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/renderer/src/hooks/useIpcEvents.test.ts",
+     "src/renderer/src/hooks/useIpcEvents.ts"
+    ],
+    "title": "fix: bound mobile state hydration buffer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:56:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4226"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4226:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:56:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4226"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4225:opened",
+   "payload": {
+    "additions": 103,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 6,
+    "files": [
+     "src/renderer/src/components/terminal-pane/terminal-file-link-hit-testing.ts",
+     "src/renderer/src/components/terminal-pane/terminal-link-handlers.test.ts",
+     "src/renderer/src/components/terminal-pane/terminal-link-handlers.ts",
+     "src/renderer/src/components/terminal-pane/terminal-path-exists-cache.ts"
+    ],
+    "title": "fix: scope terminal path cache by SSH connection"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:50:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4225"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4225:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:52:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4225"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4224:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "mobile/app/h/[hostId]/tasks.tsx"
+    ],
+    "title": "perf: move mobile task copy cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:50:38+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4224"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4224:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:50:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4224"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4222:opened",
+   "payload": {
+    "additions": 52,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "src/renderer/src/components/sidebar/WorktreeList.tsx"
+    ],
+    "title": "fix: cancel sidebar reveal frames"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:48:10+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4222"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4222:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:48:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4222"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4220:opened",
+   "payload": {
+    "additions": 2929,
+    "author": "gannonh",
+    "author_is_bot": false,
+    "changed_files": 23,
+    "deletions": 34,
+    "files": [
+     "src/main/ipc/linear.test.ts",
+     "src/main/ipc/linear.ts",
+     "src/main/linear/label-contract.ts",
+     "src/main/linear/labels.test.ts",
+     "src/main/linear/labels.ts",
+     "src/main/linear/teams.ts",
+     "src/main/runtime/orca-runtime.ts",
+     "src/main/runtime/rpc/methods/linear-labels.test.ts",
+     "src/main/runtime/rpc/methods/linear.test.ts",
+     "src/main/runtime/rpc/methods/linear.ts",
+     "src/main/runtime/runtime-rpc.ts",
+     "src/preload/api-types.ts",
+     "src/preload/index.ts",
+     "src/renderer/src/components/LinearLabelFormDialog.tsx",
+     "src/renderer/src/components/LinearLabelList.tsx",
+     "src/renderer/src/components/LinearLabelsWorkspace.test.ts",
+     "src/renderer/src/components/LinearLabelsWorkspace.tsx",
+     "src/renderer/src/components/TaskPage.tsx",
+     "src/renderer/src/components/linear-label-form-model.ts",
+     "src/renderer/src/components/use-linear-label-catalog.ts"
+    ],
+    "title": "feat(linear): add issue label management"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:45:15+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4220"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4219:opened",
+   "payload": {
+    "additions": 74,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "src/renderer/src/components/terminal-pane/terminal-link-handlers.test.ts",
+     "src/renderer/src/components/terminal-pane/terminal-link-handlers.ts",
+     "src/renderer/src/components/terminal-pane/terminal-path-exists-cache.ts"
+    ],
+    "title": "fix: bound terminal path link cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:44:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4219"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4219:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:44:38+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4219"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4218:opened",
+   "payload": {
+    "additions": 13,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/main/ghostty/index.test.ts"
+    ],
+    "title": "test: isolate Ghostty import config env"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:41:03+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4218"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4218:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:42:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4218"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4217:opened",
+   "payload": {
+    "additions": 13,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 14,
+    "files": [
+     "src/renderer/src/components/onboarding/OnboardingFlow.tsx",
+     "src/renderer/src/components/onboarding/use-onboarding-flow.ts"
+    ],
+    "title": "perf: move onboarding cleanup to modal root"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:40:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4217"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4217:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:41:11+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4217"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4216:opened",
+   "payload": {
+    "additions": 51,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/lib/crash-diagnostics.test.ts",
+     "src/renderer/src/lib/crash-diagnostics.ts"
+    ],
+    "title": "fix: dispose renderer crash diagnostics hooks"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:38:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4216"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4216:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:38:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4216"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4215:opened",
+   "payload": {
+    "additions": 86,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/shared/runtime-rpc-call-queue.test.ts",
+     "src/shared/runtime-rpc-call-queue.ts"
+    ],
+    "title": "perf: avoid shifting runtime call queues"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:34:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4215"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4215:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:54:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4215"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4215:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "PR closer validation on rebased head `2aeda464a5148bd1851efefb641023edafd9f643` passed:\\n\\n- Perf audit: replaces O(n) `Array.shift()` drains with head-indexed dequeue while preserving foreground priority, background concurrency caps, FIFO order, sync-throw cleanup, compaction to release closures, and queue deletion when empty.\\n- `pnpm exec vitest run --config config/vitest.config.ts src/shared/runtime-rpc-call-queue.test.ts src/main/ipc/runtime-environments.test.ts` (16 tests)\\n- `pnpm run typecheck:node`\\n- `pnpm lint`\\n- `pnpm exec oxfmt --check src/shared/runtime-rpc-call-queue.ts src/shared/runtime-rpc-call-queue.test.ts`\\n- `git diff --check origin/main...HEAD`\\n- `git merge-tree --write-tree origin/main HEAD`\\n\\nThe remaining risk is low after focused queue ordering/backpressure coverage plus full lint/typecheck. Ready to merge once GitHub verify completes."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:37:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4215"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4214:opened",
+   "payload": {
+    "additions": 157,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/main/daemon/daemon-server.test.ts",
+     "src/main/daemon/daemon-server.ts"
+    ],
+    "title": "fix: clean up daemon stream sockets"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:34:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4214"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4214:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:34:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4214"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4213:opened",
+   "payload": {
+    "additions": 123,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 44,
+    "files": [
+     "src/main/ghostty/discovery.test.ts",
+     "src/main/ghostty/discovery.ts",
+     "src/main/ghostty/index.test.ts",
+     "src/main/ghostty/index.ts",
+     "src/main/ghostty/mapper.test.ts",
+     "src/main/ghostty/mapper.ts",
+     "src/renderer/src/components/settings/GhosttyImportModal.tsx",
+     "src/shared/types.ts"
+    ],
+    "title": "fix: import all default Ghostty configs"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:32:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4213"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4213:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:35:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4213"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4212:opened",
+   "payload": {
+    "additions": 61,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/ssh/ssh-channel-multiplexer.test.ts",
+     "src/main/ssh/ssh-channel-multiplexer.ts"
+    ],
+    "title": "fix: release ssh mux handlers on dispose"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:29:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4212"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4212:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:29:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4212"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4212:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "PR closer validation on merged head `6f40c6ceed09268ddd5c427303cab1f434549782` passed locally after the PR merged:\\n\\n- Memory-leak audit: listener registrations now return no-op disposers after mux disposal, and dispose clears generic, method-scoped, and lifecycle handler collections so disposed muxes do not retain provider/session closures.\\n- `pnpm exec vitest run --config config/vitest.config.ts src/main/ssh/ssh-channel-multiplexer.test.ts` (20 tests)\\n- `pnpm run typecheck:node`\\n- `pnpm exec oxlint src/main/ssh/ssh-channel-multiplexer.ts src/main/ssh/ssh-channel-multiplexer.test.ts`\\n- `pnpm exec oxfmt --check src/main/ssh/ssh-channel-multiplexer.ts src/main/ssh/ssh-channel-multiplexer.test.ts`\\n- `git diff --check HEAD~1..HEAD`"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:30:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4212"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4211:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "src/renderer/src/components/settings/AutoRenameBranchFromWorkSetting.tsx"
+    ],
+    "title": "perf: move branch prompt cleanup to setting ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:29:06+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4211"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4211:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:29:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4211"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4210:opened",
+   "payload": {
+    "additions": 13,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/ipc/pty.test.ts",
+     "src/main/ipc/pty.ts"
+    ],
+    "title": "fix: clear claude live pty state on provider teardown"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:23:50+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4210"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4210:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:24:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4210"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4209:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "src/renderer/src/components/settings/CommitMessageAiPane.tsx"
+    ],
+    "title": "perf: move commit prompt cleanup to pane ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:20:40+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4209"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4209:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:21:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4209"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4209:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "PR closer validation on merged head `36d5e7ef0db2f0226e0419e3c201797d11f59be9` passed locally after the PR merged:\\n\\n- `pnpm exec vitest run --config config/vitest.config.ts src/renderer/src/components/settings/CommitMessageAiPane.test.tsx src/renderer/src/components/settings/RepositoryPane.test.ts src/renderer/src/components/settings/Settings.load-performance.test.ts` (21 tests)\\n- `pnpm run typecheck:web`\\n- `pnpm exec oxlint src/renderer/src/components/settings/CommitMessageAiPane.tsx src/renderer/src/components/settings/CommitMessageAiPane.test.tsx`\\n- `pnpm exec oxfmt --check src/renderer/src/components/settings/CommitMessageAiPane.tsx src/renderer/src/components/settings/CommitMessageAiPane.test.tsx`\\n- `git diff --check HEAD~1..HEAD`"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:22:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4209"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4208:opened",
+   "payload": {
+    "additions": 130,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 12,
+    "files": [
+     "src/main/ipc/remote-workspace-patch-queue.test.ts",
+     "src/main/ipc/remote-workspace.test.ts",
+     "src/main/ipc/remote-workspace.ts"
+    ],
+    "title": "perf: parallelize remote workspace pushes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:19:59+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4208"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4208:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:26:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4208"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4207:opened",
+   "payload": {
+    "additions": 37,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/github/pr-refresh-coordinator.test.ts",
+     "src/main/github/pr-refresh-coordinator.ts"
+    ],
+    "title": "fix: clear stale pr refresh backoff entries"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:17:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4207"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4207:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:17:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4207"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4206:opened",
+   "payload": {
+    "additions": 81,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 15,
+    "files": [
+     "src/main/ipc/worktrees.test.ts",
+     "src/main/ipc/worktrees.ts",
+     "src/main/ports/advertised-url-watcher.test.ts",
+     "src/main/ports/advertised-url-watcher.ts",
+     "src/main/runtime/orca-runtime.ts"
+    ],
+    "title": "fix: clear advertised url state on worktree removal"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:14:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4206"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4206:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:14:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4206"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4205:opened",
+   "payload": {
+    "additions": 20,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/shared/automation-schedules.test.ts",
+     "src/shared/automation-schedules.ts"
+    ],
+    "title": "fix: reject impossible weekly automation schedules"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:14:16+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4205"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4205:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:14:44+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4205"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4204:opened",
+   "payload": {
+    "additions": 25,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 16,
+    "files": [
+     "src/renderer/src/components/right-sidebar/FileExplorer.tsx",
+     "src/renderer/src/components/right-sidebar/useFileExplorerReveal.ts"
+    ],
+    "title": "perf: move file explorer reveal cleanup to shell ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:10:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4204"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4204:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:10:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4204"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4202:opened",
+   "payload": {
+    "additions": 139,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 3,
+    "files": [
+     "src/main/ipc/filesystem-import-ssh-ops.test.ts",
+     "src/main/ipc/filesystem-import-ssh.test.ts",
+     "src/main/ipc/filesystem-import-ssh.ts",
+     "src/main/ssh/sftp-upload.test.ts",
+     "src/main/ssh/sftp-upload.ts"
+    ],
+    "title": "fix: clean up failed ssh directory imports"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:08:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4202"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4202:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:11:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4202"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4201:opened",
+   "payload": {
+    "additions": 96,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 8,
+    "files": [
+     "src/main/browser/agent-browser-bridge.test.ts",
+     "src/main/browser/agent-browser-bridge.ts",
+     "src/main/browser/browser-manager.test.ts",
+     "src/main/browser/browser-manager.ts"
+    ],
+    "title": "fix: clear stale browser guest registrations"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:06:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4201"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4201:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:06:49+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4201"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4200:opened",
+   "payload": {
+    "additions": 57,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/main/ipc/pty.test.ts",
+     "src/main/ipc/pty.ts"
+    ],
+    "title": "fix: clear stale pty orphan cleanup listener"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:04:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4200"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4200:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:05:08+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4200"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4199:opened",
+   "payload": {
+    "additions": 9,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/renderer/src/components/terminal-pane/TerminalPane.tsx"
+    ],
+    "title": "perf: move terminal rename cleanup to container ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:57:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4199"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4199:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:17:53+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4199"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4199:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "PR closer validation on rebased head `7fd1c5bfb3d7a3a556c11eebf832f5ad91e00bf8` passed:\\n\\n- `pnpm exec vitest run --config config/vitest.config.ts src/renderer/src/components/terminal-pane/pane-helpers.test.ts src/renderer/src/components/terminal-pane/use-terminal-pane-global-effects.test.ts src/renderer/src/components/terminal-pane/terminal-pane-attention-subscriptions.test.ts` (23 tests)\\n- `pnpm run typecheck:web`\\n- `pnpm exec oxlint src/renderer/src/components/terminal-pane/TerminalPane.tsx`\\n- `pnpm exec oxfmt --check src/renderer/src/components/terminal-pane/TerminalPane.tsx`\\n- `git diff --check origin/main...HEAD`\\n- `git merge-tree --write-tree origin/main HEAD`\\n\\nThis keeps the change isolated to terminal rename frame cleanup and is ready to merge once GitHub checks complete."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:10:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4199"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4198:opened",
+   "payload": {
+    "additions": 100,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/runtime/runtime-file-client.test.ts",
+     "src/renderer/src/runtime/runtime-file-client.ts"
+    ],
+    "title": "fix: clean up failed runtime directory imports"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:56:24+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4198"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4198:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:58:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4198"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4197:opened",
+   "payload": {
+    "additions": 35,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/rate-limits/service.test.ts",
+     "src/main/rate-limits/service.ts"
+    ],
+    "title": "perf: sanitize rate limit polling intervals"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:52:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4197"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4197:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:53:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4197"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4196:opened",
+   "payload": {
+    "additions": 28,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 44,
+    "files": [
+     "src/renderer/src/components/editor/RichMarkdownEditor.tsx"
+    ],
+    "title": "perf: move rich markdown cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:51:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4196"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4196:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:00:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4196"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4195:opened",
+   "payload": {
+    "additions": 103,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 20,
+    "files": [
+     "src/main/ipc/filesystem-watcher-local-unsubscribe.test.ts",
+     "src/main/ipc/filesystem-watcher.test.ts",
+     "src/main/ipc/filesystem-watcher.ts"
+    ],
+    "title": "fix: clear inflight filesystem watcher senders"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:50:10+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4195"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4195:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:50:33+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4195"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4194:opened",
+   "payload": {
+    "additions": 57,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/main/ipc/notifications.test.ts",
+     "src/main/ipc/notifications.ts"
+    ],
+    "title": "perf: bound notification cooldown tracking"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:41:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4194"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4194:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:43:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4194"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4193:opened",
+   "payload": {
+    "additions": 10,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "src/renderer/src/components/editor/NotesSendMenu.test.tsx",
+     "src/renderer/src/components/editor/NotesSendMenu.tsx"
+    ],
+    "title": "perf: move notes send cleanup to trigger ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:41:09+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4193"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4193:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:41:35+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4193"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4192:opened",
+   "payload": {
+    "additions": 181,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 42,
+    "files": [
+     "src/main/ipc/filesystem-watcher-local-unsubscribe.test.ts",
+     "src/main/ipc/filesystem-watcher.ts"
+    ],
+    "title": "Fix pending local watcher listener registration"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:38:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4192"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4192:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:43:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4192"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4191:opened",
+   "payload": {
+    "additions": 95,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 17,
+    "files": [
+     "src/main/ipc/filesystem-watcher-wsl.test.ts",
+     "src/main/ipc/filesystem-watcher-wsl.ts"
+    ],
+    "title": "perf: bound WSL watcher polling"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:35:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4191"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4191:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:35:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4191"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4190:opened",
+   "payload": {
+    "additions": 22,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/store/slices/hosted-review-cache.test.ts",
+     "src/renderer/src/store/slices/hosted-review.ts"
+    ],
+    "title": "fix: clear hosted review request generations"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:31:01+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4190"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4190:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:31:15+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4190"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4189:opened",
+   "payload": {
+    "additions": 144,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 27,
+    "files": [
+     "src/main/ipc/filesystem-import.test.ts",
+     "src/main/ipc/filesystem-mutations.ts"
+    ],
+    "title": "perf: streamline runtime upload staging"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:30:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4189"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4189:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:30:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4189"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4188:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "src/renderer/src/components/editor/IpynbViewer.tsx"
+    ],
+    "title": "perf: move notebook draft cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:29:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4188"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4188:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:43:07+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4188"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4187:opened",
+   "payload": {
+    "additions": 137,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/renderer/src/store/slices/github.test.ts",
+     "src/renderer/src/store/slices/github.ts"
+    ],
+    "title": "fix: clear stale github pr refresh snapshots"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:28:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4187"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4187:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:28:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4187"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4186:opened",
+   "payload": {
+    "additions": 52,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 10,
+    "files": [
+     "src/main/ipc/filesystem-auth.test.ts",
+     "src/main/ipc/filesystem-auth.ts"
+    ],
+    "title": "perf: bound filesystem auth cache rebuild"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:23:05+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4186"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4186:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:23:26+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4186"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4185:opened",
+   "payload": {
+    "additions": 62,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 12,
+    "files": [
+     "src/renderer/src/App.tsx",
+     "src/renderer/src/hooks/useUnreadDockBadge.test.ts",
+     "src/renderer/src/hooks/useUnreadDockBadge.ts"
+    ],
+    "title": "perf: move unread dock badge cleanup to app root"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:19:53+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4185"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4185:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:20:13+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4185"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4184:opened",
+   "payload": {
+    "additions": 90,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/components/browser-pane/useGrabMode.test.ts",
+     "src/renderer/src/components/browser-pane/useGrabMode.ts"
+    ],
+    "title": "fix: target current browser page for grab mode"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:19:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4184"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4184:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:21:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4184"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4183:opened",
+   "payload": {
+    "additions": 82,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/main/hermes/hook-service.test.ts",
+     "src/main/hermes/hook-service.ts"
+    ],
+    "title": "perf: bound Hermes hook payload normalization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:17:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4183"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4183:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:17:51+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4183"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4182:opened",
+   "payload": {
+    "additions": 108,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/shared/agent-hook-listener.test.ts",
+     "src/shared/agent-hook-listener.ts"
+    ],
+    "title": "fix: bound amp hook thread caches"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:14:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4182"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4182:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:15:09+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4182"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4181:opened",
+   "payload": {
+    "additions": 146,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "src/main/gitlab/work-item-details.test.ts",
+     "src/main/gitlab/work-item-details.ts"
+    ],
+    "title": "perf: bound GitLab MR detail payloads"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:09:49+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4181"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4181:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:10:09+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4181"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4180:opened",
+   "payload": {
+    "additions": 85,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/cli/cli-installer.test.ts",
+     "src/main/cli/cli-installer.ts"
+    ],
+    "title": "fix: preserve packaged Windows CLI launcher"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:09:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4180"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4180:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:11:33+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4180"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4179:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "src/renderer/src/components/browser-pane/useGrabMode.ts"
+    ],
+    "title": "perf: fold browser grab page cleanup into lifecycle effect"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:08:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4179"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4179:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:08:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4179"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4178:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/main/gitlab/client.test.ts",
+     "src/main/gitlab/client.ts"
+    ],
+    "title": "perf: bound GitLab todos fetch"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:06:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4178"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4178:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:06:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4178"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4177:opened",
+   "payload": {
+    "additions": 7,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "src/renderer/src/components/feature-wall/use-feature-wall-tour-telemetry.ts"
+    ],
+    "title": "perf: fold feature wall telemetry cleanup into open effect"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:01:57+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4177"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4177:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:02:24+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4177"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4176:opened",
+   "payload": {
+    "additions": 102,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "src/main/ipc/filesystem-watcher.test.ts",
+     "src/main/ipc/filesystem-watcher.ts",
+     "src/main/providers/ssh-filesystem-provider.test.ts",
+     "src/main/providers/ssh-filesystem-provider.ts"
+    ],
+    "title": "fix: unwatch ssh filesystem roots on dispose"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:58:59+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4176"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4176:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:59:16+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4176"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4175:opened",
+   "payload": {
+    "additions": 90,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/components/terminal-pane/agent-completion-coordinator.test.ts",
+     "src/renderer/src/components/terminal-pane/agent-completion-coordinator.ts",
+     "src/renderer/src/components/terminal-pane/pty-connection.test.ts"
+    ],
+    "title": "fix: cancel hook completion on title working"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:56:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4175"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4175:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:57:12+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4175"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4174:opened",
+   "payload": {
+    "additions": 89,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     "src/main/git/remove-worktree.test.ts",
+     "src/main/git/worktree.ts"
+    ],
+    "title": "perf: bound worktree sparse probes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:54:56+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4174"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4174:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:55:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4174"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4173:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "src/renderer/src/components/settings/RepositoryHooksSection.tsx"
+    ],
+    "title": "perf: move repository hooks flush cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:52:27+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4173"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4173:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:52:50+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4173"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4172:opened",
+   "payload": {
+    "additions": 56,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/ipc/crash-reporting.test.ts",
+     "src/main/ipc/crash-reporting.ts"
+    ],
+    "title": "fix: bound submitted crash report ids"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:50:11+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4172"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4172:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:50:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4172"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4171:opened",
+   "payload": {
+    "additions": 33,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/git/status.test.ts",
+     "src/main/git/status.ts"
+    ],
+    "title": "perf: bound working tree diff reads"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:48:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4171"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4171:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:48:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4171"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4170:opened",
+   "payload": {
+    "additions": 55,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/ipc/filesystem-watcher-local-unsubscribe.test.ts",
+     "src/main/ipc/filesystem-watcher.ts"
+    ],
+    "title": "fix: drop destroyed senders during watcher startup"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:45:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4170"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4170:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:46:03+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4170"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4169:opened",
+   "payload": {
+    "additions": 56,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/renderer/src/components/right-sidebar/useCreatePullRequestDialogFields.test.ts",
+     "src/renderer/src/components/right-sidebar/useCreatePullRequestDialogFields.ts"
+    ],
+    "title": "fix: use base ref details for review creation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:44:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4169"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4169:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:47:13+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4169"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4168:opened",
+   "payload": {
+    "additions": 140,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "src/main/ipc/remote-workspace-cache.test.ts",
+     "src/main/ipc/remote-workspace.ts"
+    ],
+    "title": "fix: bound remote workspace snapshot cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:42:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4168"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4168:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:42:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4168"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4167:opened",
+   "payload": {
+    "additions": 21,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 20,
+    "files": [
+     "src/renderer/src/components/sidebar/RemoteFileBrowser.tsx"
+    ],
+    "title": "perf: move remote file browser cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:41:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4167"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4167:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:41:34+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4167"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4166:opened",
+   "payload": {
+    "additions": 22,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 3,
+    "files": [
+     "src/main/agent-hooks/installer-utils.ts",
+     "src/main/antigravity/hook-service.ts",
+     "src/main/claude/hook-service.ts",
+     "src/main/codex/hook-service.ts",
+     "src/main/command-code/hook-service.ts",
+     "src/main/cursor/hook-service.ts",
+     "src/main/droid/hook-service.ts",
+     "src/main/gemini/hook-service.ts",
+     "src/main/grok/hook-service.ts"
+    ],
+    "title": "perf: cap generated hook posts"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:39:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4166"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4166:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:40:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4166"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4165:opened",
+   "payload": {
+    "additions": 26,
+    "author": "sudoeren",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/cli/cli-installer.test.ts",
+     "src/main/cli/cli-installer.ts"
+    ],
+    "title": "fix: use resources/bin/orca.cmd for packaged Windows CLI path"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:39:30+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4165"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4165:merged",
+   "payload": {
+    "author": "sudoeren",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:56:12+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4165"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4165:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "Risk lowered to LOW after follow-up verification.\n\nVerification run locally on the narrowed two-file diff:\n- `pnpm exec vitest run --config config/vitest.config.ts src/main/cli/cli-installer.test.ts`\n- `pnpm run typecheck:node`\n- `pnpm exec oxlint src/main/cli/cli-installer.ts src/main/cli/cli-installer.test.ts src/renderer/src/components/automations/AutomationEditorDialog.tsx src/renderer/src/components/right-sidebar/CreatePullRequestDialog.tsx src/renderer/src/components/terminal-quick-commands/TerminalQuickCommandDialog.tsx`\n- `pnpm exec oxfmt --check src/main/cli/cli-installer.ts src/main/cli/cli-installer.test.ts src/renderer/src/components/automations/AutomationEditorDialog.tsx src/renderer/src/components/right-sidebar/CreatePullRequestDialog.tsx src/renderer/src/components/terminal-quick-commands/TerminalQuickCommandDialog.tsx`\n\nElectron verification was not useful after the unrelated UI hint diff was removed; the remaining change is a packaged Windows CLI path resolver plus a regression test."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:56:03+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4165"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4164:opened",
+   "payload": {
+    "additions": 171,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 14,
+    "files": [
+     "src/main/github/project-view.test.ts",
+     "src/main/github/project-view.ts"
+    ],
+    "title": "fix: bound github project owner caches"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:38:07+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4164"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4164:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:38:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4164"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4163:opened",
+   "payload": {
+    "additions": 26,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "src/renderer/src/components/right-sidebar/Search.tsx"
+    ],
+    "title": "perf: move file search cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:32:28+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4163"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4163:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:32:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4163"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4162:opened",
+   "payload": {
+    "additions": 85,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/runtime/web-session-tabs-sync.test.ts",
+     "src/renderer/src/runtime/web-session-tabs-sync.ts"
+    ],
+    "title": "fix: clear web session tab tracking on teardown"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:32:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4162"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4162:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:32:42+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4162"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4161:opened",
+   "payload": {
+    "additions": 94,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "src/main/daemon/daemon-pty-adapter.test.ts",
+     "src/main/daemon/daemon-pty-adapter.ts"
+    ],
+    "title": "perf: bound daemon checkpoint fanout"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:30:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4161"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4161:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:31:04+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4161"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4160:opened",
+   "payload": {
+    "additions": 131,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "src/main/daemon/daemon-stream-data-batcher.test.ts",
+     "src/main/daemon/daemon-stream-data-batcher.ts"
+    ],
+    "title": "Fix oversized daemon stream output drops"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:29:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4160"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4160:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:30:25+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4160"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4159:opened",
+   "payload": {
+    "additions": 94,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/main/daemon/ndjson.test.ts",
+     "src/main/daemon/ndjson.ts"
+    ],
+    "title": "perf: bound daemon ndjson lines"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:22:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4159"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4159:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:22:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4159"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4158:opened",
+   "payload": {
+    "additions": 13,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "src/renderer/src/components/browser-pane/BrowserPane.tsx"
+    ],
+    "title": "perf: move browser grab timer cleanup to root ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:21:26+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4158"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4158:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:21:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4158"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4157:opened",
+   "payload": {
+    "additions": 106,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 47,
+    "files": [
+     "src/renderer/src/components/browser-pane/BrowserPane.tsx",
+     "src/renderer/src/components/browser-pane/remote-browser-keyboard.test.ts",
+     "src/renderer/src/components/browser-pane/remote-browser-keyboard.ts"
+    ],
+    "title": "Fix shifted remote browser shortcuts"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:17:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4157"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4157:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:20:10+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4157"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4156:opened",
+   "payload": {
+    "additions": 46,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/gitlab/client-mr.test.ts",
+     "src/main/gitlab/client.ts"
+    ],
+    "title": "fix: bound gitlab rate limit cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:16:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4156"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4156:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:16:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4156"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4155:opened",
+   "payload": {
+    "additions": 19,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/computer/macos-native-provider-client.test.ts",
+     "src/main/computer/macos-native-provider-client.ts"
+    ],
+    "title": "perf: stop failed macOS provider startups"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:15:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4155"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4155:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:16:11+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4155"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4154:opened",
+   "payload": {
+    "additions": 65,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/main/github/client.test.ts",
+     "src/main/github/client.ts"
+    ],
+    "title": "fix: bound github merge metadata cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:12:05+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4154"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4154:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:12:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4154"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4153:opened",
+   "payload": {
+    "additions": 26,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "src/main/codex-usage/store.test.ts",
+     "src/main/codex-usage/store.ts"
+    ],
+    "title": "perf: reuse fresh Codex usage scans"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:10:47+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4153"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4153:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:12:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4153"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4152:opened",
+   "payload": {
+    "additions": 42,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 12,
+    "files": [
+     "src/main/ipc/diagnostics.test.ts",
+     "src/main/ipc/diagnostics.ts"
+    ],
+    "title": "fix: expire retained diagnostic bundle previews"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:07:44+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4152"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4152:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:08:06+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4152"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4151:opened",
+   "payload": {
+    "additions": 59,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/main/codex-accounts/service.test.ts",
+     "src/main/codex-accounts/service.ts"
+    ],
+    "title": "perf: skip unchanged Codex config writes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:06:42+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4151"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4151:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:07:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4151"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4150:opened",
+   "payload": {
+    "additions": 11,
+    "author": "sudoeren",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/components/automations/AutomationEditorDialog.tsx",
+     "src/renderer/src/components/right-sidebar/CreatePullRequestDialog.tsx",
+     "src/renderer/src/components/terminal-quick-commands/TerminalQuickCommandDialog.tsx"
+    ],
+    "title": "feat(ui): add instruction hints to command and prompt dialogs"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:06:05+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4150"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4150:merged",
+   "payload": {
+    "author": "sudoeren",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:26:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4150"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4150:comment:0",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "body": "Risk reduced to low after local verification on top of latest `origin/main` (rebased cleanly).\n\nVerification run:\n- `pnpm exec vitest run --config config/vitest.config.ts src/renderer/src/components/automations/AutomationSchedulePicker.test.ts src/renderer/src/components/terminal-quick-commands/terminal-quick-command-dialog-draft.test.ts src/renderer/src/components/settings/QuickCommandsPane.test.ts`\n- `pnpm run typecheck:web`\n- `pnpm exec oxlint src/renderer/src/components/automations/AutomationEditorDialog.tsx src/renderer/src/components/right-sidebar/CreatePullRequestDialog.tsx src/renderer/src/components/terminal-quick-commands/TerminalQuickCommandDialog.tsx`\n- `pnpm exec oxfmt --check src/renderer/src/components/automations/AutomationEditorDialog.tsx src/renderer/src/components/right-sidebar/CreatePullRequestDialog.tsx src/renderer/src/components/terminal-quick-commands/TerminalQuickCommandDialog.tsx`\n- `git diff --check origin/main..HEAD`\n- Electron dev app via CDP on this worktree: verified the Quick Command Agent Prompt hint, Automation editor prompt hint, and Create Pull Request description hint render in the live UI.\n\nI did not wait for CI per maintainer instruction."
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:25:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4150"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4149:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "src/renderer/src/components/editor/MarkdownTemplatePicker.tsx"
+    ],
+    "title": "perf: render markdown template request ref"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:04:33+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4149"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4149:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:04:41+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4149"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4148:opened",
+   "payload": {
+    "additions": 66,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 13,
+    "files": [
+     "src/main/github/pr-refresh-coordinator.test.ts",
+     "src/main/github/pr-refresh-coordinator.ts",
+     "src/main/ipc/github.ts"
+    ],
+    "title": "fix: clear visible pr refresh state on window destroy"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:04:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4148"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4148:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:04:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4148"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4147:opened",
+   "payload": {
+    "additions": 22,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "src/main/codex-accounts/runtime-home-service.test.ts",
+     "src/main/codex-accounts/runtime-home-service.ts"
+    ],
+    "title": "perf: append Codex migration diagnostics"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:02:01+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4147"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4147:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:02:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4147"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4146:opened",
+   "payload": {
+    "additions": 37,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/shared/workspace-session-browser-history.test.ts",
+     "src/shared/workspace-session-browser-history.ts"
+    ],
+    "title": "Fix browser history pruning by recency"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:58:43+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4146"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4146:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:59:40+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4146"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4145:opened",
+   "payload": {
+    "additions": 54,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/renderer/src/components/editor/editor-self-write-registry.test.ts",
+     "src/renderer/src/components/editor/editor-self-write-registry.ts"
+    ],
+    "title": "fix: bound editor self-write stamps"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:58:14+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4145"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4145:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:58:42+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4145"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4144:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "src/renderer/src/components/browser-pane/BrowserPane.tsx"
+    ],
+    "title": "perf: fold browser stream ref cleanup into unmount"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:56:52+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4144"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4144:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:57:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4144"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4143:opened",
+   "payload": {
+    "additions": 30,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "src/main/claude-usage/store.test.ts",
+     "src/main/claude-usage/store.ts"
+    ],
+    "title": "perf: reuse fresh Claude usage scans"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:54:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4143"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4143:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:56:10+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4143"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4142:opened",
+   "payload": {
+    "additions": 31,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/browser/agent-browser-bridge.test.ts",
+     "src/main/browser/agent-browser-bridge.ts"
+    ],
+    "title": "fix: clear stale browser intercept restores"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:54:12+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4142"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4142:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:54:21+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4142"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4142:review:0",
+   "payload": {
+    "author": "Ari4ka",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:55:54+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4142"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4141:opened",
+   "payload": {
+    "additions": 19,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/main/browser/agent-browser-bridge.test.ts",
+     "src/main/browser/agent-browser-bridge.ts"
+    ],
+    "title": "fix: clear drained browser command queues"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:51:37+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4141"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4141:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:51:46+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4141"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4140:opened",
+   "payload": {
+    "additions": 71,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/renderer/src/components/browser-pane/browser-focus.test.ts",
+     "src/renderer/src/components/browser-pane/browser-focus.ts"
+    ],
+    "title": "fix: expire stale browser focus requests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:47:10+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4140"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4140:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:47:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4140"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4139:opened",
+   "payload": {
+    "additions": 15,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/shared/setup-runner-command.test.ts",
+     "src/shared/setup-runner-command.ts"
+    ],
+    "title": "Fix WSL UNC setup runner casing"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:46:08+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4139"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4139:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:47:22+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4139"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4138:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "src/renderer/src/components/feature-wall/WorkspacesAnimatedVisual.tsx"
+    ],
+    "title": "perf: derive workspaces visual reduced-motion promotion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:41:00+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4138"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4138:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:41:18+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4138"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4137:opened",
+   "payload": {
+    "additions": 67,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 8,
+    "files": [
+     "src/main/browser/cdp-bridge-integration.test.ts",
+     "src/main/browser/cdp-bridge.ts"
+    ],
+    "title": "perf: bound cdp capture request bookkeeping"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:40:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4137"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4137:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:44:15+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4137"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4136:opened",
+   "payload": {
+    "additions": 74,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "src/main/browser/cdp-bridge-integration.test.ts",
+     "src/main/browser/cdp-bridge.ts"
+    ],
+    "title": "fix: preserve browser debugger stream listeners"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:40:05+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4136"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4136:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:40:26+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4136"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4135:opened",
+   "payload": {
+    "additions": 28,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/renderer/src/lib/workspace-session-patch.test.ts",
+     "src/renderer/src/lib/workspace-session-patch.ts"
+    ],
+    "title": "Fix default terminal tab session patch marker"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:35:58+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4135"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4135:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:37:49+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4135"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4134:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "src/renderer/src/components/feature-tips/FeatureTipsModal.tsx"
+    ],
+    "title": "perf: derive feature tip reduced-motion command count"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:33:32+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4134"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4134:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:33:48+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4134"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4133:opened",
+   "payload": {
+    "additions": 61,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/renderer/src/runtime/runtime-rpc-client.test.ts",
+     "src/renderer/src/runtime/runtime-rpc-client.ts"
+    ],
+    "title": "fix: bound runtime compatibility cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:31:36+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4133"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4133:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:32:02+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4133"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4132:opened",
+   "payload": {
+    "additions": 55,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 16,
+    "files": [
+     "src/main/browser/browser-manager-grab.test.ts",
+     "src/main/browser/browser-manager.test.ts",
+     "src/main/browser/browser-manager.ts"
+    ],
+    "title": "perf: clean up destroyed browser guest policies"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:30:20+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4132"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4132:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:36:17+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4132"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4131:opened",
+   "payload": {
+    "additions": 34,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 17,
+    "files": [
+     "src/renderer/src/components/editor/MarkdownPreview.test.ts",
+     "src/renderer/src/components/editor/MarkdownPreview.tsx"
+    ],
+    "title": "Fix Markdown Preview Windows worktree matching"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:28:59+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4131"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4131:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:29:49+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4131"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4130:opened",
+   "payload": {
+    "additions": 51,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 10,
+    "files": [
+     "src/main/ipc/pty.test.ts",
+     "src/main/ipc/pty.ts"
+    ],
+    "title": "fix: clear pending pane serializers on destroy"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:26:19+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4130"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4130:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:26:45+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4130"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4129:opened",
+   "payload": {
+    "additions": 47,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 16,
+    "files": [
+     "src/renderer/src/components/pet/PetOverlay.test.ts",
+     "src/renderer/src/components/pet/PetOverlay.tsx"
+    ],
+    "title": "perf: fold pet size clamp into resize effect"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:23:51+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4129"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4129:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:24:09+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4129"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4128:opened",
+   "payload": {
+    "additions": 57,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/renderer/src/components/right-sidebar/useFileExplorerRowDrag.test.ts",
+     "src/renderer/src/lib/workspace-file-drag.ts"
+    ],
+    "title": "Fix descendant paths in file explorer multi-drag"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:17:29+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4128"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4128:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:20:17+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4128"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4127:opened",
+   "payload": {
+    "additions": 45,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/main/automations/hermes-cron-output.test.ts",
+     "src/main/automations/hermes-cron-output.ts"
+    ],
+    "title": "perf: bound hermes run count cache"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:16:55+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4127"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4127:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:19:39+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4127"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4126:opened",
+   "payload": {
+    "additions": 81,
+    "author": "nwparker",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/main/ipc/runtime-environments.test.ts",
+     "src/main/ipc/runtime-environments.ts"
+    ],
+    "title": "fix: close removed runtime subscriptions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:15:31+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4126"
+  },
+  {
+   "evidence_id": "pr:stablyai/orca#4126:merged",
+   "payload": {
+    "author": "nwparker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:15:58+00:00",
+   "url": "https://github.com/stablyai/orca/pull/4126"
+  }
+ ],
+ "repo": "stablyai/orca",
+ "window": "pre_t"
+}

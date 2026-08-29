@@ -1,0 +1,250 @@
+{
+ "pool_sha256": "f100b2209c1cf871ef53c9f4ac6fccc0b6f58fa49b42237f9bec776214d5b27c",
+ "ranking": [
+  "runelite/plugin-hub",
+  "Pasta-Devs/Marinara-Engine",
+  "DefiLlama/dimension-adapters",
+  "vellum-ai/vellum-assistant",
+  "Homebrew/homebrew-cask",
+  "netwrix/docs",
+  "tscircuit/kicad-to-circuit-json",
+  "opencollective/opencollective-frontend",
+  "open-jarvis/OpenJarvis",
+  "AseemPrasad/Legalassist-AI",
+  "PerryTS/perry",
+  "space-wizards/space-station-14",
+  "anurag3407/career-pilot",
+  "volcengine/OpenViking",
+  "is-a-dev/register",
+  "utksh1/SecuScan",
+  "NixOS/nixpkgs",
+  "esengine/DeepSeek-Reasonix",
+  "stablyai/orca",
+  "NousResearch/hermes-agent",
+  "SecureBananaLabs/bug-bounty",
+  "google-test/signclav2-probe-repo"
+ ],
+ "scores": {
+  "AlvarOnce/rancho": {
+   "insiders_pre_t": 5,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "AseemPrasad/Legalassist-AI": {
+   "insiders_pre_t": 8,
+   "outsider_attempts": 46,
+   "outsider_merges": 23,
+   "distinct_outsiders_merged": 4,
+   "merge_rate": 0.5,
+   "bucket": "scored"
+  },
+  "DefiLlama/dimension-adapters": {
+   "insiders_pre_t": 28,
+   "outsider_attempts": 336,
+   "outsider_merges": 271,
+   "distinct_outsiders_merged": 145,
+   "merge_rate": 0.8065476190476191,
+   "bucket": "scored"
+  },
+  "GregoIribarren94/Lendly-android-client": {
+   "insiders_pre_t": 3,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "Homebrew/homebrew-cask": {
+   "insiders_pre_t": 8,
+   "outsider_attempts": 37,
+   "outsider_merges": 26,
+   "distinct_outsiders_merged": 10,
+   "merge_rate": 0.7027027027027027,
+   "bucket": "scored"
+  },
+  "Lucent-Financial-Group/Zeta": {
+   "insiders_pre_t": 3,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "NixOS/nixpkgs": {
+   "insiders_pre_t": 16,
+   "outsider_attempts": 210,
+   "outsider_merges": 67,
+   "distinct_outsiders_merged": 30,
+   "merge_rate": 0.319047619047619,
+   "bucket": "scored"
+  },
+  "NousResearch/hermes-agent": {
+   "insiders_pre_t": 3,
+   "outsider_attempts": 445,
+   "outsider_merges": 10,
+   "distinct_outsiders_merged": 3,
+   "merge_rate": 0.02247191011235955,
+   "bucket": "scored"
+  },
+  "Pasta-Devs/Marinara-Engine": {
+   "insiders_pre_t": 9,
+   "outsider_attempts": 386,
+   "outsider_merges": 322,
+   "distinct_outsiders_merged": 18,
+   "merge_rate": 0.8341968911917098,
+   "bucket": "scored"
+  },
+  "PerryTS/perry": {
+   "insiders_pre_t": 2,
+   "outsider_attempts": 14,
+   "outsider_merges": 7,
+   "distinct_outsiders_merged": 2,
+   "merge_rate": 0.5,
+   "bucket": "scored"
+  },
+  "SecureBananaLabs/bug-bounty": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 500,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": 0.0,
+   "bucket": "scored"
+  },
+  "Silver-Zhang/linux-cmd-helper": {
+   "insiders_pre_t": 2,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "Sistema-de-certificacion-academica/Sistema-de-certificacion-academica": {
+   "insiders_pre_t": 2,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "anurag3407/career-pilot": {
+   "insiders_pre_t": 53,
+   "outsider_attempts": 400,
+   "outsider_merges": 161,
+   "distinct_outsiders_merged": 80,
+   "merge_rate": 0.4025,
+   "bucket": "scored"
+  },
+  "esengine/DeepSeek-Reasonix": {
+   "insiders_pre_t": 19,
+   "outsider_attempts": 265,
+   "outsider_merges": 65,
+   "distinct_outsiders_merged": 26,
+   "merge_rate": 0.24528301886792453,
+   "bucket": "scored"
+  },
+  "google-test/signclav2-probe-repo": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 500,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": 0.0,
+   "bucket": "scored"
+  },
+  "is-a-dev/register": {
+   "insiders_pre_t": 35,
+   "outsider_attempts": 500,
+   "outsider_merges": 179,
+   "distinct_outsiders_merged": 126,
+   "merge_rate": 0.358,
+   "bucket": "scored"
+  },
+  "netwrix/docs": {
+   "insiders_pre_t": 31,
+   "outsider_attempts": 63,
+   "outsider_merges": 43,
+   "distinct_outsiders_merged": 21,
+   "merge_rate": 0.6825396825396826,
+   "bucket": "scored"
+  },
+  "open-jarvis/OpenJarvis": {
+   "insiders_pre_t": 10,
+   "outsider_attempts": 247,
+   "outsider_merges": 132,
+   "distinct_outsiders_merged": 39,
+   "merge_rate": 0.5344129554655871,
+   "bucket": "scored"
+  },
+  "opencollective/opencollective-frontend": {
+   "insiders_pre_t": 7,
+   "outsider_attempts": 14,
+   "outsider_merges": 8,
+   "distinct_outsiders_merged": 4,
+   "merge_rate": 0.5714285714285714,
+   "bucket": "scored"
+  },
+  "runelite/plugin-hub": {
+   "insiders_pre_t": 70,
+   "outsider_attempts": 464,
+   "outsider_merges": 392,
+   "distinct_outsiders_merged": 189,
+   "merge_rate": 0.8448275862068966,
+   "bucket": "scored"
+  },
+  "space-wizards/space-station-14": {
+   "insiders_pre_t": 41,
+   "outsider_attempts": 308,
+   "outsider_merges": 144,
+   "distinct_outsiders_merged": 45,
+   "merge_rate": 0.4675324675324675,
+   "bucket": "scored"
+  },
+  "stablyai/orca": {
+   "insiders_pre_t": 4,
+   "outsider_attempts": 292,
+   "outsider_merges": 43,
+   "distinct_outsiders_merged": 5,
+   "merge_rate": 0.14726027397260275,
+   "bucket": "scored"
+  },
+  "tscircuit/kicad-to-circuit-json": {
+   "insiders_pre_t": 6,
+   "outsider_attempts": 20,
+   "outsider_merges": 13,
+   "distinct_outsiders_merged": 6,
+   "merge_rate": 0.65,
+   "bucket": "scored"
+  },
+  "utksh1/SecuScan": {
+   "insiders_pre_t": 50,
+   "outsider_attempts": 403,
+   "outsider_merges": 138,
+   "distinct_outsiders_merged": 34,
+   "merge_rate": 0.3424317617866005,
+   "bucket": "scored"
+  },
+  "vellum-ai/vellum-assistant": {
+   "insiders_pre_t": 11,
+   "outsider_attempts": 55,
+   "outsider_merges": 44,
+   "distinct_outsiders_merged": 9,
+   "merge_rate": 0.8,
+   "bucket": "scored"
+  },
+  "volcengine/OpenViking": {
+   "insiders_pre_t": 34,
+   "outsider_attempts": 250,
+   "outsider_merges": 97,
+   "distinct_outsiders_merged": 38,
+   "merge_rate": 0.388,
+   "bucket": "scored"
+  }
+ },
+ "unavailable": [
+  "InteractorOSS/product-manager",
+  "Meats-Central/ProjectMeats",
+  "onehumancorp/mono"
+ ]
+}

@@ -26,6 +26,14 @@ from holt.types import T_CUTOFF, EvidenceRecord, Window
 
 API = "https://api.github.com/graphql"
 
+# Comment and review bodies carry the signal Holt actually reads: tone, intent,
+# whether a maintainer engaged. Four thousand characters is far more than any of
+# that needs. What blows past it is log dumps and stack traces -- one observed
+# comment ran to 74,000 characters -- which cost a judge download size and cost
+# the model context without changing a single judgement. Truncation is recorded
+# on the record so a reader is never silently shown a partial quote.
+MAX_BODY_CHARS = 4000
+
 REPO_META = """
 query($owner:String!, $name:String!) {
   rateLimit { remaining resetAt }
@@ -62,6 +70,15 @@ query($q:String!, $cursor:String) {
 
 def _ts(value: str | None) -> datetime | None:
     return datetime.fromisoformat(value.replace("Z", "+00:00")) if value else None
+
+
+def _body(text: str | None) -> tuple[str | None, bool, int]:
+    """Return (possibly truncated body, was_truncated, original_length)."""
+    if not text:
+        return text, False, 0
+    if len(text) <= MAX_BODY_CHARS:
+        return text, False, len(text)
+    return text[:MAX_BODY_CHARS], True, len(text)
 
 
 def _login(actor: dict[str, Any] | None) -> str:
@@ -132,6 +149,27 @@ def search_query(repo_slug: str, window: Window, cutoff: datetime) -> str:
     return f"repo:{repo_slug} is:pr {bound} sort:created-desc"
 
 
+def _nodes(connection: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """A connection with nothing in it can come back as null, not as an empty list.
+
+    Observed on a pull request that changed no files: `files` was null while
+    `changedFiles` was 0. Treating null and empty as the same thing here keeps a
+    single odd pull request from aborting a repository's whole capture.
+    """
+    if not connection:
+        return []
+    return [n for n in (connection.get("nodes") or []) if n]
+
+
+def _with_body(payload: dict[str, Any], raw: str | None) -> dict[str, Any]:
+    body, truncated, original = _body(raw)
+    payload["body"] = body
+    if truncated:
+        payload["body_truncated"] = True
+        payload["body_original_chars"] = original
+    return payload
+
+
 def project(repo_slug: str, nodes: Iterable[dict[str, Any]]) -> Iterator[EvidenceRecord]:
     """Turn pull requests into timestamped, individually-addressable evidence."""
     for pr in nodes:
@@ -151,7 +189,7 @@ def project(repo_slug: str, nodes: Iterable[dict[str, Any]]) -> Iterator[Evidenc
                 "additions": pr["additions"],
                 "deletions": pr["deletions"],
                 "changed_files": pr["changedFiles"],
-                "files": [f["path"] for f in pr["files"]["nodes"]],
+                "files": [f["path"] for f in _nodes(pr["files"])],
             },
         )
 
@@ -172,31 +210,35 @@ def project(repo_slug: str, nodes: Iterable[dict[str, Any]]) -> Iterator[Evidenc
                 payload={**shared, "merged": False},
             )
 
-        for i, review in enumerate(pr["reviews"]["nodes"]):
+        for i, review in enumerate(_nodes(pr["reviews"])):
             yield EvidenceRecord(
                 evidence_id=f"{base}:review:{i}",
                 source="github",
                 url=url,
                 timestamp=_ts(review["createdAt"]),
-                payload={
-                    "author": _login(review["author"]),
-                    "author_is_bot": _is_bot(review["author"]),
-                    "state": review["state"],
-                    "body": review["body"],
-                },
+                payload=_with_body(
+                    {
+                        "author": _login(review["author"]),
+                        "author_is_bot": _is_bot(review["author"]),
+                        "state": review["state"],
+                    },
+                    review["body"],
+                ),
             )
 
-        for i, comment in enumerate(pr["comments"]["nodes"]):
+        for i, comment in enumerate(_nodes(pr["comments"])):
             yield EvidenceRecord(
                 evidence_id=f"{base}:comment:{i}",
                 source="github",
                 url=url,
                 timestamp=_ts(comment["createdAt"]),
-                payload={
-                    "author": _login(comment["author"]),
-                    "author_is_bot": _is_bot(comment["author"]),
-                    "body": comment["body"],
-                },
+                payload=_with_body(
+                    {
+                        "author": _login(comment["author"]),
+                        "author_is_bot": _is_bot(comment["author"]),
+                    },
+                    comment["body"],
+                ),
             )
 
 
