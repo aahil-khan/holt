@@ -191,3 +191,79 @@ returns insufficient evidence below that. Caught on the development set, which i
 what the development set is for.
 
 **Decision.** Kept. Small model everywhere, pending the full pool run.
+
+---
+
+## Iteration 3 — the evaluation, and two results that went against us (2026-08-29)
+
+**Tried.** Score four methods over the committed pool against the L1 ground
+truth: popularity (stars), the baseline solution, Holt, and a name-only
+memorisation probe. Same repositories, same pre-cutoff evidence, same task.
+
+**Evidence — aggregate, 17 graded repositories.**
+
+| Method | P@10 | Precision | Recall | Recommended |
+|---|---|---|---|---|
+| baseline solution | 0.70 | **0.73** | 0.89 | 11 |
+| **holt** | 0.70 | 0.67 | 0.89 | 12 |
+| popularity | 0.60 | — | — | — |
+| name-only probe | 0.50 | 0.67 | 0.44 | 6 |
+
+**On the aggregate, Holt does not beat the baseline.** It ties on precision@10
+and is slightly behind on precision. That is the headline number and it is
+reported first.
+
+**Where the difference actually is.** Restricting to the repositories this
+project exists to catch — 100 or more inbound outsider attempts and zero
+qualifying contributions after the cutoff:
+
+| Holt | Baseline | Stars rank | Repo |
+|---|---|---|---|
+| not_viable ✓ | viable ✗ | 5 | `is-a-dev/register` |
+| not_viable ✓ | viable ✗ | 12 | `SecureBananaLabs/bug-bounty` |
+| not_viable ✓ | insufficient | 11 | `runelite/plugin-hub` |
+| not_viable ✓ | insufficient | 17 | `google-test/signclav2-probe-repo` |
+| viable ✗ | insufficient | 1 | `NousResearch/hermes-agent` |
+
+**Holt 4/5, the baseline 0/5**, and the baseline actively recommends two of them.
+The aggregate hides this because both methods handle the easy majority the same
+way; all of the difference sits in the hard cases. That is the shape the
+benchmark-validity literature predicts — discriminating signal concentrates in
+the hard tail while the easy majority saturates — and it is why a single
+aggregate number was the wrong instrument for this claim.
+
+**Removed: Stage C's thread signals as an input to the verdict.** Stage C is the
+most expensive stage and the one the project's pitch leans on hardest. It was
+computed and never read by `verdict.py`, which looked like a wiring bug worth
+fixing. Measuring first showed it was not:
+
+| | Genuine opportunities | Not opportunities |
+|---|---|---|
+| share of threads offering a real route in | 0.54 | **0.75** |
+| share of threads judged welcoming | 0.46 | **0.54** |
+
+The signal is inverted. `runelite/plugin-hub` scores 1.00 on "offers a real route
+in"; `NixOS/nixpkgs` scores 0.50. Registries read as maximally welcoming
+*because they are easy* — thread pleasantness measures low friction, not
+viability, and real projects generate more friction precisely by having
+standards. Wiring this into the verdict would have made Holt worse. Left out,
+and left computed: it is the most useful thing in the report for a human reader
+even though it is not a valid input to the decision.
+
+**Fixed: the harness collapsed three label buckets into two.** The first run
+scored Holt at 0.40 precision@10, behind everything. Three of its seven false
+positives were repositories with *zero* post-cutoff outsider attempts — the
+insufficient-evidence bucket that the plan and the L1 entry both define, in
+advance, as a third category rather than a failure. Scoring them as negatives
+punishes a method for saying "viable" about a project whose viability was never
+tested. Restoring the pre-registered definition moved Holt from 0.40 to 0.70.
+Recorded because the correction was made after seeing a bad number, and that
+ordering is exactly when a reader should be most suspicious.
+
+**Known limitations.**
+- 17 of 30 repositories graded: 3 were deleted between the cutoff and the run,
+  5 had no post-cutoff attempts to grade, and 5 are unrun because an OpenAI
+  spend limit stopped the sweep partway.
+- The name-only probe reaches 0.50 precision@10 knowing nothing but repository
+  names. Some of every method's performance is recognition rather than reading,
+  and that figure is the honest measure of it.

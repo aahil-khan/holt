@@ -1,0 +1,199 @@
+"""Score every method against the L1 ground truth over the committed pool.
+
+Methods, all given the same repositories and the same pre-cutoff evidence:
+
+  popularity     stars + recency, which is what people use today
+  baseline       the baseline solution: one prompt over README and metadata
+  holt           the full pipeline
+  name_only      a memorisation probe: the repository name and nothing else
+
+The probe is not a solution. It exists to measure how much of any method's
+performance is the model recognising a famous repository rather than reading
+evidence. If it scores well, the holdout is compromised and every other number
+here is suspect.
+
+Run:  PYTHONPATH=. uv run python eval/harness.py [--limit N]
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+from holt import baseline as baseline_solution
+from holt.agent.pipeline import analyze
+from holt.evidence.fixtures import FixtureProvider
+from holt.model import OpenAIModel, ReplayModel, TRAJECTORY_DIR
+from holt.report import Verdict
+from holt.types import Window
+
+POOL = Path("eval/pool.json")
+LABELS = Path("eval/results_labels.json")
+OUT = Path("eval/results_eval.json")
+
+# A repository counts as a genuine opportunity when at least two distinct people
+# landed a qualifying contribution after the cutoff. One person twice is an
+# anecdote; the threshold is declared here rather than tuned later.
+MIN_MERGES, MIN_PEOPLE = 2, 2
+
+PROBE_SYSTEM = """You are told only a repository's name. Say whether an outside \
+developer could realistically land a meaningful contribution there.
+
+You have no evidence beyond the name. Answer from what you already know."""
+PROBE_SCHEMA = {
+    "type": "object",
+    "properties": {"verdict": {"type": "string", "enum": [v.value for v in Verdict]}},
+    "required": ["verdict"],
+    "additionalProperties": False,
+}
+
+
+def truth(labels: dict) -> tuple[dict[str, bool], list[str]]:
+    """Ground truth, and the repositories that have none.
+
+    A repository nobody attempted after the cutoff is not a repository that
+    rejects people. Scoring it as a negative punishes a method for saying
+    "viable" about a project whose viability was never tested, which is a
+    different mistake from recommending somewhere hostile.
+
+    This third bucket was defined in the plan and in the L1 changelog entry
+    before any method ran. The first version of this harness collapsed it into
+    the negative class, which cost Holt three false positives it had not earned
+    and is corrected here.
+    """
+    gold, ungraded = {}, []
+    for slug, r in labels["l1"].items():
+        if r["bucket"] == "insufficient_evidence":
+            ungraded.append(slug)
+            continue
+        gold[slug] = (
+            r["qualifying_merges"] >= MIN_MERGES
+            and r["distinct_qualifying_contributors"] >= MIN_PEOPLE
+        )
+    return gold, ungraded
+
+
+def score(name: str, calls: dict[str, Verdict], gold: dict[str, bool]) -> dict:
+    judged = {s: v for s, v in calls.items() if s in gold}
+    recommended = [s for s, v in judged.items() if v is Verdict.VIABLE]
+    tp = sum(1 for s in recommended if gold[s])
+    positives = sum(1 for s in judged if gold[s])
+    # Categorical verdicts have no inherent order, so ties inside a class are
+    # broken alphabetically. Declared, because it means precision@10 for these
+    # methods carries some luck that a ranked method's does not.
+    order = {Verdict.VIABLE: 2, Verdict.INSUFFICIENT_EVIDENCE: 1, Verdict.NOT_VIABLE: 0}
+    ranked = sorted(judged, key=lambda s: (-order[judged[s]], s))
+    top10 = ranked[:10]
+    return {
+        "method": name,
+        "judged": len(judged),
+        "recommended": len(recommended),
+        "precision": (tp / len(recommended)) if recommended else None,
+        "recall": (tp / positives) if positives else None,
+        "precision_at_10": sum(1 for s in top10 if gold[s]) / len(top10) if top10 else None,
+        "top10": top10,
+    }
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--replay", action="store_true", help="score recorded runs, no spend")
+    ap.add_argument("--resume", action="store_true", help="skip repositories already recorded")
+    args = ap.parse_args()
+
+    pool = json.loads(POOL.read_text())
+    gold, ungraded = truth(json.loads(LABELS.read_text()))
+    repos = [r for r in pool["repos"] if r in gold]
+    if args.replay:
+        # Score whatever has been recorded. A partial run is still a result, as
+        # long as the count it was computed over is stated with it.
+        repos = [
+            r for r in repos
+            if (TRAJECTORY_DIR / (r.replace("/", "__") + ".jsonl")).exists()
+        ]
+    elif args.resume:
+        done = [r for r in repos if (TRAJECTORY_DIR / (r.replace("/", "__") + ".jsonl")).exists()]
+        print(f"resuming: {len(done)} already recorded, {len(repos) - len(done)} to run")
+        repos = [r for r in repos if r not in set(done)]
+    if args.limit:
+        repos = repos[: args.limit]
+
+    pre = FixtureProvider(Window.PRE_T)
+    calls: dict[str, dict[str, Verdict]] = {"baseline": {}, "holt": {}, "name_only": {}}
+    popularity: dict[str, int] = {}
+    spend = 0.0
+
+    def client(slug: str):
+        path = TRAJECTORY_DIR / (slug.replace("/", "__") + ".jsonl")
+        return ReplayModel(path) if args.replay else OpenAIModel(path)
+
+    skipped: list[str] = []
+    for i, slug in enumerate(repos, 1):
+      try:
+        records = pre.fetch(slug)
+        meta = next((r.payload for r in records if r.evidence_id.endswith(":meta")), {})
+        popularity[slug] = meta.get("stargazer_count") or 0
+
+        m = client(slug)
+        calls["baseline"][slug] = baseline_solution.assess(slug, pre, m).verdict
+        assessment, _ = analyze(slug, pre, m)
+        calls["holt"][slug] = assessment.verdict
+        probe = m.complete(
+            label="name_only", system=PROBE_SYSTEM, prompt=f"Repository: {slug}",
+            schema=PROBE_SCHEMA,
+        )
+        calls["name_only"][slug] = Verdict(probe["verdict"])
+        spend += m.usage.cost_usd
+        print(f"[{i}/{len(repos)}] {slug}: baseline={calls['baseline'][slug].value} "
+              f"holt={calls['holt'][slug].value} probe={calls['name_only'][slug].value}", flush=True)
+      except (KeyError, Exception) as exc:
+        # A run cut short mid-repository leaves a partial trajectory. Drop that
+        # repository from scoring rather than losing the whole result, and say
+        # how many were dropped alongside the numbers.
+        for c in calls.values():
+            c.pop(slug, None)
+        popularity.pop(slug, None)
+        skipped.append(slug)
+        print(f"[{i}/{len(repos)}] {slug}: SKIPPED ({type(exc).__name__})", flush=True)
+
+    results = [score(n, c, gold) for n, c in calls.items()]
+
+    # Popularity has a real ordering, so its precision@10 is a true ranked score.
+    ranked = sorted(popularity, key=lambda s: -popularity[s])[:10]
+    results.append({
+        "method": "popularity",
+        "judged": len(popularity),
+        "recommended": None,
+        "precision": None,
+        "recall": None,
+        "precision_at_10": sum(1 for s in ranked if gold[s]) / len(ranked),
+        "top10": ranked,
+    })
+
+    print(f"\n{'method':<12} {'P@10':>6} {'prec':>6} {'recall':>7} {'rec.d':>6}")
+    for r in results:
+        p = lambda x: f"{x:.2f}" if isinstance(x, float) else "  -"
+        print(f"{r['method']:<12} {p(r['precision_at_10']):>6} {p(r['precision']):>6} "
+              f"{p(r['recall']):>7} {str(r['recommended']):>6}")
+    scored_repos = [r for r in repos if r not in skipped]
+    scored_repos = [r for r in scored_repos if r in gold]
+    print(f"\nspend: ${spend:.3f}   graded {len(scored_repos)}/{len(pool['repos'])} pool repos"
+          f"   positives: {sum(gold[s] for s in scored_repos)}"
+          f"   ungraded (no post-cutoff attempts): {len(ungraded)}")
+    if skipped:
+        print(f"skipped (incomplete recording): {skipped}")
+
+    OUT.write_text(json.dumps({
+        "pool_sha256": pool["sha256"],
+        "truth_rule": f"qualifying_merges>={MIN_MERGES} and contributors>={MIN_PEOPLE}",
+        "ungraded_no_attempts": ungraded,
+        "results": results,
+        "verdicts": {n: {s: v.value for s, v in c.items()} for n, c in calls.items()},
+        "spend_usd": round(spend, 4),
+    }, indent=1) + "\n")
+
+
+if __name__ == "__main__":
+    main()
