@@ -9,6 +9,13 @@ dependencies = [
     "openai>=3.6.0",
 ]
 
+[project.optional-dependencies]
+# The terminal interface only. Deliberately not a hard dependency: the eval
+# harness and every reproduction command must keep working after a plain
+# `uv sync`, on a machine that has never installed Textual. `holt tui` is the
+# only entry point that imports it, and it imports it lazily.
+tui = ["textual>=0.80"]
+
 [project.scripts]
 holt = "holt.cli:main"
 

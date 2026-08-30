@@ -163,6 +163,38 @@ def cmd_compare(args: argparse.Namespace) -> int:
     print("\n`outsiders in` counts pull requests merged from people with no prior "
           "merge, over the number who tried.")
     print("Run `holt analyze <repo>` for the evidence behind any row.")
+
+
+def cmd_tui(args: argparse.Namespace) -> int:
+    """Open the terminal interface.
+
+    Textual is imported here and nowhere else, so a checkout installed with a
+    plain `uv sync` — the one the eval harness runs on — never imports it and
+    never needs it. Every other command works identically without the extra.
+
+    The interface runs the same `pipeline.analyze` the CLI runs. It is a way of
+    watching a stage, never the only way of running one.
+    """
+    try:
+        from holt.tui.app import run
+        from holt.tui.session import RunOptions
+    except ImportError as exc:
+        print(
+            f"The terminal interface needs the optional 'tui' extra ({exc}).\n"
+            "  uv sync --extra tui\n"
+            "Every other command, and the whole eval harness, works without it.",
+            file=sys.stderr,
+        )
+        return 2
+
+    run(
+        RunOptions(
+            repo=normalise(args.repo),
+            replay=args.replay,
+            live=args.live,
+            entry_points=not args.no_entry_points,
+        )
+    )
     return 0
 
 
@@ -444,6 +476,31 @@ def main(argv: list[str] | None = None) -> int:
     models_p.add_argument("--reset", action="store_true",
                           help="delete the configuration and restore defaults")
     models_p.set_defaults(func=cmd_models)
+
+
+
+
+    tui = sub.add_parser(
+        "tui",
+        help="watch the analysis in a terminal interface (needs the 'tui' extra)",
+    )
+    tui.add_argument("repo", help="owner/name or a github.com URL")
+    tui.add_argument(
+        "--replay",
+        action="store_true",
+        help="replay recorded model output; no API key, no spend",
+    )
+    tui.add_argument(
+        "--live",
+        action="store_true",
+        help="read GitHub directly instead of committed fixtures (needs GITHUB_TOKEN)",
+    )
+    tui.add_argument(
+        "--no-entry-points",
+        action="store_true",
+        help="skip the ranked reading order (see its measured precision in the output)",
+    )
+    tui.set_defaults(func=cmd_tui)
 
     args = parser.parse_args(argv)
     return args.func(args)
