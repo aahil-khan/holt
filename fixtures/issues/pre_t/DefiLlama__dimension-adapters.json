@@ -1,6 +1,7 @@
 {
  "captured_at": "2026-08-30T10:09:17.936381+00:00",
- "content_sha256": "e3a096bcb1d08816e211d7f5e8dfe50e1488ad9ce4c05f25018b581c8ff36734",
+ "content_sha256": "6c15c14934caa43d8c85ce3df3a0782cef8ad57ad1eb9c72bfd78a146158da0a",
+ "credentials_redacted": 4,
  "cutoff": "2026-06-01T00:00:00+00:00",
  "records": [
   {
@@ -3721,11 +3722,12 @@
    "evidence_id": "issue:DefiLlama/dimension-adapters#5912:opened",
    "payload": {
     "author": "avicoder",
-    "body": "Obfuscated GitHub PAT\n\n`/.github/workflows/commentResult.js`\n\nThe \"Obfuscation\":\n\n ```\n // Line 3 - the \"hidden\" token\n  const junk = 'VPTOH1X0B7rf8od7BGNsQ1z0BJk8iMNLxqrD';\n\n  // Line 32 - used in Authorization header\n  Authorization: `token ghp_${translate(junk)}`\n\n  // Lines 37-39 - the \"encryption\" is just string reversal\n  function translate(input) {\n      return input ? translate(input.substring(1)) + input[0] : input;\n  }\n```\n\nDecoded Token:\n\n```\nBash(# Reverse the string to get the actual token\n      echo 'VPTOH1X0B7rf8od7BGNsQ1z0BJk8iMNLxqrD' | rev)\n   \u00a0DrqxLNMi8kJB0z1QsNGB7do8fr7B0X1HOTPV\n```\n\nFull Token:\n\n` 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`",
+    "body": "Obfuscated GitHub PAT\n\n`/.github/workflows/commentResult.js`\n\nThe \"Obfuscation\":\n\n ```\n // Line 3 - the \"hidden\" token\n  const junk = '[REDACTED-CREDENTIAL]';\n\n  // Line 32 - used in Authorization header\n  Authorization: `token ghp_${translate(junk)}`\n\n  // Lines 37-39 - the \"encryption\" is just string reversal\n  function translate(input) {\n      return input ? translate(input.substring(1)) + input[0] : input;\n  }\n```\n\nDecoded Token:\n\n```\nBash(# Reverse the string to get the actual token\n      echo '[REDACTED-CREDENTIAL]' | rev)\n   \u00a0[REDACTED-CREDENTIAL]\n```\n\nFull Token:\n\n` [REDACTED-CREDENTIAL]`",
     "body_truncated": false,
     "comments": 1,
     "labels": [],
     "last_edited_at": null,
+    "redacted": true,
     "title": "Security - Fix the personal token committed workflow"
    },
    "source": "github",

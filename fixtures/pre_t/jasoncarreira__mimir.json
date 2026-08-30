@@ -1,6 +1,7 @@
 {
  "captured_at": "2026-08-29T19:57:18.194913+00:00",
- "content_sha256": "cd01e5eaa45ccb26bd6d51d32fdabeb81951cff0f5c2873f8e57e12a94439f02",
+ "content_sha256": "72d2f96e427254e5bea994cc0af0bd47b74c5fcd21206c8b6aa54acc7d416fbf",
+ "credentials_redacted": 2,
  "cutoff": "2026-06-01T00:00:00+00:00",
  "records": [
   {
@@ -2003,7 +2004,8 @@
    "payload": {
     "author": "mimir-carreira",
     "author_is_bot": false,
-    "body": "Addressed \u2014 split into two explicit patterns per the CR:\n\n```sh\n'sk-proj-[A-Za-z0-9_\\-]{20,}'   # OpenAI project keys (body allows hyphens)\n'sk-[A-Za-z0-9]{20,}'            # OpenAI classic keys (base62 \u2014 no hyphens)\n```\n\n**Why the split works:**\n- `sk-approach-to-cybernetics-1961` \u2192 doesn't start with `sk-proj-`, and classic pattern stops at the first hyphen in the body (`approach` = 8 chars < 20) \u2192 **no match \u2713**\n- `sk-proj-AbCdEfGhIjKlMnOpQrSt` \u2192 matches first pattern \u2713\n- `sk-AbCdEfGhIjKlMnOpQrStUvWx` \u2192 matches second pattern \u2713\n- `sk-proj-AbC-Def-GhI-Jkl...` (body with hyphens) \u2192 matches first pattern \u2713\n\n**Parity with `git_bootstrap._TOKEN_PATTERNS`:** the two entries together cover the same key space as `sk-(?!ant-)[A-Za-z0-9_-]{20,}` \u2014 `sk-ant-` is already the separate entry above them, so the negative lookahead isn't needed here; the split is clearer than a single combined regex.\n\nLive hook updated to match in the same commit. Rebased onto current main.",
+    "body": "Addressed \u2014 split into two explicit patterns per the CR:\n\n```sh\n'sk-proj-[A-Za-z0-9_\\-]{20,}'   # OpenAI project keys (body allows hyphens)\n'sk-[A-Za-z0-9]{20,}'            # OpenAI classic keys (base62 \u2014 no hyphens)\n```\n\n**Why the split works:**\n- `sk-approach-to-cybernetics-1961` \u2192 doesn't start with `sk-proj-`, and classic pattern stops at the first hyphen in the body (`approach` = 8 chars < 20) \u2192 **no match \u2713**\n- `[REDACTED-CREDENTIAL]` \u2192 matches first pattern \u2713\n- `sk-AbCdEfGhIjKlMnOpQrStUvWx` \u2192 matches second pattern \u2713\n- `sk-proj-AbC-Def-GhI-Jkl...` (body with hyphens) \u2192 matches first pattern \u2713\n\n**Parity with `git_bootstrap._TOKEN_PATTERNS`:** the two entries together cover the same key space as `sk-(?!ant-)[A-Za-z0-9_-]{20,}` \u2014 `sk-ant-` is already the separate entry above them, so the negative lookahead isn't needed here; the split is clearer than a single combined regex.\n\nLive hook updated to match in the same commit. Rebased onto current main.",
+    "redacted": true,
     "state": "COMMENTED"
    },
    "source": "github",
@@ -2039,7 +2041,8 @@
    "payload": {
     "author": "mimir-carreira",
     "author_is_bot": false,
-    "body": "Good catch on the underscore form \u2014 that's a real regression and the test pin is exactly right.\n\n**Fix applied** (fcbdfac): `sk-proj-` \u2192 `sk-proj[-_]` in the template.\n\n- `sk-proj_AbCdEfGh1234567890_ijKlMnOpQrSt` \u2192 matched by `sk-proj[-_][A-Za-z0-9_\\-]{20,}` \u2713\n- `sk-proj-AbCdEfGh1234567890ijKlMnOpQrSt` \u2192 also matched \u2713\n- `sk-foo-bar-baz-qux` \u2192 still not matched (doesn't start `sk-proj[-_]`) \u2713\n- `sk-AbCdEfGhIjKlMnOpQrStUvWx` \u2192 matched by classic pattern \u2713\n\nAll 24 tests pass including `test_redact_and_pre_commit_hook_agree_on_openai_project_key` and `test_pre_commit_hook_still_catches_traditional_sk_ant_keys`. Live hook at `/mimir-home/.git/hooks/pre-commit` updated to match.",
+    "body": "Good catch on the underscore form \u2014 that's a real regression and the test pin is exactly right.\n\n**Fix applied** (fcbdfac): `sk-proj-` \u2192 `sk-proj[-_]` in the template.\n\n- `sk-proj_AbCdEfGh1234567890_ijKlMnOpQrSt` \u2192 matched by `sk-proj[-_][A-Za-z0-9_\\-]{20,}` \u2713\n- `[REDACTED-CREDENTIAL]` \u2192 also matched \u2713\n- `sk-foo-bar-baz-qux` \u2192 still not matched (doesn't start `sk-proj[-_]`) \u2713\n- `sk-AbCdEfGhIjKlMnOpQrStUvWx` \u2192 matched by classic pattern \u2713\n\nAll 24 tests pass including `test_redact_and_pre_commit_hook_agree_on_openai_project_key` and `test_pre_commit_hook_still_catches_traditional_sk_ant_keys`. Live hook at `/mimir-home/.git/hooks/pre-commit` updated to match.",
+    "redacted": true,
     "state": "COMMENTED"
    },
    "source": "github",

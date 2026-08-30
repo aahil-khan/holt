@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from holt.evidence.provider import EvidenceProvider
+from holt.evidence.redact import redact_payload
 from holt.types import T_CUTOFF, EvidenceRecord, Window
 
 FIXTURE_ROOT = Path("fixtures")
@@ -55,6 +56,28 @@ def content_hash(records: Iterable[EvidenceRecord]) -> str:
     return hashlib.sha256(blob.encode()).hexdigest()
 
 
+def redact_records(records: Iterable[EvidenceRecord]) -> tuple[list[EvidenceRecord], int]:
+    """Strip third-party credentials from evidence on its way to disk.
+
+    Public issues contain leaked keys. Reading them is unavoidable; shipping them
+    in a committed fixture is a choice, and this is the point where we decline it.
+    """
+    out, removed = [], 0
+    for record in records:
+        payload, hits = redact_payload(record.payload)
+        removed += hits
+        out.append(
+            record if not hits else EvidenceRecord(
+                evidence_id=record.evidence_id,
+                source=record.source,
+                url=record.url,
+                timestamp=record.timestamp,
+                payload=payload,
+            )
+        )
+    return out, removed
+
+
 def write_fixture(
     repo_slug: str,
     window: Window,
@@ -62,7 +85,9 @@ def write_fixture(
     root: Path = FIXTURE_ROOT,
     cutoff: datetime = T_CUTOFF,
 ) -> Path:
-    records = list(records)
+    # Scrubbed before the hash is taken, so the committed hash describes the
+    # committed bytes and a later re-capture of the same evidence reproduces it.
+    records, removed = redact_records(records)
     path = root / window.value / slug_to_filename(repo_slug)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -73,6 +98,7 @@ def write_fixture(
                 "cutoff": cutoff.isoformat(),
                 "captured_at": datetime.now(UTC).isoformat(),
                 "content_sha256": content_hash(records),
+                "credentials_redacted": removed,
                 "records": [record_to_dict(r) for r in records],
             },
             indent=1,

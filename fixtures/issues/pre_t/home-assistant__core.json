@@ -1,6 +1,7 @@
 {
  "captured_at": "2026-08-30T10:19:51.171044+00:00",
- "content_sha256": "c10b998a848e50904900aaa21890c2a5ce8290403e37dd85546b3e4c3668ff8e",
+ "content_sha256": "c5a5196877096360b8abdcc081cecc53772a2492486fdb028d0a2ea5614c0c77",
+ "credentials_redacted": 2,
  "cutoff": "2026-06-01T00:00:00+00:00",
  "records": [
   {
@@ -1560,13 +1561,14 @@
    "evidence_id": "issue:home-assistant/core#172424:opened",
    "payload": {
     "author": "JediAndi",
-    "body": "### The problem\n\nMy HA logs have kicked up an error relating to a zigbee energy monitoring socket (Sonoff S60ZBTPG, Firmware 2.0.2 v8194) and the error message indicated to log this bug report here.\n\nI have four of these same sockets and only one seems to have this error. I wonder if it is a problem with state class (I am, admittedly, out of my depth on this aspect) or possibly due to my region being on Daylight Savings Time and the hour offset causing a problem in the logging. \n\nI'd like to get it resolved, and I 'm hoping that it's something I can remedy quickly myself.\n\n### What version of Home Assistant Core has the issue?\n\ncore-2026.5.4\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\nMQTT\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/mqtt\n\n### Diagnostics information\n\n[mqtt-01JDHKK7XTSQ384606VWKFS46M-Desk-3d614782ed16d19178c7fd02eb2ae3bb.json](https://github.com/user-attachments/files/28341873/mqtt-01JDHKK7XTSQ384606VWKFS46M-Desk-3d614782ed16d19178c7fd02eb2ae3bb.json)\n\n### Example YAML snippet\n\n```yaml\n\n```\n\n### Anything in the logs that might be useful for us?\n\n```txt\nLogger: homeassistant.components.sensor.recorder\nSource: components/sensor/recorder.py:431\nIntegration: Sensor (documentation, issues)\nFirst occurred: 00:05:10 (1 occurrence)\nLast logged: 00:05:10\n\nEntity sensor.desk_energy_yesterday from integration mqtt has state class total_increasing, but its state is not strictly increasing. Triggered by state 4.01 (previous state: 4.26) with last_updated set to 2026-05-27T23:00:00.391718+00:00. Please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+mqtt%22\n```\n\n### Additional information\n\n_No response_",
+    "body": "### The problem\n\nMy HA logs have kicked up an error relating to a zigbee energy monitoring socket (Sonoff S60ZBTPG, Firmware 2.0.2 v8194) and the error message indicated to log this bug report here.\n\nI have four of these same sockets and only one seems to have this error. I wonder if it is a problem with state class (I am, admittedly, out of my depth on this aspect) or possibly due to my region being on Daylight Savings Time and the hour offset causing a problem in the logging. \n\nI'd like to get it resolved, and I 'm hoping that it's something I can remedy quickly myself.\n\n### What version of Home Assistant Core has the issue?\n\ncore-2026.5.4\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\nMQTT\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/mqtt\n\n### Diagnostics information\n\n[mqtt-01JDHKK7XTSQ384606VWKFS46M-De[REDACTED-CREDENTIAL].json](https://github.com/user-attachments/files/28341873/mqtt-01JDHKK7XTSQ384606VWKFS46M-De[REDACTED-CREDENTIAL].json)\n\n### Example YAML snippet\n\n```yaml\n\n```\n\n### Anything in the logs that might be useful for us?\n\n```txt\nLogger: homeassistant.components.sensor.recorder\nSource: components/sensor/recorder.py:431\nIntegration: Sensor (documentation, issues)\nFirst occurred: 00:05:10 (1 occurrence)\nLast logged: 00:05:10\n\nEntity sensor.desk_energy_yesterday from integration mqtt has state class total_increasing, but its state is not strictly increasing. Triggered by state 4.01 (previous state: 4.26) with last_updated set to 2026-05-27T23:00:00.391718+00:00. Please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+mqtt%22\n```\n\n### Additional information\n\n_No response_",
     "body_truncated": false,
     "comments": 3,
     "labels": [
      "integration: mqtt"
     ],
     "last_edited_at": null,
+    "redacted": true,
     "title": "Energy Yesterday may have incorrect state class"
    },
    "source": "github",

@@ -1,6 +1,7 @@
 {
  "captured_at": "2026-08-30T10:10:58.381492+00:00",
- "content_sha256": "95b9cacf04dc92189cdfaf3d4fef159dcbe835272b40b6d6a6c179ed299e5c02",
+ "content_sha256": "49a6660da58f7455a476b79b1a6f633a4c491fee1818b49a68dc5b49372b0a23",
+ "credentials_redacted": 1,
  "cutoff": "2026-06-01T00:00:00+00:00",
  "records": [
   {
@@ -176,11 +177,12 @@
    "evidence_id": "issue:open-jarvis/OpenJarvis#409:opened",
    "payload": {
     "author": "robbym-dev",
-    "body": "**Summary**\n\nThe connector connect endpoints (`POST /v1/connectors/{id}/connect`) persist whatever credential they are given without validating it, then let the downstream sync fail later. Two cases observed during e2e validation:\n\n- **Slack:** `POST /v1/connectors/slack/connect` with `xoxb-fake-token` returned `HTTP 200 {\"connected\":true,\"status\":\"connected\",\"sync_status\":\"started\"}`. No rejection of the obviously-invalid token.\n- **Granola:** `POST /v1/connectors/granola/connect` with `{\"code\":\"fake-key-12345\"}` returned `HTTP 200 {\"connected\":true}` and **wrote the fake key to `~/.openjarvis/connectors/granola.json`, overwriting a previously-valid credential.** The sync later reported `state:\"error\"` \u2014 but only after the real credential had already been destroyed on disk.\n\n**Impact**\n\n1. Users get a false \"connected\" signal for credentials that don't work.\n2. **Data loss:** an invalid connect call can overwrite a working credential file, requiring full re-authentication. (This actually happened during testing \u2014 a real Granola token was lost.)\n\n**Suggested fix**\n\nValidate before persisting:\n- **Slack:** reject tokens that don't match the expected user-token prefix (e.g. `xoxp-`) with a clear 4xx error; reject `xoxb-` bot tokens for the user-data scopes.\n- **Granola:** make a lightweight authenticated probe (e.g. `GET /v1/notes?limit=1`) before writing the credential; only persist on success.\n- **General:** write to a temp file and atomically swap on validation success, so a failed connect never clobbers an existing valid credential.\n\n_Found during the continuous-agent e2e validation (see PR #407). Pre-existing; not a regression from that PR._",
+    "body": "**Summary**\n\nThe connector connect endpoints (`POST /v1/connectors/{id}/connect`) persist whatever credential they are given without validating it, then let the downstream sync fail later. Two cases observed during e2e validation:\n\n- **Slack:** `POST /v1/connectors/slack/connect` with `[REDACTED-CREDENTIAL]` returned `HTTP 200 {\"connected\":true,\"status\":\"connected\",\"sync_status\":\"started\"}`. No rejection of the obviously-invalid token.\n- **Granola:** `POST /v1/connectors/granola/connect` with `{\"code\":\"fake-key-12345\"}` returned `HTTP 200 {\"connected\":true}` and **wrote the fake key to `~/.openjarvis/connectors/granola.json`, overwriting a previously-valid credential.** The sync later reported `state:\"error\"` \u2014 but only after the real credential had already been destroyed on disk.\n\n**Impact**\n\n1. Users get a false \"connected\" signal for credentials that don't work.\n2. **Data loss:** an invalid connect call can overwrite a working credential file, requiring full re-authentication. (This actually happened during testing \u2014 a real Granola token was lost.)\n\n**Suggested fix**\n\nValidate before persisting:\n- **Slack:** reject tokens that don't match the expected user-token prefix (e.g. `xoxp-`) with a clear 4xx error; reject `xoxb-` bot tokens for the user-data scopes.\n- **Granola:** make a lightweight authenticated probe (e.g. `GET /v1/notes?limit=1`) before writing the credential; only persist on success.\n- **General:** write to a temp file and atomically swap on validation success, so a failed connect never clobbers an existing valid credential.\n\n_Found during the continuous-agent e2e validation (see PR #407). Pre-existing; not a regression from that PR._",
     "body_truncated": false,
     "comments": 0,
     "labels": [],
     "last_edited_at": null,
+    "redacted": true,
     "title": "Connect endpoints accept invalid credentials without validation (Slack xoxb-, Granola key) and can overwrite valid creds"
    },
    "source": "github",
