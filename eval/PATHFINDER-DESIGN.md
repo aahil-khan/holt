@@ -1,10 +1,18 @@
-> **Outcome: measured, ship/cut decision open.** Built, evaluated on both
-> pools, and withdrawn from the pipeline on 2026-08-30 pending a final call. Combined precision@3 over 25 repositories: Holt 0.173 against
-> the `good first issue` label's 0.187 (paired difference -0.013, 95% CI
-> [-0.133, +0.120], sign test p = 0.51). That is cut condition 2 below,
-> written before implementation. The document is kept unedited above the
-> line so the design can be read against what it produced. See `ASSESSMENT.md`
-> for the three options still live.
+> **Outcome: measured, shipped with the measurement attached.** Built and
+> evaluated on both pools. It did **not** beat its comparators: combined
+> precision@3 of 0.173 against the `good first issue` label's 0.187 over 25
+> repositories (paired difference −0.013, 95% CI [−0.133, +0.120], sign test
+> p = 0.51).
+>
+> Cut condition 2 was met, and the coverage query below is why it ships anyway:
+> **13 of those 25 repositories carry no beginner-labelled issue at all**, and 17
+> of 25 carry fewer than three — so on most of the pool the `good first issue`
+> comparator reorders nothing and *is* recency under another name. The ranking is
+> printed with its own losing number beside it, in the tool's output rather than
+> only here. See `ASSESSMENT.md`.
+>
+> The document below is unedited, so the design can be read against what it
+> produced.
 
 ---
 

@@ -52,6 +52,40 @@
   },
   "skipped_small": 2,
   "skipped_empty": 4,
+  "coverage": {
+    "DefiLlama/dimension-adapters": {
+      "candidates": 65,
+      "labelled": 0
+    },
+    "NixOS/nixpkgs": {
+      "candidates": 198,
+      "labelled": 0
+    },
+    "anurag3407/career-pilot": {
+      "candidates": 198,
+      "labelled": 69
+    },
+    "open-jarvis/OpenJarvis": {
+      "candidates": 38,
+      "labelled": 0
+    },
+    "space-wizards/space-station-14": {
+      "candidates": 215,
+      "labelled": 29
+    },
+    "stablyai/orca": {
+      "candidates": 55,
+      "labelled": 2
+    },
+    "utksh1/SecuScan": {
+      "candidates": 113,
+      "labelled": 4
+    },
+    "volcengine/OpenViking": {
+      "candidates": 53,
+      "labelled": 0
+    }
+  },
   "edited_after_cutoff": 9,
   "candidates": 935
 }

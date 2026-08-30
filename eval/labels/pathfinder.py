@@ -17,6 +17,8 @@ from __future__ import annotations
 from collections.abc import Iterable
 
 from eval.labels.qualifying import established_authors
+from holt.issues import issue_key as _issue_key
+from holt.issues import open_at_cutoff as _open_at_cutoff
 from holt.types import T_CUTOFF, EvidenceRecord
 
 CUTOFF_ISO = T_CUTOFF.isoformat()
@@ -26,30 +28,11 @@ CUTOFF_ISO = T_CUTOFF.isoformat()
 MIN_CANDIDATE_ISSUES = 10
 
 
-def issue_key(evidence_id: str) -> str:
-    """`issue:owner/name#12:closed` -> `issue:owner/name#12`."""
-    return ":".join(evidence_id.split(":")[:2])
-
-
-def candidates(pre_t: Iterable[EvidenceRecord]) -> dict[str, EvidenceRecord]:
-    """Issues open at the cutoff — the set Path Finder ranks.
-
-    A record only reaches here if the provider already asserted its timestamp is
-    at or before the cutoff, so "opened before T" needs no separate check. An
-    issue closed *before* T never produces a pre-cutoff `:closed` record either,
-    so anything with an `:opened` record and no pre-cutoff closure was open.
-    """
-    opened = {
-        issue_key(r.evidence_id): r
-        for r in pre_t
-        if r.evidence_id.startswith("issue:") and r.evidence_id.endswith(":opened")
-    }
-    closed_before = {
-        issue_key(r.evidence_id)
-        for r in pre_t
-        if r.evidence_id.startswith("issue:") and r.evidence_id.endswith(":closed")
-    }
-    return {k: v for k, v in opened.items() if k not in closed_before}
+# One definition, shared with the ranker in `holt.issues`. If the set Path Finder
+# ranks and the set this module scores could drift apart, every precision number
+# would be meaningless, so neither side owns it.
+issue_key = _issue_key
+candidates = _open_at_cutoff
 
 
 def realised(

@@ -106,6 +106,76 @@
   },
   "skipped_small": 1,
   "skipped_empty": 3,
+  "coverage": {
+    "JhaSourav07/commitpulse": {
+      "candidates": 99,
+      "labelled": 90
+    },
+    "PostHog/posthog": {
+      "candidates": 263,
+      "labelled": 2
+    },
+    "SandeepVashishtha/Eventra": {
+      "candidates": 180,
+      "labelled": 0
+    },
+    "Scottcjn/Rustchain": {
+      "candidates": 111,
+      "labelled": 0
+    },
+    "apache/doris": {
+      "candidates": 211,
+      "labelled": 0
+    },
+    "home-assistant/core": {
+      "candidates": 202,
+      "labelled": 0
+    },
+    "infiniflow/ragflow": {
+      "candidates": 182,
+      "labelled": 0
+    },
+    "knoxiboy/DoubtDesk": {
+      "candidates": 54,
+      "labelled": 5
+    },
+    "leonagoel/hybrid-recommender": {
+      "candidates": 117,
+      "labelled": 87
+    },
+    "nesquena/hermes-webui": {
+      "candidates": 91,
+      "labelled": 12
+    },
+    "openclaw/openclaw": {
+      "candidates": 155,
+      "labelled": 0
+    },
+    "paperclipai/paperclip": {
+      "candidates": 279,
+      "labelled": 0
+    },
+    "pingcap/tidb": {
+      "candidates": 247,
+      "labelled": 1
+    },
+    "rishabh0510rishabh/EnvForage": {
+      "candidates": 48,
+      "labelled": 1
+    },
+    "ronisarkarexe/story-spark-ai": {
+      "candidates": 198,
+      "labelled": 195
+    },
+    "swiftlang/llvm-project": {
+      "candidates": 198,
+      "labelled": 0
+    },
+    "termux/termux-packages": {
+      "candidates": 43,
+      "labelled": 0
+    }
+  },
   "edited_after_cutoff": 86,
   "candidates": 2678
 }

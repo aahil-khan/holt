@@ -4,12 +4,21 @@ from __future__ import annotations
 
 import argparse
 import sys
+from pathlib import Path
 
 from holt import baseline, model
-from holt.agent import pipeline
+from holt.agent import entry, pipeline
 from holt.evidence.fixtures import FixtureProvider
 from holt.evidence.provider import EvidenceProvider
+from holt.report import EntryPoint
 from holt.types import Window
+
+# Issue evidence is captured and replayed separately from pull-request evidence,
+# so that adding the ranker did not invalidate a single recorded verdict
+# trajectory. The evaluation of the verdict and the evaluation of the ranking stay
+# independent of each other.
+ISSUE_ROOT = "fixtures/issues"
+PATHFINDER_TRAJECTORIES = "pathfinder"
 
 
 def normalise(repo: str) -> str:
@@ -19,12 +28,41 @@ def normalise(repo: str) -> str:
     return "/".join(repo.split("/")[:2])
 
 
+def make_issue_provider(live: bool) -> EvidenceProvider:
+    if not live:
+        return FixtureProvider(Window.PRE_T, root=Path(ISSUE_ROOT))
+    from holt.evidence.github_graphql import LiveGitHubIssueProvider
+
+    return LiveGitHubIssueProvider(Window.PRE_T)
+
+
 def make_provider(live: bool) -> EvidenceProvider:
     if not live:
         return FixtureProvider(Window.PRE_T)
     from holt.evidence.github_graphql import LiveGitHubProvider
 
     return LiveGitHubProvider(Window.PRE_T)
+
+
+def add_entry_points(assessment, repo: str, provider, args) -> None:
+    """Attach a ranked reading order, or say nothing at all.
+
+    Silent on failure by design: a missing issue fixture means we cannot rank,
+    and a tool that invents an entry point when it has no issues is worse than
+    one that omits the section.
+    """
+    try:
+        issues = make_issue_provider(args.live).fetch(repo)
+    except FileNotFoundError:
+        return
+    # Recorded under its own directory, so the ranker's calls and the verdict's
+    # calls replay independently and adding one never invalidated the other.
+    path = model.TRAJECTORY_DIR / PATHFINDER_TRAJECTORIES / (repo.replace("/", "__") + ".jsonl")
+    client = model.ReplayModel(path) if args.replay else model.OpenAIModel(path)
+    ranked = entry.rank(repo, list(issues), list(provider.fetch(repo)), client)
+    assessment.entry_points = [
+        EntryPoint(r["evidence_id"], r["first_step"], r.get("why", "")) for r in ranked
+    ]
 
 
 def cmd_analyze(args: argparse.Namespace) -> int:
@@ -45,6 +83,8 @@ def cmd_analyze(args: argparse.Namespace) -> int:
             for d in trace.dropped:
                 print(f"<!-- DROPPED {d.field}={d.value!r} cited {list(d.evidence_ids)} -->",
                       file=sys.stderr)
+    if not args.baseline and not args.no_entry_points:
+        add_entry_points(assessment, repo, provider, args)
     print(assessment.render())
     if not args.replay:
         u = client.usage
@@ -77,6 +117,11 @@ def main(argv: list[str] | None = None) -> int:
         type=int,
         default=7,
         help="how many days you actually have; everything time-shaped scales from it",
+    )
+    analyze.add_argument(
+        "--no-entry-points",
+        action="store_true",
+        help="skip the ranked reading order (see its measured precision in the output)",
     )
     analyze.add_argument(
         "--show-verification",

@@ -129,19 +129,48 @@ pre-cutoff evidence ──┬─► signals          arithmetic, no model
                                                 cannot change
 ```
 
-Four design choices, and what measurement says about each:
+## What the orchestration buys
 
-**The model never owns the decision — and this is the one that measurably pays.**
+Four things follow from splitting this into stages rather than asking one model
+one question. Each is stated with the measurement that supports it, and the
+section after this one states what the split does **not** buy.
+
+**1. A rejection rule that no single prompt can hold.** Holt rejects a repository
+when contributions land *easily* and nobody reviews them — high merge rate, almost
+no human review. That is a project where a stranger's pull request is waved
+through into something nobody maintains, and it looks identical to a healthy
+project on every signal GitHub displays. The rule lives in `verdict.py` as two
+constants, it was **pre-registered with numeric predictions before it was run**
+(`eval/PREREGISTRATION-2.md`), and it was validated on the second pool, which had
+never been used to develop it:
+
+| | before the rule | after |
+|---|---|---|
+| Specificity, pool 2 (out of sample) | 0.58 | **0.83** |
+
+All three pre-registered predictions held. Specificity is the thing Holt exists
+to provide — saying *no* — and before this rule it was a coin flip.
+
+**2. Re-answering the question costs nothing.** The contributor's time budget is a
+parameter: `holt analyze <repo> --days 3` and `--days 90` are different questions
+with different answers. Because every time-shaped threshold is derived inside
+`verdict.py` and the model output is unchanged, **re-running with a different
+budget makes zero model calls**. A single prompt has to be re-asked, re-billed,
+and may return a different verdict for reasons unrelated to the change.
+
+**3. The model never owns the decision — and this is the one that measurably pays.**
 `src/holt/agent/verdict.py` is the only path from findings to a verdict and runs
 no model. Across three runs Holt returns identical verdicts on **21 of 22**
 repositories; the baseline, which puts the whole decision inside one model call,
 on **13 of 22**.
 
-**Arithmetic where arithmetic works.** Counting landings and measuring reply
+**4. Arithmetic where arithmetic works.** Counting landings and measuring reply
 latency are not model problems. *But the arithmetic thresholds never bind on this
 pool*: setting `MIN_MERGES` and `MIN_DISTINCT_AUTHORS` to zero leaves all 22
 verdicts and the confusion matrix unchanged. They are guardrails that this
 sample never tested.
+
+Two further properties, both structural rather than accuracy-improving:
 
 **Verification can only subtract — and on this pool it subtracts nothing.**
 Stage D resolves every evidence id a finding cites and drops what does not
@@ -162,6 +191,41 @@ narrower than "structural" suggests.
 **Stage B (`onboarding`) reaches the report and not the verdict**, like Stage C.
 Only Stage A's `repo_kind` and the arithmetic signals are consulted by
 `verdict.py`.
+
+## What the orchestration does not buy
+
+Everything above is what the split earns. This is what it does not, and it is
+published because a claim about the first is worth nothing without the second.
+
+**The pipeline's measurable contribution to accuracy is small**, and an ablation
+that removes the orchestration entirely — one prompt over the *same* signals and
+the *same* evidence digest — reaches the same MCC as the full pipeline on pool 2
+(0.42 = 0.42). The stages buy determinism, reparameterisation, auditable
+citations and a rejection rule with a written threshold. They do not buy raw
+accuracy on this evidence, and we are not going to claim they do.
+
+**Ablating the pipeline, in MCC**, holding recorded model output fixed and
+varying only `verdict.py`:
+
+| Configuration | MCC |
+|---|---|
+| full pipeline | +0.46 |
+| Stage A repository-kind rules disabled | +0.42 |
+| arithmetic thresholds set to zero | +0.46 |
+| both disabled | +0.42 |
+
+Three model stages and a verification pass are worth **+0.04 MCC** over a rule
+that answers "insufficient evidence if nobody tried, otherwise viable". What they
+*are* worth is the trap rejection — 4 of 5 against the baseline's 0 of 5 — which
+is the one comparison in this project that reaches significance.
+
+**And Path Finder, which we shipped losing.** Ranking issues by how likely an
+outsider is to land a merged fix scores precision@3 of 0.173 against GitHub's
+`good first issue` label at 0.187 over 25 repositories — indistinguishable, and
+its own pre-registered cut condition. It ships because 13 of those 25
+repositories carry no beginner-labelled issue at all, and because **the tool
+prints that result in its own output next to the ranking**, not here. Run
+`holt analyze NixOS/nixpkgs --replay` and read the "Where to start" section.
 
 ## What this result depends on
 
@@ -194,24 +258,7 @@ encodes mechanically. Label and agent operationalise one construct two ways —
 one by rule, one by judgement. That is not code sharing, and the temporal split
 is intact, but it is closer than "the agent shares no diff-shape rules" implies.
 
-**The pipeline's measurable contribution is small.** In MCC, holding recorded
-model output fixed and varying only `verdict.py`:
-
-| Configuration | MCC |
-|---|---|
-| full pipeline | +0.46 |
-| Stage A repository-kind rules disabled | +0.42 |
-| arithmetic thresholds set to zero | +0.46 |
-| both disabled | +0.42 |
-
-Three model stages and a verification pass are worth **+0.04 MCC** over a rule
-that answers "insufficient evidence if nobody tried, otherwise viable". What they
-*are* worth is the trap rejection — 4 of 5 against the baseline's 0 of 5 — which
-is the one comparison in this project that reaches significance.
-
 ---
-
-## Read-only---
 
 ## Read-only, and about time rather than people
 

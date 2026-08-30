@@ -36,6 +36,21 @@ class Claim:
     evidence_id: str | None = None
 
 
+@dataclass(frozen=True, slots=True)
+class EntryPoint:
+    """One suggested place to start, with the issue it points at.
+
+    Carried separately from `Claim` because it is a *suggestion* rather than a
+    statement of fact, and the two must not be rendered as if they had the same
+    standing. Claims are verified against evidence; this is a ranking whose
+    measured precision is printed next to it.
+    """
+
+    evidence_id: str
+    first_step: str
+    why: str = ""
+
+
 @dataclass(slots=True)
 class Assessment:
     repo: str
@@ -44,6 +59,7 @@ class Assessment:
     claims: list[Claim] = field(default_factory=list)
     method: str = "holt"
     replayed: bool = False
+    entry_points: list[EntryPoint] = field(default_factory=list)
 
     def render(self) -> str:
         lines = [f"# {self.repo}", ""]
@@ -59,4 +75,15 @@ class Assessment:
             for claim in self.claims:
                 where = f" — `{claim.evidence_id}`" if claim.evidence_id else ""
                 lines.append(f"- {claim.text}{where}")
+        if self.entry_points:
+            # The disclaimer is emitted by the renderer, not by the caller, so
+            # there is no code path that prints a ranking without the number that
+            # says how well it works. A test holds this.
+            from holt.agent.entry import DISCLAIMER
+
+            lines += ["", "## Where to start", "", DISCLAIMER, ""]
+            for point in self.entry_points:
+                lines.append(f"- **{point.first_step}** — `{point.evidence_id}`")
+                if point.why:
+                    lines.append(f"  {point.why}")
         return "\n".join(lines).rstrip() + "\n"

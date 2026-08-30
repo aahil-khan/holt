@@ -467,14 +467,12 @@ def find_paths(
 ) -> list[dict]:
     """Rank candidate issues. Returns [] when there is nothing worth ranking.
 
-    **Withdrawn from the pipeline, deliberately left in the tree.** Evaluated on
-    both pools and not shipped pending a final call: combined precision@3 of 0.173 against the `good first issue`
-    label's 0.187 over 25 repositories, which is cut condition 2 of
-    `eval/PATHFINDER-DESIGN.md`, written before this function existed. It is
-    not called by `pipeline.analyze` and does not reach any user-facing
-    assessment. Whether it ships with that measurement printed alongside it is
-    an open decision, recorded in `ASSESSMENT.md`. `eval/pathfinder_harness.py` still runs it, so the negative
-    result stays reproducible rather than becoming a claim in a changelog.
+    Shipped, and shipped losing. It does not beat the comparators it was
+    pre-registered against, and `holt.agent.entry` prints that result in the same
+    output as the ranking rather than filing it in a document. Call through
+    `entry.rank` rather than directly: it is what both the CLI and
+    `eval/pathfinder_harness.py` use, which is the only reason the published
+    precision describes something a user can actually run.
     """
     if not issues:
         return []

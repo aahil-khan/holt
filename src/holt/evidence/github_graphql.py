@@ -461,3 +461,39 @@ class LiveGitHubProvider(EvidenceProvider):
 
     def _resolve_raw(self, evidence_id: str) -> EvidenceRecord | None:
         return self._seen.get(evidence_id)
+
+
+class LiveGitHubIssueProvider(EvidenceProvider):
+    """Issues, through the same chokepoint as everything else.
+
+    Separate from `LiveGitHubProvider` rather than a flag on it because the two
+    answer different questions and are captured into different fixture roots. A
+    provider that returned issues or pull requests depending on a constructor
+    argument would make every window assertion harder to read for no gain.
+    """
+
+    def __init__(
+        self,
+        window: Window,
+        cutoff: datetime = T_CUTOFF,
+        transport: GitHubGraphQL | None = None,
+        max_pages: int = 6,
+    ) -> None:
+        super().__init__(window, cutoff)
+        self.transport = transport or GitHubGraphQL()
+        self.max_pages = max_pages
+        self._seen: dict[str, EvidenceRecord] = {}
+
+    def _fetch_raw(self, request: str, /, **params: object) -> Iterable[EvidenceRecord]:
+        # Slice at the source. `created:<T` is a server-side qualifier, so the
+        # newest-first ordering cannot fill the page with issues we must not see.
+        day = self.cutoff.date().isoformat()
+        nodes = self.transport.search_issues(
+            f"repo:{request} is:issue created:<{day}", self.max_pages
+        )
+        kept = [r for r in project_issues(request, nodes) if r.timestamp <= self.cutoff]
+        self._seen.update({r.evidence_id: r for r in kept})
+        return kept
+
+    def _resolve_raw(self, evidence_id: str) -> EvidenceRecord | None:
+        return self._seen.get(evidence_id)

@@ -24,8 +24,7 @@ import statistics
 from pathlib import Path
 
 from eval.labels import pathfinder
-from holt.agent.signals import build_threads, compute
-from holt.agent.stages import find_paths
+from holt.agent import entry
 from holt.evidence.fixtures import FixtureProvider
 from holt.model import OpenAIModel, ReplayModel, TRAJECTORY_DIR
 from holt.types import Window
@@ -74,6 +73,7 @@ def main() -> None:
     skipped_small = skipped_empty = 0
     spend = 0.0
     edited = candidates_total = 0
+    coverage: list[tuple[str, int, int]] = []
 
     for slug in repos:
         try:
@@ -90,6 +90,8 @@ def main() -> None:
 
         cand = pathfinder.candidates(pre_i)
         hits = set(truth["realised_keys"])
+        labelled = sum(1 for r in cand.values() if is_beginner(r))
+        coverage.append((slug, len(cand), labelled))
         edited += truth["edited_after_cutoff"]
         candidates_total += truth["candidates"]
 
@@ -101,10 +103,9 @@ def main() -> None:
 
         path = TRAJECTORY_DIR / "pathfinder" / (slug.replace("/", "__") + ".jsonl")
         model = ReplayModel(path) if args.replay else OpenAIModel(path)
-        sig = compute(build_threads(pre_p)).as_dict()
-        ranked = find_paths(slug, list(cand.values()),
-                            {k: sig[k] for k in ("outsider_merged", "outsider_threads",
-                                                 "median_first_response_hours")}, model)
+        # The same call the CLI makes. If these diverged, the published precision
+        # would describe something no user ever runs.
+        ranked = entry.rank(slug, list(pre_i), list(pre_p), model)
         keys = [pathfinder.issue_key(r["evidence_id"]) for r in ranked]
         scores["holt"].append(precision_at_k(keys, hits))
         per_repo[slug] = {name: scores[name][-1] for name in scores}
@@ -121,6 +122,19 @@ def main() -> None:
         vals = [v for v in scores[name] if v is not None]
         if vals:
             print(f"  {name:<12} {statistics.mean(vals):.3f}")
+    if coverage:
+        # Without this, the good_first row is quietly misread. Where a repository
+        # has no labelled issue the comparator reorders nothing and *is* recency,
+        # so "we tied the label" would really mean "we tied recency" on that repo.
+        none_at_all = sum(1 for _, _, lab in coverage if lab == 0)
+        under_k = sum(1 for _, _, lab in coverage if lab < K)
+        total_lab = sum(lab for _, _, lab in coverage)
+        print(f"\n`good first issue` coverage across the same repositories:")
+        print(f"  {none_at_all}/{len(coverage)} have no beginner-labelled issue at all")
+        print(f"  {under_k}/{len(coverage)} have fewer than {K}, so the label comparator "
+              f"cannot fill a top-{K} and degenerates to recency there")
+        print(f"  {total_lab}/{candidates_total} candidate issues carry a beginner label "
+              f"({100*total_lab/candidates_total:.1f}%)")
     if candidates_total:
         print(f"\nissue bodies edited after the cutoff: {edited}/{candidates_total} "
               f"({100*edited/candidates_total:.1f}%) — the known leak, measured")
@@ -131,6 +145,7 @@ def main() -> None:
             "per_repo": per_repo,
             "skipped_small": skipped_small,
             "skipped_empty": skipped_empty,
+            "coverage": {slug: {"candidates": n, "labelled": lab} for slug, n, lab in coverage},
             "edited_after_cutoff": edited,
             "candidates": candidates_total,
         }, indent=2) + "\n")
