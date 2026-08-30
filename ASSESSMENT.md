@@ -1,6 +1,6 @@
 # Holt — where we are and how we got here
 
-Written 2026-08-30, revised through Path Finder. 31 commits, 53 tests, ~$5.10 spent.
+Written 2026-08-30, revised through the Path Finder decision. 36 commits, 71 tests, ~$5.10 spent.
 
 This is the orientation document. Read it if you have lost the thread.
 
@@ -144,71 +144,81 @@ That is reproducibility, not accuracy, and we say so.
   our own prompt on its first run — 80 of 108 unfaithful quotes were Holt's own
   scaffolding being quoted back as evidence.
 
-**Path Finder: built, measured, decision open.** It is the one thing in the
-project whose fate is not settled, so it gets the full record here.
+**Path Finder: measured, and shipped losing.** The decision that had been left
+open is made, and one query made it.
 
-*What it does.* Given a repository already judged viable, rank the issues open at
-the cutoff by how likely an outsider is to land a merged pull request resolving
-one. Ground truth was designed before implementation
-([`eval/PATHFINDER-DESIGN.md`](eval/PATHFINDER-DESIGN.md)): an issue is a
-*realised entry point* if it was later closed by a merged pull request from
-someone who had not already landed work in that repository.
+Before choosing, we asked something that was a property of the *inputs* rather
+than a slice on outcomes: **how many of the 25 scorable repositories carry any
+beginner-labelled issue at all?**
 
-*What it scores.* Combined over both pools, 25 scorable repositories, precision@3:
+```
+13/25  none at all
+17/25  fewer than three — the label cannot fill a top-3 there
+497/3,613 candidate issues carry a beginner label (13.8%)
+```
 
-| Method | precision@3 |
+**On 17 of 17 label-absent repositories, the `good_first` comparator scored
+identically to recency, to the decimal.** With nothing labelled it reorders
+nothing; it *is* recency under another name. So "we tied the `good first issue`
+label" was, across two thirds of the pool, "we tied recency" — a flaw in how we
+reported our own comparator.
+
+That reframes the result without rescuing it. The combined numbers stand:
+
+| Method | precision@3, 25 repos |
 |---|---|
 | random (base rate) | 0.151 |
 | recency | 0.160 |
 | `good first issue` label | **0.187** |
 | Holt | **0.173** |
 
-Paired per repository, Holt − label is **−0.013, 95% CI [−0.133, +0.120]**, 3
-wins / 6 losses / 16 ties, sign test **p = 0.51**. The honest reading is not that
-Holt is worse — it is that after ranking 3,613 issues we **cannot distinguish our
-ranking from a label GitHub applies for free**. Total cost to find out: $0.14.
+Paired, Holt − label is −0.013, 95% CI [−0.133, +0.120], sign test p = 0.51.
 
-*The case for cutting.* Cut condition 2 of the design document, written before a
-line of the feature existed, reads: *"the `good first issue` comparator matches
-Holt's precision — the feature then has no argument for existing."* That is met
-verbatim. The premise of the feature was that existing signals do not tell an
-outsider where to start; if the free label ranks as well as we do, the premise is
-false. And because the measurement lives in our own repository, shipping the
-ranking anyway is the single move most likely to make the rest of the honesty
-look like theatre.
+**So it ships, and it ships losing, with the losing number printed in its own
+output.** Every rendered ranking carries this — emitted by the renderer, not by
+any caller, so no code path can print a ranking without it:
 
-*The case against cutting.* The per-repository pattern is not flat. Holt scores
-1.00 where the label scores 0.00 on `JhaSourav07/commitpulse`, 0.67 against 0.00
-on `NixOS/nixpkgs`, 0.33 against 0.00 on `PostHog/posthog` — and loses on smaller
-repositories where a maintainer curates the label by hand. There may be a real
-effect where the label is useless at scale and Holt is not. **This is post-hoc
-slicing on n = 25 with 16 ties, and it is exactly the move pre-registration
-exists to prevent.** It is recorded as a hypothesis, not a finding.
+> **This ranking is not measurably better than picking at random.** precision@3
+> was 0.173 for this ranking, 0.187 for GitHub's `good first issue` label and
+> 0.151 for a random pick — differences well inside noise. It is printed anyway
+> because 13 of those 25 repositories had no beginner-labelled issue at all.
 
-*The three live options.*
+A ranking no better than chance still beats what a contributor has today on the
+half of viable repositories where no beginner label exists at all — and saying so
+in the product, rather than in a document, is the point. Two tests hold it there:
+one that the disclaimer accompanies any ranking, one that its printed numbers
+track the recorded measurement. See it with
+`uv run python -m holt.cli analyze NixOS/nixpkgs --replay`.
 
-| | What ships | Cost |
-|---|---|---|
-| **1. Ship the ranking, drop the claim** | Entry points appear in the assessment, and the tool's own output states "this ranking is not measurably better than GitHub's `good first issue` label — 0.173 vs 0.187 over 25 repositories" | ~20 min |
-| **2. Cut** | Nothing user-facing; `find_paths` stays in the tree marked as withdrawn, harness stays runnable | done already |
-| **3. Pre-register the subgroup** | Declare "Holt beats the label on repositories with more than N open issues" *before* scoring, then test it | ~40 min, likely underpowered |
+**Two things found while doing this that matter more than the feature.**
 
-**Current state of the tree: option 2 is what is committed** — `find_paths` is
-annotated as cut and is not called by `pipeline.analyze`. Nothing is deleted, so
-options 1 and 3 remain about twenty minutes of work away. **The decision is
-yours and is not made.**
+*The isolation test we claimed existed did not exist.* `CLAUDE.md` and three
+docstrings said a test enforced that `eval/labels/` cannot import
+`src/holt/agent/`. Nothing did. A documented, unenforced guarantee is worse than
+an undocumented one, because a reader trusts it. It is now checked with `ast`, so
+even an unexecuted import fails.
 
-*One side finding worth keeping regardless:* the post-cutoff issue-body edit rate
-is 86/2,678 on pool 2 (3.2%) against 9/935 on pool 1 (1.0%), 95/3,613 combined
-(2.6%). Pool 1 alone understated the leak threefold — a small argument for two
-pools that has nothing to do with Path Finder.
+*The fresh-clone check found somebody else's credentials, not ours.* Sweeping a
+clean clone turned up **13 credential-shaped strings across 7 fixtures**,
+including two full-length GitHub tokens pasted into public issue bodies — one of
+them printed twice, once normally and once **reversed** to defeat scanners.
+Scrubbing now runs before the content hash, records keep their evidence ids so
+citations still resolve, and a test walks every committed fixture and fails on
+any credential-shaped string. All 84 trajectories still replay with zero stale
+keys: none of the removed strings had reached a prompt.
+
+**Fresh clone, no credentials, verified end to end:** `uv sync` → **71 passed** →
+`holt analyze --replay` renders → `--days 90` re-answers at zero model calls →
+`eval/pathfinder_harness.py --replay` reproduces the published ranking numbers.
+That is the qualification-gate item and the second tie-break, now actually run
+rather than designed for.
 
 **Open:**
 
 | | Effort | Why |
 |---|---|---|
-| Final frozen benchmark, both pools | ~1h, ~$3.50 | Committed results still predate the rejection rule |
-| Doc pass | ~1h | README describes the pre-rule, pre-Path-Finder world |
+| **Final frozen benchmark, both pools** | ~1h, ~$3.50 | The one blocking item. Committed results predate the rejection rule, so the README's specificity of 0.50 understates the 0.83 that actually ships |
+| Doc pass on the headline numbers | ~30m | Mechanical once the benchmark lands; the structural pass is done |
 | **Video** | yours | Required deliverable |
 | **Human-time number** | yours, ~30m | The brief asks for it; only you can produce it |
 
@@ -224,3 +234,13 @@ evidence layer does the work.
 The rejection rule is the first evidence that orchestration can add something
 accuracy-wise, and it arrived through the same discipline that killed the two
 experiments before it: write the rule down, predict the outcome, run it once.
+
+Path Finder is the fourth experiment run that way and the first that ships
+despite failing. That is not a softening of the rule — the rule was "cut if the
+label matches us", and the label does. It ships because a coverage query showed
+the comparator does not exist on half the pool, and because the honest thing to
+do with a ranking that loses is to print the loss beside it. A tool that states
+its own negative result in its own output is the clearest expression of what this
+project is: the discipline is in the artifact, not in the description of it.
+
+What is left is one benchmark run, and then it is finished.
