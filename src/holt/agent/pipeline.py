@@ -8,6 +8,7 @@ disagree, the determinism claim would be worth nothing.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import datetime
 
 from holt.agent import landing, stages
 from holt.agent.findings import Finding, Findings
@@ -48,6 +49,7 @@ def analyze(
     provider: EvidenceProvider,
     model: ModelClient,
     contributor_days: int = 7,
+    as_of: datetime | None = None,
 ) -> tuple[Assessment, Trace]:
     records = provider.fetch(repo)
     threads = build_threads(records)
@@ -100,6 +102,7 @@ def analyze(
         limits=narrated["what_could_not_be_determined"],
         rules=list(rules),
         contributor_days=contributor_days,
+        as_of=as_of,
         landing=landing.render(landing.compute(threads)),
         claims=claims,
         method="holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)",

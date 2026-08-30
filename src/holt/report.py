@@ -8,6 +8,7 @@ arriving at one differs.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import datetime
 from enum import Enum
 
 
@@ -80,6 +81,9 @@ class Assessment:
     # Rendered markdown lines from `holt.agent.landing`. Arithmetic over the file
     # lists we already crawl; the model never sees or writes this section.
     landing: list[str] = field(default_factory=list)
+    # The date evidence was cut at. Stated in the output because a reader cannot
+    # otherwise tell a quiet repository from one whose recent months were excluded.
+    as_of: datetime | None = None
 
     def render(self) -> str:
         lines = [f"# {self.repo}", ""]
@@ -91,6 +95,8 @@ class Assessment:
         budget = f"for a contributor with {self.contributor_days} day"
         budget += "" if self.contributor_days == 1 else "s"
         lines += [f"**{VERDICT_HEADLINES[self.verdict]}** — {budget}.", ""]
+        if self.as_of:
+            lines += [f"*Evidence up to {self.as_of.date().isoformat()}.*", ""]
         if self.bottom_line:
             lines += [self.bottom_line, ""]
         if self.summary:

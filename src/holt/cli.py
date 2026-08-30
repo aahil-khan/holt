@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 
 from holt import baseline, model
@@ -11,7 +12,7 @@ from holt.agent import entry, pipeline
 from holt.evidence.fixtures import FixtureProvider
 from holt.evidence.provider import EvidenceProvider
 from holt.report import EntryPoint
-from holt.types import Window
+from holt.types import T_CUTOFF, Window
 
 # Issue evidence is captured and replayed separately from pull-request evidence,
 # so that adding the ranker did not invalidate a single recorded verdict
@@ -28,20 +29,38 @@ def normalise(repo: str) -> str:
     return "/".join(repo.split("/")[:2])
 
 
-def make_issue_provider(live: bool) -> EvidenceProvider:
+def as_of_from(args: argparse.Namespace) -> datetime:
+    """How recent the evidence may be.
+
+    **T = 2026-06-01 is an evaluation device, not a product setting.** It exists so
+    labels can be computed from records the agent was never shown. A person asking
+    about a repository today wants everything up to today, and cutting them off in
+    June throws away the three most relevant months -- badly enough that an active
+    repository created in July reports "no outsider activity" and looks dead.
+
+    So: fixtures answer as of T, because that is what they contain; live runs
+    answer as of now, unless `--as-of` says otherwise. `--as-of 2026-06-01` on a
+    live run reproduces the benchmark's view.
+    """
+    if getattr(args, "as_of", None):
+        return datetime.fromisoformat(args.as_of).replace(tzinfo=UTC)
+    return datetime.now(UTC) if args.live else T_CUTOFF
+
+
+def make_issue_provider(live: bool, as_of: datetime) -> EvidenceProvider:
     if not live:
         return FixtureProvider(Window.PRE_T, root=Path(ISSUE_ROOT))
     from holt.evidence.github_graphql import LiveGitHubIssueProvider
 
-    return LiveGitHubIssueProvider(Window.PRE_T)
+    return LiveGitHubIssueProvider(Window.PRE_T, cutoff=as_of)
 
 
-def make_provider(live: bool) -> EvidenceProvider:
+def make_provider(live: bool, as_of: datetime) -> EvidenceProvider:
     if not live:
         return FixtureProvider(Window.PRE_T)
     from holt.evidence.github_graphql import LiveGitHubProvider
 
-    return LiveGitHubProvider(Window.PRE_T)
+    return LiveGitHubProvider(Window.PRE_T, cutoff=as_of)
 
 
 def add_entry_points(assessment, repo: str, provider, args) -> None:
@@ -52,7 +71,7 @@ def add_entry_points(assessment, repo: str, provider, args) -> None:
     one that omits the section.
     """
     try:
-        issues = make_issue_provider(args.live).fetch(repo)
+        issues = make_issue_provider(args.live, as_of_from(args)).fetch(repo)
     except FileNotFoundError:
         return
     # Recorded under its own directory, so the ranker's calls and the verdict's
@@ -67,13 +86,16 @@ def add_entry_points(assessment, repo: str, provider, args) -> None:
 
 def cmd_analyze(args: argparse.Namespace) -> int:
     repo = normalise(args.repo)
-    provider = make_provider(args.live)
+    as_of = as_of_from(args)
+    provider = make_provider(args.live, as_of)
     client = model.build(repo, replay=args.replay)
 
     if args.baseline:
         assessment = baseline.assess(repo, provider, client)
     else:
-        assessment, trace = pipeline.analyze(repo, provider, client, contributor_days=args.days)
+        assessment, trace = pipeline.analyze(
+            repo, provider, client, contributor_days=args.days, as_of=as_of
+        )
         if args.show_verification:
             print(
                 f"<!-- findings before verification: {trace.before_verification}, "
@@ -104,13 +126,14 @@ COMPARE_HEADERS = ("repository", "verdict", "outsiders in", "first reply", "why"
 
 
 def cmd_compare(args: argparse.Namespace) -> int:
-    provider = make_provider(args.live)
+    as_of = as_of_from(args)
+    provider = make_provider(args.live, as_of)
     rows = []
     for raw in args.repos:
         repo = normalise(raw)
         client = model.build(repo, replay=args.replay)
         assessment, trace = pipeline.analyze(
-            repo, provider, client, contributor_days=args.days
+            repo, provider, client, contributor_days=args.days, as_of=as_of
         )
         signals = trace.signals
         landed = f"{signals.outsider_merged}/{signals.outsider_threads}"
@@ -182,6 +205,11 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="read GitHub directly instead of committed fixtures (needs GITHUB_TOKEN)",
     )
+    analyze.add_argument(
+        "--as-of",
+        help="only use evidence up to this date (YYYY-MM-DD). Defaults to today "
+             "for --live and to the benchmark cutoff for fixtures",
+    )
     analyze.set_defaults(func=cmd_analyze)
 
     compare = sub.add_parser(
@@ -194,6 +222,11 @@ def main(argv: list[str] | None = None) -> int:
                          help="how many days you actually have")
     compare.add_argument("--live", action="store_true",
                          help="read GitHub directly instead of committed fixtures")
+    compare.add_argument(
+        "--as-of",
+        help="only use evidence up to this date (YYYY-MM-DD). Defaults to today "
+             "for --live and to the benchmark cutoff for fixtures",
+    )
     compare.set_defaults(func=cmd_compare)
 
     args = parser.parse_args(argv)

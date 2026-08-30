@@ -85,3 +85,25 @@ def test_the_day_budget_never_reaches_the_narration_prompt():
     source = inspect.getsource(stages.narrate)
     assert "contributor_days" not in source
     assert "contributor_days" not in stages.NARRATE_SYSTEM
+
+
+def test_a_live_run_defaults_to_today_not_the_benchmark_cutoff():
+    """T is an evaluation device and must not bound a user's question.
+
+    Cutting a live run at 2026-06-01 discarded every month since, badly enough
+    that an active repository reported "no outsider activity" and read as dead.
+    """
+    import argparse
+    from datetime import UTC, datetime
+
+    from holt.cli import as_of_from
+    from holt.types import T_CUTOFF
+
+    live = as_of_from(argparse.Namespace(live=True, as_of=None))
+    assert live > T_CUTOFF
+    assert (datetime.now(UTC) - live).total_seconds() < 60
+
+    # Fixtures answer as of T, because that is what they contain.
+    assert as_of_from(argparse.Namespace(live=False, as_of=None)) == T_CUTOFF
+    # And the benchmark's view stays reproducible on demand.
+    assert as_of_from(argparse.Namespace(live=True, as_of="2026-06-01")) == T_CUTOFF
