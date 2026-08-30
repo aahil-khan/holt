@@ -793,3 +793,50 @@ self-inflicted wound: a leak loudly disclosed that did not exist.
 excluded from the mean, because precision@k is identically zero there for every
 method including the comparators. On pool 1 that is 6 of 14 — which is itself a
 fact worth reporting about how rare these opportunities are.
+
+---
+
+## Iteration 13 — Path Finder is cut, on the number we said would cut it (2026-08-30)
+
+**Pool 2 arrived, and the combined result is worse for us than pool 1 was.**
+
+Pool 1 alone had Holt tying `good first issue` at 0.125. On pool 2 it *loses* to
+both comparators. Combined across 25 scorable repositories, the pre-committed
+answer:
+
+| Method | precision@3 |
+|---|---|
+| random (base rate) | 0.151 |
+| recency | 0.160 |
+| **`good first issue` label** | **0.187** |
+| **Holt** | **0.173** |
+
+Paired over repositories, Holt − `good first issue` is **−0.013, 95% CI
+[−0.133, +0.120]**; 3 wins, 6 losses, 16 ties, sign test **p = 0.51**. So Holt is
+not reliably *worse* than the label either — the honest statement is that after
+ranking 3,613 issues we **cannot distinguish our ranking from a label GitHub
+already puts on the issue for free**.
+
+**Cut condition 2, written before a line of it existed, is met:** *"the
+`good first issue` comparator matches Holt's precision — the feature then has no
+argument for existing."* Path Finder does not ship. `find_paths` stays in the
+tree marked as cut, and the evaluation stays runnable, because the negative
+result is worth more than a quietly deleted branch.
+
+**What it cost to find out: $0.14 and about four hours.** What it bought is the
+knowledge that our headline claim is about *repository-level* viability, and that
+we have no evidence for issue-level guidance. Shipping it would have added a
+confident-sounding ranking that a judge could have falsified in ten minutes with
+a label filter.
+
+**The leak measurement is also worse on pool 2** — 86 of 2,678 issue bodies
+edited after the cutoff (3.2%) against pool 1's 1.0%, 95 of 3,613 (2.6%)
+combined. It does not change the decision, but it is the number, and pool 1 alone
+would have understated it by three-fold.
+
+**What went right in this experiment even though the feature failed:** ground
+truth was designed and the cut conditions written before implementation; the
+combined-pool rule was fixed before pool 2 was scored; and the pool-1 result was
+published as a tie rather than as the win the nixpkgs row (0.67 against 0.00)
+would have supported on its own. Every one of those was a chance to fool
+ourselves that we declined in advance rather than resisted in the moment.

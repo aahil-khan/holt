@@ -1,0 +1,111 @@
+{
+  "pool": "eval/pool2.json",
+  "per_repo": {
+    "JhaSourav07/commitpulse": {
+      "holt": 1.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.43434343434343436
+    },
+    "PostHog/posthog": {
+      "holt": 0.3333333333333333,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.057034220532319393
+    },
+    "SandeepVashishtha/Eventra": {
+      "holt": 0.0,
+      "recency": 0.6666666666666666,
+      "good_first": 0.6666666666666666,
+      "random": 0.22777777777777777
+    },
+    "Scottcjn/Rustchain": {
+      "holt": 0.0,
+      "recency": 0.3333333333333333,
+      "good_first": 0.3333333333333333,
+      "random": 0.02702702702702703
+    },
+    "apache/doris": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.037914691943127965
+    },
+    "home-assistant/core": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.13366336633663367
+    },
+    "infiniflow/ragflow": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.08241758241758242
+    },
+    "knoxiboy/DoubtDesk": {
+      "holt": 0.6666666666666666,
+      "recency": 0.6666666666666666,
+      "good_first": 0.6666666666666666,
+      "random": 0.37037037037037035
+    },
+    "leonagoel/hybrid-recommender": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.1794871794871795
+    },
+    "nesquena/hermes-webui": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.01098901098901099
+    },
+    "openclaw/openclaw": {
+      "holt": 0.0,
+      "recency": 0.3333333333333333,
+      "good_first": 0.3333333333333333,
+      "random": 0.1032258064516129
+    },
+    "paperclipai/paperclip": {
+      "holt": 0.3333333333333333,
+      "recency": 0.3333333333333333,
+      "good_first": 0.3333333333333333,
+      "random": 0.03942652329749104
+    },
+    "pingcap/tidb": {
+      "holt": 0.3333333333333333,
+      "recency": 0.3333333333333333,
+      "good_first": 0.3333333333333333,
+      "random": 0.1659919028340081
+    },
+    "rishabh0510rishabh/EnvForage": {
+      "holt": 0.3333333333333333,
+      "recency": 0.6666666666666666,
+      "good_first": 0.6666666666666666,
+      "random": 0.3333333333333333
+    },
+    "ronisarkarexe/story-spark-ai": {
+      "holt": 0.3333333333333333,
+      "recency": 0.3333333333333333,
+      "good_first": 0.3333333333333333,
+      "random": 0.5555555555555556
+    },
+    "swiftlang/llvm-project": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.015151515151515152
+    },
+    "termux/termux-packages": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.046511627906976744
+    }
+  },
+  "skipped_small": 1,
+  "skipped_empty": 3,
+  "edited_after_cutoff": 86,
+  "candidates": 2678
+}

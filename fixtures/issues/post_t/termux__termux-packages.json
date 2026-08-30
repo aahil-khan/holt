@@ -1,0 +1,177 @@
+{
+ "captured_at": "2026-08-30T10:22:47.446200+00:00",
+ "content_sha256": "2f8a36461ae3bf0c9ecafda93ba69ae6646ca1fe389300ec65f86f0bb8fe6e0c",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:termux/termux-packages#29981:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Biswa96",
+      "author_is_bot": false,
+      "number": 29988
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:07:05+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29981"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29980:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "TomJo2000",
+      "author_is_bot": false,
+      "number": 30034
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T11:53:14+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29980"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29974:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T06:34:56+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29974"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29967:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "TomJo2000",
+      "author_is_bot": false,
+      "number": 30564
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T02:54:53+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29967"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29951:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T13:16:00+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29951"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29950:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "truboxl",
+      "author_is_bot": false,
+      "number": 30199
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T00:43:51+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29950"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29948:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T06:39:46+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29948"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29877:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Biswa96",
+      "author_is_bot": false,
+      "number": 30043
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T07:47:08+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29877"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29844:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "robertkirkman",
+      "author_is_bot": false,
+      "number": 28877
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T22:25:28+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29844"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29745:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T18:26:01+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29745"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29692:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "xingguangcuican6666",
+      "author_is_bot": false,
+      "number": 30223
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T13:52:44+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29692"
+  },
+  {
+   "evidence_id": "issue:termux/termux-packages#29690:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sabamdarif",
+      "author_is_bot": false,
+      "number": 30603
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T21:06:00+00:00",
+   "url": "https://github.com/termux/termux-packages/issues/29690"
+  }
+ ],
+ "repo": "termux/termux-packages",
+ "window": "post_t"
+}

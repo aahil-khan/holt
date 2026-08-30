@@ -465,7 +465,16 @@ def find_paths(
     signals_summary: dict,
     model: ModelClient,
 ) -> list[dict]:
-    """Rank candidate issues. Returns [] when there is nothing worth ranking."""
+    """Rank candidate issues. Returns [] when there is nothing worth ranking.
+
+    **Cut, and deliberately left in the tree.** Evaluated on both pools and
+    withdrawn: combined precision@3 of 0.173 against the `good first issue`
+    label's 0.187 over 25 repositories, which is cut condition 2 of
+    `eval/PATHFINDER-DESIGN.md`, written before this function existed. It is
+    not called by `pipeline.analyze` and does not reach any user-facing
+    assessment. `eval/pathfinder_harness.py` still runs it, so the negative
+    result stays reproducible rather than becoming a claim in a changelog.
+    """
     if not issues:
         return []
     # Most-discussed first: an issue nobody has said anything about is usually

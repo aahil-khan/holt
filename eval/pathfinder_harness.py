@@ -54,6 +54,8 @@ def main() -> None:
     ap.add_argument("--replay", action="store_true")
     ap.add_argument("--pool", default="eval/pool.json")
     ap.add_argument("--labels", default="eval/results_labels.json")
+    ap.add_argument("--out", help="write per-repository scores here, so pools combine "
+                                  "without re-running either")
     args = ap.parse_args()
 
     ipre = FixtureProvider(Window.PRE_T, root=ISSUE_ROOT)
@@ -68,6 +70,7 @@ def main() -> None:
     repos = [s for s in json.loads(Path(args.pool).read_text())["repos"] if s in viable]
 
     scores = {"holt": [], "recency": [], "good_first": [], "random": []}
+    per_repo: dict[str, dict] = {}
     skipped_small = skipped_empty = 0
     spend = 0.0
     edited = candidates_total = 0
@@ -104,6 +107,7 @@ def main() -> None:
                                                  "median_first_response_hours")}, model)
         keys = [pathfinder.issue_key(r["evidence_id"]) for r in ranked]
         scores["holt"].append(precision_at_k(keys, hits))
+        per_repo[slug] = {name: scores[name][-1] for name in scores}
         spend += getattr(model.usage, "cost_usd", 0.0)
         print(f"  {slug:<38} p@{K} holt={scores['holt'][-1]:.2f} "
               f"gfi={scores['good_first'][-1]:.2f} recent={scores['recency'][-1]:.2f} "
@@ -121,6 +125,16 @@ def main() -> None:
         print(f"\nissue bodies edited after the cutoff: {edited}/{candidates_total} "
               f"({100*edited/candidates_total:.1f}%) — the known leak, measured")
     print(f"spend: ${spend:.3f}")
+    if args.out:
+        Path(args.out).write_text(json.dumps({
+            "pool": args.pool,
+            "per_repo": per_repo,
+            "skipped_small": skipped_small,
+            "skipped_empty": skipped_empty,
+            "edited_after_cutoff": edited,
+            "candidates": candidates_total,
+        }, indent=2) + "\n")
+        print(f"per-repository scores: {args.out}")
 
 
 if __name__ == "__main__":

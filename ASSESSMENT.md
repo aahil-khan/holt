@@ -144,16 +144,19 @@ That is reproducibility, not accuracy, and we say so.
   our own prompt on its first run — 80 of 108 unfaithful quotes were Holt's own
   scaffolding being quoted back as evidence.
 
-**Path Finder: built, measured, currently failing its own test.** It ties
-GitHub's `good first issue` label at precision@3 0.125 on pool 1, which is the
-cut condition written before it existed. The combined pool-1-plus-pool-2 result
-is pre-committed as the answer.
+**Path Finder: built, measured, cut.** Combined over 25 repositories it scores
+precision@3 0.173 against the `good first issue` label's 0.187 — indistinguishable
+from a label GitHub applies for free (paired difference −0.013, 95% CI
+[−0.133, +0.120], sign test p = 0.51). That is cut condition 2 from the design
+document, written before implementation. It cost $0.14 to learn, it does not
+ship, and the evaluation stays runnable so the negative result is checkable.
+Holt's claim is about repository-level viability; we have no evidence for
+issue-level guidance and now say so.
 
 **Open:**
 
 | | Effort | Why |
 |---|---|---|
-| Pool 2 Path Finder result, then keep or cut | ~30m, ~$0.05 | Pre-committed as the deciding number |
 | Final frozen benchmark, both pools | ~1h, ~$3.50 | Committed results still predate the rejection rule |
 | Doc pass | ~1h | README describes the pre-rule, pre-Path-Finder world |
 | **Video** | yours | Required deliverable |

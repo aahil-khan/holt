@@ -1,0 +1,57 @@
+{
+  "pool": "eval/pool.json",
+  "per_repo": {
+    "DefiLlama/dimension-adapters": {
+      "holt": 0.3333333333333333,
+      "recency": 0.3333333333333333,
+      "good_first": 0.3333333333333333,
+      "random": 0.12307692307692308
+    },
+    "NixOS/nixpkgs": {
+      "holt": 0.6666666666666666,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.35858585858585856
+    },
+    "anurag3407/career-pilot": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.3333333333333333,
+      "random": 0.03535353535353535
+    },
+    "open-jarvis/OpenJarvis": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.2631578947368421
+    },
+    "space-wizards/space-station-14": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.3333333333333333,
+      "random": 0.03255813953488372
+    },
+    "stablyai/orca": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.03636363636363636
+    },
+    "utksh1/SecuScan": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.061946902654867256
+    },
+    "volcengine/OpenViking": {
+      "holt": 0.0,
+      "recency": 0.0,
+      "good_first": 0.0,
+      "random": 0.03773584905660377
+    }
+  },
+  "skipped_small": 2,
+  "skipped_empty": 4,
+  "edited_after_cutoff": 9,
+  "candidates": 935
+}
