@@ -1,0 +1,2393 @@
+{
+ "pairs": [
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "(ghost)",
+   "candidates": 99,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.18460997041792426,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.020202020202020204,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "Luffy-456",
+   "candidates": 99,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.09654024613480672,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.010101010101010102,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "ShafinNigamana",
+   "candidates": 99,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.09654024613480672,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.010101010101010102,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "YerraguntaAjayKumar",
+   "candidates": 99,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.18460997041792426,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.020202020202020204,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "imuniqueshiv",
+   "candidates": 99,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.09654024613480672,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.010101010101010102,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "kanishka-2007-tech",
+   "candidates": 99,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.09654024613480672,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.010101010101010102,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "mayank200529",
+   "candidates": 99,
+   "realised": 1,
+   "merged_prs": 4,
+   "hit": {
+    "random": 0.09654024613480672,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.010101010101010102,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "login": "tamilr0727-ux",
+   "candidates": 99,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.18460997041792426,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.020202020202020204,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Almikefred",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Creed1759",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Dannyswiss1",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 6,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Jambox11",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 9,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Mimah97",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 5,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Ndifreke000",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Pvsaint",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Saboleee",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 5,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "Tukura11",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "christabel888",
+   "candidates": 238,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.08092604494023992,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.008403361344537815,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "devoclan",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "favourawaku",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 6,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "jhayniffy",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "josunday002",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 5,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "kaynaomi-oss",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "martinzhames",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 5,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "pharuq411",
+   "candidates": 238,
+   "realised": 3,
+   "merged_prs": 4,
+   "hit": {
+    "random": 0.11913561266363704,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.012605042016806723,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "sundayjob996",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "vrickish",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "login": "yosemite01",
+   "candidates": 238,
+   "realised": 4,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.15590951729646818,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01680672268907563,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "PostHog/posthog",
+   "login": "fercgomes",
+   "candidates": 261,
+   "realised": 1,
+   "merged_prs": 3,
+   "hit": {
+    "random": 0.03766029126838355,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.0038314176245210726,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "SandeepVashishtha/Eventra",
+   "login": "AnushKamble",
+   "candidates": 171,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.05696435220553697,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.005847953216374269,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.3333333333333333,
+    "holt_repaired": 0.3333333333333333,
+    "holt_full": 0.3333333333333333,
+    "holt_full_repaired": 0.3333333333333333
+   }
+  },
+  {
+   "repo": "SandeepVashishtha/Eventra",
+   "login": "gTanusri",
+   "candidates": 180,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.054187044080112434,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005555555555555556,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "SandeepVashishtha/Eventra",
+   "login": "nisha-bugalia",
+   "candidates": 180,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.054187044080112434,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005555555555555556,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "Scottcjn/Rustchain",
+   "login": "keon0711",
+   "candidates": 111,
+   "realised": 1,
+   "merged_prs": 4,
+   "hit": {
+    "random": 0.08652416361447735,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.009009009009009009,
+    "recency": 0.3333333333333333,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "Scottcjn/Rustchain",
+   "login": "zeroknowledge0x",
+   "candidates": 111,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.08652416361447735,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.009009009009009009,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "apache/doris",
+   "login": "morningman",
+   "candidates": 208,
+   "realised": 1,
+   "merged_prs": 3,
+   "hit": {
+    "random": 0.04705002073428943,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.004807692307692308,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "home-assistant/core",
+   "login": "chemelli74",
+   "candidates": 202,
+   "realised": 1,
+   "merged_prs": 3,
+   "hit": {
+    "random": 0.048416550909212375,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.0049504950495049506,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "home-assistant/core",
+   "login": "epenet",
+   "candidates": 202,
+   "realised": 2,
+   "merged_prs": 5,
+   "hit": {
+    "random": 0.09471304530701674,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.009900990099009901,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "home-assistant/core",
+   "login": "frenck",
+   "candidates": 185,
+   "realised": 8,
+   "merged_prs": 14,
+   "hit": {
+    "random": 0.3572895229020304,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 1.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.043243243243243246,
+    "recency": 0.3333333333333333,
+    "blind": 0.0,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.6666666666666666,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.6666666666666666
+   }
+  },
+  {
+   "repo": "home-assistant/core",
+   "login": "iMicknl",
+   "candidates": 202,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.09471304530701674,
+    "recency": 0.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.009900990099009901,
+    "recency": 0.0,
+    "blind": 0.3333333333333333,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.3333333333333333,
+    "holt_full": 0.3333333333333333,
+    "holt_full_repaired": 0.3333333333333333
+   }
+  },
+  {
+   "repo": "home-assistant/core",
+   "login": "mib1185",
+   "candidates": 201,
+   "realised": 1,
+   "merged_prs": 3,
+   "hit": {
+    "random": 0.04865205930393102,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.004975124378109453,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "infiniflow/ragflow",
+   "login": "JSONbored",
+   "candidates": 182,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.05360623845113743,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.005494505494505495,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.3333333333333333,
+    "holt_repaired": 0.0,
+    "holt_full": 0.3333333333333333,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "infiniflow/ragflow",
+   "login": "monsterdavidliu-ux",
+   "candidates": 182,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.10461220304638708,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.01098901098901099,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.3333333333333333,
+    "holt_repaired": 0.3333333333333333,
+    "holt_full": 0.3333333333333333,
+    "holt_full_repaired": 0.3333333333333333
+   }
+  },
+  {
+   "repo": "infiniflow/ragflow",
+   "login": "nickmopen",
+   "candidates": 182,
+   "realised": 4,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.19926992029361879,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.02197802197802198,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "infiniflow/ragflow",
+   "login": "tmimmanuel",
+   "candidates": 182,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.05360623845113743,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005494505494505495,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "login": "Krish-Makadiya",
+   "candidates": 54,
+   "realised": 1,
+   "merged_prs": 12,
+   "hit": {
+    "random": 0.17049100880989287,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.018518518518518517,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "login": "SathvikaSingoti",
+   "candidates": 54,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.17049100880989287,
+    "recency": 0.0,
+    "blind": 1.0,
+    "path_overlap": 0.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.018518518518518517,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "login": "dreynox",
+   "candidates": 54,
+   "realised": 3,
+   "merged_prs": 4,
+   "hit": {
+    "random": 0.4353697226468617,
+    "recency": 0.0,
+    "blind": 1.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.05555555555555555,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "login": "madsysharma",
+   "candidates": 54,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.31436048645125236,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.037037037037037035,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.6666666666666666,
+    "holt_repaired": 0.6666666666666666,
+    "holt_full": 0.6666666666666666,
+    "holt_full_repaired": 0.6666666666666666
+   }
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "login": "mayannkkk19",
+   "candidates": 54,
+   "realised": 2,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.31436048645125236,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.037037037037037035,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "login": "sachin-mahato25",
+   "candidates": 54,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.17049100880989287,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.018518518518518517,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "login": "saurabhhhcodes",
+   "candidates": 54,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.17049100880989287,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.018518518518518517,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "leonagoel/hybrid-recommender",
+   "login": "Asritha11111",
+   "candidates": 117,
+   "realised": 1,
+   "merged_prs": 5,
+   "hit": {
+    "random": 0.08225658970467065,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.008547008547008548,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "leonagoel/hybrid-recommender",
+   "login": "PrishaNagpal",
+   "candidates": 117,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15837275473370604,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.017094017094017096,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "leonagoel/hybrid-recommender",
+   "login": "koushik-gupta",
+   "candidates": 117,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.15837275473370604,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.017094017094017096,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "leonagoel/hybrid-recommender",
+   "login": "vbarik317-droid",
+   "candidates": 117,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.08225658970467065,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.008547008547008548,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "microsoft/winget-pkgs",
+   "login": "SpecterShell",
+   "candidates": 76,
+   "realised": 2,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.23408376638983563,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 1.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.02631578947368421,
+    "recency": 0.3333333333333333,
+    "blind": 0.3333333333333333,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "microsoft/winget-pkgs",
+   "login": "spectopo",
+   "candidates": 76,
+   "realised": 2,
+   "merged_prs": 18,
+   "hit": {
+    "random": 0.23408376638983563,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 1.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.02631578947368421,
+    "recency": 0.3333333333333333,
+    "blind": 0.3333333333333333,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "nesquena/hermes-webui",
+   "login": "nesquena-hermes",
+   "candidates": 79,
+   "realised": 25,
+   "merged_prs": 48,
+   "hit": {
+    "random": 0.9777327448603054,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.31645569620253167,
+    "recency": 0.6666666666666666,
+    "blind": 0.6666666666666666,
+    "path_overlap": 0.6666666666666666,
+    "holt_arith": 0.6666666666666666,
+    "holt_repaired": 1.0,
+    "holt_full": 0.6666666666666666,
+    "holt_full_repaired": 1.0
+   }
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "login": "Alix-007",
+   "candidates": 155,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.12179212638672066,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.012903225806451613,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "login": "MonkeyLeeT",
+   "candidates": 155,
+   "realised": 3,
+   "merged_prs": 3,
+   "hit": {
+    "random": 0.1775322120775965,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01935483870967742,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "login": "SebTardif",
+   "candidates": 155,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.12179212638672066,
+    "recency": 1.0,
+    "blind": 0.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 1.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.012903225806451613,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.3333333333333333,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.3333333333333333
+   }
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "login": "openperf",
+   "candidates": 155,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.06267494359885317,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.0064516129032258064,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "login": "steipete",
+   "candidates": 154,
+   "realised": 9,
+   "merged_prs": 54,
+   "hit": {
+    "random": 0.4523881795774415,
+    "recency": 0.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.05844155844155844,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "login": "vincentkoc",
+   "candidates": 155,
+   "realised": 3,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.1775322120775965,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.01935483870967742,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "login": "zhangguiping-xydt",
+   "candidates": 155,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.06267494359885317,
+    "recency": 1.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.0064516129032258064,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "paperclipai/paperclip",
+   "login": "cryppadotta",
+   "candidates": 279,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.03526968334539282,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.0035842293906810036,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "pingcap/tidb",
+   "login": "YangKeao",
+   "candidates": 247,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.039756140971184184,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.004048582995951417,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "pingcap/tidb",
+   "login": "qw4990",
+   "candidates": 243,
+   "realised": 1,
+   "merged_prs": 3,
+   "hit": {
+    "random": 0.04039848749842112,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.00411522633744856,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "rishabh0510rishabh/EnvForage",
+   "login": "SriyaMeenakshi",
+   "candidates": 48,
+   "realised": 2,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.34661983977996924,
+    "recency": 0.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.041666666666666664,
+    "recency": 0.0,
+    "blind": 0.3333333333333333,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.3333333333333333,
+    "holt_repaired": 0.3333333333333333,
+    "holt_full": 0.3333333333333333,
+    "holt_full_repaired": 0.3333333333333333
+   }
+  },
+  {
+   "repo": "rishabh0510rishabh/EnvForage",
+   "login": "bashyamharika",
+   "candidates": 48,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.1898485649826238,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.020833333333333332,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "rishabh0510rishabh/EnvForage",
+   "login": "jhnavi25",
+   "candidates": 48,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.1898485649826238,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.020833333333333332,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "rishabh0510rishabh/EnvForage",
+   "login": "the404packet",
+   "candidates": 48,
+   "realised": 1,
+   "merged_prs": 4,
+   "hit": {
+    "random": 0.1898485649826238,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.020833333333333332,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "(ghost)",
+   "candidates": 198,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.04937253179108725,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005050505050505051,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "Anexus5919",
+   "candidates": 181,
+   "realised": 1,
+   "merged_prs": 12,
+   "hit": {
+    "random": 0.05389507694109652,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.0055248618784530384,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "ArshiBansal",
+   "candidates": 196,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.04986481704893675,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.00510204081632653,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "Aryan0819",
+   "candidates": 198,
+   "realised": 2,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.09654024613480672,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.010101010101010102,
+    "recency": 0.3333333333333333,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "Ashitha0409",
+   "candidates": 198,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.04937253179108725,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005050505050505051,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "Goutam-2702",
+   "candidates": 198,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.04937253179108725,
+    "recency": 1.0,
+    "blind": 0.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 1.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.005050505050505051,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "Ishika-1110",
+   "candidates": 196,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.04986481704893675,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.00510204081632653,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "Nancy-3012",
+   "candidates": 198,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.04937253179108725,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005050505050505051,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "RishiByte",
+   "candidates": 197,
+   "realised": 1,
+   "merged_prs": 2,
+   "hit": {
+    "random": 0.049617453651522925,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005076142131979695,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "SaurabhSinghRajput-8777",
+   "candidates": 198,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.04937253179108725,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005050505050505051,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "Yesha-19",
+   "candidates": 198,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.04937253179108725,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.005050505050505051,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "login": "namithar18",
+   "candidates": 198,
+   "realised": 1,
+   "merged_prs": 1,
+   "hit": {
+    "random": 0.04937253179108725,
+    "recency": 1.0,
+    "blind": 0.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.005050505050505051,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.3333333333333333,
+    "holt_repaired": 0.3333333333333333,
+    "holt_full": 0.3333333333333333,
+    "holt_full_repaired": 0.3333333333333333
+   }
+  },
+  {
+   "repo": "termux/termux-packages",
+   "login": "Biswa96",
+   "candidates": 43,
+   "realised": 2,
+   "merged_prs": 40,
+   "hit": {
+    "random": 0.3789107514433797,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 1.0,
+    "holt_repaired": 1.0,
+    "holt_full": 1.0,
+    "holt_full_repaired": 1.0
+   },
+   "prec": {
+    "random": 0.046511627906976744,
+    "recency": 0.3333333333333333,
+    "blind": 0.0,
+    "path_overlap": 0.6666666666666666,
+    "holt_arith": 0.6666666666666666,
+    "holt_repaired": 0.6666666666666666,
+    "holt_full": 0.6666666666666666,
+    "holt_full_repaired": 0.6666666666666666
+   }
+  },
+  {
+   "repo": "termux/termux-packages",
+   "login": "TomJo2000",
+   "candidates": 43,
+   "realised": 2,
+   "merged_prs": 16,
+   "hit": {
+    "random": 0.3789107514433797,
+    "recency": 1.0,
+    "blind": 1.0,
+    "path_overlap": 1.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.046511627906976744,
+    "recency": 0.3333333333333333,
+    "blind": 0.0,
+    "path_overlap": 0.3333333333333333,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "termux/termux-packages",
+   "login": "robertkirkman",
+   "candidates": 42,
+   "realised": 1,
+   "merged_prs": 34,
+   "hit": {
+    "random": 0.21413913266517415,
+    "recency": 0.0,
+    "blind": 1.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.023809523809523808,
+    "recency": 0.0,
+    "blind": 0.3333333333333333,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  },
+  {
+   "repo": "termux/termux-packages",
+   "login": "sabamdarif",
+   "candidates": 43,
+   "realised": 1,
+   "merged_prs": 6,
+   "hit": {
+    "random": 0.20967021724470614,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   },
+   "prec": {
+    "random": 0.023255813953488372,
+    "recency": 0.0,
+    "blind": 0.0,
+    "path_overlap": 0.0,
+    "holt_arith": 0.0,
+    "holt_repaired": 0.0,
+    "holt_full": 0.0,
+    "holt_full_repaired": 0.0
+   }
+  }
+ ],
+ "considered": 771,
+ "arms": [
+  "random",
+  "recency",
+  "blind",
+  "path_overlap",
+  "holt_arith",
+  "holt_repaired",
+  "holt_full",
+  "holt_full_repaired"
+ ],
+ "hit_at_k": 10,
+ "precision_at_k": 3
+}

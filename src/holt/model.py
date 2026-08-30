@@ -42,6 +42,8 @@ STAGE_MODELS: dict[str, str] = {
     "outcomes": SMALL,
     "narrate": SMALL,
     "pathfinder": SMALL,
+    "profile": SMALL,
+    "describe": SMALL,
 }
 
 TRAJECTORY_DIR = Path("fixtures/trajectories")

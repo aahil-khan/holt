@@ -240,3 +240,165 @@ other rather than to an absolute.
 a label module, a harness, a ranker. **Nothing in the verdict pipeline, no
 recorded trajectory, no committed benchmark, and no part of the reproduction path
 is touched.**
+
+---
+
+# Amendment 1 — the registered scorer lost, and why (2026-08-30)
+
+**Written after seeing the pool-1 diagnosis and before pool 2 was scored.** Pool 2
+has not been looked at for any purpose below.
+
+## The registered result, which stands
+
+Over all 128 scorable pairs, hit@10:
+
+| Arm | hit@10 | precision@3 |
+|---|---|---|
+| random | 0.172 | 0.024 |
+| recency | 0.188 | 0.047 |
+| `blind` (the old prototype) | 0.188 | 0.047 |
+| **`path_overlap` (the bar)** | **0.234** | 0.049 |
+| `holt_arith` | 0.164 | 0.039 |
+
+`holt_arith` − `path_overlap` = **−0.070**, 8W/17L/103T, sign test p = 0.108.
+**Cut condition 2 is met.** The registered scorer does not beat the cheap
+heuristic; it does not even beat random.
+
+## The diagnosis, from the features' own distributions
+
+Firing rate and lift per feature, computed on **pool 1 only**:
+
+| Feature | Weight | Fires on | Lift |
+|---|---|---|---|
+| `file_hit` | 3.0 | 8.0% | 2.57 |
+| `dir_hit` | 2.0 | 9.7% | 2.48 |
+| `lang_hit` | 1.0 | 24.0% | 1.94 |
+| `thread_reviewer` | 1.5 | 11.7% | 1.17 |
+| `scope_step` | 1.0 | 65.9% | **1.10** |
+| `actionable` | 0.5 | 83.2% | **1.11** |
+| `discussion` | 0.5 | 71.3% | **0.92** |
+
+Three of seven fire on two thirds to five sixths of all candidates with lift at or
+below 1.11. **They are not features, they are constants**, and together they add
+2.0 points of near-uniform score that outweighs `dir_hit` entirely and rivals
+`file_hit`. The scorer spent most of its range on noise.
+
+This is the same failure as `good first issue` degenerating into recency: a term
+that looks discriminative and does not discriminate. It is diagnosable from the
+inputs — firing rate and lift — without reference to hit@10.
+
+## The repair, and the rule that produces it
+
+**Declared rule, stated as a property of a feature rather than of the outcome:**
+drop any feature that fires on more than 50% of candidates *and* whose lift is
+below 1.15.
+
+Fitted on **pool 1 only** (40 pairs). It drops exactly
+`scope_step`, `actionable`, `discussion`, leaving:
+
+| Feature | Weight |
+|---|---|
+| `file_hit` | 3.0 |
+| `profile_hit` | 2.5 |
+| `dir_hit` | 2.0 |
+| `thread_reviewer` | 1.5 |
+| `lang_hit` | 1.0 |
+
+**No weight is changed.** Only the near-constant terms are removed.
+
+## The out-of-sample test, registered now
+
+The repaired scorer is evaluated on **pool 2 (88 pairs), which was not used to
+diagnose or repair it.** This mirrors the rubber-stamp rule in
+`PREREGISTRATION-2.md`, developed on pool 1 and validated on pool 2.
+
+**Predictions, before running:**
+
+| | pool 2, hit@10 |
+|---|---|
+| `path_overlap` | 0.22 |
+| `holt_arith` as registered | 0.16 |
+| **`holt_arith` repaired** | **0.30** |
+
+**Bar, unchanged from the original:** the repaired scorer must exceed
+`path_overlap` by ≥ 0.05 absolute on hit@10 with an exact sign test p < 0.10.
+
+**If it does not, progression is cut and this document is the record.** The
+registered arm is kept in the harness either way, so the loss above stays
+reproducible rather than being replaced by the number that came after it.
+
+---
+
+# Outcome — cut, on both of its own cut conditions (2026-08-30)
+
+## The registered test, out of sample on pool 2
+
+88 pairs, 211 realised next contributions, 18 repositories. Pool 2 was not used to
+diagnose or repair anything.
+
+| Arm | hit@10 | precision@3 |
+|---|---|---|
+| recency | 0.136 | 0.034 |
+| random | 0.150 | 0.019 |
+| `blind` | 0.159 | 0.027 |
+| **`path_overlap` — the bar** | **0.193** | 0.045 |
+| `holt_repaired` | 0.205 | 0.057 |
+| `holt_full_repaired` | 0.205 | 0.057 |
+
+**Cut condition 2 — met.** `holt_full_repaired` − `path_overlap` = **+0.011**,
+95% CI [−0.034, +0.057], 3W/2L/**83T**, sign test p = 1.000. The bar was +0.05
+with p < 0.10. This is a tie, and 83 of 88 pairs are identical.
+
+**Cut condition 3 — met, and it is the sharper result.**
+`holt_full_repaired` − `holt_repaired` = **+0.000, 0 wins, 0 losses, 88 ties.**
+The competence profile — one model call per contributor over their merged pull
+requests and the review feedback on them — **moved not a single ranking position
+for any of the 88 contributors.** Under the registered weights it was slightly
+negative (−0.011).
+
+## Combined over both pools, where it is worse
+
+128 pairs, 357 realised, 29 repositories:
+
+| Arm | hit@10 | precision@3 |
+|---|---|---|
+| `holt_arith` **as registered** | 0.164 | 0.039 |
+| random | 0.172 | 0.024 |
+| recency / `blind` | 0.188 | 0.047 |
+| `holt_repaired` | 0.211 | 0.047 |
+| **`path_overlap`** | **0.234** | 0.049 |
+
+`holt_repaired` − `path_overlap` = **−0.023**, CI [−0.078, +0.031], p = 0.581.
+Pool 2 alone flattered the repaired scorer; across both pools it loses to the
+cheap heuristic. **The registered scorer loses to random.**
+
+## Predictions against outcomes
+
+| | Predicted | Actual (pool 2) |
+|---|---|---|
+| `path_overlap` | 0.22 | 0.193 |
+| `holt_arith` as registered | 0.16 | 0.159 |
+| `holt_arith` repaired | **0.30** | **0.205** |
+
+The bar was predicted correctly to within 0.03. Our own arm was over-predicted by
+0.10 — which is the useful half of writing predictions down.
+
+## What this is evidence for
+
+The model was handed contributor history, file lists, review threads and a
+structured competence profile on a task where arithmetic is not obviously
+sufficient, and it **changed nothing**. That is the second independent
+measurement in this project of the same thing: the evidence layer and the
+deterministic scoring do the work, and the model layer does not improve accuracy.
+
+The first measurement (orchestration vs one matched prompt on the verdict) could
+be dismissed as the task being too easy. This one cannot: the model had strictly
+more context than the arithmetic did, and produced an identical ranking 88 times
+out of 88.
+
+## Disposition
+
+Cut. `holt next` does not ship. `eval/progression_harness.py`,
+`eval/labels/progression.py` and `src/holt/agent/progression.py` stay in the tree
+and stay runnable, including the arm that lost to random, so the negative result
+reproduces rather than becoming an unverifiable claim.

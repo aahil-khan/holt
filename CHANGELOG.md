@@ -920,3 +920,80 @@ the question at zero model calls — and states what it does not buy immediately
 after. Previously a reader met "orchestration adds no accuracy" before meeting
 either. The ablation reads better as the evidence that makes the first claim
 credible than as a retraction of it.
+
+---
+
+## Iteration 15 — personalised contribution discovery: cut, and the model changed nothing (2026-08-30)
+
+**Tried.** Not "find an approachable issue" — the prototype tied GitHub's label at
+that, because it never saw who was asking. Instead: *given what this person has
+already merged here, which open issues are a sensible next step?* A question no
+label answers, because it is a property of the pair rather than of the issue.
+
+**Pre-registered first** (`eval/PREREGISTRATION-3.md`), before a line of code:
+unit, exclusions, metrics, six arms, eight feature weights, numeric predictions,
+decision rule and four binding cut conditions.
+
+**A confound found before building, which would have faked a large win.** Of the
+655 issues open at the cutoff that an existing contributor later closed with a
+merged pull request, **299 — 46% — were issues that same person had opened.**
+Predicting that somebody fixes the bug they filed is not a recommendation; the
+intent is already legible in pre-cutoff evidence. Self-opened issues are excluded
+from both the label and the candidate set, leaving **128 scorable
+(repository, contributor) pairs and 357 realised next contributions**.
+
+**The comparator check we failed last time, run first this time.** `path_overlap`
+— "issues naming a file or directory they have already touched" — genuinely
+partitions the candidates on **77%** of pairs, unlike `good first issue` which was
+recency under another name on two thirds of the pool. So the registered bar was
+beating a real heuristic, not beating random.
+
+**Result, out of sample on pool 2** (88 pairs, never used to diagnose or repair):
+
+| Arm | hit@10 |
+|---|---|
+| recency | 0.136 |
+| random | 0.150 |
+| `blind` (the contributor-blind prototype) | 0.159 |
+| **`path_overlap` — the bar** | **0.193** |
+| `holt_full_repaired` | 0.205 |
+
+**Cut condition 2 met:** +0.011 against a +0.05 bar, 3W/2L/**83T**, p = 1.000.
+
+**Cut condition 3 met, and it is the finding.**
+`holt_full_repaired` − `holt_repaired` = **+0.000. 0 wins, 0 losses, 88 ties.**
+The model call — one competence profile per contributor, built from their merged
+pull requests and the review feedback on them — **moved not one ranking position
+for any of the 88 contributors.**
+
+**Combined over both pools it is worse**: `holt_repaired` 0.211 against
+`path_overlap` 0.234, and the scorer *exactly as registered* scores 0.164 —
+**below random's 0.172**. Pool 2 alone flattered it. The combined number is
+reported because reporting the friendlier pool is the failure mode
+pre-registration exists to stop.
+
+**Why the registered scorer lost to random, diagnosed from the inputs.** Three of
+its eight features fired on 66–90% of all candidates with lift at or below 1.11 —
+`scope_step`, `actionable`, `discussion`. **They are constants, not features**,
+and together they contributed 2.0 points of near-uniform score that outweighed
+`dir_hit` entirely and rivalled `file_hit`. Amendment 1 declared a repair rule
+stated as a property of a feature's own distribution — *fires on >50% of
+candidates and lift < 1.15* — fitted on pool 1 alone, changing no weight. It
+lifted the arm from 0.164 to 0.205 out of sample and still did not clear the bar.
+
+**A reproducibility bug the replay layer caught.** `histories()` iterated a Python
+`set` of pull-request numbers, and string hashing is randomised per process, so
+the same contributor produced a **different prompt on every run** — every recorded
+trajectory an unreplayable miss. Now sorted, and verified identical across three
+`PYTHONHASHSEED` values. Nobody re-running our work would have reproduced the
+ranking, and only the replay discipline exposed it.
+
+**What survives.** Not a feature. The second independent measurement that Holt's
+model layer does not improve accuracy — and a much sharper one than the first.
+The orchestration ablation could be waved away as the verdict task being too easy
+for the extra machinery. This one cannot: the model had **strictly more context**
+than the arithmetic — history, files, review threads, a structured profile — and
+returned an identical ranking 88 times out of 88.
+
+**Cost: $0.49 and about four hours.** `holt next` does not ship. Everything stays
+runnable, including the arm that lost to random.
