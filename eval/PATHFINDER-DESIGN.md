@@ -75,6 +75,14 @@ tested here, and it may lose.
 
 - Repositories with fewer than 10 issues open at the cutoff are excluded; a
   precision@3 over 4 issues is noise.
+- **Repositories with zero realised entry points are excluded from the mean.**
+  Precision at k is identically zero there for *every* method, including the
+  comparators, so they cannot distinguish anything — they would only dilute all
+  methods equally toward zero. Excluding empty queries is standard in ranking
+  evaluation, and it is declared here **before any method has been scored**. The
+  count of excluded repositories is reported alongside the result, because the
+  exclusion is also a fact about how rare these opportunities are: on pool 1,
+  6 of 14 viable repositories had none.
 - Repositories Holt judges NOT_VIABLE are excluded. Path Finder only runs where
   the prior question was answered yes, and a confident route into
   `is-a-dev/register` is worse than no route at all.

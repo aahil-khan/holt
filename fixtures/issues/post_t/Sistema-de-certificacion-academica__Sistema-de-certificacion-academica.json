@@ -1,0 +1,239 @@
+{
+ "captured_at": "2026-08-30T10:10:22.281162+00:00",
+ "content_sha256": "d2621046a81c47821258cab369632cb2538d3b04352b50e5c6932face8e7d0a1",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#28:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T04:49:09+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/28"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#27:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T04:34:54+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/27"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#26:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:13:49+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/26"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#25:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T14:23:29+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/25"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#24:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T03:56:43+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/24"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#23:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T01:19:47+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/23"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#22:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T04:57:21+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/22"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#21:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:38:32+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/21"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#20:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:32:57+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/20"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#19:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T22:53:40+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/19"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#18:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:57:01+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/18"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#17:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:26:32+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/17"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#16:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:54:09+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/16"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#14:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:04:44+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/14"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#12:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T14:39:58+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/12"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#11:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:19:21+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/11"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#10:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:09:00+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/10"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#8:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T01:07:38+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/8"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#7:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T04:18:40+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/7"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#6:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T04:10:07+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/6"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#5:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T00:51:56+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/5"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#4:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T01:11:07+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/4"
+  },
+  {
+   "evidence_id": "issue:Sistema-de-certificacion-academica/Sistema-de-certificacion-academica#3:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T03:50:08+00:00",
+   "url": "https://github.com/Sistema-de-certificacion-academica/Sistema-de-certificacion-academica/issues/3"
+  }
+ ],
+ "repo": "Sistema-de-certificacion-academica/Sistema-de-certificacion-academica",
+ "window": "post_t"
+}

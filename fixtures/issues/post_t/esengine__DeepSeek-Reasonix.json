@@ -1,0 +1,2041 @@
+{
+ "captured_at": "2026-08-30T10:10:42.128120+00:00",
+ "content_sha256": "35019ca5d5cf88bfcf37df46cf9bb41467cf24d3adc2c39f3c2b66686aa03b3b",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2490:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T12:32:51+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2490"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2488:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:37:32+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2488"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2485:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T11:36:55+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2485"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2483:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SivanCola",
+      "author_is_bot": false,
+      "number": 2487
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:41:54+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2483"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2468:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T12:31:34+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2468"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2464:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:21+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2464"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2461:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:49:53+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2461"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2456:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:26+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2456"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2419:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "esengine",
+      "author_is_bot": false,
+      "number": 7290
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T09:03:44+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2419"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2416:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:49:56+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2416"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2414:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:50:00+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2414"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2413:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:50:03+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2413"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2398:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T14:46:18+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2398"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2395:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:30:35+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2395"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2391:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:30:40+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2391"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2390:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:36+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2390"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2389:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:31+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2389"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2388:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:14:19+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2388"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2387:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:35+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2387"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2382:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:32+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2382"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2381:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:30:44+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2381"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2379:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:39+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2379"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2378:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:43+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2378"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2377:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:48+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2377"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2376:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:30:50+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2376"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2375:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:52+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2375"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2373:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:29+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2373"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2372:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:30:54+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2372"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2371:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:56:57+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2371"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2369:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:01+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2369"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2367:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:25+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2367"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2366:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:21+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2366"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2364:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:06+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2364"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2362:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:10+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2362"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2361:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:15+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2361"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2358:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:14:16+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2358"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2357:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:18+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2357"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2355:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:19+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2355"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2354:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:30:59+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2354"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2350:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:24+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2350"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2345:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:28+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2345"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2340:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:14:13+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2340"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2338:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:32+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2338"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2335:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:37+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2335"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2332:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:14:09+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2332"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2329:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:14:05+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2329"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2328:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:51+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2328"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2325:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:04+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2325"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2321:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:14+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2321"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2318:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:57:56+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2318"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2315:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:00+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2315"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2303:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:09+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2303"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2302:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:18:40+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2302"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2301:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:05+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2301"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2295:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:09+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2295"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2294:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:14+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2294"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2292:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:19+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2292"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2291:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:23+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2291"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2289:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:28+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2289"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2287:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:32+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2287"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2286:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:13+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2286"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2277:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:14:02+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2277"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2272:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:11+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2272"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2265:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:18+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2265"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2261:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:07+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2261"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2260:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:36+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2260"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2256:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:41+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2256"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2254:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:45+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2254"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2251:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:50+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2251"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2247:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:54+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2247"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2238:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:58:59+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2238"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2237:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:58+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2237"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2234:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:16:45+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2234"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2232:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:23+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2232"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2224:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:28+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2224"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2214:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:55+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2214"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2212:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:16:05+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2212"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2211:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:33:56+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2211"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2205:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:16:01+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2205"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2204:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:35+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2204"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2202:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:03+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2202"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2201:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:58+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2201"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2197:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:08+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2197"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2194:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:51+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2194"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2193:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:12+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2193"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2184:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:40+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2184"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2181:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:47+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2181"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2167:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:45+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2167"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2165:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:17+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2165"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2160:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:44+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2160"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2159:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:23+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2159"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2155:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:40+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2155"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2154:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:33:49+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2154"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2153:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:28+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2153"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2150:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:32+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2150"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2148:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:50+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2148"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2141:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:31:55+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2141"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2140:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:00+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2140"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2139:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:37+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2139"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2131:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T09:21:17+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2131"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2129:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:04+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2129"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2121:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:41+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2121"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2118:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:59:45+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2118"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2114:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:54+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2114"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2113:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:00+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2113"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2110:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:36+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2110"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2109:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:10+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2109"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2108:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:05+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2108"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2107:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T10:10:16+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2107"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2105:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:50+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2105"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2102:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:14+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2102"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2101:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:19+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2101"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2100:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:09+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2100"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2099:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:14+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2099"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2096:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:23+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2096"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2094:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:18+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2094"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2092:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:37+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2092"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2088:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:42+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2088"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2086:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:46+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2086"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2084:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:22+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2084"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2083:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:27+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2083"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2082:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:33+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2082"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2079:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:50+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2079"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2077:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:38+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2077"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2076:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:43+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2076"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2071:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:32:55+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2071"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2065:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:47+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2065"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2063:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:47+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2063"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2061:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:32+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2061"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2060:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:35:29+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2060"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2047:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:51+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2047"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2045:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:43+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2045"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2044:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:39+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2044"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2043:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:36+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2043"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2039:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:00:56+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2039"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2037:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:00+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2037"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2035:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:05+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2035"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2031:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:29+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2031"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2030:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:09+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2030"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2028:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:35:33+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2028"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2027:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:35:38+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2027"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2026:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:26+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2026"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2014:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:13+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2014"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2013:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:18+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2013"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2012:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:22+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2012"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2010:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:35:43+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2010"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2007:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:26+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2007"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2006:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:31+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2006"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2005:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:35+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2005"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2002:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:40+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2002"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2001:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:44+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2001"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#2000:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:49+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/2000"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1999:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:01:53+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1999"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1998:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:09+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1998"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1996:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:35:48+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1996"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1995:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:13+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1995"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1988:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:17+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1988"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1987:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:35:52+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1987"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1983:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:22+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1983"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1981:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:35:56+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1981"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1977:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:26+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1977"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1973:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:22+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1973"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1971:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:30+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1971"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1968:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:34+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1968"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1967:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:01+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1967"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1966:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:38+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1966"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1963:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:42+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1963"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1957:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:05+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1957"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1953:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:10+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1953"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1952:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:46+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1952"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1951:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:15+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1951"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1950:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:33+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1950"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1948:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:50+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1948"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1940:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:19+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1940"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1935:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:54+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1935"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1932:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:02:58+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1932"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1931:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:19+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1931"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1928:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:03:02+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1928"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1927:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:23+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1927"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1926:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:28+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1926"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1925:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:03:07+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1925"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1922:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:15+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1922"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1912:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:03:11+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1912"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1898:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:03:15+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1898"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1893:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:32+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1893"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1888:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:37+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1888"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1885:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:29+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1885"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1870:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:11+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1870"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1864:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:03:19+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1864"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1860:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:03:23+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1860"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1855:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:25+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1855"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1851:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:07+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1851"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1849:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:36:42+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1849"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1846:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:22+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1846"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1841:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:13:04+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1841"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1840:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:12:53+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1840"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1839:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:17:03+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1839"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1838:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:12:49+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1838"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1837:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:12:45+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1837"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1836:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:12:42+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1836"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1835:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:15:18+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1835"
+  },
+  {
+   "evidence_id": "issue:esengine/DeepSeek-Reasonix#1834:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:12:39+00:00",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix/issues/1834"
+  }
+ ],
+ "repo": "esengine/DeepSeek-Reasonix",
+ "window": "post_t"
+}

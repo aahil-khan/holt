@@ -1,0 +1,97 @@
+{
+ "captured_at": "2026-08-30T10:22:19.294762+00:00",
+ "content_sha256": "ebd15f55d3bde7012787ea4554465d91e820e7f3b703e278d4552cc540576f0b",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:swiftlang/llvm-project#12767:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T23:58:59+00:00",
+   "url": "https://github.com/swiftlang/llvm-project/issues/12767"
+  },
+  {
+   "evidence_id": "issue:swiftlang/llvm-project#12766:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "abhijeetsharma200",
+      "author_is_bot": false,
+      "number": 13199
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T15:00:51+00:00",
+   "url": "https://github.com/swiftlang/llvm-project/issues/12766"
+  },
+  {
+   "evidence_id": "issue:swiftlang/llvm-project#12765:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jpjepko",
+      "author_is_bot": false,
+      "number": 12990
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T18:13:22+00:00",
+   "url": "https://github.com/swiftlang/llvm-project/issues/12765"
+  },
+  {
+   "evidence_id": "issue:swiftlang/llvm-project#12758:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T23:55:50+00:00",
+   "url": "https://github.com/swiftlang/llvm-project/issues/12758"
+  },
+  {
+   "evidence_id": "issue:swiftlang/llvm-project#12436:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Holo-xy",
+      "author_is_bot": false,
+      "number": 12446
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T16:12:24+00:00",
+   "url": "https://github.com/swiftlang/llvm-project/issues/12436"
+  },
+  {
+   "evidence_id": "issue:swiftlang/llvm-project#11483:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T00:18:20+00:00",
+   "url": "https://github.com/swiftlang/llvm-project/issues/11483"
+  },
+  {
+   "evidence_id": "issue:swiftlang/llvm-project#10831:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T03:03:21+00:00",
+   "url": "https://github.com/swiftlang/llvm-project/issues/10831"
+  }
+ ],
+ "repo": "swiftlang/llvm-project",
+ "window": "post_t"
+}

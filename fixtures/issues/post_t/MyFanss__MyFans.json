@@ -1,0 +1,3115 @@
+{
+ "captured_at": "2026-08-30T10:18:38.944636+00:00",
+ "content_sha256": "c2ce3a6c62f2c8817b49202d17c46fd3b0909d4088e6d9ac0fe676d72d1d6525",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1217:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "JoyAdah",
+      "author_is_bot": false,
+      "number": 1329
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:43:53+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1217"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1199:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:45+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1199"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1198:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:45+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1198"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1197:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:26+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1197"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1196:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1196"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1195:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1195"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1169:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1169"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1168:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1168"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1167:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1167"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1166:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1166"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1165:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1165"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1164:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:22+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1164"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1163:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:22+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1163"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1162:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:59:22+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1162"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1161:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1161"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1160:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1160"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1159:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1159"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1158:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1158"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1157:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1157"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1156:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:22+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1156"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1155:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:22+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1155"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1154:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:21+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1154"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1153:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:21+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1153"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1152:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:21+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1152"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1151:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:20+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1151"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1150:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:20+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1150"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1149:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:20+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1149"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1148:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:19+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1148"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1147:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:19+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1147"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1146:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:18+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1146"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1145:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:18+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1145"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1144:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:18+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1144"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1143:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:17+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1143"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1142:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:17+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1142"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1141:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:17+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1141"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1140:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:16+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1140"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1139:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:16+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1139"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1138:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:15+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1138"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1137:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:15+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1137"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1136:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:05+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1136"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1135:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:05+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1135"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1134:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:05+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1134"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1133:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:04+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1133"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1132:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:04+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1132"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1131:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:04+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1131"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1130:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:03+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1130"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1129:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:03+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1129"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1128:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:03+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1128"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1127:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:02+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1127"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1126:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:02+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1126"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1125:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:02+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1125"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1124:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1124"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1123:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1123"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1122:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1122"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1121:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:00+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1121"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1120:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:00+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1120"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1119:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:58:00+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1119"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1118:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1118"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1117:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1117"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1116:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1116"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1115:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1115"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1114:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1114"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1113:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1113"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1112:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:57+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1112"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1111:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1111"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1110:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1110"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1109:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:33+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1109"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1108:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:33+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1108"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1107:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:33+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1107"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1106:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1106"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1105:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1105"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1104:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1104"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1103:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:31+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1103"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1102:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:31+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1102"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1101:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:30+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1101"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1100:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:30+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1100"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1099:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:30+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1099"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1098:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:29+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1098"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1097:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:29+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1097"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1096:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:29+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1096"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1095:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:28+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1095"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1094:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:28+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1094"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1093:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:27+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1093"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1092:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:27+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1092"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1091:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:27+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1091"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1090:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:26+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1090"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1089:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:26+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1089"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1088:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1088"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1087:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1087"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1086:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:02+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1086"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1085:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:02+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1085"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1084:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1084"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1083:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1083"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1082:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1082"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1081:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:00+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1081"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1080:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:00+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1080"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1079:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:57:00+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1079"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1078:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1078"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1077:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1077"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1076:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1076"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1075:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1075"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1074:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1074"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1073:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1073"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1072:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:57+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1072"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1071:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:56:57+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1071"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1070:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chidinma000",
+      "author_is_bot": false,
+      "number": 1325
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:05:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1070"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1069:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chidinma000",
+      "author_is_bot": false,
+      "number": 1325
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:05:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1069"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1068:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chidinma000",
+      "author_is_bot": false,
+      "number": 1325
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:05:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1068"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1067:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chidinma000",
+      "author_is_bot": false,
+      "number": 1325
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:05:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1067"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1066:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Emeka000",
+      "author_is_bot": false,
+      "number": 1339
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:53:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1066"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1065:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Emeka000",
+      "author_is_bot": false,
+      "number": 1339
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:53:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1065"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1064:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Emeka000",
+      "author_is_bot": false,
+      "number": 1339
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:53:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1064"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1063:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Emeka000",
+      "author_is_bot": false,
+      "number": 1339
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:53:23+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1063"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1062:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:16:28+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1062"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1061:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:16:27+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1061"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1060:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:51:10+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1060"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1059:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:51:09+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1059"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1058:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dannyswiss1",
+      "author_is_bot": false,
+      "number": 1318
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:51:07+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1058"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1057:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dannyswiss1",
+      "author_is_bot": false,
+      "number": 1318
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:51:07+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1057"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1056:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dannyswiss1",
+      "author_is_bot": false,
+      "number": 1318
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:51:07+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1056"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1055:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dannyswiss1",
+      "author_is_bot": false,
+      "number": 1318
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:51:06+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1055"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1054:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marvs8",
+      "author_is_bot": false,
+      "number": 1336
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:49:31+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1054"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1053:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marvs8",
+      "author_is_bot": false,
+      "number": 1335
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:44:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1053"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1052:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marvs8",
+      "author_is_bot": false,
+      "number": 1334
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:24:15+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1052"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1051:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marvs8",
+      "author_is_bot": false,
+      "number": 1333
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:17:19+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1051"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1050:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sundayjob996",
+      "author_is_bot": false,
+      "number": 1322
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T10:33:40+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1050"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1049:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sundayjob996",
+      "author_is_bot": false,
+      "number": 1322
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:03:07+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1049"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1048:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sundayjob996",
+      "author_is_bot": false,
+      "number": 1322
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:03:07+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1048"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1047:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sundayjob996",
+      "author_is_bot": false,
+      "number": 1322
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:03:07+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1047"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1046:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "josunday002",
+      "author_is_bot": false,
+      "number": 1321
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:52+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1046"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1045:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "josunday002",
+      "author_is_bot": false,
+      "number": 1321
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:52+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1045"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1044:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "josunday002",
+      "author_is_bot": false,
+      "number": 1321
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:52+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1044"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1043:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "josunday002",
+      "author_is_bot": false,
+      "number": 1321
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:51+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1043"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1042:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "martinzhames",
+      "author_is_bot": false,
+      "number": 1323
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:20+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1042"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1041:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "martinzhames",
+      "author_is_bot": false,
+      "number": 1323
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:20+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1041"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1040:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "martinzhames",
+      "author_is_bot": false,
+      "number": 1323
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:19+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1040"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1039:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "martinzhames",
+      "author_is_bot": false,
+      "number": 1323
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:20+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1039"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1038:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "devoclan",
+      "author_is_bot": false,
+      "number": 1324
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:45+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1038"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1037:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "devoclan",
+      "author_is_bot": false,
+      "number": 1324
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:45+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1037"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1036:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "devoclan",
+      "author_is_bot": false,
+      "number": 1324
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:46+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1036"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1035:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "devoclan",
+      "author_is_bot": false,
+      "number": 1324
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T14:04:46+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1035"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1034:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jhayniffy",
+      "author_is_bot": false,
+      "number": 1320
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:53:33+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1034"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1033:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jhayniffy",
+      "author_is_bot": false,
+      "number": 1320
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:53:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1033"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1032:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jhayniffy",
+      "author_is_bot": false,
+      "number": 1320
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:53:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1032"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1031:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jhayniffy",
+      "author_is_bot": false,
+      "number": 1320
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:53:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1031"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1030:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "james2177",
+      "author_is_bot": false,
+      "number": 1331
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:15:14+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1030"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1029:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "james2177",
+      "author_is_bot": false,
+      "number": 1331
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:15:14+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1029"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1028:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "james2177",
+      "author_is_bot": false,
+      "number": 1331
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:15:14+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1028"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1027:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "james2177",
+      "author_is_bot": false,
+      "number": 1331
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:15:13+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1027"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1026:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dami-005",
+      "author_is_bot": false,
+      "number": 1328
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:42:35+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1026"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1025:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dami-005",
+      "author_is_bot": false,
+      "number": 1328
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:42:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1025"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1024:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dami-005",
+      "author_is_bot": false,
+      "number": 1328
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:42:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1024"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1023:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dami-005",
+      "author_is_bot": false,
+      "number": 1328
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:42:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1023"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1022:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "levi0005",
+      "author_is_bot": false,
+      "number": 1330
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:02:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1022"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1021:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "levi0005",
+      "author_is_bot": false,
+      "number": 1330
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:02:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1021"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1020:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "levi0005",
+      "author_is_bot": false,
+      "number": 1330
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:02:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1020"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1019:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "levi0005",
+      "author_is_bot": false,
+      "number": 1330
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:02:57+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1019"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1018:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:41:48+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1018"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1017:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:41:48+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1017"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1016:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:41:47+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1016"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1015:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:41:47+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1015"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1014:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mac-5",
+      "author_is_bot": false,
+      "number": 1326
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:31:35+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1014"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1013:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mac-5",
+      "author_is_bot": false,
+      "number": 1326
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:31:35+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1013"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1012:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mac-5",
+      "author_is_bot": false,
+      "number": 1326
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:31:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1012"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1011:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mac-5",
+      "author_is_bot": false,
+      "number": 1326
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T20:31:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1011"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1010:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mspotless",
+      "author_is_bot": false,
+      "number": 1338
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:52:12+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1010"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1009:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mspotless",
+      "author_is_bot": false,
+      "number": 1338
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:52:12+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1009"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1008:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mspotless",
+      "author_is_bot": false,
+      "number": 1338
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:52:11+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1008"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1007:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pvsaint",
+      "author_is_bot": false,
+      "number": 1317
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T16:55:38+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1007"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1006:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mspotless",
+      "author_is_bot": false,
+      "number": 1338
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:52:11+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1006"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1005:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pvsaint",
+      "author_is_bot": false,
+      "number": 1317
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T16:55:39+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1005"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1004:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Creed1759",
+      "author_is_bot": false,
+      "number": 1319
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:52:27+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1004"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1003:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pvsaint",
+      "author_is_bot": false,
+      "number": 1317
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T16:55:38+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1003"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1002:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Creed1759",
+      "author_is_bot": false,
+      "number": 1319
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:52:27+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1002"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1001:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Creed1759",
+      "author_is_bot": false,
+      "number": 1319
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:52:27+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1001"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#1000:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Creed1759",
+      "author_is_bot": false,
+      "number": 1319
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:52:26+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/1000"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#999:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pvsaint",
+      "author_is_bot": false,
+      "number": 1317
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T16:55:38+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/999"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#998:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Jambox11",
+      "author_is_bot": false,
+      "number": 1306
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:28:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/998"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#997:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Jambox11",
+      "author_is_bot": false,
+      "number": 1306
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:28:32+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/997"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#996:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Jambox11",
+      "author_is_bot": false,
+      "number": 1306
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:28:31+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/996"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#995:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Jambox11",
+      "author_is_bot": false,
+      "number": 1306
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:28:31+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/995"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#994:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tukura11",
+      "author_is_bot": false,
+      "number": 1305
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:25:53+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/994"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#993:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tukura11",
+      "author_is_bot": false,
+      "number": 1305
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:25:52+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/993"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#992:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tukura11",
+      "author_is_bot": false,
+      "number": 1305
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:25:52+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/992"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#991:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tukura11",
+      "author_is_bot": false,
+      "number": 1305
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:25:52+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/991"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#990:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Almikefred",
+      "author_is_bot": false,
+      "number": 1304
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:22:11+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/990"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#989:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Almikefred",
+      "author_is_bot": false,
+      "number": 1304
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:22:10+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/989"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#988:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Almikefred",
+      "author_is_bot": false,
+      "number": 1304
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:22:10+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/988"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#987:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Almikefred",
+      "author_is_bot": false,
+      "number": 1304
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:22:10+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/987"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#986:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Saboleee",
+      "author_is_bot": false,
+      "number": 1303
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:19:55+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/986"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#985:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Saboleee",
+      "author_is_bot": false,
+      "number": 1303
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:19:55+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/985"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#984:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Saboleee",
+      "author_is_bot": false,
+      "number": 1303
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:19:54+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/984"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#983:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Saboleee",
+      "author_is_bot": false,
+      "number": 1303
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:19:54+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/983"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#982:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ndifreke000",
+      "author_is_bot": false,
+      "number": 1309
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:32:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/982"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#981:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T14:55:08+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/981"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#980:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ndii-dev",
+      "author_is_bot": false,
+      "number": 1314
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T14:57:09+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/980"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#979:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yosemite01",
+      "author_is_bot": false,
+      "number": 1301
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:17:14+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/979"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#978:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ndifreke000",
+      "author_is_bot": false,
+      "number": 1310
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:32:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/978"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#977:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yosemite01",
+      "author_is_bot": false,
+      "number": 1301
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:17:14+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/977"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#976:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ndifreke000",
+      "author_is_bot": false,
+      "number": 1308
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:29:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/976"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#975:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ndifreke000",
+      "author_is_bot": false,
+      "number": 1307
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:28:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/975"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#974:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ndii-dev",
+      "author_is_bot": false,
+      "number": 1313
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T14:56:04+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/974"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#973:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ndii-dev",
+      "author_is_bot": false,
+      "number": 1312
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T14:53:44+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/973"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#972:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "christabel888",
+      "author_is_bot": false,
+      "number": 1316
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T14:58:59+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/972"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#971:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "christabel888",
+      "author_is_bot": false,
+      "number": 1315
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T14:58:11+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/971"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#970:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yosemite01",
+      "author_is_bot": false,
+      "number": 1301
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:17:13+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/970"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#969:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yosemite01",
+      "author_is_bot": false,
+      "number": 1301
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:17:13+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/969"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#968:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mimah97",
+      "author_is_bot": false,
+      "number": 1300
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:47:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/968"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#967:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mimah97",
+      "author_is_bot": false,
+      "number": 1300
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:47:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/967"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#966:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mimah97",
+      "author_is_bot": false,
+      "number": 1300
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:47:25+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/966"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#965:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mimah97",
+      "author_is_bot": false,
+      "number": 1300
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:47:24+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/965"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#964:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "favourawaku",
+      "author_is_bot": false,
+      "number": 1296
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T22:16:18+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/964"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#963:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "favourawaku",
+      "author_is_bot": false,
+      "number": 1296
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T22:16:17+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/963"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#962:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "favourawaku",
+      "author_is_bot": false,
+      "number": 1296
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T22:16:16+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/962"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#961:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "favourawaku",
+      "author_is_bot": false,
+      "number": 1296
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T22:16:16+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/961"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#960:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "CeceOs92",
+      "author_is_bot": false,
+      "number": 1294
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:48:49+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/960"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#959:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "CeceOs92",
+      "author_is_bot": false,
+      "number": 1294
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:48:49+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/959"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#958:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "CeceOs92",
+      "author_is_bot": false,
+      "number": 1294
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:48:48+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/958"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#957:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "CeceOs92",
+      "author_is_bot": false,
+      "number": 1294
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:48:48+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/957"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#956:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kaynaomi-oss",
+      "author_is_bot": false,
+      "number": 1302
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:18:15+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/956"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#955:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kaynaomi-oss",
+      "author_is_bot": false,
+      "number": 1302
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:18:16+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/955"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#954:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kaynaomi-oss",
+      "author_is_bot": false,
+      "number": 1302
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:18:16+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/954"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#953:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kaynaomi-oss",
+      "author_is_bot": false,
+      "number": 1302
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T11:18:15+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/953"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#952:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:50:31+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/952"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#951:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:50:30+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/951"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#950:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:50:30+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/950"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#949:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "pharuq411",
+      "author_is_bot": false,
+      "number": 1286
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T13:55:04+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/949"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#948:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "pharuq411",
+      "author_is_bot": false,
+      "number": 1287
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T13:55:01+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/948"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#947:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T00:50:30+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/947"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#945:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jpetee21-design",
+      "author_is_bot": false,
+      "number": 1290
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:58+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/945"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#943:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "pharuq411",
+      "author_is_bot": false,
+      "number": 1283
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T13:36:46+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/943"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#940:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jpetee21-design",
+      "author_is_bot": false,
+      "number": 1290
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:57+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/940"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#939:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jpetee21-design",
+      "author_is_bot": false,
+      "number": 1290
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:57+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/939"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#934:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vrickish",
+      "author_is_bot": false,
+      "number": 1289
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:36+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/934"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#933:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jpetee21-design",
+      "author_is_bot": false,
+      "number": 1290
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:56+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/933"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#932:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vrickish",
+      "author_is_bot": false,
+      "number": 1289
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:36+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/932"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#931:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vrickish",
+      "author_is_bot": false,
+      "number": 1289
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:35+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/931"
+  },
+  {
+   "evidence_id": "issue:MyFanss/MyFans#930:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vrickish",
+      "author_is_bot": false,
+      "number": 1289
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:37:34+00:00",
+   "url": "https://github.com/MyFanss/MyFans/issues/930"
+  }
+ ],
+ "repo": "MyFanss/MyFans",
+ "window": "post_t"
+}

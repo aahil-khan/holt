@@ -1,6 +1,6 @@
 # Holt — where we are and how we got here
 
-Written 2026-08-30. **32.9 hours to deadline.** 26 commits, 47 tests, $4.85 spent.
+Written 2026-08-30, revised through Path Finder. 31 commits, 53 tests, ~$5.10 spent.
 
 This is the orientation document. Read it if you have lost the thread.
 
@@ -123,18 +123,41 @@ That is reproducibility, not accuracy, and we say so.
 - Stage B and Stage C reach the report but not the verdict, and that is disclosed
   rather than quietly true.
 
-## 5. What is open
+## 5. What has happened since, and what is open
 
-| | Effort | Why it matters |
+**Shipped since this document was first written:**
+
+- **The rubber-stamp rejection rule.** Rejects when contributions land easily and
+  nobody reviews them. Validated out-of-sample on pool 2 *before* shipping —
+  specificity 0.58 → 0.83, all three pre-registered predictions holding. This is
+  the first thing that makes the pipeline itself, rather than the evidence layer,
+  earn its place.
+- **`--days`.** The contributor's time budget is a parameter, not a hardcoded
+  week. Re-running with a different budget costs **zero model calls**, because
+  only `verdict.py` re-runs. That is the cleanest thing the orchestration buys
+  that a single prompt cannot, and unlike the accuracy claim it is not in dispute.
+- **Evidence integrity as an evaluation dimension.** Holt's citations resolve
+  696/696. Two of our predictions failed here: the matched prompt does *not*
+  fabricate (638/638 resolve), and our own quote fidelity is 80% rather than
+  near-perfect. The real difference is that the prompt emits no quotes at all, so
+  its claims cannot be checked while Holt's can. The metric also found a defect in
+  our own prompt on its first run — 80 of 108 unfaithful quotes were Holt's own
+  scaffolding being quoted back as evidence.
+
+**Path Finder: built, measured, currently failing its own test.** It ties
+GitHub's `good first issue` label at precision@3 0.125 on pool 1, which is the
+cut condition written before it existed. The combined pool-1-plus-pool-2 result
+is pre-committed as the answer.
+
+**Open:**
+
+| | Effort | Why |
 |---|---|---|
-| **Ship the rejection rule into `verdict.py`** and re-run both pools | ~1h, ~$3 | It is the first thing that makes the *pipeline* earn its place. Right now it exists only as a counterfactual. |
-| **Evidence-integrity metric** | ~1.5h | Do the reports' citations actually resolve? Ours should be near-perfect by construction; the matched prompt will fabricate. Lands on End-to-End Quality rather than competing on accuracy. |
-| **Doc pass** | ~1h | README and REPRODUCTION still describe the pre-pool-2 world. |
-| **Video** | yours | Required deliverable. |
-| **Human-time number** | yours, ~30m | Time yourself reading twenty threads. Holt takes ~69 seconds. The most legible comparison we could show. |
-
-**Recommended order:** ship the rule → re-run → doc pass → evidence integrity →
-your video.
+| Pool 2 Path Finder result, then keep or cut | ~30m, ~$0.05 | Pre-committed as the deciding number |
+| Final frozen benchmark, both pools | ~1h, ~$3.50 | Committed results still predate the rejection rule |
+| Doc pass | ~1h | README describes the pre-rule, pre-Path-Finder world |
+| **Video** | yours | Required deliverable |
+| **Human-time number** | yours, ~30m | The brief asks for it; only you can produce it |
 
 ## 6. The honest summary
 

@@ -1,0 +1,1083 @@
+{
+ "captured_at": "2026-08-30T10:19:36.986193+00:00",
+ "content_sha256": "ef7a2f6ab507b9d78389b613bcc6e3119ee551e25075328715d97cf5f1e0ff80",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:apache/doris#63854:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Larborator",
+      "author_is_bot": false,
+      "number": 63851
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:38:53+00:00",
+   "url": "https://github.com/apache/doris/issues/63854"
+  },
+  {
+   "evidence_id": "issue:apache/doris#63603:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MarkLee131",
+      "author_is_bot": false,
+      "number": 63604
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:46:26+00:00",
+   "url": "https://github.com/apache/doris/issues/63603"
+  },
+  {
+   "evidence_id": "issue:apache/doris#63562:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "zhangrq5",
+      "author_is_bot": false,
+      "number": 63565
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:20:41+00:00",
+   "url": "https://github.com/apache/doris/issues/63562"
+  },
+  {
+   "evidence_id": "issue:apache/doris#63426:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T03:18:22+00:00",
+   "url": "https://github.com/apache/doris/issues/63426"
+  },
+  {
+   "evidence_id": "issue:apache/doris#63358:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "zhaorongsheng",
+      "author_is_bot": false,
+      "number": 63363
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T01:48:11+00:00",
+   "url": "https://github.com/apache/doris/issues/63358"
+  },
+  {
+   "evidence_id": "issue:apache/doris#63193:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T01:50:04+00:00",
+   "url": "https://github.com/apache/doris/issues/63193"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62768:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "officialasishkumar",
+      "author_is_bot": false,
+      "number": 63215
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T09:30:11+00:00",
+   "url": "https://github.com/apache/doris/issues/62768"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62676:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T03:06:00+00:00",
+   "url": "https://github.com/apache/doris/issues/62676"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62672:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:55:07+00:00",
+   "url": "https://github.com/apache/doris/issues/62672"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62497:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "JoverZhang",
+      "author_is_bot": false,
+      "number": 64093
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T08:59:31+00:00",
+   "url": "https://github.com/apache/doris/issues/62497"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62412:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "officialasishkumar",
+      "author_is_bot": false,
+      "number": 63600
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:13:13+00:00",
+   "url": "https://github.com/apache/doris/issues/62412"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62406:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T03:18:44+00:00",
+   "url": "https://github.com/apache/doris/issues/62406"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62259:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "morningman",
+      "author_is_bot": false,
+      "number": 64799
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T08:51:38+00:00",
+   "url": "https://github.com/apache/doris/issues/62259"
+  },
+  {
+   "evidence_id": "issue:apache/doris#62230:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T10:37:08+00:00",
+   "url": "https://github.com/apache/doris/issues/62230"
+  },
+  {
+   "evidence_id": "issue:apache/doris#61817:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:56:33+00:00",
+   "url": "https://github.com/apache/doris/issues/61817"
+  },
+  {
+   "evidence_id": "issue:apache/doris#61447:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T01:23:46+00:00",
+   "url": "https://github.com/apache/doris/issues/61447"
+  },
+  {
+   "evidence_id": "issue:apache/doris#61121:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T03:18:15+00:00",
+   "url": "https://github.com/apache/doris/issues/61121"
+  },
+  {
+   "evidence_id": "issue:apache/doris#61119:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T05:11:31+00:00",
+   "url": "https://github.com/apache/doris/issues/61119"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60791:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T00:22:27+00:00",
+   "url": "https://github.com/apache/doris/issues/60791"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60789:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T00:22:28+00:00",
+   "url": "https://github.com/apache/doris/issues/60789"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60780:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T01:24:59+00:00",
+   "url": "https://github.com/apache/doris/issues/60780"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60768:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T00:09:46+00:00",
+   "url": "https://github.com/apache/doris/issues/60768"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60714:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:09:21+00:00",
+   "url": "https://github.com/apache/doris/issues/60714"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60682:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T00:09:19+00:00",
+   "url": "https://github.com/apache/doris/issues/60682"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60669:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T00:09:27+00:00",
+   "url": "https://github.com/apache/doris/issues/60669"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60590:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T02:47:01+00:00",
+   "url": "https://github.com/apache/doris/issues/60590"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60588:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T00:09:10+00:00",
+   "url": "https://github.com/apache/doris/issues/60588"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60568:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:24+00:00",
+   "url": "https://github.com/apache/doris/issues/60568"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60541:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:22+00:00",
+   "url": "https://github.com/apache/doris/issues/60541"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60536:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:21+00:00",
+   "url": "https://github.com/apache/doris/issues/60536"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60508:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:20+00:00",
+   "url": "https://github.com/apache/doris/issues/60508"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60496:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:18+00:00",
+   "url": "https://github.com/apache/doris/issues/60496"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60483:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:17+00:00",
+   "url": "https://github.com/apache/doris/issues/60483"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60460:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:15+00:00",
+   "url": "https://github.com/apache/doris/issues/60460"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60451:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:14+00:00",
+   "url": "https://github.com/apache/doris/issues/60451"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60442:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:12+00:00",
+   "url": "https://github.com/apache/doris/issues/60442"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60427:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:11+00:00",
+   "url": "https://github.com/apache/doris/issues/60427"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60399:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:10+00:00",
+   "url": "https://github.com/apache/doris/issues/60399"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60381:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:08+00:00",
+   "url": "https://github.com/apache/doris/issues/60381"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60361:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:07+00:00",
+   "url": "https://github.com/apache/doris/issues/60361"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60353:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "iaorekhov-1980",
+      "author_is_bot": false,
+      "number": 61440
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:05+00:00",
+   "url": "https://github.com/apache/doris/issues/60353"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60306:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:04+00:00",
+   "url": "https://github.com/apache/doris/issues/60306"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60270:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:03+00:00",
+   "url": "https://github.com/apache/doris/issues/60270"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60242:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T00:25:17+00:00",
+   "url": "https://github.com/apache/doris/issues/60242"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60193:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:01+00:00",
+   "url": "https://github.com/apache/doris/issues/60193"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60163:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:39:00+00:00",
+   "url": "https://github.com/apache/doris/issues/60163"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60108:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T00:30:17+00:00",
+   "url": "https://github.com/apache/doris/issues/60108"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60084:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T00:30:18+00:00",
+   "url": "https://github.com/apache/doris/issues/60084"
+  },
+  {
+   "evidence_id": "issue:apache/doris#60071:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T00:30:20+00:00",
+   "url": "https://github.com/apache/doris/issues/60071"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59962:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T00:30:21+00:00",
+   "url": "https://github.com/apache/doris/issues/59962"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59889:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-28T00:28:11+00:00",
+   "url": "https://github.com/apache/doris/issues/59889"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59871:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T00:27:05+00:00",
+   "url": "https://github.com/apache/doris/issues/59871"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59851:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T00:26:16+00:00",
+   "url": "https://github.com/apache/doris/issues/59851"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59837:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:38:59+00:00",
+   "url": "https://github.com/apache/doris/issues/59837"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59781:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T00:29:03+00:00",
+   "url": "https://github.com/apache/doris/issues/59781"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59723:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T08:24:20+00:00",
+   "url": "https://github.com/apache/doris/issues/59723"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59691:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T00:28:41+00:00",
+   "url": "https://github.com/apache/doris/issues/59691"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59676:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T00:28:45+00:00",
+   "url": "https://github.com/apache/doris/issues/59676"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59658:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T00:29:27+00:00",
+   "url": "https://github.com/apache/doris/issues/59658"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59628:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T00:25:23+00:00",
+   "url": "https://github.com/apache/doris/issues/59628"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59596:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T00:28:49+00:00",
+   "url": "https://github.com/apache/doris/issues/59596"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59593:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T00:28:43+00:00",
+   "url": "https://github.com/apache/doris/issues/59593"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59576:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:38:57+00:00",
+   "url": "https://github.com/apache/doris/issues/59576"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59560:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T00:28:53+00:00",
+   "url": "https://github.com/apache/doris/issues/59560"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59537:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T00:27:11+00:00",
+   "url": "https://github.com/apache/doris/issues/59537"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59534:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T01:25:07+00:00",
+   "url": "https://github.com/apache/doris/issues/59534"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59531:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:38:56+00:00",
+   "url": "https://github.com/apache/doris/issues/59531"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59504:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T00:23:42+00:00",
+   "url": "https://github.com/apache/doris/issues/59504"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59490:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T00:34:30+00:00",
+   "url": "https://github.com/apache/doris/issues/59490"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59456:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-28T00:28:13+00:00",
+   "url": "https://github.com/apache/doris/issues/59456"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59415:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T00:32:27+00:00",
+   "url": "https://github.com/apache/doris/issues/59415"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59342:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T00:32:27+00:00",
+   "url": "https://github.com/apache/doris/issues/59342"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59325:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:38:54+00:00",
+   "url": "https://github.com/apache/doris/issues/59325"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59312:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T00:32:28+00:00",
+   "url": "https://github.com/apache/doris/issues/59312"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59304:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T00:33:43+00:00",
+   "url": "https://github.com/apache/doris/issues/59304"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59265:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T00:33:47+00:00",
+   "url": "https://github.com/apache/doris/issues/59265"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59238:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T00:40:00+00:00",
+   "url": "https://github.com/apache/doris/issues/59238"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59225:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T00:40:01+00:00",
+   "url": "https://github.com/apache/doris/issues/59225"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59220:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T00:23:44+00:00",
+   "url": "https://github.com/apache/doris/issues/59220"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59195:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T00:42:17+00:00",
+   "url": "https://github.com/apache/doris/issues/59195"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59194:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T00:42:18+00:00",
+   "url": "https://github.com/apache/doris/issues/59194"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59150:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T00:40:23+00:00",
+   "url": "https://github.com/apache/doris/issues/59150"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59138:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T00:40:24+00:00",
+   "url": "https://github.com/apache/doris/issues/59138"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59133:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T00:40:25+00:00",
+   "url": "https://github.com/apache/doris/issues/59133"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59125:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T00:34:34+00:00",
+   "url": "https://github.com/apache/doris/issues/59125"
+  },
+  {
+   "evidence_id": "issue:apache/doris#59124:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T00:42:21+00:00",
+   "url": "https://github.com/apache/doris/issues/59124"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58976:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T00:45:14+00:00",
+   "url": "https://github.com/apache/doris/issues/58976"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58930:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T00:45:16+00:00",
+   "url": "https://github.com/apache/doris/issues/58930"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58917:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T00:50:17+00:00",
+   "url": "https://github.com/apache/doris/issues/58917"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58808:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T00:27:34+00:00",
+   "url": "https://github.com/apache/doris/issues/58808"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58735:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T00:45:18+00:00",
+   "url": "https://github.com/apache/doris/issues/58735"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58605:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T00:38:53+00:00",
+   "url": "https://github.com/apache/doris/issues/58605"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58441:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T00:34:26+00:00",
+   "url": "https://github.com/apache/doris/issues/58441"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58304:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T00:46:10+00:00",
+   "url": "https://github.com/apache/doris/issues/58304"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58067:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T00:44:08+00:00",
+   "url": "https://github.com/apache/doris/issues/58067"
+  },
+  {
+   "evidence_id": "issue:apache/doris#58039:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T00:40:05+00:00",
+   "url": "https://github.com/apache/doris/issues/58039"
+  },
+  {
+   "evidence_id": "issue:apache/doris#57883:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T00:43:44+00:00",
+   "url": "https://github.com/apache/doris/issues/57883"
+  },
+  {
+   "evidence_id": "issue:apache/doris#57882:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T00:23:46+00:00",
+   "url": "https://github.com/apache/doris/issues/57882"
+  },
+  {
+   "evidence_id": "issue:apache/doris#57788:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T00:32:39+00:00",
+   "url": "https://github.com/apache/doris/issues/57788"
+  },
+  {
+   "evidence_id": "issue:apache/doris#57773:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T00:42:24+00:00",
+   "url": "https://github.com/apache/doris/issues/57773"
+  },
+  {
+   "evidence_id": "issue:apache/doris#57707:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T00:46:03+00:00",
+   "url": "https://github.com/apache/doris/issues/57707"
+  },
+  {
+   "evidence_id": "issue:apache/doris#57318:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T00:42:11+00:00",
+   "url": "https://github.com/apache/doris/issues/57318"
+  }
+ ],
+ "repo": "apache/doris",
+ "window": "post_t"
+}

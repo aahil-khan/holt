@@ -1,0 +1,289 @@
+{
+ "captured_at": "2026-08-30T10:20:43.164402+00:00",
+ "content_sha256": "2fa629ada0ff88384ac2f8d1874046bf7a051bfaaf1b062d142385e2bd9963ad",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#381899:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SpecterShell",
+      "author_is_bot": false,
+      "number": 382345
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T16:53:16+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/381899"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#381854:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "spectopo",
+      "author_is_bot": false,
+      "number": 381860
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T00:43:36+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/381854"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#381666:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:10:00+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/381666"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#381259:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 381462
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 381463
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 381472
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 381473
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 381475
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:41:32+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/381259"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#380827:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:31:35+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/380827"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#380740:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "spectopo",
+      "author_is_bot": false,
+      "number": 379662
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:33:30+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/380740"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#380664:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:56:36+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/380664"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#379466:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SpecterShell",
+      "author_is_bot": false,
+      "number": 379527
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T17:41:14+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/379466"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#377458:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:00:57+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/377458"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#375651:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 392531
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 392532
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 392534
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 392535
+     },
+     {
+      "author": "Dragon1573",
+      "author_is_bot": false,
+      "number": 392536
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T17:48:02+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/375651"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#375247:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "zyphlar",
+      "author_is_bot": false,
+      "number": 388155
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T17:44:58+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/375247"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#374882:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T22:32:55+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/374882"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#373886:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T13:27:08+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/373886"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#369734:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T05:13:43+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/369734"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#369284:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "alexchen-sys",
+      "author_is_bot": false,
+      "number": 409519
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T00:41:23+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/369284"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#366852:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "alexchen-sys",
+      "author_is_bot": false,
+      "number": 409490
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-29T19:23:52+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/366852"
+  },
+  {
+   "evidence_id": "issue:microsoft/winget-pkgs#365267:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "exchange12rocks",
+      "author_is_bot": false,
+      "number": 394719
+     },
+     {
+      "author": "exchange12rocks",
+      "author_is_bot": false,
+      "number": 394720
+     },
+     {
+      "author": "exchange12rocks",
+      "author_is_bot": false,
+      "number": 394721
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T21:45:10+00:00",
+   "url": "https://github.com/microsoft/winget-pkgs/issues/365267"
+  }
+ ],
+ "repo": "microsoft/winget-pkgs",
+ "window": "post_t"
+}

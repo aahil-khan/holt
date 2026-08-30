@@ -1,0 +1,89 @@
+{
+ "captured_at": "2026-08-30T10:20:21.290720+00:00",
+ "content_sha256": "3a36dde49356f8852769168d871c44deab1e5a2cd856acc87cb538ebad7ce2a8",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#38460:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:32:25+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/38460"
+  },
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#38419:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T02:14:44+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/38419"
+  },
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#38416:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T11:06:38+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/38416"
+  },
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#31690:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T15:42:05+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/31690"
+  },
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#28713:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T14:40:28+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/28713"
+  },
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#21309:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T17:35:54+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/21309"
+  },
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#19424:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T19:08:08+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/19424"
+  },
+  {
+   "evidence_id": "issue:leanprover-community/mathlib4#15865:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T15:44:24+00:00",
+   "url": "https://github.com/leanprover-community/mathlib4/issues/15865"
+  }
+ ],
+ "repo": "leanprover-community/mathlib4",
+ "window": "post_t"
+}

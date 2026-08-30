@@ -1,0 +1,24 @@
+{
+ "captured_at": "2026-08-30T10:11:21.931196+00:00",
+ "content_sha256": "25dd20f64f85dcc1603de9e3030cbd3390eb6089804d31cbf9ea7d77fd481a0f",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:tscircuit/kicad-to-circuit-json#65:opened",
+   "payload": {
+    "author": "amin57007",
+    "body": "Hello and thank you for your efforts,\n\nI really appreciate the development of this useful and interesting project. However, I have encountered a few ambiguities and would appreciate some clarification:\n\n1. Which version of the project is currently considered stable and functioning correctly?\n2. Which versions of KiCad are officially supported?\n3. Do you have any plans to support KiCad version 10, and if so, until when can we expect compatibility?\n\nThank you in advance for your time and support.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "conversion not working"
+   },
+   "source": "github",
+   "timestamp": "2026-04-20T06:14:01+00:00",
+   "url": "https://github.com/tscircuit/kicad-to-circuit-json/issues/65"
+  }
+ ],
+ "repo": "tscircuit/kicad-to-circuit-json",
+ "window": "pre_t"
+}

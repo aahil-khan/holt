@@ -1,0 +1,273 @@
+{
+ "captured_at": "2026-08-30T10:11:21.149642+00:00",
+ "content_sha256": "0f955cea24890ec5a58336a2906084b99571ec0cc7519ac4d14b8e59589ef369",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:stablyai/orca#4319:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nwparker",
+      "author_is_bot": false,
+      "number": 4331
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:47:50+00:00",
+   "url": "https://github.com/stablyai/orca/issues/4319"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#4285:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T16:48:58+00:00",
+   "url": "https://github.com/stablyai/orca/issues/4285"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#4223:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Jinwoo-H",
+      "author_is_bot": false,
+      "number": 5039
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T19:11:49+00:00",
+   "url": "https://github.com/stablyai/orca/issues/4223"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#4203:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T18:33:24+00:00",
+   "url": "https://github.com/stablyai/orca/issues/4203"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#4023:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T08:41:06+00:00",
+   "url": "https://github.com/stablyai/orca/issues/4023"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#3971:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T23:53:38+00:00",
+   "url": "https://github.com/stablyai/orca/issues/3971"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#3464:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T01:33:41+00:00",
+   "url": "https://github.com/stablyai/orca/issues/3464"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#3346:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T00:28:21+00:00",
+   "url": "https://github.com/stablyai/orca/issues/3346"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#3191:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T23:23:51+00:00",
+   "url": "https://github.com/stablyai/orca/issues/3191"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#3190:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nwparker",
+      "author_is_bot": false,
+      "number": 3196
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:24:26+00:00",
+   "url": "https://github.com/stablyai/orca/issues/3190"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#3163:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T23:41:45+00:00",
+   "url": "https://github.com/stablyai/orca/issues/3163"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#2989:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nwparker",
+      "author_is_bot": false,
+      "number": 10818
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-28T00:03:59+00:00",
+   "url": "https://github.com/stablyai/orca/issues/2989"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#2836:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T07:11:33+00:00",
+   "url": "https://github.com/stablyai/orca/issues/2836"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#2434:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "brennanb2025",
+      "author_is_bot": false,
+      "number": 6541
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T08:29:18+00:00",
+   "url": "https://github.com/stablyai/orca/issues/2434"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#2432:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T23:18:58+00:00",
+   "url": "https://github.com/stablyai/orca/issues/2432"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#2429:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:16:09+00:00",
+   "url": "https://github.com/stablyai/orca/issues/2429"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#2178:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "leynier",
+      "author_is_bot": false,
+      "number": 2188
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T01:50:06+00:00",
+   "url": "https://github.com/stablyai/orca/issues/2178"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#2026:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AmethystLiang",
+      "author_is_bot": false,
+      "number": 3976
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:14:43+00:00",
+   "url": "https://github.com/stablyai/orca/issues/2026"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#1796:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Jinwoo-H",
+      "author_is_bot": false,
+      "number": 4706
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T02:41:26+00:00",
+   "url": "https://github.com/stablyai/orca/issues/1796"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#1310:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nwparker",
+      "author_is_bot": false,
+      "number": 2238
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:04:05+00:00",
+   "url": "https://github.com/stablyai/orca/issues/1310"
+  },
+  {
+   "evidence_id": "issue:stablyai/orca#1222:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T00:43:16+00:00",
+   "url": "https://github.com/stablyai/orca/issues/1222"
+  }
+ ],
+ "repo": "stablyai/orca",
+ "window": "post_t"
+}

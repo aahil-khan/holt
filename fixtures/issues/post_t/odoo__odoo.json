@@ -1,0 +1,119 @@
+{
+ "captured_at": "2026-08-30T10:21:04.888101+00:00",
+ "content_sha256": "8171cdfc8b7b64995d3d639149bc3dd1e1bec5e9ff630898672c34e9beaff0d7",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:odoo/odoo#266521:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T11:34:21+00:00",
+   "url": "https://github.com/odoo/odoo/issues/266521"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#266373:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T13:44:52+00:00",
+   "url": "https://github.com/odoo/odoo/issues/266373"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#264312:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T13:42:52+00:00",
+   "url": "https://github.com/odoo/odoo/issues/264312"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#263938:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T22:27:03+00:00",
+   "url": "https://github.com/odoo/odoo/issues/263938"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#260239:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T13:29:39+00:00",
+   "url": "https://github.com/odoo/odoo/issues/260239"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#254376:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T11:00:53+00:00",
+   "url": "https://github.com/odoo/odoo/issues/254376"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#254316:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T14:02:03+00:00",
+   "url": "https://github.com/odoo/odoo/issues/254316"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#253543:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T11:55:54+00:00",
+   "url": "https://github.com/odoo/odoo/issues/253543"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#246275:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T13:25:15+00:00",
+   "url": "https://github.com/odoo/odoo/issues/246275"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#245052:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T00:11:47+00:00",
+   "url": "https://github.com/odoo/odoo/issues/245052"
+  },
+  {
+   "evidence_id": "issue:odoo/odoo#244511:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T11:26:15+00:00",
+   "url": "https://github.com/odoo/odoo/issues/244511"
+  }
+ ],
+ "repo": "odoo/odoo",
+ "window": "post_t"
+}

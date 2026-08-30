@@ -1,0 +1,1754 @@
+{
+ "captured_at": "2026-08-30T10:10:11.092510+00:00",
+ "content_sha256": "fda025bd373d27865a05f55c76fa6c9f0b142a389a5137d7f65b66a1c8425d46",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:PerryTS/perry#3910:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3947
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:05:59+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3910"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3909:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 3975
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:19:29+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3909"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3908:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4060
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:25:35+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3908"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3906:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T09:10:22+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3906"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3905:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4014
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:31:00+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3905"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3904:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4012
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:16:41+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3904"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3902:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T23:01:04+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3902"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3900:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3931
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T07:01:29+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3900"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3899:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3911
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:11:21+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3899"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3898:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:59:33+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3898"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3897:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:59:30+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3897"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3896:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 3982
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:10:17+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3896"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3893:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:12:45+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3893"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3891:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:51:17+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3891"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3890:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3903
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:11:27+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3890"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3887:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3903
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:11:28+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3887"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3885:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3892
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:01:59+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3885"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3884:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3894
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:02:07+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3884"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3880:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:39:01+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3880"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3879:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:12:44+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3879"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3877:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T06:27:36+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3877"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3876:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4218
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:37:55+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3876"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3873:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4127
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T16:24:50+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3873"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3872:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:30:37+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3872"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3871:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 3979
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T15:17:46+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3871"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3870:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:30:36+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3870"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3868:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3874
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:57:06+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3868"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3867:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:14:33+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3867"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3864:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3874
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:57:06+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3864"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3862:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3886
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:01:50+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3862"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3861:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3886
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:01:50+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3861"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3860:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4117
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:53:44+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3860"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3857:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:24:58+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3857"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3854:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T07:47:50+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3854"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3853:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:02:43+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3853"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3852:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:51:14+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3852"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3851:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4094
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T11:40:08+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3851"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3850:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3895
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:02:14+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3850"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3849:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3894
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:02:06+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3849"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3848:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T07:13:34+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3848"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3847:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3869
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T06:45:57+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3847"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3844:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:01:23+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3844"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3843:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:12:55+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3843"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3842:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4164
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:16:46+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3842"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3841:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T09:09:13+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3841"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3840:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T09:09:12+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3840"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3839:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4202
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T05:11:08+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3839"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3837:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T08:04:50+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3837"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3836:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4147
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T05:39:22+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3836"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3748:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4130
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T19:26:21+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3748"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3744:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4072
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:33:59+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3744"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3738:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T01:48:25+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3738"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3734:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3869
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T06:45:56+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3734"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3728:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T07:50:49+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3728"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3727:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:29:27+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3727"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3720:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 3959
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:16:53+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3720"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3719:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4006
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:17:11+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3719"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3713:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4203
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T05:38:05+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3713"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3712:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 3998
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:20:56+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3712"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3711:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 3960
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:12:17+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3711"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3710:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3968
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:30:51+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3710"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3707:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T07:01:18+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3707"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3706:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3903
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:11:29+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3706"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3700:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4080
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T08:39:34+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3700"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3699:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4208
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:18:51+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3699"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3697:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4016
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:41:08+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3697"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3695:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:41:19+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3695"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3693:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4062
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T06:45:26+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3693"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3689:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:02:45+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3689"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3687:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:02:47+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3687"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3686:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4075
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T11:23:03+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3686"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3682:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:02:49+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3682"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3681:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3926
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:03:41+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3681"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3675:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4078
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T08:19:29+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3675"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3671:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T07:01:18+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3671"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3665:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:55:13+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3665"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3664:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4086
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T09:22:43+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3664"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3663:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4076
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T08:48:21+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3663"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3662:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:38:56+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3662"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3661:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:25:26+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3661"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3658:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:01:12+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3658"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3656:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:00:24+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3656"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3655:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4009
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T23:44:31+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3655"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3654:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3889
+     },
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 3958
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:50:31+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3654"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3621:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "proggeramlug",
+      "author_is_bot": false,
+      "number": 4403
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T15:55:28+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3621"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3583:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T07:19:00+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3583"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3581:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3694
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:01:02+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3581"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3580:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3735
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:53:00+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3580"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3579:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4011
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T23:44:57+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3579"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3578:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:20+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3578"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3577:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T06:52:03+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3577"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3576:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T06:52:00+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3576"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3575:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T07:08:26+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3575"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3574:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:38+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3574"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3573:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:35+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3573"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3572:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4268
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T09:59:24+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3572"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3571:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T09:12:09+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3571"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3570:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T06:28:10+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3570"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3569:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:33+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3569"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3568:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T07:17:25+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3568"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3567:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:31+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3567"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3566:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:28+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3566"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3565:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:26+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3565"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3564:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:24+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3564"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3562:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:22+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3562"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3561:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3694
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:01:05+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3561"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3560:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3694
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:01:04+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3560"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3559:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3694
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:01:04+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3559"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3558:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3694
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:01:03+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3558"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3557:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3694
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:01:02+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3557"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3556:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3735
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:53:03+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3556"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3555:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3735
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:53:02+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3555"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3554:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3735
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:53:01+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3554"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3527:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T09:11:19+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3527"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3415:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:24:57+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3415"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3412:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4181
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:27:52+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3412"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3395:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:01:14+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3395"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3393:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:01:16+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3393"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3390:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:35:30+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3390"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3377:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4106
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:51:30+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3377"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3366:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T09:08:10+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3366"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3365:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T09:08:10+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3365"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3341:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:03:18+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3341"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3337:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 3889
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T07:01:25+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3337"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3330:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4053
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:01:37+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3330"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3329:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4053
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:01:38+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3329"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3328:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4063
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T06:25:02+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3328"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3327:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4050
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T10:44:44+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3327"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3326:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4051
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T08:19:05+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3326"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3323:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T07:00:20+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3323"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3322:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "andrewtdiz",
+      "author_is_bot": false,
+      "number": 4172
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:16:11+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3322"
+  },
+  {
+   "evidence_id": "issue:PerryTS/perry#3321:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T04:02:58+00:00",
+   "url": "https://github.com/PerryTS/perry/issues/3321"
+  }
+ ],
+ "repo": "PerryTS/perry",
+ "window": "post_t"
+}

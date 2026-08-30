@@ -1,0 +1,2675 @@
+{
+ "captured_at": "2026-08-30T10:11:01.899609+00:00",
+ "content_sha256": "4166ef2357151a24294f6dee922ae2127ab9ec06693c9d703b8fda8639e2b7a1",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#11132:opened",
+   "payload": {
+    "author": "denraf",
+    "body": "# :rotating_light: Deprecation Notice :rotating_light:\n\nClearbit's free Logo API (logo.clearbit.com) will be discontinued on **December 1, 2025**, and will stop working on that date.\n\n## What You Need to Know:\nWe have identified your project as one that uses logo.clearbit.com - you\u2019ll need to migrate to an alternative solution.\nWe\u2019ve shared detailed information and alternative approaches in [our announcement on the HubSpot Developer Community](https://developers.hubspot.com/changelog/upcoming-sunset-of-clearbits-free-logo-api).\n\n## Recommended Next Steps\n1. **Audit your code**: Identify where logo.clearbit.com is used\n2. **Consider alternatives**: Review options and recommendations in our official post\n3. **Update dependencies**: If this project is part of a larger system, notify relevant maintainers\n\nWe appreciate all the developers who have used this service over the years! Check out the [HubSpot Developer Community](https://developers.hubspot.com/changelog/upcoming-sunset-of-clearbits-free-logo-api) for more details.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": ":warning: Clearbit\u2019s Free Logo API (logo.clearbit.com) is Being Discontinued \u2013 Update Required"
+   },
+   "source": "github",
+   "timestamp": "2025-04-02T17:15:00+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/11132"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#11132:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-04-03T13:06:09+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/11132"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#8274:opened",
+   "payload": {
+    "author": "Stellachini7126",
+    "body": "https://github.com/markdown-it/markdown-it/tree/master",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "https://interactive-card-details-form-three.vercel.app/success.html?"
+   },
+   "source": "github",
+   "timestamp": "2022-10-11T06:31:52+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/8274"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#8274:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2022-10-13T10:12:52+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/8274"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#6801:opened",
+   "payload": {
+    "author": "renovate",
+    "body": "This issue lists Renovate updates and detected dependencies. Read the [Dependency Dashboard](https://docs.renovatebot.com/key-concepts/dashboard/) docs to learn more.<br>[View this repository on the Mend.io Web Portal](https://developer.mend.io/github/opencollective/opencollective-frontend).\n\n## Deprecations / Replacements\n> [!WARNING]\nThe following dependencies are either deprecated or have replacements available.\n\n| Datasource | Package | Replacement PR? |\n|------------|------|--------------|\n| npm | [framer-motion](https://redirect.github.com/motiondivision/motion) | ![Available](https://img.shields.io/badge/available-green?style=flat-square) |\n\n## Abandoned Dependencies\n\nThe following dependencies have not received updates for an extended period and may be unmaintained.\n\n<details>\n<summary>View abandoned dependencies (68)</summary>\n\n> [!NOTE]\nPackages are marked as abandoned when they exceed the [`abandonmentThreshold`](https://docs.renovatebot.com/configuration-options/#abandonmentthreshold) since their last release. Unlike deprecated packages with official notices, abandonment is detected by release inactivity.\n> \n| Datasource | Package | Last Updated |\n|------------|------|-------------|\n| npm | [@dnd-kit/core](https://redirect.github.com/clauderic/dnd-kit) | `2024-12-05` |\n| npm | [@dnd-kit/sortable](https://redirect.github.com/clauderic/dnd-kit) | `2024-12-04` |\n| npm | [@dnd-kit/utilities](https://redirect.github.com/clauderic/dnd-kit) | `2023-11-06` |\n| npm | [@graphql-typed-document-node/core](https://redirect.github.com/dotansimha/graphql-typed-document-node) | `2023-03-20` |\n| npm | [@popperjs/core](https://redirect.github.com/popperjs/popper-core) | `2023-05-26` |\n| npm | [@styled-icons/boxicons-regular](https://redirect.github.com/styled-icons/styled-icons) | `2022-12-22` |\n| npm | [@styled-icons/boxicons-solid](https://redirect.github.com/styled-icons/styled-icons) | `2022-12-22` |\n| npm | [@styled-icons/fa-brands](https://redirect.github.com/styled-icons/styled-icons) | `2022-12-22` |\n| npm | [@styled-icons/fa-solid](https://redirect.github.com/styled-icons/styled-icons) | `2022-12-22` |\n| npm | [@styled-icons/feather](https://redirect.github.com/styled-icons/styled-icons) | `2022-12-22` |\n| npm | [@styled-icons/icomoon](https://redirect.github.com/styled-icons/styled-icons) | `2022-09-08` |\n| npm | [@styled-icons/material](https://redirect.github.com/styled-icons/styled-icons) | `2022-12-22` |\n| npm | [@styled-icons/remix-line](https://redirect.github.com/styled-icons/styled-icons) | `2022-09-08` |\n| npm | `@styled-system/css` | `2020-02-17` |\n| npm | `@styled-system/theme-get` | `2019-09-11` |\n| npm | [@testing-library/dom](https://redirect.github.com/testing-library/dom-testing-library) | `2025-07-27` |\n| npm | [@transferwise/approve-api-action-helpers](https://redirect.github.com/transferwise/approve-api-action-helpers) | `2024-06-26` |\n| npm | [@ubilabs/react-geosuggest](https://redirect.github.com/ubilabs/react-geosuggest) | `2025-03-31` |\n| npm | [accepts](https://redirect.github.com/jshttp/accepts) | `2024-08-31` |\n| npm | [circular-dependency-plugin](https://redirect.github.com/aackerman/circular-dependency-plugin) | `2020-10-31` |\n| npm | [class-variance-authority](https://redirect.github.com/joe-bell/cva) | `2024-11-26` |\n| npm | [cloudflare-ip](https://redirect.github.com/danneu/cloudflare-ip) | `2018-03-26` |\n| npm | [clsx](https://redirect.github.com/lukeed/clsx) | `2024-04-23` |\n| npm | [cmdk](https://redirect.github.com/pacocoursey/cmdk) | `2025-03-14` |\n| npm | [cookie-parser](https://redirect.github.com/expressjs/cookie-parser) | `2024-10-08` |\n| npm | [country-currency-emoji-flags](https://redirect.github.com/opencollective/country-currency-emoji-flags) | `2023-12-28` |\n| npm | [currency-symbol-map](https://redirect.github.com/bengourley/currency-symbol-map) | `2022-05-29` |\n| npm | [cypress-multi-reporters](https://redirect.github.com/YOU54F/cypress-plugins) | `2025-01-27` |\n| npm | [eslin",
+    "body_truncated": true,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2026-08-29T22:42:22Z",
+    "title": "Dependency Dashboard"
+   },
+   "source": "github",
+   "timestamp": "2021-08-30T09:21:14+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/6801"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#5239:opened",
+   "payload": {
+    "author": "clehner",
+    "body": "Requested by a @ssbc backer",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "RSS/Atom feed for Updates"
+   },
+   "source": "github",
+   "timestamp": "2020-10-13T14:54:54+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/5239"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#5239:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-10-19T10:00:19+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/5239"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#5196:opened",
+   "payload": {
+    "author": "bkardell",
+    "body": "In running our open-prioritization experiment we got feedback that people were unclear on how to pledge a custom amount (it is possible, but not clear) - and that pledge amounts aren't accessible.  It seems like this could (maybe should) just use radio buttons - but if not, aria-pressed I think was suggested by @aardrian should be set.  Idk, if someone tells me how they prefer to proceed I'm happy to send a PR here, or open collective sort this out?",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Pledge amounts a11y issue/clarity"
+   },
+   "source": "github",
+   "timestamp": "2020-10-03T00:32:06+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/5196"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#5196:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-10-19T10:00:01+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/5196"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#3735:opened",
+   "payload": {
+    "author": "snitin315",
+    "body": "There are various typos across the project.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Typos present in project."
+   },
+   "source": "github",
+   "timestamp": "2020-03-19T02:55:25+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/3735"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#3735:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "snitin315",
+      "author_is_bot": false,
+      "number": 3736
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2020-03-19T14:21:41+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/3735"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1755:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "## There have been updates to the *enzyme* monorepo:\r\n\r\n + - The `devDependency` [enzyme-adapter-react-16](https://github.com/airbnb/enzyme) was updated from `1.12.1` to `1.13.0`.\r\n\r\n\r\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fmonorepo.enzyme-20190511135734).\r\n\r\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\r\n\r\nThis monorepo update includes releases of one or more dependencies which all belong to the [enzyme group definition](https://github.com/greenkeeperio/monorepo-definitions).\r\n\r\n\r\nenzyme is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\r\n\r\n<details>\r\n<summary>Status Details</summary>\r\n\r\n- \u274c **now:** Now is deploying your app ([Details](https://zeit.co/github/deployment?deploymentId=D6nomkTCOH5uXhIMvvyue3bk)).\r\n- \u2705 **ci/circleci: update-langs:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19900?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n- \u2705 **ci/circleci: jest:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19899?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n- \u2705 **ci/circleci: build-api:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19898?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n- \u2705 **ci/circleci: lint:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19897?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n- \u2705 **ci/circleci: build:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19901?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n- \u2705 **ci/circleci: test-e2e-1:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19903?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n- \u2705 **ci/circleci: test-e2e-0:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19902?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n- \u274c **ci/circleci: test-e2e-2:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/19904?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\r\n</details>\r\n\r\n\r\n---\r\n\r\n\r\n\r\n\r\n<details>\r\n<summary>FAQ and help</summary>\r\n\r\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\r\n</details>\r\n\r\n---\r\n\r\n\r\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\r\n\r\n---\r\n\r\n<details>\r\n\r\n![opencollective com_babel_](https://user-images.githubusercontent.com/1556356/91910960-53a5de80-ecb0-11ea-9eeb-29364ab4e0c4.png)\r\n\r\n![opencollective com_babel_ (1)](https://user-images.githubusercontent.com/1556356/91911074-a089b500-ecb0-11ea-82bc-fa1e7347fc04.png)\r\n\r\n\r\n</details>\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2020-09-01T22:10:01Z",
+    "title": "An in-range update of enzyme is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-05-11T14:18:42+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1755"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1755:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-05-11T14:33:24+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1755"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1609:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [eslint](https://github.com/eslint/eslint) was updated from `5.15.3` to `5.16.0`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Feslint-5.16.0).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\neslint is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **ci/circleci: update-langs:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/14360?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: lint:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/14363?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: jest:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/14362?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: build:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/14361?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: build-api:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/14364?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=bF3vt893lHUeJJmM1ceBFtKF)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes for v5.16.0</summary>\n\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/dfef227091955a2f8f3fa8c76ad79de8a77e7955\"><code>dfef227</code></a> Build: gensite passes rulesMeta to formatter rendering (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"427235879\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11567\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/eslint/eslint/pull/11567/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint/pull/11567\">#11567</a>) (Kevin Partington)</li>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/c06d38c81bd9203c904587396a65d3c8cc7f2944\"><code>c06d38c</code></a> Fix: Allow HTML formatter to handle no meta data (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"427235288\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11566\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/eslint/eslint/pull/11566/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint/pull/11566\">#11566</a>) (Ilya Volodin)</li>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/87a5c034977cf4538ff3539d2f8776a987c5942a\"><code>87a5c03</code></a> Docs: <code>func-style</code>: clarify when <code>allowArrowFunctions</code> is used (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"424881138\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11548\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/eslint/eslint/pull/11548/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint/pull/11548\">#11548</a>) (Oliver Joseph Ash)</li>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/bc3e427ee8875c53eac6b6762884b50074f1adfc\"><code>bc3e427</code></a> Update: pass rule meta to formatters RFC 10 (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"425022053\" data-p",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of eslint is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-03-30T18:59:10+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1609"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1609:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-04-08T19:07:44+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1609"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1597:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [sinon](https://github.com/sinonjs/sinon) was updated from `7.3.0` to `7.3.1`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fsinon-7.3.1).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nsinon is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **ci/circleci: jest:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11854?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: lint:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11857?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: update-langs:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11856?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build-api:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11855?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11853?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-0:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11860?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-1:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11858?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: test-e2e-2:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/11859?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=2fJou0lUPZAGAfjzE8tUKGmh)).\n</details>\n\n\n---\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 6 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/sinonjs/sinon/commit/3812a7dbcea0cb013e42420cd130c24399863084\"><code>3812a7d</code></a> <code>Update docs/changelog.md and set new release id in docs/_config.yml</code></li>\n<li><a href=\"https://urls.greenkeeper.io/sinonjs/sinon/commit/93bef5525f61f2278d4d73ddfb150751ad1bfcaa\"><code>93bef55</code></a> <code>Add release documentation for v7.3.1</code></li>\n<li><a href=\"https://urls.greenkeeper.io/sinonjs/sinon/commit/e02c1928fdec079c27e841d98c05365b8ed1d9fb\"><code>e02c192</code></a> <code>7.3.1</code></li>\n<li><a href=\"https://urls.greenkeeper.io/sinonjs/sinon/commit/8ee1d352c8c44d90dbabdd9ee78d86996625aa19\"><code>8ee1d35</code></a> <code>Update CHANGELOG.md and AUTHORS for new release</code></li>\n<li><a href=\"https://urls.greenkeeper.io/sinonjs/sinon/commit/bc53d82ec45e9c1513747e49f9a49af2dda12867\"><code>bc53d82</code></a> <code>Fix security issues</code></li>\n<li><a href=\"https://urls.greenkeeper.io/sinonjs/sinon/commit/1a09166870c7a97998ff24d49f03f1b7cc40ee07\"><code>1a09166</code></a> <code>Update @sinonjs/samsam to v3.3.1</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/sinonjs/sinon/compare/059727bf9db20f277c8b056144e31ecbbce18a44...3812a7dbcea0cb013e42420cd130c24399863084\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of sinon is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-03-29T01:11:09+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1597"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1597:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-03-29T09:48:24+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1597"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1548:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [eslint](https://github.com/eslint/eslint) was updated from `5.15.2` to `5.15.3`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Feslint-5.15.3).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\neslint is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **ci/circleci: jest:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/10024?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: lint:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/10027?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build-api:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/10025?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/10026?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-1:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/10030?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: test-e2e-0:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/10028?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-2:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/10029?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=4zIorJmyBwMATLKv8uAosdex)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes for v5.15.3</summary>\n\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/71adc665b9649b173adc76f80723b8de20664ae1\"><code>71adc66</code></a> Fix: avoid moving comments in implicit-arrow-linebreak (fixes <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"421906357\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11521\" data-hovercard-type=\"issue\" data-hovercard-url=\"/eslint/eslint/issues/11521/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint/issues/11521\">#11521</a>) (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"421978023\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11522\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/eslint/eslint/pull/11522/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint/pull/11522\">#11522</a>) (Teddy Katz)</li>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/1f715a20c145d8ccc38f3310afccd838495d09d4\"><code>1f715a2</code></a> Chore: make test-case-property-ordering reasonable (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"421335627\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11511\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/eslint/eslint/pull/11511/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint/pull/11511\">#11511</a>) (Toru Nagashima)</li>\n</ul>\n</details>\n\n<details>\n<summary>Commits</summary>\n<p",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of eslint is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-03-18T19:40:30+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1548"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1548:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-03-18T21:11:21+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1548"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1535:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## There have been updates to the *enzyme* monorepo:\n\n + - The `devDependency` [enzyme-adapter-react-16](https://github.com/airbnb/enzyme) was updated from `1.11.1` to `1.11.2`.\n\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fmonorepo.enzyme-20190314073505).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\nThis monorepo update includes releases of one or more dependencies which all belong to the [enzyme group definition](https://github.com/greenkeeperio/monorepo-definitions).\n\n\nenzyme is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **ci/circleci: lint:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9364?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: jest:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9363?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build-api:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9361?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9362?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=ZmLD2Xpq1hT7tPVF8hIWbiQK)).\n- \u2705 **ci/circleci: test-server:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9372?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-2:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9371?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-1:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9370?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: test-e2e-0:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/9369?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of enzyme is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-03-14T07:56:41+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1535"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1535:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-03-15T14:03:39+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1535"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1488:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [eslint](https://github.com/eslint/eslint) was updated from `5.15.0` to `5.15.1`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Feslint-5.15.1).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\neslint is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **ci/circleci: jest:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7769?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: lint:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7767?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build-api:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7768?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: build:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7766?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-server:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7772?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **ci/circleci: test-e2e-0:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7773?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-1:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7770?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **ci/circleci: test-e2e-2:** Your tests passed on CircleCI! ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/7771?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u274c **now:** Deployment has failed ([Details](https://zeit.co/github/deployment?deploymentId=GaBYR1x0SZPyBjDS4bz3V85y)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes for v5.15.1</summary>\n\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/fe1a892f85b09c3d2fea05bef011530a678a6af5\"><code>fe1a892</code></a> Build: bundle espree (fixes <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"416472421\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint.github.io/issues/546\" data-hovercard-type=\"issue\" data-hovercard-url=\"/eslint/eslint.github.io/issues/546/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint.github.io/issues/546\">eslint/eslint.github.io#546</a>) (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"416474799\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11467\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/eslint/eslint/pull/11467/hovercard\" href=\"https://urls.greenkeeper.io/eslint/eslint/pull/11467\">#11467</a>) (\u859b\u5b9a\u8c14\u7684\u732b)</li>\n<li><a href=\"https://urls.greenkeeper.io/eslint/eslint/commit/458053b0b541f857bf233dacbde5ba80681820f8\"><code>458053b</code></a> Fix: avoid creating invalid regex in no-warning-comments (fixes <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"416580575\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/eslint/eslint/issues/11471\" data-",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of eslint is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-03-05T06:21:37+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1488"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1488:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-03-05T07:34:23+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1488"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1415:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [lint-staged](https://github.com/okonet/lint-staged) was updated from `8.1.3` to `8.1.4`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Flint-staged-8.1.4).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nlint-staged is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/5082?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=TsPItj3VlujLuepHg3Ejn1Z7)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes for v8.1.4</summary>\n\n<h2><a href=\"https://urls.greenkeeper.io/okonet/lint-staged/compare/v8.1.3...v8.1.4\">8.1.4</a> (2019-02-14)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li>Use lodash version with prototype pollution fix (<a href=\"https://urls.greenkeeper.io/okonet/lint-staged/issues/578\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/okonet/lint-staged/pull/578/hovercard\">#578</a>) (<a href=\"https://urls.greenkeeper.io/okonet/lint-staged/commit/0be88a0\">0be88a0</a>)</li>\n</ul>\n</details>\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 4 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/okonet/lint-staged/commit/0be88a00cc76ef303276ee7033a91d95391f23a8\"><code>0be88a0</code></a> <code>fix: Use lodash version with prototype pollution fix (#578)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/okonet/lint-staged/commit/138fbc71407401fe37b34abcf0ea59b54cad1515\"><code>138fbc7</code></a> <code>docs: Update Node version in the documentation  (#579)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/okonet/lint-staged/commit/f9e5d7b4de47226768bdeab5b3f94d4541e93dbc\"><code>f9e5d7b</code></a> <code>refactor: Use micromatch <code>ignore</code> option instead of patterns with negations</code></li>\n<li><a href=\"https://urls.greenkeeper.io/okonet/lint-staged/commit/6e3218868e3211da6116ef33a8f1e5c1a338e194\"><code>6e32188</code></a> <code>chore: Update yarn.lock</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/okonet/lint-staged/compare/f5bed7bad940518fb7161e26fbc9a87b4f091edf...0be88a00cc76ef303276ee7033a91d95391f23a8\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of lint-staged is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-02-14T12:27:53+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1415"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1415:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-02-14T14:15:46+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1415"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1392:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) was updated from `3.0.3` to `3.0.4`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fwebpack-bundle-analyzer-3.0.4).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nwebpack-bundle-analyzer is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **now:** Now is deploying your app ([Details](https://zeit.co/github/deployment?deploymentId=75fB9SUJ72bHNkQals1RuBcC)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/4974?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 11 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/2d340ff9e5b52180250ab540630ac65372af2d79\"><code>2d340ff</code></a> <code>v3.0.4</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/477d36270b06cd4cb8b8f25c61e568b3e6153a0e\"><code>477d362</code></a> <code>Add changelog entry for async fix (#250)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/1c8aba35c62850a2e30a978471efba8f3925b643\"><code>1c8aba3</code></a> <code>Make webpack's done hook wait until analyzer writes report / stat file. (#247)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/182181258468c2b0a1bf38dec0a7ee85c4f2b834\"><code>1821812</code></a> <code>Fix error message typo (#234)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/f94fb30ed5deefa40b0b1f563c653083fce890a2\"><code>f94fb30</code></a> <code>Merge pull request #231 from fanich37/stat-size-issue</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/363a34a6d750f47a768ee3e60c81e263b55dd636\"><code>363a34a</code></a> <code>Fix README.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/fa30ce1f8d1a60877e0608ccca958da83a8033ca\"><code>fa30ce1</code></a> <code>Clean usage section at README.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/66f48d92446d958be0e20c83e4adca3532415291\"><code>66f48d9</code></a> <code>Update troubleshooting section at README.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/15402cbc424bbbf474c4f75a05454c286ffa0d20\"><code>15402cb</code></a> <code>Update README.md (#191)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/a3ee8e07581b09c47d3f2bb95104a10edb42a1a3\"><code>a3ee8e0</code></a> <code>ci: test Node.js 6, 8, 10 and 11 (#227)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/commit/61f260b279ce15dfabd25383fc8b4609acb537f3\"><code>61f260b</code></a> <code>Add Yarn install instructions to readme (#222)</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/webpack-contrib/webpack-bundle-analyzer/compare/d14528452108988ec6fe5ddd069bbdbd704d0b67...2d340ff9e5b52180250ab540630ac65372af2d79\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://gree",
+    "body_truncated": true,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of webpack-bundle-analyzer is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-02-12T10:57:04+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1392"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1392:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-02-12T11:03:35+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1392"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1369:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## There have been updates to the *enzyme* monorepo:\n\n + - The `devDependency` [enzyme-adapter-react-16](https://github.com/airbnb/enzyme) was updated from `1.9.0` to `1.9.1`.\n\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fmonorepo.enzyme-20190206000933).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\nThis monorepo update includes releases of one or more dependencies which all belong to the [enzyme group definition](https://github.com/greenkeeperio/monorepo-definitions).\n\n\nenzyme is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **now:** Now is deploying your app ([Details](https://zeit.co/github/deployment?deploymentId=ZRxqw3Oeskn95rW8kIzFbWaW)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/4864?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of enzyme is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-02-06T00:15:24+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1369"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1369:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-02-07T11:48:20+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1369"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1358:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## There have been updates to the *enzyme* monorepo:\n\n + - The `devDependency` [enzyme-adapter-react-16](https://github.com/airbnb/enzyme) was updated from `1.8.0` to `1.9.0`.\n\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fmonorepo.enzyme-20190205093746).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\nThis monorepo update includes releases of one or more dependencies which all belong to the [enzyme group definition](https://github.com/greenkeeperio/monorepo-definitions).\n\n\nenzyme is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/4807?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=1RguJmOorp8mqTl8PvjXjBlZ)).\n</details>\n\n\n---\n\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of enzyme is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-02-05T10:14:11+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1358"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1358:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-02-05T19:51:16+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1358"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1357:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## There have been updates to the *enzyme* monorepo:\n\n + - The `devDependency` [enzyme-adapter-react-16](https://github.com/airbnb/enzyme) was updated from `1.8.0` to `1.9.0`.\n\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fmonorepo.enzyme-20190205082327).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\nThis monorepo update includes releases of one or more dependencies which all belong to the [enzyme group definition](https://github.com/greenkeeperio/monorepo-definitions).\n\n\nenzyme is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/4805?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=gPhhMnlGfifqe04Eis4MUa70)).\n</details>\n\n\n---\n\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of enzyme is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2019-02-05T10:08:25+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1357"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1357:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-02-05T19:51:08+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1357"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1328:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "We decided to use a single repository to track issues across all our projects.\r\n\r\nSee: https://github.com/opencollective/opencollective/issues\r\n\r\nIssues specifically linked to this repository should contains the label `frontend`:\r\nhttps://github.com/opencollective/opencollective/issues?q=is%3Aissue+is%3Aopen+label%3Afrontend",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2019-03-06T10:20:28Z",
+    "title": "To report or browse Issues, use our main repository"
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:26:25+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1328"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1326:opened",
+   "payload": {
+    "author": "flickz",
+    "body": "Labeling issues based on their current status, priority  and difficulty would assist new contributors like me, it is usually helpful to have issues with \"good first contribution\" to help get around the code base.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Labeling existing issues and new issues "
+   },
+   "source": "github",
+   "timestamp": "2019-01-23T20:17:15+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1326"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1326:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T11:58:38+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1326"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1298:opened",
+   "payload": {
+    "author": "mojoaxel",
+    "body": "\r\n![image](https://user-images.githubusercontent.com/600565/51201210-c60b5480-18fb-11e9-95cd-0bf37444bad2.png)\r\n\r\nExample:\r\nhttps://opencollective.com/vis\r\n\r\n_Please excuse the brevity of this report ..._",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Problem with large user-icon"
+   },
+   "source": "github",
+   "timestamp": "2019-01-15T18:30:18+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1298"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1298:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:14:29+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1298"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1227:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) was updated from `7.11.1` to `7.12.0`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Feslint-plugin-react-7.12.0).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\neslint-plugin-react is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=BdOXh4FcbzLtO6XioQNTk2Ia)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/4333?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes for v7.12.0</summary>\n\n<h3>Added</h3>\n<ul>\n<li><a href=\"/yannickcr/eslint-plugin-react/blob/v7.12.0/docs/rules/no-typos.md\"><code>no-typos</code></a>: Support createClass (<a href=\"https://urls.greenkeeper.io/yannickcr/eslint-plugin-react/pull/1828\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/yannickcr/eslint-plugin-react/pull/1828/hovercard\">#1828</a>, <a class=\"user-mention\" data-hovercard-type=\"user\" data-hovercard-url=\"/hovercards?user_id=93752\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://urls.greenkeeper.io/alexzherdev\">@alexzherdev</a>)</li>\n<li>Support detecting React.forwardRef/React.memo (<a href=\"https://urls.greenkeeper.io/yannickcr/eslint-plugin-react/pull/2089\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/yannickcr/eslint-plugin-react/pull/2089/hovercard\">#2089</a>, <a class=\"user-mention\" data-hovercard-type=\"user\" data-hovercard-url=\"/hovercards?user_id=416773\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://urls.greenkeeper.io/jomasti\">@jomasti</a>)</li>\n<li><a href=\"/yannickcr/eslint-plugin-react/blob/v7.12.0/docs/rules/jsx-indent.md\"><code>jsx-indent</code></a>: add <code>checkAttributes</code> option for JSX attribute indentation (<a href=\"https://urls.greenkeeper.io/yannickcr/eslint-plugin-react/pull/2086\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/yannickcr/eslint-plugin-react/pull/2086/hovercard\">#2086</a>, <a class=\"user-mention\" data-hovercard-type=\"user\" data-hovercard-url=\"/hovercards?user_id=416773\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://urls.greenkeeper.io/jomasti\">@jomasti</a>)</li>\n<li>Change allowed <code>propWrapperFunctions</code> setting values (<a href=\"https://urls.greenkeeper.io/yannickcr/eslint-plugin-react/pull/2065\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/yannickcr/eslint-plugin-react/pull/2065/hovercard\">#2065</a>, <a class=\"user-mention\" data-hovercard-type=\"user\" data-hovercard-url=\"/hovercards?user_id=416773\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://urls.greenkeeper.io/jomasti\">@jomasti</a>)</li>\n<li>add <a href=\"/yannickcr/eslint-plugin-react/blob/v7.12.0/docs/rules/jsx-fragments.md\"><code>jsx-fragments</code></a> rule to enforce fragment syntax (<a href=\"https://urls.greenkeeper.io/yannickcr/eslint-plugin-react/pull/1994\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/yannickcr/eslint-plugin-react/pull/1994/hovercard\">#1994</a>, <a class=\"user-mention\" data-hovercard-type=\"user\" data-hovercard-url=\"/hovercards?user_id=93752\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://urls.greenkeeper.io/alexzherdev\">@alexzherdev</a>)</li>\n<li>Support \"detect\" option for React version setting (<a href=\"https://urls.greenkeeper.io/yannickcr/esli",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of eslint-plugin-react is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-12-28T08:55:59+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1227"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1227:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-12-29T10:56:41+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1227"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1099:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [babel-plugin-styled-components](https://github.com/styled-components/babel-plugin-styled-components) was updated from `1.8.0` to `1.9.0`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fbabel-plugin-styled-components-1.9.0).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nbabel-plugin-styled-components is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/3798?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=uzcmi4kUqU9j52Q5sm6GkaHZ)).\n</details>\n\n\n---\n\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of babel-plugin-styled-components is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-11-26T08:46:31+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1099"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1099:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-27T10:07:23+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1099"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1030:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The dependency [showdown](https://github.com/showdownjs/showdown) was updated from `1.8.7` to `1.9.0`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fshowdown-1.9.0).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nshowdown is a direct dependency of this project, and **it is very likely causing it to break**. If other packages depend on yours, this update is probably also breaking those in turn.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **now:** Now is deploying your app ([Details](https://zeit.co/github/deployment?deploymentId=VpyS0j6AW2UyG30379sB5Z7w)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/3551?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 16 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/8afa1fff0e1de2481e0545be17a906e2a68bb4e2\"><code>8afa1ff</code></a> <code>release 1.9.0</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/cc1b9553a23ba89cf537703e5d78c3f775b8d58a\"><code>cc1b955</code></a> <code>prep release</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/a894a0e1db8cd7f33dc16579dd976ef3bf599780\"><code>a894a0e</code></a> <code>docs: add mention to makeMd() to reamde.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/e4b0e697243f2d8b0a604eb688d08938a0e7acbb\"><code>e4b0e69</code></a> <code>feat(converter.makeMarkdown): add an HTML to MD converter</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/5c0d67e04a958d70083c38f25e3e9b55bb8296be\"><code>5c0d67e</code></a> <code>fix(italicsAndBold): Make italicsAndBold lazy (#608)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/afbaec98d9dc52de1f2622a91e64a73aa5464474\"><code>afbaec9</code></a> <code>docs(donations.md): update</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/0087148a60cd1f8718897b00d0d9684579507c50\"><code>0087148</code></a> <code>docs(readme.md): update</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/69b816e431f2e328c8e6c68644d91beb8a64868d\"><code>69b816e</code></a> <code>docs(completeHTMLDocument): Change completeHTMLDocument comment (#610)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/a608114a5cc538dd5135c49e8f202fef858de66e\"><code>a608114</code></a> <code>docs(readme.md): update readme.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/9907c959d7e0fb136a28dab85293b4ec07424a19\"><code>9907c95</code></a> <code>add md-page to people who use (#604)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/3fe5e9a5bf52dd18d83dc5acb9fbd4d55b99ca9a\"><code>3fe5e9a</code></a> <code>Update DONATIONS.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/012f8d633d534c4d1a5979226e6593be98ddc644\"><code>012f8d6</code></a> <code>Update DONATIONS.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/47428b72b522af5d7e57835e3d53f0e406a75e57\"><code>47428b7</code></a> <code>Update README.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/c96c3efbe692c339f3cd62d1960c6ac296066998\"><code>c96c3ef</code></a> <code>Update README.md</code></li>\n<li><a href=\"https://urls.greenkeeper.io/showdownjs/showdown/commit/dc70e6898364847ffa36ce7824985c4b8b62a234\"><code>dc70e68</code></a> <code>docs(emoji): Change emoji comment (#611)</code></li>\n</ul>\n<p>There are 16 commits in total.</p>\n<p>See the <a href=\"https://urls.greenkeeper.io/showdownjs/showdown/compare/e6aeb61dde3720adb1e04f9383423a792e736",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of showdown is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-11-10T23:31:03+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1030"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1030:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-13T09:40:03+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1030"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1021:opened",
+   "payload": {
+    "author": "kasbah",
+    "body": "I feel like the `owner/repo` format doesn't tell a user what it's going to link to. E.g. for gitextensions it just says `gitextensions/gitextensions`.  Maybe there used to be an icon there? \r\n\r\n![image](https://user-images.githubusercontent.com/206854/48223855-1318fa80-e390-11e8-9d3b-c5f2a8a740dc.png)\r\n\r\nhttps://opencollective.com/gitextensions",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Github link needs an icon?"
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T20:00:34+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1021"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1021:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-09T11:39:04+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1021"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1020:opened",
+   "payload": {
+    "author": "kasbah",
+    "body": "![image](https://user-images.githubusercontent.com/206854/48222936-c3d1ca80-e38d-11e8-9184-8722662e9fae.png)\r\n\r\nhttps://opencollective.com/manyverse",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Titles in financial overview can be on top of each other"
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T19:40:06+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1020"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1020:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-26T08:53:32+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1020"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1019:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## There have been updates to the *enzyme* monorepo:\n\n + - The `devDependency` [enzyme](https://github.com/airbnb/enzyme) was updated from `3.6.0` to `3.7.0`.\n- The `devDependency` [enzyme-adapter-react-16](https://github.com/airbnb/enzyme) was updated from `1.5.0` to `1.6.0`.\n\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fmonorepo.enzyme-1.9.0).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\nThis monorepo update includes releases of one or more dependencies which all belong to the [enzyme group definition](https://github.com/greenkeeperio/monorepo-definitions).\n\n\nenzyme is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=seTlaOYvgamTSeZyvTr16jXF)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/3512?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of enzyme is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T01:17:43+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1019"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#1019:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T10:29:50+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/1019"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#963:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "https://github.com/opencollective/opencollective-api/pull/1486#issuecomment-432143393",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "CI failing since latest dbdump update"
+   },
+   "source": "github",
+   "timestamp": "2018-10-23T08:15:16+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/963"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#963:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-26T10:32:27+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/963"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#956:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [jest-styled-components](https://github.com/styled-components/jest-styled-components) was updated from `6.2.1` to `6.2.2`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fjest-styled-components-6.2.2).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\njest-styled-components is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **deployment/now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=CcTWc5x2FtPhQxiYSz6BmVBW)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/3296?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 3 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/styled-components/jest-styled-components/commit/0d43b5538a5f33b17810a9f9b32c9042bea47d3f\"><code>0d43b55</code></a> <code>v6.2.2</code></li>\n<li><a href=\"https://urls.greenkeeper.io/styled-components/jest-styled-components/commit/c692a90fb9640503fc51a755198e41dc92e62595\"><code>c692a90</code></a> <code>Remove object rest/spread notation to continue Node 6 support (#196)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/styled-components/jest-styled-components/commit/4f42010efc4886cf05067cee7c65eff8ad224566\"><code>4f42010</code></a> <code>Update CHANGELOG.md</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/styled-components/jest-styled-components/compare/54de5b6f596322e814720a0aea955fc5fc9e9637...0d43b5538a5f33b17810a9f9b32c9042bea47d3f\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of jest-styled-components is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-10-21T13:14:58+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/956"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#956:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-21T14:42:56+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/956"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#952:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [commitizen](https://github.com/commitizen/cz-cli) was updated from `3.0.2` to `3.0.3`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fcommitizen-3.0.3).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\ncommitizen is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **deployment/now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=YIakNZWmcswaBxB64jNRULdP)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/3276?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes for v3.0.3</summary>\n\n<p>&lt;a name\"3.0.3\"&gt;</p>\n<h3>3.0.3 (2018-10-19)</h3>\n<h4>Bug Fixes</h4>\n<ul>\n<li><strong>config loader:</strong> deal with config file charset (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"326782604\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/commitizen/cz-cli/issues/525\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/commitizen/cz-cli/pull/525/hovercard\" href=\"https://urls.greenkeeper.io/commitizen/cz-cli/pull/525\">#525</a>) (<a href=\"https://urls.greenkeeper.io/commitizen/cz-cli/commit/c74eeb9e\">c74eeb9e</a>)</li>\n</ul>\n</details>\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 4 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/commitizen/cz-cli/commit/c74eeb9e6b11c5740ca7b714579c5870334b3149\"><code>c74eeb9</code></a> <code>fix(config loader): deal with config file charset (#525)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/commitizen/cz-cli/commit/42c8bb67adda800cb3376f44f59f963f2f8cfae6\"><code>42c8bb6</code></a> <code>docs: fix link to external adapter (#581)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/commitizen/cz-cli/commit/9e05c287a5424c46a582ffedbb0ae77228dcf08c\"><code>9e05c28</code></a> <code>docs: add esg github adapter to the docs (#579)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/commitizen/cz-cli/commit/2965fe6c24a1573f2ed393f40d764718c35d4464\"><code>2965fe6</code></a> <code>docs: add another JIRA adapter (#576)</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/commitizen/cz-cli/compare/7c4703bb2afc8bbb8a910aa958a855cad2f6beb7...c74eeb9e6b11c5740ca7b714579c5870334b3149\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of commitizen is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-10-19T11:10:59+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/952"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#952:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-19T13:01:19+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/952"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#945:opened",
+   "payload": {
+    "author": "Betree",
+    "body": "Regression from new video list from GraphQL : videos timestamp is invalid.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "-"
+   },
+   "source": "github",
+   "timestamp": "2018-10-18T15:28:49+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/945"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#945:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-18T15:28:59+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/945"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#928:opened",
+   "payload": {
+    "author": "Betree",
+    "body": "As discussed in https://github.com/opencollective/opencollective-frontend/pull/921#discussion_r225086183 we should migrate `svg` icons from `src/static/icons` to their `font-awesome` equivalents to avoid maintaining svg files and for unification. Most changes will have to be done in JS + CSS.\r\n\r\n- [x] `src/static/icons/edit.svg`\r\n- [x] `src/static/icons/external-link.svg`\r\n- [x] `src/static/icons/icon-help-dark.svg`\r\n- [x] `src/static/icons/icon-help-light.svg`\r\n- [x] `src/static/icons/success.svg`\r\n- [x] `src/static/icons/twitter-handler.svg`",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-10-16T12:22:42Z",
+    "title": "Replace SVG icons by their font-awesome versions"
+   },
+   "source": "github",
+   "timestamp": "2018-10-15T13:22:29+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/928"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#928:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Betree",
+      "author_is_bot": false,
+      "number": 936
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T23:02:22+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/928"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#926:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "One of the cypress test is fragile and failing often, up to ~50% of the time. As a result, we're losing time and confidence in CI. We need to adjust it to avoid its failure. The error:\r\n\r\n> CypressError: Timed out retrying: Expected to find content: 'Collective created successfully' within the element:\r\n\r\nIn https://github.com/opencollective/opencollective-frontend/blob/master/cypress/integration/21-collective.create.test.js",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "High failure rate with cypress Create Collective test"
+   },
+   "source": "github",
+   "timestamp": "2018-10-15T08:42:51+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/926"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#926:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-12-05T10:31:00+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/926"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#899:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "- [x] `textTransform` in `home.js`\r\n- [x] `whiteSpace` in `home.js` (opening the profile menu)\r\n- [x] `minHeight` in `redeem.js`\r\n- [x] `backgroundSize` in `redeem.js`\r\n\r\n\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-12-05T10:32:11Z",
+    "title": "React does not recognize the `xX` prop on a DOM element."
+   },
+   "source": "github",
+   "timestamp": "2018-10-08T07:51:17+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/899"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#899:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-12-05T10:38:23+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/899"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#891:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "![screen shot 2018-10-05 at 18 16 37](https://user-images.githubusercontent.com/806/46546991-e5412180-c8ca-11e8-9b54-455332f39f43.png)\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Link to events should not reload the app"
+   },
+   "source": "github",
+   "timestamp": "2018-10-05T16:17:22+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/891"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#891:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "znarf",
+      "author_is_bot": false,
+      "number": 903
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2018-10-10T09:18:06+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/891"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#886:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "This has an important impact in our bundle size, we do end up embedding 2 times React.\r\n\r\n![screen shot 2018-10-05 at 10 01 16](https://user-images.githubusercontent.com/806/46523319-a3da5300-c885-11e8-992d-068a1f3311ee.png)\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "react-tag-input embed its own version of React"
+   },
+   "source": "github",
+   "timestamp": "2018-10-05T08:01:41+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/886"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#886:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-09T09:07:24+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/886"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#884:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## There have been updates to the *enzyme* monorepo:\n\n + - The `devDependency` [enzyme](https://github.com/airbnb/enzyme) was updated from `3.6.0` to `3.7.0`.\n- The `devDependency` [enzyme-adapter-react-16](https://github.com/airbnb/enzyme) was updated from `1.5.0` to `1.6.0`.\n\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fmonorepo.enzyme-3.7.0).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\nThis monorepo update includes releases of one or more dependencies which all belong to the [enzyme group definition](https://github.com/greenkeeperio/monorepo-definitions).\n\n\nenzyme is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **deployment/now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=oGWWzjRE8QlTzNJoImneylOV)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/3072?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of enzyme is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-10-05T07:10:40+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/884"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#884:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-05T07:43:41+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/884"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#860:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [eslint-plugin-babel](https://github.com/babel/eslint-plugin-babel) was updated from `5.2.0` to `5.2.1`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Feslint-plugin-babel-5.2.1).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\neslint-plugin-babel is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **deployment/now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=IdGCG4UVCbHVSBfdZzMPVQtv)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/2975?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 2 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/babel/eslint-plugin-babel/commit/585b8ec5b3cce3e523220fcaaa56649d2bbbc6be\"><code>585b8ec</code></a> <code>5.2.1</code></li>\n<li><a href=\"https://urls.greenkeeper.io/babel/eslint-plugin-babel/commit/e4c669e8c47612187d64d9cb112d9cd73a92a387\"><code>e4c669e</code></a> <code>Fix missing valid-typeof export (#165)</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/babel/eslint-plugin-babel/compare/802a99e36f1016e8b1aaaa9929263a4df21974b9...585b8ec5b3cce3e523220fcaaa56649d2bbbc6be\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of eslint-plugin-babel is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-09-27T16:36:27+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/860"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#860:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-09-28T07:10:56+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/860"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#858:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "A significant portion of our Javascript client bundle is from `moment-timezone`, especially `latest.json`. Would be great to find a way to optimize that.\r\n\r\n![screen shot 2018-09-26 at 22 43 00](https://user-images.githubusercontent.com/806/46139176-1cba2900-c24e-11e8-851b-51491d94fe29.png)\r\n\r\nSee:\r\nhttps://github.com/moment/moment-timezone/issues/356",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-09-27T10:09:02Z",
+    "title": "Optimize moment-timezone footprint"
+   },
+   "source": "github",
+   "timestamp": "2018-09-27T10:08:33+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/858"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#858:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-09T09:05:06+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/858"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#853:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Expected:\r\n\r\n![screen shot 2018-09-27 at 08 43 04](https://user-images.githubusercontent.com/806/46127581-68aaa500-c231-11e8-9571-0db17dfbf116.png)\r\n\r\nHappening:\r\n\r\n![screen shot 2018-09-27 at 08 43 17](https://user-images.githubusercontent.com/806/46127586-6c3e2c00-c231-11e8-8e1b-d008c1ac94d1.png)\r\n\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Top Bar style different on staticPage"
+   },
+   "source": "github",
+   "timestamp": "2018-09-27T06:43:46+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/853"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#853:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-09-27T09:50:24+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/853"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#846:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "It should be our most lightweight page and it's actually the heaviest.\r\n\r\nMight be because of the require `await require(`${filepath}`);`, Webpack is not able to figure  what is needed and what is not.\r\n\r\n![screen shot 2018-09-26 at 18 12 59](https://user-images.githubusercontent.com/806/46093603-0e213280-c1b8-11e8-8a7e-4ff3b9d93373.png)\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Huge staticPage bundle footprint "
+   },
+   "source": "github",
+   "timestamp": "2018-09-26T16:15:22+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/846"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#846:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-09-27T09:52:23+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/846"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#837:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The devDependency [babel-plugin-react-intl](https://github.com/yahoo/babel-plugin-react-intl) was updated from `3.0.0` to `3.0.1`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fbabel-plugin-react-intl-3.0.1).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nbabel-plugin-react-intl is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u2705 **deployment/now:** Deployment has completed ([Details](https://zeit.co/github/deployment?deploymentId=w7JmjwcQhI7zbTh1f4A3rYCZ)).\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/2893?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes for v3.0.1</summary>\n\n<p>Commits:</p>\n<ul>\n<li>Remove upath dependency because of unintended introduction breaking changes (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"363058765\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/yahoo/babel-plugin-react-intl/issues/154\" href=\"https://urls.greenkeeper.io/yahoo/babel-plugin-react-intl/pull/154\">#154</a>)  <a class=\"commit-link\" href=\"https://urls.greenkeeper.io/yahoo/babel-plugin-react-intl/commit/2d1abf43e5ff0e43b05c87450d5b6ad449ca977a\"><tt>2d1abf4</tt></a></li>\n<li>Update readme for babel 7 (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"359777007\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/yahoo/babel-plugin-react-intl/issues/150\" href=\"https://urls.greenkeeper.io/yahoo/babel-plugin-react-intl/pull/150\">#150</a>)  <a class=\"commit-link\" href=\"https://urls.greenkeeper.io/yahoo/babel-plugin-react-intl/commit/26d93f2a1ab6cc1dbfb167718261f61d781a81e8\"><tt>26d93f2</tt></a></li>\n<li>Run Node.js v8 and v10 on CI (<a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load issue title\" data-id=\"359473640\" data-permission-text=\"Issue title is private\" data-url=\"https://github.com/yahoo/babel-plugin-react-intl/issues/148\" href=\"https://urls.greenkeeper.io/yahoo/babel-plugin-react-intl/pull/148\">#148</a>)  <a class=\"commit-link\" href=\"https://urls.greenkeeper.io/yahoo/babel-plugin-react-intl/commit/4a562ffae5f1dd1bec5c87f26da9db8106f3320f\"><tt>4a562ff</tt></a></li>\n</ul>\n</details>\n\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of babel-plugin-react-intl is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-09-25T01:11:30+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/837"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#837:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-09-26T16:12:28+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/837"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#816:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Context: In the createCollective page, when slug is undefined.\r\n\r\nActual: A GraphQL is triggered with an undefined slug as parameter (through addCollectiveCoverData/getCollectiveCoverQuery)\r\n\r\nExpected: If slug is undefined,  no GraphQL query should be triggered",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "createCollective page should not fetch data if slug is undefined"
+   },
+   "source": "github",
+   "timestamp": "2018-09-18T21:27:23+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/816"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#816:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-26T10:33:54+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/816"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#802:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## The dependency [react-tag-input](https://github.com/prakhar1989/react-tags) was updated from `5.1.2` to `5.2.0`.\n\n\ud83d\udea8 [View failing branch](https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Freact-tag-input-5.2.0).\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nreact-tag-input is a direct dependency of this project, and **it is very likely causing it to break**. If other packages depend on yours, this update is probably also breaking those in turn.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/2770?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 14 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/2d2f9e2e76b5a2e98f20dfa2a81d3ba77c292db0\"><code>2d2f9e2</code></a> <code>version bump to 5.2.0</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/b7c6898c770b3232963254b073f4b2e24048ecf8\"><code>b7c6898</code></a> <code>ignore test folder in codeclimate</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/1fb3cd48bf72103871aaa5f91e80e4d57b23cbd6\"><code>1fb3cd4</code></a> <code>Add allow Unique prop</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/cecaa0fa86e3701751e2312ab56b8602f1d998e7\"><code>cecaa0f</code></a> <code> fix(package): update lodash to version 4.17.11\ud83d\ude80 (#403)</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/459f67f75d61687fbf179e8712725262d3c1e39c\"><code>459f67f</code></a> <code>Send test coverage to code climate</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/195e47fdb0c227e770fc72ae18eee3b8523d5316\"><code>195e47f</code></a> <code>Add dist in gitignore</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/8b8b389a115d19e655f02e869d1744f30c540d17\"><code>8b8b389</code></a> <code>Don't commit dist</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/1660ca63620408f0e02791afba91114ade0c2b92\"><code>1660ca6</code></a> <code>remove open-localhost and fix webpack config</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/47b5c9bbbf8f8fde699993cf6951e5d4d65e0264\"><code>47b5c9b</code></a> <code>Add dist-modules in gitignore</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/466118a2daf7275011db88cad7ef3239da3d4e1b\"><code>466118a</code></a> <code>don't commit dist-modules</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/e5db3c6f90693eacf8ef5973ab76f32ea994de5b\"><code>e5db3c6</code></a> <code>rename lib to src directory</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/8795f99a531cbe93836aedd7a5b688a4432ba11b\"><code>8795f99</code></a> <code>update read-dnd to v5</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/3efea41976f830f8fdc20a0bd02784e1cbb324f8\"><code>3efea41</code></a> <code>chore(package): update enzyme-adapter-react-16 to version 1.2.0</code></li>\n<li><a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/commit/f59da5037d5f929d1b1f01e40fa2edef093ef262\"><code>f59da50</code></a> <code>chore(package): update enzyme to version 3.4.2</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/prakhar1989/react-tags/compare/c641776802b662cc3dbb56ae0160a388bf8b994d...2d2f9e2e76b5a2e98f20dfa2a81d3ba77c292db0\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans beh",
+    "body_truncated": true,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of react-tag-input is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-09-15T07:02:41+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/802"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#802:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-09-17T11:51:27+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/802"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#798:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Document how to submit an issue to this repository"
+   },
+   "source": "github",
+   "timestamp": "2018-09-13T18:51:18+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/798"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#798:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T14:47:52+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/798"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#789:opened",
+   "payload": {
+    "author": "greenkeeper",
+    "body": "\n## Version **15.9.15** of **semantic-release** was just published.\n\n<table>\n  <tr>\n    <th align=left>\n      Branch\n    </th>\n    <td>\n      <a href=\"https://github.com/opencollective/opencollective-frontend/compare/master...opencollective:greenkeeper%2Fsemantic-release-15.9.15\">Build failing \ud83d\udea8</a>\n    </td>\n  </tr>\n  <tr>\n    <th align=left>\n      Dependency\n    </th>\n    <td>\n      <a target=_blank href=https://github.com/semantic-release/semantic-release>semantic-release</a>\n    </td>\n  </tr>\n  <tr>\n    <th align=left>\n      Current Version\n    </td>\n    <td>\n      15.9.14\n    </td>\n  </tr>\n  <tr>\n    <th align=left>\n      Type\n    </td>\n    <td>\n      devDependency\n    </td>\n  </tr>\n</table>\n\nThis version is **covered** by your **current version range** and after updating it in your project **the build failed**.\n\n\n\n\nsemantic-release is a devDependency of this project. It **might not break your production code or affect downstream projects**, but probably breaks your build or test tools, which may **prevent deploying or publishing**.\n\n\n\n<details>\n<summary>Status Details</summary>\n\n- \u274c **ci/circleci:** Your tests failed on CircleCI ([Details](https://circleci.com/gh/opencollective/opencollective-frontend/2712?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link)).\n</details>\n\n\n---\n\n<details>\n<summary>Release Notes</summary>\n<strong>v15.9.15</strong>\n\n<h2><a href=\"https://urls.greenkeeper.io/semantic-release/semantic-release/compare/v15.9.14...v15.9.15\">15.9.15</a> (2018-09-11)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>package:</strong> update debug to version 4.0.0 (<a href=\"https://urls.greenkeeper.io/semantic-release/semantic-release/commit/7b8cd99\">7b8cd99</a>)</li>\n</ul>\n</details>\n\n<details>\n<summary>Commits</summary>\n<p>The new version differs by 1 commits.</p>\n<ul>\n<li><a href=\"https://urls.greenkeeper.io/semantic-release/semantic-release/commit/7b8cd9918b7c35fce5ed4791ae86bf51f8b5c668\"><code>7b8cd99</code></a> <code>fix(package): update debug to version 4.0.0</code></li>\n</ul>\n<p>See the <a href=\"https://urls.greenkeeper.io/semantic-release/semantic-release/compare/540d4fa764a822d3dfe6a8bac814e91af685e5c2...7b8cd9918b7c35fce5ed4791ae86bf51f8b5c668\">full diff</a></p>\n</details>\n\n\n<details>\n<summary>FAQ and help</summary>\n\nThere is a collection of [frequently asked questions](https://greenkeeper.io/faq.html). If those don\u2019t help, you can always [ask the humans behind Greenkeeper](https://github.com/greenkeeperio/greenkeeper/issues/new).\n</details>\n\n---\n\n\nYour [Greenkeeper](https://greenkeeper.io) Bot :palm_tree:\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "An in-range update of semantic-release is breaking the build \ud83d\udea8"
+   },
+   "source": "github",
+   "timestamp": "2018-09-11T23:33:49+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/789"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#789:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-09-12T00:37:17+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/789"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#730:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "```Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client ```\r\n\r\nWe have this error in production logs. We should find where it's coming from.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Cannot set headers after they are sent to the client "
+   },
+   "source": "github",
+   "timestamp": "2018-08-31T18:51:19+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/730"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#730:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-08-31T20:39:14+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/730"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#729:opened",
+   "payload": {
+    "author": "marcogbarcellos",
+    "body": "When Collectives are trying to donate money across hosts to other Collectives, in some cases(Collectives and their hosts with different currencies) we do not allow the payment. The errors that are shown can be improved, here is a SS of one of them: \r\n\r\n![screen shot 2018-08-31 at 11 32 49 am](https://user-images.githubusercontent.com/8717041/44922561-a50ee200-ad13-11e8-9275-89ea8c775389.png)\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Improve errors on collective donations across hosts"
+   },
+   "source": "github",
+   "timestamp": "2018-08-31T15:49:16+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/729"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#729:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:25:54+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/729"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#723:opened",
+   "payload": {
+    "author": "marcogbarcellos",
+    "body": "There is no credit card information with this \"normal\" view of the page:\r\n \r\n![screen shot 2018-08-30 at 10 55 08 am](https://user-images.githubusercontent.com/8717041/44860055-6e699680-ac43-11e8-8b77-a2bbdc9af06f.png)\r\n\r\nBut if I open the console vertically, I can see them: \r\n\r\n![screen shot 2018-08-30 at 10 55 27 am](https://user-images.githubusercontent.com/8717041/44860134-96f19080-ac43-11e8-9309-a340ece7e8c3.png)\r\n\r\nMacOs Sierra version 10.13.5\r\nGoogle: Chrome Version 68.0.3440.106\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Payment Methods Labels not showing up on Organization Edit payment Methods"
+   },
+   "source": "github",
+   "timestamp": "2018-08-30T15:00:38+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/723"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#723:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:07:29+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/723"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#671:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "- visitor A (with french default language) visits a collective page with, the page will be stored at cloudflare edge in french\r\n- a few seconds after, visitor B (with english default language) visits the collective page in the same region, the page will be displayed in french\r\n\r\nVisitors with english as default language should never see a page displayed in french.",
+    "body_truncated": false,
+    "comments": 4,
+    "labels": [],
+    "last_edited_at": "2018-08-14T09:53:26Z",
+    "title": "Cache should be localization aware"
+   },
+   "source": "github",
+   "timestamp": "2018-08-14T09:52:37+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/671"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#671:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:25:30+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/671"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#669:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "https://opencollective.com/opensourcedesign#contribute\r\n\r\n![screen shot 2018-08-13 at 16 09 26](https://user-images.githubusercontent.com/806/44036953-66e3c508-9f13-11e8-9502-7ff7385eba83.png)\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Unexpected `Contribute` section in menu"
+   },
+   "source": "github",
+   "timestamp": "2018-08-13T14:10:34+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/669"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#669:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:21:08+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/669"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#643:opened",
+   "payload": {
+    "author": "hichamelkaddioui",
+    "body": "It looks like the translation values of `collective.collective.memberOf.collective.parent.title` is set to the template for the subtitle for non-English languages, and not the actual translation of \"Member collectives\".\r\n\r\nSee the [English translation](https://github.com/opencollective/frontend/blob/8533b8f8d521e890394a516c06a0417a84829179/src/lang/en.json#L131) vs [French translation](https://github.com/opencollective/frontend/blob/8533b8f8d521e890394a516c06a0417a84829179/src/lang/fr.json#L131).",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Wrong translation values for 'Member Collectives' titles"
+   },
+   "source": "github",
+   "timestamp": "2018-08-02T15:15:54+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/643"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#643:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-08-10T13:44:57+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/643"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#639:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "https://opencollective.com/redux-form/contributors.svg\r\n\r\nThe badge is relying on the result of this GraphQL query:\r\n\r\n```\r\nquery Collective($collectiveSlug: String) {\r\n  Collective(slug: $collectiveSlug) {\r\n    id\r\n    data\r\n  }\r\n}\r\n```\r\n\r\nWhich is returning nothing:\r\n\r\n```\r\n{\r\n  \"data\": {\r\n    \"Collective\": {\r\n      \"id\": 18332,\r\n      \"data\": {}\r\n    }\r\n  }\r\n}\r\n```\r\n\r\nThe `update-contributions' cron job is supposed to take care of that. Let's run it:\r\n\r\n`heroku run npx babel-node cron/daily/update-contributions.js --app opencollective-prod-api`\r\n\r\nWe're getting an error:\r\n\r\n```\r\n/app/node_modules/bluebird/js/release/debuggability.js:113\r\n        throw new Error(\"cannot enable long stack traces after promises have been created\\u000a\\u000a    See http://goo.gl/MqrFmX\\u000a\");\r\n        ^\r\nError: cannot enable long stack traces after promises have been created\r\n```",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-08-01T14:49:48Z",
+    "title": "Contributors badge not found for redux-form"
+   },
+   "source": "github",
+   "timestamp": "2018-08-01T12:42:52+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/639"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#639:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-08-02T12:20:20+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/639"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#632:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "![screen shot 2018-07-27 at 16 54 17](https://user-images.githubusercontent.com/806/43328223-bd48215e-91bd-11e8-9bda-69475754d0bd.png)\r\n\r\nWhile it should be `pointer`, it's currently `default` or `text`.\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Wrong cursor in topbar menu"
+   },
+   "source": "github",
+   "timestamp": "2018-07-27T14:56:46+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/632"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#632:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-01T07:06:19+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/632"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#631:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Eg:\r\n\r\n```<div class=\"sc-dnqmqq ddDArR\" height=\"52,,65\" width=\"52,,65\"></div></a></div></div><p class=\"Text__P-s18kcxxs-1 goephr\" font-size=\"1.4rem\" font-weight=\"bold\">```\r\n\r\nThe solution seems to be using `clean-tag`: https://www.npmjs.com/package/clean-tag",
+    "body_truncated": false,
+    "comments": 4,
+    "labels": [],
+    "last_edited_at": "2018-07-27T14:43:14Z",
+    "title": "Unwanted HTML attributes when using styled components"
+   },
+   "source": "github",
+   "timestamp": "2018-07-27T14:43:08+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/631"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#631:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T14:19:38+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/631"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#630:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "![screen shot 2018-07-27 at 16 11 27](https://user-images.githubusercontent.com/806/43325837-c9f6640c-91b7-11e8-94de-ddc3337a863f.png)\r\n\r\nI don't think `333k` for webpack and `111k` for material-ui are real monthly values.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Monthly spending for active collectives is off on Homepage"
+   },
+   "source": "github",
+   "timestamp": "2018-07-27T14:13:37+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/630"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#630:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T10:18:50+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/630"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#623:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "- [x] Warning: React does not recognize the `maxWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `maxwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.\r\n- [x] Warning: Received `true` for a non-boolean attribute `lg`. If you want to write it to the DOM, pass a string instead: lg=\"true\" or lg={value.toString()}\r\n- [x] Warning: Received `true` for a non-boolean attribute `md`. If you want to write it to the DOM, pass a string instead: md=\"true\" or md={value.toString()}.\r\n- [x] Warning: Received `true` for a non-boolean attribute `sm`. If you want to write it to the DOM, pass a string instead: sm=\"true\" or sm={value.toString()}.\r\n- [x] Warning: Received `true` for a non-boolean attribute `xs`. If you want to write it to the DOM, pass a string instead: xs=\"true\" or xs={value.toString()}.\r\n- [x] Warning: Failed prop type: CollectiveStatsCard: prop type `name` is invalid; it must be a function, usually from the `prop-types` package, but received `undefined`.  in CollectiveStatsCard\r\n- [x] Warning: Failed prop type: The prop `settings.goals[0].amount` is marked as required in `CollectiveStatsCard`, but its value is `undefined`. in CollectiveStatsCard\r\n- [x] Warning: Each child in an array or iterator should have a unique \"key\" prop. Check the top-level render call using <styled.div>.\r\n- [x] Deprecation warning: value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-08-09T15:29:30Z",
+    "title": "Multiple warnings when rendering Homepage"
+   },
+   "source": "github",
+   "timestamp": "2018-07-25T17:01:03+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/623"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#623:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-08-09T16:30:19+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/623"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#622:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "![screen shot 2018-07-25 at 18 47 33](https://user-images.githubusercontent.com/806/43215021-4c9e155e-903b-11e8-87b4-705c3c500191.png)\r\n\r\n- [x] fix \"00 monthly spending\"\r\n- [x] add currency (likely dollar $) when displaying a value",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-10-09T09:19:02Z",
+    "title": "Improve currency formatting on Homepage active collectives"
+   },
+   "source": "github",
+   "timestamp": "2018-07-25T16:49:40+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/622"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#622:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-09T09:19:04+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/622"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#621:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "![screen shot 2018-07-25 at 18 45 58](https://user-images.githubusercontent.com/806/43214923-0cc997b4-903b-11e8-992a-fab29108c3ae.png)\r\n",
+    "body_truncated": false,
+    "comments": 5,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Progress > 100% on Homepage active collectives"
+   },
+   "source": "github",
+   "timestamp": "2018-07-25T16:47:00+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/621"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#621:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-12-05T10:31:36+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/621"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#618:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "When running `npm run test:src`. In `src/pages/__tests__/search.test.js`, we get:\r\n\r\n`Warning: Failed prop type: Link: unknown props found: title`\r\n\r\nLet's fix this warning.\r\n\r\nThis might be due that in `TopBar.js`, we use:\r\n\r\n`<Link href=\"/\" title={intl.formatMessage(this.messages['menu.homepage'])}>`\r\n\r\nWhile the API for the Link component (coming from https://github.com/fridays/next-routes) is only exposing `route`, `params` and `options`.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-07-25T13:53:04Z",
+    "title": "Warning in search test"
+   },
+   "source": "github",
+   "timestamp": "2018-07-25T13:50:07+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/618"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#618:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-08-01T12:54:01+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/618"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#577:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "It was copied from the website repository and is not needed from now on.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Delete 'public' assets folder"
+   },
+   "source": "github",
+   "timestamp": "2018-07-05T09:14:35+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/577"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#577:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-09T09:16:31+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/577"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#549:opened",
+   "payload": {
+    "author": "Betree",
+    "body": "When trying to reach https://opencollective.com/paris this morning I get a `Not Found` error\r\n\r\n> Preview\r\n\r\n![Screenshot](https://user-images.githubusercontent.com/1556356/41765570-ba73ed20-7604-11e8-9695-83b1579d0db6.png)\r\n\r\n> Console output\r\n\r\n```\r\nmain-9bb7b75b93ab8f42ab5f.js:1 Unhandled (in react-apollo) Error: GraphQL error: The loader.load() function must be called with a value,but got: null.\r\n    at new t (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:1253405)\r\n    at t.currentResult (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:1255668)\r\n    at s.dataForChild (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:50448)\r\n    at s.render (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:51324)\r\n    at Ba (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:364438)\r\n    at Ua (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:370058)\r\n    at _i (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:379211)\r\n    at Ii (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:379521)\r\n    at is (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:383073)\r\n    at ns (https://opencollective.com/_next/static/commons/main-9bb7b75b93ab8f42ab5f.js:1:382575)\r\n```",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "GraphQL error / Page not Found when trying to reach collective"
+   },
+   "source": "github",
+   "timestamp": "2018-06-22T08:13:38+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/549"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#549:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-06-22T14:16:01+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/549"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#539:opened",
+   "payload": {
+    "author": "mattwelke",
+    "body": "Just went to visit them from the marketing email I got. Looks like this:\r\n\r\n![](https://i.imgur.com/Q3G426u.png)",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "BootstrapCDN not working \"graphql error\""
+   },
+   "source": "github",
+   "timestamp": "2018-06-20T00:25:04+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/539"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#539:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-06-20T00:32:51+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/539"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#530:opened",
+   "payload": {
+    "author": "XhmikosR",
+    "body": "```\r\nLoading mixed (insecure) display content \u201chttp://res.cloudinary.com/opencollective/image/upload/v1508519428/S9gk78AS_400x400_fulq2l.jpg\u201d on a secure page\r\n```\r\n\r\nI haven't checked all the pages so I don't know if there are other such cases.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Mixed content warning in homepage"
+   },
+   "source": "github",
+   "timestamp": "2018-06-18T14:54:55+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/530"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#530:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-09T09:17:24+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/530"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#526:opened",
+   "payload": {
+    "author": "XhmikosR",
+    "body": "Alternatively, I can optimize all the images, but this isn't automated so when one adds new images they'll need to be manually optimized.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-06-18T11:59:09Z",
+    "title": "Add svgo in the build process"
+   },
+   "source": "github",
+   "timestamp": "2018-06-17T19:53:55+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/526"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#526:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:03:26+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/526"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#525:opened",
+   "payload": {
+    "author": "XhmikosR",
+    "body": "The SVGs should be pure vectors.",
+    "body_truncated": false,
+    "comments": 6,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Remove any base64 PNGs from SVG assets"
+   },
+   "source": "github",
+   "timestamp": "2018-06-17T19:53:39+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/525"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#525:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:03:38+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/525"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#524:opened",
+   "payload": {
+    "author": "XhmikosR",
+    "body": "It results in much bigger files.",
+    "body_truncated": false,
+    "comments": 4,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Stop Base64 encoding SVGs"
+   },
+   "source": "github",
+   "timestamp": "2018-06-17T19:52:49+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/524"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#524:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-06-18T15:40:06+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/524"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#512:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "We're proud of not using Google Analytics or similar in production.\r\n\r\nWe should remove the related code from our codebase to avoid any confusion.\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Remove Google Analytics support from codebase"
+   },
+   "source": "github",
+   "timestamp": "2018-06-13T07:51:56+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/512"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#512:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-09T09:16:45+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/512"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#501:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "We need to run staging with NODE_ENV=production because we want the build process to be exactly the same as production one.\r\n\r\nHowever, we need to ensure there is no undesirable side effects to it.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Ensure staging can run with NODE_ENV=production"
+   },
+   "source": "github",
+   "timestamp": "2018-06-08T18:36:33+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/501"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#501:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-06-14T07:31:21+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/501"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#491:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Our `svg-to-png` library is not actively maintained and its dependencies are generating security warnings.\r\n\r\n```\r\nwarning svg-to-png > imagemin > vinyl-fs > graceful-fs@3.0.11: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js\r\nwarning svg-to-png > imagemin > vinyl-fs > glob-stream > minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue\r\nwarning svg-to-png > imagemin > vinyl-fs > glob-stream > glob > minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue\r\nwarning svg-to-png > imagemin > vinyl-fs > glob-watcher > gaze > globule > minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue\r\nwarning svg-to-png > imagemin > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue\r\nwarning svg-to-png > imagemin > vinyl-fs > glob-watcher > gaze > globule > glob > graceful-fs@1.2.3: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js\r\nwarning svg-to-png > imagemin > imagemin-gifsicle > gifsicle > bin-build > download > gulp-decompress > gulp-util@3.0.8: gulp-util is deprecated - replace it, following the guidelines at https://medium.com/gulpjs/gulp-util-ca3b1f9f9ac5\r\n```\r\n\r\nAlso, `svg-to-png` is relying on PhantomJS which will not be maintained in the future, the community is now moving to Headless Chrome.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-06-06T19:07:06Z",
+    "title": "Upgrade svg-to-png "
+   },
+   "source": "github",
+   "timestamp": "2018-06-06T07:25:13+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/491"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#491:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-06-07T08:05:11+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/491"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#489:opened",
+   "payload": {
+    "author": "patcon",
+    "body": "@eatskolnikov brough up in Slack that the spanish translations are out of date. (Thanks! :tada:)\r\n\r\nThe file handling this localization is here: https://github.com/opencollective/frontend/blob/master/src/lang/es.json\r\n\r\nLocalization docs are here, and could perhaps do with an update if they don't cover a case like this? Dunno! whatever seems right :)\r\nhttps://developer.opencollective.com/#/frontend/localize\r\nhttps://github.com/opencollective/opencollective/blob/master/docs/frontend/localize.md\r\n\r\nYou want to run with this, @eatskolnikov?",
+    "body_truncated": false,
+    "comments": 4,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Update spanish string translations"
+   },
+   "source": "github",
+   "timestamp": "2018-06-05T20:45:34+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/489"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#489:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:14:55+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/489"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#467:opened",
+   "payload": {
+    "author": "patcon",
+    "body": "Hi there! I'm attempting to use the docker container development environment so that I can set up a demo of how OpenCollective can be used to support a local community.\r\n\r\nI'm currently running into a few errors. I mitigated one with https://github.com/opencollective/opencollective-api/pull/1311, but I'm now running into a GraphQL error  when I visit a collective page.\r\n\r\n## Screenshot\r\n\r\n![screenshot of collective page with graphql error](https://i.imgur.com/muVYmdN.png)\r\n\r\n## Logs\r\n\r\n```\r\nfrontend_1  | info: GET /opensource 200 61ms\r\nfrontend_1  | error: >>> Error calling API http://localhost:13060/graphql?api_key=dvl-1510egmf4a23d80342403fb599qd {\"meta\":{\"code\":\"ECONNREFUSED\",\"errno\":\"ECONNREFUSED\",\"syscall\":\"connect\",\"address\":\"127.0.0.1\",\"port\":13060}}\r\nfrontend_1  | info: POST /api/graphql 500 12ms\r\n```\r\n\r\nAny thoughts? Thanks again!",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": "2018-05-30T23:18:19Z",
+    "title": "GraphQL errors in docker environment"
+   },
+   "source": "github",
+   "timestamp": "2018-05-30T23:17:39+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/467"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#467:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-31T07:48:50+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/467"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#466:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "https://opencollective.com/sustainoss/events/sustainuk-2018-442ev#budget\r\n\r\n![screen shot 2018-05-30 at 15 42 27](https://user-images.githubusercontent.com/806/40723888-206abc86-6420-11e8-8ee5-18bcd574ff9d.png)\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Duplicate Section title"
+   },
+   "source": "github",
+   "timestamp": "2018-05-30T13:43:01+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/466"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#466:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-07-05T09:11:31+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/466"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#465:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "![screen shot 2018-05-30 at 15 25 43](https://user-images.githubusercontent.com/806/40723090-53cf8518-641e-11e8-9c27-83a3141bd101.png)\r\n",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Upgrade Heroku stack (prod)"
+   },
+   "source": "github",
+   "timestamp": "2018-05-30T13:30:43+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/465"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#465:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-06-04T07:41:31+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/465"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#462:opened",
+   "payload": {
+    "author": "Betree",
+    "body": "On edit page, I have :\r\n\r\n![selection_451](https://user-images.githubusercontent.com/1556356/40684883-ec82386e-6392-11e8-9792-639367642c76.png)\r\n\r\nBut the [final render](https://opencollective.com/captainfact_io/updates/captainfact-passe-a-lattaque) is more like :\r\n\r\n![selection_452](https://user-images.githubusercontent.com/1556356/40684985-3f38ca1e-6393-11e8-88e1-389fd2f1ea6d.png)\r\n\r\n-----------------\r\n\r\nBrowser: Firefox 60.0.1\r\nOS: Ubuntu 16.04",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Markdown formatting not visible on rendered page"
+   },
+   "source": "github",
+   "timestamp": "2018-05-29T20:56:52+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/462"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#462:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-10-15T21:25:31+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/462"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#450:opened",
+   "payload": {
+    "author": "znarf",
+    "body": " `isomorphic-fetch` is not actively maintained and is using old versions of `node-fetch` and `whatwg-fetch`:\r\n\r\n```\r\n\"dependencies\": {\r\n    \"node-fetch\": \"^1.0.1\",\r\n    \"whatwg-fetch\": \">=0.10.0\"\r\n  },\r\n```\r\n\r\nPotential maintained replacements are:\r\n - `cross-fetch`: https://github.com/lquixada/cross-fetch\r\n - `isomorphic-unfetch`: https://github.com/developit/unfetch/tree/master/packages/isomorphic-unfetch\r\n\r\nAlso, with `cross-fetch` and `isomorphic-unfetch` the 'polyfilling' is optional., which is a better approach.\r\n\r\nWe should also replace our calls from `node-fetch` to `cross-fetch`/`isomorphic-unfetch` and remove `node-fetch` as a dependency.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-05-25T12:33:53Z",
+    "title": "Replace isomorphic-fetch"
+   },
+   "source": "github",
+   "timestamp": "2018-05-25T11:33:30+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/450"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#450:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-07-28T09:43:53+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/450"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#443:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "We currently cache LoggedInUser in localStorage for 1 hour, without invalidation strategy.\r\n\r\nThis can lead to data consistency issues, such as:\r\n  - when creating an Organization, the organization will not appear in the OrderForm for up to 1 hour\r\n\r\nThis could be mitigated with a lower TTL.\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-05-25T09:37:21Z",
+    "title": "Issues with LoggedInUser cache"
+   },
+   "source": "github",
+   "timestamp": "2018-05-25T08:49:36+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/443"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#443:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-30T13:20:54+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/443"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#442:opened",
+   "payload": {
+    "author": "HipsterBrown",
+    "body": "In conjunction with https://github.com/opencollective/frontend/pull/434, we will be removing `styled-jsx` (and the postcss integration) with `styled-components`. See the RFC for more details about the change.\r\n\r\nTODO:\r\n\r\n- [x] replace the global styles in `src/pages/_document.js` and `src/components/Header.js` with a single [`injectGlobal`](https://www.styled-components.com/docs/api#injectglobal) declaration in `src/pages/_document.js`\r\n- [x] create a [Theme](https://www.styled-components.com/docs/advanced#theming) with common colors and sizing values (?)\r\n- [x] create [media templates](https://www.styled-components.com/docs/advanced#media-templates) for consistent responsive settings\r\n- [ ] update all pages (`src/pages/`) to use `styled-components`\r\n- [ ] update all components (`src/components/`) to use `styled-components`",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2019-01-24T15:09:09Z",
+    "title": "Replace `styled-jsx` usage with `styled-components`"
+   },
+   "source": "github",
+   "timestamp": "2018-05-24T20:33:13+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/442"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#442:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T15:09:47+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/442"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#400:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "On a collective page like https://opencollective.com/yeoman, expense categories links are invalid.\r\n\r\n![screen shot 2018-05-15 at 11 05 37](https://user-images.githubusercontent.com/806/40047494-ede518de-582f-11e8-9438-448c6ffad5c2.png)\r\n\r\nIt should be `/yeoman/expenses/categories/Web%20services` not `/yeoman/expenses/Web%20services`.\r\n\r\nAlso, the slug should be properly encoded: `Web%20services` not `Web services`\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Broken expense category links"
+   },
+   "source": "github",
+   "timestamp": "2018-05-15T09:08:39+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/400"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#400:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-17T18:59:01+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/400"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#395:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "We're currently using a fork of react-mde, which is based on version 2.3.3.\r\n\r\nWould be great to switch back to the upstream version, which is currently 5.5.1.\r\n\r\nAlternatively, on the short term, we could just update the fork from the latest upstream version.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-05-17T08:00:11Z",
+    "title": "Update react-mde to latest upstream"
+   },
+   "source": "github",
+   "timestamp": "2018-05-14T16:22:18+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/395"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#395:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Betree",
+      "author_is_bot": false,
+      "number": 1007
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T10:14:34+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/395"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#392:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "We're currently running react-apollo 1.4.16. This version is not maintained anymore and it starts to be difficult to find the documentation for it. The best I could find: https://s3.amazonaws.com/apollo-docs-1.x/api.html\r\n\r\nThe latest stable version is 2.1.4 but unfortunately the API is different and upgrading would need a lot of attention. \r\n\r\nWe might actually skip version 2, because version 3 is coming (3.0.0-alpha.2 is already available https://www.npmjs.com/package/react-apollo/v/3.0.0-alpha.2).\r\n\r\nAlso, important to note, we're keeping right now graphql to 0.12.3 and graphql-tag to 2.6.1 to keep the versions consistent with react-apollo.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Upgrade react-apollo to the latest version"
+   },
+   "source": "github",
+   "timestamp": "2018-05-14T15:38:45+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/392"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#392:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-07-31T07:15:02+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/392"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#379:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Right now, we have a postinstall npm hook which is automatically triggering a build after we run `npm install`. I think we should remove that and clearly separate these tasks.\r\n\r\nMy understanding is that we're doing that mainly for the Heroku setup. We'll need to have that in mind if we proceed to change something.\r\n\r\nhttps://devcenter.heroku.com/articles/nodejs-support#heroku-specific-build-steps",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-05-12T07:18:01Z",
+    "title": "Separate `npm install` from `npm build`"
+   },
+   "source": "github",
+   "timestamp": "2018-05-11T08:17:02+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/379"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#379:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-06-04T13:53:39+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/379"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#373:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "1. It's generating a security warning that had not been fixed for months.\r\n2. It's requiring 'unicode' as dependency, leading to a huge footprint in client bundle\r\n",
+    "body_truncated": false,
+    "comments": 5,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Replace 'slug' dependency"
+   },
+   "source": "github",
+   "timestamp": "2018-05-09T10:10:43+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/373"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#373:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-10T10:58:04+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/373"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#366:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Currently, requests are going to the API servers (API_URL) directly.\r\n\r\nIn the past, we did setup a proxy (`/api/`) for that purpose, we need to make sure it's used.\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-05-08T14:58:21Z",
+    "title": "Use local API proxy for frontend requests"
+   },
+   "source": "github",
+   "timestamp": "2018-05-08T09:19:07+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/366"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#366:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-09T11:25:30+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/366"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#365:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Currently, when running `npm test`, there is a lot of data and errors output, even when the tests are properly passing. \r\n\r\nWould be great to make it quieter:\r\n\r\n - [x] fix every warning\r\n - [x] silent console.log\r\n\r\nAPI output was already taken care of by @clarete in:\r\nhttps://github.com/opencollective/opencollective-api/issues/1280\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-05-31T07:49:39Z",
+    "title": "Make tests less verbose"
+   },
+   "source": "github",
+   "timestamp": "2018-05-08T09:14:35+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/365"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#365:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-31T07:53:07+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/365"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#363:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "CircleCI 1.0 will be deprecated on August 31, 2018.\r\n\r\nLet's do the migration.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-05-08T08:55:09Z",
+    "title": "Convert to CircleCI 2.0"
+   },
+   "source": "github",
+   "timestamp": "2018-05-08T08:54:59+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/363"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#363:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-07-27T14:43:32+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/363"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#360:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "```\r\nnpm WARN codemirror-graphql@0.5.9 requires a peer of graphql@^0.6.0 || ^0.7.0 || ^0.8.0 but none was installed.\r\nnpm WARN graphiql@0.8.0 requires a peer of graphql@^0.6.0 || ^0.7.0 || ^0.8.0-b but none was installed.\r\n```\r\n\r\nLet's update to the latest version of GraphiQL.\r\n\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "GraphiQL peer dependencies warning"
+   },
+   "source": "github",
+   "timestamp": "2018-05-04T06:41:27+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/360"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#360:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-04T06:46:22+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/360"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#349:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "When retrieving from:\r\nhttps://staging.opencollective.com/api/groups/railsgirlsatl/backers?cacheBurst=75395\r\n\r\nWe get back a Cloudflare error:\r\n![screen shot 2018-04-27 at 11 19 27](https://user-images.githubusercontent.com/806/39355275-09b40600-4a0d-11e8-9536-38dd73760f35.png)\r\n\r\nIt's likely because \"Cloudflare detects a cyclic loop - e.g. Cloudflare proxying back to Cloudflare. This is detected when your origin responds with a \"cf-ray\" header.\"\r\n\r\nWhen doing this proxy request in the Frontend app, we should skip the Cloudflare network. Maybe in the future, we should consider doing this proxying differently.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Frontend /api should not answer with CF headers"
+   },
+   "source": "github",
+   "timestamp": "2018-04-27T09:23:13+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/349"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#349:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-27T14:23:47+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/349"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#348:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Our Webpack configuration is currently managed through Next.js:\r\nhttps://github.com/opencollective/frontend/blob/master/src/next.config.js\r\n\r\nWe should:\r\n\r\n - [x] check and simplify the configuration\r\n   - [x] remove sass/scss support\r\n   - [x] remove emit-file-loader (seems not used)\r\n - [x] remove the unused 'loader' dependencies from our `package.json`\r\n   - [x] sass-loader\r\n   - [x] file-loader\r\n   - [x] image-webpack-loader\r\n - [ ] removed webpack itself from our dependencies (we're only using it through `next.js`)\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-05-14T08:46:39Z",
+    "title": "Webpack configuration is out of date"
+   },
+   "source": "github",
+   "timestamp": "2018-04-27T08:23:32+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/348"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#348:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-14T09:54:39+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/348"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#345:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "![ezgif-4-6d45bfe9b0](https://user-images.githubusercontent.com/806/39305864-d7f043bc-495e-11e8-9680-8d9ea7c4c664.gif)\r\n\r\nHappening since the upgrade to Next.js 5.1.\r\n\r\nIt's because initial styles are empty while rendering the page server side.\r\n\r\nThe root cause is that 2 instances of the `styled-jsx` `stylesheet-registry` are existing at the same time, one used to register the styles from our React Components. The other used by Next.js, document.js when getting the cssRules to be injected in the page.\r\n\r\nIt's not supposed to happen, because node should normally only require `styled-jsx/style` once, the root cause still needs to be determinated.\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-04-26T13:04:53Z",
+    "title": "Flash of unstyled content (FOUC)"
+   },
+   "source": "github",
+   "timestamp": "2018-04-26T08:35:38+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/345"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#345:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-26T18:57:03+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/345"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#331:opened",
+   "payload": {
+    "author": "mattwelke",
+    "body": "",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "ed"
+   },
+   "source": "github",
+   "timestamp": "2018-04-20T20:58:19+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/331"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#331:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-20T20:58:58+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/331"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#329:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "As mentioned in https://github.com/opencollective/frontend/issues/315, there are duplicate classes all over our rendered pages.\r\n\r\nThe issue is mentioned here https://github.com/zeit/styled-jsx/issues/407, but no fix proposed yet. \r\n\r\nEg:\r\n\r\n```\r\n<div class=\"jsx-3812884289 jsx-3812884289 Member undefined large USER viewMode-USER\">\r\n  <div class=\"jsx-3812884289 jsx-3812884289\">\r\n    <a title=\"Frank Paczynski\" href=\"/frankpaczynski\">\r\n...\r\n    </a>\r\n  </div>\r\n</div>\r\n```\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Duplicate JSX classes"
+   },
+   "source": "github",
+   "timestamp": "2018-04-20T13:22:06+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/329"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#329:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "znarf",
+      "author_is_bot": false,
+      "number": 342
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2018-04-27T12:17:10+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/329"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#327:opened",
+   "payload": {
+    "author": "(ghost)",
+    "body": "Subscriptions page->Update payment method:\r\n\r\n<img width=\"547\" alt=\"screen shot 2018-04-19 at 8 25 13 pm\" src=\"https://user-images.githubusercontent.com/340268/39029278-d978d162-440f-11e8-93ca-8ed512bf394f.png\">\r\n\r\nChoose another payment method, \"Save\" button becomes active. Clicking save button throws `Uncaught (in promise) TypeError: this.update is not a function` in `subscriptions.js`:\r\n\r\n<img width=\"807\" alt=\"screen shot 2018-04-19 at 8 18 39 pm\" src=\"https://user-images.githubusercontent.com/340268/39029330-0d299654-4410-11e8-8c66-30672cf228d6.png\">\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Unable to update payment method "
+   },
+   "source": "github",
+   "timestamp": "2018-04-20T03:28:17+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/327"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#327:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-20T10:39:32+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/327"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#320:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Adding a simple robots.txt based on the environment should do the job.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2018-04-18T15:57:57Z",
+    "title": "Prevent indexing of staging by search engines"
+   },
+   "source": "github",
+   "timestamp": "2018-04-18T15:57:15+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/320"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#320:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-19T09:36:11+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/320"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#317:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Might happen when height is expressed as a non-integer value (eg: 10rem). See, `CollectiveCover` component for example.\r\n\r\nIn Logo component, minWidth is then computed with `Math.max(0, parseInt(height)/2)` which is a problem.\r\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "min-width:NaN in Logo component"
+   },
+   "source": "github",
+   "timestamp": "2018-04-16T10:44:25+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/317"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#317:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-23T13:26:22+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/317"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#315:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "When browsing https://opencollective.com/yeoman\r\n\r\nA `null` background image is loaded resulting in a bogus request to `https://opencollective.com/null`. That is in the end a performance issue because a full web page is loaded in place of a static image.\r\n\r\n```html\r\n<div class=\"jsx-3812884289 jsx-3812884289 Member undefined large USER viewMode-USER\">\r\n  <div class=\"jsx-3812884289 jsx-3812884289\">\r\n    <a title=\"Frank Paczynski\" href=\"/frankpaczynski\">\r\n      <div style=\"width:45px;height:45px;background-image:url(/static/images/avatar-01.svg)\" class=\"jsx-179226476 jsx-179226476 Avatar undefined\">\r\n        <div style=\"background-image:url(null);width:45px;height:45px\" class=\"jsx-179226476 jsx-179226476 image\"></div>\r\n      </div>\r\n      <div class=\"jsx-3812884289 jsx-3812884289 bubble\">\r\n        <div class=\"jsx-3812884289 jsx-3812884289 name\">Frank Paczynski</div>\r\n        <div style=\"color:#797D7F\" class=\"jsx-3812884289 jsx-3812884289 description\"></div>\r\n        <div style=\"color:#797D7F\" class=\"jsx-3812884289 jsx-3812884289 meta since\">Backer since October 2017</div>\r\n        <div style=\"color:#797D7F\" class=\"jsx-3812884289 jsx-3812884289 meta totalDonations\">Total amount contributed: $3</div>\r\n      </div>\r\n    </a>\r\n  </div>\r\n</div>\r\n```\r\n\r\nIn this snippet, there is also:\r\n - some `undefined' classes that could be removed.\r\n - a duplicate `jsx` class that could also be investigated.\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-04-16T07:44:26Z",
+    "title": "'null' background image"
+   },
+   "source": "github",
+   "timestamp": "2018-04-16T07:42:36+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/315"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#315:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-19T09:59:03+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/315"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#314:opened",
+   "payload": {
+    "author": "znarf",
+    "body": "Each time, an `InputField` is displayed the stylesheet from `styles/react-datetime.css` is also copied. Would be great to avoid these duplicate styles in the pages.\r\n\r\nhttps://github.com/opencollective/frontend/blob/master/src/components/InputField.js#L440\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2018-04-14T14:21:07Z",
+    "title": "Duplicate 'stylesheet' for every InputField"
+   },
+   "source": "github",
+   "timestamp": "2018-04-14T14:20:49+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/314"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#314:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-11-08T10:17:09+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/314"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#309:opened",
+   "payload": {
+    "author": "mattwelke",
+    "body": "Just a nit pick here, but even when there are no sponsors at all, it displays \"organizations and x people are supporting us.\"\r\n\r\nSee screenshot for example:\r\n\r\nOpen collective ui bug https://imgur.com/gallery/uzbdP",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Grammatically incorrect ui regarding contributor counts"
+   },
+   "source": "github",
+   "timestamp": "2018-04-11T04:33:49+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/309"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#309:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-19T11:05:19+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/309"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#308:opened",
+   "payload": {
+    "author": "mattwelke",
+    "body": "I noticed an issue tonight while browsing the site on my phone. In the top right corner I can tap to visit other collectives I have history with. If I select one, it brings me to their page, but if I go to another one, and then use the menu to try to go back to the first one (that I visited before) it does nothing when I tap. It stays highlighted in the list of collectives. After a lot of browsing, I'll eventually be stuck. I won't be able to go anywhere else. Refreshing the browser solves this, but it's definitely.not working as an SPA as it was designed to.\r\n\r\nThis is kind of hard to demonstrate with a screenshot but here's one showing what my screen looks like after I tap on the collective I want to go to:\r\n\r\nOpen collective example https://imgur.com/gallery/daseC",
+    "body_truncated": false,
+    "comments": 8,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Website links not working on mobile if already visited"
+   },
+   "source": "github",
+   "timestamp": "2018-04-11T04:31:02+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/308"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#308:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-17T19:21:02+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/308"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#284:opened",
+   "payload": {
+    "author": "alexanderby",
+    "body": "![image](https://user-images.githubusercontent.com/9638588/37327893-2362ad18-26a9-11e8-8a6d-df92d8191833.png)\r\n",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Links in About section are white on white"
+   },
+   "source": "github",
+   "timestamp": "2018-03-13T07:28:25+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/284"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#284:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-03-13T17:29:14+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/284"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#277:opened",
+   "payload": {
+    "author": "pierreneter",
+    "body": "It's still nice at content of article or description of projects.\r\n\r\n![hover](https://user-images.githubusercontent.com/12815768/37068598-176cd6d0-21e2-11e8-96c4-53978fda4f4e.png)\r\n_(https://opencollective.com/wwcodetwincities)_\r\n\r\nBut, at the banner, it's a bad case.\r\n\r\n![hover2](https://user-images.githubusercontent.com/12815768/37068945-cde50a4e-21e3-11e8-85b9-300f05eef54f.png)\r\n\r\nhover:\r\n\r\n![hover3](https://user-images.githubusercontent.com/12815768/37068959-d95bdf10-21e3-11e8-8e8c-19d3725b69f6.png)\r\n_(https://opencollective.com/pierreneter)_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "[UX] Color and hover color of URL"
+   },
+   "source": "github",
+   "timestamp": "2018-03-07T01:46:10+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/277"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#277:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-03-12T13:11:21+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/277"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#276:opened",
+   "payload": {
+    "author": "pierreneter",
+    "body": "On any page except the home page, like: project, profile, etc,...\r\n\r\n![footer](https://user-images.githubusercontent.com/12815768/37068316-a0a2b2a0-21e0-11e8-910b-1e48508162b6.png)\r\n\r\nURLs for error reference:\r\nhttps://opencollective.com/webpack\r\nhttps://opencollective.com/tobiaskoppers",
+    "body_truncated": false,
+    "comments": 7,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "The footer is in the wrong position"
+   },
+   "source": "github",
+   "timestamp": "2018-03-07T01:25:03+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/276"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#276:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-19T09:39:59+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/276"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#228:opened",
+   "payload": {
+    "author": "cloudkompute",
+    "body": "Hi\r\n\r\nLooks like the system asks for Email only during the Sign Up. In this scenario, a user needs to open her Email Inbox and click on the Login link every time she wants to visit the website.\r\n\r\nIf I am right, can you add/store the Password field in the db itself and let the user simply remember it.\r\n\r\nThanks   ",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Sign Up: Both Email and Password"
+   },
+   "source": "github",
+   "timestamp": "2018-01-31T10:00:52+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/228"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#228:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-05-23T17:46:45+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/228"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#210:opened",
+   "payload": {
+    "author": "janpieterz",
+    "body": "See below image. The icons of the companies seem to be placed on a different card.\r\n\r\n![image](https://user-images.githubusercontent.com/383634/35028862-63b69c98-fb58-11e7-8019-0c898d3d6be9.png)\r\n",
+    "body_truncated": false,
+    "comments": 10,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Icons seem to be placed incorrectly"
+   },
+   "source": "github",
+   "timestamp": "2018-01-17T06:31:20+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/210"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#210:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-04-19T18:46:34+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/210"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#199:opened",
+   "payload": {
+    "author": "bradvogel",
+    "body": "Just noticed that your favicon is broken:\r\n![image](https://user-images.githubusercontent.com/821706/34854776-908add18-f6f0-11e7-90b4-8491ff240eb4.png)\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "favicon broken"
+   },
+   "source": "github",
+   "timestamp": "2018-01-12T00:57:56+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/199"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#199:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "xdamman",
+      "author_is_bot": false,
+      "number": 222
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2018-01-26T20:26:42+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/199"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#159:opened",
+   "payload": {
+    "author": "TeddMcAdams",
+    "body": "![screenshot 2017-12-17 02 25 03](https://user-images.githubusercontent.com/15876990/34077540-89b5157e-e2d4-11e7-9e41-8dcf8c31a4e5.png)\r\n\r\nIssue can be seen by viewing https://reactiveui.net/ in Microsoft IE or Edge\r\n\r\nIn Edge, the SVG icons scale infinitely, filling the entire view area.\r\nIn IE, the SVG icons have infinite width, causing them to be in their own row.\r\n\r\nI believe this issue can be resolved by adding the width attribute to the SVG.\r\nAttaching a PR.  New to GitHub so please let me know if I'm doing something incorrectly.  :)",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "SVG images not scaling properly in IE & Edge"
+   },
+   "source": "github",
+   "timestamp": "2017-12-17T07:50:35+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/159"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#159:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2018-01-26T20:11:32+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/159"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#103:opened",
+   "payload": {
+    "author": "cloudkompute",
+    "body": "Can we expect that you add these essential features?\r\n\r\nThanks",
+    "body_truncated": false,
+    "comments": 7,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Search, Sort, Filter, Pagination features"
+   },
+   "source": "github",
+   "timestamp": "2017-11-13T18:27:33+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/103"
+  },
+  {
+   "evidence_id": "issue:opencollective/opencollective-frontend#103:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-01-24T14:57:59+00:00",
+   "url": "https://github.com/opencollective/opencollective-frontend/issues/103"
+  }
+ ],
+ "repo": "opencollective/opencollective-frontend",
+ "window": "pre_t"
+}

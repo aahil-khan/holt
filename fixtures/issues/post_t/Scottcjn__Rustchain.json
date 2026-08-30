@@ -1,0 +1,1035 @@
+{
+ "captured_at": "2026-08-30T10:19:07.687109+00:00",
+ "content_sha256": "2efffbde3804daec3f46c93360baa3a6a39f9d85f0154c0f0a9d6a104b900228",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6655:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yyswhsccc",
+      "author_is_bot": false,
+      "number": 6663
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:48:55+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6655"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6645:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "keon0711",
+      "author_is_bot": false,
+      "number": 6676
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T02:28:58+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6645"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6642:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:31:38+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6642"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6636:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:17:20+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6636"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6635:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:17:17+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6635"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6634:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:17:13+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6634"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6627:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T15:46:18+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6627"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6624:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T15:46:15+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6624"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6613:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:17:10+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6613"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6612:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:17:07+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6612"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6611:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:14:55+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6611"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6610:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:14:58+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6610"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6609:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:01+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6609"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6608:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:04+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6608"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6607:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:06+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6607"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6606:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:09+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6606"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6605:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:12+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6605"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6604:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:14+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6604"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6603:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:17+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6603"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6602:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:20+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6602"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6601:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:34+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6601"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6600:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:37+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6600"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6599:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:40+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6599"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6598:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:42+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6598"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6597:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:45+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6597"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6596:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:48+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6596"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6595:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:50+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6595"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6594:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:53+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6594"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6593:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:56+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6593"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6592:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:15:59+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6592"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6591:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:02+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6591"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6590:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:05+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6590"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6589:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:08+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6589"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6588:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:11+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6588"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6587:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:13+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6587"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6586:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:16+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6586"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6585:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:19+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6585"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6584:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:21+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6584"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6583:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:24+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6583"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6582:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:27+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6582"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6581:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:29+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6581"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6580:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:32+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6580"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6579:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:35+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6579"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6578:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:38+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6578"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6565:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "zeroknowledge0x",
+      "author_is_bot": false,
+      "number": 6866
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T03:04:20+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6565"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6545:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonathanpopham",
+      "author_is_bot": false,
+      "number": 6546
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T20:23:25+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6545"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6462:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:22:03+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6462"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6416:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mvmax-dev",
+      "author_is_bot": false,
+      "number": 6832
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T21:58:15+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6416"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6404:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:33+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6404"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6403:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:32+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6403"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6402:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:30+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6402"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6401:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:29+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6401"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6400:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:27+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6400"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6399:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:26+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6399"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6398:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:24+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6398"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6397:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:22+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6397"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6395:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:21+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6395"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6394:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:19+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6394"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6393:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:17+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6393"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6392:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:16+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6392"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6391:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:14+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6391"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6389:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:13+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6389"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6388:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:11+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6388"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6387:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:07+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6387"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6386:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:06+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6386"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6385:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:04+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6385"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6384:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:52:02+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6384"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6382:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:40+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6382"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6381:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:43+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6381"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6379:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:49+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6379"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6378:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:51+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6378"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6380:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:16:46+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6380"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6373:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:22:01+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6373"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6372:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:59+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6372"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6343:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T19:05:01+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6343"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6211:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yyswhsccc",
+      "author_is_bot": false,
+      "number": 6212
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:48:37+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6211"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6131:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:57+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6131"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6129:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:55+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6129"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#6121:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:53+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/6121"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5909:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:51+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5909"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5761:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:29+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5761"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5672:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:27+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5672"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5638:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:55+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5638"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5614:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:52+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5614"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5539:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:44:38+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5539"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5436:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:50+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5436"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5434:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:48+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5434"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5432:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:46+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5432"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5429:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:45+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5429"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5394:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:10+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5394"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5393:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:08+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5393"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5392:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:07+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5392"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5335:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:43+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5335"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5154:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:17:45+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5154"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5145:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T03:45:53+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5145"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5120:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:41+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5120"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#5059:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:39+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/5059"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#4981:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:38+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/4981"
+  },
+  {
+   "evidence_id": "issue:Scottcjn/Rustchain#4973:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:21:35+00:00",
+   "url": "https://github.com/Scottcjn/Rustchain/issues/4973"
+  }
+ ],
+ "repo": "Scottcjn/Rustchain",
+ "window": "post_t"
+}

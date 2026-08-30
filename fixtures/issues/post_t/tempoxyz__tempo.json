@@ -1,0 +1,29 @@
+{
+ "captured_at": "2026-08-30T10:22:29.449551+00:00",
+ "content_sha256": "120f615e139a3cdc19e5186a3bb33ee77876408f9534368f66ef77cdcdeed10a",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:tempoxyz/tempo#2187:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T05:23:48+00:00",
+   "url": "https://github.com/tempoxyz/tempo/issues/2187"
+  },
+  {
+   "evidence_id": "issue:tempoxyz/tempo#1254:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T05:10:38+00:00",
+   "url": "https://github.com/tempoxyz/tempo/issues/1254"
+  }
+ ],
+ "repo": "tempoxyz/tempo",
+ "window": "post_t"
+}

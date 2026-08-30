@@ -1,0 +1,551 @@
+{
+ "captured_at": "2026-08-30T10:11:12.021308+00:00",
+ "content_sha256": "226b6bcb5d77b7945d8a14f6eaede0b9385724fe58d7b48aac9488cd71f8a0f0",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44195:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "whatston3",
+      "author_is_bot": false,
+      "number": 44209
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:29:52+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44195"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44185:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "robbitsu",
+      "author_is_bot": false,
+      "number": 44229
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T21:10:33+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44185"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44184:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "robbitsu",
+      "author_is_bot": false,
+      "number": 44229
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T21:10:33+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44184"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44175:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "PJB3005",
+      "author_is_bot": false,
+      "number": 44329
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T23:15:46+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44175"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44159:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T08:21:57+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44159"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44158:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Codubreku",
+      "author_is_bot": false,
+      "number": 44279
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T16:06:23+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44158"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44155:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "VerinSenpai",
+      "author_is_bot": false,
+      "number": 44206
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:10:07+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44155"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44074:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "VerinSenpai",
+      "author_is_bot": false,
+      "number": 6
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T04:35:07+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44074"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44069:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T12:08:54+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44069"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44059:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SlamBamActionman",
+      "author_is_bot": false,
+      "number": 44081
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T19:37:05+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44059"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44054:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "LordKnish",
+      "author_is_bot": false,
+      "number": 44258
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T05:41:14+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44054"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44045:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jessicamaybe",
+      "author_is_bot": false,
+      "number": 44405
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T04:53:14+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44045"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44039:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "whatston3",
+      "author_is_bot": false,
+      "number": 44053
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T02:49:52+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44039"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#44017:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T16:45:33+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/44017"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43957:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "devpikachu",
+      "author_is_bot": false,
+      "number": 44965
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T20:22:46+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43957"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43869:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T16:14:32+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43869"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43834:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "eoineoineoin",
+      "author_is_bot": false,
+      "number": 43865
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T14:22:32+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43834"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43818:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "CroilBird",
+      "author_is_bot": false,
+      "number": 44078
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T01:16:28+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43818"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43784:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "whatston3",
+      "author_is_bot": false,
+      "number": 44978
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T00:11:26+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43784"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43783:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T19:46:31+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43783"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43782:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ProPeperos",
+      "author_is_bot": false,
+      "number": 43438
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T09:28:19+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43782"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43741:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T21:32:10+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43741"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43636:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SlamBamActionman",
+      "author_is_bot": false,
+      "number": 44436
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T09:27:47+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43636"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43620:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pok27",
+      "author_is_bot": false,
+      "number": 43667
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T02:24:25+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43620"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43516:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T21:00:56+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43516"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43383:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YoungThugSS14",
+      "author_is_bot": false,
+      "number": 44197
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T04:23:19+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43383"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43354:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ArtisticRoomba",
+      "author_is_bot": false,
+      "number": 44134
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T21:09:19+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43354"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43298:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "themias",
+      "author_is_bot": false,
+      "number": 43539
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T19:51:51+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43298"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43258:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "whatston3",
+      "author_is_bot": false,
+      "number": 44911
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T13:07:25+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43258"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43218:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Princess-Cheeseballs",
+      "author_is_bot": false,
+      "number": 43730
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T04:25:43+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43218"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43214:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "psykana",
+      "author_is_bot": false,
+      "number": 43259
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T05:22:52+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43214"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43187:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T03:07:31+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43187"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43108:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "slarticodefast",
+      "author_is_bot": false,
+      "number": 44524
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T20:59:32+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43108"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43085:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T12:28:43+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43085"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43060:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T18:28:16+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43060"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43028:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SlamBamActionman",
+      "author_is_bot": false,
+      "number": 43816
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T22:34:45+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43028"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43009:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T05:43:22+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43009"
+  },
+  {
+   "evidence_id": "issue:space-wizards/space-station-14#43000:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "B-Kirill",
+      "author_is_bot": false,
+      "number": 44612
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T14:43:04+00:00",
+   "url": "https://github.com/space-wizards/space-station-14/issues/43000"
+  }
+ ],
+ "repo": "space-wizards/space-station-14",
+ "window": "post_t"
+}

@@ -1,0 +1,321 @@
+{
+ "captured_at": "2026-08-30T10:20:02.726717+00:00",
+ "content_sha256": "605aa4a86431eeddcb2ba2b8b8c6981c813223a7af0922e1bae68058218ef1a3",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#376:opened",
+   "payload": {
+    "author": "jason-visotrust",
+    "body": "## Motivation\n\nmimir's current `Agent.run_turn(event)` is single-shot per `AgentEvent`. The dispatcher serializes events per-channel, so if a user types while the agent is thinking, that message queues and fires as the *next* turn once the in-flight one completes.\n\nClaude Code's UX is different: the user can type at any time during agent execution, and the new message gets folded into the conversation history at the next reasoning-step boundary \u2014 same logical \"turn\" continues with expanded context. This produces a markedly more conversational feel for any long-running agent operation (e.g., the bench harness, multi-tool research turns, the synthesis-turn flow).\n\nBoth UX shapes have merit:\n- **Current (one-event-one-turn)**: clear turn boundaries; every input has a stable `turn_id` reference; auditable.\n- **Continuous-injection**: lower friction for course-correction mid-execution; matches what users now expect from agent tools they've used elsewhere.\n\nWorth landing as an opt-in mode, not a wholesale replacement.\n\n## Current architecture\n\n- `Agent.run_turn(event: AgentEvent) -> TurnRecord` processes one event end-to-end (`mimir/agent.py:880`).\n- The deepagents graph is compiled per turn and consumed via `astream` until the result chunk arrives.\n- New events queue at `mimir/dispatcher.py` (per-channel serialization).\n- Turn records, saga sessions, commitments, and most of the observability surface are all keyed on a single `turn_id`/`saga_session_id` per `AgentEvent`.\n\n## Proposed approach (mid-turn injection on top of deepagents)\n\ndeepagents 0.6 ships `interrupt_on` for **pre-tool HITL approval** \u2014 a different primitive (gate before tool dispatch, resume with approval/edit). LangGraph's underlying `interrupt()` + `Command(resume=...)` is more flexible but still requires explicit interrupt points in the graph. Claude Code's anytime-injection is an application-layer pattern on top of these primitives, not a native graph feature.\n\nTo get it in mimir:\n\n1. **Checkpointer**: compile the deepagents graph with a `MemorySaver` (or SQLite-backed) checkpointer so state persists across pauses. Lets the loop yield and resume without losing tool-call history.\n\n2. **`check_pending_messages` node** at each iteration boundary: peeks a per-turn queue, and if non-empty wraps the entries as `HumanMessage`s and prepends them to `state[\\\"messages\\\"]` before the next LLM call. The node is a no-op when the queue is empty (zero overhead for the common case).\n\n3. **Injection API**: `Agent.inject_message(channel_id, content)` (or similar) writes to the same queue the node reads. Dispatcher routes user messages received during an in-flight turn to `inject_message` for that channel's running turn, rather than queuing them as fresh events. Opt-in via a config flag or per-channel policy.\n\n4. **Lifecycle implications**:\n   - **TurnRecord shape**: a single turn can now have multiple `input` messages folded in. Need to decide: list-of-inputs on the record, or separate sub-records linked under one parent? Probably the former (preserves \\\"one turn\\\" semantics).\n   - **Saga session**: stays bound to the turn, not the input. Mid-turn injections don't trigger session boundary.\n   - **Commitments extraction**: runs at session-end as usual, just sees a longer message list.\n   - **Turn-viewer UI**: needs to render \\\"new input arrived during turn at t=X\\\" markers in the reasoning stream.\n\n## Open questions\n\n- **Cancel semantics**: should the agent be interruptible (e.g., \\\"never mind, stop\\\") in addition to extendable? That'd need a stop signal, not just a queue.\n- **Per-channel opt-in or global**: probably opt-in. The dispatch channels that benefit (chat-shaped, interactive) are different from the ones that shouldn't (poller-triggered, scheduled-tick).\n- **Cost-tracking attribution**: each fold-in is a fresh LLM call. Does the cost roll up to the turn or get split? Affects budgeting + reflection.\n- **Failure modes**: what if the in-flight turn is mid-tool-call when inj",
+    "body_truncated": true,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "feat: mid-turn user message injection (Claude Code-style continuous input)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:27:10+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/376"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#332:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "## Background\n\n\\`mimir scaffold-docker\\` currently emits a single Dockerfile shape: bind-mounted workspace + \\`uv sync\\` from a local clone. That's right for development-sandbox deployments (mimirbot pattern) where you iterate on mimir source locally and \\`docker compose restart\\` picks up the new code.\n\nAfter v0.1.0 lands on PyPI, a second deployment shape becomes attractive: pin a specific \\`mimir-agent\\` version, install via \\`pip install\\` at image-build, and rely on the pending-update flag flow (PR #330) for upgrades. Production-shaped operators want this \u2014 version-pinned, restart-driven updates, no live source bind-mount.\n\nThe pre-OSS Dockerfile rewrite (PR #331) shows what the PyPI shape looks like. muninn-mimir is the first deployment we'll migrate manually post-publish. But long-term it'd be nicer if \\`mimir scaffold-docker --mode=pypi\\` emitted the right shape directly.\n\n## Scope\n\n1. **New CLI flag** \\`mimir scaffold-docker --mode=workspace|pypi\\` (default: \\`workspace\\` for back-compat).\n2. **Two template variants** in \\`mimir/scaffold_docker.py\\`:\n   - \\`_DOCKERFILE_BASE_WORKSPACE\\` \u2014 what exists today (bind-mount + \\`uv sync\\`).\n   - \\`_DOCKERFILE_BASE_PYPI\\` \u2014 installs \\`mimir-agent\\` into a user-owned venv; no source bind-mount; supports the pending-update flow.\n3. **compose.yml variants** \u2014 the PyPI mode drops the \\`workspace\\` named volume entirely; the \\`/mimir-home\\` mount stays.\n4. **start.sh** \u2014 PyPI mode either drops it entirely or trims to a no-op (no clone, no \\`uv sync\\`).\n5. **Tests** \u2014 \\`tests/test_scaffold_docker.py\\` already pins the workspace shape; add parallel tests for the PyPI shape (PyPI extras propagate, no \\`workspace\\` volume, no start.sh references).\n6. **Extras propagation** \u2014 the \\`--extras\\` arg today maps to \\`UV_EXTRAS\\`; for the PyPI mode it should map to the \\`MIMIR_EXTRAS\\` build-arg in the Dockerfile.\n\n## Sizing estimate\n\n**Medium.** ~150 LOC + tests. The existing scaffold structure is well-factored; this is mostly adding a parallel template + a mode branch in the renderers.\n\n## Related\n\n- PR #331 (mimir-repo Dockerfile rewrite to PyPI install) \u2014 shows the target shape.\n- PR #330 (pending-update flag) \u2014 the flow the PyPI mode supports.\n- After v0.1.0 publish, muninn-mimir migrates manually (the Dockerfile gets hand-edited to override the scaffold). When this issue lands, we re-run \\`mimir scaffold-docker --mode=pypi\\` on muninn-mimir to get back to scaffold-managed.\n\n\ud83e\udd16 Tracked via auto-memory after the muninn-mimir cutover plan in #331.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "mimir scaffold-docker: --mode=pypi option (PyPI install vs workspace bind-mount)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T00:55:27+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/332"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#332:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jasoncarreira",
+      "author_is_bot": false,
+      "number": 336
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T03:25:15+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/332"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#268:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "**Tracking issue for the pin in #267.**\n\nWe currently depend on \\`langchain-claude-code\\` from a forked git ref because three upstream PRs to \\`thehumanworks/langchain-claude-code\\` haven't merged yet:\n\n| Upstream PR | What it fixes |\n|---|---|\n| [#2](https://github.com/thehumanworks/langchain-claude-code/pull/2) | Preserve full ResultMessage field set on response_metadata |\n| [#4](https://github.com/thehumanworks/langchain-claude-code/pull/4) | Capture tool calls/results via SDK hooks |\n| [#6](https://github.com/thehumanworks/langchain-claude-code/pull/6) | Skip tools with langgraph-injected args in bind_tools MCP bridge |\n\nPR #6 was the production-load-bearing fix (\\`mcp__langchain-tools__read_file\\` failing with \\`missing 1 required positional argument: 'runtime'\\` on every invocation under deepagents 0.6+).\n\n## When this issue closes\n\nWhen **all three** upstream PRs have merged AND a new PyPI version of \\`langchain-claude-code\\` has been published containing all three fixes:\n\n1. In \\`pyproject.toml\\`, revert the three \\`langchain-claude-code @ git+https://...\\` pins back to the PyPI form: \\`langchain-claude-code>=<new-version>\\`.\n2. Drop the \\`[tool.hatch.metadata] allow-direct-references = true\\` block (no longer needed once we're back on the registry source).\n3. Run \\`uv sync --extra dev\\` to refresh the lock; verify \\`uv run pytest -q\\` still passes.\n4. Close this issue with the revert commit / PR linked.\n\n## When this issue gets escalated\n\nIf upstream stays unresponsive for an extended window (say > 4 weeks past the last fork-side push), escalate to publishing the fork under a renamed PyPI package (\\`langchain-claude-code-mimir\\` or similar). See the conversation in #267 for the rationale.\n\n## Where the pin currently points\n\nBranch: [\\`jasoncarreira/langchain-claude-code:mimir-bundled-fixes\\`](https://github.com/jasoncarreira/langchain-claude-code/tree/mimir-bundled-fixes)\nSHA: \\`f7af15b613d1e016437740f739321316730cdd39\\`",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "chore: revert langchain-claude-code pin once upstream PRs land"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T22:24:38+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/268"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#268:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jasoncarreira",
+      "author_is_bot": false,
+      "number": 461
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T19:18:18+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/268"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#243:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "## Background\n\nmimir's quota / homeostat infrastructure (``mimir/billing.py``, ``mimir/oauth_usage_poller.py``, ``mimir/rate_limits.py``) currently knows exactly one provider shape: **Anthropic Max OAuth via ``/api/oauth/usage``**. The ``AnthropicQuotaProvider`` is hardcoded in the billing-mode detection path.\n\nThat worked fine when every mimir install routed through Anthropic. **muninn-mimir cutover (2026-05-20)** broke that assumption: it routes the agent's chat model to Minimax M2.7 via Anthropic-compat (``ANTHROPIC_BASE_URL=https://api.minimax.io/anthropic``). The agent runs fine, but mimir's quota / cost-rate / spike-ratio gates are blind to Minimax usage. The homeostat will not throttle when Minimax quota gets tight; the operator will only learn about it from 429s landing mid-conversation.\n\n## Scope\n\n1. **``MinimaxQuotaProvider``** \u2014 new concrete ``QuotaProvider`` subclass. Reads Minimax's usage / billing surface (need to investigate what they expose) and maps to the same ``QuotaWindow`` shape Anthropic uses. Per-window utilization, ``status``, ``resets_at``.\n2. **Auto-discovery wiring** \u2014 at ``Config.from_env`` / Agent build time, inspect what's configured (``MIMIR_MODEL_SPEC`` prefix, ``ANTHROPIC_BASE_URL`` value, ``OPENAI_BASE_URL`` value, presence of ``MINIMAX_API_KEY`` / ``OPENROUTER_API_KEY`` etc.) and register the matching provider instances automatically. Today the provider list is hardcoded; should be auto-built from configured credentials so \"if you have a Minimax credential configured, you get a Minimax provider \u2014 same for Kimi, Bedrock, etc.\"\n3. **Minimax-side equivalent of ``oauth_usage_poller``** \u2014 same cron cadence (3-min default), same algedonic signal pattern (``minimax_usage_ok`` / ``_failed`` / ``_rate_limited``), same ``RateLimitStore`` persistence so the arbiter sees both providers in a unified projection.\n4. **Provider-agnostic arbiter** \u2014 make ``HomeostaticArbiter`` aggregate across ALL registered providers' windows instead of assuming Anthropic. Currently it consults the Anthropic provider directly.\n\n## Open questions\n\n- **Does Minimax expose remaining-quota data?** Their docs aren't great. If not, the provider has to projection-only: track outgoing tokens locally, project against the subscription cap from config, no remote read-back. Same projection arithmetic the Anthropic provider does, but with an inferred denominator.\n- **Per-model sub-buckets?** Anthropic has ``seven_day_sonnet`` / ``seven_day_opus``. Minimax may or may not split by model \u2014 depends on their API.\n- **Cron cadence** for the Minimax poller \u2014 match Anthropic's 3-min default, or back off based on rate limits.\n\n## Sizing estimate\n\n**Medium.** The framework already exists (``QuotaProvider`` ABC + ``RateLimitStore`` + arbiter). This is adding a concrete subclass + the auto-wire layer. The hardest part is the empirical investigation of Minimax's usage API.\n\n## Related\n\n- [PR #238](https://github.com/jasoncarreira/mimir/pull/238) \u2014 Minimax via Anthropic-compat docs (the routing layer this would observe).\n- ``mimir/oauth_usage_poller.py`` \u2014 the Anthropic poller this would mirror.\n- ``mimir/billing.py:AnthropicQuotaProvider`` \u2014 the concrete class to parallel.\n\n\ud83e\udd16 Tracked via auto-memory after the muninn-mimir cutover.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "billing: Minimax quota provider + auto-discoverable quota provider wiring"
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T21:39:16+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/243"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#243:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T23:44:41+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/243"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#228:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "Three non-blocking nits Mimir flagged after approving #225. Filing as a bundle for a small future cleanup PR.\n\n## 1. Stale comment on \\`_write_if_changed\\`\n\nIn \\`mimir/scaffold_docker.py\\` inside \\`scaffold()\\`:\n\n\\`\\`\\`python\ndef _write_if_changed(path: Path, content: str, label: str) -> None:\n    \"\"\"...\n    Returns (wrote, exec_bit_changed) so the caller can stamp chmod\n    bits without flagging \"wrote\" when only mode-bit work happened.\n    \"\"\"\n\\`\\`\\`\n\nThe function actually returns \\`None\\` and mutates \\`result\\` via closure. The docstring describes an earlier design. Cleanup-only.\n\n## 2. \\`REPO_DIR=\"/workspace/mimir\"\\` hardcoded in generated start.sh\n\nFor non-mimir agents (Muninn, forks), the clone lands at \\`/workspace/mimir\\` regardless of what \\`MIMIR_GIT_URL\\` points to. Not wrong (the right source is cloned), just naming-confusing. Consider \\`REPO_DIR=\"/workspace/runtime\"\\` or deriving from the URL's repo name.\n\n## 3. \\`--service-name\\` user input not sanitized\n\nAuto-derived service names go through:\n\n\\`\\`\\`python\nservice_name = re.sub(r\"[^a-zA-Z0-9_-]\", \"-\", raw)\n\\`\\`\\`\n\nBut an explicit \\`--service-name \"has spaces\"\\` skips that path entirely and could produce an invalid compose service name. Apply the same sanitizer to user-provided values too, OR validate and fail-fast with a clear error.\n\n## Scope\n\nTiny \u2014 ~20 LOC across docstring + sanitizer reuse + (optional) REPO_DIR rename. Bundle in one PR with regression tests for each.\n\n---\n\ud83e\udd16 Filed by Claude Code after Mimir's #225 third-pass review notes",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "follow-ups: scaffold_docker nits from #225 third-pass review"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T22:50:14+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/228"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#228:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jasoncarreira",
+      "author_is_bot": false,
+      "number": 229
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:08:05+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/228"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#226:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "Mimir's re-review on PR #224 (merged) flagged 4 code-quality nits + 4 test gaps. None are blocking \u2014 filing as a single follow-up to bundle the cleanup pass.\n\n## Issues\n\n### 1. \\`list_available\\` / \\`list_installed\\` are ~40 lines of duplicated code\nBoth walk a directory, skip hidden entries, check for \\`SKILL.md\\`, call \\`parse_frontmatter\\`, build an \\`OptionalSkill\\`. Extract to:\n\n\\`\\`\\`python\ndef _walk_skills_dir(root: Path) -> list[OptionalSkill]:\n    ...\n\\`\\`\\`\n\nEach caller becomes ~3 lines. Will diverge on the next change.\n\n### 2. \\`DEFAULT_OPTIONAL_SKILLS_ROOT\\` silently breaks on pip-installed mimir\n\\`Path(__file__).parent.parent / \"optional-skills\"\\` resolves correctly from the repo checkout, but \\`optional-skills/\\` isn't packaged for distribution. A pip-installed user gets:\n\n- \\`mimir skills list-optional\\` \u2192 \\\"no optional skills available\\\"\n- \\`mimir skills install <name>\\` \u2192 \\`FileNotFoundError\\` with no explanation\n\nSame gotcha lives in #225's \\`scaffold_docker._BUNDLED_SKILL_ROOTS\\` \u2014 fix should cover both. Add a call-time check + clear error message pointing at \\\"checkout the repo, this CLI command requires a source-tree install.\\\"\n\n### 3. \\`[poller]\\` flag breaks the description column alignment\nFormat string \\`f\\\"  {s.name:<{width}}{flag}  {desc}\\\"\\` pads \\`name\\` to \\`width\\` then appends \\`flag\\`, so:\n\n\\`\\`\\`\n  fake-poller [poller]  A test poller that does nothing.\n  fake-skill            A plain non-poller skill.\n\\`\\`\\`\n\nThe flag column needs its own fixed width (\\`{flag:<10}\\` or similar). Affects both \\`cmd_list_optional\\` and \\`cmd_list\\` output.\n\n### 4. Description truncation is copy-pasted\n\\`s.description if len(s.description) <= 100 else s.description[:97] + \\\"...\\\"\\` appears in both \\`cmd_list_optional\\` and \\`cmd_list\\`. Trivial helper:\n\n\\`\\`\\`python\ndef _truncate_desc(desc: str, budget: int = 100) -> str: ...\n\\`\\`\\`\n\n## Test gaps\n\n- \\`cmd_list\\` on a home where \\`.claude/skills/\\` doesn't exist \u2014 the \\\"Did you run \\`mimir setup\\`?\\\" path is not covered.\n- \\`cmd_install\\` early-exit when \\`home\\` path doesn't exist as a directory \u2014 exit-2 path is hit via \\`FileNotFoundError\\` only; the \\`if not home.is_dir()\\` early-exit has no test.\n- \\`cmd_install\\` with \\`--force\\` tested at the library level (\\`test_install_force_overwrites_existing\\`) but not via the CLI path. No \\`cmd_install\\` test passes \\`force=True\\`.\n- The poller-hint output line in \\`cmd_install\\` (\\\"this skill ships a pollers.json...\\\") isn't asserted anywhere.\n\n## Scope\n\nAll four code nits + all four test gaps in one cleanup PR. Should be ~100 lines net, including helper extraction + test additions. No behavior change for end users.\n\n---\n\ud83e\udd16 Filed by Claude Code after Mimir's #224 re-review notes",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "follow-ups: skill_install + CLI polish nits flagged on #224 re-review"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T21:40:18+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/226"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#226:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jasoncarreira",
+      "author_is_bot": false,
+      "number": 227
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T22:09:22+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/226"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#216:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "## Background\n\nMimir currently has five separate extension surfaces, each registered differently:\n\n| Surface | Registration mechanism |\n|---|---|\n| Tools | `tools/registry.py:_STATE` module-globals + `@tool` decorators |\n| Hooks | `TurnHook` chain on `Agent.__init__(turn_hooks=...)` (PR #213) |\n| Prompt blocks | Inlined in `prompts.py:build_turn_prompt` + `agent.py:_build_turn_prompt` |\n| Pollers | `.claude/skills/*/pollers.yaml` |\n| Algedonic events | Ad-hoc `log_event(...)` calls scattered through the codebase |\n| Scheduled jobs | `scheduler.yaml` + env vars (`MIMIR_*_CRON`) |\n\nThe fragmentation is fine for a single-agent deployment but becomes painful when a second agent (Muninnbot, soon) wants its own bundle of extensions. Each surface needs separate wiring; adding a third agent would compound the friction.\n\nThis issue proposes a **`Plugin` protocol** that consolidates all five surfaces under one registration shape. The PR #213 `TurnHook` chain is the first step toward this \u2014 it gives each agent its own hook list. The plugin protocol extends that pattern to the other four surfaces.\n\n## Design goals\n\n1. **One registration call per agent** \u2014 `agent.install(MuninnbotPlugin())` registers tools + hooks + prompt blocks + pollers + declared algedonic events in one shot.\n2. **Cache-aware prompt-block ordering** \u2014 each block declares a `cache_tier` (stable / slow / volatile). The prompt builder sorts within semantic sections so the prompt prefix maximizes Anthropic's 5-min cache TTL hit rate.\n3. **No semantic-order violations** \u2014 the current curated order (persona \u2192 identities \u2192 feedback \u2192 session summaries \u2192 usage \u2192 upcoming \u2192 commitments \u2192 self-state \u2192 recent activity \u2192 memories \u2192 event) encodes \"read self-state before reading the conversation.\" Cache optimization sorts within tiers, never across them.\n4. **Discrete tiers, not continuous scores** \u2014 plugin authors will guess at \"this updates every 12s.\" Three tiers map to how people actually think about cache invalidation.\n5. **Catalog over enforcement for algedonic signals** \u2014 plugins declare what event types they emit (operator-discoverable) but the event-emission path stays `log_event(...)` for simplicity. No new bus / dispatcher.\n\n## Proposed protocol (sketch only)\n\n```python\nfrom dataclasses import dataclass, field\nfrom typing import Literal, Protocol\n\nCacheTier = Literal[\"stable\", \"slow\", \"volatile\"]\n# stable   \u2014 persona, identities, skills catalog (changes per deploy)\n# slow     \u2014 feedback signals, commitments, session summaries (changes per turn-cluster)\n# volatile \u2014 recent activity, current event body (changes per turn)\n\n\n@dataclass\nclass PromptBlock:\n    label: str                       # e.g. \"Recent activity\"\n    section: Literal[\n        \"system_context\",            # \u2248 stable + slow (top of prompt)\n        \"turn_context\",              # \u2248 volatile (just above event body)\n    ]\n    cache_tier: CacheTier\n    render: Callable[[TurnContext, AgentEvent], str | None]\n\n\n@dataclass\nclass PollerDef:\n    name: str\n    cron: str\n    handler: Callable                # invoked on tick\n\n\n@dataclass\nclass AlgedonicEventDecl:\n    \"\"\"Declarative metadata only \u2014 doesn't change emission path.\n    Operator-discoverable catalog of what this plugin emits.\"\"\"\n    event_type: str                  # e.g. \"wiki_health\"\n    valence: Literal[\"positive\", \"negative\", \"neutral\"]\n    description: str\n\n\nclass Plugin(Protocol):\n    name: str                        # unique plugin id (\"muninnbot\", \"commitments\", ...)\n\n    hooks: list[TurnHook]            # appended to agent's hook chain\n    prompt_blocks: list[PromptBlock] # registered with the prompt builder\n    tools: list                      # langchain BaseTool instances\n    pollers: list[PollerDef]         # registered with the scheduler\n    declared_events: list[AlgedonicEventDecl]  # catalog (no enforcement)\n```\n\n## Cache-tier sort, two-tier\n\nPseudocode for the prompt builder:\n\n```python\ndef assemble_prompt(plugins, ctx, event):\n    sections =",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Plugin protocol: unified extension surface for tools + hooks + prompt blocks + pollers + algedonic signals"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:45:54+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/216"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#214:opened",
+   "payload": {
+    "author": "mimir-carreira",
+    "body": "## Symptom\n\nMimir's \\`/review\\` skill is drafting reviews into the turn output but not invoking \\`gh pr review\\` (or equivalent) to actually post them to GitHub. The drafts are visible in \\`turns.jsonl\\` but never reach the PR's reviews tab.\n\nConcretely: PRs #208/#210/#211/#212/#213 have all been open for 1\u20132 hours without any GitHub-side review activity from \\`@mimir-carreira\\`, even though the github-activity poller fired and triggered turns that read the diffs and drafted reviews.\n\n## Evidence\n\n**Turn \\`9a26c92c0ba4\\`** (2026-05-18T18:47:19Z, trigger=poller, channel=poller:github-activity):\n\n- Tool sequence (truncated): \\`Skill(/review)\\` \u2192 \\`gh pr view 208\\` \u2192 \\`gh pr diff 208\\` \u2192 \\`Agent(read source files)\\` \u2192 \\`Read(saga/activation.py)\\` \u2192 \\`Read(saga/vector_index.py)\\` \u2192 \\`Read(saga/forget.py)\\` \u2192 \\`Bash(grep saga/client.py)\\` \u2192 \\`Bash(sed forget method)\\` \u2192 \\`Read(tests/test_saga_correctness_regressions.py)\\` \u2190 **fails** with \\\"File does not exist\\\".\n- Turn ended via \\`saga_end_session\\` with summary \\\"Reviewed PR #208 ...\\\".\n- Turn \\`output\\` contains the full drafted review (truncated to 2KB by \\`turn_logger\\`): \\\"Verdict: Approve with minor suggestions...\\\"\n- **No \\`gh pr review\\` invocation anywhere in the tool sequence.**\n\nSame pattern in turn \\`2ac1c984\\` (2026-05-18T17:46:24Z) for PR #206: drafted, never submitted.\n\n## Probable trigger\n\nThe \\`Read(tests/test_saga_correctness_regressions.py)\\` failure (the file only exists on PR #208's branch, the bot's local clone is at \\`f3823f1\\` = PR #207) appears to cause mimir to bail without finishing the submission step. The review draft was already complete in the output stream at that point \u2014 the local-file-read failure happened during a \\\"verify test logic\\\" follow-up, not during the review-drafting itself.\n\nSymptom suggests two cascading issues:\n\n1. **The \\`/review\\` skill prompt isn't explicit about \\\"after drafting, submit via \\`gh pr review --comment --body <draft>\\`\\\".** Earlier successful reviews (PR #202, #203, #205, #206) must have worked because the skill flow was different or the model was less likely to bail on a local-read failure. Bisect target: when did this regress?\n\n2. **Local-file-not-found handling for unmerged PRs is brittle.** When reviewing a PR whose branch isn't checked out locally, the bot should:\n   - Use \\`gh pr diff <num>\\` for file content (already does this for the top-level diff)\n   - Or \\`gh pr checkout <num>\\` to make local Read work\n   - Currently it tries to \\`Read(<local_path>)\\` and bails when the file isn't on the current branch.\n\n## Workaround\n\nRe-prompt mimir explicitly: \\\"review PR #X and post your review via gh pr review\\\". Implicit prompting via the poller channel apparently isn't enough.\n\n## Suggested fix\n\n1. **Audit \\`memory/core/skills/review.md\\`** (or wherever the \\`/review\\` skill template lives) \u2014 make the submission step explicit and the LAST action in the recipe, not optional.\n2. **Add a guardrail** at end-of-turn for poller-triggered review sessions: if the turn output contains review-shaped text (\\\"Verdict:\\\", \\\"## Review\\\", etc.) AND no \\`gh pr review\\` call fired, emit a \\`review_drafted_but_not_submitted\\` algedonic event so the operator dashboard catches this immediately.\n3. **Fix local-file-read fallback for unmerged PRs**: when reviewing, the skill should know to use PR-tip file content rather than local checkout content. Or check out the PR branch first.\n\n## Related\n\n- PR #208 has the drafted review forwarded as a manual comment so you can see what mimir would have said: jasoncarreira/mimir#208 (comment 4481584257)\n- PRs #210/#211/#212/#213 likely have the same drafted-but-unposted shape \u2014 turn inspection pending.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "/review skill drafts reviews but doesn't submit them to GitHub"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:05:22+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/214"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#214:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mimir-carreira",
+      "author_is_bot": false,
+      "number": 215
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:40:25+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/214"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#177:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "## Background\n\nPR #175 renamed the package `mimir.memory` \u2192 `mimir.saga`. The internal types still carry \"Memory\" in their names \u2014 names that made sense when the package was `mimir.memory` but now mismatch the package they live in:\n\n| Old name | Lives at | Suggested new name |\n|---|---|---|\n| `MemoryClient` | `mimir/saga/client.py` | `SagaClient` (collides with the Protocol in `mimir/saga_client.py`) \u2014 needs disambiguation |\n| `MemoryConfig` | `mimir/saga/config.py:167` | `SagaConfig` (collides with TOML-config callable concept) \u2014 needs thought |\n| `DEFAULT = MemoryConfig()` | `mimir/saga/config.py:210` | `DEFAULT_CONFIG = SagaConfig()` (already exported as `DEFAULT_CONFIG`) |\n\nThe `MemoryClient` rename has a naming collision: `mimir.saga_client.SagaClient` is the abstract `Protocol`; `mimir.saga.client.MemoryClient` is the concrete in-process implementation. Both can't be named `SagaClient`. Three resolution options:\n\n### Option A: rename Protocol AND keep concrete as SagaClient\n\n`SagaClient` \u2192 `SagaClientProtocol` (or `SagaInterface`). Concrete becomes the un-suffixed `SagaClient`. Clearer everyday name; renames the abstract.\n\n### Option B: rename concrete to `InProcessSagaClient`\n\nResurrects the legacy name (`_InProcessSaga` was deleted). Awkward.\n\n### Option C: rename concrete to `LocalSagaStore` (or `SagaStore`)\n\nDifferent verb root \u2014 \"store\" emphasizes the persistence role, sidesteps the Client/Protocol naming collision. Probably the cleanest.\n\n## Scope\n\n- Pick a target name (recommendation: Option C \u2014 `SagaStore`)\n- `git mv` won't help here; need code-level rename across class def + all references (~100 occurrences per the survey at PR #175 review time)\n- Update tests (`test_memory_client*.py` \u2192 `test_saga_store*.py` plus content)\n- Same for `MemoryConfig` \u2192 `SagaConfig`\n- Update `__all__` exports in `mimir/saga/__init__.py`\n\n## Estimated scope\n\nPure rename, ~150 LOC of import changes + class definitions touched. Single PR.\n\n## Blockers\n\nNone functionally; queued behind PR #175 + mimirbot migration so we're not chaining unrelated renames.\n\n## Suggested ordering\n\n1. PR #175 merges (the package rename)\n2. Mimirbot migrated to memory.db / new package\n3. Bench stability window (~1 day)\n4. This PR \u2014 type renames\n\nThat way if anything goes wrong with the package rename + production migration, we have a clean rollback point before the type rename adds more diff to bisect through.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Rename Memory*\u2192Saga* types (MemoryClient, MemoryConfig) post-mimir.saga package rename"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T17:28:37+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/177"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#177:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jasoncarreira",
+      "author_is_bot": false,
+      "number": 179
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T19:30:48+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/177"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#176:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "## Background\n\nIn the PR #161 design discussion we explored moving session boundaries out of the `atoms` table entirely \u2014 into their own first-class entity with a dedicated retrieval surface. The conversation landed on:\n\n> \"I'm wondering if we should make session boundaries a different thing, not atoms. Maybe we should also store / embed the user and agent messages under the session for retrieval ... merging the session boundaries into the session table is a good direction. Go ahead and draft it. I like the optional query param that does the semantic+recency blend.\"\n\nWhat actually shipped in #161:\n\n- \u2705 Sidecar `sessions` table (id, channel_id, started_at, ended_at, summary, reflected_at)\n- \u2705 `reflect()` upserts the sessions row\n- \u274c Session boundaries are **still atoms** (`source_type='session_boundary'`, `memory_type='raw'`) \u2014 dual storage\n- \u274c No semantic+recency blended search method\n- \u274c `recent_session_boundaries()` is recency-only listing, not semantic\n- \u274c User/agent messages aren't stored/embedded under the session\n\n## Scope of this issue\n\nFull migration of session boundaries out of `atoms`:\n\n### Schema changes (new migration entry in `MemoryClient.MIGRATIONS`)\n\n- Add `summary_embedding BLOB` to `sessions` (provider+dim same as atoms)\n- Add `summary_topics TEXT DEFAULT '[]'` (currently in atom metadata)\n- Optional: per-session message storage table (`session_messages` with text + embedding + role + ts)\n\n### Code changes\n\n- `mimir.saga.reflect`: write only the `sessions` row + embedding, not the atom\n- `mimir.saga.recall`: drop the `source_type='session_boundary'` special case\n- New `mimir.saga.search_sessions(query, *, channel_id=None, alpha=0.7)` \u2014 \u03b1 blends `cosine_similarity` vs `recency_decay` (chainlink #N reference for the score formula)\n- `mimir.saga.reflect.recent_session_boundaries()` \u2192 keep recency-only path, add optional `query=` for semantic blend\n- `MemoryClient.search_sessions()` async facade\n\n### Migration\n\n- Add migration entry to `MemoryClient.MIGRATIONS = {2: \"...\"}` that:\n  - Copies existing `session_boundary` atoms into `sessions` rows\n  - Embeds the summaries (or copies existing embedding if found)\n  - Tombstones the source atoms (or deletes \u2014 leaning tombstone for rollback)\n\n### Tests\n\n- `test_session_search_semantic` \u2014 query matches by topic, not just recency\n- `test_session_search_recency_blend` \u2014 alpha=1 \u2192 pure recency, alpha=0 \u2192 pure semantic, in between blends\n- `test_migration_atom_to_session_row` \u2014 schema_version bump preserves history\n- `test_recall_no_longer_surfaces_session_boundaries` \u2014 the atom-level filter goes away\n\n## Estimated scope\n\n~300\u2013500 LOC + tests + a schema migration entry. Single PR, single chainlink.\n\n## Blockers\n\nNone \u2014 can start after PR #175 lands + the mimirbot migration is stable on the new namespace.\n\n## Reference\n\nOriginal conversation: 2026-05-15 session (saga/v0.5 design exploration); see PR #161 + state/spec/chainlink-N-session-boundaries-as-first-class.md (to be created when work begins).\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Session boundaries as first-class entities (not atoms) + semantic+recency search"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T17:28:12+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/176"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#176:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:16:26+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/176"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#149:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "## Bug\n\n`VoyageProvider.__init__` (`saga/saga/embeddings.py:283-313`) tries to detect \"operator didn't override\" by comparing the inherited `self.url` against OpenAI's default URL:\n\n```python\nsuper().__init__()  # OpenAIProvider.__init__ \u2014 reads url via _cfg\nif self.url == \"https://api.openai.com/v1/embeddings\":\n    self.url = \"https://api.voyageai.com/v1/embeddings\"\nif self.model == \"text-embedding-3-small\":\n    self.model = \"voyage-4-lite\"\n```\n\nThe comparison is broken because saga's `_DEFAULTS[\"embedding\"]` (`saga/saga/config.py:43-54`) defaults to **nvidia-nim's** URL/model, not OpenAI's. When an operator writes a minimal voyage saga.toml:\n\n```toml\n[embedding]\nprovider = \"voyage\"\nmodel = \"voyage-4-lite\"   # explicit\ndimensions = 1024\napi_key_env = \"VOYAGE_API_KEY\"\n```\n\n\u2026with no `url` key, the merged config has `url = \"https://integrate.api.nvidia.com/v1/embeddings\"` (inherited from `_DEFAULTS`). `OpenAIProvider.__init__` reads that via `_cfg('embedding', 'url', ...)`, so `self.url` ends up pointing at nvidia-nim. The voyage check (`self.url == openai-default`) fails, the override never fires, and runtime API calls land on nvidia-nim's endpoint and 404.\n\n## Repro\n\n```python\n# saga.toml: provider=\"voyage\", model=\"voyage-4-lite\", api_key_env=\"VOYAGE_API_KEY\", no url\nfrom saga.embeddings import get_provider\np = get_provider()\nassert isinstance(p, VoyageProvider)\nprint(p.url)\n# \u2192 https://integrate.api.nvidia.com/v1/embeddings   (BUG: should be voyageai.com)\n```\n\nI hit this on the real path running `mimir setup --embedding voyage` followed by `mimir reindex --apply` against mimirbot. The reindex burned 5 minutes hitting nvidia-nim and 404'ing every batch, with `failed: 2131` on the file_search side.\n\n## Workaround\n\nExplicitly set `url` (and `send_input_type = true`) in saga.toml. Documented this as a comment in mimirbot's saga.toml.\n\n## Fix proposal\n\nAdd a `was_set_in_toml(section, key) -> bool` helper to `saga/config.py` that returns True only when the key was explicitly written in the toml (vs. inherited from `_DEFAULTS`). Track the set of explicitly-set keys in a module-level dict populated during `_load_config`. Then `VoyageProvider.__init__` becomes:\n\n```python\nsuper().__init__()\nfrom saga.config import was_set_in_toml\nif not was_set_in_toml(\"embedding\", \"url\"):\n    self.url = \"https://api.voyageai.com/v1/embeddings\"\nif not was_set_in_toml(\"embedding\", \"model\"):\n    self.model = \"voyage-4-lite\"\nif not was_set_in_toml(\"embedding\", \"api_key_env\"):\n    self.api_key_env = \"VOYAGE_API_KEY\"\nself.send_input_type = True  # unchanged \u2014 already unconditional\n```\n\nPreserves operator override (the original intent), fixes the broken detection. Side benefit: same helper is useful for other \"did the user explicitly opt in/out?\" checks scattered through saga.\n\n## Test coverage\n\nAdd to `saga/saga/tests/test_embeddings.py`:\n\n- Voyage saga.toml with explicit url \u2192 respect it\n- Voyage saga.toml without url \u2192 falls back to `https://api.voyageai.com/v1/embeddings` (the regression case)\n- Same shape for model\n\n## Also affects\n\n`mimir setup --embedding voyage` produces a saga.toml with no explicit url. That's `_embedding_block_for_preset(\"voyage\")` in `mimir/cli.py`. Once the saga fix lands the preset can stay minimal; until then, the preset should write `url` and `send_input_type` explicitly so fresh setups aren't broken.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "VoyageProvider URL override fails when saga.toml omits explicit url"
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T17:14:59+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/149"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#149:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jasoncarreira",
+      "author_is_bot": false,
+      "number": 150
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T17:40:04+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/149"
+  },
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#118:opened",
+   "payload": {
+    "author": "jasoncarreira",
+    "body": "## Context\n\nInspired by OpenClaw's \\`src/context-engine/\\` (MIT, 370k\u2605) \u2014 they have a registry where context engines register themselves and the runtime calls \\`engine.assemble({sessionKey, prompt})\\` to get back \\`{messages, estimatedTokens, systemPromptAddition, promptAuthority}\\`.\n\n## Problem\n\nMimir's prompt assembly is hardcoded on the Agent class \u2014 \\`_assemble_resource_usage_block\\` / \\`_assemble_upcoming_block\\` / \\`_assemble_self_state_block\\` / \\`_assemble_session_summaries\\` / \\`_assemble_git_status_line\\` / \\`_assemble_skill_block\\` / \\`_assemble_skill_telemetry_lines\\`. Skills can emit algedonic events (which the feedback block surfaces) but they can't contribute their own prompt sections without touching \\`agent.py\\`.\n\nPR #116 (CR2-#6) did this refactor at a small scale: extracted the stats block into a shared helper \\`mimir/stats_block.py\\` so the CLI and agent share assembly. The context-engine registry is the same direction, generalized.\n\n## Sketch\n\n\\`\\`\\`python\nclass PromptBlock(Protocol):\n    priority: int                    # render order\n    enabled_predicate: Callable[[TurnContext], bool]\n    estimated_token_cost: int        # for budget enforcement\n    async def assemble(self, ctx: TurnContext) -> str | None: ...\n\nclass PromptRegistry:\n    def register(self, name: str, block: PromptBlock) -> None: ...\n    async def assemble_all(self, ctx: TurnContext) -> str: ...\n\\`\\`\\`\n\nBuilt-in blocks register themselves at agent startup; skill manifests (\\`skills/<name>/prompt-blocks.json\\`?) declare additional ones loaded at install time.\n\n## Why future, not now\n\n- Requires touching every \\`_assemble_*\\` method in agent.py (\u22657 callsites)\n- Prompt-block ordering matters and the current implicit order is load-bearing; explicit priorities need careful tuning to preserve behavior\n- The MCP/skill loading surface is the right place to register them \u2014 needs design alignment with that\n- No active user need today \u2014 current built-in blocks are stable; the unlock is for third-party skill prompt contributions which aren't on the roadmap\n\n## When to revisit\n\n- A skill wants to contribute its own prompt section (concrete first user)\n- agent.py's \\`_assemble_*\\` count crosses ~10 and the implicit ordering becomes hard to reason about\n- We want operators to be able to disable specific prompt blocks via config without forking agent.py\n\n## References\n\n- OpenClaw: https://github.com/openclaw/openclaw/tree/main/src/context-engine\n- Surface area today: \\`grep -n \"def _assemble_\" mimir/agent.py\\`\n- Stats block extraction precedent: #116",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Future: context-engine registry \u2014 pluggable prompt block assembly"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T21:43:12+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/118"
+  }
+ ],
+ "repo": "jasoncarreira/mimir",
+ "window": "pre_t"
+}

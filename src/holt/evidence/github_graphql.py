@@ -87,6 +87,33 @@ query($q:String!, $cursor:String) {
 """
 
 
+# Issues, for Path Finder. Decomposed the same way pull requests are: an issue
+# opening is a pre-cutoff fact, and an issue being closed by somebody's merged
+# pull request is a post-cutoff one. The two must not travel together.
+ISSUE_SEARCH = """
+query($q:String!, $cursor:String) {
+  rateLimit { remaining resetAt }
+  search(query:$q, type:ISSUE, first:50, after:$cursor) {
+    issueCount
+    pageInfo { hasNextPage endCursor }
+    nodes {
+      ... on Issue {
+        number title body createdAt closedAt lastEditedAt
+        author { login __typename }
+        labels(first:12) { nodes { name } }
+        comments { totalCount }
+        closedByPullRequestsReferences(first:5, includeClosedPrs:true) {
+          nodes { number mergedAt author { login __typename } }
+        }
+      }
+    }
+  }
+}
+"""
+
+MAX_ISSUE_BODY = 4000
+
+
 def _ts(value: str | None) -> datetime | None:
     return datetime.fromisoformat(value.replace("Z", "+00:00")) if value else None
 
@@ -161,6 +188,16 @@ class GitHubGraphQL:
             readme=f"{oid}:README.md",
             contributing=f"{oid}:CONTRIBUTING.md",
         )["repository"]
+
+    def search_issues(self, q: str, max_pages: int = 6) -> Iterator[dict[str, Any]]:
+        cursor: str | None = None
+        for _ in range(max_pages):
+            search = self.query(ISSUE_SEARCH, q=q, cursor=cursor)["search"]
+            yield from (n for n in search["nodes"] if n)
+            page = search["pageInfo"]
+            if not page["hasNextPage"]:
+                return
+            cursor = page["endCursor"]
 
     def search_pull_requests(self, q: str, max_pages: int = 8) -> Iterator[dict[str, Any]]:
         cursor: str | None = None
@@ -326,6 +363,58 @@ def project_docs(repo_slug: str, docs: dict[str, Any], commit: dict[str, Any]) -
             url=f"https://github.com/{repo_slug}/blob/{commit['oid']}/{kind.upper()}.md",
             timestamp=when,
             payload=payload,
+        )
+
+
+def project_issues(repo_slug: str, nodes: Iterable[dict[str, Any]]) -> Iterator[EvidenceRecord]:
+    """Issue events. Opening is pre-cutoff evidence; being resolved is the label."""
+    for issue in nodes:
+        number = issue["number"]
+        base = f"issue:{repo_slug}#{number}"
+        url = f"https://github.com/{repo_slug}/issues/{number}"
+        body = issue.get("body") or ""
+
+        yield EvidenceRecord(
+            evidence_id=f"{base}:opened",
+            source="github",
+            url=url,
+            timestamp=_ts(issue["createdAt"]),
+            payload={
+                "title": issue.get("title"),
+                "body": body[:MAX_ISSUE_BODY],
+                "body_truncated": len(body) > MAX_ISSUE_BODY,
+                "labels": [n["name"] for n in (issue.get("labels") or {}).get("nodes", [])],
+                "comments": (issue.get("comments") or {}).get("totalCount", 0),
+                "author": _login(issue.get("author")),
+                # The body GitHub returns is the current one, not the one that
+                # existed at the cutoff. `lastEditedAt` is null unless the body
+                # itself was edited; `updatedAt` bumps on any comment or label
+                # change, and using it measured "had activity" rather than "was
+                # edited" -- reporting a 100% leak that was not real.
+                "last_edited_at": issue.get("lastEditedAt"),
+            },
+        )
+
+        closed_at = _ts(issue.get("closedAt"))
+        if not closed_at:
+            continue
+        merged = [
+            p for p in (issue.get("closedByPullRequestsReferences") or {}).get("nodes", [])
+            if p and p.get("mergedAt")
+        ]
+        yield EvidenceRecord(
+            evidence_id=f"{base}:closed",
+            source="github",
+            url=url,
+            timestamp=closed_at,
+            payload={
+                "resolved_by_merged_pr": bool(merged),
+                "closing_prs": [
+                    {"number": p["number"], "author": _login(p.get("author")),
+                     "author_is_bot": _is_bot(p.get("author"))}
+                    for p in merged
+                ],
+            },
         )
 
 

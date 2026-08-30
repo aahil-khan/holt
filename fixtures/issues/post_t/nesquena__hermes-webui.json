@@ -1,0 +1,913 @@
+{
+ "captured_at": "2026-08-30T10:20:55.163937+00:00",
+ "content_sha256": "d892a8e7a15b7292c1fb0db9e3b7b45f7e069ed9f5fefe795551ac77f747cebe",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3294:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3456
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:33:24+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3294"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3293:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3452
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T00:35:20+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3293"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3288:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T00:35:53+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3288"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3283:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3309
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:13:11+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3283"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3281:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3354
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:52:20+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3281"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3280:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3348
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:34:50+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3280"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3276:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3434
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T19:57:06+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3276"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3260:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 5445
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T20:52:01+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3260"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3246:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3308
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T04:53:33+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3246"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3243:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T04:55:14+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3243"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3239:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3426
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T19:17:55+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3239"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3238:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T00:35:20+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3238"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3232:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:51:13+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3232"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3230:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3682
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:34:56+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3230"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3227:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T02:38:17+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3227"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3226:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T02:38:15+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3226"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3225:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T01:56:43+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3225"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3224:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 4168
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T04:42:14+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3224"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3185:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3683
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:45:17+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3185"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3133:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 4602
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T06:58:41+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3133"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3115:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T01:36:03+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3115"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3108:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T17:50:54+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3108"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3106:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3363
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T00:20:51+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3106"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3100:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 4287
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T01:00:14+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3100"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3079:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3690
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T23:52:30+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3079"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3042:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T20:24:02+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3042"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3040:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:33:53+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3040"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3035:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T01:26:35+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3035"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3014:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T02:45:47+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3014"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3013:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T22:14:06+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3013"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#3007:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3697
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T02:52:53+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/3007"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2977:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T18:22:59+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2977"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2974:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:58:46+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2974"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2962:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T02:20:14+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2962"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2942:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T02:50:25+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2942"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2941:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 4374
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T19:57:01+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2941"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2929:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 5067
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T20:32:41+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2929"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2926:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T02:37:17+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2926"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2850:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T03:21:30+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2850"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2848:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 4275
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T22:41:23+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2848"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2841:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3692
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T00:48:29+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2841"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2833:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:01:35+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2833"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2791:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3857
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T01:47:57+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2791"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2785:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T22:22:17+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2785"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2782:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T02:41:48+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2782"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2781:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rodboev",
+      "author_is_bot": false,
+      "number": 5673
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T17:13:05+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2781"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2780:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T20:44:17+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2780"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2751:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:23:39+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2751"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2734:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T05:05:28+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2734"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2732:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T02:50:27+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2732"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2729:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 5958
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T23:46:14+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2729"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2724:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 5068
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T20:37:52+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2724"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2698:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 4519
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T02:03:03+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2698"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2664:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:47:54+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2664"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2660:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T07:44:37+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2660"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2654:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T22:15:22+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2654"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2645:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:56:29+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2645"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2623:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T03:24:15+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2623"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2590:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:53:21+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2590"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2586:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T02:09:51+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2586"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2577:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 3757
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T01:04:18+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2577"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2559:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:32:59+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2559"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2558:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T00:16:55+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2558"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2555:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:01:29+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2555"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2543:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 4376
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T20:25:12+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2543"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2492:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T16:37:19+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2492"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2481:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T04:41:26+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2481"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2476:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:45:48+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2476"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2467:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:32:57+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2467"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2422:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nesquena-hermes",
+      "author_is_bot": false,
+      "number": 6049
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T01:33:06+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2422"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2403:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T01:31:38+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2403"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2364:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T02:45:46+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2364"
+  },
+  {
+   "evidence_id": "issue:nesquena/hermes-webui#2284:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:47:05+00:00",
+   "url": "https://github.com/nesquena/hermes-webui/issues/2284"
+  }
+ ],
+ "repo": "nesquena/hermes-webui",
+ "window": "post_t"
+}

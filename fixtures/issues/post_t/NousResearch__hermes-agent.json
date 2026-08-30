@@ -1,0 +1,1307 @@
+{
+ "captured_at": "2026-08-30T10:09:51.227952+00:00",
+ "content_sha256": "92b39ec25c6c792242e0f548999384963727fe1c741ca52a4b1cd13f5c48e495",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36131:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 73507
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-28T18:52:46+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36131"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36121:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T08:31:03+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36121"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36120:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T20:06:16+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36120"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36118:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T20:06:10+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36118"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36111:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T20:05:55+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36111"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36109:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 54080
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T09:05:22+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36109"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36108:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T12:50:59+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36108"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36090:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T20:05:06+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36090"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36070:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T20:04:18+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36070"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36054:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T10:55:30+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36054"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36052:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 37133
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:49:52+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36052"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36046:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 63619
+     },
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 63627
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T06:09:43+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36046"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36041:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T20:01:50+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36041"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36037:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 65540
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T12:44:45+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36037"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36031:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T21:14:44+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36031"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36030:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T21:14:48+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36030"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36012:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:10:44+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36012"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#36005:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 65535
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T11:40:36+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/36005"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35994:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kshitijk4poor",
+      "author_is_bot": false,
+      "number": 52090
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T19:04:23+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35994"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35975:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T12:41:40+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35975"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35970:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:08:30+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35970"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35954:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:07:32+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35954"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35936:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:06:25+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35936"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35935:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:07:26+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35935"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35927:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kshitijk4poor",
+      "author_is_bot": false,
+      "number": 53294
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T23:29:25+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35927"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35912:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:05:50+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35912"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35901:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T19:30:22+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35901"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35892:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T02:45:39+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35892"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35876:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:03:51+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35876"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35861:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:03:16+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35861"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35857:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:03:22+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35857"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35848:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:06:00+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35848"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35844:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:02:14+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35844"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35838:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kshitijk4poor",
+      "author_is_bot": false,
+      "number": 85555
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T22:01:24+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35838"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35835:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:43:36+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35835"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35829:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T08:57:21+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35829"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35825:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T23:49:53+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35825"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35823:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 65538
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T11:24:37+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35823"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35819:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:00:52+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35819"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35811:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:00:27+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35811"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35809:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T13:38:31+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35809"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35803:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:00:36+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35803"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35751:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:19:45+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35751"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35750:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:57:20+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35750"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35743:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:56:26+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35743"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35738:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:55:59+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35738"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35736:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:56:11+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35736"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35704:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 73515
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-28T21:06:59+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35704"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35703:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:15:54+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35703"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35696:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T07:44:12+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35696"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35692:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:54:39+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35692"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35685:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:53:49+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35685"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35671:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:53:56+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35671"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35652:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 65419
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T06:51:44+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35652"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35613:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kshitijk4poor",
+      "author_is_bot": false,
+      "number": 42653
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T09:21:14+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35613"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35595:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T19:03:05+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35595"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35580:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SiTaggart",
+      "author_is_bot": false,
+      "number": 35583
+     },
+     {
+      "author": "benbarclay",
+      "author_is_bot": false,
+      "number": 36189
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T02:16:55+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35580"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35578:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:49:37+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35578"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35575:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T17:15:49+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35575"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35574:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:49:22+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35574"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35566:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 65029
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T14:39:19+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35566"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35555:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:05:52+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35555"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35548:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:48:03+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35548"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35527:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 60553
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T23:27:30+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35527"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35519:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 54166
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T11:13:22+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35519"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35517:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:45:52+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35517"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35509:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:45:45+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35509"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35498:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:45:06+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35498"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35497:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:45:31+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35497"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35492:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:44:41+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35492"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35482:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:44:03+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35482"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35474:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T13:20:21+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35474"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35472:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tranquil-Flow",
+      "author_is_bot": false,
+      "number": 36259
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T06:13:47+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35472"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35465:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T08:29:07+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35465"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35459:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T12:36:49+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35459"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35454:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:43:14+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35454"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35443:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:43:05+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35443"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35437:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T08:34:57+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35437"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35425:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 46822
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T19:24:48+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35425"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35423:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:47:42+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35423"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35419:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kshitijk4poor",
+      "author_is_bot": false,
+      "number": 61340
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T08:10:21+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35419"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35409:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T08:37:44+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35409"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35406:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "benbarclay",
+      "author_is_bot": false,
+      "number": 36627
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T01:11:30+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35406"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35404:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T01:56:29+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35404"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35394:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:19:38+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35394"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35376:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kshitijk4poor",
+      "author_is_bot": false,
+      "number": 44082
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T07:20:54+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35376"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35374:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T19:03:03+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35374"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35367:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:45:04+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35367"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35356:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:57:04+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35356"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35326:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:56:05+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35326"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35314:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:05:48+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35314"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35306:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T19:55:43+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35306"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35267:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:11:52+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35267"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35247:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:11:02+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35247"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35242:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T08:30:50+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35242"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35240:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:05:46+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35240"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35230:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T11:45:14+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35230"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35214:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:08:54+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35214"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35209:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kshitijk4poor",
+      "author_is_bot": false,
+      "number": 85452
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T18:13:19+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35209"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35205:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 54076
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T08:38:19+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35205"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35201:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:07:52+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35201"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35192:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:07:39+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35192"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35186:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T02:53:41+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35186"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35166:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 54078
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T09:05:20+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35166"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35164:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T08:07:53+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35164"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35151:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T18:06:59+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35151"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35116:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 65531
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T11:34:59+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35116"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35075:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "teknium1",
+      "author_is_bot": false,
+      "number": 52960
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T08:11:13+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35075"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35059:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T17:32:52+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35059"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35045:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T17:32:03+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35045"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35043:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T08:25:16+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35043"
+  },
+  {
+   "evidence_id": "issue:NousResearch/hermes-agent#35025:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Foldblade",
+      "author_is_bot": false,
+      "number": 35027
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T01:59:45+00:00",
+   "url": "https://github.com/NousResearch/hermes-agent/issues/35025"
+  }
+ ],
+ "repo": "NousResearch/hermes-agent",
+ "window": "post_t"
+}

@@ -1,0 +1,65 @@
+{
+ "captured_at": "2026-08-30T10:10:54.158519+00:00",
+ "content_sha256": "89a7f1eff9855611f2cfa08f7f02b4b109f0f7e73d7e1f78fa87a871bf3ff421",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:netwrix/docs#1013:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T15:40:31+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1013"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1012:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:01:41+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1012"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1011:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:03:16+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1011"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1008:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "hilram7",
+      "author_is_bot": false,
+      "number": 1045
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T14:09:24+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1008"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#918:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T16:52:02+00:00",
+   "url": "https://github.com/netwrix/docs/issues/918"
+  }
+ ],
+ "repo": "netwrix/docs",
+ "window": "post_t"
+}

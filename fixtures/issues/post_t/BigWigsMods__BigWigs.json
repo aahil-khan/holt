@@ -1,0 +1,59 @@
+{
+ "captured_at": "2026-08-30T10:18:17.121148+00:00",
+ "content_sha256": "f317e44003a9a761787d4510acb92d38fbcf21e33ce5a34ddffb3002e65637d6",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:BigWigsMods/BigWigs#2567:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:52:46+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/issues/2567"
+  },
+  {
+   "evidence_id": "issue:BigWigsMods/BigWigs#1825:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:18:55+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/issues/1825"
+  },
+  {
+   "evidence_id": "issue:BigWigsMods/BigWigs#1349:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T15:04:39+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/issues/1349"
+  },
+  {
+   "evidence_id": "issue:BigWigsMods/BigWigs#1330:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T15:05:34+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/issues/1330"
+  },
+  {
+   "evidence_id": "issue:BigWigsMods/BigWigs#1087:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:17:16+00:00",
+   "url": "https://github.com/BigWigsMods/BigWigs/issues/1087"
+  }
+ ],
+ "repo": "BigWigsMods/BigWigs",
+ "window": "post_t"
+}

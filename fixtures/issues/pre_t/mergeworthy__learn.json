@@ -1,0 +1,289 @@
+{
+ "captured_at": "2026-08-30T10:20:32.849241+00:00",
+ "content_sha256": "de703468a6f7443090cd5a9f0d731dbe9e0b23e4269e3a0b36638840d54faf94",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:mergeworthy/learn#15:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "The [contributors wall](../blob/main/contributors.md) has six numbered slots reserved as guaranteed first-PR opportunities. **Slot 6 is open** \u2014 this is the last numbered slot. After this fills, additions go in alphabetically without needing to claim a slot.\n\n## What to do\n\nReplace this line in [`contributors.md`](../blob/main/contributors.md):\n\n```\n6. *Slot 6 \u2014 open. Claim via the corresponding issue.*\n```\n\nwith:\n\n```\n6. [Your Name](https://github.com/your-username) \u2014 first contribution: [PR title](pr-url-once-you-open-it)\n```\n\n## Acceptance criteria\n\n- [ ] Slot 6's placeholder line is replaced with your real entry.\n- [ ] The format matches the existing entry on slot 1: `- [Name](github-profile-url) \u2014 first contribution: [PR title](pr-url)`.\n- [ ] No other slots are modified.\n- [ ] The PR includes `Closes #` referencing this issue.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** Once you claim, it's yours. New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "documentation",
+     "good first issue"
+    ],
+    "last_edited_at": null,
+    "title": "Claim contributor slot 6 in contributors.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:39:13+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/15"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#14:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "The [contributors wall](../blob/main/contributors.md) has six numbered slots reserved as guaranteed first-PR opportunities. **Slot 5 is open.**\n\n## What to do\n\nReplace this line in [`contributors.md`](../blob/main/contributors.md):\n\n```\n5. *Slot 5 \u2014 open. Claim via the corresponding issue.*\n```\n\nwith:\n\n```\n5. [Your Name](https://github.com/your-username) \u2014 first contribution: [PR title](pr-url-once-you-open-it)\n```\n\n## Acceptance criteria\n\n- [ ] Slot 5's placeholder line is replaced with your real entry.\n- [ ] The format matches the existing entry on slot 1: `- [Name](github-profile-url) \u2014 first contribution: [PR title](pr-url)`.\n- [ ] No other slots are modified.\n- [ ] The PR includes `Closes #` referencing this issue.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** Once you claim, it's yours. New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "documentation",
+     "good first issue"
+    ],
+    "last_edited_at": null,
+    "title": "Claim contributor slot 5 in contributors.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:39:11+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/14"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#13:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "The [contributors wall](../blob/main/contributors.md) has six numbered slots reserved as guaranteed first-PR opportunities. **Slot 4 is open.**\n\n## What to do\n\nReplace this line in [`contributors.md`](../blob/main/contributors.md):\n\n```\n4. *Slot 4 \u2014 open. Claim via the corresponding issue.*\n```\n\nwith:\n\n```\n4. [Your Name](https://github.com/your-username) \u2014 first contribution: [PR title](pr-url-once-you-open-it)\n```\n\n## Acceptance criteria\n\n- [ ] Slot 4's placeholder line is replaced with your real entry.\n- [ ] The format matches the existing entry on slot 1: `- [Name](github-profile-url) \u2014 first contribution: [PR title](pr-url)`.\n- [ ] No other slots are modified.\n- [ ] The PR includes `Closes #` referencing this issue.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** Once you claim, it's yours. New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "documentation",
+     "good first issue"
+    ],
+    "last_edited_at": null,
+    "title": "Claim contributor slot 4 in contributors.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:39:07+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/13"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#12:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "The [contributors wall](../blob/main/contributors.md) has six numbered slots reserved as guaranteed first-PR opportunities. **Slot 3 is open.**\n\n## What to do\n\nReplace this line in [`contributors.md`](../blob/main/contributors.md):\n\n```\n3. *Slot 3 \u2014 open. Claim via the corresponding issue.*\n```\n\nwith:\n\n```\n3. [Your Name](https://github.com/your-username) \u2014 first contribution: [PR title](pr-url-once-you-open-it)\n```\n\n## Acceptance criteria\n\n- [ ] Slot 3's placeholder line is replaced with your real entry.\n- [ ] The format matches the existing entry on slot 1: `- [Name](github-profile-url) \u2014 first contribution: [PR title](pr-url)`.\n- [ ] No other slots are modified.\n- [ ] The PR includes `Closes #` referencing this issue.\n\nThe PR can reference itself in the \"first contribution\" link.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** Once you claim, it's yours. New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "documentation",
+     "good first issue"
+    ],
+    "last_edited_at": null,
+    "title": "Claim contributor slot 3 in contributors.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:39:04+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/12"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#11:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "The [contributors wall](../blob/main/contributors.md) has six numbered slots reserved as guaranteed first-PR opportunities. Slot 1 is taken by the maintainer \u2014 **slot 2 is open**.\n\n## What to do\n\nReplace this line in [`contributors.md`](../blob/main/contributors.md):\n\n```\n2. *Slot 2 \u2014 open. Claim via the corresponding issue.*\n```\n\nwith:\n\n```\n2. [Your Name](https://github.com/your-username) \u2014 first contribution: [PR title](pr-url-once-you-open-it)\n```\n\n## Acceptance criteria\n\n- [ ] Slot 2's placeholder line is replaced with your real entry.\n- [ ] The format matches the existing entry on slot 1: `- [Name](github-profile-url) \u2014 first contribution: [PR title](pr-url)`.\n- [ ] No other slots are modified.\n- [ ] The PR includes `Closes #` referencing this issue.\n\nThe PR can reference itself in the \"first contribution\" link \u2014 that's allowed and expected.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** Once you claim, it's yours \u2014 no one else will take it. New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "documentation",
+     "good first issue"
+    ],
+    "last_edited_at": null,
+    "title": "Claim contributor slot 2 in contributors.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:39:02+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/11"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#10:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "[Awesome TypeScript](https://github.com/dzharii/awesome-typescript) is a curated list of TypeScript resources \u2014 fits well in the \"Beginner-friendly project lists\" section since it doubles as a directory of projects to learn from.\n\n## Where it should go\n\n[`resources/typescript/curated-links.md`](../blob/main/resources/typescript/curated-links.md), under **\"Beginner-friendly project lists\"**, in alphabetical order.\n\n## Suggested entry\n\n```\n- [Awesome TypeScript](https://github.com/dzharii/awesome-typescript) \u2014 Curated list of TypeScript libraries, tools, and projects worth learning from.\n```\n\n## Acceptance criteria\n\n- [ ] The entry is added to the \"Beginner-friendly project lists\" section of `resources/typescript/curated-links.md`.\n- [ ] It's placed in correct alphabetical order within the section.\n- [ ] The format matches existing entries: `- [Title](url) \u2014 one-line description.`\n- [ ] No other content is changed.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "resource-addition"
+    ],
+    "last_edited_at": null,
+    "title": "Add Awesome TypeScript to typescript/curated-links.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:39:00+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/10"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#9:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "[Node Weekly](https://nodeweekly.com/) is a Node.js-focused newsletter that complements the existing JavaScript Weekly entry.\n\n## Where it should go\n\n[`resources/javascript/curated-links.md`](../blob/main/resources/javascript/curated-links.md), under **\"Newsletters and blogs\"**, in alphabetical order (it'd go alongside JavaScript Weekly).\n\n## Suggested entry\n\n```\n- [Node Weekly](https://nodeweekly.com/) \u2014 Weekly newsletter focused on Node.js news, articles, and releases.\n```\n\n## Acceptance criteria\n\n- [ ] The entry is added to the \"Newsletters and blogs\" section of `resources/javascript/curated-links.md`.\n- [ ] It's placed in correct alphabetical order within the section.\n- [ ] The format matches existing entries: `- [Title](url) \u2014 one-line description.`\n- [ ] No other content is changed.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "resource-addition"
+    ],
+    "last_edited_at": null,
+    "title": "Add Node Weekly to javascript/curated-links.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:58+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/9"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#8:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "[Total TypeScript](https://www.totaltypescript.com/) by Matt Pocock has free tutorials and is one of the better-known modern TypeScript learning resources.\n\n## Where it should go\n\n[`resources/typescript/curated-links.md`](../blob/main/resources/typescript/curated-links.md), under **\"Learning the language\"**, in alphabetical order.\n\n## Suggested entry\n\n```\n- [Total TypeScript](https://www.totaltypescript.com/) \u2014 Free and paid tutorials focused on practical TypeScript patterns and the type system.\n```\n\n## Acceptance criteria\n\n- [ ] The entry is added to the \"Learning the language\" section of `resources/typescript/curated-links.md`.\n- [ ] It's placed in correct alphabetical order within the section.\n- [ ] The format matches existing entries: `- [Title](url) \u2014 one-line description.`\n- [ ] No other content is changed.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "resource-addition"
+    ],
+    "last_edited_at": null,
+    "title": "Add Total TypeScript to typescript/curated-links.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:55+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/8"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#7:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "[Real Python](https://realpython.com/) is one of the most well-known sites for practical Python tutorials \u2014 it'd be a useful addition to the Python \"Learning the language\" resources.\n\n## Where it should go\n\n[`resources/python/curated-links.md`](../blob/main/resources/python/curated-links.md), under **\"Learning the language\"**, in alphabetical order.\n\n## Suggested entry\n\n```\n- [Real Python](https://realpython.com/) \u2014 In-depth practical tutorials covering Python from beginner to advanced topics.\n```\n\n## Acceptance criteria\n\n- [ ] The entry is added to the \"Learning the language\" section of `resources/python/curated-links.md`.\n- [ ] It's placed in correct alphabetical order within the section.\n- [ ] The format matches existing entries: `- [Title](url) \u2014 one-line description.`\n- [ ] No other content is changed.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "resource-addition"
+    ],
+    "last_edited_at": null,
+    "title": "Add Real Python to python/curated-links.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:52+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/7"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#6:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "[Eloquent JavaScript](https://eloquentjavascript.net/) is a free online book that's widely recommended for beginners learning JavaScript well \u2014 it'd be a great addition to the JS resources list.\n\n## Where it should go\n\n[`resources/javascript/curated-links.md`](../blob/main/resources/javascript/curated-links.md), under the **\"Learning the language\"** section, in alphabetical order (it goes between the existing entries).\n\n## Suggested entry\n\n```\n- [Eloquent JavaScript](https://eloquentjavascript.net/) \u2014 A free online book that teaches JavaScript fundamentals through worked examples and exercises.\n```\n\n## Acceptance criteria\n\n- [ ] The entry is added to the \"Learning the language\" section of `resources/javascript/curated-links.md`.\n- [ ] It's placed in correct alphabetical order within the section.\n- [ ] The format matches existing entries exactly: `- [Title](url) \u2014 one-line description.`\n- [ ] No other content is changed.\n\n## Estimated time\n\n~10 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "resource-addition"
+    ],
+    "last_edited_at": null,
+    "title": "Add Eloquent JavaScript to javascript/curated-links.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:49+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/6"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#5:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "A heading in the \"Your first PR checklist\" guide spells `comitting` with one `t` \u2014 should be `committing`.\n\n## Where\n\n[`guides/your-first-pr-checklist.md`](../blob/main/guides/your-first-pr-checklist.md), the section heading near the top:\n\n> ## Pre-flight: before comitting\n\n## What it should say\n\n> ## Pre-flight: before committing\n\n## Acceptance criteria\n\n- [ ] `comitting` is replaced with `committing` in the heading.\n- [ ] No other text in the file is changed.\n- [ ] The PR is small and focused.\n\n## Estimated time\n\n~5 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "typo"
+    ],
+    "last_edited_at": null,
+    "title": "Fix typo: \"comitting\" \u2192 \"committing\" in your-first-pr-checklist.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:46+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/5"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#4:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "The opening paragraph of the \"Reading a codebase\" guide says `unfimiliar` instead of `unfamiliar`.\n\n## Where\n\n[`guides/reading-a-codebase.md`](../blob/main/guides/reading-a-codebase.md), the first sentence:\n\n> Before you change a line of code in an **unfimiliar** codebase, you need to orient yourself.\n\n## What it should say\n\n> Before you change a line of code in an **unfamiliar** codebase, you need to orient yourself.\n\n## Acceptance criteria\n\n- [ ] `unfimiliar` is replaced with `unfamiliar`.\n- [ ] No other text in the file is changed.\n- [ ] The PR is small and focused.\n\n## Estimated time\n\n~5 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "typo"
+    ],
+    "last_edited_at": null,
+    "title": "Fix typo: \"unfimiliar\" \u2192 \"unfamiliar\" in reading-a-codebase.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:43+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/4"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#3:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "There's a typo in one of the section headings in the \"Finding good first issues\" guide \u2014 `responsivness` is missing an `e`.\n\n## Where\n\n[`guides/finding-good-first-issues.md`](../blob/main/guides/finding-good-first-issues.md), the section heading:\n\n> ### Maintainer responsivness\n\n## What it should say\n\n> ### Maintainer responsiveness\n\n## Acceptance criteria\n\n- [ ] `responsivness` is replaced with `responsiveness` in the heading.\n- [ ] No other text in the file is changed (the heading change should not affect anchor links elsewhere \u2014 none reference this section).\n- [ ] The PR is small and focused.\n\n## Estimated time\n\n~5 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "typo"
+    ],
+    "last_edited_at": null,
+    "title": "Fix typo: \"responsivness\" \u2192 \"responsiveness\" in finding-good-first-issues.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:39+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/3"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#2:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "The README has \"developpers\" (extra `p`) where it should say \"developers\".\n\n## Where\n\n[`README.md`](../blob/main/README.md), in the intro paragraph just under the subtitle:\n\n> ...help **developpers** go from \"I've never merged a PR\" to...\n\n## What it should say\n\n> ...help **developers** go from \"I've never merged a PR\" to...\n\n## Acceptance criteria\n\n- [ ] `developpers` is replaced with `developers` in `README.md`.\n- [ ] No other text in the file is changed.\n- [ ] The PR is small and focused (just this one fix).\n\n## Estimated time\n\n~5 minutes.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it.** New to opening a PR? See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) for a step-by-step walkthrough.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "typo"
+    ],
+    "last_edited_at": null,
+    "title": "Fix typo: \"developpers\" \u2192 \"developers\" in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:32+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/2"
+  },
+  {
+   "evidence_id": "issue:mergeworthy/learn#1:opened",
+   "payload": {
+    "author": "mergeworthy",
+    "body": "There's a typo in the README \u2014 the subtitle blockquote near the top reads \"contibution\" instead of \"contribution\".\n\n## Where\n\n[`README.md`](../blob/main/README.md), in the blockquote at the top of the file:\n\n> Your guide to making your first open source **contibution**.\n\n## What it should say\n\n> Your guide to making your first open source **contribution**.\n\n## Acceptance criteria\n\n- [ ] The word `contibution` is replaced with `contribution` in `README.md`.\n- [ ] No other text in the file is changed.\n- [ ] The PR is small and focused (just this one fix).\n\n## Estimated time\n\n~5 minutes \u2014 this is a great first PR.\n\n## Want to work on this?\n\n**Comment below to claim it before working on it** (something like *\"I'd like to take this on\"*). This prevents two people doing the same fix.\n\nNew to opening a PR? [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) walks through every step.",
+    "body_truncated": false,
+    "comments": 6,
+    "labels": [
+     "documentation",
+     "good first issue",
+     "typo"
+    ],
+    "last_edited_at": null,
+    "title": "Fix typo: \"contibution\" \u2192 \"contribution\" in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:38:19+00:00",
+   "url": "https://github.com/mergeworthy/learn/issues/1"
+  }
+ ],
+ "repo": "mergeworthy/learn",
+ "window": "pre_t"
+}

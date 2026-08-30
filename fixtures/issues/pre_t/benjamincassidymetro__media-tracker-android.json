@@ -1,0 +1,129 @@
+{
+ "captured_at": "2026-08-30T10:19:37.859318+00:00",
+ "content_sha256": "97227e49fa78a02fa1923a7d0355eb2413afb2c5557e3bcbe178195d4130ecd0",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#19:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Profile data might not update correctly after the app is backgrounded"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:19:44+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/19"
+  },
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#18:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "The app freezes for about a second when I open the Library tab"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:19:36+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/18"
+  },
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#17:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Something seems to keep loading in the background after I leave the Library screen"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:19:29+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/17"
+  },
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#16:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Library filter resets every time I rotate my phone"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:19:21+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/16"
+  },
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#15:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "The Register button doesn't do anything"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:19:14+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/15"
+  },
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#14:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "The filter chips on the Library screen get cut off on my phone"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:19:06+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/14"
+  },
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#13:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "The bottom nav bar never highlights the active tab"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:18:58+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/13"
+  },
+  {
+   "evidence_id": "issue:benjamincassidymetro/media-tracker-android#12:opened",
+   "payload": {
+    "author": "benjamincassidymetro",
+    "body": "",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "App crashes when I tap anything in the Library"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T22:18:44+00:00",
+   "url": "https://github.com/benjamincassidymetro/media-tracker-android/issues/12"
+  }
+ ],
+ "repo": "benjamincassidymetro/media-tracker-android",
+ "window": "pre_t"
+}

@@ -1,0 +1,2583 @@
+{
+ "captured_at": "2026-08-30T10:22:02.054782+00:00",
+ "content_sha256": "f17d1e1eca660995979d751b28ca02da2aec2f76fa2b39fd3f417758d6c9021d",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1729:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "HarshitaShakya",
+      "author_is_bot": false,
+      "number": 2163
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T06:39:12+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1729"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1727:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1728
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:43:31+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1727"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1725:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1726
+     },
+     {
+      "author": "Aryan0819",
+      "author_is_bot": false,
+      "number": 1783
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:38:59+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1725"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1723:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1724
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:44:31+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1723"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1721:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1722
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:44:48+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1721"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1717:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1718
+     },
+     {
+      "author": "Goutam-2702",
+      "author_is_bot": false,
+      "number": 1737
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:52:21+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1717"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1715:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1716
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:45:14+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1715"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1712:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Aryan0819",
+      "author_is_bot": false,
+      "number": 1790
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:33:47+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1712"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1710:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1711
+     },
+     {
+      "author": "namithar18",
+      "author_is_bot": false,
+      "number": 1753
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:49:19+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1710"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1708:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YLaxmikanth",
+      "author_is_bot": false,
+      "number": 2101
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:10:06+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1708"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1707:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mythri2405",
+      "author_is_bot": false,
+      "number": 4948
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T07:59:39+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1707"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1706:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rachel-d-07",
+      "author_is_bot": false,
+      "number": 1764
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:41:25+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1706"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1705:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Kokila-chandrakar",
+      "author_is_bot": false,
+      "number": 1709
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:21:23+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1705"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1703:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1704
+     },
+     {
+      "author": "Xenon010101",
+      "author_is_bot": false,
+      "number": 1806
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:28:11+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1703"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1702:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "amanyadavkr098-bot",
+      "author_is_bot": false,
+      "number": 1719
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:44:55+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1702"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1701:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "amanyadavkr098-bot",
+      "author_is_bot": false,
+      "number": 2438
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T11:31:19+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1701"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1699:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1700
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:42:51+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1699"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1697:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1698
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:42:39+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1697"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1696:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kumarishreya-ai-ds",
+      "author_is_bot": false,
+      "number": 1918
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:10:14+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1696"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1694:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1695
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:42:19+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1694"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1692:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T02:59:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1692"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1689:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rajesh-puripanda",
+      "author_is_bot": false,
+      "number": 1690
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:23:22+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1689"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1688:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rajesh-puripanda",
+      "author_is_bot": false,
+      "number": 1691
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:22:21+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1688"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1684:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rajesh-puripanda",
+      "author_is_bot": false,
+      "number": 1687
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:10:13+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1684"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1683:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rajesh-puripanda",
+      "author_is_bot": false,
+      "number": 1685
+     },
+     {
+      "author": "rajesh-puripanda",
+      "author_is_bot": false,
+      "number": 2347
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T03:34:40+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1683"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1682:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "RishiByte",
+      "author_is_bot": false,
+      "number": 1693
+     },
+     {
+      "author": "Apekshaa007",
+      "author_is_bot": false,
+      "number": 1975
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:23:07+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1682"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1673:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1674
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:25:40+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1673"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1671:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "RishiByte",
+      "author_is_bot": false,
+      "number": 2078
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T10:42:15+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1671"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1669:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "bhavyajain0810",
+      "author_is_bot": false,
+      "number": 1681
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:23:50+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1669"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1666:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aanya1407jain",
+      "author_is_bot": false,
+      "number": 1667
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:26:22+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1666"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1664:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1665
+     },
+     {
+      "author": "Ishika-1110",
+      "author_is_bot": false,
+      "number": 1933
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:20:42+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1664"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1663:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "KaparthyReddy",
+      "author_is_bot": false,
+      "number": 2346
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T03:43:33+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1663"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1662:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "KaparthyReddy",
+      "author_is_bot": false,
+      "number": 2345
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T03:34:18+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1662"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1661:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aishwary-vansh",
+      "author_is_bot": false,
+      "number": 1678
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:24:17+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1661"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1660:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "joshnajojo12",
+      "author_is_bot": false,
+      "number": 1805
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T14:15:11+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1660"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1656:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1657
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:22:37+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1656"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1653:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "shrushtigaynar",
+      "author_is_bot": false,
+      "number": 1956
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:20:23+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1653"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1652:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "eshaanag",
+      "author_is_bot": false,
+      "number": 1654
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:26:40+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1652"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1651:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sweetylearner-max",
+      "author_is_bot": false,
+      "number": 3453
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T17:27:43+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1651"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1648:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T03:22:24+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1648"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1646:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1647
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:47:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1646"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1645:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Apekshaa007",
+      "author_is_bot": false,
+      "number": 1655
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:46:51+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1645"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1643:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Kokila-chandrakar",
+      "author_is_bot": false,
+      "number": 1672
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:25:50+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1643"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1641:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Yesha-19",
+      "author_is_bot": false,
+      "number": 1668
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:26:03+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1641"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1640:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kd717913-spec",
+      "author_is_bot": false,
+      "number": 2627
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T17:43:44+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1640"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1636:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "iammissmiller",
+      "author_is_bot": false,
+      "number": 3782
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:23:06+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1636"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1633:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aanya1407jain",
+      "author_is_bot": false,
+      "number": 2762
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T18:13:29+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1633"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1629:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T05:33:47+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1629"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1627:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "adrish-mage",
+      "author_is_bot": false,
+      "number": 1981
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:26:44+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1627"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1623:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T08:50:30+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1623"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1622:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T05:24:50+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1622"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1613:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Krishnx21",
+      "author_is_bot": false,
+      "number": 1748
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:49:51+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1613"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1610:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Akshayab-07",
+      "author_is_bot": false,
+      "number": 1617
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:49:35+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1610"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1609:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "workwithme67",
+      "author_is_bot": false,
+      "number": 2034
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:02:35+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1609"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1606:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aaditya755",
+      "author_is_bot": false,
+      "number": 3082
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T16:48:24+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1606"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1604:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ArshiBansal",
+      "author_is_bot": false,
+      "number": 1801
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:30:13+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1604"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1602:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SRSoham",
+      "author_is_bot": false,
+      "number": 1990
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:24:53+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1602"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1601:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saumyasargam",
+      "author_is_bot": false,
+      "number": 1883
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:21:57+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1601"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1595:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Varshinigurram",
+      "author_is_bot": false,
+      "number": 3168
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T17:53:31+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1595"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1586:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Keerthana-0507",
+      "author_is_bot": false,
+      "number": 1858
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:38:53+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1586"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1585:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Aayush-p10",
+      "author_is_bot": false,
+      "number": 1882
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T19:12:09+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1585"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1584:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DnN04",
+      "author_is_bot": false,
+      "number": 2184
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:46:22+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1584"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1583:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T18:33:21+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1583"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1578:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ashitha0409",
+      "author_is_bot": false,
+      "number": 1850
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:24:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1578"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1574:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T09:44:26+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1574"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1570:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rachel-Mathew25",
+      "author_is_bot": false,
+      "number": 4250
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T10:13:34+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1570"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1569:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Christina1507",
+      "author_is_bot": false,
+      "number": 1802
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:30:01+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1569"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1567:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nishita1797-glitch",
+      "author_is_bot": false,
+      "number": 1815
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T14:09:19+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1567"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1566:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ishika-1110",
+      "author_is_bot": false,
+      "number": 1932
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:20:28+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1566"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1547:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Honey-pg",
+      "author_is_bot": false,
+      "number": 1757
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:08:30+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1547"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1546:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Nencypatel21",
+      "author_is_bot": false,
+      "number": 1550
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:54:25+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1546"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1541:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mahavirb22",
+      "author_is_bot": false,
+      "number": 3592
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T04:25:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1541"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1534:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "manishworkss",
+      "author_is_bot": false,
+      "number": 2025
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:27:07+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1534"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1526:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jyoti-5906",
+      "author_is_bot": false,
+      "number": 1714
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:20:08+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1526"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1505:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "HarshalKushwaha0027",
+      "author_is_bot": false,
+      "number": 2313
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T03:26:31+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1505"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1501:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1502
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:19:40+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1501"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1500:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "joshnajojo12",
+      "author_is_bot": false,
+      "number": 1514
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:18:49+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1500"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1497:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Namratha36",
+      "author_is_bot": false,
+      "number": 1658
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:22:49+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1497"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1496:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ria447",
+      "author_is_bot": false,
+      "number": 3864
+     },
+     {
+      "author": "Rachel-Mathew25",
+      "author_is_bot": false,
+      "number": 4251
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:40:53+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1496"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1494:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Kokila-chandrakar",
+      "author_is_bot": false,
+      "number": 2024
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:27:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1494"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1492:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T16:45:03+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1492"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1475:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Payal430",
+      "author_is_bot": false,
+      "number": 4045
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T07:35:15+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1475"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1470:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sancharidas1327",
+      "author_is_bot": false,
+      "number": 3243
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T15:26:53+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1470"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1468:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "riyaax07",
+      "author_is_bot": false,
+      "number": 2404
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:15:29+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1468"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1466:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "riyaax07",
+      "author_is_bot": false,
+      "number": 2645
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T17:31:08+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1466"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1465:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T18:30:50+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1465"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1462:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yashasviiiii",
+      "author_is_bot": false,
+      "number": 1582
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:51:53+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1462"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1458:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:19:15+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1458"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1444:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sancharidas1327",
+      "author_is_bot": false,
+      "number": 3244
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T15:26:07+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1444"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1437:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rudrakshtank",
+      "author_is_bot": false,
+      "number": 3808
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:25:22+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1437"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1425:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Friizy56",
+      "author_is_bot": false,
+      "number": 1917
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:11:08+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1425"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1414:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T06:20:15+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1414"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1403:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:23:59+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1403"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1402:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T01:14:07+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1402"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1401:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "shreyarani01",
+      "author_is_bot": false,
+      "number": 1679
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:46:14+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1401"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1395:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "abhishekmanegit",
+      "author_is_bot": false,
+      "number": 2906
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T15:49:03+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1395"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1391:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "PremDhakad07",
+      "author_is_bot": false,
+      "number": 1393
+     },
+     {
+      "author": "surajbharsakle07",
+      "author_is_bot": false,
+      "number": 2707
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T18:17:51+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1391"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1389:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "abhishekmanegit",
+      "author_is_bot": false,
+      "number": 2907
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T15:48:51+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1389"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1387:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pooja975-ai",
+      "author_is_bot": false,
+      "number": 1891
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:13:12+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1387"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1384:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SakshiChavan12",
+      "author_is_bot": false,
+      "number": 1412
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:13:43+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1384"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1373:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Bheemeswari497",
+      "author_is_bot": false,
+      "number": 3605
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T08:38:21+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1373"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1364:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "trushi-jasani",
+      "author_is_bot": false,
+      "number": 1436
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:38:17+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1364"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1363:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Khushhalbansal",
+      "author_is_bot": false,
+      "number": 2904
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T15:50:43+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1363"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1362:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mohanapriya-sparks",
+      "author_is_bot": false,
+      "number": 3719
+     },
+     {
+      "author": "Mohanapriya-sparks",
+      "author_is_bot": false,
+      "number": 3725
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T15:20:13+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1362"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1344:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Nancy-3012",
+      "author_is_bot": false,
+      "number": 2866
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T15:35:09+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1344"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1338:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "manassanjaymishra24",
+      "author_is_bot": false,
+      "number": 1394
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T18:22:28+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1338"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1337:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DivyanshSaharan",
+      "author_is_bot": false,
+      "number": 3365
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T17:16:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1337"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1336:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saurabhhhcodes",
+      "author_is_bot": false,
+      "number": 2915
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T15:44:23+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1336"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1325:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rohith-Saran",
+      "author_is_bot": false,
+      "number": 3458
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T17:35:30+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1325"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1321:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rohith-Saran",
+      "author_is_bot": false,
+      "number": 3117
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T17:33:01+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1321"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1314:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T16:45:31+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1314"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1311:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ameenaparvi",
+      "author_is_bot": false,
+      "number": 1438
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:20:43+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1311"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1307:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:03:43+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1307"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1306:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saurabhhhcodes",
+      "author_is_bot": false,
+      "number": 2937
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T16:06:48+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1306"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1304:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nkapoor175",
+      "author_is_bot": false,
+      "number": 1480
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T19:28:03+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1304"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1296:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Anexus5919",
+      "author_is_bot": false,
+      "number": 1647
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:47:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1296"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1292:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ommprasad-programmer",
+      "author_is_bot": false,
+      "number": 1348
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:40:25+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1292"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1291:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yachikadev",
+      "author_is_bot": false,
+      "number": 1309
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:24:03+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1291"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1288:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sancharidas1327",
+      "author_is_bot": false,
+      "number": 3067
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T08:07:54+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1288"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1287:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nidhimaurya19",
+      "author_is_bot": false,
+      "number": 1580
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:52:41+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1287"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1286:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Gopikrishnan20",
+      "author_is_bot": false,
+      "number": 1308
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:16:18+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1286"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1280:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "laxmiprasanna188",
+      "author_is_bot": false,
+      "number": 3209
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T03:08:51+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1280"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1279:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jagnyaseni-panda",
+      "author_is_bot": false,
+      "number": 1333
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:16:28+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1279"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1277:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "prasannaPratapSingh",
+      "author_is_bot": false,
+      "number": 3322
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T16:32:15+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1277"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1276:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saivardhankundala2005-sys",
+      "author_is_bot": false,
+      "number": 3086
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T16:50:09+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1276"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1274:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ArshiBansal",
+      "author_is_bot": false,
+      "number": 1460
+     },
+     {
+      "author": "rpoojaa06-git",
+      "author_is_bot": false,
+      "number": 1899
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T05:16:45+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1274"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1264:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ManishaGurugubelli",
+      "author_is_bot": false,
+      "number": 5034
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T07:49:27+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1264"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1258:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "prasadl18",
+      "author_is_bot": false,
+      "number": 2390
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:29:08+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1258"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1257:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Christina1507",
+      "author_is_bot": false,
+      "number": 1906
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:20:42+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1257"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1256:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T11:43:13+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1256"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1253:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ckprojects77",
+      "author_is_bot": false,
+      "number": 1255
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:25:06+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1253"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1252:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:37:31+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1252"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1251:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "(ghost)",
+      "author_is_bot": false,
+      "number": 4929
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T08:37:32+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1251"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1247:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "NayansiDupare",
+      "author_is_bot": false,
+      "number": 1823
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:43:38+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1247"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1239:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "NayansiDupare",
+      "author_is_bot": false,
+      "number": 1244
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T15:03:35+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1239"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1236:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sanjam3712",
+      "author_is_bot": false,
+      "number": 1243
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:26:24+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1236"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1230:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T08:44:42+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1230"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1229:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "krishpatel2-prog",
+      "author_is_bot": false,
+      "number": 1857
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:38:39+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1229"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1224:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SaurabhSinghRajput-8777",
+      "author_is_bot": false,
+      "number": 2439
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T11:30:24+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1224"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1221:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saurabhhhcodes",
+      "author_is_bot": false,
+      "number": 2936
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T16:09:29+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1221"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1220:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akshayad2006-cmd",
+      "author_is_bot": false,
+      "number": 1268
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:18:11+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1220"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1218:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Bhavikapatel06",
+      "author_is_bot": false,
+      "number": 1260
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:24:46+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1218"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1217:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saurabhhhcodes",
+      "author_is_bot": false,
+      "number": 2939
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T16:06:34+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1217"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1214:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vaishnavi003-svg",
+      "author_is_bot": false,
+      "number": 4304
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T03:44:41+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1214"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1213:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ManishaGurugubelli",
+      "author_is_bot": false,
+      "number": 1313
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:21:07+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1213"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1211:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saurabhhhcodes",
+      "author_is_bot": false,
+      "number": 2913
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T15:45:04+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1211"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1207:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "PremDhakad07",
+      "author_is_bot": false,
+      "number": 1216
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T15:04:19+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1207"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1201:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anand-esc",
+      "author_is_bot": false,
+      "number": 1329
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:19:53+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1201"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1194:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ArshVermaGit",
+      "author_is_bot": false,
+      "number": 1195
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:41:48+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1194"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1191:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ARPANPATRA111",
+      "author_is_bot": false,
+      "number": 3246
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T16:16:58+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1191"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1188:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "toufiq00007",
+      "author_is_bot": false,
+      "number": 3043
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T17:14:39+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1188"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1185:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:56:01+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1185"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1184:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T13:00:25+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1184"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1175:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gowthamrdyy",
+      "author_is_bot": false,
+      "number": 1179
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:47:05+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1175"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1174:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gowthamrdyy",
+      "author_is_bot": false,
+      "number": 1178
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:47:45+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1174"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1173:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gowthamrdyy",
+      "author_is_bot": false,
+      "number": 1177
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:49:44+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1173"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1172:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "rastogiradhika",
+      "author_is_bot": false,
+      "number": 5494
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T08:40:20+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1172"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1169:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chandni5033",
+      "author_is_bot": false,
+      "number": 1283
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:23:53+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1169"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1168:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aryanm9026",
+      "author_is_bot": false,
+      "number": 1446
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:25:34+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1168"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1166:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "PoojaS-1711",
+      "author_is_bot": false,
+      "number": 1181
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:45:08+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1166"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1160:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T19:20:02+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1160"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1155:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "piyusha-chopra",
+      "author_is_bot": false,
+      "number": 1600
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:50:30+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1155"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1149:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nyxsky404",
+      "author_is_bot": false,
+      "number": 1153
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:56:29+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1149"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1146:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Shourya72Krishna",
+      "author_is_bot": false,
+      "number": 1156
+     },
+     {
+      "author": "YerraguntaAjayKumar",
+      "author_is_bot": false,
+      "number": 2332
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T03:32:19+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1146"
+  },
+  {
+   "evidence_id": "issue:ronisarkarexe/story-spark-ai#1145:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SuhaniSnehasini",
+      "author_is_bot": false,
+      "number": 1157
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T13:50:56+00:00",
+   "url": "https://github.com/ronisarkarexe/story-spark-ai/issues/1145"
+  }
+ ],
+ "repo": "ronisarkarexe/story-spark-ai",
+ "window": "post_t"
+}

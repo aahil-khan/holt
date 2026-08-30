@@ -397,3 +397,90 @@ def narrate(
         prompt="\n".join(lines),
         schema=NARRATE_SCHEMA,
     )["summary"]
+
+
+PATHFINDER_SYSTEM = """You are helping an outside developer -- someone with no
+prior connection to a project -- choose which open issue to attempt first.
+
+You are given issues that were open at a fixed point in time, and evidence about
+how the project treated outside contributions before that point.
+
+Rank the issues by one thing only: **how likely is it that an outsider, starting
+from nothing, lands a merged pull request resolving this issue?**
+
+That is not the same as "which issue is most important", and it is not the same
+as "which issue is easiest". Weigh:
+
+  * whether the issue states a concrete, bounded outcome rather than a wish
+  * whether someone could act on it without private context or a design decision
+    only a maintainer can make
+  * whether the report contains enough to reproduce or locate the problem
+  * whether the project's history suggests work of this shape gets merged
+
+An issue labelled for beginners is not automatically a good entry point; many
+are aspirational one-liners nobody has scoped. Judge the text, not the label.
+
+Return at most five, best first. For each, say in one sentence what the person
+would actually do, and cite the issue's evidence id."""
+
+PATHFINDER_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "ranked": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "evidence_id": {"type": "string"},
+                    "first_step": {"type": "string"},
+                    "why": {"type": "string"},
+                },
+                "required": ["evidence_id", "first_step", "why"],
+                "additionalProperties": False,
+            },
+        }
+    },
+    "required": ["ranked"],
+    "additionalProperties": False,
+}
+
+MAX_ISSUES_SHOWN = 40
+
+
+def _render_issue(record: EvidenceRecord) -> str:
+    p = record.payload
+    body = " ".join((p.get("body") or "").split())[:700]
+    return "\n".join([
+        f"--- evidence id: {record.evidence_id}",
+        f"    opened {record.timestamp.date()} by {p.get('author')}; "
+        f"{p.get('comments', 0)} comments; labels: {p.get('labels') or 'none'}",
+        f"    title: {p.get('title')}",
+        f"    {body or '(no description)'}",
+    ])
+
+
+def find_paths(
+    repo: str,
+    issues: list[EvidenceRecord],
+    signals_summary: dict,
+    model: ModelClient,
+) -> list[dict]:
+    """Rank candidate issues. Returns [] when there is nothing worth ranking."""
+    if not issues:
+        return []
+    # Most-discussed first: an issue nobody has said anything about is usually
+    # unscoped, and the sample has to fit in one call.
+    shown = sorted(
+        issues, key=lambda r: r.payload.get("comments", 0), reverse=True
+    )[:MAX_ISSUES_SHOWN]
+
+    prompt = "\n".join(
+        [f"Repository: {repo}", "", "How this project treated outsiders before the cutoff:"]
+        + [f"  {k}: {v}" for k, v in signals_summary.items()]
+        + ["", f"Issues open at the cutoff ({len(shown)} of {len(issues)} shown):", ""]
+        + [_render_issue(r) for r in shown]
+    )
+    return model.complete(
+        label="pathfinder", system=PATHFINDER_SYSTEM, prompt=prompt,
+        schema=PATHFINDER_SCHEMA,
+    )["ranked"]

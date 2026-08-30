@@ -1,0 +1,1555 @@
+{
+ "captured_at": "2026-08-30T10:22:10.039275+00:00",
+ "content_sha256": "07e939c6cb16a09b02b928da95037f607a0e0eece6be2e62c82f511d3c22527c",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#1724:opened",
+   "payload": {
+    "author": "Bfat-6z",
+    "body": "Hi maintainers \u2014 heads-up about a repo-wide spam pattern affecting Algora bounty #560 (and possibly others). Filing this as a fellow contributor who just got hit.\n\n## Pattern\n\nThe user account [@BossChaos](https://github.com/BossChaos) (account age ~1 month, 1 follower, no `[bot]` suffix \u2014 i.e. not an official bot) is posting unsolicited comments on PRs that claim Algora bounties. The comments mimic the legitimate `algora-pbc[bot]` formatting (header `Code Review \u2014 Bounty #560`, structured \"PR / \u2705 / Wallet\" block) and list a hardcoded ETH wallet:\n\n```\n0xdaE5d307339074A24F579dB48e7c639359D94904\n```\n\n## Evidence\n\nThe **same wallet** appears across **94+ PRs in this repo** from many different PR authors \u2014 pattern consistent with brand-impersonation / bounty-hijack:\n\n\ud83d\udd0e [Search: `0xdaE5d307339074A24F579dB48e7c639359D94904` in this repo](https://github.com/search?q=repo%3Aspaceandtimefdn%2Fsxt-proof-of-sql+0xdaE5d307339074A24F579dB48e7c639359D94904+type%3Apr)\n\nExamples of affected PRs (different authors, same fake wallet): #1627, #1636, #1694, #1697, #1549, #1613, #1420, #1301, #1321, #1508, #1510, #1370, and ~80 more.\n\nEtherscan: the wallet has zero transactions across 33 chains ([etherscan](https://etherscan.io/address/0xdaE5d307339074A24F579dB48e7c639359D94904)) \u2014 no legitimate payout history.\n\n## Why it matters\n\nA maintainer skimming a bounty-claim PR may read the official-looking `Code Review \u2014 Bounty #560` header, see the wallet presented as the claim payee, and route a manual payout off-platform to the impersonator. The actual Algora flow pays the PR author's registered Stripe/wallet automatically; the BossChaos comment is noise designed to redirect that.\n\n## Suggested actions\n\n- Consider blocking [@BossChaos](https://github.com/BossChaos) from the repo: Settings \u2192 Moderation \u2192 Interaction limits / Block users\n- Mass-hide the 94+ comments as off-topic (each comment has `...` \u2192 Hide \u2192 Off-topic)\n- Optionally pin a notice that only `algora-pbc[bot]` posts official Algora notifications\n\nFor reference: my own claim is properly registered \u2014 `/claim #560` in PR body, `algora-pbc[bot]` added the bounty-claim label, and my payout will route via my Algora-registered Stripe. I've already posted a warning comment on my own PRs (#1627, #1636) noting the impersonation.\n\nThanks for the bounty program \u2014 the spam is third-party, not on you.\n\ncc @stuarttimwhite @iajoiner @tlovell-sxt\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Brand-impersonation spam: @BossChaos posting fake Algora-style bounty comments across 94+ PRs (wallet 0xdaE5...)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T09:48:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/1724"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#1121:opened",
+   "payload": {
+    "author": "alireza-shirzad",
+    "body": "Is there any benchmark for the system on TPCH queries?",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "TPCH Benchmark"
+   },
+   "source": "github",
+   "timestamp": "2026-01-22T02:12:30+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/1121"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#1113:opened",
+   "payload": {
+    "author": "nicolalandro",
+    "body": "# Background and Motivation\nI try to get started to undestand and use it as a verifyable DB but the hello world linked is not present anymore. The old one [v0.117.5](https://github.com/spaceandtimefdn/sxt-proof-of-sql/blob/v0.117.5/crates/proof-of-sql/examples/hello_world/main.rs) seams not work now.\n\nHow can I create a simple table and test some query with verifier? Can I split verifier and database into two different container/vm?\n\n# Changes Required\nSimple getting started documentation. (Maybe very small with docker on CPU only to understand the basics, without blockchain)\n",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Hello world is not present anymore"
+   },
+   "source": "github",
+   "timestamp": "2025-12-19T14:12:26+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/1113"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#843:opened",
+   "payload": {
+    "author": "waelsy123",
+    "body": "# Background and Motivation\nCurrently the PoSQL verifier library for solidity export a public method instead of internal method which force EVM to deploy this lib to dedicated addresses therefore increase the gas consumption when calling it as public. \nhttps://github.com/spaceandtimefdn/sxt-proof-of-sql/blob/2939c1ef99996cb72e21b175bdc82426fb4a6166/solidity/src/verifier/Verifier.post.sol#L9-L15\n\n\n# Changes Required\nChange method visibility to internal and fix test cases ",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2025-05-13T12:19:32Z",
+    "title": "Expose internal verify method from solidity evm ZK PoSQL verifier"
+   },
+   "source": "github",
+   "timestamp": "2025-05-13T12:19:06+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/843"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#790:opened",
+   "payload": {
+    "author": "Gmhax",
+    "body": "Description:\n\nI propose adding a query optimizer for join operations in the Proof of SQL engine to improve performance by selecting the most efficient join order based on table sizes and indexes. This will enhance query execution speed for complex SQL queries involving multiple joins.\n\nProposed Solution:\n\n- Add a new module query_optimizer.rs to analyze join operations.\n- Implement a cost-based optimizer that evaluates table sizes and available indexes.\n- Update the query planner to integrate the optimizer\u2019s recommendations.\n- Include unit tests to validate the optimizer\u2019s behavior for various join scenarios (e.g., inner joins, left joins).\n- Document the public APIs in query_optimizer.rs using Rust\u2019s documentation style.\n\nExpected Benefits:\n- Reduced execution time for queries with multiple joins.\n- Improved scalability for large datasets.\n- Better alignment with industry-standard SQL optimization techniques.\n\nTasks:\n- Design the cost-based optimization algorithm.\n- Implement the optimizer in query_optimizer.rs.\n- Add unit tests in tests/query_optimizer.rs.\n- Update documentation in README.md or relevant files.\n- Run performance benchmarks to compare before/after optimization.\n\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "Add query optimizer for join operations"
+   },
+   "source": "github",
+   "timestamp": "2025-04-24T15:27:30+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/790"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#597:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "**Is your feature request related to a problem? Please describe.**\nWe need to check that we can compile `proof-of-sql-planner` into WASM.\n\n**Describe the solution you'd like**\nWe need some changes around here: https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/.github/workflows/lint-and-test.yml#L75-L78",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "Add a wasm target to the CI"
+   },
+   "source": "github",
+   "timestamp": "2025-03-05T18:00:06+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/597"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#582:opened",
+   "payload": {
+    "author": "stuarttimwhite",
+    "body": "# Background and Motivation\nThere are some places within our test code where there is syntactically inefficient code. Here are two examples:\n1. Initializing a `Vec<TestScalar>` with\n `vec![TestScalar::from(1), TestScalar::from(2), ...]`, instead of \n`[1, 2, ...].map(TestScalar::from).into_iter().collect()` or something similar. \nSometimes these vecs should be used as slices anyway, in which case the iter and collect steps aren't necessary.\n2. Some files will have several very similar tests with only little variation but have no centralization of the common functionality. For example, look at the tests in `/src/base/database/table_test_accessor_test.rs`. Each test starts with a very similar setup. That could be centralized in one utility function.\n\nIt would be very nice to reduce this unnecessary boilerplate code.\n# Changes Required\nReduction in unnecessary extra boilerplate code. This doesn't have to be restricted to test code, but that tends to be the area with a lot of unnecessary extra code. No need to restrict yourself to the two examples above. We generally like to keep macros out of our code base, but we'll consider it if you want to use a macro.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "chore: reduce boilerplate code"
+   },
+   "source": "github",
+   "timestamp": "2025-02-27T15:48:47+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/582"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#560:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\n\nCurrently, the repo has 2292 uncovered lines of code. We should have 100% test coverage.\n\nNote: this can/should be broken down into smaller PRs that each cover something different. Multiple contributors can work on it in parallel.\n\n# Changes Required\n\n- [ ] Add test coverage for uncovered code. This could mean removing dead code or adding annotations so that lines are not included in the coverage report.\n    - NOTE: 100% test coverage does _NOT_ mean tests are good. The tests that you add will be reviewed to ensure that they are, in fact, high quality. This is very dependent on the individual test.",
+    "body_truncated": false,
+    "comments": 548,
+    "labels": [
+     "\ud83d\udc8e Bounty",
+     "$200"
+    ],
+    "last_edited_at": "2025-02-20T23:45:08Z",
+    "title": "test: improve test coverage"
+   },
+   "source": "github",
+   "timestamp": "2025-02-19T12:11:52+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/560"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#559:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\n\nThe `record_batch!` macro leads to code complexity and maintenance overhead, but has minimal use: primarily in test.\n\n# Changes Required\n\n- [x] Remove the entire `record_batch_utility` module and replace uses of `record_batch!` with direct `arrow` usage.\n- [x] Ensure that tests are functionally unchanged.",
+    "body_truncated": false,
+    "comments": 5,
+    "labels": [
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released"
+    ],
+    "last_edited_at": "2025-02-19T20:06:32Z",
+    "title": "chore: remove `record_batch_utility`"
+   },
+   "source": "github",
+   "timestamp": "2025-02-19T11:49:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/559"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#559:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "varshith257",
+      "author_is_bot": false,
+      "number": 561
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2025-02-19T19:57:33+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/559"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#557:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\n\nCurrently, running all the tests takes a long time: almost 15 min on my local machine.\n\n# Changes Required\n\nReduce the test times, without removing or weakening any tests.\n\nEDIT: More broadly, any improvement to the overall CI runtimes are welcome changes and will qualify for the bounty. This ultimately the main goal of this issue, with a secondary goal being faster local development work.\n\n- [ ] The most obvious and easiest way to improve the performance is by caching the Dory setups. I believe (although have not confirmed) that `PublicParameters::test_rand`, `ProverSetup::from`, and `VerifierSetup::from` are taking up over half of the entire test suite time.\n    - This could be done by either saving test setups to a file if they are not found, by simply committing test versions to the repo, or some other approach. I am open to creative solutions.\n\n\nBelow is a the output of `cargo nextest run -j1 --all-features | grep -v \"\\[   \"`.\n\n```\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.14s\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n Nextest run ID 045165c7-1b36-4116-94aa-fb64511d54e7 with nextest profile: default\n    Starting 1506 tests across 7 binaries (2 tests skipped)\n        PASS [  14.648s] proof-of-sql proof_primitive::dory::dory_commitment_evaluation_proof_test::test_random_ipa_with_length_1\n        PASS [  57.824s] proof-of-sql proof_primitive::dory::dory_commitment_evaluation_proof_test::test_random_ipa_with_various_lengths\n        PASS [  14.638s] proof-of-sql proof_primitive::dory::dory_commitment_evaluation_proof_test::test_simple_ipa\n        PASS [  23.490s] proof-of-sql proof_primitive::dory::dynamic_dory_commitment_evaluation_proof_test::test_random_ipa_with_various_lengths\n        PASS [  10.478s] proof-of-sql proof_primitive::dory::setup_test::we_can_create_prover_setups_with_various_sizes\n        PASS [  10.288s] proof-of-sql sql::proof_exprs::inequality_expr_test::we_can_compare_columns_with_extreme_values\n        PASS [  13.511s] proof-of-sql sql::proof_plans::sort_merge_join_exec_test::we_can_prove_and_get_the_correct_result_from_a_complex_query_involving_two_sort_merge_joins\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n     Summary [ 814.675s] 1506 tests run: 1506 passed, 2 skipped\n```",
+    "body_truncated": false,
+    "comments": 84,
+    "labels": [
+     "\ud83d\udc8e Bounty"
+    ],
+    "last_edited_at": "2025-03-07T02:06:28Z",
+    "title": "test: improve test performance"
+   },
+   "source": "github",
+   "timestamp": "2025-02-18T14:37:16+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/557"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#548:opened",
+   "payload": {
+    "author": "lovetoacess",
+    "body": "**Describe the bug**\nA clear and concise description of what the bug is.\n\n**To Reproduce**\nPlease provide a minimal example of what causes the bug. This allows us to identify the root cause and fix it more quickly.\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Additional context**\nAdd any other context about the problem here.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "what is the public"
+   },
+   "source": "github",
+   "timestamp": "2025-02-13T15:43:40+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/548"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#548:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-02-18T14:22:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/548"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#545:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\n\nCurrently, we have been using `allow` to allow clippy lints on a case-by-case basis. Using `expect` is the better solution to this.\n\nSee https://blog.rust-lang.org/2024/09/05/Rust-1.81.0.html#expectlint.\n\nSee the conversation here for an example of why this is useful: https://github.com/spaceandtimelabs/sxt-proof-of-sql/pull/539#discussion_r1951980743.\n\n# Changes Required\n\n- [x] Add `allow_attributes = \"warn\"` to the `Cargo.toml` file and make any necessary changes.",
+    "body_truncated": false,
+    "comments": 10,
+    "labels": [
+     "\ud83d\udc8e Bounty"
+    ],
+    "last_edited_at": "2025-04-08T20:14:13Z",
+    "title": "chore: transition from `allow` to `expect` for turning off clippy lints"
+   },
+   "source": "github",
+   "timestamp": "2025-02-13T03:56:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/545"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#545:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-04-08T22:42:12+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/545"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#521:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "## Experiment Description\n\nThese benchmarks compare two different mechanisms for verifying that a set of random scalar values lies within a certain range:\n- **SignExpr through inequality** (treating scalars as full width, 2^248)\n- **Range check construction** (on both u16 and u8)\n\nBoth experiments were run using the dynamic Dory proof system with a nu value of 16 on an NVIDIA A100 multi-GPU setup. The table below summarizes the timings for sequential and fully-random inputs, as well as varying input sizes.\n\n---\n\n## Single-Value Results (size = 1_000_000)\n\n| Experiment                                                | Time   |\n|-----------------------------------------------------------|-------:|\n| trace fully random SignExpr through inequality            | 52.3s  |\n| trace fully random rangecheck on u16s                     | 8.97s  |\n| trace sequential 0 to 1 million SignExpr through inequality | 7.35s  |\n| trace sequential 0 to 1 million rangecheck on u16s        | 8.7s   |\n\n---\n\n## Fully Random Inputs\n\n### SignExpr (2^248) Through Inequality\n\n| Input Size  | Time      |\n|-------------|----------:|\n| 1000        | 532.22ms  |\n| 1,000,000   | 52.3s     |\n| 10,000,000  | 3m 40s    |\n\n### Rangecheck on u16s\n\n| Input Size  | Time    |\n|-------------|--------:|\n| 1000        | 2.78s   |\n| 1,000,000   | 8.97s   |\n| 10,000,000  | 36.4s   |\n\n### Rangecheck on u8s\n\n| Input Size  | Time     |\n|-------------|---------:|\n| 1000        | 352.8ms  |\n| 1,000,000   | 14.3s    |\n| 10,000,000  | 1m       |",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Benching range check mechanisms"
+   },
+   "source": "github",
+   "timestamp": "2025-02-03T08:57:32+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/521"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#494:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "**Describe the bug**\nThere is a conflict arising from multiple versions of the `opentelemetry` crate being pulled into the same dependency graph, causing the compiler to see traits (like `Tracer`) as coming from different crates. Despite explicitly aligning dependencies (e.g., `opentelemetry`, `opentelemetry-jaeger`, and `tracing-opentelemetry`) to the same version, transitive dependencies still bring in older or newer `opentelemetry` versions. This leads to errors such as \u201cthe trait comes from a different crate version,\u201d as well as a nested \u201coverflow evaluating the requirement\u201d involving `ordered_float` and `thrift`. The issue persists when building or testing, resulting in compilation failures and Clippy checks that cannot complete successfully.\n\n\n**To Reproduce**\n\nBelow is a minimal project setup demonstrating the issue. Attempting to build this project will produce errors related to multiple versions of the `opentelemetry` crate.\n\n\nPlace the following code in any testing module (This behavior was originally reserved in the range check test plan)\n```rust\n  init_backend();\n\n  use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, EnvFilter};\n\n  let tracer = opentelemetry_jaeger::new_agent_pipeline()\n      .with_service_name(\"benches\")\n      .install_simple()\n      .unwrap();\n\n  let opentelemetry = tracing_opentelemetry::layer().with_tracer(tracer);\n\n  let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new(\"DEBUG\"));\n\n  tracing_subscriber::registry()\n      .with(opentelemetry)\n      .with(filter)\n      .try_init()\n      .unwrap();\n```\n(Note this may or may not work, the behavior is very inconsistent.)\n\n**Expected behavior**\nAfter aligning the `opentelemetry` dependencies to a single version, we expect the project to compile successfully without trait-version conflicts. The Jaeger tracer should install cleanly, allowing spans to be emitted through `tracing-opentelemetry` or any other instrumentation layer, with no errors related to multiple `opentelemetry` crates in the dependency graph.\n\n**Additional context**\n- This conflict often arises when multiple crates (like `opentelemetry-jaeger` and `tracing-opentelemetry`) have different semver ranges for `opentelemetry`, pulling in mismatched versions (e.g., `0.21.x` and `0.22.x`).\n- The issue can manifest as both trait-incompatibility errors (`the trait comes from a different crate version`) and infinite nesting errors for crates like `ordered-float`, especially if `thrift` is involved.\n- Workarounds might? involve consolidating all crates on the same version of `opentelemetry` (this failed in my attempts so far) (and possibly `thrift`), or using the HTTP transport instead of Thrift to avoid older `ordered-float`. (havent tried this yet)\n\n",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": "2025-01-20T18:49:07Z",
+    "title": "Jaeger overflow error from OrderedFloat"
+   },
+   "source": "github",
+   "timestamp": "2025-01-20T09:03:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/494"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#464:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "# Bug Report: Proof Breakdown in InnerProductProof System for RangeCheck\r\n\r\n## Describe the Bug\r\n\r\nThe bug is found on [this branch](https://github.com/spaceandtimelabs/sxt-proof-of-sql/tree/feat/range-check-arbitrary-word-columns)\r\n\r\nGo directly to the failing test [here](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/bb7d8c8addafbbb906b6be199a5a2bf1e6b333da/crates/proof-of-sql/src/sql/proof_gadgets/range_check_test.rs#L329-L362)\r\n\r\nThe `InnerProductProof` system fails to verify a column of scalars when the range includes values up to `10241`, while the same proof system works correctly for ranges up to `10240`. Notably, the `DoryProof` system verifies the same range (`0..10241`) without any issues.\r\n\r\n## To Reproduce\r\n### Minimal Example\r\nHere is a minimal test that reproduces the issue in the `InnerProductProof` system:\r\n\r\n```rust\r\n#[test]\r\nfn ipa_proof_breaks_down_on_range_check() {\r\n    // Create a column of scalars from 0 to 10240\r\n    let data = owned_table::<Curve25519Scalar>([scalar(\"a\", 0..10240)]);\r\n    let t = \"sxt.t\".parse().unwrap();\r\n    let accessor = OwnedTableTestAccessor::<InnerProductProof>::new_from_table(t, data, 0, ());\r\n    let ast = RangeCheckTestPlan {\r\n        column: ColumnRef::new(t, \"a\".into(), ColumnType::Scalar),\r\n    };\r\n    let verifiable_res = VerifiableQueryResult::<InnerProductProof>::new(&ast, &accessor, &());\r\n    let res: Result<QueryData<MontScalar<ark_curve25519::FrConfig>>, QueryError> =\r\n        verifiable_res.verify(&ast, &accessor, &());\r\n    assert!(res.is_ok());\r\n\r\n    // Now create a column of scalars from 0 to 10241\r\n    let data = owned_table::<Curve25519Scalar>([scalar(\"a\", 0..10241)]);\r\n    let t = \"sxt.t\".parse().unwrap();\r\n    let accessor = OwnedTableTestAccessor::<InnerProductProof>::new_from_table(t, data, 0, ());\r\n    let ast = RangeCheckTestPlan {\r\n        column: ColumnRef::new(t, \"a\".into(), ColumnType::Scalar),\r\n    };\r\n    let verifiable_res = VerifiableQueryResult::<InnerProductProof>::new(&ast, &accessor, &());\r\n    let res: Result<QueryData<MontScalar<ark_curve25519::FrConfig>>, QueryError> =\r\n        verifiable_res.verify(&ast, &accessor, &());\r\n\r\n    if let Err(e) = res {\r\n        panic!(\"Verification failed: {e}\");\r\n    }\r\n}\r\n\r\n```\r\n\r\n## Steps to Reproduce with DoryProof\r\nTo confirm that the issue is specific to InnerProductProof, use the following test, which successfully verifies the range 0..10241 under the DoryProof system:\r\n\r\n```rust\r\n#[test]\r\nfn testing_dory_range_check_boundary_conditions() {\r\n    let blitzar_handle_path = std::env::var(\"BLITZAR_HANDLE_PATH\")\r\n        .expect(\"Environment variable BLITZAR_HANDLE_PATH not set\");\r\n    let public_parameters_path = std::env::var(\"PUBLIC_PARAMETERS_PATH\")\r\n        .expect(\"Environment variable PUBLIC_PARAMETERS_PATH not set\");\r\n    let verifier_setup_path = std::env::var(\"VERIFIER_SETUP_PATH\")\r\n        .expect(\"Environment variable VERIFIER_SETUP_PATH not set\");\r\n\r\n    let handle = blitzar::compute::MsmHandle::new_from_file(&blitzar_handle_path);\r\n    let public_parameters =\r\n        PublicParameters::load_from_file(Path::new(&public_parameters_path)).unwrap();\r\n\r\n    let prover_setup =\r\n        ProverSetup::from_public_parameters_and_blitzar_handle(&public_parameters, handle);\r\n    let verifier_setup = VerifierSetup::load_from_file(Path::new(&verifier_setup_path))\r\n        .expect(\"Failed to load VerifierSetup\");\r\n\r\n    let t = \"sxt.t\".parse().unwrap();\r\n    let mut accessor =\r\n        OwnedTableTestAccessor::<DynamicDoryEvaluationProof>::new_empty_with_setup(\r\n            &prover_setup,\r\n        );\r\n\r\n    accessor.add_table(\r\n        \"sxt.t\".parse().unwrap(),\r\n        owned_table::<DoryScalar>([scalar(\"a\", 0..10241)]),\r\n        0,\r\n    );\r\n\r\n    let ast = RangeCheckTestPlan {\r\n        column: ColumnRef::new(t, \"a\".into(), ColumnType::Scalar),\r\n    };\r\n\r\n    let verifiable_res = VerifiableQueryResult::<DynamicDoryEvaluationProof>::new(\r\n        &ast,\r\n        &accessor,\r\n        &&prover_setup,",
+    "body_truncated": true,
+    "comments": 2,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": "2025-01-10T03:06:26Z",
+    "title": "IPA seems to break down during range check proof while Dory seems to be ok"
+   },
+   "source": "github",
+   "timestamp": "2025-01-10T02:57:02+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/464"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#464:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-01-22T19:15:10+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/464"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#394:opened",
+   "payload": {
+    "author": "Lengxiaoyi",
+    "body": "Hi\uff0cI paid attention to zksql when I was looking through the paper recently and reviewed TPC- H based on the code in the paper, I found that performing a join operation, which was not mentioned in the paper, would lead to memory overflow, and suggested that this project could measure the program's running maximum memory after implementing the sql inner_join operator, and it would be a more convincing proof of the correctness of the program selection. Good luck!\r\n",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "enhancement",
+     "released"
+    ],
+    "last_edited_at": null,
+    "title": "feat: SQL Inner Join Operation"
+   },
+   "source": "github",
+   "timestamp": "2024-11-26T07:32:39+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/394"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#394:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "iajoiner",
+      "author_is_bot": false,
+      "number": 496
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2025-02-05T19:00:47+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/394"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#393:opened",
+   "payload": {
+    "author": "Lengxiaoyi",
+    "body": "# Background and Motivation\r\nHi, when I run the example example using only the CPU, I find that when I set const DORY_SETUP_MAX_NU: usize = 13, the time will only consume roughly 10s, and when I set it to 15, the time consumes 49s, and the performance of the CPU I'm using is pretty much the same as described in the code, but when I use the blitzar feature I find that the time transformations can increase by 2 squares with the DORY_SETUP_MAX_NU number setting, which is not GPU enabled in the dory setting. The time transform can increase by 2 squares with the number setting of DORY_SETUP_MAX_NU, the GPU was not enabled at the time of the dory setting I can't pinpoint the cause of the problem need your help, good luck!\r\n# Changes Required\r\nPlease help me understand this.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Some questions about Dory setup"
+   },
+   "source": "github",
+   "timestamp": "2024-11-26T07:26:30+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/393"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#393:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-11-26T16:51:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/393"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#383:opened",
+   "payload": {
+    "author": "Lengxiaoyi",
+    "body": "Could you consider making GPU compilation optimizations for the Mac system? Currently, it is not possible to compile according to the work instructions on non-Linux machines and those without GPU resources. Good luck.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "enhancement",
+     "released"
+    ],
+    "last_edited_at": null,
+    "title": "Is it possible to add support for the ARM architecture?"
+   },
+   "source": "github",
+   "timestamp": "2024-11-20T02:31:22+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/383"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#383:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "tlovell-sxt",
+      "author_is_bot": false,
+      "number": 386
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-11-20T22:57:51+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/383"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#356:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\n\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\n\n# Changes Required\n\n- [ ] Before we get started make sure that all previous issues are complete:\n  - [x] #348 \n  - [x] #349 \n  - [x] #350 \n  - [x] #351 \n  - [x] #352 \n  - [x] #353 \n  - [x] #354 \n  - [x] #355 \n- [x] Remove the workspace & the `proof-of-sql-parser` crate",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "refactor"
+    ],
+    "last_edited_at": "2025-08-28T20:37:34Z",
+    "title": "Simplify the repo to the `proof-of-sql` crate once sqlparser adaptation is complete"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:49:12+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/356"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#356:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-08-28T20:37:51+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/356"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#355:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\r\n\r\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\r\n\r\n# Changes Required\r\n\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::SelectResultExpr` with `sqlparser::ast::SelectItem` in the `proof-of-sql` crate.\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::SetExpression` with `sqlparser::ast::Select` in the `proof-of-sql` crate.\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::SelectStatement` with `sqlparser::ast::Query` in the `proof-of-sql` crate.\r\n- [ ] Once this issue is complete there should be no instances of any construct from the `proof-of-sql-parser` in the `proof-of-sql` crate.\r\n\r\nNote that this issue is blocked until all previous issues related to sqlparser refactoring are complete.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "refactor"
+    ],
+    "last_edited_at": null,
+    "title": "Replace `proof_of_sql_parser::intermediate_ast::SelectStatement` with `sqlparser::ast::Query` in the `proof-of-sql` crate"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:44:11+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/355"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#355:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-03-13T20:16:18+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/355"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#354:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\n\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\n\n# Changes Required\n\n- [x] Replace `proof_of_sql_parser::intermediate_ast::OrderBy` with `sqlparser::ast::OrderByExpr` in the `proof-of-sql` crate.",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "refactor"
+    ],
+    "last_edited_at": "2025-02-18T17:57:08Z",
+    "title": "Replace `proof_of_sql_parser::intermediate_ast::OrderBy` with `sqlparser::ast::OrderByExpr` in the `proof-of-sql` crate"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:38:07+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/354"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#354:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-02-18T17:57:28+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/354"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#353:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\r\n\r\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\r\n\r\n# Changes Required\r\n\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::Literal` with `sqlparser::ast::Expr` in the `proof-of-sql` crate.\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::Expression` with `sqlparser::ast::Expr` in the `proof-of-sql` crate.\r\n \r\nNotes:\r\n- This issue is blocked until the following issues are complete:\r\n  - #348 \r\n  - #349 \r\n  - #350 \r\n  - #351 \r\n  - #352\r\n- The reason why we want to cast `Literal` to `Expr` as opposed to `Value` is that `Value` doesn't handle timestamp type. If you have a clever solution that can use `Value` instead of `Literal` it is even better but using `Expr` is what we currently expect.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "refactor"
+    ],
+    "last_edited_at": "2024-11-07T19:30:45Z",
+    "title": "Replace  `proof_of_sql_parser::intermediate_ast::Literal` and `proof_of_sql_parser::intermediate_ast::Expression` with `sqlparser::ast::Expr` in the `proof-of-sql` crate"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:29:59+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/353"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#353:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-03-13T20:16:00+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/353"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#352:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\r\n\r\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\r\n\r\n# Changes Required\r\n\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::ResourceId` with `Vec<sqlparser::ast::Ident>` or `sqlparser::ast::ObjectName` in the `proof-of-sql` crate.\r\n \r\nNote that this issue is blocked until #350 is complete.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "released",
+     "refactor"
+    ],
+    "last_edited_at": "2024-11-07T19:23:49Z",
+    "title": "Replace `proof_of_sql_parser::intermediate_ast::ResourceId` with `Vec<sqlparser::ast::Ident>` or `sqlparser::ast::ObjectName` in the `proof-of-sql` crate"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:23:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/352"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#352:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "varshith257",
+      "author_is_bot": false,
+      "number": 449
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2025-02-07T00:28:04+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/352"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#351:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\r\n\r\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\r\n\r\n# Changes Required\r\n- [ ] Adapt `proof_of_sql_parser::posql_time` to `sqlparser`\r\n\r\nThis task requires further breakdowns. Please make sure to post your plan here and discuss with @Dustin-Ray , @JayWhite2357 or I before starting your work. \r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "refactor"
+    ],
+    "last_edited_at": "2024-11-07T19:16:53Z",
+    "title": "Adapt `proof_of_sql_parser::posql_time` to `sqlparser`"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:14:48+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/351"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#351:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-03-13T20:05:52+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/351"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#350:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\r\n\r\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\r\n\r\n# Changes Required\r\n\r\n- [ ] Replace `proof_of_sql_parser::Identifier` with `sqlparser::ast::Ident` in the `proof-of-sql` crate.\r\n- [ ] Do not add any constraint for identifier length. Any valid `sqlparser::ast::Ident` should be legit PoSQL identifiers from now on.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "refactor"
+    ],
+    "last_edited_at": null,
+    "title": "Replace `proof_of_sql_parser::Identifier` with `sqlparser::ast::Ident` in the `proof-of-sql` crate"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:10:07+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/350"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#350:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-12-16T21:22:58+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/350"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#349:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\r\n\r\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\r\n\r\n# Changes Required\r\n\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::BinaryOp` with `sqlparser::ast::BinaryOp` in the `proof-of-sql` crate.\r\n- [ ] Make sure no functionality is lost.\r\n- [ ] If necessary add error enum variants for unary ops in sqlparser that we don't support yet.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "released",
+     "refactor"
+    ],
+    "last_edited_at": null,
+    "title": "Replace `proof_of_sql_parser::intermediate_ast::BinaryOp` with `sqlparser::ast::BinaryOp` in the `proof-of-sql` crate"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T19:06:59+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/349"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#349:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "varshith257",
+      "author_is_bot": false,
+      "number": 362
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-11-17T13:06:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/349"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#348:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nThis issue is a subtask in https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/235. In short since we plan to add more SQL features we plan to switch to the [`sqlparser`](https://crates.io/crates/sqlparser) crate which is a feature-rich, `no_std`-compatible parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem.\r\n\r\nRight now we already have [some code](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql-parser/src/sqlparser.rs) that can convert intermediate AST from `proof-of-sql-parser` we use to sqlparser AST. Now we need to systematically replace instances of `proof-of-sql-parser` constructs with their corresponding sqlparser ones.\r\n\r\n# Changes Required\r\n\r\n- [ ] Replace `proof_of_sql_parser::intermediate_ast::UnaryOp` with `sqlparser::ast::UnaryOp` in the `proof-of-sql` crate.\r\n- [ ] Make sure no functionality is lost.\r\n- [ ] If necessary add error enum variants for unary ops in sqlparser that we don't support yet.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "refactor"
+    ],
+    "last_edited_at": null,
+    "title": "Replace `proof_of_sql_parser::intermediate_ast::UnaryOp` with `sqlparser::ast::UnaryOp` in the `proof-of-sql` crate"
+   },
+   "source": "github",
+   "timestamp": "2024-11-07T16:37:43+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/348"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#348:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-11-12T18:49:08+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/348"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#332:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\nWe need to expand [column_operation.rs](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql/src/base/database/column_operation.rs) to include column-literal operations so that we can define accurate and fast operations on `ColumnarValue`s.\r\n# Changes Required\r\n\r\n- [ ] Add the following functions to `column_operation.rs` or start a separate `column_literal_operation.rs`.\r\n- [ ] Make sure the code is well tested.\r\n\r\nExamples of functions we need:\r\n```rust\r\npub(super) fn slice_literal_and(slice: &[bool], lit: bool) -> Vec<bool>;\r\npub(super) fn slice_literal_or(slice: &[bool], lit: bool) -> Vec<bool>;\r\npub(super) fn slice_literal_eq<T>(slice: &[T], lit: T) -> Vec<T>\r\nwhere\r\n    T: PartialEq + Debug;\r\npub(super) fn slice_literal_le_casting_slice<SmallerType, LargerType>(\r\n    slice_of_smaller_type: &[SmallerType],\r\n    literal_of_larger_type: LargerType,\r\n) -> Vec<bool>\r\nwhere\r\n    SmallerType: Copy + Debug + Into<LargerType>,\r\n    LargerType: PartialOrd + Copy + Debug;\r\npub(super) fn slice_literal_le_casting_literal<SmallerType, LargerType>(\r\n    slice_of_larger_type: &[LargerType],\r\n    literal_of_smaller_type: SmallerType,\r\n) -> Vec<bool>\r\nwhere\r\n    SmallerType: Copy + Debug + Into<LargerType>,\r\n    LargerType: PartialOrd + Copy + Debug;\r\n```",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": "2024-11-07T16:29:25Z",
+    "title": "Expand `column_operation.rs` to include column-literal operations"
+   },
+   "source": "github",
+   "timestamp": "2024-11-01T13:32:20+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/332"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#332:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-04-28T12:47:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/332"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#256:opened",
+   "payload": {
+    "author": "varshith257",
+    "body": "# Background and Motivation\r\nThe --no-default-features flag in our CI pipeline is generating around 800 errors during testing, as some parts of the code rely on std and default features. While the code is expected to be compatible with no_std, the tests are not yet adapted for this.\r\n\r\n## Steps to Reproduce:\r\nRun tests using the following command:\r\n```\r\ncargo test --no-default-features --workspace\r\n```\r\nObserve the 769 errors related to missing imports and methods tied to std and Vec etc...\r\n\r\nTasks to be done:\r\n\r\nTask List:\r\n\r\n- [ ]  Review and fix missing std and Vec imports\r\n- [ ]  Conditionally use alloc for environments where std is not enabled\r\n- [ ]  Fix errors related to missing methods such as to_string()\r\n- [ ]  Review test cases for compatibility in no_std mode\r\n- [ ]  (Optional) Clean up any unused imports related warnings",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": "2024-10-11T03:06:18Z",
+    "title": " Fix Compilation Errors When Running Tests with --no-default-features"
+   },
+   "source": "github",
+   "timestamp": "2024-10-11T03:05:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/256"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#244:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\n\r\nOur example code leverages the `InnerProductProof` commitment scheme. While this is still valid, it is more difficult as an entry point to the code because it requires Linux (and GPU by default).\r\n\r\n# Changes Required\r\n\r\n- [x] Update the examples (in `crates/proof-of-sql/examples`) to use the `DynamicDoryEvaluationProof` instead of the `InnerProductProof`.\r\n- [ ] Ensure these examples run correctly with the `blitzar` feature disabled. (i.e. update the CI)\r\n- [ ] Update the READMEs to add examples of how to run this with and without the `blitzar` feature enabled.",
+    "body_truncated": false,
+    "comments": 13,
+    "labels": [
+     "enhancement",
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released"
+    ],
+    "last_edited_at": "2024-10-11T05:32:37Z",
+    "title": "Update examples to use the dynamic Dory commitment scheme."
+   },
+   "source": "github",
+   "timestamp": "2024-10-08T19:38:19+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/244"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#244:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abiji-2020",
+      "author_is_bot": false,
+      "number": 259
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-10-11T19:02:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/244"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#239:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\n\r\nCoverage reports help a lot with code quality and review.\r\n\r\n# Changes Required\r\n\r\nAdd a code coverage workflow to the CI. There is no single way to do this, and some work will be needed to figure out a good reporting mechanism.\r\n\r\n* References with varying ways to set it up:\r\n    * https://doc.rust-lang.org/rustc/instrument-coverage.html#instrumentation-based-code-coverage\r\n    * https://marco-c.github.io/2020/11/24/rust-source-based-code-coverage.html\r\n* Tools:\r\n    * https://crates.io/crates/grcov\r\n    * https://crates.io/crates/cargo-tarpaulin\r\n    * https://crates.io/crates/cargo-llvm-cov\r\n* Services that help with reporting and perhaps other things:\r\n    * codecov.io\r\n    * coveralls.io\r\n\r\nSome more clarification:\r\n* The CI job should fail if the code coverage does not meet a threshold. (i.e. at least 90% coverage, or something similar).\r\n* The CI logs should show some human readable output.\r\n* I would much prefer to not _need_ an external service like Codecov to do the above. That should only be for visualization and deeper dives into job failures. (And should be added in a separate CP.)\r\n* There are several features. We should make sure we are checking for coverage for all of the combinations of features. (i.e. are we actually testing all code?)\r\n* For Codecov, etc. I will need to be the one setting up tokens/accounts, etc. So, be sure to add some documentation that explains how to do this, or links to a how to.",
+    "body_truncated": false,
+    "comments": 11,
+    "labels": [
+     "enhancement",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released"
+    ],
+    "last_edited_at": "2024-10-09T14:58:32Z",
+    "title": "Set up coverage report in CI."
+   },
+   "source": "github",
+   "timestamp": "2024-10-08T12:27:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/239"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#239:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "varshith257",
+      "author_is_bot": false,
+      "number": 246
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-10-11T06:46:11+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/239"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#238:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\n\r\nThe unary `-` operator is a important operator. As we expand support for all SQL, this is one of the pieces that we should have.\r\n\r\n# Changes Required\r\n\r\n- [ ] Add a `NegativeExpr` in `sql::proof_exprs`.\r\n    - See `AddSubtractExpr` and `NotExpr` for good reference points.\r\n    - [ ] Be sure to implement `ProofExpr`, add it to `DynProofExpr`, etc.\r\n- [ ] Update the parser to handle the unary negative (`-`) operator.\r\n- [ ] Test\r\n    - [ ] Add unit tests for all net-new code.\r\n    - [ ] Add end-to-end tests demonstrating that this operator is added.",
+    "body_truncated": false,
+    "comments": 5,
+    "labels": [
+     "enhancement",
+     "\ud83d\udc8e Bounty"
+    ],
+    "last_edited_at": "2024-10-08T12:11:22Z",
+    "title": "Add unary negative (`-`) operator to the prover."
+   },
+   "source": "github",
+   "timestamp": "2024-10-08T12:10:33+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/238"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#238:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-10-12T02:02:40+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/238"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#237:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\n\r\nCurrently, `arrow` is one of the elements that must be disabled to enable `no_std` support. Additionally, not every use-case requires arrow. So, we have gated it behind a features flag (`feature = \"arrow\"`). However, there are many instances of `#[cfg(feature = \"arrow\")]` throughout the codebase, which leave the code cluttered.\r\n\r\n# Changes Required\r\n\r\n- [x] Move all arrow code to a single (or a small number) of modules.\r\n    - My suggestion would be creating a new `proof_of_sql::base::arrow` module and moving all code there. However, this may not be possible, so this is not a hard requirement.\r\n    - The resulting code _**must**_ not introduce cyclic dependencies and should resolve any existing ones with arrow related code. This is one of the primary reasons for this cleanup: in order to more easily identify and resolve these.\r\n- [ ] Update any legacy documentation referencing arrow to ensure that it is up to date.\r\n- [ ] ~Bump the `arrow` crate to version 53.~",
+    "body_truncated": false,
+    "comments": 15,
+    "labels": [
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released",
+     "refactor"
+    ],
+    "last_edited_at": "2024-10-27T02:29:47Z",
+    "title": "Isolate `arrow` code"
+   },
+   "source": "github",
+   "timestamp": "2024-10-08T11:27:32+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/237"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#237:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "varshith257",
+      "author_is_bot": false,
+      "number": 266
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-10-27T02:28:48+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/237"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#236:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\n\r\nRust macros are a bit of a anti-pattern. In particular, the `query!` macro, which is used as a testing utility macro to test `QueryExpr`, obfuscates the tests.\r\n\r\n# Changes Required\r\n\r\n- [ ] Remove uses of the `query!` macro and replace it with explicit uses of the tested methods. For example, https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/e2eb590ec5f100ae048c85474dc9f576901303cb/crates/proof-of-sql/src/sql/parse/query_expr_tests.rs#L1166-L1170 can be replaced by\r\n    ```rust\r\n    let query_text = \"select max(i) max_sal, i0 d, count(i0) from t group by i0, i1 order by max_sal\";\r\n    let (t, accessor) = get_test_accessor();\r\n    let intermediate_ast = SelectStatementParser::new().parse(query_text).unwrap();\r\n    let query = QueryExpr::<NaiveCommitment>::try_new(intermediate_ast, t.schema_id(), &accessor).unwrap();\r\n    ```\r\n- [ ] Refactor or remove `get_test_accessor` so that it is explicit what the tables, columns, and data types are in the `SchemaAccessor`. For example, the above query has a `t` table with the columns `i`, `i0`, and `i1`, all with `BigInt` type. These columns should also be renamed to be slightly less generic and/or more helpful.\r\n- [ ] Remove the `query!` macro.\r\n\r\nNOTE: the macro is almost exclusively a macro that builds the query text. The actual functionality being tested should be essentially unchanged.",
+    "body_truncated": false,
+    "comments": 9,
+    "labels": [
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released",
+     "refactor"
+    ],
+    "last_edited_at": "2024-10-08T16:11:05Z",
+    "title": "Remove `query!` macro."
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T22:44:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/236"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#236:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilender-bongirwar",
+      "author_is_bot": false,
+      "number": 284
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-10-28T17:09:35+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/236"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#235:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\nCurrently, we have an in-house parser that is built on the `lalrpop` parser-generator. This has been good while the supported syntax has been simple. However, as the supported syntax has grown, we need a more comprehensive parser.\r\n\r\nThe [`sqlparser`](https://crates.io/crates/sqlparser) crate is the parser used by [DataFusion](https://datafusion.apache.org/), which is part of the Arrow ecosystem. It is a feature-rich parser that ultimately will require less code maintenance. It is `no_std` compatible, so there should be no issues integrating it.\r\n\r\n# Changes Required\r\n\r\n- [ ] Replace `proof-of-sql-parser` usage within the `proof-of-sql` crate with `sqlparser` usage.\r\n- [ ] Ensure that no functionality is removed.\r\n- [ ] Add thorough testing.\r\n- [ ] Remove the workspace and simplify the repo to be a single crate: the `proof-of-sql` crate.",
+    "body_truncated": false,
+    "comments": 35,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": "2024-10-07T20:57:23Z",
+    "title": "Replace `proof-of-sql-parser` with `sqlparser`."
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T20:56:46+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/235"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#235:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-08-28T20:37:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/235"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#234:opened",
+   "payload": {
+    "author": "stuarttimwhite",
+    "body": "# Background and Motivation\r\nMontScalar and Scalar logic is currently disorganized. We should consolidate this logic.\r\n\r\n**NOTE**: The following issues are likely to modify the same files, so be aware of potential merge conflicts with other PRs:\r\n\r\n1. https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/232\r\n2. https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/228\r\n\r\n# Changes Required\r\n\r\n- [x] Combine any logic held within the four files \"mont_scalar\", \"mont_scalar_from\", \"mont_scalar_test\", \"mont_scalar_from_test\" into two files \"mont_scalar\" and \"mont_scalar_test\".\r\n- [x] Move the Scalar trait to its own \"scalar\" file within base/scalar.",
+    "body_truncated": false,
+    "comments": 6,
+    "labels": [
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "refactor"
+    ],
+    "last_edited_at": "2024-10-19T19:48:22Z",
+    "title": "Tidy up `scalar` module"
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T20:38:32+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/234"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#234:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-10-19T19:48:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/234"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#233:opened",
+   "payload": {
+    "author": "stuarttimwhite",
+    "body": "# Background and Motivation\r\nThe Scalar trait currently exists in the mod file within base/scalar. This code should belong in its own file \"scalar\".\r\n\r\n**NOTE**: The following issue also modifies Scalar code, so be aware of potential merge conflicts:\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/228\r\n\r\n# Changes Required\r\nMove the Scalar trait to its own \"scalar\" file within base/scalar.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2024-10-07T20:43:03Z",
+    "title": "Move Scalar to its own file"
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T20:36:00+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/233"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#233:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T20:51:28+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/233"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#232:opened",
+   "payload": {
+    "author": "stuarttimwhite",
+    "body": "# Background and Motivation\r\n**NOTE**: https://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/230 should be completed before this ticket can be done. Additionally, be aware that some of the code changes for this issue are likely to conflict with the code changes in the following issue:\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/234\r\n\r\nCurrently, we have reference to 3 types that we want removed from proof-of-sql/src/base:\r\n1. Curve25519Scalar\r\n2. RistrettoPoint\r\n3. InnerProductProof\r\n\r\n Any references to these types should be moved to the proof_primitive directory in its own directory named \"inner_product\". Ultimately, we are trying to remove all cyclic dependencies caused by these types.\r\n\r\n# Changes Required\r\n\r\nEach of these should be a separate PR.\r\n- [ ] Move Curve25519Scalar and its unit tests to new directory proof_primitive/inner_product.\r\n- [ ] Move RistrettoPoint and its unit tests to inner_product.\r\n- [ ] Move InnerProductProof and its unit tests to inner_product.\r\n- [ ] If there is any reference to any of these types remaining (most likely within a test), either move those to inner_product or replace with one of TestScalar, NaiveCommitment, or TestEvaluationProof.",
+    "body_truncated": false,
+    "comments": 15,
+    "labels": [
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released",
+     "refactor"
+    ],
+    "last_edited_at": "2024-10-07T20:50:44Z",
+    "title": "Move InnerProductTypes out of base to proof_primitive"
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T20:32:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/232"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#232:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "tmahmood",
+      "author_is_bot": false,
+      "number": 567
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2025-03-09T02:20:45+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/232"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#230:opened",
+   "payload": {
+    "author": "stuarttimwhite",
+    "body": "# Background and Motivation\r\nCurrently within the base directory (proof-of-sql/src/base), there is reference to 3 types: \r\n1. Curve25519Scalar\r\n2. RistrettoPoint\r\n3. InnerProductProof.\r\n\r\nAny tests (within base) that use one of these 3 types to test a different type or function should be modified to remove these types. Note that some tests within base are actually meant to test one of these 3 types. These may be left alone for this issue. Non-test code should not be touched.\r\n\r\n# Changes Required\r\nFor any of the 3 types that will be removed, replace each instance as follows:\r\n1. Curve25519Scalar -> TestScalar\r\n2. RistrettoPoint -> NaiveCommitment\r\n3. InnerProductProof -> TestEvaluationProof\r\n\r\nWe recommend splitting the PR into 4 commits:\r\n1. Scalar replacement\r\n2. Commitment replacement (RistrettoPoint -> NaiveCommitment)\r\n3. Proof replacement.\r\n4. Everything else (to get build and tests passing).\r\n\r\nNOTE: https://github.com/spaceandtimelabs/sxt-proof-of-sql/pull/197 is a partially completed version of this that is a bit out of date. It may or may not be a helpful reference point.",
+    "body_truncated": false,
+    "comments": 20,
+    "labels": [
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released",
+     "refactor"
+    ],
+    "last_edited_at": "2024-10-12T02:00:20Z",
+    "title": "Remove InnerProduct types from generic tests within base directory"
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T20:18:11+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/230"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#230:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abiji-2020",
+      "author_is_bot": false,
+      "number": 264
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-11-06T16:04:18+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/230"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#229:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\n\r\nMany data are binary blobs. In particular, the EVM address and hash types are 20 bytes and 32 bytes respectively. We should support these natively within Proof of SQL. See https://docs.rs/arrow/latest/arrow/datatypes/enum.DataType.html#variant.FixedSizeBinary.\r\n\r\n# Changes Requested\r\n\r\nAdd full support for a `FixedSizeBinary` type. In order to do this there are several considerations.\r\n* Since `Scalar` types support naturally embedding 31 bytes but not 32 bytes, there should be a divergence in how <=31 bytes are handled and 32 bytes are handled.\r\n    * 31 bytes and under should be naturally embedded into the `Scalar` type. This means simply relying on the conversion from `[u64; 4]` to the `Scalar`.\r\n    * 32 bytes should be handled by first hashing the data and then converting it to a `Scalar`. This is identical to how `String`s are handled. See https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/48b2f0bc8b92dbc3ef9deecfdfc04dfbc2b4460c/crates/proof-of-sql/src/base/scalar/mont_scalar_from.rs#L16.\r\n* `ColumnType` should probably have a new variant `FixedSizeBinary(i32)` added. It is not as clear what the variant for `Column` and `OwnedColumn` should be.\r\n    * My initial suggestion would be `FixedSizeBinary(i32, &'a [u8])` and `FixedSizeBinary(i32, Vec<u8>)` respectively, but that may not make sense. The reason for this suggestion is because something like `Vec<Vec<u8>>` has a lot of overhead, and `Vec<[u8]>` is not allowed by Rust.\r\n    * Alternatively, it may make sense to have two variants: one for the <=31 bytes case, and one for the 32 bytes case. In this case, it may make sense to have the latter simply be `Binary` instead of `FixedSizeBinary`.\r\n* #228 is partially motivated by this issue, and may make this issue a bit more ergonomic. However, working on them in parallel will likely lead to some branch conflict, so pay attention to that issue.\r\n* The only expression that needs to be supported is equality (`=`) and inequality (`!=`). This is because there is no way to add, subtract, etc. between binary data. Eventually, we may wish to add bitwise operations, but those are beyond the scope of this issue.\r\n* It is not clear what the best way to handle binary literals is. We strive to adhere to PostgreSQL syntax, but this data type is unsupported in PostgreSQL. See https://www.postgresql.org/docs/current/datatype-binary.html. There is some flexibility here, but there should be agreement on this before this particular implementation is done.",
+    "body_truncated": false,
+    "comments": 26,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "Add `FixedSizeBinary` with support up to at least 32 bytes."
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T10:08:01+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/229"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#228:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\nCurrently, the `Scalar` trait requires various conversions using the `From` and `Into` traits. Some of these are confusing, while others are clear.\r\nIn general, the rule should be that for types with a natural embedding into the associated `Scalar` field, `Scalar` should implement `From`. In all other cases, the conversion should either be auto-implemented, or a trait method, where appropriate.\r\n\r\n**NOTE**: The following issue also necessitates changes to Scalar, so be aware of potential merge conflicts:\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/issues/234\r\n\r\n# Changes Required\r\n\r\nEach of these should be a separate PR.\r\n- [ ] Remove `Into<[u64; 4]>`, `From<[u64; 4]>`, and `RefInto<[u64; 4]>` bounds.\r\n    - Replace these with the trait methods `fn from_limbs(val: [u64; 4]) -> Self` and `fn to_limbs(&self) -> [u64; 4]`\r\n    - These three conversions are the base conversions that are used for many other conversions. A `Scalar` is a field element (number mod some prime) with slightly less than 256 bits. Usually, `Scalar`s are internally stored in Montgomery form, so these conversions are non-free. However, they are needed in some situations.\r\n- [ ] Remove `From<&'a String>`, `From<String>`, and `From<&'a str>` bounds. These three implementations ultimately rely on the conversions to and from limbs. As a result, these should have blanket/default implementations.\r\n    - Replace these with `fn from_str_via_hash(val: &str) -> Self` and add a default implementation.\r\n    - While it would be nice to `impl<S: Scalar> From<String> for S`, this is not allowed by the Rust type system. Solutions other than the default implementation of a trait method are welcome.\r\n    - This conversion requires that the string is hashed in order to convert it to 256 bits which are ultimately converted into the `Scalar` itself. This is different from a parsing method.\r\n- [ ] Remove the `VarInt` bound and replace it with a blanket `impl<S: Scalar> VarInt for S` implementation. The existing (and requested) implementation relies on the limb conversions only.",
+    "body_truncated": false,
+    "comments": 34,
+    "labels": [
+     "good first issue",
+     "refactor"
+    ],
+    "last_edited_at": "2024-10-07T20:51:12Z",
+    "title": "Make opaque `Scalar` conversions explicit rather than using `From`/`Into` trait."
+   },
+   "source": "github",
+   "timestamp": "2024-10-07T09:44:19+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/228"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#183:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\nCurrently, we have not implemented support for columns with null values. This is a very useful and ubiquitous primitive for any database engine.\n\n# Changes Required\n- [ ] Support adding a flag (or some other mechanism) to the columns types in order to support nullable columns. Logically, this is the same as adding a new column datatype for each existing datatype.\n- [ ] Support existing operations on nullable columns. (e.g. we should be able to add a nullable bigint to a non-nullable bigint)\n\n\nNOTE: We will likely take this internal eventually, in which case, the bounty will be removed. At the moment, we still welcome people to work on this, and can pay out for partial (but productive) work. However, since this is complex, we don't have the time to be able to provide in-depth feedback on work that is not high-quality.\n\nNOTE: Since this is complex, we would like to see a Proof of Concept before merging any large PRs. This is because this task could result in large changes that we don't want to maintain unless we actually have null support. In particular, the Proof of Concept should demonstrate some non-trivial proof involving at least one null type.",
+    "body_truncated": false,
+    "comments": 47,
+    "labels": [
+     "enhancement",
+     "\ud83d\udc8e Bounty"
+    ],
+    "last_edited_at": "2025-03-09T02:06:46Z",
+    "title": "Add nullable column support"
+   },
+   "source": "github",
+   "timestamp": "2024-09-25T16:44:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/183"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#182:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\nWe have `cargo clippy` running in our CI in order to enforce code quality. In order to increase our standards, we should enable the `clippy::pedantic` lint group.\r\n\r\n\r\n# Requested Changes\r\n- [ ] Add the `clippy::pedantic` lint to the bottom of the workspace `Cargo.toml` file.\r\n- [ ] Refactor all of the code warnings so that clippy will pass.\r\n\r\nNOTE: `clippy::pedantic` is very aggressive. It is possible that we will want to blanket `allow` some lints.\r\n\r\nNOTE: please have good git hygiene on this issue. Make sure the individual commits on a PR are small and individually readable.",
+    "body_truncated": false,
+    "comments": 11,
+    "labels": [
+     "enhancement",
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded",
+     "released"
+    ],
+    "last_edited_at": "2024-09-26T14:10:31Z",
+    "title": "Enable `clippy::pedantic` lint group."
+   },
+   "source": "github",
+   "timestamp": "2024-09-25T16:37:08+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/182"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#182:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mehulmathur16",
+      "author_is_bot": false,
+      "number": 282
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-10-19T19:16:25+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/182"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#175:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\nWhile a portion of the repo cannot be `no_std` (namely, the prover), a large portion of the project is intended to run in lightweight environments, and should be `no_std` compatible (namely, the verifier).\n\n# Requested Changes\n\nThis list may need to grow as other parts get uncovered.\n\n- [ ] Add the `clippy::std_instead_of_core`, `clippy::alloc_instead_of_core`, and `clippy::alloc_instead_of_core` lints.\n- [ ] Remove all direct references throughout the repo to `std`.\n- [ ] Remove `#[cfg(feature = \"std\")]` where possible.\n    - [ ] `proof_primitive::sumcheck`.\n    - [ ] None-blitzar `proof_primitive::dory`.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "Add support for `no_std`."
+   },
+   "source": "github",
+   "timestamp": "2024-09-20T14:04:20+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/175"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#175:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-10-09T03:12:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/175"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#174:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\nIn order to make this rep `no_std` compatible, we need `no_std` compatible errors. `thiserror` is not `no_std` compatible, while `snafu` is. We are currently using `thiserror`.\n\nNote: While https://github.com/dtolnay/thiserror/pull/304 is an open PR, it is not clear how soon this will get merged. Additionally, Substrate uses `snafu`, which would help unify dependencies for Substrate-based integrations.\n\n# Requested Changes\n\n- [ ] Replace `thiserror` with `snafu`",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "refactor: migrate from `thiserror` to `snafu`"
+   },
+   "source": "github",
+   "timestamp": "2024-09-20T13:38:00+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/174"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#174:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "lgiussan",
+      "author_is_bot": false,
+      "number": 181
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-09-27T04:57:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/174"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#168:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\nThe `compute_commitment_for_testing` function was a utility function to simplify computing commitments for testing purposes. Newer interfaces simplify this code, so this function is no longer needed, and adds clutter.\n\n# Requested Changes\n- [ ] Replace `compute_commitment_for_testing` with `RistrettoPoint::compute_commitments`, which exists because of an `impl Commitment for RistrettoPoint`.\n\nNote:\n`compute_commitment_for_testing` could be refactored to leverage `Commitment::compute_commitments` like this:\n```rust\nlet vals = iter_cast::<Curve25519Scalar, [u64; 4]>(slice_cast_to_iter(vals));\nlet mut commitments = [RistrettoPoint::default()];\nCommitment::compute_commitments(\n    &mut commitments,\n    &[CommittableColumn::Scalar(vals)],\n    offset_generators,\n    &(),\n);\ncommitments[0]\n```",
+    "body_truncated": false,
+    "comments": 11,
+    "labels": [
+     "enhancement",
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded"
+    ],
+    "last_edited_at": null,
+    "title": "test: replace `compute_commitment_for_testing` with `RistrettoPoint::compute_commitments`"
+   },
+   "source": "github",
+   "timestamp": "2024-09-19T02:02:06+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/168"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#168:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Gmin2",
+      "author_is_bot": false,
+      "number": 186
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-09-26T14:03:32+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/168"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#167:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "In order to keep rust up to date, we should be periodically updating the toolchain we use.\n\nBumping to 1.81, in particular, enables `Error` to be `no_std` compatible, which is something we need soon.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "enhancement",
+     "good first issue"
+    ],
+    "last_edited_at": null,
+    "title": "build: bump rust toolchain to 1.81.0"
+   },
+   "source": "github",
+   "timestamp": "2024-09-19T01:35:55+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/167"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#167:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "geosxt",
+      "author_is_bot": false,
+      "number": 171
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-09-20T03:03:37+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/167"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#165:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\nCurrently `Commitment::compute_commitments` mutates a slice buffer of commitments rather than returning a collection of the commitments. This is inherited from the behavior of the `blitzar` crate. However, it is more idiomatic for the implementations to return collections.\r\n\r\n# Requested Changes\r\n\r\n- [ ] Change the signature of `Commitment::compute_commitments` to be\r\n```rust\r\nfn compute_commitments(\r\n    committable_columns: &[CommittableColumn],\r\n    offset: usize,\r\n    setup: &Self::PublicSetup<'_>,\r\n) -> Vec<Self>;\r\n```\r\n- [ ] Update all implementers to reflect this.",
+    "body_truncated": false,
+    "comments": 5,
+    "labels": [
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded"
+    ],
+    "last_edited_at": "2024-09-17T02:19:37Z",
+    "title": "Return result from `Commitment::compute_commitments` rather than mutate parameter."
+   },
+   "source": "github",
+   "timestamp": "2024-09-17T02:17:14+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/165"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#165:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Gmin2",
+      "author_is_bot": false,
+      "number": 184
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-09-26T04:49:18+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/165"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#163:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\n\r\nIn order to improve documentation and identify possible panics, we should enable clippy lints that warn when a function that panics but does not document this behavior.\r\n\r\n# Requested Changes\r\n\r\n- [ ] Enable `clippy::missing_panics_doc` lint.\r\n- [ ] Add `#![cfg_attr(test, allow(clippy::missing_panics_doc))]` in order to not warn on `test`-only functions.\r\n- [ ] Add documentation for every function violating this lint. (At the time of writing, this is 43 functions.)\r\n- [ ] Set the `check-private-items = true` option.\r\n- [ ] Add documentation for the private items violating this lint. (At the time of writing, this is 73 _additional_ functions.)\r\n\r\nIt is ok for this to be done in separate PRs. (e.g. one PR could enable the lint, and simply write `TODO: add panic docs` everywhere the warning appears.\r\nNOTE: `allow(clippy::missing_panics_doc)` should only be used if a `panic` is actually impossible.",
+    "body_truncated": false,
+    "comments": 9,
+    "labels": [
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded"
+    ],
+    "last_edited_at": "2024-09-16T15:23:00Z",
+    "title": "Enable `clippy::missing_panics_doc`"
+   },
+   "source": "github",
+   "timestamp": "2024-09-16T15:07:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/163"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#163:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Gmin2",
+      "author_is_bot": false,
+      "number": 188
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-10-05T02:57:20+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/163"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#161:opened",
+   "payload": {
+    "author": "JayWhite2357",
+    "body": "# Background and Motivation\r\nCurrently, the Proof of SQL prover uses the `merlin` crate to provide it's public-coin transcript, created here: https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/29d334d5cd6e31cf66a0353f21613932df63c059/crates/proof-of-sql/src/sql/proof/query_proof.rs#L62.\r\nHowever, `merlin` does not support `no_std` (see #117 and https://github.com/zkcrypto/merlin/pull/8) and is not conducive to use within the EVM/Solidity.\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/pull/123 and https://github.com/spaceandtimelabs/sxt-proof-of-sql/pull/159 add a new `Transcript` trait that allows for using different transcripts. (Such as the simple `Keccak256Transcript`.)\r\n\r\nIf we replace all uses of `merlin::Transcript` with `impl Transcript`, we enable the ability to use any transcript implementation that is desired.\r\n\r\n# Requested Changes\r\nWe need to replace all usage of `merlin::Transcript` with `impl Transcript`. Tests can still leverage `merlin::Transcript` because they need a concrete implementation, but all other code should be written generically.\r\n\r\n- `extend_serialize_as_le` can replace `append_auto`\r\n- `extend_canonical_serialize_as_le` can replace `append_canonical_serialize`\r\n- `scalar_challenge_as_be` can replace `challenge_scalar_single` ( and `challenge_scalars` )\r\n- other methods can be better replacements as relevant\r\n\r\n- [ ] `CommitmentEvaluationProof::new`, `CommitmentEvaluationProof::verify_proof`, `CommitmentEvaluationProof::verify_batched_proof` should accept `impl crate::base::proof::Transcript` instead of `merlin::Transcript`.\r\n- [ ] All implementers of `CommitmentEvaluationProof` will need to be updated to implement the changes properly.\r\n    - [ ] `InnerProductProof` - this will still internally need to use `merlin::Transcript`. This is handled via `wrap_transcript`.\r\n    - [ ] `DoryEvaluationProof` - the usages of the transcript bubble down to `DoryMessages`.\r\n- [ ] Either `QueryProof::new` and `QueryProof::verify` can be made generic w.r.t. `Transcript`, or `QueryProof` itself can be made generic w.r.t. `Transcript`. It is unclear which is a better design choice. Both solutions will require replacing the old transcript usage with the new within those functions.\r\n- [ ] Tests will likely need to be refactored, but should just used `merlin::Transcript` as the concrete type. In the future, we may wish to migrate tests to use `Keccak256Transcript` instead. This can be a separate issue.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "enhancement",
+     "good first issue"
+    ],
+    "last_edited_at": "2024-09-13T19:57:52Z",
+    "title": "Enable using transcripts other than `merlin::Transcript`."
+   },
+   "source": "github",
+   "timestamp": "2024-09-13T19:55:50+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/161"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#161:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "JayWhite2357",
+      "author_is_bot": false,
+      "number": 180
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-09-26T19:38:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/161"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#154:opened",
+   "payload": {
+    "author": "iajoiner",
+    "body": "# Background and Motivation\r\n\r\nWe already have `SmallInt / i16`, `Int / i32`, and `BigInt / i64` data types supported. Adding an additional `TinyInt / i8` data type would be helpful to some users and would additionally have (minor) performance benefits with those columns.\r\n\r\n# Changes Requested\r\n\r\n- [ ] Add a `TinyInt` variant to the various `*Column*` enum types.\r\n- [ ] Add a branch for handling `TinyInt` everywhere that `SmallInt`, `Int`, and `BigInt` are handled.\r\n- [ ] Add unit tests covering the additional code.\r\n\r\nNOTE: be sure keep individual PRs small and self-contained. All net-new code should be tested within the PR.\r\n\r\n## EDIT: clarification\r\n\r\nI've seen several attempts at this issue, and most have the following concern: there aren't any tests around using +, -, =, >, *, etc. on TinyInt columns.\r\n\r\nIn other words, I'm not convinced that the following query will execute properly if `a`, `b`, and `c` are TinyInt columns:\r\n```sql\r\nSELECT a*b+b+c FROM table WHERE a>b OR c=4\r\n```\r\n\r\nIt might be the case that there is code in place to do this. However, there should be unit tests providing evidence that this is the case.\r\n\r\nAt a minimum, in order to close this ticket we need to have at least one integration test showing end-to-end behavior with `TinyInt` columns and a non-trivial query that requires computation involving `TinyInt`.",
+    "body_truncated": false,
+    "comments": 12,
+    "labels": [
+     "enhancement",
+     "good first issue",
+     "\ud83d\udc8e Bounty",
+     "\ud83d\udcb0 Rewarded"
+    ],
+    "last_edited_at": "2024-10-02T02:00:56Z",
+    "title": "Add `TinyInt / i8` type"
+   },
+   "source": "github",
+   "timestamp": "2024-09-12T14:57:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/154"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#154:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ashu999",
+      "author_is_bot": false,
+      "number": 190
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2024-10-05T14:49:14+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/154"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#150:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "There are a few todos spread throughout the repo, most of them are notating planned features that are not yet supported. See #149 for a few TimeStamp related todo!()s that actually would cause a panic under certain conditions.\r\n\r\nHere are a few non-panicking todos labelled in doc comments throughout the repo that may or may not need some attention:\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/README.md?plain=1#L104\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/base/commitment/column_commitments.rs#L355\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/base/commitment/column_commitments.rs#L429\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/base/commitment/table_commitment.rs#L517\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/proof_primitive/mod.rs#L1\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/sql/postprocessing/group_by_postprocessing.rs#L208\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/sql/proof/mod.rs#L1\r\n\r\nWork is currently underway on range check which should resolve this, see #141\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/sql/proof_exprs/sign_expr.rs#L41\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/tests/integration_tests.rs#L494\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql-parser/src/intermediate_ast_tests.rs#L253\r\n\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql-parser/src/intermediate_ast_tests.rs#L773-L775",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "todo tracker"
+   },
+   "source": "github",
+   "timestamp": "2024-09-12T00:38:13+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/150"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#150:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-09-16T18:44:52+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/150"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#149:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "Here:\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/base/database/owned_column_operation.rs#L182\r\n\r\nHere:\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/base/database/owned_column_operation.rs#L316\r\n\r\nAnd Here:\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/6740144a5d3d01583d264d2560e68ff5f0025b22/crates/proof-of-sql/src/base/database/owned_column_operation.rs#L450\r\n\r\n@iajoiner I must have forgotten about these when we wrapped up timestamp, sorry about that. What are the above lines used for? Because right now, full provable inequality is supported on timestamp-related queries:\r\n\r\n```\r\n\"SELECT * FROM table WHERE times > timestamp '1970-01-01T00:00:00Z';\",\r\n```\r\n```\r\n\"SELECT * FROM table WHERE times < timestamp '1970-01-01T00:00:00Z';\",\r\n```\r\n```\r\n\"SELECT * FROM table WHERE times >= timestamp '1970-01-01T00:00:00Z';\",\r\n```\r\n```\r\n\"SELECT * FROM table WHERE times <= timestamp '1970-01-01T00:00:00Z';\",\r\n```\r\n```\r\n\"SELECT * FROM table WHERE times = timestamp '1970-01-01T00:00:00Z';\",\r\n```\r\n\r\nAll succeed without incident. Should I fill out these missing implementations marked as ```todo!()```?",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": "2024-09-12T00:39:33Z",
+    "title": "missing ge, eq, ineq postprocessing implementations for TimeStampTZ"
+   },
+   "source": "github",
+   "timestamp": "2024-09-12T00:27:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/149"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#146:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "Is there a reason why we need a try_from on any of the unsigned integer types? Seems to me that anything 64 bits and under should be able to be infallibly converted to Scalar, since those bit widths should always fit. Maybe we choose a scalar someday around 128 bits but that seems unlikely as well.\r\n\r\nFeels kind of wrong to keep having to .expect() these conversions like so:\r\n\r\n```rust\r\nS::try_from(i.into()).expect(\"u8 value will always fit into S\") + alpha\r\n```\r\n\r\nMaybe we just need to add these From conversions somewhere in [here](https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/dbe91428c2f4d2d2d6b409aa6d3971662e47e8ec/crates/proof-of-sql/src/base/scalar/mont_scalar_from.rs#L1-L58):\r\n\r\nI see something here that converts a slice of bytes to MontScalar, I just need individual bytes, so maybe we can put it in here with something similar to this:\r\n\r\n```rust\r\nimpl<T: MontConfig<4>> From<&[u8]> for MontScalar<T> {\r\n    fn from(x: &[u8]) -> Self {\r\n        if x.is_empty() {\r\n            return Self::zero();\r\n        }\r\n\r\n        let hash = blake3::hash(x);\r\n        let mut bytes: [u8; 32] = hash.into();\r\n        bytes[31] &= 0b00001111_u8;\r\n\r\n        Self::from_le_bytes_mod_order(&bytes)\r\n    }\r\n}\r\n```\r\n\r\nAlthough this appears to be taking the hash of the slice and converting that result into MontScalar.\r\n\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2024-09-11T06:36:25Z",
+    "title": "MontScalar infallible conversions for trivial types"
+   },
+   "source": "github",
+   "timestamp": "2024-09-11T06:35:48+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/146"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#146:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-09-16T14:49:10+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/146"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#135:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "Several unwraps occur outside of test code in this repo that may cause a panic under certain conditions. Any options or errors should handled or mapped fallibly. Here is a running list of known unwraps so far:\r\n\r\nAccessors for query commitment:\r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql/src/base/commitment/query_commitments.rs\r\n\r\n- [x] max_integer_type_function: should be resolved in #152 \r\nhttps://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/base/database/column.rs#L317-L318\r\n\r\nowned arrow conversions for decimal:\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/base/database/owned_and_arrow_conversions.rs#L76\r\n\r\nreceive challenge function\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/base/proof/transcript_core.rs#L22\r\n\r\nmultiple unwraps in transcript protocol.rs\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql/src/base/proof/transcript_protocol.rs\r\n\r\nmontscalar from bigint\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/base/scalar/mont_scalar.rs#L131\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/base/scalar/mont_scalar.rs#L278\r\n\r\nbatch inverse\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/base/slice_ops/batch_inverse.rs#L69\r\n\r\nQuite a few in dory commitment helper:\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql/src/proof_primitive/dory/dory_commitment_helper_cpu.rs\r\n\r\nseveral in dory messages:\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql/src/proof_primitive/dory/dory_messages.rs\r\n\r\nseveral in parings.rs\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql/src/proof_primitive/dory/pairings.rs\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/parse/filter_exec_builder.rs#L64\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/postprocessing/group_by_postprocessing.rs#L78\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/postprocessing/group_by_postprocessing.rs#L82\r\n\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/postprocessing/group_by_postprocessing.rs#L132\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/proof/proof_builder.rs#L177\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/proof/verifiable_query_result.rs#L139\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/proof/verifiable_query_result.rs#L142\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/proof/verification_builder.rs#L156\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a197527501a7d2602b30587e750b98816537f9f/crates/proof-of-sql/src/sql/proof_exprs/numerical_util.rs#L45\r\n\r\nseveral in sign_expr:\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/main/crates/proof-of-sql/src/sql/proof_exprs/sign_expr.rs\r\n\r\n- [ ] https://github.com/spaceandtimelabs/sxt-proof-of-sql/blob/2a",
+    "body_truncated": true,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": "2024-09-12T19:58:43Z",
+    "title": ".unwrap() tracker"
+   },
+   "source": "github",
+   "timestamp": "2024-09-07T05:27:06+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/135"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#135:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-09-16T15:10:45+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/135"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#134:opened",
+   "payload": {
+    "author": "chenmeng04",
+    "body": "",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "hi"
+   },
+   "source": "github",
+   "timestamp": "2024-09-07T01:51:33+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/134"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#134:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-09-09T02:08:20+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/134"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#113:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "# Background and Motivation\r\nCurrently, the code handling decimal parsing and conversions is somewhat scattered. This issue seeks to resolve this by using the `bigdecimal::BigDecimal` type for as much as possible.\r\n\r\nImportant Note: the `BigDecimal` type does not trim leading and trailing zeros. Care should be taken when dealing with this.\r\n\r\n# Requested Changes\r\nTo resolve this issue, we should:\r\n- [ ] Add a `BigDecimalExt` extension trait in the `proof_of_sql::base::math` module. It should have, at minimum,\r\n    - [ ] `precision` and `scale` methods akin to the existing `IntermediateDecimal::precision` and `IntermediateDecimal::scale` methods. NOTE: the precision and scale should be the values _after_ trimming any leading and trailing zeros. This is what the current implementation (implicitly) does.\r\n    - [ ] a `try_into_scalar_with_precision_and_scale` method akin to the exiting `try_into_to_scalar` function.\r\n- [ ] Eliminate the `proof_of_sql_parser::intermediate_decimal::IntermediateDecimal` and `proof_of_sql::base::math::decimal::Decimal` types, in favor of using `bigdecimal::BigDecimal` along with the `BigDecimalExt` extension trait.\r\n\r\nOptional:\r\n- [ ] Other refactoring and/or cleanup is welcome, but not immediately clear to me what should be done. These likely should be done in a follow up PR/issue. Some possibilities are:\r\n    - [ ] It is not clear if the `DecimalError` enum is needed or if `bigdecimal::ParseBigDecimalError` or similar is sufficient.\r\n    - [ ] The `scale_scalar` function should likely be moved into the `proof_of_sql::base::scalar` module.",
+    "body_truncated": false,
+    "comments": 6,
+    "labels": [
+     "good first issue",
+     "refactor"
+    ],
+    "last_edited_at": "2024-09-14T00:30:59Z",
+    "title": "refactor: remove intermediate decimal and move decimal into PoSQL parser crate"
+   },
+   "source": "github",
+   "timestamp": "2024-08-16T19:32:48+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/113"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#113:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-11-06T18:02:03+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/113"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#107:opened",
+   "payload": {
+    "author": "Dustin-Ray",
+    "body": "Suppose I have a table of times denoted in seconds:\r\n\r\n```rust\r\naccessor.add_table(\r\n    \"sxt.table\".parse().unwrap(),\r\n    owned_table([timestamptz(\r\n        \"times\",\r\n        PoSQLTimeUnit::Second,\r\n        PoSQLTimeZone::Utc,\r\n        test_timestamps,\r\n    )]),\r\n    0,\r\n);\r\n```\r\n\r\nAssume that the table contains the following:\r\n```rust\r\nvec![-1, 0, 1];\r\n```\r\n\r\nAnd I wish to query the following against this table:\r\n\r\n```sql\r\n\"SELECT * FROM table WHERE times < timestamp '1970-01-01T00:00:00.000000001Z'\"\r\n```\r\n\r\nOne would expect that the query should give back [-1, 0], but instead, after parsing the query and generating a proof:\r\n\r\n```rust\r\n// Parse and execute the query\r\nlet query = QueryExpr::try_new(\r\n    query_str.parse().unwrap(),\r\n    \"sxt\".parse().unwrap(),\r\n    &accessor,\r\n)\r\n.unwrap();\r\n\r\nlet proof = VerifiableQueryResult::<InnerProductProof>::new(query.proof_expr(), &accessor, &());\r\n\r\n// Verify the results\r\nlet owned_table_result = proof\r\n    .verify(query.proof_expr(), &accessor, &())\r\n    .unwrap()\r\n    .table;\r\n```\r\n\r\nwe receive the following:\r\n\r\n```bash\r\nProofError(VerificationError(\"sumcheck evaluation check failed\"))\r\n```\r\n\r\nfrom the ```unwrap()``` on the ```verify()``` call:\r\n\r\n```rust\r\n    // Verify the results\r\n    let owned_table_result = proof\r\n        .verify(query.proof_expr(), &accessor, &())\r\n        .unwrap()\r\n```\r\n\r\n\r\n\r\nWithout a timeunit at all, this query is shown to succeed as expected in #75. I would assume that we should be able to compare times of differing units without incident so long as rounding does not occur, but in this case of inequality it should not.\r\n\r\nCuriously, the query\r\n```sql\r\n\"SELECT * FROM table WHERE times > timestamp '1970-01-01T00:00:00.000000001Z'\"\r\n```\r\n\r\nsucceeds without incident on a table of seconds, so perhaps this is a simple fix somewhere in the inequality expr node?\r\n\r\n## Proofs-service\r\nThis issue produces buggy behavior in proofs-service because the gateway currently can only DDL tables into nanosecond precision, thus any query that is parsed as a timeunit differing from nanoseconds seems to be failing with a ```sumcheck verification failure```.\r\n\r\n## Timeunit parsing:\r\nFor reference, timeunits are parsed here, I am still uneasy about this approach:\r\n```rust\r\npub fn try_from(timestamp_str: &str) -> Result<Self, PoSQLTimestampError> {\r\n    let dt = DateTime::parse_from_rfc3339(timestamp_str)\r\n        .map_err(|e| PoSQLTimestampError::ParsingError(e.to_string()))?;\r\n\r\n    let offset_seconds = dt.offset().local_minus_utc();\r\n    let timezone = PoSQLTimeZone::from_offset(offset_seconds);\r\n    let nanoseconds = dt.timestamp_subsec_nanos();\r\n    let timeunit = if nanoseconds % 1_000 != 0 {\r\n        PoSQLTimeUnit::Nanosecond\r\n    } else if nanoseconds % 1_000_000 != 0 {\r\n        PoSQLTimeUnit::Microsecond\r\n    } else if nanoseconds % 1_000_000_000 != 0 {\r\n        PoSQLTimeUnit::Millisecond\r\n    } else {\r\n        PoSQLTimeUnit::Second\r\n    };\r\n\r\n    Ok(PoSQLTimestamp {\r\n        timestamp: dt.with_timezone(&Utc),\r\n        timeunit,\r\n        timezone,\r\n    })\r\n}\r\n```\r\n\r\nPerhaps there is a more sophisticated way of handling this? Because it seems like just checking the number of zeros at the end of a time is not always guaranteed to deliver the expected time unit for the given query.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": "2024-08-13T11:29:25Z",
+    "title": "bug: differing timeunit inequality matching fails "
+   },
+   "source": "github",
+   "timestamp": "2024-08-13T11:21:59+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/107"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#107:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-08-16T01:39:22+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/107"
+  }
+ ],
+ "repo": "spaceandtimefdn/sxt-proof-of-sql",
+ "window": "pre_t"
+}

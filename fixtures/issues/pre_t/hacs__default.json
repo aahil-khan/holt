@@ -1,0 +1,2064 @@
+{
+ "captured_at": "2026-08-30T10:19:40.331799+00:00",
+ "content_sha256": "749f15c066048902d6326e65585d8a5efb316f722b0bb6847c2b77753421bd8d",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:hacs/default#8091:opened",
+   "payload": {
+    "author": "carloscae",
+    "body": "## Checklist\n\n- [x] I've read the [publishing documentation](https://hacs.xyz/docs/publish/start).\n- [x] I've added the [HACS action](https://hacs.xyz/docs/publish/action) to my repository.\n- [x] (For integrations only) I've added the [hassfest action](https://developers.home-assistant.io/blog/2020/04/16/hassfest/) to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n\n## Links\n\nAction run: https://github.com/carloscae/solar-cover/actions/runs/26677905125\n\nRepository: https://github.com/carloscae/solar-cover\n\n## Information\n\nSolar Cover is a Home Assistant integration that automatically positions blinds, shutters, and awnings based on where the sun is. Supports vertical blinds, horizontal awnings, and venetian/tilt blinds.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Adds new integration [carloscae/solar-cover]"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:20:55+00:00",
+   "url": "https://github.com/hacs/default/issues/8091"
+  },
+  {
+   "evidence_id": "issue:hacs/default#8091:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:20:58+00:00",
+   "url": "https://github.com/hacs/default/issues/8091"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7863:opened",
+   "payload": {
+    "author": "augleao",
+    "body": "**Repository:** https://github.com/augleao/onedrive-backup-machine-integration\n**Release:** https://github.com/augleao/onedrive-backup-machine-integration/releases/tag/v0.2.5\n\nThis is a clean, HACS-only integration for Home Assistant that provides dashboard visibility and controls for the OneDrive Backup companion service.\n\nChanges from the previous attempt:\n- Fresh repository without historical credentials or legacy code\n- Real brand assets\n- Passes HACS and hassfest validation",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add onedrive-backup-machine-integration"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T18:19:06+00:00",
+   "url": "https://github.com/hacs/default/issues/7863"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7863:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T18:19:10+00:00",
+   "url": "https://github.com/hacs/default/issues/7863"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7789:opened",
+   "payload": {
+    "author": "BetaHydri",
+    "body": "## Repository\nBetaHydri/hymer-connect-ha-ble\n\n## Category\nIntegration",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add BetaHydri/hymer-connect-ha-ble"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T11:25:20+00:00",
+   "url": "https://github.com/hacs/default/issues/7789"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7789:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T11:25:24+00:00",
+   "url": "https://github.com/hacs/default/issues/7789"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7521:opened",
+   "payload": {
+    "author": "bls0n",
+    "body": "## Repository info\n\n- Repository: https://github.com/bls0n/tdbu-shade-card\n- Category: Frontend\n\n## Description\n\nCustom Home Assistant Lovelace card for Top Down Bottom Up (TDBU) motorized \nshades with independent dual rail control. Designed for Rollease Acmeda Pulse \nv2 hubs (sold under Budget Blinds Smart Home Collection and Automate brands).\n\nFeatures:\n- Draggable visual window interface showing both rails and fabric\n- Independent top and bottom rail control\n- Configurable scene preset buttons\n- Support for controlling multiple shades simultaneously from one card\n\n## Checklist\n\n- [x] The repository is public\n- [x] The repository has a hacs.json file\n- [x] The repository has a README\n- [x] The repository has a release\n- [x] The integration/plugin works",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add tdbu-shade-card"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T13:42:34+00:00",
+   "url": "https://github.com/hacs/default/issues/7521"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7521:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T13:42:37+00:00",
+   "url": "https://github.com/hacs/default/issues/7521"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7384:opened",
+   "payload": {
+    "author": "Jordi-14",
+    "body": "### Repository to remove\n\nhttps://github.com/epoplavskis/homeassistant_salus\n\n### Why should this be removed?\n\nThis repository appears abandoned and is no longer maintained. Users are still discovering and installing it from HACS defaults, then hitting compatibility problems with current Home Assistant / Salus gateway behavior.\n\nAttempts to contact the maintainer and request a deprecation notice have not received a response.\n\nA maintained successor/fork exists here:\n\nhttps://github.com/Jordi-14/homeassistant_salus\nBeing maintained by @Jordi-14 and @leonartpitzu\n\nThe maintained fork includes current Home Assistant compatibility work and support for newer Salus gateway behavior, including UGE600/UG800 work. It also solves the majority of still open issues in the to-be-removed repo.\n\n### Evidence\n\n- Open issues/PRs unanswered: https://github.com/epoplavskis/homeassistant_salus/issues/     https://github.com/epoplavskis/homeassistant_salus/issues/86     https://github.com/epoplavskis/homeassistant_salus/issues/78\n- Maintainer contact attempt: https://github.com/epoplavskis/homeassistant_salus/pull/86#issuecomment-4329813449\n- Maintained fork release history: https://github.com/Jordi-14/homeassistant_salus/releases\n\n\n### Requested outcome\n\nPlease remove `epoplavskis/homeassistant_salus` from HACS defaults, or advise on the correct replacement/deprecation process so users are not directed to an abandoned integration.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Remove abandoned Salus iT600 repository from HACS defaults"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T14:16:10+00:00",
+   "url": "https://github.com/hacs/default/issues/7384"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7384:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T14:16:13+00:00",
+   "url": "https://github.com/hacs/default/issues/7384"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7012:opened",
+   "payload": {
+    "author": "htiel",
+    "body": "## Repository\nhtiel/LCARS-lovelace-dashboard\n\n## Category\nintegration\n\n## Description\nA Star Trek LCARS (Library Computer Access/Retrieval System) dashboard for Home Assistant. Auto-discovers floors, areas, devices and entities. Features warp core battery panels, atmoscrubber environment panels, consolidated power systems monitoring, floor-grouped navigation, 6 LCARS animations, and full keyboard/screen reader accessibility.\n\n## Checklist\n- [x] Repository is public\n- [x] Repository has a valid hacs.json\n- [x] Repository has a valid manifest.json with version\n- [x] Repository has at least one published GitHub release\n- [x] Repository has a README\n- [x] Repository has a license\n- [x] Repository has a description on GitHub",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add htiel/LCARS-lovelace-dashboard"
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T00:55:34+00:00",
+   "url": "https://github.com/hacs/default/issues/7012"
+  },
+  {
+   "evidence_id": "issue:hacs/default#7012:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T00:55:39+00:00",
+   "url": "https://github.com/hacs/default/issues/7012"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6961:opened",
+   "payload": {
+    "author": "GeiserX",
+    "body": "### Repository\nhttps://github.com/GeiserX/genieacs-ha\n\n### Category\nintegration\n\n### Description\nGenieACS integration for Home Assistant. Monitors and manages TR-069 CPE devices through a GenieACS server via local polling.\n\n### Checklist\n- [x] I've read the publishing documentation.\n- [x] I've added the HACS action to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n### Links\nLink to current release: https://github.com/GeiserX/genieacs-ha/releases/latest\nLink to successful HACS action: https://github.com/GeiserX/genieacs-ha/actions/runs/24339230564",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add GeiserX/genieacs-ha"
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:05:05+00:00",
+   "url": "https://github.com/hacs/default/issues/6961"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6961:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:05:08+00:00",
+   "url": "https://github.com/hacs/default/issues/6961"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6960:opened",
+   "payload": {
+    "author": "GeiserX",
+    "body": "### Repository\nhttps://github.com/GeiserX/duplicacy-ha\n\n### Category\nintegration\n\n### Description\nDuplicacy Backup Monitor integration for Home Assistant. Monitors Duplicacy backup status and statistics via local polling.\n\n### Checklist\n- [x] I've read the publishing documentation.\n- [x] I've added the HACS action to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n### Links\nLink to current release: https://github.com/GeiserX/duplicacy-ha/releases/latest\nLink to successful HACS action: https://github.com/GeiserX/duplicacy-ha/actions/runs/24339228602",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add GeiserX/duplicacy-ha"
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:05:03+00:00",
+   "url": "https://github.com/hacs/default/issues/6960"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6960:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:05:08+00:00",
+   "url": "https://github.com/hacs/default/issues/6960"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6959:opened",
+   "payload": {
+    "author": "GeiserX",
+    "body": "### Repository\nhttps://github.com/GeiserX/cashpilot-ha\n\n### Category\nintegration\n\n### Description\nCashPilot integration for Home Assistant. Monitors bandwidth-sharing dashboard earnings and container status via local polling.\n\n### Checklist\n- [x] I've read the publishing documentation.\n- [x] I've added the HACS action to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n### Links\nLink to current release: https://github.com/GeiserX/cashpilot-ha/releases/latest\nLink to successful HACS action: https://github.com/GeiserX/cashpilot-ha/actions/runs/24339225294",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add GeiserX/cashpilot-ha"
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:05:01+00:00",
+   "url": "https://github.com/hacs/default/issues/6959"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6959:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:26:34+00:00",
+   "url": "https://github.com/hacs/default/issues/6959"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6958:opened",
+   "payload": {
+    "author": "GeiserX",
+    "body": "### Repository\nhttps://github.com/GeiserX/pumperly-ha\n\n### Category\nintegration\n\n### Description\nPumperly Fuel Prices integration for Home Assistant. Monitors fuel prices from gas stations using the Pumperly API with cloud polling.\n\n### Checklist\n- [x] I've read the publishing documentation.\n- [x] I've added the HACS action to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n### Links\nLink to current release: https://github.com/GeiserX/pumperly-ha/releases/latest\nLink to successful HACS action: https://github.com/GeiserX/pumperly-ha/actions/runs/24339240622",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add GeiserX/pumperly-ha"
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:05:00+00:00",
+   "url": "https://github.com/hacs/default/issues/6958"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6958:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-13T11:05:04+00:00",
+   "url": "https://github.com/hacs/default/issues/6958"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6860:opened",
+   "payload": {
+    "author": "ciocotab-cpu",
+    "body": "### Repository\nhttps://github.com/ciocotab-cpu/another-linear-gauge-card\n\n### Category\nplugin\n\n### Description\nA customizable linear gauge card for Home Assistant.\n\n### Checklist\n- [x] I've read the publishing documentation.\n- [x] I've added the HACS action to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n### Links\nLink to current release: https://github.com/ciocotab-cpu/another-linear-gauge-card/releases/latest\nLink to successful HACS action: https://github.com/ciocotab-cpu/another-linear-gauge-card/actions/runs/24161641839",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add new repository"
+   },
+   "source": "github",
+   "timestamp": "2026-04-08T22:23:53+00:00",
+   "url": "https://github.com/hacs/default/issues/6860"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6860:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-08T22:23:57+00:00",
+   "url": "https://github.com/hacs/default/issues/6860"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6859:opened",
+   "payload": {
+    "author": "ciocotab-cpu",
+    "body": "### Repository\nhttps://github.com/ciocotab-cpu/another-linear-gauge-card\n\n### Category\nplugin\n\n### Description\nAnother Linear Gauge Card!\n\n### Checklist\n- [x] I've read the publishing documentation.\n- [x] I've added the HACS action to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n### Links\nLink to current release: https://github.com/ciocotab-cpu/another-linear-gauge-card/releases/tag/v0.0.1\nLink to successful HACS action: https://github.com/ciocotab-cpu/another-linear-gauge-card/actions/runs/24161194293/job/70514170218",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add new repository"
+   },
+   "source": "github",
+   "timestamp": "2026-04-08T22:20:44+00:00",
+   "url": "https://github.com/hacs/default/issues/6859"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6859:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-08T22:20:49+00:00",
+   "url": "https://github.com/hacs/default/issues/6859"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6822:opened",
+   "payload": {
+    "author": "tiankuosun",
+    "body": "<!-- : Tuya Cloud HA Bridge -->\n\nIntegration name: tuya_cloud_ha_bridge\nRepository: https://github.com/tuya/tuya_cloud_ha_bridge\nAuthor: @tiankuosun\nCategory: integration\n\nDescription:\ntuya_cloud_ha_bridge is a new Home Assistant (HA) plugin officially released by Tuya. Leveraging this plugin, users can synchronize devices from Home Assistant to the Tuya App via a QR code authorization process. Through the App, users can access a range of features\u2014including device management, bidirectional device control, voice control, and scene automation\u2014thereby enabling developers to conveniently manage smart home devices across both the Tuya ecosystem and Home Assistant.\n\nLink to documentation (if available): https://github.com/tuya/tuya_cloud_ha_bridge/blob/master/README.md",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Request to add integration: Tuya Cloud HA Bridge"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T10:15:29+00:00",
+   "url": "https://github.com/hacs/default/issues/6822"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6822:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T10:15:35+00:00",
+   "url": "https://github.com/hacs/default/issues/6822"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6820:opened",
+   "payload": {
+    "author": "tiankuosun",
+    "body": "<!-- : Tuya Cloud HA Bridge -->\n\nIntegration name: tuya_cloud_ha_bridge\nRepository: https://github.com/tuya/tuya_cloud_ha_bridge\nAuthor: @tiankuosun\nCategory: integration\n\nDescription:\ntuya_cloud_ha_bridge is a new Home Assistant (HA) plugin officially released by Tuya. Leveraging this plugin, users can synchronize devices from Home Assistant to the Tuya App via a QR code authorization process. Through the App, users can access a range of features\u2014including device management, bidirectional device control, voice control, and scene automation\u2014thereby enabling developers to conveniently manage smart home devices across both the Tuya ecosystem and Home Assistant.\n\nLink to documentation (if available): https://github.com/tuya/tuya_cloud_ha_bridge/blob/master/README.md",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Request to add integration: Tuya Cloud HA Bridge"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T09:54:09+00:00",
+   "url": "https://github.com/hacs/default/issues/6820"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6820:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T09:54:13+00:00",
+   "url": "https://github.com/hacs/default/issues/6820"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6694:opened",
+   "payload": {
+    "author": "miraiehomeassistant",
+    "body": "**Repository:** miraiehomeassistant/ha-panasonic-miraie\n**Category:** Integration\n\nPanasonic MirAIe Home Assistant integration for controlling Panasonic smart home devices (AC, Fan, Switch) via the MirAIe cloud API.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add miraiehomeassistant/ha-panasonic-miraie"
+   },
+   "source": "github",
+   "timestamp": "2026-04-02T09:42:42+00:00",
+   "url": "https://github.com/hacs/default/issues/6694"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6694:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-02T09:42:48+00:00",
+   "url": "https://github.com/hacs/default/issues/6694"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6628:opened",
+   "payload": {
+    "author": "tienou",
+    "body": "**Repository:** https://github.com/tienou/ha-ecocompteur\n**Category:** integration\n\n**Description:**\nHome Assistant custom integration for the Legrand Ecocompteur (412000) energy monitoring device. Communicates locally via HTTP API to provide real-time power monitoring, built-in energy accumulation (kWh), TIC metering with tariff-aware filtering, and pulse counter support for water/gas.\n\n**Features:**\n- Real-time power sensors (W) for 5 configurable circuits\n- Built-in energy sensors (kWh) via Riemann sum integration\n- TIC energy metering with automatic tariff detection (Base, HC/HP, EJP, Tempo)\n- Pulse counter support with dynamic device class (electricity, water, gas)\n- Configurable polling interval (2\u2013300s)\n- State restoration across HA restarts\n- Local polling \u2014 no cloud dependency\n\n**Fork of:** [AlexandreFournier/ha-ecocompteur](https://github.com/AlexandreFournier/ha-ecocompteur) with significant improvements.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add tienou/ha-ecocompteur"
+   },
+   "source": "github",
+   "timestamp": "2026-03-30T07:04:03+00:00",
+   "url": "https://github.com/hacs/default/issues/6628"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6628:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-30T07:04:07+00:00",
+   "url": "https://github.com/hacs/default/issues/6628"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6389:opened",
+   "payload": {
+    "author": "szajbergyerek",
+    "body": "## Add new default repository\n\n### Repository\nszajbergyerek/ha-ship24\n\n### Category\nIntegration\n\n### Description\nShip24 Package Tracker - Home Assistant integration that automatically syncs and tracks packages from your Ship24 account. Supports voice assistant commands to query and remove packages.\n\n### Checklist\n- [x] I have read the [HACS requirements](https://hacs.xyz/docs/publish/requirements)\n- [x] The repository is public\n- [x] The repository has a description\n- [x] The repository has a release (`v1.0.9`)\n- [x] The repository has a valid `hacs.json`\n- [x] The repository has a valid `manifest.json`\n- [x] Brand PR submitted to home-assistant/brands: https://github.com/home-assistant/brands/pull/10000",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add szajbergyerek/ha-ship24"
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T21:03:53+00:00",
+   "url": "https://github.com/hacs/default/issues/6389"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6389:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T21:03:58+00:00",
+   "url": "https://github.com/hacs/default/issues/6389"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6280:opened",
+   "payload": {
+    "author": "simplytoast1",
+    "body": "https://github.com/simplytoast1/ScentAirHABridge",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add ScentAirHABridge"
+   },
+   "source": "github",
+   "timestamp": "2026-03-14T21:10:46+00:00",
+   "url": "https://github.com/hacs/default/issues/6280"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6280:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-14T21:10:49+00:00",
+   "url": "https://github.com/hacs/default/issues/6280"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6075:opened",
+   "payload": {
+    "author": "onpremcloudguy",
+    "body": "### Repository\n\nhttps://github.com/onpremcloudguy/HelloSmart_HomeAssistant\n\n### Category\n\nintegration",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add onpremcloudguy/HelloSmart_HomeAssistant"
+   },
+   "source": "github",
+   "timestamp": "2026-03-08T23:07:24+00:00",
+   "url": "https://github.com/hacs/default/issues/6075"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6075:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-08T23:07:27+00:00",
+   "url": "https://github.com/hacs/default/issues/6075"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6036:opened",
+   "payload": {
+    "author": "dzerik",
+    "body": "Custom Lovelace card for Melitta Barista Smart coffee machines\n\n<!--\nMake sure to check out the guide here: https://hacs.xyz/docs/publish/start\n-->\n## Checklist\n\n- [x] I've read the [publishing documentation](https://hacs.xyz/docs/publish/start).\n- [x] I've added the [HACS action](https://hacs.xyz/docs/publish/action) to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n## Links\n\nLink to current release: <https://github.com/dzerik/melitta-barista-card/releases/tag/v0.4.0>\nLink to successful HACS action (without the `ignore` key): <https://github.com/dzerik/melitta-barista-card/actions/runs/22798353374/job/66136224366>",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Adds new plugin [dzerik/melitta-barista-card]"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T11:54:29+00:00",
+   "url": "https://github.com/hacs/default/issues/6036"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6036:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T11:54:31+00:00",
+   "url": "https://github.com/hacs/default/issues/6036"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6035:opened",
+   "payload": {
+    "author": "dzerik",
+    "body": "Melitta Barista Smart coffee machine integration via BLE\n\n<!--\nDO NOT REQUEST REVIEWS, THAT IS JUST RUDE, IF YOU DO THE PULL REQUEST WILL BE CLOSED!\nMake sure to check out the guide here: https://hacs.xyz/docs/publish/start\n-->\n## Checklist\n\n- [x] I've read the [publishing documentation](https://hacs.xyz/docs/publish/start).\n- [x] I've added the [HACS action](https://hacs.xyz/docs/publish/action) to my repository.\n- [x] (For integrations only) I've added the [hassfest action](https://developers.home-assistant.io/blog/2020/04/16/hassfest/) to my repository.\n- [x] The actions are passing without any disabled checks in my repository.\n- [x] I've added a link to the action run on my repository below in the links section.\n- [x] I've created a new release of the repository after the validation actions were run successfully.\n\n## Links\n\nLink to current release: <https://github.com/dzerik/melitta-barista-ha/releases/tag/v0.6.2>\nLink to successful HACS action (without the `ignore` key): <https://github.com/dzerik/melitta-barista-ha/actions/runs/22798438715/job/66136419064>\nLink to successful hassfest action (if integration): <https://github.com/dzerik/melitta-barista-ha/actions/runs/22798438715/job/66136419071>",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Adds new integration [dzerik/melitta-barista-ha]"
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T11:54:21+00:00",
+   "url": "https://github.com/hacs/default/issues/6035"
+  },
+  {
+   "evidence_id": "issue:hacs/default#6035:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-07T11:54:24+00:00",
+   "url": "https://github.com/hacs/default/issues/6035"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5867:opened",
+   "payload": {
+    "author": "Bargemanos",
+    "body": "Repository: Bargemanos/ha-saj-esolar-ble\nCategory: Integration",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add Bargemanos/ha-saj-esolar-ble"
+   },
+   "source": "github",
+   "timestamp": "2026-02-28T12:41:10+00:00",
+   "url": "https://github.com/hacs/default/issues/5867"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5867:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-28T12:41:13+00:00",
+   "url": "https://github.com/hacs/default/issues/5867"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5693:opened",
+   "payload": {
+    "author": "marsh4200",
+    "body": "### New integration submission\n\n**Name:** AR Smart Scheduler  \n**Repository:** https://github.com/marsh4200/ar_smart_scheduler  \n**Category:** Integration  \n**Description:** Home Assistant integration for smart scheduling and automation.\n\nAll HACS validation and Hassfest checks are passing.  \nPlease review this repository for inclusion in the HACS default store.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "New integration submission: AR Smart Scheduler"
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T15:36:05+00:00",
+   "url": "https://github.com/hacs/default/issues/5693"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5693:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T15:36:08+00:00",
+   "url": "https://github.com/hacs/default/issues/5693"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5651:opened",
+   "payload": {
+    "author": "leguernadrian-boop",
+    "body": "### Repository\nhttps://github.com/adrianleguern/apple-music-mac-ha\n\n### Category\nintegration\n\n### Description\nUne int\u00e9gration moderne pour contr\u00f4ler Apple Music sur macOS avec support des pochettes HD et gestion du volume.\n\n### Checklist\n- [x] I have verified that the repository is compliant with the HACS requirements.\n- [x] I have verified that the repository is not already in the default store.\n- [x] I am the owner of the repository.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add Apple Music for Mac (Modern)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-16T03:28:58+00:00",
+   "url": "https://github.com/hacs/default/issues/5651"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5651:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-16T03:29:01+00:00",
+   "url": "https://github.com/hacs/default/issues/5651"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5650:opened",
+   "payload": {
+    "author": "leguernadrian-boop",
+    "body": "### Repository\nhttps://github.com/adrianleguern/apple-music-mac-ha\n\n### Category\nintegration\n\n### Description\nUne int\u00e9gration moderne pour contr\u00f4ler Apple Music sur macOS avec support des pochettes HD et gestion du volume.\n\n### Checklist\n- [x] I have verified that the repository is compliant with the HACS requirements.\n- [x] I have verified that the repository is not already in the default store.\n- [x] I am the owner of the repository.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add Apple Music for Mac (Modern)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-16T03:25:48+00:00",
+   "url": "https://github.com/hacs/default/issues/5650"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5650:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-16T03:25:52+00:00",
+   "url": "https://github.com/hacs/default/issues/5650"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5444:opened",
+   "payload": {
+    "author": "DJTech84",
+    "body": "## Repository\nhttps://github.com/djtech84/boiler-card\n\n## Category\nLovelace\n\n## Description\nCustom Lovelace card for Home Assistant to monitor and control\nAriston Lydos WiFi water heaters.\n\n## Checklist\n- [x] This is a single repository\n- [x] I have created a release\n- [x] The repository contains a hacs.json file\n- [x] This is not a fork\n- [x] The repository has a README\n- [x] The repository uses an open-source license (MIT)\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add Ariston Lydos Boiler Card to HACS"
+   },
+   "source": "github",
+   "timestamp": "2026-02-07T10:08:57+00:00",
+   "url": "https://github.com/hacs/default/issues/5444"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5444:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-07T10:09:00+00:00",
+   "url": "https://github.com/hacs/default/issues/5444"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5308:opened",
+   "payload": {
+    "author": "diestrohs",
+    "body": "## Repository\n\nhttps://github.com/diestrohs/time-spinner-card\n\n## Category\n\nPlugin\n\n## Description\n\niOS-style time spinner card for Home Assistant with visual editor support. Features intuitive spinner interface for time selection, support for input_datetime and time entities, configurable minute steps, and full visual editor integration. Compatible with EVCC Scheduler and other time-based integrations.\n\n## Checklist\n\n- [x] The repository contain a valid hacs.json\n- [x] The repository has a valid info.md\n- [x] The repository has a valid README with documentation\n- [x] The repository has been published to GitHub with a release\n- [x] I have read and understood the requirements for adding a repository",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "[Add] time-spinner-card"
+   },
+   "source": "github",
+   "timestamp": "2026-01-28T22:28:25+00:00",
+   "url": "https://github.com/hacs/default/issues/5308"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5308:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-28T22:28:28+00:00",
+   "url": "https://github.com/hacs/default/issues/5308"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5225:opened",
+   "payload": {
+    "author": "jaycollett",
+    "body": "## Repository\n\nhttps://github.com/jaycollett/OpenIRBlaster\n\n## Category\n\nIntegration\n\n## Description\n\nOpenIRBlaster is a Home Assistant custom integration that enables users to learn, store, and replay infrared remote control codes using ESPHome-based hardware.\n\n**Key Features:**\n- Learn IR codes from any remote control with a single button press\n- Store unlimited codes with custom names, tags, and notes\n- One-click replay via Home Assistant button entities\n- Full automation support for smart home integration\n- Multi-device support for managing multiple IR blasters throughout the home\n- Local control via ESPHome (no cloud dependency)\n\n**Use Cases:**\n- Control TVs, air conditioners, fans, projectors, and other IR devices\n- Create unified dashboards for all IR-controlled devices\n- Build automations (e.g., \"turn off AC when leaving home\")\n- Voice control through Home Assistant integrations\n\n**Hardware:**\n- ESP8266/ESP32 based\n- Includes pre-compiled firmware binary and source\n- Circuit diagrams and build instructions provided\n- Uses common components (TSOP38238 IR receiver, 950nm IR LED)\n\n**Technical Details:**\n- Integrates with Home Assistant's ESPHome integration\n- Config flow for easy setup\n- Storage of learned codes in Home Assistant storage\n- Services for programmatic control\n- Entity platform: buttons, sensors, text inputs\n\n**Documentation:**\n- Complete README with quick start guide\n- Hardware build instructions\n- Development and testing documentation\n- MIT licensed\n\n**Why HACS Default?**\nThis integration provides a common, frequently-requested feature (IR control) in a polished, user-friendly package suitable for general Home Assistant users. It eliminates the need for complex ESPHome YAML configurations and provides a unified interface for managing IR codes across multiple devices.\n\n## Additional Information\n\n- **First Release:** v1.0.0 (January 2026)\n- **Maintainer:** @jaycollett\n- **Home Assistant Version:** 2024.1+\n- **Dependencies:** ESPHome integration\n- **Issue Tracker:** https://github.com/jaycollett/OpenIRBlaster/issues\n- **License:** MIT\n\nThe integration has been tested with multiple devices and includes comprehensive error handling, logging, and user feedback.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add jaycollett/OpenIRBlaster integration"
+   },
+   "source": "github",
+   "timestamp": "2026-01-20T01:25:38+00:00",
+   "url": "https://github.com/hacs/default/issues/5225"
+  },
+  {
+   "evidence_id": "issue:hacs/default#5225:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-20T01:25:42+00:00",
+   "url": "https://github.com/hacs/default/issues/5225"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4943:opened",
+   "payload": {
+    "author": "PalmManiac",
+    "body": "### Repository\n\nhttps://github.com/PalmManiac/zendure-smartflow-ai\n\n### Integration type\n\nIntegration\n\n### Domain\n\nzendure_smartflow_ai\n\n### Name\n\nZendure SmartFlow AI\n\n### Description\n\nAn advanced Home Assistant integration for intelligent control of Zendure SmartFlow battery systems.\n\nFeatures include:\n- AI-based charging and discharging logic\n- PV surplus charging\n- Price-aware discharge using dynamic electricity tariffs\n- Emergency charging until SoC-Min\n- Manual, automatic, summer and winter modes\n- Detailed analytics (average charge price, profit / savings)\n- Full Home Assistant UI integration (numbers, selects, sensors)\n\n### Version\n\n1.0.0\n\n### Requirements\n\n- Home Assistant 2024.6 or newer\n- Zendure SmartFlow compatible battery system\n- Existing Home Assistant sensors for:\n  - Battery SoC\n  - PV production\n  - (optional) dynamic electricity price\n\n### Checklist\n\n- [x] This is a custom integration\n- [x] The repository is public\n- [x] The repository contains a `hacs.json`\n- [x] The integration follows Home Assistant guidelines\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add integration: Zendure SmartFlow AI"
+   },
+   "source": "github",
+   "timestamp": "2025-12-30T12:18:59+00:00",
+   "url": "https://github.com/hacs/default/issues/4943"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4943:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-30T12:19:02+00:00",
+   "url": "https://github.com/hacs/default/issues/4943"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4820:opened",
+   "payload": {
+    "author": "davidss20",
+    "body": "## Repository Information\n\n**Repository URL:**\n```\nhttps://github.com/davidss20/home-assistant-24h-timer-integration\n```\n\n**Category:** Integration\n\n**Description:**\n```\nA powerful 24-hour visual timer with automatic entity control for Home Assistant.\n\nFeatures:\n\u2022 24-hour circular timer interface with half-hour precision\n\u2022 Smart activation conditions (home presence, Shabbat mode, vacation, custom sensors)\n\u2022 Automatic entity control (lights, switches, fans, climate, covers, etc.)\n\u2022 Event-driven architecture for instant response (no polling delays)\n\u2022 Real-time visual status indicators\n\u2022 Multi-language support (8 languages: EN, HE, ES, FR, DE, IT, NL, PL)\n\u2022 Automatic Lovelace card installation with cache busting\n\u2022 Multiple timer instances support\n\u2022 RTL support for Hebrew and other RTL languages\n\nPerfect for:\n- Water heater scheduling\n- Smart lighting automation\n- Garden irrigation timers\n- HVAC time-based control\n- Any time-based home automation\n```\n\n**Why should this be in the default repository?**\n```\n1. Unique Visual Interface: Provides an intuitive circular 24-hour timer that's easy to use\n2. Solves Common Need: Time-based automation is one of the most requested features\n3. Well Documented: Comprehensive README with examples in multiple languages\n4. Active Development: Regular updates with detailed changelog (currently v1.0.0)\n5. Quality Code: Follows HA best practices, includes validation workflow\n6. Multi-Language: Supports 8 languages with RTL support\n7. Complete Solution: Includes both backend integration and frontend card\n8. User-Friendly: Config flow for easy setup, no YAML required\n9. Event-Driven: Uses state listeners for instant response, not polling\n10. Already in Use: Being used by multiple users with positive feedback\n```\n\n**Additional information:**\n```\n- Latest version: 1.0.0\n- Minimum Home Assistant version: 2024.1.0\n- Minimum HACS version: 1.6.0\n- IoT Class: local_push (event-driven, no polling)\n- Integration type: device\n- Config flow: Yes\n- Includes Lovelace card: Yes (auto-installed)\n- Dependencies: None\n- Translations: 8 languages\n- GitHub workflow: HACS validation + Hassfest validation\n- License: MIT\n- Active maintenance: Yes\n```\n\n**Screenshots/Preview:**\n```\nPreview images available in repository:\nhttps://github.com/davidss20/home-assistant-24h-timer-integration/raw/main/images/preview.jpg\nhttps://github.com/davidss20/home-assistant-24h-timer-integration/raw/main/images/preview1.jpg\n```\n\n---\n\n## Checklist Before Submission\n\n- [x] Repository is public\n- [x] Repository has a valid LICENSE file (MIT)\n- [x] Repository has a README.md with documentation\n- [x] Repository has releases (create v1.0.0 before submitting!)\n- [x] Integration has a manifest.json\n- [x] Integration has a hacs.json\n- [x] Integration has proper structure in custom_components/\n- [x] Integration uses config_flow\n- [x] Integration has translations\n- [x] Repository has GitHub Actions validation workflow\n- [x] No obvious bugs or issues\n- [x] Code follows Home Assistant standards\n\n---\n\n## Quick Links for Submission\n\n1. **Create Release First**: https://github.com/davidss20/home-assistant-24h-timer-integration/releases/new\n   - Tag: `v1.0.0`\n   - Title: `v1.0.0 - First Official HACS Release`\n   - Description: Copy from CHANGELOG.md\n\n2. **Submit to HACS**: https://github.com/hacs/default/issues/new?template=integration.yml\n\n3. **Wait for Response**: Usually 1-4 weeks\n\n---\n\n**Note**: Version 1.0.0 marks the first official HACS release. Previous versions (4.x-5.x) were development versions.\n\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add Timer 24H Integration - 24-hour visual timer with automatic entity control"
+   },
+   "source": "github",
+   "timestamp": "2025-12-07T15:30:56+00:00",
+   "url": "https://github.com/hacs/default/issues/4820"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4820:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-12-07T15:30:59+00:00",
+   "url": "https://github.com/hacs/default/issues/4820"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4582:opened",
+   "payload": {
+    "author": "ivanb1989",
+    "body": "Repository URL : https://github.com/ivanb1989/sabiana-cloud\nCategory: Integration\nDescription: Integration for Sabiana Cloud, Sabianet. Control of devices connected with modbus",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add ivanb1989/sabiana-cloud"
+   },
+   "source": "github",
+   "timestamp": "2025-11-10T18:18:53+00:00",
+   "url": "https://github.com/hacs/default/issues/4582"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4582:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-10T18:18:56+00:00",
+   "url": "https://github.com/hacs/default/issues/4582"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4368:opened",
+   "payload": {
+    "author": "domodom30",
+    "body": "name: Mealie Cards\nurl: https://github.com/domodom30/mealie-cards\ncategory: lovelace",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add Mealie Cards"
+   },
+   "source": "github",
+   "timestamp": "2025-10-14T14:30:32+00:00",
+   "url": "https://github.com/hacs/default/issues/4368"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4368:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-10-14T14:30:35+00:00",
+   "url": "https://github.com/hacs/default/issues/4368"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4152:opened",
+   "payload": {
+    "author": "404GamerNotFound",
+    "body": "A Home Assistant integration that connects to a remote server via SSH to collect and display live system metrics. This plugin provides an easy, configurable way to monitor a headless or remote Linux host directly from Home Assistant.\n\nWhy It Should Be Included in HACS\n1. Remote Monitoring Convenience \u2013 It offers a seamless, Home-Assistant-native method for retrieving CPU usage, memory utilization, disk usage, and other vital stats from an external host, removing the need for third-party dashboards.\n2. Simple Configuration \u2013 Uses a straightforward YAML configuration that requires only SSH credentials and the host\u2019s IP address; no advanced setup or additional software is necessary on the target system.\n3. Customizable Sensors \u2013 Users can choose which metrics to retrieve, define sensor names, and configure polling intervals for fine-grained control over performance and resource usage.\n4. Secure Communication \u2013 Relies on standard SSH protocol with public-key authentication (password fallback optional), ensuring a secure channel without exposing additional ports or services.\n5. Extensible Foundation \u2013 The codebase is modular and well-documented, making it easy to extend in the future with additional sensors or custom features.\n\n\nFeatures\n- CPU load, memory usage, disk usage, network traffic, and uptime sensors and kore\n- SSH-based data retrieval\n- Configurable polling intervals\n- Support for multiple remote hosts\n- Detailed logs for troubleshooting\n\nDependencies and Compatibility\n- Requires Python 3.10+ (matching Home Assistant\u2019s supported Python version).\n- Tested with Home Assistant 2023.7 and later.\n- Works on Home Assistant OS, Supervised, Container, and Core installations.\n\n\n\nLinks\n- Repository: https://github.com/404GamerNotFound/vserver-ssh-stats/\n- Documentation: https://github.com/404GamerNotFound/vserver-ssh-stats/blob/main/README.md\n- Issue Tracker: https://github.com/404GamerNotFound/vserver-ssh-stats/issues\n\n![Image](https://github.com/user-attachments/assets/8bd48ebd-fed3-491b-8ba0-9ce313f0f342)\n![Image](https://github.com/user-attachments/assets/05c5abee-e30a-4ab9-876e-a8fade2fdae7)",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "[REPO ADD]: vServer SSH Stats"
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T05:52:47+00:00",
+   "url": "https://github.com/hacs/default/issues/4152"
+  },
+  {
+   "evidence_id": "issue:hacs/default#4152:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-09-13T05:52:50+00:00",
+   "url": "https://github.com/hacs/default/issues/4152"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3873:opened",
+   "payload": {
+    "author": "smartkwadrat",
+    "body": "repository: https://github.com/smartkwadrat/enhanced-platerecognizer\ncategory: integration",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add new integration: Enhanced PlateRecognizer"
+   },
+   "source": "github",
+   "timestamp": "2025-07-29T20:58:57+00:00",
+   "url": "https://github.com/hacs/default/issues/3873"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3873:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-07-29T20:59:01+00:00",
+   "url": "https://github.com/hacs/default/issues/3873"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3690:opened",
+   "payload": {
+    "author": "Drakann1234",
+    "body": "I no longer see any forcasts like hourly. Entitys just show current weather.\nAnyone else got same problem?",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Lost hourly and other forcasts on entity"
+   },
+   "source": "github",
+   "timestamp": "2025-06-27T20:05:13+00:00",
+   "url": "https://github.com/hacs/default/issues/3690"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3690:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-06-27T20:05:17+00:00",
+   "url": "https://github.com/hacs/default/issues/3690"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3494:opened",
+   "payload": {
+    "author": "mon3y78",
+    "body": "name: Bubble room\nurl: https://github.com/mon3y78/Lovelace-Bubble-room\ncategory: lovelace",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Bubble-room"
+   },
+   "source": "github",
+   "timestamp": "2025-05-30T20:36:01+00:00",
+   "url": "https://github.com/hacs/default/issues/3494"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3494:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-05-30T20:36:03+00:00",
+   "url": "https://github.com/hacs/default/issues/3494"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3362:opened",
+   "payload": {
+    "author": "VesuvioCode",
+    "body": "### Repository\n\nhttps://github.com/VesuvioCode/munnezzassistant-hacs\n\n### Category\n\nLovelace\n\n### HACS.json file present?\n\nYes\n\n### Additional information\n\nMunnezzAssistant \u00e8 una dashboard Lovelace premium per Home Assistant, progettata per gestire la raccolta differenziata in modo elegante e interattivo.\n\nInclude:\n- Dashboard YAML con card animate e grafiche in stile HomeKit\n- Notifiche Alexa configurabili da interfaccia\n- Tema lucido chiaro personalizzato\n- Pulsante con tracciamento \"spazzatura conferita\"\n- Icone realistiche per ogni tipo di rifiuto\n\nIl pacchetto \u00e8 gi\u00e0 validato, compatibile con HACS e include la release v1.0.0.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Add repository: VesuvioCode/munnezzassistant-hacs"
+   },
+   "source": "github",
+   "timestamp": "2025-04-30T16:04:22+00:00",
+   "url": "https://github.com/hacs/default/issues/3362"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3362:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-04-30T16:04:26+00:00",
+   "url": "https://github.com/hacs/default/issues/3362"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3104:opened",
+   "payload": {
+    "author": "Rafciq",
+    "body": "Hello, greetings to all!\nLet's be better to each other. Let's respect each other.\nI've been waiting for a solution https://github.com/hacs/default/pull/3089 for a few long days. Please support me.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Let's respect ourselves and our time."
+   },
+   "source": "github",
+   "timestamp": "2025-02-08T13:06:18+00:00",
+   "url": "https://github.com/hacs/default/issues/3104"
+  },
+  {
+   "evidence_id": "issue:hacs/default#3104:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-02-08T13:06:22+00:00",
+   "url": "https://github.com/hacs/default/issues/3104"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2962:opened",
+   "payload": {
+    "author": "luarrk995",
+    "body": "#!/bin/bash\n\nls -ltd */ | sed \"1,$1d\" | rev | cut -d ' ' -f1 | rev &> dir_list\nif [ -s dir_list ]; then\n  echo \"Removing:\"\n  cat dir_list\n  srun -N 1 -n 20 -p pdebug -t 30 drm `< dir_list`\nelse\n  echo \"No directories to remove at this time.\"\nfi\nrm dir_list",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Remove"
+   },
+   "source": "github",
+   "timestamp": "2025-01-02T03:48:23+00:00",
+   "url": "https://github.com/hacs/default/issues/2962"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2962:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2025-01-02T03:48:26+00:00",
+   "url": "https://github.com/hacs/default/issues/2962"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2926:opened",
+   "payload": {
+    "author": "artemsvit",
+    "body": "Repository: https://github.com/artemsvit/HA-Air-Purifier-Card\r\nCategory: Plugin",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Xiaomi Air Purifier Card"
+   },
+   "source": "github",
+   "timestamp": "2024-12-19T13:13:57+00:00",
+   "url": "https://github.com/hacs/default/issues/2926"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2926:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-12-19T13:14:02+00:00",
+   "url": "https://github.com/hacs/default/issues/2926"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2502:opened",
+   "payload": {
+    "author": "wuwentao",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_\r\n\r\n## Description: \r\n**if we install midea_ac_lan from HACS, it can't work any more , just return an unkown error.**\r\nas the hacs.json input an error file name mi**ed**a_ac_lan.zip, the right name should be mi**de**a_ac_lan.zip\r\n\r\n1. old repo URL that can't work :  [https://github.com/georgezhao2010/midea_ac_lan](https://github.com/georgezhao2010/midea_ac_lan)\r\n2. the hacs domain: **midea_ac_lan**\r\n3. the hacs name: Midea AC Lan\r\n\r\n\r\n\r\n## Plan:\r\nmost github user report issue and PR about it, got no any reponse for a long time.\r\nnow I'm decide to fork and continue maintainer with it in future\r\n\r\n[https://github.com/wuwentao/midea_ac_lan ](https://github.com/wuwentao/midea_ac_lan )   (it should a works verion with the error fix and some new PR merged.)\r\n\r\nand I' also send send email to the origin maintainer, got no repsone.\r\nreport a github issue in the origin repo: \r\n[https://github.com/georgezhao2010/midea_ac_lan/issues/517](https://github.com/georgezhao2010/midea_ac_lan/issues/517)\r\n\r\n## **Question:**\r\nI'm not sure with how to do it now, so I just file a new PR to check and confirm with it ,then i will file PR to follow  the rule with our suggestion.\r\n\r\n**Option 1**. file PR to replace my forked repo with old repo? and continue maintain it in future ?\r\n**Option 2**.  or remove old **midea_ac_lan** or temp black list? and add a new name with it and file to hacs default?\r\n\r\n\r\nThanks\r\nWentao\r\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "fork and continue maintain midea_ac_lan as origin owner have no reponse for 7 month with new issue and PR"
+   },
+   "source": "github",
+   "timestamp": "2024-05-13T02:49:30+00:00",
+   "url": "https://github.com/hacs/default/issues/2502"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2502:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-05-13T02:49:33+00:00",
+   "url": "https://github.com/hacs/default/issues/2502"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2441:opened",
+   "payload": {
+    "author": "Ixitxachitl",
+    "body": "              Updated is not for when the <thing> was updated, it is when the repository was.\r\nOnce you need to update, the state of the update entities changes.\r\n\r\n_Originally posted by @ludeeus in https://github.com/hacs/integration/issues/3553#issuecomment-2008677924_\r\n            \r\n![image](https://user-images.githubusercontent.com/16951681/320046327-90d709fd-c94a-4d0c-964a-04a9d6964e28.png)\r\nSO, you're saying that although it was updated yesterday, because there was no new version released there was no updated but it tells me that there was an update to the repository anyway? Why do I need to know this? I've been trying for hours to figure out how things were auto-updating but it turns out that the Updated column is just misleading.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Updated is not for when the <thing> was updated, it is when the repository was."
+   },
+   "source": "github",
+   "timestamp": "2024-04-05T15:01:31+00:00",
+   "url": "https://github.com/hacs/default/issues/2441"
+  },
+  {
+   "evidence_id": "issue:hacs/default#2441:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2024-04-05T15:01:33+00:00",
+   "url": "https://github.com/hacs/default/issues/2441"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1925:opened",
+   "payload": {
+    "author": "MTrab",
+    "body": "Not easy to create PR's for removing repos when they get auto-closed :(\r\n\r\nhttps://github.com/hacs/default/pull/1924",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Remove repository PR gets auto-closed"
+   },
+   "source": "github",
+   "timestamp": "2023-06-02T12:20:22+00:00",
+   "url": "https://github.com/hacs/default/issues/1925"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1925:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2023-06-02T12:20:24+00:00",
+   "url": "https://github.com/hacs/default/issues/1925"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1805:opened",
+   "payload": {
+    "author": "mailchao",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\n## Describe why you are flagging this\n\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "1"
+   },
+   "source": "github",
+   "timestamp": "2023-03-21T16:50:41+00:00",
+   "url": "https://github.com/hacs/default/issues/1805"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1805:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2023-03-21T16:50:44+00:00",
+   "url": "https://github.com/hacs/default/issues/1805"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1665:opened",
+   "payload": {
+    "author": "NatanCoralogix",
+    "body": "Not a big issue,\r\nbut i see PRs pending more than 2 weeks, can we speed it up somehow?",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Too many PR`s, no reviewers "
+   },
+   "source": "github",
+   "timestamp": "2023-01-10T16:01:56+00:00",
+   "url": "https://github.com/hacs/default/issues/1665"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1665:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2023-01-10T16:01:59+00:00",
+   "url": "https://github.com/hacs/default/issues/1665"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1632:opened",
+   "payload": {
+    "author": "AbidingOhmsLaw",
+    "body": "using HA version\r\nHome Assistant 2022.12.8\r\nSupervisor 2022.11.2\r\nOperating System 9.4\r\nFrontend 20221213.1 - latest\r\n\r\niOS app version\r\n2022.10.1\r\n\r\nissue encountered:\r\nWhen using the HA iOS app and attempting to install/register the HACS integration at the point that the integration gives the code for github device oAuth.  I can successfully authorize the oAuth token and github gives me the \u201cYour all set page\u201d but retuning to the HA app just shows the same screen waiting for activation and never progresses, waited more than 15 min.  \r\n\r\nOnce I logged into the HA server with a web browser it worked as documented.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "oAuth validation not working from HA app"
+   },
+   "source": "github",
+   "timestamp": "2022-12-27T17:59:22+00:00",
+   "url": "https://github.com/hacs/default/issues/1632"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1632:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2022-12-27T17:59:24+00:00",
+   "url": "https://github.com/hacs/default/issues/1632"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1406:opened",
+   "payload": {
+    "author": "breakthestatic",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nGetting errors in HA logs:\r\n```\r\nGitHub returned 404 for https://api.github.com/repos/fred-oranje/rituals-genie\r\n```\r\nLooks like the user deleted their repo - https://github.com/fred-oranje/rituals-genie returns a 404, and going to the user's list of repos (https://github.com/fred-oranje?tab=repositories) also does not show that repo.\r\n\r\nI'm not actually using this integration, but am still seeing it in the logs regardless.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "fred-oranje/rituals-genie missing"
+   },
+   "source": "github",
+   "timestamp": "2022-06-17T16:55:42+00:00",
+   "url": "https://github.com/hacs/default/issues/1406"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1406:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2022-06-17T16:55:43+00:00",
+   "url": "https://github.com/hacs/default/issues/1406"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1392:opened",
+   "payload": {
+    "author": "nirchen",
+    "body": "I'm having issues updating HACS via HACS updates. I've searched and found that #2464 solves this but I don't know how to update HACS manually, can someone help?\r\n\r\nThanks\r\n\r\nI'm not sure, but I believe this issue was solved in version 1.20.0 (#2464)\r\nUnfortunately because of issue #2556 you can not update past 1.19.3 using the normal update method at the moment.\r\n\r\n_Originally posted by @ManCaveMedia in https://github.com/hacs/integration/issues/2563#issuecomment-1078927405_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "HACS won't update past 1.15 - I understand I need to update it manually, but how?"
+   },
+   "source": "github",
+   "timestamp": "2022-06-04T18:22:37+00:00",
+   "url": "https://github.com/hacs/default/issues/1392"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1392:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2022-06-04T18:22:38+00:00",
+   "url": "https://github.com/hacs/default/issues/1392"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1377:opened",
+   "payload": {
+    "author": "mririgoyen",
+    "body": "I'm referring to this PR: https://github.com/hacs/default/pull/1373\r\n\r\nThere was no warning, no deprecation notice, no nothing. HACS just automatically removed packages in which my setup relies heavily on. This is not good user experience and I'm a bit set back by just how bad this was handled.\r\n\r\nMight I suggest you properly indicate when packages have been archived to allow people chance to prepare for breaking changes instead of having them automatically removed from our configurations? Or give people the ability to keep what is already installed, installed with proper warnings or indications that there will no longer be updates?\r\n\r\nThis whole process really needs some well documented steps and expectations moving forward.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Auto-removal on archived packages should absolutely NOT be the default path"
+   },
+   "source": "github",
+   "timestamp": "2022-05-28T23:30:57+00:00",
+   "url": "https://github.com/hacs/default/issues/1377"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1377:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2022-05-28T23:30:59+00:00",
+   "url": "https://github.com/hacs/default/issues/1377"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1359:opened",
+   "payload": {
+    "author": "ChristophCaina",
+    "body": "Hi, after updating one of my integrations installed by HACS, I've noticed that the link which will navigate to the restart option of HomeAssistant seems to link to an older, no longer existing URL...\r\n\r\n/config/server_control\r\n\r\nusing the link just showed an empty page without any further content.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "HACS forwarding to old \"system page\""
+   },
+   "source": "github",
+   "timestamp": "2022-05-13T07:58:09+00:00",
+   "url": "https://github.com/hacs/default/issues/1359"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1359:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2022-05-13T07:58:11+00:00",
+   "url": "https://github.com/hacs/default/issues/1359"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1012:opened",
+   "payload": {
+    "author": "kwaggamot",
+    "body": "Versions:\r\nOperating System\r\nHome Assistant OS 6.1\r\n\r\nHACS release: 1.13.2\r\n\r\n\r\n![image](https://user-images.githubusercontent.com/83424726/124274505-a440cf00-db41-11eb-8b88-6795d94f7c9b.png)\r\n\r\n![image](https://user-images.githubusercontent.com/83424726/124274635-cdf9f600-db41-11eb-9dc7-9710ac5a3c5e.png)\r\n\r\n![image](https://user-images.githubusercontent.com/83424726/124274682-da7e4e80-db41-11eb-9c9c-a36a43d55e56.png)\r\n\r\n![image](https://user-images.githubusercontent.com/83424726/124274719-e538e380-db41-11eb-80ca-5a2440ed0046.png)\r\n\r\n![image](https://user-images.githubusercontent.com/83424726/124274762-f1bd3c00-db41-11eb-93c9-31f60f52e7e3.png)\r\n\r\nI have tried everything. To a fresh HA install to removing everything. Using configuration.yaml. Nothing works. Please tell what I may have done wrong?",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": "2021-07-02T12:33:37Z",
+    "title": "Won't install"
+   },
+   "source": "github",
+   "timestamp": "2021-07-02T12:30:49+00:00",
+   "url": "https://github.com/hacs/default/issues/1012"
+  },
+  {
+   "evidence_id": "issue:hacs/default#1012:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2021-07-02T13:19:51+00:00",
+   "url": "https://github.com/hacs/default/issues/1012"
+  },
+  {
+   "evidence_id": "issue:hacs/default#729:opened",
+   "payload": {
+    "author": "tux2000",
+    "body": "xMrVizzy/button-toolbar is not available any longer. This results in the error in home assistant:\r\n\r\n```\r\nLogger: custom_components.hacs.repository.plugin.xMrVizzy.button-toolbar\r\nSource: custom_components/hacs/helpers/functions/validate_repository.py:40\r\nIntegration: HACS (documentation, issues)\r\nFirst occurred: 7:09:29 AM (1 occurrences)\r\nLast logged: 7:09:29 AM\r\nGitHub returned 404 for https://api.github.com/repos/xMrVizzy/button-toolbar \r\n```\r\n\r\nThe repository is listed here: https://github.com/hacs/default/blob/9af12399b38aa51ec37b3779be4f3ee1d5d07d16/plugin#L195 but apparently its not as easy as removing that line only (see https://github.com/hacs/default/pull/728).\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "xMrVizzy/button-toolbar not available any longer"
+   },
+   "source": "github",
+   "timestamp": "2020-12-05T13:10:46+00:00",
+   "url": "https://github.com/hacs/default/issues/729"
+  },
+  {
+   "evidence_id": "issue:hacs/default#729:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-12-05T14:06:49+00:00",
+   "url": "https://github.com/hacs/default/issues/729"
+  },
+  {
+   "evidence_id": "issue:hacs/default#725:opened",
+   "payload": {
+    "author": "LucidityCrash",
+    "body": "xMrVizzy/button-toolbar no longer exists so needs to be removed from the plugins default list.\r\n\r\n\r\n```\r\n2020-12-04 07:35:32 ERROR (MainThread) [custom_components.hacs.repository.plugin.xMrVizzy.button-toolbar] GitHub returned 404 for https://api.github.com/repos/xMrVizzy/button-toolbar,\r\n2020-12-04 07:35:32 ERROR (MainThread) [custom_components.hacs.api.repository] GitHub returned 404 for https://api.github.com/repos/xMrVizzy/button-toolbar\r\n```",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "xMrVizzy/button-toolbar no longer exists"
+   },
+   "source": "github",
+   "timestamp": "2020-12-04T07:57:06+00:00",
+   "url": "https://github.com/hacs/default/issues/725"
+  },
+  {
+   "evidence_id": "issue:hacs/default#725:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-12-04T10:50:04+00:00",
+   "url": "https://github.com/hacs/default/issues/725"
+  },
+  {
+   "evidence_id": "issue:hacs/default#682:opened",
+   "payload": {
+    "author": "Int-Kagune",
+    "body": "#include <iostream.h>\n#include <conio.h>\n#include <string.h>\n#include <stdlib.h>\n#include <stdio.h>\n \nstruct pilas\n{\nint d;\npilas *a;\n}*c,*e;\n \nvoid menu(void);\nvoid ingresar(void);\nvoid sacar (void);\nvoid actualizar_pila(void);\n \nmain()\n{\nmenu();\n}\nvoid menu(void)\n{\nint y,opc;\n for(;;)\n {\n cout<<\"\\n1. Ingresar datos\";\n cout<<\"\\t2. Sacar datos\";\n cout<<\"\\t0. Terminar\";\n cout<<\"\\n Ingrese opcion: \";cin>>opc;\n switch(opc)\n {\n case 1:\n ingresar();\n break;\n case 2: sacar();\n break;\n case 0: exit(1);\n default: cout<<\"\\n Opcion no valida!!\"; break;\n }\nactualizar_pila();\ncout<<\"\\n\\nOprima una tecla para continuar\";\ngetch();\n }\n}\n \nvoid ingresar (void)\n{\n if(!c)\n {\n c=new(pilas);\n cout<<\"Ingrese elemento: \";\n cin>>c->d;\n c->a=NULL;\n return;\n }\n \n e=new(pilas);\n cout<<\"\\nIngrese elemento: \";\n cin>>e->d;\n e->a=c;\n c=e;\n}\n \nvoid sacar(void)\n{\n if(!c)\n {\n cout<<\"\\n\\nNo hay elementos!!\";\n return;\n }\n \n e=new(pilas);\n e=c;\n cout<<\"\\n\\nElemento eliminado: \" <<e->d;\n c=e->a;\n delete(e);\n \n}\nvoid actualizar_pila(void)\n{\n int y=2,i,ca=0;\n e=c;\n while(e)\n {\n ca++;\n e=e->a;\n }\n \nfor(i=0;i<=ca;i++)\n {\n cout<<\" \";\n }\n //muestro lo que tiene la pila!!\n i=0;\n e=c;\n while(e)\n {\n cout<<\"\\n\";\n cout<<++i<<\" - \"<<e->d;\n e=e->a;\n }\n}\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Pilas "
+   },
+   "source": "github",
+   "timestamp": "2020-10-29T04:50:01+00:00",
+   "url": "https://github.com/hacs/default/issues/682"
+  },
+  {
+   "evidence_id": "issue:hacs/default#682:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-10-29T08:24:33+00:00",
+   "url": "https://github.com/hacs/default/issues/682"
+  },
+  {
+   "evidence_id": "issue:hacs/default#464:opened",
+   "payload": {
+    "author": "fineemb",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\nCUSTOM REPOSITORIES\r\nadd  erpositories -- save\r\n````\r\nUncaught TypeError: Cannot read property 'selectedItem' of undefined\r\n    at HTMLElement.Save (frontend-20200426112021.js:21594)\r\n    at EventPart.handleEvent (frontend-20200426112021.js:1090)\r\n    at HTMLElement.EventPart.__boundHandleEvent (frontend-20200426112021.js:1056)\r\n````\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "Cannot read property 'selectedItem' of undefined(CUSTOM REPOSITORIES)"
+   },
+   "source": "github",
+   "timestamp": "2020-05-21T16:02:00+00:00",
+   "url": "https://github.com/hacs/default/issues/464"
+  },
+  {
+   "evidence_id": "issue:hacs/default#464:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-21T16:02:44+00:00",
+   "url": "https://github.com/hacs/default/issues/464"
+  },
+  {
+   "evidence_id": "issue:hacs/default#459:opened",
+   "payload": {
+    "author": "DSorlov",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nI think HASL have been wrongly blacklisted, probably because of this:\r\nhttps://github.com/hacs/default/pull/449",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "HASL shoud **not** be blacklisted"
+   },
+   "source": "github",
+   "timestamp": "2020-05-20T09:06:52+00:00",
+   "url": "https://github.com/hacs/default/issues/459"
+  },
+  {
+   "evidence_id": "issue:hacs/default#459:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-20T09:13:50+00:00",
+   "url": "https://github.com/hacs/default/issues/459"
+  },
+  {
+   "evidence_id": "issue:hacs/default#445:opened",
+   "payload": {
+    "author": "SonomaGTS",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nThis integration has stopped working. Author of it hasn't touched it in almost a year and sdk it relies on hasn't been touched in 6 months.  ",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "dcshoecomp/noaa_alerts"
+   },
+   "source": "github",
+   "timestamp": "2020-05-16T04:22:00+00:00",
+   "url": "https://github.com/hacs/default/issues/445"
+  },
+  {
+   "evidence_id": "issue:hacs/default#445:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-25T17:26:52+00:00",
+   "url": "https://github.com/hacs/default/issues/445"
+  },
+  {
+   "evidence_id": "issue:hacs/default#436:opened",
+   "payload": {
+    "author": "holdestmade",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n\r\nGitHub returned 404 for https://api.github.com/repos/Rendili/hive-for-home-assistant/git/trees/v2019.1\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "Rendili/hive-for-home-assistant"
+   },
+   "source": "github",
+   "timestamp": "2020-05-12T15:08:51+00:00",
+   "url": "https://github.com/hacs/default/issues/436"
+  },
+  {
+   "evidence_id": "issue:hacs/default#436:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-12T20:45:08+00:00",
+   "url": "https://github.com/hacs/default/issues/436"
+  },
+  {
+   "evidence_id": "issue:hacs/default#435:opened",
+   "payload": {
+    "author": "Yllelder",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nThis component is no longer maintained.\r\n\r\nReference:\r\nhttps://github.com/atomic7777/atomic_calendar#this-component-is-no-longer-maintained-instead-please-use-this-one---atomic-calendar-revive",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "atomic7777/atomic_calendar"
+   },
+   "source": "github",
+   "timestamp": "2020-05-12T08:37:58+00:00",
+   "url": "https://github.com/hacs/default/issues/435"
+  },
+  {
+   "evidence_id": "issue:hacs/default#435:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-15T17:19:01+00:00",
+   "url": "https://github.com/hacs/default/issues/435"
+  },
+  {
+   "evidence_id": "issue:hacs/default#428:opened",
+   "payload": {
+    "author": "ghds514",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nAs described in the community thread, uninstall of his component is blocked.\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "robmarkcole/Hue-remotes-HASS"
+   },
+   "source": "github",
+   "timestamp": "2020-05-10T14:49:28+00:00",
+   "url": "https://github.com/hacs/default/issues/428"
+  },
+  {
+   "evidence_id": "issue:hacs/default#428:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-10T18:22:45+00:00",
+   "url": "https://github.com/hacs/default/issues/428"
+  },
+  {
+   "evidence_id": "issue:hacs/default#415:opened",
+   "payload": {
+    "author": "apozzato73",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_\r\n\r\nI'm using HA rev 1.09.6 and I'm not abe to uninstall the CC by HACS . Any idea to remove it?\r\n\"An error occurred while processing\r\nCould not uninstall\"\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "robmarkcole/Hue-remotes-HASS"
+   },
+   "source": "github",
+   "timestamp": "2020-05-08T13:07:30+00:00",
+   "url": "https://github.com/hacs/default/issues/415"
+  },
+  {
+   "evidence_id": "issue:hacs/default#415:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-08T13:08:55+00:00",
+   "url": "https://github.com/hacs/default/issues/415"
+  },
+  {
+   "evidence_id": "issue:hacs/default#393:opened",
+   "payload": {
+    "author": "robmarkcole",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nRE https://github.com/robmarkcole/hue-remotes-hass",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Should archived, but still functional, integration be removed?"
+   },
+   "source": "github",
+   "timestamp": "2020-05-04T12:50:07+00:00",
+   "url": "https://github.com/hacs/default/issues/393"
+  },
+  {
+   "evidence_id": "issue:hacs/default#393:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-09T09:19:03+00:00",
+   "url": "https://github.com/hacs/default/issues/393"
+  },
+  {
+   "evidence_id": "issue:hacs/default#392:opened",
+   "payload": {
+    "author": "LordMike",
+    "body": "I received an error log in my HASS log like the one below. It's my impression that it comes from the HACS list of repositories to check/update/track.\r\n\r\nGenerally, in my opinion, I should not be presented with errors that I can't fix or react to. Therefore, if there is a repository on HACS' list, that is invalid for some reason.. then it shouldn't appear on my system.. at least not like this. I think, \"archived repo\" is a manageable error, that we can just ignore.\r\n\r\nI of course assume that the issue goes away by itself, as the erroneous repository is eventually removed from HACS list. :)\r\n\r\n## Version of HACS\r\n` 0.24.3`\r\n\r\n## Describe the bug\r\nI received a log message stating:\r\n\r\n> robmarkcole/Hue-remotes-HASS - Repository is archived.\r\n\r\nI believe it comes from these lines: https://github.com/hacs/integration/blob/bd9b5bdca293c0cb9224563177dbf8119bda4d09/custom_components/hacs/helpers/validate_repository.py#L41-L43\r\n\r\n## Debug log\r\nN/A\r\n\r\n## Fix proposal\r\n\r\n* Change log level to warning or debug",
+    "body_truncated": false,
+    "comments": 5,
+    "labels": [],
+    "last_edited_at": "2020-05-04T12:02:51Z",
+    "title": "Error log: Repository is archived; should be ignored ?"
+   },
+   "source": "github",
+   "timestamp": "2020-05-04T11:59:11+00:00",
+   "url": "https://github.com/hacs/default/issues/392"
+  },
+  {
+   "evidence_id": "issue:hacs/default#392:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-09T09:22:30+00:00",
+   "url": "https://github.com/hacs/default/issues/392"
+  },
+  {
+   "evidence_id": "issue:hacs/default#377:opened",
+   "payload": {
+    "author": "marksie1988",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\nThis repository is dead and hasn't been updated, it no longer works with the latest HA.\r\n\r\nI have setup a new version here which is being maintained: \r\n  https://github.com/marksie1988/atomic_calendar_revive\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 8,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "atomic7777/atomic_calendar"
+   },
+   "source": "github",
+   "timestamp": "2020-04-30T10:50:54+00:00",
+   "url": "https://github.com/hacs/default/issues/377"
+  },
+  {
+   "evidence_id": "issue:hacs/default#377:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-05-01T08:16:31+00:00",
+   "url": "https://github.com/hacs/default/issues/377"
+  },
+  {
+   "evidence_id": "issue:hacs/default#348:opened",
+   "payload": {
+    "author": "holdestmade",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## An error occurred while processing\r\nRepository is archived.\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": "2020-04-22T08:40:47Z",
+    "title": "pippyn/Home-Assistant-Sensor-Ophaalkalender"
+   },
+   "source": "github",
+   "timestamp": "2020-04-22T08:40:20+00:00",
+   "url": "https://github.com/hacs/default/issues/348"
+  },
+  {
+   "evidence_id": "issue:hacs/default#348:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-04-22T08:41:34+00:00",
+   "url": "https://github.com/hacs/default/issues/348"
+  },
+  {
+   "evidence_id": "issue:hacs/default#347:opened",
+   "payload": {
+    "author": "dmatik",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n<!-- Before you open a new issue, search through the existing issues to see if others have had the same problem.\r\n\r\nIssues not containing the minimum requirements will be closed:\r\n\r\n- Issues without a description (using the header is not good enough) will be closed.\r\n- Issues without debug logging will be closed.\r\n\r\n-->\r\n\r\n## Version of HACS\r\n\r\n<!-- If you are not using the newest version, download and try that before opening an issue\r\nIf you are unsure about the version check the \"SETTINGS\" tab.\r\n-->\r\n\r\n\r\n## Describe the bug\r\nSince the Github incident yesterday, I had to recreate HACS from scratch, which is fine, just reinstalled all the plugins and instigation, took few minutes.\r\nNow everything is working but I have the below error in log all the time.\r\n\r\nLogger: hacs.factory\r\nSource: custom_components/hacs/hacsbase/task_factory.py:72\r\nFirst occurred: 8:32:45 AM (1 occurrences)\r\nLast logged: 8:32:45 AM\r\n\r\npippyn/Home-Assistant-Sensor-Ophaalkalender - Repository is archived.\r\n\r\n## Debug log\r\n\r\n\r\n\r\n\r\n<details>\r\n  <summary>Logs</summary>\r\n\r\n```text\r\n2020-04-22 10:33:39 DEBUG (MainThread) [hacs] Starting recuring background task for installed repositories\r\n2020-04-22 10:33:39 DEBUG (MainThread) [hacs] 4840\r\n2020-04-22 10:33:39 DEBUG (MainThread) [hacs] 2020-04-22 08:05:40\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.data] Saving data\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs] Recuring background task for installed repositories done\r\n2020-04-22 10:33:40 DEBUG (MainThread) [queueman.manager] Checking out tasks to execute\r\n2020-04-22 10:33:40 DEBUG (MainThread) [queueman.manager] Starting queue execution for 21 tasks\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.integration.pippyn.Home-Assistant-Sensor-Ophaalkalender] Checking repository.\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.integration.hacs.integration] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.custom-cards.text-element] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.ofekashery.vertical-stack-in-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.iantrich.list-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.custom-cards.button-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.matisaul.vertical-style-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.thomasloven.lovelace-fold-entity-row] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.kalkih.mini-graph-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.thomasloven.lovelace-card-tools] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.custom-cards.bar-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.kalkih.simple-weather-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.thomasloven.lovelace-gap-card] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.benct.lovelace-multiple-entity-row] Getting repository information\r\n2020-04-22 10:33:40 DEBUG (MainThread) [hacs.repository.plugin.custom-cards.text-divider-row] Getting repository information\r\n**2020-04-22 10:33:41 ERROR (MainThread) [hacs.factory] pippyn/Home-Assistant-Sensor-Ophaalkalender - Repository is archived.**\r\n2020-04-22 10:33:41 DEBUG (MainThread) [hacs.repository.plugin.thomasloven.lovelace-gap-card] Running checks against master\r\n2020-04-22 10:33:41 DEBUG (MainThread) [hacs.repository.plugin.thomasloven.lovelace-card-tools] Running checks against 10\r\n2020-04-22 10:33:41 DEBUG (MainThr",
+    "body_truncated": true,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": "2020-04-22T08:43:21Z",
+    "title": "pippyn/Home-Assistant-Sensor-Ophaalkalender - Repository is archived"
+   },
+   "source": "github",
+   "timestamp": "2020-04-22T06:31:12+00:00",
+   "url": "https://github.com/hacs/default/issues/347"
+  },
+  {
+   "evidence_id": "issue:hacs/default#347:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-04-22T08:45:05+00:00",
+   "url": "https://github.com/hacs/default/issues/347"
+  },
+  {
+   "evidence_id": "issue:hacs/default#344:opened",
+   "payload": {
+    "author": "sermayoral",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n<!-- Before you open a new issue, search through the existing issues to see if others have had the same problem.\r\n\r\nIssues not containing the minimum requirements will be closed:\r\n\r\n- Issues without a description (using the header is not good enough) will be closed.\r\n- Issues without debug logging will be closed.\r\n\r\n-->\r\n\r\n## Version of HACS\r\n\r\n<!-- If you are not using the newest version, download and try that before opening an issue\r\nIf you are unsure about the version check the \"SETTINGS\" tab.\r\n-->\r\n0.24.0\r\n\r\n## Describe the bug\r\nThis new version spam logs in error severity when a custom is archived\r\n\r\n## Debug log\r\n\r\n<!-- To enable debug logs check this https://www.home-assistant.io/components/logger/ -->\r\n\r\n```text\r\n Detalles de registro (ERROR)\r\n\r\nLogger: hacs.factory\r\nSource: custom_components/hacs/hacsbase/task_factory.py:52\r\nFirst occurred: 8:07:51 (2 occurrences)\r\nLast logged: 8:09:06 \r\n\r\nrobmarkcole/HASS-Sighthound - Repository is archived.\r\ncustom-cards/home-setter - Repository is archived\r\n```\r\n\r\n</details>\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "0.24.0 spam logs in error severity when something is archived"
+   },
+   "source": "github",
+   "timestamp": "2020-04-21T08:56:59+00:00",
+   "url": "https://github.com/hacs/default/issues/344"
+  },
+  {
+   "evidence_id": "issue:hacs/default#344:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-04-21T14:52:14+00:00",
+   "url": "https://github.com/hacs/default/issues/344"
+  },
+  {
+   "evidence_id": "issue:hacs/default#318:opened",
+   "payload": {
+    "author": "timdonovanuk",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nNo longer maintained or working (https://github.com/custom-cards/surveillance-card/issues/20)",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "custom-cards/surveillance-card"
+   },
+   "source": "github",
+   "timestamp": "2020-04-12T14:14:05+00:00",
+   "url": "https://github.com/hacs/default/issues/318"
+  },
+  {
+   "evidence_id": "issue:hacs/default#318:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-04-13T08:29:40+00:00",
+   "url": "https://github.com/hacs/default/issues/318"
+  },
+  {
+   "evidence_id": "issue:hacs/default#310:opened",
+   "payload": {
+    "author": "gabriele2368",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\ncan not uninstall from installed plugin",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "finity69x2/light-brightness-preset-row"
+   },
+   "source": "github",
+   "timestamp": "2020-04-09T16:19:07+00:00",
+   "url": "https://github.com/hacs/default/issues/310"
+  },
+  {
+   "evidence_id": "issue:hacs/default#310:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-04-09T16:19:58+00:00",
+   "url": "https://github.com/hacs/default/issues/310"
+  },
+  {
+   "evidence_id": "issue:hacs/default#296:opened",
+   "payload": {
+    "author": "alekceevich74",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "r-renato/hass-xiaomi-mi-flora-and-flower-care"
+   },
+   "source": "github",
+   "timestamp": "2020-03-27T05:26:57+00:00",
+   "url": "https://github.com/hacs/default/issues/296"
+  },
+  {
+   "evidence_id": "issue:hacs/default#296:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-03-28T12:04:13+00:00",
+   "url": "https://github.com/hacs/default/issues/296"
+  },
+  {
+   "evidence_id": "issue:hacs/default#293:opened",
+   "payload": {
+    "author": "alessio78karate",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "hacs/integration"
+   },
+   "source": "github",
+   "timestamp": "2020-03-24T22:31:16+00:00",
+   "url": "https://github.com/hacs/default/issues/293"
+  },
+  {
+   "evidence_id": "issue:hacs/default#293:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-03-25T10:39:20+00:00",
+   "url": "https://github.com/hacs/default/issues/293"
+  },
+  {
+   "evidence_id": "issue:hacs/default#288:opened",
+   "payload": {
+    "author": "trentjw",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues --> no longer loads up with 107.5 documentation goes to page not found\r\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Hacs Broken?"
+   },
+   "source": "github",
+   "timestamp": "2020-03-24T01:07:54+00:00",
+   "url": "https://github.com/hacs/default/issues/288"
+  },
+  {
+   "evidence_id": "issue:hacs/default#288:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-03-24T01:36:32+00:00",
+   "url": "https://github.com/hacs/default/issues/288"
+  },
+  {
+   "evidence_id": "issue:hacs/default#252:opened",
+   "payload": {
+    "author": "chenxi520",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "thomasloven/lovelace-gui-sandbox"
+   },
+   "source": "github",
+   "timestamp": "2020-03-02T09:02:18+00:00",
+   "url": "https://github.com/hacs/default/issues/252"
+  },
+  {
+   "evidence_id": "issue:hacs/default#252:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-03-02T09:18:54+00:00",
+   "url": "https://github.com/hacs/default/issues/252"
+  },
+  {
+   "evidence_id": "issue:hacs/default#249:opened",
+   "payload": {
+    "author": "JohanPotgieter",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\nAn error ocoured while processing\r\nGitHub returned 404 for https://api.github.com/repos/maykar/plex_assistant/git/trees/0.0.2\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "maykar/plex_assistant"
+   },
+   "source": "github",
+   "timestamp": "2020-02-29T13:40:19+00:00",
+   "url": "https://github.com/hacs/default/issues/249"
+  },
+  {
+   "evidence_id": "issue:hacs/default#249:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-02-29T14:16:06+00:00",
+   "url": "https://github.com/hacs/default/issues/249"
+  },
+  {
+   "evidence_id": "issue:hacs/default#216:opened",
+   "payload": {
+    "author": "tvhggg",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "jihao/colorfulclouds-hass"
+   },
+   "source": "github",
+   "timestamp": "2020-02-09T19:07:50+00:00",
+   "url": "https://github.com/hacs/default/issues/216"
+  },
+  {
+   "evidence_id": "issue:hacs/default#216:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-02-09T19:11:59+00:00",
+   "url": "https://github.com/hacs/default/issues/216"
+  },
+  {
+   "evidence_id": "issue:hacs/default#204:opened",
+   "payload": {
+    "author": "dinobla",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "hacs/integration"
+   },
+   "source": "github",
+   "timestamp": "2020-02-05T05:46:49+00:00",
+   "url": "https://github.com/hacs/default/issues/204"
+  },
+  {
+   "evidence_id": "issue:hacs/default#204:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-02-09T09:22:29+00:00",
+   "url": "https://github.com/hacs/default/issues/204"
+  },
+  {
+   "evidence_id": "issue:hacs/default#201:opened",
+   "payload": {
+    "author": "vitafon007",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "custom-cards/button-card"
+   },
+   "source": "github",
+   "timestamp": "2020-02-03T14:26:17+00:00",
+   "url": "https://github.com/hacs/default/issues/201"
+  },
+  {
+   "evidence_id": "issue:hacs/default#201:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-02-09T09:22:17+00:00",
+   "url": "https://github.com/hacs/default/issues/201"
+  },
+  {
+   "evidence_id": "issue:hacs/default#183:opened",
+   "payload": {
+    "author": "SY-979",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "maykar/custom-header"
+   },
+   "source": "github",
+   "timestamp": "2020-01-27T12:46:19+00:00",
+   "url": "https://github.com/hacs/default/issues/183"
+  },
+  {
+   "evidence_id": "issue:hacs/default#183:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-02-02T08:42:41+00:00",
+   "url": "https://github.com/hacs/default/issues/183"
+  },
+  {
+   "evidence_id": "issue:hacs/default#167:opened",
+   "payload": {
+    "author": "bistyc",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "custom-components/alexa_media_player"
+   },
+   "source": "github",
+   "timestamp": "2020-01-21T12:41:43+00:00",
+   "url": "https://github.com/hacs/default/issues/167"
+  },
+  {
+   "evidence_id": "issue:hacs/default#167:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2020-01-21T13:37:26+00:00",
+   "url": "https://github.com/hacs/default/issues/167"
+  },
+  {
+   "evidence_id": "issue:hacs/default#50:opened",
+   "payload": {
+    "author": "Domotique59",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "rgruebel/ha_zigbee2mqtt_networkmap"
+   },
+   "source": "github",
+   "timestamp": "2019-11-20T16:35:31+00:00",
+   "url": "https://github.com/hacs/default/issues/50"
+  },
+  {
+   "evidence_id": "issue:hacs/default#50:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-11-20T16:36:21+00:00",
+   "url": "https://github.com/hacs/default/issues/50"
+  },
+  {
+   "evidence_id": "issue:hacs/default#49:opened",
+   "payload": {
+    "author": "Domotique59",
+    "body": "<!-- Learn how to submit an issue here https://hacs.xyz/docs/issues -->\r\n## Describe why you are flagging this\r\n\r\n_This template should **only** be used if a repository **needs** to be removed/blacklisted from HACS_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "invalid"
+    ],
+    "last_edited_at": null,
+    "title": "rgruebel/ha_zigbee2mqtt_networkmap"
+   },
+   "source": "github",
+   "timestamp": "2019-11-20T16:35:19+00:00",
+   "url": "https://github.com/hacs/default/issues/49"
+  },
+  {
+   "evidence_id": "issue:hacs/default#49:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2019-11-20T16:36:11+00:00",
+   "url": "https://github.com/hacs/default/issues/49"
+  }
+ ],
+ "repo": "hacs/default",
+ "window": "pre_t"
+}

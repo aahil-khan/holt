@@ -1,0 +1,1553 @@
+{
+ "captured_at": "2026-08-30T10:09:09.767910+00:00",
+ "content_sha256": "377dfa052616be9f1097ded25da62a6373b9e602e417118e40f60f4970887411",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1648:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1673
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:34:49+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1648"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1646:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1671
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:34:04+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1646"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1645:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1670
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:33:40+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1645"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1644:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1669
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:33:12+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1644"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1643:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1668
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:32:44+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1643"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1642:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1667
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:32:17+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1642"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1641:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1666
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:31:25+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1641"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1640:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:37:06+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1640"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1639:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1664
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:29:20+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1639"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1638:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1663
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:28:56+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1638"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1637:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1662
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:28:23+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1637"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1636:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1661
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:28:03+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1636"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1635:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1660
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:27:30+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1635"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1634:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1659
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:26:44+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1634"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1633:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1658
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:26:06+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1633"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1632:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1657
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:25:29+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1632"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1631:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1656
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:24:51+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1631"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1630:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1655
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:24:19+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1630"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1629:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1654
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:23:50+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1629"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1628:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Tushar15769",
+      "author_is_bot": false,
+      "number": 1653
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:21:42+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1628"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1626:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:37:06+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1626"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1625:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:37:06+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1625"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1624:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:37:05+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1624"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1594:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abhushan187",
+      "author_is_bot": false,
+      "number": 1745
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:22:28+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1594"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1593:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abhushan187",
+      "author_is_bot": false,
+      "number": 1746
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:22:54+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1593"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1592:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abhushan187",
+      "author_is_bot": false,
+      "number": 1747
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T08:35:57+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1592"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1591:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abhushan187",
+      "author_is_bot": false,
+      "number": 1748
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T17:16:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1591"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1590:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Lovishkasoni",
+      "author_is_bot": false,
+      "number": 1708
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:43:58+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1590"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1574:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ameyvaidya44",
+      "author_is_bot": false,
+      "number": 1891
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:01:51+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1574"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1573:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ameyvaidya44",
+      "author_is_bot": false,
+      "number": 1886
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T20:59:31+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1573"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1572:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ameyvaidya44",
+      "author_is_bot": false,
+      "number": 1887
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:00:11+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1572"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1571:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ameyvaidya44",
+      "author_is_bot": false,
+      "number": 1889
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:01:00+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1571"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1570:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:12:47+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1570"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1569:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ameyvaidya44",
+      "author_is_bot": false,
+      "number": 1888
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:00:35+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1569"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1529:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2187
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1529"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1528:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2203
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:24+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1528"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1527:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2202
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1527"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1526:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2186
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1526"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1525:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2185
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1525"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1524:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2184
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1524"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1523:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2183
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1523"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1522:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2201
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1522"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1521:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2200
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1521"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1520:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2199
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1520"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1519:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2198
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1519"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1518:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2170
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1518"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1517:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2182
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1517"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1516:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2181
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1516"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1515:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2197
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1515"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1514:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2172
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1514"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1513:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2171
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1513"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1512:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2180
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1512"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1511:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2169
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1511"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1510:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2168
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1510"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1509:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2179
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1509"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1508:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2167
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1508"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1507:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2166
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1507"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1506:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2178
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1506"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1505:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2158
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1505"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1504:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2175
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1504"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1503:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2165
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1503"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1502:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2196
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1502"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1501:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2164
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1501"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1500:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2163
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1500"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1499:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2177
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1499"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1498:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2174
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:27+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1498"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1497:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2176
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1497"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1496:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2195
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1496"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1495:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2173
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1495"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1494:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2159
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:14:49+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1494"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1493:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2157
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:14:49+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1493"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1492:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2161
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:14:49+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1492"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1491:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2160
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:14:49+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1491"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1490:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2095
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T21:27:33+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1490"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1489:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2096
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T21:28:00+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1489"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1488:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2194
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1488"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1487:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2193
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1487"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1486:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2192
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1486"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1485:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2191
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1485"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1484:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2190
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1484"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1483:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2189
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1483"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1482:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2188
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:15:26+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1482"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1481:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2154
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:14:47+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1481"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1480:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SujalKamate",
+      "author_is_bot": false,
+      "number": 2152
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T07:12:23+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1480"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1471:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abhushan187",
+      "author_is_bot": false,
+      "number": 1743
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:21:14+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1471"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1470:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Abhushan187",
+      "author_is_bot": false,
+      "number": 1744
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:22:02+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1470"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1469:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:00:18+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1469"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1411:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 1711
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:45:20+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1411"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1410:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 1710
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:44:51+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1410"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1409:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 1709
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:44:25+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1409"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1393:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "annrose2277-glitch",
+      "author_is_bot": false,
+      "number": 1704
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:41:35+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1393"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1392:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "annrose2277-glitch",
+      "author_is_bot": false,
+      "number": 1706
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:42:58+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1392"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1391:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "annrose2277-glitch",
+      "author_is_bot": false,
+      "number": 1705
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:42:32+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1391"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1388:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T08:26:52+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1388"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1383:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "annrose2277-glitch",
+      "author_is_bot": false,
+      "number": 1707
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:43:25+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1383"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1346:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:33:41+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1346"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1241:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ameyvaidya44",
+      "author_is_bot": false,
+      "number": 1413
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T06:09:24+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1241"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1239:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:14:59+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1239"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1238:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:15:02+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1238"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1088:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:16:37+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1088"
+  },
+  {
+   "evidence_id": "issue:AseemPrasad/Legalassist-AI#1087:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:16:16+00:00",
+   "url": "https://github.com/AseemPrasad/Legalassist-AI/issues/1087"
+  }
+ ],
+ "repo": "AseemPrasad/Legalassist-AI",
+ "window": "post_t"
+}

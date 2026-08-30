@@ -1,0 +1,203 @@
+{
+ "captured_at": "2026-08-30T10:09:17.948644+00:00",
+ "content_sha256": "5dbc65dc4a83759c3ca61c4b7b320f41a34846c0d00b01c1e6b7dc50c902857a",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#7347:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:28:03+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/7347"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#7344:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "0xshubhs",
+      "author_is_bot": false,
+      "number": 8006
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T13:53:42+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/7344"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#7045:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:17:17+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/7045"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#6639:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DarkLord017",
+      "author_is_bot": false,
+      "number": 7941
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T19:59:40+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/6639"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#6618:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T12:34:59+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/6618"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#6265:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T16:22:14+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/6265"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5597:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DaniiRix",
+      "author_is_bot": false,
+      "number": 7354
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T18:37:55+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5597"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5553:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DarkLord017",
+      "author_is_bot": false,
+      "number": 8273
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T10:36:38+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5553"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5245:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gomesalexandre",
+      "author_is_bot": false,
+      "number": 8808
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T16:20:23+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5245"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5243:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "0xshubhs",
+      "author_is_bot": false,
+      "number": 7928
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T15:20:17+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5243"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5235:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DarkLord017",
+      "author_is_bot": false,
+      "number": 7963
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T08:03:30+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5235"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5232:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T14:11:27+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5232"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5221:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DarkLord017",
+      "author_is_bot": false,
+      "number": 8113
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T10:56:17+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5221"
+  },
+  {
+   "evidence_id": "issue:DefiLlama/dimension-adapters#5214:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nopbody",
+      "author_is_bot": false,
+      "number": 7390
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T13:14:22+00:00",
+   "url": "https://github.com/DefiLlama/dimension-adapters/issues/5214"
+  }
+ ],
+ "repo": "DefiLlama/dimension-adapters",
+ "window": "post_t"
+}

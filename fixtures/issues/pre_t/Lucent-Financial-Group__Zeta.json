@@ -1,0 +1,808 @@
+{
+ "captured_at": "2026-08-30T10:09:30.224373+00:00",
+ "content_sha256": "828e832b71e3e0de5717020a845faee0afaa73ffdcea203ca43e18b7541b617e",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#4856:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "The 'tools/pr-preservation/archive-pr.ts' script does not add the created archive files to git. This is causing Riven's worktree to become dirty and is polluting the main repository with untracked files.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "fix(pr-preservation): archive-pr.ts does not add files to git"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T20:02:11+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/4856"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#4856:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:59:54+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/4856"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#4815:opened",
+   "payload": {
+    "author": "github-actions",
+    "body": "## Razor cadence -- daily fire\n\nThis issue is the durable artifact of the razor-cadence trigger\n(`.github/workflows/razor-cadence.yml`). It fires daily whether or\nnot any AI is running, so the discipline does not depend on\nagent-remembering-to-check.\n\n### Cadence checklist (run on next wake)\n\nFor each load-bearing rule encoded since the last razor pass:\n\n1. **Test 1 (operational form)**: what observable variable\n   determines whether this claim is true? If no answer ->\n   metaphysical -> cut. (Per\n   `memory/feedback_razor_discipline_no_metaphysical_inference_only_operational_claims_rodney_razor_aaron_claudeai_2026_05_03.md`)\n\n2. **Test 2 (dialectical-unfalsifiability)**: what observation\n   would I treat as falsifying this claim? If \"no observation\n   could falsify it because every observation is consistent with\n   some condition under which the claim holds\" -> unfalsifiable\n   -> cut OR specify falsification boundary. (Per\n   `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`)\n\n3. **Mechanization audit**: is this rule mechanized (linter,\n   pre-commit hook, scheduled workflow, validator) or does it\n   depend on agent-remembering? If the latter, file a backlog\n   row for mechanization (per 081KQR4HQ0008QG0R001GAD29A itself; per\n   `memory/feedback_orchestrator_pre_commit_verify_branch_rule_aaron_2026_05_04.md`\n   the encoded-rule-alone failure mode).\n\n4. **Composes-with audit**: does the rule's `Composes with`\n   section point at existing files? Are the cross-references\n   live or stale? Update or remove dead links.\n\n5. **MEMORY.md index audit**: are recently-added memory files\n   indexed in `memory/MEMORY.md`? The router's discoverability\n   depends on it (per `memory/README.md`).\n\n### Pointers\n\n- `docs/active-trajectory.md` -- current trajectory state.\n- `docs/backlog/P1/081KQR4HQ0008QG0R001GAD29A-github-actions-razor-cadence-trigger-aaron-2026-05-04.md`\n  -- this row.\n- `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`\n  -- Test 2 razor extension.\n\n### Resolving this issue\n\nClose this issue when the razor pass has been run. The next\ncadence fire will open a new issue (or update the next-day's\nartifact). Issues that age in the open state without being\nclosed indicate cadence-skip; that itself is a signal for the\nmaintainer.\n\n---\n\nFired by `.github/workflows/razor-cadence.yml` run 33303980002 on 2026-08-30.\n\n---\n\ud83e\udd16 *Posted by razor-cadence workflow (AI-generated content)*",
+    "body_truncated": false,
+    "comments": 97,
+    "labels": [
+     "razor-cadence"
+    ],
+    "last_edited_at": "2026-08-30T09:24:53Z",
+    "title": "Razor cadence due -- 2026-08-30"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T10:50:35+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/4815"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#4643:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "This issue is to track the decomposition of PR #4642. This part of the decomposition is for the Ace package format spec v2.\n\nSee: https://github.com/Lucent-Financial-Group/Zeta/pull/4642",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Decompose PR #4642: Ace package format spec v2"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T17:52:30+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/4643"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#4644:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "This issue is to track the decomposition of PR #4642. This part of the decomposition is for the Amara synthesis.\n\nSee: https://github.com/Lucent-Financial-Group/Zeta/pull/4642",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Decompose PR #4642: Amara synthesis"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T17:52:30+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/4644"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#4645:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "This issue is to track the decomposition of PR #4642. This part of the decomposition is for the docs/agendas/ split.\n\nSee: https://github.com/Lucent-Financial-Group/Zeta/pull/4642",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Decompose PR #4642: docs/agendas/ split"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T17:52:30+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/4645"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#3128:opened",
+   "payload": {
+    "author": "github-actions",
+    "body": "## Razor cadence -- daily fire\n\nThis issue is the durable artifact of the razor-cadence trigger\n(`.github/workflows/razor-cadence.yml`). It fires daily whether or\nnot any AI is running, so the discipline does not depend on\nagent-remembering-to-check.\n\n### Cadence checklist (run on next wake)\n\nFor each load-bearing rule encoded since the last razor pass:\n\n1. **Test 1 (operational form)**: what observable variable\n   determines whether this claim is true? If no answer ->\n   metaphysical -> cut. (Per\n   `memory/feedback_razor_discipline_no_metaphysical_inference_only_operational_claims_rodney_razor_aaron_claudeai_2026_05_03.md`)\n\n2. **Test 2 (dialectical-unfalsifiability)**: what observation\n   would I treat as falsifying this claim? If \"no observation\n   could falsify it because every observation is consistent with\n   some condition under which the claim holds\" -> unfalsifiable\n   -> cut OR specify falsification boundary. (Per\n   `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`)\n\n3. **Mechanization audit**: is this rule mechanized (linter,\n   pre-commit hook, scheduled workflow, validator) or does it\n   depend on agent-remembering? If the latter, file a backlog\n   row for mechanization (per B-0192 itself; per\n   `memory/feedback_orchestrator_pre_commit_verify_branch_rule_aaron_2026_05_04.md`\n   the encoded-rule-alone failure mode).\n\n4. **Composes-with audit**: does the rule's `Composes with`\n   section point at existing files? Are the cross-references\n   live or stale? Update or remove dead links.\n\n5. **MEMORY.md index audit**: are recently-added memory files\n   indexed in `memory/MEMORY.md`? The router's discoverability\n   depends on it (per `memory/README.md`).\n\n### Pointers\n\n- `docs/active-trajectory.md` -- current trajectory state.\n- `docs/backlog/P1/B-0192-github-actions-razor-cadence-trigger-aaron-2026-05-04.md`\n  -- this row.\n- `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`\n  -- Test 2 razor extension.\n\n### Resolving this issue\n\nClose this issue when the razor pass has been run. The next\ncadence fire will open a new issue (or update the next-day's\nartifact). Issues that age in the open state without being\nclosed indicate cadence-skip; that itself is a signal for the\nmaintainer.\n\n---\n\nFired by `.github/workflows/razor-cadence.yml` run 26330635596 on 2026-05-23.\n\n---\n\ud83e\udd16 *Posted by razor-cadence workflow (AI-generated content)*",
+    "body_truncated": false,
+    "comments": 10,
+    "labels": [
+     "razor-cadence"
+    ],
+    "last_edited_at": "2026-05-23T10:43:38Z",
+    "title": "Razor cadence due -- 2026-05-23"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T11:21:56+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/3128"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#3128:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T20:33:40+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/3128"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2691:opened",
+   "payload": {
+    "author": "github-actions",
+    "body": "## Razor cadence -- daily fire\n\nThis issue is the durable artifact of the razor-cadence trigger\n(`.github/workflows/razor-cadence.yml`). It fires daily whether or\nnot any AI is running, so the discipline does not depend on\nagent-remembering-to-check.\n\n### Cadence checklist (run on next wake)\n\nFor each load-bearing rule encoded since the last razor pass:\n\n1. **Test 1 (operational form)**: what observable variable\n   determines whether this claim is true? If no answer ->\n   metaphysical -> cut. (Per\n   `memory/feedback_razor_discipline_no_metaphysical_inference_only_operational_claims_rodney_razor_aaron_claudeai_2026_05_03.md`)\n\n2. **Test 2 (dialectical-unfalsifiability)**: what observation\n   would I treat as falsifying this claim? If \"no observation\n   could falsify it because every observation is consistent with\n   some condition under which the claim holds\" -> unfalsifiable\n   -> cut OR specify falsification boundary. (Per\n   `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`)\n\n3. **Mechanization audit**: is this rule mechanized (linter,\n   pre-commit hook, scheduled workflow, validator) or does it\n   depend on agent-remembering? If the latter, file a backlog\n   row for mechanization (per B-0192 itself; per\n   `memory/feedback_orchestrator_pre_commit_verify_branch_rule_aaron_2026_05_04.md`\n   the encoded-rule-alone failure mode).\n\n4. **Composes-with audit**: does the rule's `Composes with`\n   section point at existing files? Are the cross-references\n   live or stale? Update or remove dead links.\n\n5. **MEMORY.md index audit**: are recently-added memory files\n   indexed in `memory/MEMORY.md`? The router's discoverability\n   depends on it (per `memory/README.md`).\n\n### Pointers\n\n- `docs/active-trajectory.md` -- current trajectory state.\n- `docs/backlog/P1/B-0192-github-actions-razor-cadence-trigger-aaron-2026-05-04.md`\n  -- this row.\n- `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`\n  -- Test 2 razor extension.\n\n### Resolving this issue\n\nClose this issue when the razor pass has been run. The next\ncadence fire will open a new issue (or update the next-day's\nartifact). Issues that age in the open state without being\nclosed indicate cadence-skip; that itself is a signal for the\nmaintainer.\n\n---\n\nFired by `.github/workflows/razor-cadence.yml` run 25796634701 on 2026-05-13.\n\n---\n\ud83e\udd16 *Posted by razor-cadence workflow (AI-generated content)*",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "razor-cadence"
+    ],
+    "last_edited_at": "2026-05-13T11:37:08Z",
+    "title": "Razor cadence due -- 2026-05-13"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T12:22:42+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2691"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2691:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T13:12:42+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2691"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2463:opened",
+   "payload": {
+    "author": "github-actions",
+    "body": "## Razor cadence -- daily fire\n\nThis issue is the durable artifact of the razor-cadence trigger\n(`.github/workflows/razor-cadence.yml`). It fires daily whether or\nnot any AI is running, so the discipline does not depend on\nagent-remembering-to-check.\n\n### Cadence checklist (run on next wake)\n\nFor each load-bearing rule encoded since the last razor pass:\n\n1. **Test 1 (operational form)**: what observable variable\n   determines whether this claim is true? If no answer ->\n   metaphysical -> cut. (Per\n   `memory/feedback_razor_discipline_no_metaphysical_inference_only_operational_claims_rodney_razor_aaron_claudeai_2026_05_03.md`)\n\n2. **Test 2 (dialectical-unfalsifiability)**: what observation\n   would I treat as falsifying this claim? If \"no observation\n   could falsify it because every observation is consistent with\n   some condition under which the claim holds\" -> unfalsifiable\n   -> cut OR specify falsification boundary. (Per\n   `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`)\n\n3. **Mechanization audit**: is this rule mechanized (linter,\n   pre-commit hook, scheduled workflow, validator) or does it\n   depend on agent-remembering? If the latter, file a backlog\n   row for mechanization (per B-0192 itself; per\n   `memory/feedback_orchestrator_pre_commit_verify_branch_rule_aaron_2026_05_04.md`\n   the encoded-rule-alone failure mode).\n\n4. **Composes-with audit**: does the rule's `Composes with`\n   section point at existing files? Are the cross-references\n   live or stale? Update or remove dead links.\n\n5. **MEMORY.md index audit**: are recently-added memory files\n   indexed in `memory/MEMORY.md`? The router's discoverability\n   depends on it (per `memory/README.md`).\n\n### Pointers\n\n- `docs/active-trajectory.md` -- current trajectory state.\n- `docs/backlog/P1/B-0192-github-actions-razor-cadence-trigger-aaron-2026-05-04.md`\n  -- this row.\n- `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`\n  -- Test 2 razor extension.\n\n### Resolving this issue\n\nClose this issue when the razor pass has been run. The next\ncadence fire will open a new issue (or update the next-day's\nartifact). Issues that age in the open state without being\nclosed indicate cadence-skip; that itself is a signal for the\nmaintainer.\n\n---\n\nFired by `.github/workflows/razor-cadence.yml` run 25626526937 on 2026-05-10.\n\n---\n\ud83e\udd16 *Posted by razor-cadence workflow (AI-generated content)*",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "razor-cadence"
+    ],
+    "last_edited_at": null,
+    "title": "Razor cadence due -- 2026-05-10"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T10:37:19+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2463"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2463:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AceHack",
+      "author_is_bot": false,
+      "number": 2468
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T11:02:05+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2463"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2275:opened",
+   "payload": {
+    "author": "github-actions",
+    "body": "## Razor cadence -- daily fire\n\nThis issue is the durable artifact of the razor-cadence trigger\n(`.github/workflows/razor-cadence.yml`). It fires daily whether or\nnot any AI is running, so the discipline does not depend on\nagent-remembering-to-check.\n\n### Cadence checklist (run on next wake)\n\nFor each load-bearing rule encoded since the last razor pass:\n\n1. **Test 1 (operational form)**: what observable variable\n   determines whether this claim is true? If no answer ->\n   metaphysical -> cut. (Per\n   `memory/feedback_razor_discipline_no_metaphysical_inference_only_operational_claims_rodney_razor_aaron_claudeai_2026_05_03.md`)\n\n2. **Test 2 (dialectical-unfalsifiability)**: what observation\n   would I treat as falsifying this claim? If \"no observation\n   could falsify it because every observation is consistent with\n   some condition under which the claim holds\" -> unfalsifiable\n   -> cut OR specify falsification boundary. (Per\n   `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`)\n\n3. **Mechanization audit**: is this rule mechanized (linter,\n   pre-commit hook, scheduled workflow, validator) or does it\n   depend on agent-remembering? If the latter, file a backlog\n   row for mechanization (per B-0192 itself; per\n   `memory/feedback_orchestrator_pre_commit_verify_branch_rule_aaron_2026_05_04.md`\n   the encoded-rule-alone failure mode).\n\n4. **Composes-with audit**: does the rule's `Composes with`\n   section point at existing files? Are the cross-references\n   live or stale? Update or remove dead links.\n\n5. **MEMORY.md index audit**: are recently-added memory files\n   indexed in `memory/MEMORY.md`? The router's discoverability\n   depends on it (per `memory/README.md`).\n\n### Pointers\n\n- `docs/active-trajectory.md` -- current trajectory state.\n- `docs/backlog/P1/B-0192-github-actions-razor-cadence-trigger-aaron-2026-05-04.md`\n  -- this row.\n- `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`\n  -- Test 2 razor extension.\n\n### Resolving this issue\n\nClose this issue when the razor pass has been run. The next\ncadence fire will open a new issue (or update the next-day's\nartifact). Issues that age in the open state without being\nclosed indicate cadence-skip; that itself is a signal for the\nmaintainer.\n\n---\n\nFired by `.github/workflows/razor-cadence.yml` run 25598638979 on 2026-05-09.\n\n---\n\ud83e\udd16 *Posted by razor-cadence workflow (AI-generated content)*",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "razor-cadence"
+    ],
+    "last_edited_at": null,
+    "title": "Razor cadence due -- 2026-05-09"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T10:16:48+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2275"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2275:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T12:51:40+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2275"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2053:opened",
+   "payload": {
+    "author": "github-actions",
+    "body": "## Razor cadence -- daily fire\n\nThis issue is the durable artifact of the razor-cadence trigger\n(`.github/workflows/razor-cadence.yml`). It fires daily whether or\nnot any AI is running, so the discipline does not depend on\nagent-remembering-to-check.\n\n### Cadence checklist (run on next wake)\n\nFor each load-bearing rule encoded since the last razor pass:\n\n1. **Test 1 (operational form)**: what observable variable\n   determines whether this claim is true? If no answer ->\n   metaphysical -> cut. (Per\n   `memory/feedback_razor_discipline_no_metaphysical_inference_only_operational_claims_rodney_razor_aaron_claudeai_2026_05_03.md`)\n\n2. **Test 2 (dialectical-unfalsifiability)**: what observation\n   would I treat as falsifying this claim? If \"no observation\n   could falsify it because every observation is consistent with\n   some condition under which the claim holds\" -> unfalsifiable\n   -> cut OR specify falsification boundary. (Per\n   `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`)\n\n3. **Mechanization audit**: is this rule mechanized (linter,\n   pre-commit hook, scheduled workflow, validator) or does it\n   depend on agent-remembering? If the latter, file a backlog\n   row for mechanization (per B-0192 itself; per\n   `memory/feedback_orchestrator_pre_commit_verify_branch_rule_aaron_2026_05_04.md`\n   the encoded-rule-alone failure mode).\n\n4. **Composes-with audit**: does the rule's `Composes with`\n   section point at existing files? Are the cross-references\n   live or stale? Update or remove dead links.\n\n5. **MEMORY.md index audit**: are recently-added memory files\n   indexed in `memory/MEMORY.md`? The router's discoverability\n   depends on it (per `memory/README.md`).\n\n### Pointers\n\n- `docs/active-trajectory.md` -- current trajectory state.\n- `docs/backlog/P1/B-0192-github-actions-razor-cadence-trigger-aaron-2026-05-04.md`\n  -- this row.\n- `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`\n  -- Test 2 razor extension.\n\n### Resolving this issue\n\nClose this issue when the razor pass has been run. The next\ncadence fire will open a new issue (or update the next-day's\nartifact). Issues that age in the open state without being\nclosed indicate cadence-skip; that itself is a signal for the\nmaintainer.\n\n---\n\nFired by `.github/workflows/razor-cadence.yml` run 25551506543 on 2026-05-08.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "razor-cadence"
+    ],
+    "last_edited_at": null,
+    "title": "Razor cadence due -- 2026-05-08"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:49:50+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2053"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#2053:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T05:59:36+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/2053"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#1624:opened",
+   "payload": {
+    "author": "github-actions",
+    "body": "## Razor cadence -- daily fire\n\nThis issue is the durable artifact of the razor-cadence trigger\n(`.github/workflows/razor-cadence.yml`). It fires daily whether or\nnot any AI is running, so the discipline does not depend on\nagent-remembering-to-check.\n\n### Cadence checklist (run on next wake)\n\nFor each load-bearing rule encoded since the last razor pass:\n\n1. **Test 1 (operational form)**: what observable variable\n   determines whether this claim is true? If no answer ->\n   metaphysical -> cut. (Per\n   `memory/feedback_razor_discipline_no_metaphysical_inference_only_operational_claims_rodney_razor_aaron_claudeai_2026_05_03.md`)\n\n2. **Test 2 (dialectical-unfalsifiability)**: what observation\n   would I treat as falsifying this claim? If \"no observation\n   could falsify it because every observation is consistent with\n   some condition under which the claim holds\" -> unfalsifiable\n   -> cut OR specify falsification boundary. (Per\n   `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`)\n\n3. **Mechanization audit**: is this rule mechanized (linter,\n   pre-commit hook, scheduled workflow, validator) or does it\n   depend on agent-remembering? If the latter, file a backlog\n   row for mechanization (per B-0192 itself; per\n   `memory/feedback_orchestrator_pre_commit_verify_branch_rule_aaron_2026_05_04.md`\n   the encoded-rule-alone failure mode).\n\n4. **Composes-with audit**: does the rule's `Composes with`\n   section point at existing files? Are the cross-references\n   live or stale? Update or remove dead links.\n\n5. **MEMORY.md index audit**: are recently-added memory files\n   indexed in `memory/MEMORY.md`? The router's discoverability\n   depends on it (per `memory/README.md`).\n\n### Pointers\n\n- `docs/active-trajectory.md` -- current trajectory state.\n- `docs/backlog/P1/B-0192-github-actions-razor-cadence-trigger-aaron-2026-05-04.md`\n  -- this row.\n- `memory/feedback_dialectical_unfalsifiability_detection_razor_extension_holding_all_truths_failure_mode_aaron_2026_05_04.md`\n  -- Test 2 razor extension.\n\n### Resolving this issue\n\nClose this issue when the razor pass has been run. The next\ncadence fire will open a new issue (or update the next-day's\nartifact). Issues that age in the open state without being\nclosed indicate cadence-skip; that itself is a signal for the\nmaintainer.\n\n---\n\nFired by `.github/workflows/razor-cadence.yml` run 25492611111 on 2026-05-07.",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "razor-cadence"
+    ],
+    "last_edited_at": "2026-05-07T11:19:00Z",
+    "title": "Razor cadence due -- 2026-05-07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T10:55:52+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/1624"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#1624:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T15:43:45+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/1624"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#82:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nSuccession-infrastructure gap identified round 35. Scan every skill under `.claude/skills/`, every numbered section in `GOVERNANCE.md`, and every reviewer clause in `docs/CONFLICT-RESOLUTION.md` for the pattern \"escalate to the human maintainer\" / \"binding decisions go via human\". For each, check whether the *criteria the maintainer applies* are written down somewhere a successor could read.\n\nGoal: every `escalate-to-human` path carries criteria a stranger could apply when the named human is unavailable. This closes the single largest will-propagation hole in the current factory.\n\n## Proposed work\n\n- Mechanical audit of `.claude/skills/**`, `GOVERNANCE.md`, and `docs/CONFLICT-RESOLUTION.md` for escalate-to-human patterns.\n- For each hit, check if maintainer criteria are documented.\n- Where not: draft criteria stubs or file the gap as a candidate ADR seed.\n- Landing surface: `docs/research/escalation-criteria-audit-YYYY-MM-DD.md` for audit output; individual ADRs for material criteria.\n- Effort: M (audit is mechanical; criteria drafting is per-case and needs maintainer input for hard cases).\n\n## Success signal\n\nEvery `escalate-to-human` path has readable criteria a successor could apply when the named human is unavailable.\n\n## Source\n\n- `docs/BACKLOG.md` L4409-L4425 (P1 \u2014 architectural hygiene)\n- Round tag: round 35\n\n## Reviewers\n\nAarav (audit), Kenji (Architect, criteria synthesis), maintainer (hard-case input)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Escalate-to-human-maintainer criteria-sweep (will-propagation gap)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:41:45+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/82"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#81:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nThe existing seven `skill-tune-up` ranking criteria (drift / contradiction / staleness / user-pain / bloat / best-practice-drift / portability-drift) do not cover the data-behaviour-mix violation class. Add mix-signature as criterion 8 with the same scoring rubric as the author-time prevention.\n\n## Proposed work\n\n- Add criterion 8 (mix-signature) to `skill-tune-up/SKILL.md`. Five signatures; threshold score >= 2 flags.\n- Keep the seven existing criteria unchanged \u2014 criterion 8 is additive.\n- Citation format: every flagged skill cites the mix signatures that triggered (e.g., \"mix-signature: catalogue-section + what-survives-inventory\").\n- Finding feeds the `SPLIT` action (already in the closed action-set) via `skill-creator` execution.\n- Routed through `skill-creator` workflow per `GOVERNANCE.md` \u00a74 \u2014 no ad-hoc edits.\n\n## Success signal\n\nNext cadence fire of `skill-tune-up` surfaces mix-signature flags with citations; `SPLIT` action runs via `skill-creator`.\n\n## Source\n\n- `docs/BACKLOG.md` L4408 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nskill-creator (to edit skill-tune-up/SKILL.md), Aarav (self-audit on next cadence)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> skill-tune-up criterion-8 mix-signature as 8th ranking criterion"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:41:44+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/81"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#80:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nFACTORY-HYGIENE row #51 cadenced detection (Aarav / skill-tune-up every 5-10 rounds) is the backstop; the author-time prevention lives in `skill-creator`'s workflow. Before a new skill lands, the workflow should score the draft against the five mix signatures and prompt for a three-surface split if score >= 2.\n\n## Proposed work\n\n- Add mix-signature scoring step to `skill-creator`'s authoring ritual.\n- Signatures: gotcha-list > 3; worked-example > 20 lines; adapter/variants table; what-survives/breaks inventory; cross-platform matrix; plus catalog/catalogue/index/compendium/taxonomy keyword sections.\n- If score >= 2, prompt for three-surface split: SKILL.md (behaviour) + `docs/<CAPITALIZED-NAME>.md` (data) + optional `docs/hygiene-history/<name>-history.md` (event log).\n- Routed through `skill-creator` workflow per `GOVERNANCE.md` \u00a74 \u2014 `skill-creator` self-modifies via canonical path.\n- Checklist addition, not a rewrite.\n\n## Success signal\n\nNew skills landing via `skill-creator` are scored at author-time; mixes are caught and split before landing rather than via cadenced retrospective sweep.\n\n## Source\n\n- `docs/BACKLOG.md` L4407 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nskill-creator (self-modifies), Kenji (Architect)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> skill-creator at-landing mix-signature checklist (prevention surface)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:41:43+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/80"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#79:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nFACTORY-HYGIENE row #51 first fire (2026-04-22) scanned 234 SKILL.md files and surfaced four genuine split candidates:\n\n1. `performance-analysis-expert` (642 lines; \"Core background \u2014 the catalogue\" ~130 lines + \"Profiler-tool catalogue\" ~80 lines)\n2. `serialization-and-wire-format-expert` (478 lines; \"Format catalogue\" ~60 lines)\n3. `compression-expert` (431 lines; \"Core background\" ~115 lines + \"Hazards and anti-patterns\" ~70 lines)\n4. `hashing-expert` (415 lines; \"Hash-function catalogue\" ~75 lines + \"Hazards \u2014 read these once, remember forever\" ~55 lines)\n\nPlus one borderline (`consent-ux-researcher`, single-catalog-in-otherwise-procedural) queued for next-cycle observation.\n\n## Proposed work\n\n- Routed through `skill-creator` workflow per `GOVERNANCE.md` \u00a74 \u2014 no ad-hoc SKILL.md edits.\n- Each split moves routine to SKILL.md (behaviour) and catalogue/background data to a new `docs/<CAPITALIZED-NAME>-REFERENCE.md`.\n- No fire-history surface needed (these are expert-advice skills, not cadenced-fire routines).\n- Priority order within the batch: `performance-analysis-expert` first (largest, most catalogue-heavy, highest invocation-context cost); others by line-count descending.\n\n## Success signal\n\nFour splits landed via `skill-creator`; cross-reference correctness verified; Aarav verifies post-split via next fire of row #51.\n\n## Source\n\n- `docs/BACKLOG.md` L4406 (P1 \u2014 architectural hygiene)\n- Round tag: round 44 / FACTORY-HYGIENE row #51 first fire 2026-04-22\n\n## Reviewers\n\nskill-creator, Aarav (skill-tune-up)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Retrospective split of 4 data-heavy expert skills (row #51 first fire)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:41:41+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/79"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#78:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nThe durable-commit path needs copy-reduction work. The stated order: batching and group-commit first, then measure before reaching for direct/unbuffered I/O or other exotic modes. Measure-before-exotic is the discipline.\n\n## Proposed work\n\n- Implement batching and group-commit on the durable-commit path.\n- Measure copy count and latency before considering direct/unbuffered I/O.\n- Only escalate to exotic I/O modes if batching/group-commit measurements justify it.\n\n## Success signal\n\nDurable-commit path has batching/group-commit landed and measured before any exotic I/O mode is considered.\n\n## Source\n\n- `docs/BACKLOG.md` L4402-L4404 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nNaledi (performance-engineer), storage-specialist, file-system-persistence-expert\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Copy-reduction on durable-commit path via batching/group-commit first"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:41:40+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/78"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#77:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nAny future persistent state tier should adopt a FASTER-style HybridLog region model \u2014 memory / read-only / stable regions with explicit boundaries \u2014 rather than starting with a single flat file and bolting region pointers on later. Retrofitting regions onto a flat-file design is historically painful.\n\n## Proposed work\n\n- Document the HybridLog region model (memory / read-only / stable) as the default for any new persistent tier.\n- Surface as an ADR or design constraint so future tier proposals cite it.\n- Ensure region boundaries are explicit from day one of any new tier implementation.\n\n## Success signal\n\nFuture persistent tier designs begin with explicit memory / read-only / stable boundaries rather than a single flat file plus later retrofit.\n\n## Source\n\n- `docs/BACKLOG.md` L4398-L4401 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nstorage-specialist, file-system-persistence-expert, database-systems-expert\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> FASTER-style HybridLog region model for future persistent state tier"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:41:39+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/77"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#76:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nThe `IAppendSink` abstraction already distinguishes `AppendResult.Success` / `.Conflict`. Ensure every new sink implementation preserves that shape rather than raising for the conflict case \u2014 conflicts are routine outcomes, not exceptions. Raising breaks referential transparency the operator algebra depends on (`CLAUDE.md` result-over-exception).\n\n## Proposed work\n\n- Audit every existing `IAppendSink` implementation to confirm it returns `AppendResult` for conflicts rather than throwing.\n- Add an analyzer or convention test that flags new sinks throwing on conflict.\n- Document the contract in `IAppendSink` XML doc or adjacent ADR.\n\n## Success signal\n\nEvery sink implementation returns `AppendResult.Conflict` for conflicts; none raise on the conflict path.\n\n## Source\n\n- `docs/BACKLOG.md` L4394-L4397 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nfile-system-persistence-expert, storage-specialist, csharp-fsharp-fit-reviewer\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Typed optimistic-append outcomes on every IAppendSink"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:40:32+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/76"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#75:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nAny ad-hoc `Guid.NewGuid()` test-path noise should be replaced with a process-local deterministic counter so reruns diff cleanly. Random suffixes make test reruns impossible to diff and hide real regressions.\n\n## Proposed work\n\n- Implement a process-local deterministic counter helper for test filesystem paths.\n- Sweep the test tree for `Guid.NewGuid()` used purely for path uniqueness and replace with the helper.\n- Document the helper as the preferred API for new tests.\n\n## Success signal\n\nTest reruns diff cleanly; no new `Guid.NewGuid()`-based path generation lands in tests.\n\n## Source\n\n- `docs/BACKLOG.md` L4391-L4393 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\ndeterministic-simulation-theory-expert, csharp-expert\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Deterministic-path helper for tests needing filesystem uniqueness"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:40:31+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/75"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#75:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AceHack",
+      "author_is_bot": false,
+      "number": 5994
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:01:17+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/75"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#74:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nThe `coverage-report/` folder is gitignored and current coverage collection is ad-hoc per-dev. Land a reproducible Cobertura merge that the normal `dotnet test` run produces, with a loud-failure mode when a project stops emitting coverage artifacts.\n\n## Proposed work\n\n- Add `coverage:collect` entry point that runs as part of `dotnet test`.\n- Add `coverage:merge` that produces a single Cobertura report across all projects.\n- Implement loud-failure mode: if any project stops emitting coverage artifacts, the merge step fails visibly.\n\n## Success signal\n\nA reproducible Cobertura merge ships with the normal `dotnet test` run; any project dropping out of coverage emission fails loudly instead of silently disappearing.\n\n## Source\n\n- `docs/BACKLOG.md` L4386-L4390 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nDejan (devops-engineer), Bodhi (developer-experience-engineer)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> coverage:collect and coverage:merge entry points with loud-failure"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:40:30+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/74"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#73:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nTypes like `*Options`, `*Plan`, `*Descriptor` should be init-only or immutable by construction. Reviewer currently catches mutable public setters on these shapes; promote the rule to an analyzer so it is build-enforced.\n\n## Proposed work\n\n- Author a Roslyn / F# analyzer that flags mutable public setters on types matching `*Options`, `*Plan`, `*Descriptor`.\n- Require init-only or immutable-by-construction shape.\n- Decide suppression policy for legacy types (allowlist via attribute, or per-file pragma).\n\n## Success signal\n\nReviewer no longer has to flag mutable public setters on these shapes; analyzer catches them in CI.\n\n## Source\n\n- `docs/BACKLOG.md` L4382-L4385 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nroslyn-analyzers-expert, fsharp-analyzers-expert\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Analyzer banning mutable public setters on Options/Plan/Descriptor types"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:40:29+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/73"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#72:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\n`Task.Result`, `.Wait()`, and `GetAwaiter().GetResult()` on the production F#/C# surface are currently caught only by review. The async contract is load-bearing for the factory's no-bottlenecks performance posture; lift enforcement into the build.\n\n## Proposed work\n\n- Author a Roslyn analyzer (C#) and F# analyzer pair banning `Task.Result`, `.Wait()`, and `GetAwaiter().GetResult()` on the production surface.\n- Scope: production projects only (test projects can opt out explicitly).\n- Treat violations as errors under `TreatWarningsAsErrors`.\n\n## Success signal\n\nBuild fails on any new blocking-wait pattern in production code; reviewers no longer need to catch this by eye.\n\n## Source\n\n- `docs/BACKLOG.md` L4378-L4381 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\nroslyn-analyzers-expert, fsharp-analyzers-expert, csharp-analyzers-expert\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Roslyn/F# analyzer banning blocking-wait patterns"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:40:28+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/72"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#71:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nEvery `.tla` spec under `docs/` should be TLC-exercised in CI so spec drift becomes a build break, not a quarterly rediscovery. Currently TLC runs are ad-hoc; drift can accumulate silently between rounds until someone notices.\n\n## Proposed work\n\n- Add a `dotnet test` target (or equivalent MSBuild entry point) that invokes TLC against every `docs/**/*.tla` spec.\n- Wire the target into CI so a failing TLC run fails the build.\n- Decide cadence: per-PR vs. nightly, based on TLC wall-clock cost per spec.\n\n## Success signal\n\nSpec drift becomes \"a build break, not a quarterly rediscovery.\"\n\n## Source\n\n- `docs/BACKLOG.md` L4375-L4377 (P1 \u2014 architectural hygiene)\n\n## Reviewers\n\ntla-expert, formal-verification-expert (Soraya)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> TLC-validation as dotnet test target for all .tla specs"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:40:27+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/71"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#70:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nThe current Zeta threat model is markdown-only, which means it cannot be executed, diffed as a program, or kept structurally in sync with the codebase surfaces it describes. The BACKLOG row promotes pytm (the Python threat-model framework) as the authoritative source going forward: the executable `threatmodel.py` script generates the canonical diagrams and findings, and the markdown becomes derived output.\n\nThis aligns with Zeta's preference for code-over-prose where executable specs exist and with SDL practice #8 (threat modelling as a first-class, versioned, diffable artifact). It also means the threat-model lives alongside other formal-method and security artifacts under `docs/security/`.\n\n## Proposed work\n\n- Add `docs/security/pytm/threatmodel.py` as the authoritative pytm source.\n- Model Zeta's trust boundaries, actors, data flows, and assets in pytm DSL.\n- Generate DFDs and findings output from the script and commit the derived artifacts (or wire them into CI so they regenerate on change).\n- Replace / supersede the markdown-only threat-model with pytm-derived output; cross-link old doc to new authoritative source.\n- Document the run command (`python docs/security/pytm/threatmodel.py --dfd | dot -Tpng > dfd.png` or equivalent) in a README adjacent to the script.\n- Ensure soul-file hygiene: the `.py` is text, small, portable; any generated binary diagrams gate on deliberate-checkin policy.\n\n## Success signal\n\n`docs/security/pytm/threatmodel.py` **replaces markdown-only threat-model as authoritative source.** The file exists, runs cleanly, and downstream docs reference it as the source of record.\n\n## Source\n\n- `docs/BACKLOG.md` L3522-L3523 (P0 \u2014 security / SDL artifacts)\n\n## Reviewers\n\nAminata (threat-model-critic), Nazar (security-operations-engineer), Mateo (security-researcher), Nadia (prompt-protector), python-expert\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "threat-model",
+     "security"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> pytm threat model \u2014 docs/security/pytm/threatmodel.py authoritative"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:39:43+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/70"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#69:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nFollow-on CI workflows (Semgrep, Alloy, Lean, TLC, Stryker, FsCheck, etc.) are added one at a time, each preceded by an Aaron-signed design doc. This is a standing process gate, not a single ship \u2014 it exists to prevent \"ship and iterate\" on CI surface where the blast radius is shared infrastructure, secrets, and CI minutes.\n\nParallelism note from the row: Architect is free to dispatch CI-design subagents in parallel with product work as long as neither agent writes the same file.\n\n## Proposed work\n\n- For each additional workflow beyond `build-and-test.yml`:\n  - Produce a dedicated design doc under `docs/research/` covering trigger cadence, matrix, caching, permissions, artefact retention, secret handling, cost envelope.\n  - Secure Aaron sign-off on the design doc before authoring the workflow YAML.\n  - Author the workflow; secure Aaron sign-off on per-job concurrency / timeout / permissions / cache / trigger settings before merge.\n- Track the sequence; one workflow at a time; no bundled multi-workflow PRs.\n\n## Success signal\n\nEvery post-`build-and-test.yml` workflow lands with an accompanying `docs/research/*.md` design doc signed off by Aaron prior to authoring; no \"ship and iterate\" bundles; workflows land one per PR.\n\n## Source\n\n- `docs/BACKLOG.md` L3496-L3497 (P0 \u2014 CI / build-machine setup, sub-task 5)\n- Round tag: round-29 anchor\n\n## Reviewers\n\nAaron (sign-off on every per-workflow design doc and every workflow YAML)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "ci-build"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> CI pipeline \u2014 subsequent workflows gated on per-design sign-off"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:39:17+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/69"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#68:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nFirst concrete CI surface after the three design docs land. Covers only the core build+test gate on two OSes; Windows deferred until a Windows-breaking test justifies the matrix slot. Aaron's framing (round 28):\n\n> \"Our CI setup is as first class for this software factory as is the agents themselves, it does not ultimately work without both.\"\n\nCross-platform discipline: Zeta is cross-platform (.NET 10, macOS arm64 dev box, Linux CI, Windows supported); matrix covers at least macOS + Linux. Cost discipline: nothing beyond the core gate ships in this workflow until Aaron has signed off on the gate list.\n\n## Proposed work\n\n- Author `.github/workflows/build-and-test.yml`.\n- Jobs: `dotnet build -c Release` + `dotnet test Zeta.sln -c Release`.\n- OS matrix: `ubuntu-latest` + `macos-latest`.\n- Triggers, concurrency, timeouts, permissions model, caching strategy all reviewed by Aaron before merge.\n- No additional gates in this workflow \u2014 gate-inventory sign-off gates any expansion.\n\n## Success signal\n\n`.github/workflows/build-and-test.yml` green on `ubuntu-latest` and `macos-latest`; reviewed and signed off by Aaron on trigger / concurrency / timeout / permissions / caching decisions; no scope creep beyond build + test.\n\n## Source\n\n- `docs/BACKLOG.md` L3492-L3495 (P0 \u2014 CI / build-machine setup, sub-task 4)\n- Round tag: round-29 anchor\n\n## Reviewers\n\nAaron (sign-off on workflow shape and all per-job settings)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "ci-build"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> CI pipeline \u2014 first workflow build-and-test.yml (Linux + macOS)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:39:16+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/68"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#67:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nBefore any CI workflow beyond the first `build-and-test.yml` lands, the actual gate set Zeta needs to enforce must be mapped. Cost discipline applies: CI minutes are the expensive resource and every job earns its slot. Default to narrow; widen with a stated reason.\n\n## Proposed work\n\n- Enumerate Zeta's actual gate list:\n  - `dotnet build`\n  - `dotnet test`\n  - Semgrep\n  - Alloy (needs JDK)\n  - Lean proofs (needs elan/lake)\n  - TLC (needs JDK + tla2tools.jar)\n  - Stryker (slow \u2014 scheduled, not per-PR)\n  - FsCheck tests\n- For each gate record: trigger cadence (per-PR / scheduled / on-demand), toolchain prerequisites, expected cost envelope, failure-classification (hard-gate vs advisory).\n- Produce gate inventory at `docs/research/ci-gate-inventory.md`.\n\n## Success signal\n\n`docs/research/ci-gate-inventory.md` covers all listed gates with cadence + prerequisites + cost envelope + failure-classification per gate; passes Aaron's sign-off before subsequent workflows are authored.\n\n## Source\n\n- `docs/BACKLOG.md` L3486-L3491 (P0 \u2014 CI / build-machine setup, sub-task 3)\n- Round tag: round-29 anchor\n\n## Reviewers\n\nAaron (review gate on gate list + cost discipline)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "ci-build"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> CI pipeline \u2014 map Zeta gate inventory"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:39:15+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/67"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#65:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nEvery agent-written commit eventually has to pass the same gate a human commit does; today the only gate is `dotnet build -c Release` on the maintainer's laptop. Aaron's framing (round 28):\n\n> \"Our CI setup is as first class for this software factory as is the agents themselves, it does not ultimately work without both.\"\n\n`../scratch` is the read-only reference for build-machine setup (scripts, installers, install locations, tool pins). Discipline: **never copy files** \u2014 read to understand shape and intent, hand-craft every Zeta artefact from scratch.\n\n## Proposed work\n\n- Audit `../scratch` for install-script patterns: what tools, what versions, what pinning method, what target paths.\n- Produce design doc `docs/research/build-machine-setup.md` citing every borrowed idea and nothing else.\n- No file copies from `../scratch`.\n\n## Success signal\n\n`docs/research/build-machine-setup.md` exists, enumerates tools/versions/pinning/targets, cites `../scratch` as reference-only, and passes Aaron's sign-off gate before any downstream CI workflow lands.\n\n## Source\n\n- `docs/BACKLOG.md` L3429-L3481 (P0 \u2014 CI / build-machine setup, sub-task 1)\n- Round tag: round-29 anchor\n\n## Reviewers\n\nAaron (review gate on design decisions, tool pins, target paths)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "ci-build"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> CI pipeline \u2014 audit ../scratch for install-script patterns"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:39:14+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/65"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#66:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\n`../SQLSharp` is the read-only reference for GitHub Actions workflows. Discipline: **never copy files** \u2014 read to understand workflow shape (triggers, jobs, matrix, caching, permissions) and hand-craft every Zeta artefact from scratch so no cruft from another repo's context sneaks in.\n\nHuman review is required on every decision \u2014 OS matrix, tool versions, caching strategy, artefact retention, secret handling, permissions model, workflow triggers, per-job concurrency/timeouts \u2014 before any workflow lands. This is not a place for \"ship and iterate\".\n\n## Proposed work\n\n- Audit `../SQLSharp/.github/workflows/` for workflow shape: triggers, jobs, matrix strategy, caching, permissions model.\n- Produce design doc `docs/research/ci-workflow-design.md` citing every borrowed idea and nothing else.\n- No file copies from `../SQLSharp`.\n\n## Success signal\n\n`docs/research/ci-workflow-design.md` exists, enumerates trigger/job/matrix/caching/permissions patterns with cited intent, and passes Aaron's sign-off gate before any workflow lands.\n\n## Source\n\n- `docs/BACKLOG.md` L3429-L3485 (P0 \u2014 CI / build-machine setup, sub-task 2)\n- Round tag: round-29 anchor\n\n## Reviewers\n\nAaron (review gate on workflow-design decisions)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "ci-build"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> CI pipeline \u2014 audit ../SQLSharp workflows for workflow shape"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:39:14+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/66"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#64:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nSkeleton shipped Round 17 (`src/Core/Durability.fs` DU + `WitnessDurableBackingStore` placeholder). Full protocol implementation blocked on the WDC paper peer-review rebuttal; see `docs/papers/WDC-rebuttal.md`.\n\n## Proposed work\n\n- Resolve the WDC paper peer-review rebuttal in `docs/papers/WDC-rebuttal.md`.\n- Implement the full Witness-Durable Commit protocol on top of the Round 17 skeleton.\n- Flesh out `WitnessDurableBackingStore` from placeholder to working implementation.\n\n## Success signal\n\nFull protocol implementation lands; skeleton placeholder replaced; rebuttal resolved.\n\n## Source\n\n- `docs/BACKLOG.md` L412-L415 (P0 \u2014 next round (committed) section)\n- Round tag: blocked on WDC-rebuttal.md\n\n## Reviewers\n\n(Paper peer-reviewer implied via rebuttal doc dependency)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> Witness-Durable Commit \u2014 full protocol implementation"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:38:13+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/64"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#63:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nNo-empty-dirs gate shipped Round 35. Two allowlist entries are load-bearing runtime-output paths (Alloy compile classes, TLC state output). If either one ever gets populated by a checked-in artefact that belongs elsewhere, the allowlist entry should be dropped rather than silently accumulated.\n\n## Proposed work\n\n- Review allowlist once per 10 rounds, or whenever `no-empty-dirs.sh --list` flags a new allowlisted entry.\n- On each review, verify each entry remains a legitimate scratch/runtime-output path.\n- Drop entries whose populating artefact now belongs elsewhere.\n\n## Success signal\n\nAllowlist stays minimal; no silent accumulation of entries that no longer earn their exception.\n\n## Source\n\n- `docs/BACKLOG.md` L376-L384 (P0 \u2014 next round (committed) section)\n- Round tag: periodic (every 10 rounds, plus on-trigger)\n\n## Reviewers\n\nDejan (DevOps, advisory), Kenji (Architect, integrates)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> Empty-folder allowlist \u2014 periodic fix-on-main review"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:38:12+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/63"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#62:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nAaron 2026-04-19: *\"can we add a memory 2nd level folder so it's memory/role/persona that makes roles fist class defined of what we need too in the memory definition\"*. Today persona notebooks live flat under `memory/persona/<name>/NOTEBOOK.md`. Aaron wants roles elevated to a first-class directory level: e.g. `memory/security/aminata/NOTEBOOK.md`, `memory/verification/soraya/NOTEBOOK.md`, `memory/architect/kenji/NOTEBOOK.md`. Makes the role taxonomy self-documenting from `ls memory/`.\n\nRound 41 design plan landed at `docs/research/memory-role-restructure-plan-2026-04-21.md` \u2014 proposes 13-directory role axis (architect, security, verification, review, experience, api, performance, devops, algebra, skill-ops, maintainer, homage, alignment), crosswalks every current persona, lays out a 5-phase atomic-commit execution plan with 114 files / ~260 hand-written references to update plus 3 phase-4 verification passes. Execution awaits Aaron's sign-off on the role axis (four open questions in \u00a7\"Open questions for Aaron\").\n\n## Proposed work\n\n- Obtain Aaron sign-off on four open questions in `docs/research/memory-role-restructure-plan-2026-04-21.md` \u00a7\"Open questions for Aaron\".\n- Execute 5-phase atomic-commit plan (114 files / ~260 references).\n- Run 3 phase-4 verification passes.\n- Target Round 42 opener (after Round 41 PR merges) to keep wide-surface reviews from overlapping.\n\n## Success signal\n\n`ls memory/` surfaces the 13-directory role axis as self-documenting taxonomy; all persona notebook references resolve post-rename; Aarav finds no BP-drift.\n\n## Source\n\n- `docs/BACKLOG.md` L340-L364 (P0 \u2014 next round (committed) section)\n- Round tag: Round 42 opener\n\n## Reviewers\n\nKenji (integrates), Aarav (skill-tune-up, audits post-rename for BP-drift), Daya (agent-experience-engineer, cold-start pointer resolution spot-check)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> Memory folder restructure to memory/role/persona/"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:38:11+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/62"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#61:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nAaron 2026-04-19: *\"fully rtractable ci/ci backlog item\"* -> *\"ci/cd\"*. Apply the retractability clause of the Zeta=heaven formal statement (`docs/research/zeta-equals-heaven-formal-statement.md` \u00a72 H2 \"fully-retractable\") to the factory's own CI/CD pipeline. The factory asks downstream code to be retraction-native; the pipeline that gates downstream code should meet the same bar. Today several CI/CD surfaces are partially retractable in practice but not by declared mechanism \u2014 that is the channel-closure h2 attack shadow applied to delivery infra (`docs/security/THREAT-MODEL.md` \u00a7\"Channel-closure: retractability (h2)\").\n\nPart (a) landed Round 38: `docs/research/ci-retractability-inventory.md` \u2014 13 surfaces classified, named-exception register with defender-persona owners. Parts (b)-(e) remain open.\n\n## Proposed work\n\n- (b) For each non-retractable surface, flag whether a retraction-window-declaration is possible (e.g., revocation CRL, unpublish window, rotation drill cadence).\n- (c) Where no retraction mechanism is possible, treat surface as named exception with defender-persona ownership (analogous to no-empty-dirs allowlist).\n- (d) Land declared mechanism as comment block per workflow file.\n- (e) Add a CI-retractability audit job that fails the build if a new workflow file lands without a declared retraction mechanism (lint-as-control graduation per channel-closure section).\n\n## Success signal\n\nEvery CI/CD surface carries a declared retraction mechanism or a named-exception entry with defender-persona owner; audit job blocks new workflow files that lack one.\n\n## Source\n\n- `docs/BACKLOG.md` L300-L339 (P0 \u2014 next round (committed) section)\n- Round tag: follows Round 38 part (a)\n\n## Reviewers\n\nDejan (DevOps, integrates), Nazar (security-operations-engineer, signing-key + artifact-attestation surfaces), Aminata (threat-model-critic, adversarial audit), Kenji (Architect gate)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "ci-build"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> Fully-retractable CI/CD \u2014 parts (b)-(e)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:37:33+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/61"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#60:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\n35 pre-ADR `O(\u00b7)` claims are catalogued at `docs/research/grandfather-claims-inventory-2026-04-21.md` per router-coherence v2 Closure C-P0-1. Surface concentration: 29 F# docstrings (83%), 3 grey-zone F# code comments, 1 `openspec/specs/operator-algebra/spec.md` line, 2 `docs/research/**` claims. Cadence: one claim per round through the router-coherence v2 pipeline.\n\n**Latent blocker (Round 43):** the cadence names `complexity-reviewer` (Hiroshi) and `claims-tester` (Daisy) as executors, but neither persona file exists under `.claude/agents/` \u2014 only `performance-engineer` (Naledi) is present, and memory marks Naledi as distinct from Hiroshi (Naledi: benchmark-driven hot-path tuning; Hiroshi: asymptotic-complexity analysis). The discharge queue cannot advance until resolved. No Round 43 discharge landed.\n\n## Proposed work\n\n- Resolve the blocker via one of: (a) land `complexity-reviewer` + `claims-tester` persona files via `skill-creator` flow; (b) amend v2 ADR to route discharge through Naledi + a claims-tester-acting role with role-acting note; (c) declare explicit pause with documented reason so Aarav's drift-finding clause does not fire.\n- Per round: Architect selects a claim; Hiroshi runs Stage-1 analytic; Daisy runs Stage-2 empirical.\n- On each discharge, flip inventory row's Stage-1 and Stage-2 cells from `pre-ADR` to output state (`sound` / `wrong` / `under-specified` / `measurement-matches` / `measurement-contradicts` / `workload-narrowed`).\n- Aarav files P1 drift finding if no claim discharged for >=3 consecutive rounds without declared pause.\n\n## Success signal\n\nEmpty inventory closes the entry (expected round ~76 at one-per-round cadence, sooner under batching).\n\n## Source\n\n- `docs/BACKLOG.md` L262-L298 (P0 \u2014 next round (committed) section)\n- Round tag: cross-round (35-round tail)\n\n## Reviewers\n\nKenji (Architect, selects round's claim), Hiroshi (complexity-reviewer, Stage 1), Daisy (claims-tester, Stage 2), Aarav (skill-tune-up, drift-finding enforcement)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> Grandfather O-claims discharge \u2014 35-claim inventory, one per round"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:37:12+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/60"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#59:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nViktor's re-audit of commit `ce247a2` delivered a **NO verdict** on the \"could I rebuild these modules from these specs alone?\" gate. Third data-point breaks the two-ship unconditional-rebuild pattern that `operator-algebra` (Round 41) and `lsm-spine-family` (Round 42) established. Verdict preserved verbatim: *\"Third data-point breaks the two-ship pattern. The pattern was convenient. The specs are not strong enough yet.\"*\n\n## Proposed work\n\n**Three P0s:**\n- (1) `src/Core/NestedCircuit.fs:82,94-97` \u2014 cap-hit path sets `Converged = false` and still publishes `extract()` to parent. `operator-algebra/spec.md:486-488` forbids this. Fix: `IterateOp.StepAsync` raises `Result<_, DbspError>` or throws on cap-hit; plain `Nest` either removed or routed through the same failure path.\n- (2) `src/Core/Primitive.fs:10-22` (DelayOp) and `src/Core/Recursive.fs:40-85` (FeedbackOp) \u2014 no `ClockStart` override; `state` / `initial` survives across outer ticks, breaking DBSP \u00a75-6 inner-scope semantics. Add `ClockStart` override resetting per-scope state to declared initial.\n- (3) Spec gap \u2014 no requirement states HOW strict operators observe \"clean tick-0 semantics\" on each outer tick. `operator-algebra/spec.md:420-423` says `ClockStart` **MAY** initialise per-scope state; must become **MUST**. Write a SHALL requirement.\n\n**Six P1s:**\n- (1) `src/Core/Circuit.fs:113-119` `Register` throws after `Build`; reconcile with `operator-algebra/spec.md:496-519` atomic-against-stepping topology mutation.\n- (2) Implement async-replacement-waits-for-outstanding-tick-t continuations (`operator-algebra/spec.md:533-544`).\n- (3) Document `NestedCircuit.fs:22-23,49` cap default `64` in `profiles/fsharp.md` per `circuit-recursion/spec.md:138-141`.\n- (4) Reconcile cap-hit semantics: `circuit-recursion` allows passive-observable-handle read vs `operator-algebra` active-failure requirement.\n- (5) Rewrite `operator-algebra/spec.md:420-421` MAY to MUST (root cause of P0-3).\n- (6) Add `profiles/fsharp.md` entries for `NestedCircuit` / `IterateOp` / cap-default / `FeedbackOp`-to-requirement mapping.\n\n**Three P2s:** complexity belongs in profile not base (`spec.md:615-625`); redundant \"including under retractions\" at `:549-555`; driver-is-linear classification (`circuit-recursion/spec.md:232-265`) lacks observable predicate.\n\n## Success signal\n\nViktor re-audit of the follow-up returns **yes** on the rebuild-from-spec gate for `circuit-recursion` + `operator-algebra`.\n\n## Source\n\n- `docs/BACKLOG.md` L113-L174 (P0 \u2014 next round (committed) section)\n- Round tag: Round 44 absorb\n\n## Reviewers\n\nKenji (Architect drafts closures), Viktor (spec-zealot re-audits each finding)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> circuit-recursion + operator-algebra \u2014 Viktor P0/P1 absorb (Round 44)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:36:47+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/59"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#58:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nAaron 2026-04-20: *\"opensepcs, if I deleted all the code right now how easy to recreate based on the openspecs\"*. Measured coverage is 4 capabilities / 783 lines of `spec.md` vs 66 top-level F# modules / 10,839 lines under `src/Core/` (~6% by capability count, ~7% by line ratio). Band 1 (MUST BACKFILL) is 8 modules / 1,629 lines \u2014 ZSet, Circuit, NestedCircuit, Spine family (5), plus `BloomFilter.fs` elevated for Adopt-row backwards-compatibility coupling.\n\nRound 41 program setup landed as `docs/research/openspec-coverage-audit-2026-04-21.md` (inventory + banding) and `docs/DECISIONS/2026-04-21-openspec-backfill-program.md` (ADR declaring one-capability-per-round baseline with Viktor adversarial-audit gate). Round 41 shipped `operator-algebra` extension (commits `e51ec1b` + `92d7db2`). Round 43 shipped `circuit-recursion`. Viktor's adversarial audit delivered a NO verdict on the rebuild-from-spec gate (see separate issue).\n\n## Proposed work\n\n- Round 42: `lsm-spine-family` capability spec (~200 lines)\n- Round 44: `sketches-probabilistic` capability spec (Bloom priority)\n- Round 45: `content-integrity` capability spec\n- Round 46: `crdt-family` capability spec\n- Each round: Kenji drafts, Viktor adversarial audits, Ilyana reviews any capability crossing the published-library surface\n- Add `OpenSpec cadence` line to round-close ledger each round\n\n## Success signal\n\nPer-round: Viktor spec-zealot adversarial audit answers \"could I rebuild this module from this spec alone?\" with a clear **yes**.\n\n## Source\n\n- `docs/BACKLOG.md` L20-L69 (P0 \u2014 next round (committed) section)\n- Round tag: Rounds 41-46 program\n\n## Reviewers\n\nKenji (Architect, drafts), Viktor (spec-zealot, audits), Ilyana (public-API designer, published-library-surface capabilities)\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> OpenSpec backfill \u2014 per-round capability sweep through Round 46"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:36:18+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/58"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#57:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nAaron 2026-04-22: *\"you shoould put on the backlog hygene for skills that mix data and behavior\"*, after calling out a first-pass `github-repo-transfer` SKILL.md that bundled the nine-step routine **and** the gotcha catalog **and** the adapter table **and** the worked example into one file. Principle verbatim from a prior tick: *\"seperating thing by data and behiaver is a tried and true way and you mentied it for the skills earler, works in code too lol\"*.\n\nCanonical split at round 44: `.claude/skills/github-repo-transfer/SKILL.md` (behaviour \u2014 routine only) + `docs/GITHUB-REPO-TRANSFER.md` (data \u2014 gotcha catalog, what-survives inventory, adapter neutrality table, worked-example summary) + `docs/hygiene-history/repo-transfer-history.md` (event log).\n\nRule class: a SKILL.md that carries a multi-row catalog (gotcha list, inventory table, enumerated variants, worked-examples gallery, adapter mapping) without offloading to a `docs/**.md` data layer is a mix violation.\n\n## Proposed work\n\n- Define mix-signature rubric (5 signatures): (a) \"Known gotchas\" > 3 items; (b) \"Worked example\" / \"Case study\" > 20 lines; (c) adapter / compatibility / variants table; (d) what-survives / what-breaks inventory; (e) cross-platform-neutrality matrix. Threshold: score >= 2 flags.\n- Split target: routine stays in `.claude/skills/<name>/SKILL.md`; catalog/inventory/adapter/examples move to `docs/<CAPITALIZED-NAME>.md`; event log lives in `docs/hygiene-history/<name>-history.md` if the routine fires on cadence.\n- Land companion FACTORY-HYGIENE row (cadenced detection, Aarav / skill-tune-up owner on 5-10 round cadence).\n- One-shot retrospective pass over existing `.claude/skills/**/SKILL.md` files.\n\n## Success signal\n\nCadenced detection + retrospective sweep active; `github-repo-transfer` triplet (SKILL.md + docs + history) exists as the worked example.\n\n## Source\n\n- `docs/BACKLOG.md` L4405 (P1 \u2014 architectural hygiene)\n- Round tag: round 44\n\n## Reviewers\n\nAarav (skill-tune-up), skill-creator, Kenji (Architect)",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p1",
+     "backlog",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "<P1> Data/behaviour split hygiene rule for skills mixing routine with catalog data"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:35:38+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/57"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#56:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nZeta currently uses CRC32C for checkpoint/payload integrity checks but has no authoritative document justifying that choice or laying out the future roadmap toward cryptographic hashing. Security reviewers (and downstream operators evaluating tamper-evidence properties) need a single source of truth that distinguishes the integrity-only guarantee CRC32C provides from the tamper-evident authentication guarantee SHA-256 would provide for checkpoint manifests.\n\nThe BACKLOG entry calls out the gap directly: the doc must justify CRC32C as integrity (not auth) and capture the future roadmap toward SHA-256 for tamper-evident checkpoint manifests. Absent this doc, crypto-choice is tribal knowledge and cannot be audited against SDL practice artifacts.\n\n## Proposed work\n\n- Create `docs/security/CRYPTO.md` as a new authoritative security doc.\n- Document the current CRC32C usage sites and their threat model (integrity against accidental corruption, NOT authentication against a motivated adversary).\n- Explain why CRC32C is sufficient for the current integrity scope (fast, well-understood collision properties for non-adversarial settings).\n- Lay out the SHA-256 roadmap for tamper-evident checkpoint manifests, including which surfaces graduate when and what triggers the upgrade.\n- Cross-link from relevant checkpoint/persistence docs and from the security SDL index.\n- Per `GOVERNANCE.md \u00a72`, edit `docs/` in-place (current-state-not-history).\n\n## Success signal\n\n`docs/security/CRYPTO.md` exists, justifies CRC32C as \"integrity, not auth,\" and captures the \"future roadmap for tamper-evident checkpoint manifests\" using SHA-256. Row is checkable off in `docs/BACKLOG.md`.\n\n## Source\n\n- `docs/BACKLOG.md` L3501-L3503 (P0 \u2014 security / SDL artifacts)\n\n## Reviewers\n\nNazar (security-operations-engineer), Aminata (threat-model-critic), Mateo (security-researcher), hashing-expert",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "security"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> docs/security/CRYPTO.md \u2014 justify CRC32C vs SHA-256 roadmap"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:35:14+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/56"
+  },
+  {
+   "evidence_id": "issue:Lucent-Financial-Group/Zeta#55:opened",
+   "payload": {
+    "author": "AceHack",
+    "body": "## Context\n\nThe current `docs/security/THREAT-MODEL.md` is under-scoped for advanced-persistent-threat / nation-state and sophisticated supply-chain adversaries. Aaron (round-29 close) framed the gap directly:\n\n> \"in the real threat model we should take into consideration nation state and supply chain attacks.\"\n\nAaron's background is load-bearing on this work: he helped build the US smart grid (nation-state defense work) and is a gray hat with hardware side-channel experience. Treat APT + nation-state + sophisticated supply-chain as first-class threat classes, not box-ticks.\n\n## Proposed work\n\n- Revise `docs/security/THREAT-MODEL.md` adversary model: APT + nation-state + sophisticated supply-chain as first-class threat classes.\n- Expand supply-chain coverage: package registries (NuGet, Mathlib, Homebrew formulae); build toolchain (dotnet SDK, elan, mise installers); CI runners (GitHub Actions runner image compromise, runner-level persistence); third-party actions (beyond SHA-pin mitigation); dep-graph attacks.\n- For every mitigation, cite a real control (code / governance rule / CI gate / reviewer cadence). Unenforced mitigations become gap rows, not mitigation rows.\n- Add side-channel + hardware adversary coverage: timing, cache behavior, microarchitectural leaks, speculative execution for tenant-isolated deployments.\n- Author a nation-state response playbook covering compromise scenarios: `actions/checkout` compromise, `mise.run` hijack, poisoned NuGet package. Written before we need it.\n- Complete `docs/security/THREAT-MODEL-SPACE-OPERA.md` as the serious-underneath-the-fun variant; every silly adversary maps to a real STRIDE class + real control + real CVE-style escalation path.\n\n## Success signal\n\n`docs/security/THREAT-MODEL.md` treats APT / nation-state / sophisticated supply-chain as first-class threat classes with every mitigation tied to a real enforced control; side-channel + hardware adversary classes present; response playbook lands before incident need; `THREAT-MODEL-SPACE-OPERA.md` complete with every adversary mapped to STRIDE + control + CVE-style escalation path.\n\n## Source\n\n- `docs/BACKLOG.md` L3382-L3427 (P0 \u2014 Threat-model elevation)\n- Round tag: round-30 anchor (with round-29 Aaron framing)\n\n## Reviewers\n\n- Primary: `threat-model-critic` (Aminata)\n- Secondary: `security-researcher` (Mateo) \u2014 novel attack classes, CVE landscape, advisory-tracking\n- Consulting: Aaron \u2014 nation-state-adversary modeling",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "priority-p0",
+     "backlog",
+     "threat-model"
+    ],
+    "last_edited_at": null,
+    "title": "<P0> Nation-state + supply-chain threat-model rewrite"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:34:48+00:00",
+   "url": "https://github.com/Lucent-Financial-Group/Zeta/issues/55"
+  }
+ ],
+ "repo": "Lucent-Financial-Group/Zeta",
+ "window": "pre_t"
+}

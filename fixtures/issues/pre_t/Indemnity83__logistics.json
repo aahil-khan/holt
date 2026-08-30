@@ -1,0 +1,1936 @@
+{
+ "captured_at": "2026-08-30T10:18:20.490618+00:00",
+ "content_sha256": "b1bd99f7ea59b3d7c216dcad0d7386816b151015576b08fcd9715e7e58e0adc7",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:Indemnity83/logistics#423:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "Summary\n- `QuarryPhaseRunner.tickClearing` can exit its scan loop with `target == null` and then call `GridScanner.shouldSkip(world, target, targetState)`.\n- That can pass null target/state into clearing logic and risks an NPE when the scan reaches the end exactly after advancing.\n\nSource\n- Present in `mc/26.1` and inherited by the `mc/1.21.1` / `mc/1.21.11` quarry refactor ports.\n\nExpected fix\n- In `mc/26.1`, handle `target == null` immediately after the scan loop the same way as when `clearingTargetPos` returns null inside the loop: move to `BUILDING_FRAME`, reset `frameBuildIndex`, reset break progress, call `setChanged()`, and return.\n- Cherry-pick the fix back to `mc/1.21.11` and `mc/1.21.1` after it lands.\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Laser quarry: clearing scan can pass null target to shouldSkip"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:03:20+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/423"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#423:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 427
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:10:24+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/423"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#422:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "Summary\n-  returns immediately after calling  when a transport block is above the quarry.\n- If  returns , the stack is not routed to the inventory fallback or dropped, so quarry output can be lost.\n\nSource\n- Present in  and inherited by the  /  quarry refactor ports.\n\nExpected fix\n- In , only return from the transport path when  returns .\n- If it returns , fall through to the existing inventory/drop fallback for the same stack.\n- Cherry-pick the fix back to  and  after it lands.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Fix laser quarry dropped output when pipe insertion is rejected"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:01:40+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/422"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#422:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:03:12+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/422"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#412:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## User report\nA user reported that the NeoForge version of Logistics for Minecraft 1.21.1 works in single-player, but they cannot join a multiplayer world/server.\n\n## Error\n```\nChannel of mod Logistics failed to connect\n\nChannel name:\nlogistics:pipe/sync_requester_inventory\n[+2 more]\n\nCause:\nChannel of mod \"Logistics\" failed to connect:\nThis channel does not exist on the server side, but is required on the client side!\n```\n\n## Environment\n- Minecraft: 1.21.1\n- Loader: NeoForge\n- Mode affected: Multiplayer join\n- Single-player: Reported working normally\n\n## Expected behavior\nA client with the Logistics NeoForge mod installed can join a multiplayer world/server when the server has the compatible Logistics mod installed.\n\n## Actual behavior\nThe client is rejected during connection because required Logistics networking channels are missing on the server side.\n\n## Notes / investigation points\n- Reported missing channel includes `logistics:pipe/sync_requester_inventory` plus two more channels.\n- Check whether NeoForge server-side payload/channel registration includes all common Logistics payloads used by the client.\n- Verify client/server version mismatch handling and whether the published NeoForge 1.21.1 build contains matching networking registration on both sides.\n",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "bug",
+     "neoforge"
+    ],
+    "last_edited_at": null,
+    "title": "NeoForge multiplayer join fails due to missing Logistics channel"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:56:03+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/412"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#412:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T15:20:29+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/412"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#411:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n`LaserQuarryBlockEntity.setCustomBounds` (now `QuarryPhaseRunner.onCustomBoundsSet`) rewinds the mining cursor (`miningX/Y/Z`) and clears `finished`, but does not reset `frameBuildIndex` or `phase`. If `setCustomBounds` is ever called after the quarry has begun building its frame or mining, the frame cursor would resume from its previous index \u2014 likely producing nonsensical positions against the resized bounds \u2014 and `phase` would not return to `CLEARING` to re-clear the new area.\n\n**Currently latent**: the only caller is `LaserQuarryBlock.setPlacedBy`, which runs once at placement when `frameBuildIndex == 0` and `phase == CLEARING`, so the bug doesn't manifest today. But the function name implies a full reset, and any future caller (in-game resize via wrench, marker re-placement, etc.) would hit it.\n\n## Location\n`common/src/main/java/com/logistics/automation/laserquarry/entity/QuarryPhaseRunner.java:75-81` (post-refactor)\n`common/src/main/java/com/logistics/automation/laserquarry/entity/LaserQuarryBlockEntity.java:1060-1071` (pre-refactor on `mc/26.1`)\n\n```java\npublic void onCustomBoundsSet() {\n    miningX = 0;\n    miningY = 0;\n    miningZ = 0;\n    finished = false;\n    // missing: phase = Phase.CLEARING; frameBuildIndex = 0;\n}\n```\n\n## Suggested fix\nAdd `phase = Phase.CLEARING;` and `frameBuildIndex = 0;` to `onCustomBoundsSet` so resizing a quarry's bounds always restarts the full clear \u2192 frame \u2192 mine sequence against the new area. Also reset `currentTarget` and `breakProgress` via the existing `resetBreakProgress()` helper to avoid the next tick continuing to break the previous target.\n\n## History\nSurfaced in PR #406 review. Pre-existing on `mc/26.1`, `mc/1.21.11`, and `mc/1.21.1`. Deferred from the refactor PR.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Laser quarry: setCustomBounds doesn't reset frameBuildIndex or phase"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T05:15:28+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/411"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#411:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 427
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:10:24+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/411"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#410:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\nWhen `tickClearing` finishes the clear area and switches phase to `BUILDING_FRAME`, it calls `setChanged()` but not `syncToClients()`. Clients only see the phase change on the next tick that flips the energy sync condition \u2014 typically the first frame-build tick when `consumeEnergy()` fires. Until then, the probe display and any phase-driven renderer state remain stale (up to 1 tick of \"still clearing\" after the server has moved on).\n\nIn practice this is minor because the next tick almost always consumes energy and triggers a sync, but it's an inconsistency worth fixing.\n\n## Location\n`common/src/main/java/com/logistics/automation/laserquarry/entity/QuarryPhaseRunner.java:109-113` (post-refactor)\n`common/src/main/java/com/logistics/automation/laserquarry/entity/LaserQuarryBlockEntity.java:223-229` (pre-refactor on `mc/26.1`)\n\n```java\nif (target == null) {\n    phase = Phase.BUILDING_FRAME;\n    frameBuildIndex = 0;\n    be.setChanged();\n    return;        // <-- no syncToClients()\n}\n```\n\nThe `tickBuildingFrame` \u2192 `MINING` transition *does* call `syncToClients()` \u2014 the CLEARING \u2192 BUILDING_FRAME transition should match for consistency.\n\n## Suggested fix\nAdd `be.syncToClients();` after `be.setChanged();` in the phase-transition branch.\n\n## History\nSurfaced in PR #406 review. Pre-existing on `mc/26.1`, `mc/1.21.11`, and `mc/1.21.1`. Deferred from the refactor PR.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Laser quarry: CLEARING \u2192 BUILDING_FRAME transition not immediately synced to clients"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T05:15:18+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/410"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#410:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 427
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:10:24+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/410"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#409:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n`LaserQuarryBlockEntity.tick` checks `phaseRunner.isFinished()` (pre-refactor: `entity.finished`) and returns early *before* resetting `consumedEnergyThisTick`. If the quarry was actively consuming energy on the tick it finished, the flag remains true forever \u2014 its public getter is read by the client renderer (LED indicator), so the indicator may stay \"lit\" indefinitely after the quarry is done.\n\n## Location\n`common/src/main/java/com/logistics/automation/laserquarry/entity/LaserQuarryBlockEntity.java:122-145` (post-refactor)\n`common/src/main/java/com/logistics/automation/laserquarry/entity/LaserQuarryBlockEntity.java:150-163` (pre-refactor on `mc/26.1`)\n\n```java\nif (entity.phaseRunner.isFinished()) {\n    return;   // <-- consumedEnergyThisTick not cleared\n}\n// ...later in the same method...\nentity.consumedEnergyThisTick = false;\n```\n\n## Suggested fix\nReset `consumedEnergyThisTick = false` (and trigger a final sync if it changed) before the `isFinished` early return so the LED state is consistent post-finish. Add a regression test that runs the BE for one extra tick after `phaseRunner.setFinished(true)` (or equivalent) and asserts the flag transitions to false.\n\n## History\nSurfaced in PR #406 review. Pre-existing on `mc/26.1`, `mc/1.21.11`, and `mc/1.21.1` \u2014 the refactor PR is pure extraction, so the fix was deferred to its own PR for traceability and cross-branch cherry-picks.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Laser quarry: consumedEnergyThisTick can stay true after the quarry finishes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T05:15:11+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/409"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#409:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 427
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:10:23+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/409"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#408:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n`QuarryBlockBreaker.insertIntoSlot` mutates the target inventory without calling `inv.setChanged()`. The empty-slot path uses `inv.setItem(slot, ...)` (which calls `setChanged()` in vanilla `SimpleContainer`, but not necessarily in every `Container` implementation), and the merge path uses `existing.grow(...)` which mutates the `ItemStack` in place and bypasses `setItem` entirely.\n\nLikely consequences:\n- Chunk may not be marked dirty \u2192 mutated contents may not persist across save/load until another change re-dirties the chunk.\n- Open menus viewing the container may not see the update immediately.\n\n## Location\n`common/src/main/java/com/logistics/automation/laserquarry/entity/QuarryBlockBreaker.java:109-124`\n\n```java\npublic static ItemStack insertIntoSlot(Container inv, int slot, ItemStack stack) {\n    ItemStack existing = inv.getItem(slot);\n\n    if (existing.isEmpty()) {\n        int maxInsert = Math.min(stack.getCount(), Math.min(inv.getMaxStackSize(), stack.getMaxStackSize()));\n        inv.setItem(slot, stack.split(maxInsert));\n    } else if (ItemStack.isSameItemSameComponents(existing, stack)) {\n        int space = Math.min(inv.getMaxStackSize(), existing.getMaxStackSize()) - existing.getCount();\n        if (space > 0) {\n            int toInsert = Math.min(space, stack.getCount());\n            existing.grow(toInsert);\n            stack.shrink(toInsert);\n        }\n    }\n\n    return stack;\n}\n```\n\n## Suggested fix\nCall `inv.setChanged()` after any mutation (both branches). Add a regression test against a `ChestBlockEntity`-style fake (or real `ChestBlockEntity` in a gametest) to verify the chunk is dirtied and a save/reload preserves the merged stack.\n\n## History\nSurfaced in PR #405 review. Pre-existing on `mc/26.1`, `mc/1.21.11`, and `mc/1.21.1`. Deferred from the refactor PR to keep behavior changes out of a pure extraction commit.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Laser quarry: insertIntoSlot does not call setChanged() on target container"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T05:12:50+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/408"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#408:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 427
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:10:23+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/408"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#407:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\nIn `QuarryBlockBreaker.outputItem` (extracted from `LaserQuarryBlockEntity`), when a transport block is detected above the quarry, the return value of `TransportApi.forceInsert(...)` is ignored and the method returns unconditionally. If the transport rejects the stack (e.g., pipe is full or routing fails), the items are silently lost \u2014 the inventory and drop fallbacks are never reached.\n\n## Location\n`common/src/main/java/com/logistics/automation/laserquarry/entity/QuarryBlockBreaker.java:68-71`\n\n```java\nif (transportApi.isTransportBlock(aboveState)) {\n    transportApi.forceInsert(world, abovePos, stack.copy(), Direction.UP);\n    return;\n}\n```\n\n## Suggested fix\nCapture the boolean result and only return early on `true`; fall through to the inventory/drop fallback otherwise. Will also want to confirm the documented contract of `forceInsert` (whether `false` means \\\"try again later\\\" vs. \\\"unrecoverable rejection\\\") and add a regression test that simulates a full-pipe scenario.\n\n## History\nSurfaced in PR #405 review. Pre-existing on `mc/26.1`, `mc/1.21.11`, and `mc/1.21.1` \u2014 the refactor PR was strictly maintainability work, so the fix was deferred to its own PR to keep the behavior change traceable and cherry-pickable.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Laser quarry: items lost when forceInsert into pipe above returns false"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T05:12:37+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/407"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#407:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 427
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T21:10:22+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/407"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#396:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\nAdd targeted regression tests around logistics failure paths and adapter edge cases found during code review.\n\n## Areas to cover\n- Tracked TravelingItem drop/discard paths should release outstanding requester accounting without counting as successful delivery.\n- Provider dispatch queue failure paths should not mark jobs complete as if items arrived.\n- Partial insertion/drop behavior should preserve correct accounting and job state.\n- NeoForge multi-slot item exposure should be covered once the adapter model is improved.\n\n## Motivation\nThe current pure logic and module tests are strong, but the highest-risk gaps are around failure accounting and cross-loader storage behavior. Focused regression coverage will make future refactors safer.\n\n## Notes\nThis is a test and maintainability improvement, not a standalone bug report.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "cleanup",
+     "improvement",
+     "neoforge",
+     "common"
+    ],
+    "last_edited_at": "2026-05-31T03:16:35Z",
+    "title": "Add regression coverage for logistics failure paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:08:37+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/396"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#396:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 402
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:22:50+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/396"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#395:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\nLaserQuarryBlockEntity has grown into a large multi-responsibility class that mixes quarry phase execution, energy tracking, marker/bounds handling, frame building, mining scan logic, render sync, active quarry registry, and pipe connection behavior.\n\n## Motivation\nThe class is currently around 1,500 lines, making quarry behavior harder to reason about and increasing the risk of regressions when changing mining, frame, or render-sync behavior. Splitting the implementation would make snapshot/API porting and targeted tests easier.\n\n## Suggested cleanup\nConsider extracting focused collaborators for:\n- Phase execution: clearing, frame building, and mining\n- Bounds and marker resolution\n- Active quarry registry / TTL tracking\n- Arm/render synchronization state\n- Energy consumption and speed calculation helpers\n\nKeep the public block entity surface stable so this remains easy to cherry-pick across mc/* branches.\n\n## Notes\nThis is maintainability work, not a bug report. It can be done incrementally as long as each step preserves existing behavior.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "architecture",
+     "cleanup",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Refactor LaserQuarryBlockEntity into focused services"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:08:37+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/395"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#395:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 406
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T16:25:48+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/395"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#393:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\nRuntime config values are parsed and assigned directly without validation. Invalid values such as negative speeds, negative energy multipliers, NaN, Infinity, or zero/negative scan rates can reach physics, energy, and quarry logic.\n\n## Evidence\n- common/src/main/java/com/logistics/core/LogisticsConfig.java:42 defines public mutable config fields with no range constraints.\n- common/src/main/java/com/logistics/core/LogisticsConfig.java:80 and nearby entries assign parsed command values directly.\n- common/src/main/java/com/logistics/core/LogisticsConfig.java:248 applies parsed values without validation.\n- common/src/main/java/com/logistics/core/LogisticsCommandTree.java:132 calls setFromString from the /logistics config set command.\n\n## Suggested fix\nAdd validation per config entry before mutating INSTANCE. Clamp or reject invalid values for area, energy amounts/multipliers, arm speed/scaling, rain penalty, scan rate, pipe min/max speed, acceleration, drag, and engine outputs. Explicitly reject NaN and Infinity for floating-point entries.\n\n## Test coverage\nAdd tests for command/config parsing that verify invalid values are rejected and existing config remains unchanged.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Validate runtime config ranges before applying values"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:06:02+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/393"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#393:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:21:26+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/393"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#394:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\nThe NeoForge adapter for common IItemStorage exposes the storage as one virtual ResourceHandler slot. This means external NeoForge callers that enumerate slots only see the first non-empty item type, which can reduce interoperability for multi-slot or multi-resource Logistics machines.\n\n## Evidence\n- neoforge/src/main/java/com/logistics/neoforge/storage/NeoForgeItemStorage.java:93 documents that CommonItemHandler reports size() == 1 regardless of underlying contents.\n- neoforge/src/main/java/com/logistics/neoforge/storage/NeoForgeItemStorage.java:101 documents that external slot enumeration only observes the first item type.\n\n## Suggested fix\nIntroduce a slot-aware common storage contract or adapter for machine/container-backed storages, then expose those slots faithfully through NeoForge ResourceHandler. Keep the unified fallback only for truly slotless storages.\n\n## Test coverage\nAdd NeoForge adapter tests with a multi-slot common storage containing multiple item types. Verify slot enumeration exposes all expected resources and that insert/extract transaction behavior remains correct.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "neoforge",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "NeoForge common item storage exposes only one virtual slot"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:06:02+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/394"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#394:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 400
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:49:01+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/394"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#392:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\nEnergyComponent does not guard against non-positive transfer requests or invalid configured limits/capacity. Negative input or negative config-derived values can make insert/extract return negative amounts, violating normal energy storage semantics.\n\n## Evidence\n- common/src/main/java/com/logistics/core/lib/energy/EnergyComponent.java:36 calculates accepted with Math.min(maxAmount, ...), with no maxAmount <= 0 guard.\n- common/src/main/java/com/logistics/core/lib/energy/EnergyComponent.java:47 does the same for extraction.\n- Config-derived values such as quarry energy capacity/input can become negative if config accepts negative multipliers.\n\n## Suggested fix\nClamp transfer requests and derived values to non-negative values. insert/extract should immediately return 0 for maxAmount <= 0, negative capacity should be treated as 0, and maxInsert/maxExtract should not allow negative effective transfer amounts.\n\n## Test coverage\nAdd EnergyComponent tests for negative maxAmount, zero/negative limits, and negative dynamic capacity suppliers.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "EnergyComponent can return negative transfer amounts"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:06:01+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/392"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#392:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 399
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T17:57:49+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/392"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#391:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\nDropped or discarded logistics items currently call the same delivery path as successful inventory insertion. That can mark jobs complete even though the requested items never reached the destination inventory.\n\n## Evidence\n- common/src/main/java/com/logistics/pipe/runtime/PipeRuntime.java:257 calls network.notifyDelivery before dropping a routed item.\n- common/src/main/java/com/logistics/pipe/runtime/PipeRuntime.java:441 does the same in notifyDropAndDrop.\n- common/src/main/java/com/logistics/pipe/network/PipeNetwork.java:186 forwards notifyDelivery to jobCoordinator.onDelivery.\n- common/src/main/java/com/logistics/pipe/network/NetworkJob.java:75 records this as delivery and may transition the job to COMPLETE.\n\n## Suggested fix\nSplit the network API into separate success and failure/accounting paths, for example recordDelivery(...) for real inventory arrival and releaseOutstanding(...) or recordLoss(...) for failed extraction/drop/discard paths. Dropped items should decrement outstanding requester accounting without incrementing deliveredAmount or completing the job.\n\n## Test coverage\nAdd a focused regression test for tracked TravelingItem drop/failure paths to verify ordered counts are released but NetworkJob deliveredAmount is not incremented.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "architecture",
+     "common"
+    ],
+    "last_edited_at": null,
+    "title": "Dropped logistics items are counted as delivered"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:05:41+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/391"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#391:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 397
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:09:35+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/391"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#388:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Description\n\nJEI does not display the Macerator's recipe group when playing on NeoForge.\n\n## Steps to Reproduce\n\n1. Install the mod on NeoForge with JEI\n2. Open JEI and look for Macerator recipes\n\n## Expected Behavior\n\nMacerator recipes should appear in JEI under their recipe category/group.\n\n## Actual Behavior\n\nThe Macerator recipe group is not visible in JEI.\n\n## Environment\n\n- **Loader:** NeoForge 26.1.2.66-beta (latest)\n- **JEI:** jei-26.1.2-neoforge-29.6.2.31 (latest)\n- **Logistics:** logistics-26w22a+mc26.1.neoforge (latest)\n\n## Source\n\nReported via CurseForge comment.",
+    "body_truncated": false,
+    "comments": 6,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "JEI does not show Macerator recipe group on NeoForge"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T15:30:33+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/388"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#388:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:43:09+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/388"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#365:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Background\n\nA recent incident exposed a gap in CI coverage: missing `META-INF/services/` registration files caused the mod to fail at runtime (ServiceLoader throws on startup), but all CI checks passed because nothing exercises the JVM after a clean checkout.\n\n## Goal\n\nBuild a test suite that:\n- Tests all business logic in `common` with no dependency on Fabric API or NeoForge\n- Uses Minecraft classes as a test dependency (acceptable trade-off for now)\n- Keeps `fabric`/`neoforge` test scope limited to unit tests of their thin adapter implementations\n\n## Proposed Structure\n\n```\ncommon/src/test/java/        # JUnit, MC as compile dep, no Fabric/NeoForge\nfabric/src/test/java/        # Unit tests for Fabric adapters (FabricFuelHelper, etc.)\nneoforge/src/test/java/      # Unit tests for NeoForge adapters\n```\n\n### common tests\n- Shared base class calls `Bootstrap.bootStrap()` in `@BeforeAll` to initialize MC registries\n- Test business logic directly: pipe routing, engine fuel consumption, network graph, etc.\n- No loader APIs \u2014 if Fabric leaks into common, it fails to compile here (free architectural guard)\n\n### fabric / neoforge tests\n- Plain JUnit where possible, but likely will need platform tools (like `@GameTest`)\n- Verify ServiceLoader registrations are present: `ServiceLoader.load(FuelHelper.class).findFirst().orElseThrow()`\n- Test adapter correctness: given a known item, does `FabricFuelHelper.checkBurnDuration()` return the expected value?\n\n## Immediate Win\n\nThe ServiceLoader smoke test in `fabric` and `neoforge` would have caught the missing `META-INF/services/` files that broke the mc/26.1 snapshot release. This is the first thing to implement.\n\n## Notes\n\n- `@GameTest` is intentionally avoided \u2014 game tests are loader-specific and the goal is loader-agnostic test coverage\n- `Bootstrap.bootStrap()` is slow but a one-time cost per test run; acceptable for now\n- Future direction: push MC types to the edges (domain types in common, MC conversion at adapter boundary) to remove the Bootstrap dependency entirely",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "multiloader",
+     "cleanup",
+     "improvement",
+     "neoforge",
+     "common",
+     "fabric"
+    ],
+    "last_edited_at": "2026-05-09T16:40:14Z",
+    "title": "feat: establish test infrastructure for common module"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T16:31:42+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/365"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#365:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T03:25:09+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/365"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#354:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Overview\n\n`common/` is now fully loader-agnostic (zero Fabric imports, #352). The NeoForge stubs in `neoforge/` compile but do nothing \u2014 this issue wires them up so the mod actually initializes, ticks, and interacts correctly on NeoForge.\n\n## Dependency order\n\n```\n1. Common bootstrap init              \u2190 everything depends on this\n2. BlockEntityTypeFactory impl        \u2190 needed for blocks/entities to register\n3. PlatformService impl               \u2190 needed for config path\n4. Energy services                    \u2190 engines need push/presence checker\n5. Capability registration            \u2190 energy, item, fluid, pipe connections\n6. Packet registration                \u2190 networking (ServerNetworking SPI already wired)\n7. Lifecycle events                   \u2190 pipe network ticking + quarry cleanup\n8. Commands, loot modifiers, creative tab\n```\n\n## Work items\n\n### 1. Common bootstrap \u2014 `LogisticsNeoForge.java`\n\nCall `new LogisticsCommonBootstrap().initialize()`. Without this, no blocks, items, or entities register.\n\n### 2. `NeoForgeBlockEntityBuilder.java` (NEW)\n\nImplement the `BlockEntityTypeFactory` SPI (`common/src/main/java/com/logistics/core/lib/block/BlockEntityTypeFactory`).\nFabric reference: `fabric/src/main/java/com/logistics/fabric/FabricBlockEntityBuilder.java`.\n\n### 3. `NeoForgePlatformService.java` (NEW)\n\nImplement the `PlatformService` SPI. Provide `configDir()` using NeoForge's loader API.\nFabric reference: `fabric/src/main/java/com/logistics/fabric/FabricPlatformService.java`.\n\n### 4. Energy services \u2014 `LogisticsNeoForge.java`\n\nWire two lambdas into `AbstractEngineBlockEntity` and `AbstractEngineBlock`:\n\n```java\n// Push RF to an adjacent block via NeoForge capability\nAbstractEngineBlockEntity.setEnergyPushService((level, pos, dir, source, max) -> {\n    IEnergyStorage target = level.getCapability(Capabilities.EnergyStorage.BLOCK, pos, dir);\n    if (target == null || !target.canReceive()) return 0L;\n    return target.receiveEnergy((int) Math.min(max, Integer.MAX_VALUE), false);\n});\n\n// Check if adjacent block can accept energy\nAbstractEngineBlock.setEnergyPresenceChecker((world, pos, dir) -> {\n    IEnergyStorage s = world.getCapability(Capabilities.EnergyStorage.BLOCK, pos.relative(dir), dir.getOpposite());\n    return s != null && s.canReceive();\n});\n```\n\nFabric reference: `LogisticsFabric.registerEnergyServices()`.\n\n### 5. Capability registration \u2014 `NeoForgeCapabilityRegistration.java` (uncomment + complete)\n\nSubscribe to `RegisterCapabilitiesEvent` and register:\n\n- **Energy:** `HasEnergyStorage` \u2192 `Capabilities.EnergyStorage.BLOCK`\n- **Items:** `HasItemStorage` \u2192 `Capabilities.ItemHandler.BLOCK`\n- **Fluids:** `HasFluidStorage` \u2192 `Capabilities.FluidHandler.BLOCK`\n- Wire `ItemStorageLookup.register()` and `FluidStorageLookup.register()` to query NeoForge's capability system\n- Wire `PipeConnectionLookup.register()` (NeoForge equivalent of `PipeConnectionRegistry.SIDED`)\n\nNew adapter files needed:\n\n| File | Purpose | Fabric reference |\n|------|---------|-----------------|\n| `energy/NeoForgeEnergyStorage.java` | Adapts `IEnergyStorage` \u2194 NeoForge `IEnergyStorage` | `FabricEnergyStorage.java` |\n| `storage/NeoForgeItemStorage.java` | Adapts `IItemStorage` \u2194 `IItemHandler` | `FabricItemStorage.java` |\n| `storage/NeoForgeItemKey.java` | Adapts `ItemStack` \u2192 `IItemKey` | `FabricItemKey.java` |\n| `fluids/NeoForgeFluidStorage.java` | Adapts `IFluidStorage` \u2194 `IFluidHandler` | `FabricFluidStorage.java` |\n| `fluids/NeoForgeFluidKey.java` | Adapts `FluidStack` \u2192 `IFluidKey` | `FabricFluidKey.java` |\n\nFabric reference: `FabricCapabilityRegistration.java` + `fabric/energy/` + `fabric/storage/`.\n\n### 6. Packet registration \u2014 `NeoForgePacketRegistration.java` (uncomment + complete)\n\nUncomment the existing stub (the structure is already correct). Wire `ServerNetworking.register()` with NeoForge's server-play sender. Packet types and codecs are defined in common.\nFabric reference: `FabricPacketRegistration.java`.\n\n### 7. Lifecycle events\n\n**`NeoF",
+    "body_truncated": true,
+    "comments": 2,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Wire up NeoForge server-side so the mod loads and runs"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T05:11:16+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/354"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#354:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:06:03+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/354"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#353:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Overview\n\nAll client-side code currently lives in `fabric/src/client/`. To support NeoForge (and future loaders), the vanilla-compatible portions need to move to `common/src/client/` and the loader-specific parts need abstraction layers \u2014 the same pattern used on the server side.\n\n## What's vanilla-compatible (move to `common/src/client/`)\n\n**Screens \u2014 pure vanilla, zero loader dependencies:**\n- All pipe screens: `RequesterScreen`, `SupplierScreen`, `ProviderScreen`, `SinkScreen`, `CraftingScreen`, `ProcessScreen`, `SatelliteScreen`, `ChassisScreen`, `ItemFilterScreen`, `AdvancedExtractorScreen`, `ModSinkScreen` \u2014 plus `widget/` subdirectory\n- `power/screen/StirlingEngineScreen.java`\n- `automation/kiln/KilnScreen.java` + `KilnRecipeBookComponent.java`\n- `core/macerator/MaceratorScreen.java` + `MaceratorRecipeBookComponent.java`\n- JEI integration: `core/macerator/jei/` (JEI is loader-agnostic)\n\n**Bootstrap SPI \u2014 vanilla ServiceLoader, no Fabric API:**\n- `core/bootstrap/ClientDomainBootstrap.java`\n- `core/bootstrap/ClientDomainBootstraps.java`\n- `core/bootstrap/LogisticsClientBootstrap.java`\n\n## What needs abstraction before it can be shared\n\n### Client networking\n\nCurrently `ClientPlayNetworking` is used in two places:\n\n1. **Receiving packets** \u2014 `ClientPlayNetworking.registerGlobalReceiver()` in `LogisticsPipeClient.registerPacketReceivers()`\n2. **Sending packets** \u2014 `ClientPlayNetworking.send()` in `RequesterScreen`, `ChassisScreen`\n\nFix: introduce `ClientNetworking` SPI in `core.lib.platform` (same Pattern A shape as `ServerNetworking` from #352). Fabric wires `ClientPlayNetworking`; NeoForge wires its equivalent.\n\n### Model loading\n\n~80 extra models are registered across all domain clients via Fabric's `ExtraModelKey` + `ModelLoadingPlugin`. Renderers access them by casting to `FabricModelManager`. This is the deepest Fabric dependency in the client layer.\n\nFix: introduce a `ClientModelRegistry` SPI (Pattern A \u2014 ServiceLoader). Fabric provides an `ExtraModelKey`-backed implementation; NeoForge provides its own. Renderers call `ClientModelRegistry.INSTANCE.get(id)` instead of casting `FabricModelManager` directly.\n\n## What stays loader-specific\n\n- `LogisticsModClient` \u2014 must implement `ClientModInitializer` (Fabric) or equivalent (NeoForge)\n- Domain client bootstraps (`LogisticsPipeClient`, `LogisticsPowerClient`, etc.) \u2014 register models, hook events, wire packet receivers; each loader has its own thin version that calls the common abstractions\n\n## Dependency order\n\n```\n1. Create common/src/client/ directory structure\n2. Move screens + bootstrap SPI (no-risk, pure vanilla, no code changes)\n3. Add ClientNetworking SPI + Fabric impl \u2192 replace ClientPlayNetworking calls in screens\n4. Add ClientModelRegistry SPI + Fabric impl \u2192 replace ExtraModelKey / FabricModelManager in domain clients\n5. Write NeoForge client bootstrap implementations using the same SPIs\n```\n\n## Acceptance criteria\n\n- `common/src/client/` exists and contains all vanilla-compatible screens and bootstrap SPI\n- `fabric/src/client/` domain clients are thin wrappers that call common abstractions\n- No `net.fabricmc.*` imports in `common/src/client/`\n- `neoforge/src/client/` has parallel domain client implementations using the same SPIs\n- All 69 Fabric game tests continue to pass",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Split client code between common/ and fabric/ for multi-loader support"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T05:10:38+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/353"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#353:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 355
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T05:44:25+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/353"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#339:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\n`LogisticsPower.java` registers the Stirling Engine menu using Fabric's `ExtendedMenuType`, which sends extra data from server to client when the menu is opened. This is in `common/`.\n\n## Research findings\n\nBoth Fabric and NeoForge support extended menu data but via different mechanisms:\n\n- **Fabric:** `ExtendedMenuType` + `ExtendedMenuProvider` \u2014 extra data written to a `PacketByteBuf` on the server and read in the menu constructor client-side.\n- **NeoForge:** `IContainerFactory` \u2014 menu constructor receives an `IMenuType` with a factory that reads from a `FriendlyByteBuf`.\n\nThe menu *logic* (slots, data slots, container sync) is vanilla and belongs in `common/`. Only the type registration and the extra-data wiring are loader-specific.\n\n**Recommended approach:**\n\n1. Keep the `AbstractContainerMenu` subclass in `common/` \u2014 it reads its extra state from a `FriendlyByteBuf` in its constructor (this is vanilla-compatible).\n2. Move `ExtendedMenuType` creation to `fabric/`.\n3. For NeoForge, create equivalent `IContainerFactory`-based registration in `neoforge/`.\n4. No shared interface needed \u2014 the constructor signature is sufficient contract.\n\n## Acceptance criteria\n\n- `LogisticsPower.java` in `common/` has no `ExtendedMenuType` import\n- Stirling Engine menu opens and syncs correctly (fuel level, energy) on Fabric",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Abstract extended menu type for Stirling Engine (and any future menus with server\u2192client data)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:12:12+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/339"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#339:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:59:30+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/339"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#338:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\n`FluidTankComponent` extends Fabric's `SingleVariantStorage<FluidVariant>` and `HasFluidStorage` returns `Storage<FluidVariant>`. These are in `common/` but have no NeoForge equivalent.\n\n## Research findings\n\nFluid pipes are not yet implemented, so this is low urgency \u2014 but `FluidTankComponent` and `HasFluidStorage` sit in `core/lib/` and need to be clean before `common/` can be considered fully loader-agnostic.\n\n**Recommended approach:** Mirror the energy approach:\n\n```java\n// common/\npublic interface IFluidStorage {\n    long insert(IFluidKey fluid, long maxAmount, boolean simulate);\n    long extract(IFluidKey fluid, long maxAmount, boolean simulate);\n    long getAmount(IFluidKey fluid);\n    long getCapacity();\n}\n```\n\n`IFluidKey` wraps `FluidVariant` (Fabric) or `FluidStack` (NeoForge).\n\n`FluidTankComponent` moves to `fabric/` and wraps `SingleVariantStorage<FluidVariant>`.\n\nThis can be deferred until fluid pipes are actively being worked on \u2014 the stub interfaces are enough to unblock `common/` compilation.\n\n## Acceptance criteria\n\n- `common/` has no `net.fabricmc.fabric.api.transfer.v1.fluid.*` imports\n- `HasFluidStorage` returns `IFluidStorage`\n- Existing fluid tank behaviour on Fabric is unchanged",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Abstract fluid storage (IFluidStorage contract)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:11:46+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/338"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#338:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:59:22+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/338"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#337:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nThe automation domain (Kiln, Laser Quarry, Macerator) uses both Team Reborn Energy and Fabric Transfer API types in `common/`.\n\n## Depends on\n\n- #332 \u2014 IEnergyStorage contract\n- #333 \u2014 IItemStorage contract\n\n## Files to update\n\n- `automation/kiln/KilnBlockEntity.java` \u2014 uses `ContainerStorage`, `Storage<ItemVariant>`, `EnergyStorage`\n- `automation/laserquarry/entity/LaserQuarryBlockEntity.java` \u2014 uses `EnergyStorage`, `TransactionContext`\n- `core/macerator/MaceratorBlockEntity.java` \u2014 uses `EnergyStorage`, `TransactionContext`, `Storage<ItemVariant>` (via `ContainerStorage`)\n\n## Notes\n\n`ContainerStorage` (Fabric) is used to wrap vanilla `Container` / `WorldlyContainer` for the Kiln and Macerator's sided inventory. After the item storage abstraction, these should use `IItemStorage` \u2014 the Fabric layer creates the `ContainerStorage` wrapper and hands it in as an `IItemStorage`.\n\n`LaserQuarryBlockEntity` only uses energy \u2014 no item storage \u2014 so it can be ported as soon as #332 is done, without waiting for #333.\n\n## Acceptance criteria\n\n- `automation/` and `core/macerator/` have no `team.reborn.*` or `net.fabricmc.fabric.api.transfer.*` imports\n- Kiln smelts items correctly; quarry mines correctly; macerator grinds correctly on Fabric",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Port automation domain to IEnergyStorage and IItemStorage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:11:24+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/337"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#337:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:59:29+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/337"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#336:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nAll power domain block entities directly use Team Reborn Energy types. Once #332 defines `IEnergyStorage`, this is mechanical substitution work.\n\n## Depends on\n\n- #332 \u2014 IEnergyStorage contract and EnergyComponent move to fabric/\n\n## Files to update\n\n- `power/block/entity/CreativeSinkBlockEntity.java`\n- `power/engine/block/entity/RedstoneEngineBlockEntity.java`\n- `power/engine/block/entity/StirlingEngineBlockEntity.java` \u2014 also uses `Storage<ItemVariant>` for fuel slot; depends on #333 too\n- `power/cable/CableBlockEntity.java`\n- `power/cable/CableNetwork.java`\n- `power/cable/CableNetworkManager.java`\n- `core/lib/power/EnergyDemandProvider.java` \u2014 interface uses TRE types in javadoc/signature; update\n- `core/lib/power/AbstractEngineBlockEntity.java` \u2014 check for TRE references\n\n## Notes\n\n`StirlingEngineBlockEntity` has a fuel inventory slot that uses `Storage<ItemVariant>` to check fuel items. This makes it depend on both #332 and #333 \u2014 coordinate or do the energy part first and leave fuel slot for the item storage issue.\n\n`CableNetwork` distributes energy between connected devices each tick using TRE's transaction system. The distribution algorithm itself is loader-agnostic; only the `energy.insert()` / `energy.extract()` calls need to go through `IEnergyStorage`.\n\n## Acceptance criteria\n\n- `power/` subpackage has no `team.reborn.*` imports\n- Engines produce energy, cables distribute it, sinks absorb it correctly on Fabric\n- `EnergyDemandProvider.networkDemandPerTick()` signature uses only common types",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Port power domain to IEnergyStorage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:11:10+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/336"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#336:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:59:27+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/336"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#335:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nThe pipe network layer (`pipe/network/`) uses `ItemVariant` as the canonical item identity type throughout \u2014 in the planner, the world view, packets, and the network graph. This is the deepest coupling point in the codebase.\n\n## Depends on\n\n- #333 \u2014 IItemStorage / ITransaction contract\n- #334 \u2014 pipe modules ported (recommended to do together)\n\n## Files to update\n\nAll in `common/src/main/java/com/logistics/pipe/network/`:\n\n- `PipeNetwork.java`\n- `NetworkController.java`\n- `RequestPlanner.java`\n- `MinecraftWorldView.java`\n- Plus remaining network files (ILogisticsNetwork, Order, etc. in core/lib/network/)\n\nNetwork packets that carry item data:\n- `pipe/network/packet/SyncRequesterInventoryPacket.java` \u2014 uses `ItemVariant` for codec\n\n## Notes\n\n`ItemVariant` is used both as a map key (for counting available items) and as a codec type (for packet serialization). The codec replacement needs care: the on-wire format doesn't need to change if `IItemKey` serializes identically to `ItemVariant`.\n\n`Order` in `core/lib/network/` should switch from `ItemVariant` to `IItemKey` \u2014 this is the type that flows across domain boundaries.\n\n## Acceptance criteria\n\n- `pipe/network/` and `core/lib/network/` have no `ItemVariant` or Fabric Transfer API imports\n- End-to-end network request (requester \u2192 provider \u2192 delivery) works correctly on Fabric\n- Packet wire format unchanged (no world saves broken)",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Port pipe network layer to IItemStorage / IItemKey"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:10:56+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/335"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#335:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:59:25+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/335"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#334:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nAll pipe module classes use Fabric Transfer API types (`Storage<ItemVariant>`, `ItemVariant`, `TransactionContext`, `StorageView`) directly. Once #333 defines the abstraction, these need updating.\n\n## Depends on\n\n- #333 \u2014 IItemStorage / ITransaction contract\n\n## Files to update\n\nAll in `common/src/main/java/com/logistics/pipe/modules/`:\n\n- `BasicExtractorModule.java`\n- `AdvancedExtractorModule.java`\n- `ExtractionModule.java`\n- `InsertionModule.java`\n- `ProviderModule.java`\n- `SupplierModule.java`\n- `PassiveSupplierModule.java`\n- `ProcessModule.java`\n- `QuickSortModule.java`\n- `PolymorphicSinkModule.java`\n- `RequesterModule.java`\n\nAlso:\n- `pipe/block/entity/PipeBlockEntity.java`\n- `pipe/block/entity/PipeItemStorage.java`\n- `pipe/block/PipeBlock.java`\n- `pipe/runtime/PipeRuntime.java`\n- `pipe/Pipe.java`\n- `pipe/ChassisPipe.java`\n\n## Notes\n\nUnit tests in `common/src/test/` test modules directly via Fabric types today. After this change they should test via the `IItemStorage` interface \u2014 the test can use a simple in-memory implementation of `IItemStorage` so there is no Fabric dependency at test time.\n\n## Acceptance criteria\n\n- No Fabric Transfer API imports in any of the above files\n- All existing pipe module unit tests pass (rewritten against `IItemStorage`)\n- Manual smoke test: extract pipe pulls items from a chest correctly",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Port pipe modules to IItemStorage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:10:42+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/334"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#334:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:59:24+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/334"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#333:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nFabric's Transfer API (`Storage<ItemVariant>`, `TransactionContext`, `StorageView<ItemVariant>`, `ItemVariant`) is used in 30+ files across `common/` \u2014 pipe modules, pipe network, runtime, and block entities. This is the largest single blocker for NeoForge compilation.\n\n## Scope\n\nFabric Transfer API types appear in every pipe module, the pipe runtime, the pipe network layer, and several block entities. A full file list is in the parent tracking issue (#324).\n\n## Research findings\n\nThe core operations needed by pipes are:\n\n1. **Identify an item** \u2014 \"what is this item, including components/data?\" \u2192 `ItemVariant` (Fabric) / `ItemStack` identity (NeoForge)\n2. **Ask how much fits** \u2014 \"can I insert N of X?\" \u2192 `Storage.simulateInsert()`\n3. **Move items** \u2014 `Storage.insert()` / `Storage.extract()` atomically\n4. **Iterate contents** \u2014 `Storage.forEach(view -> ...)` to see what's available\n5. **Atomic batching** \u2014 group multiple moves so they either all happen or none do \u2192 `Transaction`\n\n**Options evaluated:**\n\n| Option | Pros | Cons |\n|--------|------|------|\n| Wrap Fabric API in our own interfaces | Full control, no new dependency | ~30 file changes, some overhead |\n| Use Architectury API | Pre-built abstraction, maintained | Adds a required dependency to common |\n| Accept Fabric-only pipes, reimplement for NeoForge | Zero changes to pipe code now | Duplicates all pipe module logic |\n| Use vanilla `Container` as the abstraction | Works for simple cases | Lossy \u2014 no item identity beyond stack equality, no atomicity |\n\n**Recommended approach:** Define a minimal set of interfaces in `common/`:\n\n```java\n// Identifies an item type (ignoring count)\npublic interface IItemKey {\n    ItemStack toStack(int count);\n    boolean matches(ItemStack stack);\n}\n\n// Read-only view of a slot or resource in a storage\npublic interface IItemView {\n    IItemKey resource();\n    long amount();\n}\n\n// A storage that can be read from and written to\npublic interface IItemStorage {\n    long insert(IItemKey item, long maxAmount, boolean simulate);\n    long extract(IItemKey item, long maxAmount, boolean simulate);\n    Iterable<IItemView> contents();\n}\n\n// Atomic operation scope \u2014 open/close, rollback on abort\npublic interface ITransaction extends AutoCloseable {\n    void commit();\n    // close() without commit = rollback\n}\n```\n\n`IItemStorage` with `simulate=true` replaces `Transaction`-based simulation in most module logic. Real atomic moves (multiple inserts/extracts in one unit) still need `ITransaction` but this covers a small subset of the code.\n\nFabric implementation wraps `Storage<ItemVariant>` and `TransactionContext`. NeoForge implementation wraps `IItemHandler` with `simulate` flag.\n\n## Acceptance criteria\n\n- `common/` has no `net.fabricmc.fabric.api.transfer.*` imports\n- All pipe module unit tests pass\n- Pipe network delivers items correctly on Fabric end-to-end\n- `IItemStorage` and `IItemKey` are documented as the primary extension points",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Define IItemStorage / ITransaction contract (primary pipe abstraction)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:10:23+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/333"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#333:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 349
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:07:49+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/333"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#332:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\n`EnergyComponent` extends Team Reborn's `SimpleEnergyStorage`, coupling it to a Fabric-only energy API. It is used throughout `common/` by engines, cables, the quarry, and the kiln.\n\n## Scope\n\nFiles that directly use Team Reborn energy types in `common/`:\n\n- `core/lib/energy/EnergyComponent.java` \u2014 extends `SimpleEnergyStorage`\n- `core/lib/block/capability/HasEnergyStorage.java` \u2014 return type is `team.reborn.energy.api.EnergyStorage`\n- `core/lib/power/EnergyDemandProvider.java` \u2014 return type check\n- `power/block/entity/CreativeSinkBlockEntity.java`\n- `power/cable/CableBlockEntity.java`, `CableNetwork.java`\n- `power/engine/block/entity/RedstoneEngineBlockEntity.java`, `StirlingEngineBlockEntity.java`\n- `automation/kiln/KilnBlockEntity.java`\n- `automation/laserquarry/entity/LaserQuarryBlockEntity.java`\n\n## Research findings\n\nTeam Reborn Energy (Fabric) and NeoForge Energy share the same conceptual API \u2014 insert, extract, getAmount, getCapacity \u2014 but differ in:\n\n1. **Transaction system:** TRE uses `TransactionContext`; NeoForge Energy uses no transactions (simulate flag instead).\n2. **Registration:** TRE uses `BlockApiLookup`; NeoForge uses `ICapabilityProvider`.\n\n**Recommended contract:**\n\n```java\n// common/ \u2014 no loader imports\npublic interface IEnergyStorage {\n    long insert(long maxAmount, boolean simulate);\n    long extract(long maxAmount, boolean simulate);\n    long getAmount();\n    long getCapacity();\n    default boolean canInsert() { return true; }\n    default boolean canExtract() { return true; }\n}\n```\n\n`EnergyComponent` moves to `fabric/` and adapts between `IEnergyStorage` and Team Reborn's `SimpleEnergyStorage`. Block entities in `common/` hold `IEnergyStorage` fields; the Fabric layer wires up the TRE lookup using the wrapped instance.\n\n**Note:** `TransactionContext` parameters on `insert()`/`extract()` disappear from `common/` \u2014 only the Fabric wrapper sees them. This simplifies most block entity code significantly.\n\n## Acceptance criteria\n\n- `common/` has no `team.reborn.*` imports\n- `HasEnergyStorage` returns `IEnergyStorage`\n- All engines, cables, quarry, and kiln work correctly on Fabric\n- `IEnergyStorage` is documented as the extension point for loader implementations",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Define IEnergyStorage contract and move EnergyComponent to fabric/"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:10:02+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/332"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#332:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 340
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T17:44:31+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/332"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#331:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\n`MaceratorRecipeManager.java` in `common/` registers itself as a resource reload listener using Fabric's `ResourceLoader` API:\n\n```java\nimport net.fabricmc.fabric.api.resource.ResourceLoader;\n// ...\nResourceLoader.get(PackType.SERVER_DATA).registerReloadListener(this);\n```\n\n## Research findings\n\nBoth loaders support resource reload listeners but via different registration mechanisms:\n\n- **Fabric:** `ResourceLoader.get(type).registerReloadListener(listener)` at init time\n- **NeoForge:** `AddReloadListenerEvent` fired during data pack setup\n\nThe listener *implementation* (reading JSON files, caching recipes) is entirely vanilla and belongs in `common/`. Only the *registration call* is loader-specific.\n\n**Recommended approach:**\n\n1. Keep `MaceratorRecipeManager` in `common/` \u2014 its reload logic uses only vanilla `ResourceManager` / `CompletableFuture`.\n2. Create a simple registration hook: expose a static `MaceratorRecipeManager.getInstance()` and call `.registerReloadListener(instance)` from the Fabric entry point.\n3. For NeoForge: subscribe to `AddReloadListenerEvent` and add the same instance.\n\nNo interface needed between loaders \u2014 the listener class is vanilla, only the registration point differs.\n\n## Acceptance criteria\n\n- `common/` has no `net.fabricmc.fabric.api.resource.*` imports\n- Macerator recipes reload correctly when resource packs change on Fabric",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Abstract resource reload listener registration (MaceratorRecipeManager)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:09:44+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/331"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#331:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 347
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T15:57:35+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/331"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#330:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\n`LogisticsConfig.java` in `common/` calls `FabricLoader.getInstance().getConfigDir()` to locate the config file.\n\n## Research findings\n\nThis is a single-method, single-call platform difference. The standard approach in multiloader mods is a small `Platform` service:\n\n```java\n// common/\npublic interface Platform {\n    Path configDir();\n\n    static Platform INSTANCE = ServiceLoader.load(Platform.class)\n        .findFirst().orElseThrow();\n}\n\n// fabric/\npublic class FabricPlatform implements Platform {\n    public Path configDir() {\n        return FabricLoader.getInstance().getConfigDir();\n    }\n}\n\n// neoforge/ (when needed)\npublic class NeoForgePlatform implements Platform {\n    public Path configDir() {\n        return FMLPaths.CONFIGDIR.get();\n    }\n}\n```\n\nRegistration via `META-INF/services/com.logistics.core.Platform` in each loader subproject.\n\n**Alternative:** Some teams just pass the config path in at mod init time and avoid the service entirely \u2014 simpler if config is only loaded once.\n\n## Acceptance criteria\n\n- `common/` has no `net.fabricmc.loader.*` imports\n- Config loads correctly from the platform config directory on Fabric\n- Mechanism is documented so NeoForge implementation is a copy-paste-adapt",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Create Platform service for config directory path"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:09:25+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/330"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#330:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 347
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T15:57:34+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/330"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#329:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\n`LogisticsCore.java` in `common/` imports Fabric-specific creative tab and biome modification APIs.\n\n## Imports to remove\n\n```java\nimport net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;\nimport net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;\nimport net.fabricmc.fabric.api.biome.v1.BiomeModifications;\nimport net.fabricmc.fabric.api.biome.v1.BiomeSelectors;\n```\n\n## Research findings\n\nBoth creative tabs and biome modifications are completely loader-specific registration hooks with no shared interface worth creating.\n\n- **Creative tabs:** Fabric uses `ItemGroupEvents.modifyEntriesEvent()`; NeoForge uses `BuildCreativeModeTabContentsEvent`. Move the tab population logic to `fabric/`; NeoForge equivalent added separately when needed.\n- **Biome modifications:** Fabric uses `BiomeModifications`; NeoForge uses `BiomeLoadingEvent` / datapack-driven biome modifiers. Move to `fabric/`.\n\n**Recommended approach:** Extract the creative tab setup and biome registration blocks from `LogisticsCore.initCommon()` into dedicated classes in `fabric/` (`FabricCreativeTabSetup.java`, `FabricBiomeModifications.java`), called from the Fabric entry point.\n\n## Acceptance criteria\n\n- `LogisticsCore.java` has no `net.fabricmc.fabric.api.itemgroup.*` or `net.fabricmc.fabric.api.biome.*` imports\n- Creative tab still populated correctly when running on Fabric",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "good first issue",
+     "multiloader"
+    ],
+    "last_edited_at": null,
+    "title": "Move creative tab and biome registration to fabric/"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:09:13+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/329"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#329:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 344
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T04:24:13+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/329"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#328:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nDomain bootstraps (`LogisticsMod` and others) use `FabricBlockEntityTypeBuilder` to register block entities, coupling `common/` to Fabric.\n\n## Research findings\n\nIn Minecraft 1.21+, vanilla's `BlockEntityType.Builder.of(factory, blocks...)` is fully sufficient for block entity registration on both Fabric and NeoForge. Fabric's builder was historically needed to support blocks added after registration, but vanilla now handles this natively.\n\n**Recommended approach:** Replace every `FabricBlockEntityTypeBuilder.create(...)` call with `BlockEntityType.Builder.of(...)`. This is a mechanical substitution \u2014 no interface, no abstraction needed.\n\nVerify: after substitution, check that `addSupportedBlocks()` or `addSupportedBlock()` isn't being called anywhere. If it is, that logic needs to move to `fabric/`.\n\n## Acceptance criteria\n\n- `common/` has no `FabricBlockEntityTypeBuilder` imports\n- All block entities register and function correctly in-game\n- No Fabric-specific builder features relied upon (verify `addSupportedBlocks` not used)",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Replace FabricBlockEntityTypeBuilder with vanilla BlockEntityType.Builder"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:09:02+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/328"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#328:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 345
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T05:08:34+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/328"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#327:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nFour packet classes in `common/` contain static `register()` methods that call Fabric's `PayloadTypeRegistry` and `ServerPlayNetworking` directly.\n\n## Files affected\n\n- `pipe/network/packet/SetSatelliteIdPacket.java`\n- `pipe/network/packet/RequestItemPacket.java`\n- `pipe/network/packet/OpenChassisSlotPacket.java`\n- `pipe/network/packet/SyncRequesterInventoryPacket.java`\n\n## Research findings\n\nThe packet *data* (fields + codec) is vanilla \u2014 perfectly fine in `common/`. Only the `register()` call is Fabric-specific.\n\n**Recommended approach:**\n\n1. Keep packet payload classes in `common/` \u2014 they are just data + codec, no Fabric types in the class body after this change.\n2. Delete the static `register()` method from each class.\n3. In `fabric/`, create a `PacketRegistrar` (or inline in the Fabric entry point) that calls `PayloadTypeRegistry` and `ServerPlayNetworking.registerGlobalReceiver()` directly.\n4. For NeoForge: create equivalent registration in `neoforge/` when needed (NeoForge uses `RegisterPayloadHandlersEvent`).\n\nThis is the cleanest split: common = what a packet contains, fabric = how to send/receive it.\n\n## Acceptance criteria\n\n- No `net.fabricmc.fabric.api.networking.*` imports in `common/`\n- Packet classes in `common/` contain only fields, codec, and `CustomPacketPayload.Type` ID\n- Registration wired in `fabric/` entry point; behaviour unchanged",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "good first issue",
+     "multiloader"
+    ],
+    "last_edited_at": null,
+    "title": "Move packet .register() calls out of common/"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:08:52+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/327"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#327:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 342
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T02:34:11+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/327"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#326:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\n`common/` contains Fabric's `BlockApiLookup` / `registerFallback` calls, which are purely Fabric-specific capability plumbing.\n\n## Files affected\n\n| File | Fabric API used |\n|------|----------------|\n| `core/lib/block/lookup/ItemStorageAccess.java` | `ItemStorage.SIDED.registerFallback()` |\n| `core/lib/block/lookup/EnergyStorageAccess.java` | `EnergyStorage.SIDED.registerFallback()` |\n| `core/lib/block/lookup/FluidStorageAccess.java` | `FluidStorage.SIDED.registerFallback()` |\n| `core/lib/pipe/PipeConnectionRegistry.java` | `BlockApiLookup` |\n\n## Research findings\n\nThese files are Fabric's \"capability system\" \u2014 they teach Fabric which blocks expose which APIs. NeoForge has an entirely different capability system (`ICapabilityProvider`, `RegisterCapabilitiesEvent`).\n\n**Recommended approach:** Move all four files to `fabric/src/main/java/.../` unchanged. When NeoForge support is needed, create parallel NeoForge capability registration in `neoforge/`. No shared interface is useful here \u2014 the registration shape is completely different between loaders.\n\nThe lookup *callers* (e.g. `MinecraftWorldView` reading from neighbouring block entities) will need a separate abstraction tracked in the item/energy storage issues.\n\n## Acceptance criteria\n\n- `common/` has no `BlockApiLookup` imports\n- `ItemStorageAccess`, `EnergyStorageAccess`, `FluidStorageAccess`, `PipeConnectionRegistry` live in `fabric/`\n- All four are called from the Fabric entry point; Fabric behaviour unchanged",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "good first issue",
+     "multiloader"
+    ],
+    "last_edited_at": null,
+    "title": "Move capability lookup registrations out of common/"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:08:39+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/326"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#326:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T03:02:23+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/326"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#325:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nSeveral files in `common/` register Fabric-specific lifecycle and game events directly, making them uncompilable by NeoForge.\n\n## Files affected\n\n| File | Fabric API used |\n|------|----------------|\n| `core/LogisticsCommands.java` | `CommandRegistrationCallback` |\n| `core/network/NetworkTickHandler.java` | `ServerTickEvents`, `ServerLevelEvents` |\n| `core/loot/ChestLootModifier.java` | `LootTableEvents` |\n| `LogisticsAutomation.java` | `ServerLevelEvents` (quarry cleanup) |\n\n## Research findings\n\nThese files have **zero shared logic** between loaders \u2014 they are 100% registration glue. NeoForge equivalents:\n\n- `CommandRegistrationCallback` \u2192 `RegisterCommandsEvent`\n- `ServerTickEvents` \u2192 `TickEvent.ServerTickEvent`\n- `ServerLevelEvents` \u2192 `LevelEvent.Load` / `LevelEvent.Unload`\n- `LootTableEvents` \u2192 `LootTableLoadEvent` / `GlobalLootModifierProvider`\n\n**Recommended approach:** Move each file to `fabric/src/.../` as-is. When NeoForge support is needed, create a parallel file in `neoforge/src/.../` with the NeoForge event equivalents. No interface needed \u2014 these are pure side-effect registrations.\n\n## Acceptance criteria\n\n- None of the above files import `net.fabricmc.fabric.api.event.*`\n- `common/` still compiles; Fabric behaviour is unchanged\n- Each moved file is wired up in the appropriate Fabric entry point",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "good first issue",
+     "multiloader"
+    ],
+    "last_edited_at": null,
+    "title": "Move Fabric event registrations out of common/"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:08:17+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/325"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#325:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 341
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T01:10:16+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/325"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#324:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Overview\n\nThe `common/` subproject needs to become truly loader-agnostic so the `:neoforge` subproject can compile against it. This issue tracks all the work items needed to get there.\n\n## Dependency order\n\nWork flows in this order \u2014 each layer unblocks the next:\n\n```\n1. Pure moves (no abstraction needed)\n   \u251c\u2500 Move Fabric event registrations \u2192 fabric/\n   \u251c\u2500 Move capability lookup registrations \u2192 fabric/\n   \u2514\u2500 Move packet .register() calls \u2192 fabric/\n\n2. Vanilla substitutions\n   \u251c\u2500 Replace FabricBlockEntityTypeBuilder with vanilla\n   \u2514\u2500 Move creative tab / biome registration \u2192 fabric/\n\n3. Platform services (small, isolated)\n   \u251c\u2500 Platform.configDir() service\n   \u2514\u2500 Resource reload listener abstraction\n\n4. Energy abstraction  \u2190 unblocks power domain + automation\n   \u2514\u2500 IEnergyStorage contract + HasEnergyStorage update\n\n5. Item storage abstraction  \u2190 unblocks all pipe work (the big one)\n   \u2514\u2500 IItemStorage / ITransaction contract + HasItemStorage update\n\n6. Domain ports (parallelizable once 4 & 5 are done)\n   \u251c\u2500 Port pipe modules to IItemStorage\n   \u251c\u2500 Port pipe network to IItemStorage\n   \u251c\u2500 Port power domain to IEnergyStorage\n   \u2514\u2500 Port automation domain\n```\n\n## Child issues\n\n_Links will be added as issues are created._\n\n## Acceptance criteria\n\n- `:common` subproject has zero `net.fabricmc.*` and `team.reborn.*` imports\n- `:neoforge` can compile against `:common` sources\n- All existing game tests pass on Fabric after the refactor",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "multiloader",
+     "architecture"
+    ],
+    "last_edited_at": null,
+    "title": "Multiloader abstraction: roadmap and tracking"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T21:07:49+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/324"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#324:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 351
+     },
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 352
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T04:59:32+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/324"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#297:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "We should probably only have one viable place for placing things on an engine, the full face or back of the engine, but we don't actually restrict it in any way. This means we get somewhat nonsense placement like a lever or redstone dust that can float in space. ",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Redstone and levers can be placed \"on top\" of the engine"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:16:53+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/297"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#297:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T18:20:20+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/297"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#293:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "Can't see any tooltips when hovering over an item in the request GUI, so I can't tell what enchantments are on an item, or if they have been renamed. ",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Request inventory doesn't show tooltips"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T18:27:16+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/293"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#293:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:15:37+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/293"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#287:opened",
+   "payload": {
+    "author": "samodugel-sys",
+    "body": "Filters in some diamond pipes just disappeared after the last update 0.5.4 on version 1.21.11 and items in any pipes disappear when I turn the game off and on.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": "2026-04-23T16:16:24Z",
+    "title": "Disappearing filters"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T15:14:46+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/287"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#287:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T18:02:14+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/287"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#281:opened",
+   "payload": {
+    "author": "ZayshaaCodes",
+    "body": "src\\main\\resources\\data\\logistics\\recipe\\macerator\\ender_dust.json\n```\n{\n    \"type\": \"logistics:macerator\",\n    \"ingredient\": \"minecraft:ender_pearl\",\n    \"result\": {\n        \"id\": \"logistics:core/ender_dust\",\n        \"count\": 1\n    },\n    \"grindingtime\": 200\n}\n```\n\nplease add :)\n\nI'd also like to contribute. wanna chat in discord? been playing with automation mods since the OG red-power days, would love to make some cool stuff. Very in-tune with AI coding tools (been trying to keep up), been programming 20 years, blah blah. did Minecraft mod coding in the past (like 10 years ago).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2026-04-19T18:08:29Z",
+    "title": "Missing ender dust recipe"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T17:24:46+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/281"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#281:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:11:06+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/281"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#264:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Description\n\nThe macerator block cannot be broken or picked up with any tool \u2014 diamond pickaxe, shovel, axe, hoe, bare hands, and the wrench all fail to break it.\n\n## Steps to Reproduce\n\n1. Place a macerator\n2. Attempt to break it with a diamond pickaxe, shovel, axe, hoe, or bare hand\n3. Attempt to break it with the Logistics wrench\n\n## Expected Behavior\n\nThe macerator should be breakable with the appropriate tool (likely pickaxe) and drop itself as an item.\n\n## Reported In\n\nOriginally reported in #261 (split from multi-issue report).\n\nReported against v0.5.0 for fabric 1.21.11.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Macerator cannot be broken or picked up"
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T03:09:21+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/264"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#264:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 266
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T04:12:58+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/264"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#263:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Description\n\nThe machine frame block has no crafting recipe visible in JEI (and possibly no recipe at all), making it unobtainable in survival without commands.\n\n## Steps to Reproduce\n\n1. Open JEI\n2. Search for \"machine frame\"\n3. No recipe is shown\n\n## Expected Behavior\n\nMachine frame should have a crafting recipe registered and visible in JEI.\n\n## Reported In\n\nOriginally reported in #261 (split from multi-issue report).\n\nReported against v0.5.0 for fabric 1.21.11.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Machine frame block has no crafting recipe"
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T03:09:10+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/263"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#263:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T05:05:56+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/263"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#262:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Description\n\nThe machine frame block renders without a texture (appears as a missing texture / purple-black checkerboard or invisible).\n\n## Steps to Reproduce\n\n1. Craft or place a machine frame block\n2. Observe the block in-world or in inventory\n\n## Expected Behavior\n\nMachine frame should display its intended texture.\n\n## Reported In\n\nOriginally reported in #261 (split from multi-issue report).\n\nReported against v0.5.0 for fabric 1.21.11.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Machine frame block is missing texture"
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T03:09:02+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/262"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#262:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T05:06:02+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/262"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#261:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "\n### Discussed in https://github.com/Indemnity83/logistics/discussions/259\n\n<div type='discussions-op-text'>\n\n<sup>Originally posted by **DragonFBI** April  5, 2026</sup>\nIm not sure where to post this(here or issues), as it seems like a oversight bug I dont know if im missing something or this is a oversight, but the machine frame has no texture and no recipe(as far as I can tell in jei) and I dont know if this one is me or just oversight, but the macerator can not pickup, I tried a diamond pickaxe, shovel, axe, hoe, players hand, even the wrench</div>",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Logistics v0.5.0 for fabric 1.21.11"
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T03:07:58+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/261"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#261:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-06T03:09:29+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/261"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#197:opened",
+   "payload": {
+    "author": "manlikemac96",
+    "body": "[crash-2026-03-09_10.30.40-server.txt](https://github.com/user-attachments/files/25913357/crash-2026-03-09_10.30.40-server.txt)\n\n\nnot sure if this is how i submit this but hopefully is \n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "LOGISTIC"
+   },
+   "source": "github",
+   "timestamp": "2026-03-11T16:34:06+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/197"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#197:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 219
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T04:06:14+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/197"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#151:opened",
+   "payload": {
+    "author": "colint6",
+    "body": "After the most recent update I am no longer able to craft pipes, engines etc. Everything I made before the last update still works, but I can no longer craft anything new. Issue persists on a new world. ",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Can no longer craft any of the mod items"
+   },
+   "source": "github",
+   "timestamp": "2026-02-27T03:32:51+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/151"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#151:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-27T17:23:04+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/151"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#137:opened",
+   "payload": {
+    "author": "colint6",
+    "body": "In order to use the extractor pipe off of a furnace I must connect an engine to it. The engine connects like a pipe. When pulling resources from said furnace, the pipe has a chance to divert the ingots toward the engine, dropping them on the ground. Wrench only allows me to change which block the extractor pipe is pulling from. It diverts in every other available direction randomly. \n\nI must be missing something because this means the extractor pipe is useless. On the latest version, did my best to search before posting here. Why would the extractor pipe move resources toward the engine powering it? ",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Engines pull extractor pipe items"
+   },
+   "source": "github",
+   "timestamp": "2026-02-25T06:33:25+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/137"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#137:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 138
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-25T16:31:21+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/137"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#130:opened",
+   "payload": {
+    "author": "JS0NDY",
+    "body": "I installed the more recent versions of the mod 3.0+ and every time I try to place down an engine, it crashes my hosted server for some reason. I never had issues back in 2.5 with the older quarry, but now I can't use the engines, quarry, or the wooden extraction pipes because it needs an engine to run? Attached is the crash report if it helps. I don't really understand how to read it.\n\n[crash-2026-02-19_04.02.00-server.txt](https://github.com/user-attachments/files/25411214/crash-2026-02-19_04.02.00-server.txt)",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Placing engine crashes server"
+   },
+   "source": "github",
+   "timestamp": "2026-02-19T09:05:07+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/130"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#130:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 132
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-22T05:52:00+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/130"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#121:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\n\nThe back side of the engine's moving (piston) part renders noticeably darker than expected.\n\n## Steps to reproduce\n\n1. Place a Stone Engine in mc/1.21.1 (v0.3.1)\n2. View it from behind while it is running\n\n## Expected\n\nConsistent shading on all visible faces of the moving part.\n\n## Actual\n\nThe back face of the moving part is significantly darker than the other faces.\n\n## Environment\n\n- Logistics: 0.3.1\n- Minecraft: 1.21.1\n- Fabric Loader: 0.18.4\n- Fabric API: 0.116.8\n\n## Notes\n\nNot game-breaking. May be a face-winding or normal issue in the engine model specific to mc/1.21.1.\n\n_Reported in #117_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "Engine moving part back face renders dark (mc/1.21.1)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T17:26:13+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/121"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#121:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T19:56:29+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/121"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#120:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\n\nTin ore generates in very large deposits, and each ore drops 3 raw ore instead of 1.\n\n## Steps to reproduce\n\n1. Create a world in mc/1.21.1 (v0.3.1)\n2. Explore underground\n\n## Expected\n\nNormal-sized tin deposits with standard drop counts (1 raw ore per block).\n\n## Actual\n\nHuge tin deposits are present, each dropping 3 raw ore.\n\n## Environment\n\n- Logistics: 0.3.1\n- Minecraft: 1.21.1\n- Fabric Loader: 0.18.4\n- Fabric API: 0.116.8\n\n## Notes\n\nLikely a world gen config or loot table issue specific to mc/1.21.1. Related to #119 (same pattern for apatite).\n\n_Reported in #117_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Tin generates in excessive quantities with high raw ore yield (mc/1.21.1)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T17:25:52+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/120"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#120:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T16:44:34+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/120"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#119:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\n\nApatite ore generates in very large deposits, and each ore drops 3 raw ore instead of 1.\n\n## Steps to reproduce\n\n1. Create a world in mc/1.21.1 (v0.3.1), e.g. in a Windswept Hills biome\n2. Explore underground\n\n## Expected\n\nNormal-sized apatite deposits with standard drop counts (1 raw ore per block).\n\n## Actual\n\nHuge apatite deposits are present, each dropping 3 raw ore.\n\n## Environment\n\n- Logistics: 0.3.1\n- Minecraft: 1.21.1\n- Fabric Loader: 0.18.4\n- Fabric API: 0.116.8\n\n## Notes\n\nLikely a world gen config or loot table issue specific to mc/1.21.1.\n\n_Reported in #117_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "Apatite generates in excessive quantities with high raw ore yield (mc/1.21.1)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T17:25:37+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/119"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#119:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T17:36:33+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/119"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#118:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\n\nFilter pipe configuration is lost when closing the GUI.\n\n## Steps to reproduce\n\n1. Place a filter pipe (mc/1.21.1, v0.3.1)\n2. Open its GUI and configure filters\n3. Close the GUI\n\n## Expected\n\nFilters are saved and applied as configured.\n\n## Actual\n\nFilters are deleted \u2014 the filter slots are empty after closing the GUI.\n\n## Environment\n\n- Logistics: 0.3.1\n- Minecraft: 1.21.1\n- Fabric Loader: 0.18.4\n- Fabric API: 0.116.8\n\n## Notes\n\nWorks correctly on mc/1.21.11. Likely a version-specific regression.\n\n_Reported in #117_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "Filter pipe loses filter items on GUI close (mc/1.21.1)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T17:21:51+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/118"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#118:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T19:56:39+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/118"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#117:opened",
+   "payload": {
+    "author": "VanCock",
+    "body": "### What were you doing?\n\n1. Placed filter pipe\n2. Was in windswept hills biomes\n3. Placed stone engine \n\n### What did you expect to happen?\n\n1. It to work like in 1.21.11\n2. NOT to see huge appetite deposits \n3. For the engine to have regular rendering \n\n### What actually happened?\n\n1. It deletes filters after closing the GUI \n2. There's a lot of appetite and each drops 3 raw ore, same with tin \n3. The back side of the moving part is pretty dark, I couldn't care less about it as it's not game breaking, but just letting you know\n\n### Logistics Version\n\n0.3.1\n\n### Minecraft Version\n\n1.21.1\n\n### Fabric Loader Version\n\n0.18.4\n\n### Fabric API Version\n\n0.116.8\n\n### Other Mods\n\nNon\n\n### Crash Report\n\n- [ ] I have a crash report available if needed\n\n### Additional Context\n\nJust wanted to say I love you for making the part, it's truly amazing and I appreciate it.   <3",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "[Bug]  Few bugs in 1.21.1"
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T07:27:25+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/117"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#117:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-18T17:28:30+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/117"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#109:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "The redstone engine doesn\u2019t flash between yellow and red anymore, it gets to red and stays there. ",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Regression: redstone engine doesn\u2019t flash yellow/red"
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T07:45:44+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/109"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#109:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 111
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T19:20:59+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/109"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#105:opened",
+   "payload": {
+    "author": "SimplisticGames",
+    "body": "### What were you doing?\n\nI was trying to craft a Gold Gear\n\n### What did you expect to happen?\n\nTo craft a gold gear\n\n### What actually happened?\n\nBronze gear does not have a crafting Recipe\n\n### Logistics Version\n\n0.3.1\n\n### Minecraft Version\n\n1.21.11\n\n### Fabric Loader Version\n\n0.18.4\n\n### Fabric API Version\n\n0.141.3+1.21.11\n\n### Other Mods\n\n_No response_\n\n### Crash Report\n\n- [ ] I have a crash report available if needed\n\n### Additional Context\n\n_No response_",
+    "body_truncated": false,
+    "comments": 4,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": "2026-02-16T18:52:06Z",
+    "title": "[Bug]"
+   },
+   "source": "github",
+   "timestamp": "2026-02-16T18:51:41+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/105"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#105:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 110
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T17:03:57+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/105"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#95:opened",
+   "payload": {
+    "author": "StockiesLad",
+    "body": "This mod does really well in maintaining the traditional buildcraft vibe. Well done!\n\nGiven it\u2019s modernisation, having it interop with create with be unprecedented.\n\n**The Idea**\n\nHave an engine-like block that translates create kinetic energy to buildcraft energy and vice versa. Logically this is fairly natural as they both work with mechanical energy.\n\n**How to implement**\nThe original buildcraft used forge capabilities and outputted MJs to a machine block it was facing. It used a block entity to handle burning (much like a furnace) and outputted power if burning. Conceptually very simple.\n\nThis conversional machine would effectively implement the cogwheel logic, particularly something like a create gearshift block, which already has a good model and \u201cbehaviour specification\u201d to work with. Create tends to use interfaces to manage their mechanical api, so you could easily retrofit the existing engine block object with it. The only difficult part would be the models.\n\nThanks for taking the time to read this. Excellent mod! All the best!",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "[Feature] Create Compat"
+   },
+   "source": "github",
+   "timestamp": "2026-02-14T00:36:11+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/95"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#95:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T16:47:02+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/95"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#76:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "### What were you doing?\n\nMining engine blocks in logistics mod and observing for particle effects.\n\n### What did you expect to happen?\n\nEngine blocks should emit regular mining particle effects when broken, similar to other blocks.\n\n### What actually happened?\n\nEngines (redstone, stone, wooden, etc.) are missing or have broken particles when being mined. No visual feedback or particles appear during mining.\n\n### Logistics Version\n\n0.3.0\n\n### Minecraft Version\n\n1.21.11\n\n### Fabric Loader Version\n\n0.18.4\n\n### Fabric API Version\n\n0.141.2\n\n### Other Mods\n\n_No response_\n\n### Crash Report\n\n- [ ] I have a crash report available if needed\n\n### Additional Context\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "[Bug] Engine blocks don't generate mining particles"
+   },
+   "source": "github",
+   "timestamp": "2026-02-03T22:14:43+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/76"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#76:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 86
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-06T00:17:52+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/76"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#75:opened",
+   "payload": {
+    "author": "VanCock",
+    "body": "### What were you doing?\n\nI was messing around with new engines and torches as I was curious how big a quarry can get for science mostly.\n\n### What did you expect to happen?\n\nI was expecting:\n1.) Wooden engine to work just like the stone work (minus fuel and effectiveness).\n2.) All engines to have regular particles like every other block once being mined.\n3.) Quarry to send all the torches that were used to set custom quarry frame to the output (above the quarry).\n\n### What actually happened?\n\n1.) Redstone engine does not power quarry, it works as you can test it on those creative blocks, but not when using it on quarry, the stone one fortunately works just fine.\n2.) All engines have missing/broken particles when being mined.\n3.) When using the blue torches I have noticed it doesn't collect all the torches, it usually collects one, sends it through quarry and proceeds to place the frame while leaving the rest on the ground in item form.\n\n### Logistics Version\n\n0.3.0\n\n### Minecraft Version\n\n1.21.11\n\n### Fabric Loader Version\n\n0.18.4\n\n### Fabric API Version\n\n0.141.2\n\n### Other Mods\n\n_No response_\n\n### Crash Report\n\n- [ ] I have a crash report available if needed\n\n### Additional Context\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "[Bug] Engines (mainly)"
+   },
+   "source": "github",
+   "timestamp": "2026-02-02T21:00:48+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/75"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#75:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-03T22:20:28+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/75"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#68:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "### What were you doing?\n\nIf you place an engine down, pointed into a block that accepts energy, the engine will sometimes not actually transfer energy into that block unless it's visually backward. \n\n### What did you expect to happen?\n\nThe direction the engine is facing should always be the direction of energy transfer\n\n### What actually happened?\n\nSometimes the engine transfers energy out of its back, requiring that it be flipped around to work. \n\n### Logistics Version\n\n0.3.0-dev\n\n### Minecraft Version\n\n1.21.11\n\n### Fabric Loader Version\n\n0.18.4\n\n### Fabric API Version\n\n0.141.1+1.21.11\n\n### Other Mods\n\n_No response_\n\n### Crash Report\n\n- [ ] I have a crash report available if needed\n\n### Additional Context\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "[Bug] Engines don't always output in the direction their facing"
+   },
+   "source": "github",
+   "timestamp": "2026-02-01T18:26:23+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/68"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#68:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 71
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-02T02:55:41+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/68"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#67:opened",
+   "payload": {
+    "author": "VanCock",
+    "body": "So for starters I have to say I love your mod, it's very good and brings back some good memories of playing with BC around the 1.7.10 era.\n\nWith that being said do you have plans to support more versions, I was particularly hoping for 1.21.1 as it's one of the more popular modern modding version and a lot of mods are there, mods that I was hoping to play along the way with your Logistics mod.\n\nOf course it's totally understandable if such thing is way too much of work and just doesn't seem like a good idea overall, but if you think it should be possible then I (and probably multiple people who have seen the mod) would greatly appreciate the effort. It would also technically allow for mod compatibility, a one that I was kinda hoping for is Classic Pipes (granted it supports 1.21.11 as well but so it does 1.21.1) given said mod would go great along the way with your mod as both focus on item logistics.\n\nEither way great mod, had fun playing with it, will be definitely looking forward to what you're making and yeah, keep it up chief. \n\nCheers.",
+    "body_truncated": false,
+    "comments": 6,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "[Request] more versions support"
+   },
+   "source": "github",
+   "timestamp": "2026-02-01T12:46:04+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/67"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#67:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-17T23:32:51+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/67"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#59:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "This issue tracks the long-range plan for adding Forestry-style farming systems and their supporting tech (tin, brass, circuit boards, electron tubes, farms, and harvesters).\n\nThe goal is to build this in thin, playable vertical slices so the logistics layer is always exercised and nothing becomes pure infrastructure work.\n\n\u2e3b\n\n\ud83e\uddf1 Epic 0 \u2014 Scaffolding & Conventions\n\nGoal: Put light structure in place so future machines and materials don\u2019t require refactors.\n\t\u2022\tDefine material naming, domain ownership, and tag conventions\n\t\u2022\tingots, raw ores, storage blocks, machine parts\n\t\u2022\tdocument in repo (README or docs/materials.md)\n\t\u2022\tAdd a basic \u201cmachine\u201d block template\n\t\u2022\tticking block entity\n\t\u2022\tinventory helper\n\t\u2022\tfluid helper (even stubbed)\n\t\u2022\tpersistent NBT\n\t\u2022\tDefine machine IO rules (pipes integration)\n\t\u2022\tdefault item/fluid in/out behavior\n\t\u2022\tsimple test block that can accept and output via pipes\n\nExit criteria: A dummy machine can tick, store items, and move them through pipes.\n\n\u2e3b\n\n\ud83e\udea8 Epic 1 \u2014 Tin & Brass Foundation\n\nGoal: Ship tangible progression materials that everything else can build on.\n\t\u2022\tAdd tin ore worldgen\n\t\u2022\tstone + deepslate variants\n\t\u2022\traw tin, smelting, tags\n\t\u2022\tAdd tin ingot + storage blocks\n\t\u2022\tblock of tin, raw tin block\n\t\u2022\ttag integration\n\t\u2022\tAdd brass alloy\n\t\u2022\tdefine copper + tin \u2192 brass\n\t\u2022\tdecide crafting vs smelting path\n\t\u2022\ttags for brass ingots/blocks\n\t\u2022\tDocument bronze vs brass decision\n\t\u2022\tshort design note to prevent churn later\n\nExit criteria: Tin and brass are fully usable survival materials.\n\n\u2e3b\n\n\ud83e\udde0 Epic 2 \u2014 Circuits & Electron Tubes\n\nGoal: Introduce the tech gating layer that farms and machines will depend on.\n\t\u2022\tAdd Circuit Board item\n\t\u2022\trecipe defined\n\t\u2022\tused in at least one machine or tube recipe\n\t\u2022\tImplement Electron Tube system\n\t\u2022\tregistry/enum approach\n\t\u2022\tdata-driven where possible\n\t\u2022\tat least two tube variants\n\t\u2022\tImplement tube crafting method\n\t\u2022\tcrafting table first (fast path)\n\t\u2022\toptional future electronics machine\n\t\u2022\tRecipe integration pass\n\t\u2022\tensure farms/harvesters reference tubes & boards\n\nExit criteria: Tubes exist, are craftable, and are usable as recipe gates.\n\n\u2e3b\n\n\ud83d\ude9c Epic 3 \u2014 Farm & Harvester Framework\n\nGoal: Build the reusable system all farms will use.\n\t\u2022\tDefine FarmLogic API\n\t\u2022\tinputs (items/fluids)\n\t\u2022\tworking conditions\n\t\u2022\toutputs\n\t\u2022\toptional world interaction\n\t\u2022\tImplement Farm block\n\t\u2022\tinventory\n\t\u2022\tfluid tanks\n\t\u2022\ttick loop calling FarmLogic\n\t\u2022\tImplement Harvester block\n\t\u2022\tadjacency-based linking to farms\n\t\u2022\tsimple world interaction (even 1\u00d71 to start)\n\t\u2022\tIntegrate both with Transport API\n\t\u2022\tfarms and harvesters fully pipe-operable\n\nExit criteria: A farm + harvester can form a complete automated loop.\n\n\u2e3b\n\n\ud83c\udf3e Epic 4 \u2014 First Complete Farm (Vertical Slice)\n\nGoal: Prove the entire stack works before scaling content.\n\nPick ONE to ship first:\n\t\u2022\tCrop Farm or\n\t\u2022\tArboretum\n\t\u2022\tImplement first farm logic\n\t\u2022\tDefine water + fertilizer consumption\n\t\u2022\tBalance first pass\n\t\u2022\tVerify pipe-driven replanting and output routing\n\nExit criteria: A player can automate one renewable resource end-to-end.\n\n\u2e3b\n\n\ud83c\udf32 Epic 5 \u2014 Forestry-Inspired Farm Set\n\nEach farm is mostly content once the framework exists.\n\t\u2022\tArboretum\n\t\u2022\tsaplings \u2192 logs/saplings/apples\n\t\u2022\tPeat Bog\n\t\u2022\tbog earth \u2192 peat + dirt\n\t\u2022\tcandidate for closed-loop systems\n\t\u2022\tInfernal Farm\n\t\u2022\tsoul sand + nether wart\n\t\u2022\tShroom Farm\n\t\u2022\tmycelium + mushrooms\n\t\u2022\theavy water usage\n\nEach farm includes:\n\t\u2022\tfarm logic\n\t\u2022\trecipe + tube gate\n\t\u2022\tbalance pass\n\t\u2022\tpipe compatibility verification\n\nExit criteria: Multiple farms exist that stress routing and logistics decisions.\n\n\u2e3b\n\n\u2699\ufe0f Epic 6 \u2014 Polish, Upgrades & System Depth\n\nGoal: Make the system feel like a real tech mod layer.\n\t\u2022\tSpeed / efficiency upgrades\n\t\u2022\tOutput specialization or filtering mechanics\n\t\u2022\tAt least one closed-loop chain (peat, compost, biomass, etc.)\n\t\u2022\tVisual + audio feedback\n\t\u2022\tOptional progression guidance (advancements / book)\n\nExit criteria: Farms feel integrated, scalable, and logistics-driven.\n\n\u2e3b\n\n\ud83e\udded Guiding Pr",
+    "body_truncated": true,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Forestry-Inspired Farming & Electronics Roadmap"
+   },
+   "source": "github",
+   "timestamp": "2026-01-29T06:17:43+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/59"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#59:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T18:22:05+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/59"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#57:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "This document defines how this repo will be structured and released once we support multiple Minecraft versions in parallel.\n\n---\n\n# \ud83c\udfaf Goals\n\n- Support **multiple Minecraft versions at once** without versioning chaos.\n- Keep **stable releases** clean and automated via `release-please`.\n- Keep **snapshot/testing builds** flowing without polluting stable releases.\n- Allow **independent patching per MC line** (older versions can receive fixes without forcing new releases everywhere).\n\n---\n\n# \ud83e\uddf1 Branch Model\n\nAfter MC 26.1 releases, the repo will follow this structure:\n\n## Stable / maintenance branches\n- `mc/1.21.11` \u2192 Maintenance branch for MC 1.21.11  \n- `mc/26.1` \u2192 Maintenance branch for MC 26.1  \n\nThese branches:\n- Receive bug fixes and approved backports\n- Are the **only branches managed by release-please**\n- Produce **stable releases**\n\n## Forward development branch\n- `main` \u2192 Development branch for **26.2 snapshots**\n\nThis branch:\n- Tracks snapshots / next MC line\n- Produces **test builds only**\n- Does **not** use release-please\n\n---\n\n# \ud83d\udd00 Cutover Plan (when MC 26.1 is released)\n\nCurrent state assumption:\n- `main` = current stable (1.21.11 era)\n- `next` = work targeting 26.1\n\n### Steps\n\n1. Create `mc/1.21.11` from current `main`\n2. Create `mc/26.1` from current `next`\n3. Create new `main` from `mc/26.1`\n4. Set new `main` as GitHub default branch\n\nEnd state:\n\n```\nmc/1.21.11  \u2192 old stable line\nmc/26.1     \u2192 new stable line\nmain        \u2192 26.2 snapshot development\n```\n\n---\n\n# \ud83d\ude80 Release Model\n\n## Stable releases (release-please)\n\n- `release-please` runs on:  \n  ```\n  mc/**\n  ```\n\n- Each `mc/*` branch:\n  - Has its **own independent version**\n  - Maintains its own changelog + manifest\n  - Cuts releases only when that line changes\n\n### Tag safety (critical)\n\nEach MC branch must use a **unique package name** in `release-please-config.json`.\n\nExample:\n\nOn `mc/1.21.11`:\n```json\n\"package-name\": \"logistics-mc1.21.11\"\n```\n\nOn `mc/26.1`:\n```json\n\"package-name\": \"logistics-mc26.1\"\n```\n\nWith `include-component-in-tag: true`, tags become:\n\n- `logistics-mc1.21.11-v0.2.6`\n- `logistics-mc26.1-v0.3.1`\n\nThis prevents global git tag collisions and allows versions to diverge.\n\n---\n\n## Snapshot / testing builds (no release-please)\n\n`main` publishes **snapshot builds only**, via CI.\n\nCharacteristics:\n- Version includes `-snapshot` + SHA\n- Published as **alpha** (or workflow artifacts only)\n- No changelog PRs\n- No GitHub Releases unless explicitly desired\n\nPublishing options:\n- manual (`workflow_dispatch`)\n- on every push to `main`\n- scheduled (nightly \u201clatest snapshot\u201d)\n\n---\n\n# \ud83d\udd27 Backport Rules\n\n### Default flow\n1. Implement on `main`\n2. Cherry-pick into:\n   - `mc/26.1` if applicable\n   - `mc/1.21.11` if still supported\n3. Each branch releases independently\n\n### Scenarios\n\n#### Feature for all versions\n- main \u2192 mc/26.1 \u2192 mc/1.21.11\n- release from each branch\n\n#### Bug only in 1.21.11\n- fix only on `mc/1.21.11`\n- release only from that branch\n\n#### Bug in 26.1 and snapshots\n- main \u2192 mc/26.1\n- release only from `mc/26.1`\n\n#### Critical bug everywhere\n- main \u2192 all supported mc/*\n- each branch releases\n\n---\n\n# \ud83e\uddea Snapshot Publishing Policy\n\nSnapshots are:\n- for testers\n- allowed to be broken\n- allowed to be spammy\n\nRecommended early setup:\n- manual publish workflow\n- or push-to-main with alpha channel\n\nSnapshots should:\n- never update stable changelogs\n- never block stable releases\n- never reuse stable versions\n\n---\n\n# \u2705 Validation Checklist (after setup)\n\n- [ ] `mc/26.1` release produces tag like `logistics-mc26.1-vX.Y.Z`\n- [ ] `mc/1.21.11` release produces different tag namespace\n- [ ] Versions diverge safely\n- [ ] Snapshot workflow builds from `main`\n- [ ] Snapshot builds do not trigger release-please\n- [ ] mc-publish handles multi-loader jars correctly\n\n---\n\n# \ud83d\udccc Operating Principles\n\n- Stable branches exist to **serve players**, not convenience.\n- `main` exists to **move fast and break things**.\n- Backports are intentional, not automatic.\n- When version",
+    "body_truncated": true,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Minecraft Branching & Release Management Plan"
+   },
+   "source": "github",
+   "timestamp": "2026-01-28T23:42:32+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/57"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#57:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-05T23:54:57+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/57"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#48:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "Add a BuildCraft API compatibility layer that maps a subset of BC transport interfaces to Logistics' native API. Goal: ease porting of BC add-ons without constraining internal API. Keep as optional shim, document supported subset.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "BuildCraft compatibility shim"
+   },
+   "source": "github",
+   "timestamp": "2026-01-27T19:15:54+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/48"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#48:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T16:47:44+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/48"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#37:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "### What were you doing?\n\nWooden pipes don't connect to other wooden pipes, which was handy for making a compact pipe system where I needed to pass by another wooden pipe doing extraction. \n\n### What did you expect to happen?\n\nVisually, the pipe shows that items should have traversed through the pipe\n\n### What actually happened?\n\nItems pop out when the adjacent pipe tries to pass it on\n\n### Logistics Version\n\n0.2.3-dev\n\n### Minecraft Version\n\n1.21.11\n\n### Fabric Loader Version\n\n0.18.4\n\n### Fabric API Version\n\n0.141.1+1.21.11\n\n### Other Mods\n\n_No response_\n\n### Crash Report\n\n- [ ] I have a crash report available if needed\n\n### Additional Context\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "[Bug] Wooden pipes appear to connect as a basic transport pipe, but items will not enter them."
+   },
+   "source": "github",
+   "timestamp": "2026-01-20T22:08:56+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/37"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#37:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 38
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-21T04:13:28+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/37"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#12:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Summary\n\nCurrently, each pipe arm is implemented as **six separate baked models** (north/south/east/west/up/down) even though they are geometrically identical and only differ by orientation.\n\nNow that all pipe rendering is handled in the **Block Entity Renderer (BER)** and we control the full transform pipeline, we can significantly simplify assets and maintenance by using **one base arm model** and rotating it to the correct direction at render time.\n\nThis will reduce model JSON count, simplify content creation, and make future pipe/module variants easier to maintain.\n\n## Goals\n\n- Replace 6 direction-specific arm models with **one base arm model**\n- Rotate arms dynamically in the BER (or via rotated `BakedModel` wrappers)\n- Preserve:\n  - Correct world lighting\n  - Nominal face directions for shading/AO\n  - Compatibility with Sodium and modern rendering pipeline\n- Keep performance acceptable (ideally bake/compute rotations once and cache)\n\n## Context\n\n- Pipes no longer use blockstate models.\n- All pipe visuals are assembled dynamically in `PipeBlockEntityRenderer`.\n- Arm models already **avoid `cullface`**, making them safe candidates for rotation.\n- Current architecture already supports dynamic model selection via `Pipe.getArmModelId(...)`.\n\nThis task is a **rendering-layer improvement only**. Game logic and connection handling are unaffected.\n\n## Proposed Implementation Options\n\n### \ud83d\udfe2 Option A (Simple, fast, low risk)\n\nRotate the `MatrixStack` in the BER before submitting the arm model.\n\n**How it works:**\n- Keep a single arm model (e.g. `pipe_arm.json`, authored facing NORTH or EAST).\n- For each connected direction:\n  - `matrices.push()`\n  - apply rotation based on `Direction`\n  - `queue.submitModel(...)`\n  - `matrices.pop()`\n\n**Pros**\n- Very easy to implement\n- No custom model classes\n- Immediate asset reduction\n\n**Cons**\n- Quad \u201cnominal face\u201d metadata is not rotated\n- Can cause subtle lighting/AO inconsistencies (usually minor, especially since cullface is disabled)\n\nThis is likely \u201cgood enough\u201d and may be all that\u2019s ever needed.\n\n### \ud83d\udfe1 Option B (Clean, technically correct, still one JSON)\n\nCreate **six rotated wrapper `BakedModel`s in code** from a single base model using Fabric Renderer API (FRAPI / Indigo).\n\n**How it works:**\n- Load one base arm `BakedModel`\n- Create and cache six `RotatedArmModel` wrappers:\n  - Each wrapper intercepts quad emission\n  - Rotates vertex positions and normals\n  - Remaps the quad\u2019s nominal face (`NORTH \u2192 EAST`, etc.)\n- BER selects the rotated wrapper instead of rotating matrices\n\n**Pros**\n- Correct face orientation for lighting/AO\n- Still only one JSON model\n- No per-frame math beyond normal rendering\n- Clean long-term solution\n\n**Cons**\n- More complex to implement\n- Requires FRAPI `FabricBakedModel` / `RenderContext` usage\n\n**Implementation sketch:**\n- Extend `ForwardingBakedModel implements FabricBakedModel`\n- Override `emitBlockQuads(...)`\n- `context.pushTransform(quad -> rotateQuad(quad, dir))`\n\n## Recommended Path\n\n1. Implement **Option A first** (matrix rotation).\n2. If lighting artifacts appear or if correctness is desired long-term:\n   - Upgrade to **Option B** with rotated baked wrappers.\n\nBoth approaches are compatible with the current architecture.\n\n## Acceptance Criteria\n\n- [ ] Only **one arm model JSON** exists per pipe style\n- [ ] Arms render correctly in all six directions\n- [ ] Feature face overrides (modules) still work\n- [ ] No face culling artifacts\n- [ ] Lighting matches vanilla block behavior\n- [ ] No regression to pipe rendering performance\n\n## Notes\n\n- Base arm model must be authored in a known orientation (recommend: **NORTH**).\n- UP/DOWN arms will require X-axis rotations.\n- Wrappers (Option B) should be cached, not rebuilt per frame.\n- This task is independent of blockstate JSON cleanup.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "enhancement"
+    ],
+    "last_edited_at": null,
+    "title": "Enhancement: Reduce Arm Model Count by Rotating a Single Arm Model at Render Time"
+   },
+   "source": "github",
+   "timestamp": "2026-01-14T03:53:42+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/12"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#12:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-01-21T04:13:57+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/12"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#6:opened",
+   "payload": {
+    "author": "Indemnity83",
+    "body": "## Problem\n\nThe mod currently experiences 36+ second initialization times due to a blockstate explosion.\n\n**Current State:**\n- Total blockstates: 183,708 (20,412 per pipe \u00d7 9 pipes)\n- Calculation: 729 base states \u00d7 7 FEATURE_FACE values \u00d7 2 POWERED \u00d7 2 WATERLOGGED = 20,412 per pipe\n\n## Root Cause\n\nThe `FEATURE_FACE` blockstate property (used to show the opaque extraction/output face on wooden and iron pipes) multiplies the number of blockstates by 7\u00d7. This property has 7 possible values (NONE, NORTH, SOUTH, EAST, WEST, UP, DOWN).\n\n## Proposed Solution\n\nMove `FEATURE_FACE` rendering to the Block Entity Renderer instead of using a blockstate property.\n\n- Remove `FEATURE_FACE` from blockstate properties\n- Render the opaque face texture in `PipeBlockEntityRenderer` based on module NBT data\n- This approach is similar to how chest directions are rendered\n\n## Expected Impact\n\n**After fix:**\n- Blockstates per pipe: 2,916 (729 base \u00d7 2 POWERED \u00d7 2 WATERLOGGED)\n- Total blockstates: 26,244 (2,916 \u00d7 9 pipes)\n- **85% reduction** in total blockstates\n- Significantly faster initialization time\n\n## Implementation Notes\n\n- Affects `PipeBlock.java` - remove FEATURE_FACE property\n- Affects `PipeBlockEntityRenderer.java` - add feature face rendering logic\n- Affects `ExtractionModule.java` and `MergerModule.java` - change from blockstate to NBT-only storage\n- May need to handle world upgrades (existing worlds with FEATURE_FACE in blockstates)\n\n## Status\n\nDeferred until after Minecraft 1.21.11 upgrade (now complete).",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "performance"
+    ],
+    "last_edited_at": null,
+    "title": "perf: reduce blockstate explosion from FEATURE_FACE property"
+   },
+   "source": "github",
+   "timestamp": "2026-01-11T22:54:49+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/6"
+  },
+  {
+   "evidence_id": "issue:Indemnity83/logistics#6:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 11
+     },
+     {
+      "author": "Indemnity83",
+      "author_is_bot": false,
+      "number": 4
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-01-14T03:53:36+00:00",
+   "url": "https://github.com/Indemnity83/logistics/issues/6"
+  }
+ ],
+ "repo": "Indemnity83/logistics",
+ "window": "pre_t"
+}

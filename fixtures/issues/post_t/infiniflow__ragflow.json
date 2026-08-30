@@ -1,0 +1,885 @@
+{
+ "captured_at": "2026-08-30T10:20:01.849440+00:00",
+ "content_sha256": "694d222321c048fa0e2d161bd97c81ec5fded2038eb13f41bba62e604753254c",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15449:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T09:56:57+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15449"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15445:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jiashi19",
+      "author_is_bot": false,
+      "number": 15446
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T02:20:12+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15445"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15441:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:30:21+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15441"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15430:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "bitloi",
+      "author_is_bot": false,
+      "number": 15431
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T11:57:43+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15430"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15427:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nickmopen",
+      "author_is_bot": false,
+      "number": 15432
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:04:44+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15427"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15423:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dexterity104",
+      "author_is_bot": false,
+      "number": 15424
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T13:38:27+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15423"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15409:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rene0422",
+      "author_is_bot": false,
+      "number": 15709
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T08:47:34+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15409"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15392:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:09:03+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15392"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15388:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "bitloi",
+      "author_is_bot": false,
+      "number": 15389
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T10:11:46+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15388"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15381:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dexterity104",
+      "author_is_bot": false,
+      "number": 15382
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T13:40:09+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15381"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15379:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dexterity104",
+      "author_is_bot": false,
+      "number": 15380
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T13:39:35+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15379"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15369:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kiannidev",
+      "author_is_bot": false,
+      "number": 15371
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:16:31+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15369"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15367:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kiannidev",
+      "author_is_bot": false,
+      "number": 15368
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:17:18+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15367"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15365:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kiannidev",
+      "author_is_bot": false,
+      "number": 15366
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:18:08+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15365"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15360:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "monsterdavidliu-ux",
+      "author_is_bot": false,
+      "number": 15386
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:19:02+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15360"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15358:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "glorysr1209-png",
+      "author_is_bot": false,
+      "number": 15359
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:27:15+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15358"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15356:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T01:52:57+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15356"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15343:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "wangq8",
+      "author_is_bot": false,
+      "number": 15346
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:08:53+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15343"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15342:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:23:14+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15342"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15335:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "monsterdavidliu-ux",
+      "author_is_bot": false,
+      "number": 15387
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:24:09+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15335"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15323:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:24:49+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15323"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15317:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T05:18:50+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15317"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15314:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T09:01:00+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15314"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15312:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jony376",
+      "author_is_bot": false,
+      "number": 15313
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:29:50+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15312"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15308:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:46:58+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15308"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15286:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nickmopen",
+      "author_is_bot": false,
+      "number": 15443
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T05:22:00+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15286"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15268:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nickmopen",
+      "author_is_bot": false,
+      "number": 15270
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:42:09+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15268"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15245:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rene0422",
+      "author_is_bot": false,
+      "number": 15266
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:09:18+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15245"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15206:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:13:24+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15206"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15196:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:13:09+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15196"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15173:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:15:18+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15173"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15171:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:13:02+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15171"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15139:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nickmopen",
+      "author_is_bot": false,
+      "number": 15229
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:14:05+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15139"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15117:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kiannidev",
+      "author_is_bot": false,
+      "number": 15118
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:53:02+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15117"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15115:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kiannidev",
+      "author_is_bot": false,
+      "number": 15116
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T03:33:16+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15115"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15112:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kiannidev",
+      "author_is_bot": false,
+      "number": 15113
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T11:19:18+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15112"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15088:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "JSONbored",
+      "author_is_bot": false,
+      "number": 15097
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:11:10+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15088"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#15083:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Aeovy",
+      "author_is_bot": false,
+      "number": 15101
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:15:10+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/15083"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14985:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rene0422",
+      "author_is_bot": false,
+      "number": 15238
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T03:26:33+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14985"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14943:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:10:14+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14943"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14928:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:40:29+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14928"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14873:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T06:04:35+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14873"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14865:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dale053",
+      "author_is_bot": false,
+      "number": 14868
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:31:08+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14865"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14859:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:08:50+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14859"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14858:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dale053",
+      "author_is_bot": false,
+      "number": 14860
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:30:58+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14858"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14853:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dale053",
+      "author_is_bot": false,
+      "number": 14854
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:30:51+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14853"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14847:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:08:57+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14847"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14830:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:30:38+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14830"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14768:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dale053",
+      "author_is_bot": false,
+      "number": 14775
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T11:43:58+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14768"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14763:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:30:25+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14763"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14755:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "wdeveloper16",
+      "author_is_bot": false,
+      "number": 14761
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T03:08:18+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14755"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14752:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T13:11:15+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14752"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14750:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-10T14:19:32+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14750"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14720:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ai-mountain",
+      "author_is_bot": false,
+      "number": 14778
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T10:57:30+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14720"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14659:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T11:07:43+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14659"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14627:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:20:20+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14627"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14570:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "tmimmanuel",
+      "author_is_bot": false,
+      "number": 14577
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T10:58:30+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14570"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14549:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T01:48:35+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14549"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14449:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T10:58:12+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14449"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14447:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ParasSondhi",
+      "author_is_bot": false,
+      "number": 14553
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T11:35:58+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14447"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14434:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T11:29:45+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14434"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14428:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rene0422",
+      "author_is_bot": false,
+      "number": 14924
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:30:04+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14428"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14424:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T01:48:44+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14424"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14408:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:29:54+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14408"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14384:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T09:28:59+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14384"
+  },
+  {
+   "evidence_id": "issue:infiniflow/ragflow#14360:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "octo-patch",
+      "author_is_bot": false,
+      "number": 14378
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:30:14+00:00",
+   "url": "https://github.com/infiniflow/ragflow/issues/14360"
+  }
+ ],
+ "repo": "infiniflow/ragflow",
+ "window": "post_t"
+}

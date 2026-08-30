@@ -1,0 +1,441 @@
+{
+ "captured_at": "2026-08-30T10:18:48.260129+00:00",
+ "content_sha256": "f5627a367f9e2586023fb6b0f8c967a1e4c867a317e923e5cf1caeedb2cffa52",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:PostHog/posthog#60581:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "haacked",
+      "author_is_bot": false,
+      "number": 62816
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T16:39:30+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60581"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60471:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T01:42:51+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60471"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60375:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "fercgomes",
+      "author_is_bot": false,
+      "number": 65929
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T22:38:42+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60375"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60339:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MattBro",
+      "author_is_bot": false,
+      "number": 61940
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T17:34:11+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60339"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60335:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MattBro",
+      "author_is_bot": false,
+      "number": 61225
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:59:39+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60335"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60334:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:59:44+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60334"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60333:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MattBro",
+      "author_is_bot": false,
+      "number": 61224
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:59:36+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60333"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60332:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:59:41+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60332"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60331:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MattBro",
+      "author_is_bot": false,
+      "number": 61223
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:59:34+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60331"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60330:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T20:28:00+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60330"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60329:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:59:31+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60329"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60314:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gustavohstrassburger",
+      "author_is_bot": false,
+      "number": 71611
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T14:29:59+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60314"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60313:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:50:13+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60313"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60281:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T16:32:58+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60281"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#60123:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T12:24:56+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/60123"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#59898:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "afsuyadi",
+      "author_is_bot": false,
+      "number": 59903
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T04:59:34+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/59898"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#58639:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T14:13:25+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/58639"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#58313:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T11:42:20+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/58313"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#58151:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T19:29:05+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/58151"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#58066:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "GeneralistDev",
+      "author_is_bot": false,
+      "number": 80570
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T11:16:53+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/58066"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57899:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T13:08:05+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57899"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57572:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "patricio-posthog",
+      "author_is_bot": false,
+      "number": 61486
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T15:19:51+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57572"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57234:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dmarticus",
+      "author_is_bot": false,
+      "number": 57235
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:06:44+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57234"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57184:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T13:08:14+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57184"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57183:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "haacked",
+      "author_is_bot": false,
+      "number": 58057
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T19:58:35+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57183"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57043:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "haacked",
+      "author_is_bot": false,
+      "number": 61026
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T01:42:04+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57043"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57021:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T17:19:51+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57021"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57018:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T16:15:37+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57018"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57017:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "arthurdedeus",
+      "author_is_bot": false,
+      "number": 60075
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T19:51:01+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57017"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57012:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T16:30:24+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57012"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#57002:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dmarticus",
+      "author_is_bot": false,
+      "number": 57007
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T14:08:59+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/57002"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#56261:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Muskaan436",
+      "author_is_bot": false,
+      "number": 56368
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T02:22:04+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/56261"
+  },
+  {
+   "evidence_id": "issue:PostHog/posthog#56083:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gustavohstrassburger",
+      "author_is_bot": false,
+      "number": 61719
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T16:45:42+00:00",
+   "url": "https://github.com/PostHog/posthog/issues/56083"
+  }
+ ],
+ "repo": "PostHog/posthog",
+ "window": "post_t"
+}

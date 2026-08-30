@@ -1,0 +1,195 @@
+{
+ "captured_at": "2026-08-30T10:09:00.822491+00:00",
+ "content_sha256": "abd722e7aef812d40c8845d2f846bc195013bd0225197754a434b7e59db30142",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#70:opened",
+   "payload": {
+    "author": "liboo500",
+    "body": "Todos los animales, sin excepci\u00f3n, pueden saltarse entre s\u00ed dentro del escenario tablero, esto no tiene sentido pues los \u00fanicos animales que f\u00edsicamente en la vida real podr\u00edan ser capaces de saltar a todos los animales ser\u00edan el pollo, m\u00e1s o menos, y la cabra ",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Bug animales dentro de tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T19:17:22+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/70"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#69:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "",
+    "body_truncated": false,
+    "comments": 17,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "BUGS"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T19:12:34+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/69"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#53:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "- [x] [\u00c1lvaro] Movimiento casilla (casilla origen y destino; funci\u00f3n movimiento legal)\n- [ ] [Juli\u00e1n] Restriccion movimiento legal otro personaje, interfaz de casillas a las que te puedes mover, condiciones de victoria\n- [ ] [LIBRE] Transici\u00f3n tablero - arena. Que le pase dos personajes y que el que gana se quede en la casilla.\n- [ ] [Jaime] Disparos en la arena y clase Colision para detectar colisiones entre animales, barreras, paredes, disparos...\nA\n- [ ] [LIBRE] Hechizos. Sobre todo el de revivir. Hay que usar un bool vivo que tenga cada animal.\nB\n- [ ] [LIBRE] Mover las funciones dibuja a la clase Renderizador para que el renderizador reciba el tablero y lo dibuje en vez de que el tablero reciba el renderizador y se autodibuje.\n- [ ] [LIBRE] Implementar el patr\u00f3n \"singleton\" en la clase Juego\nC\n- [ ] [LIBRE] IA para jugar en solitario contra ella.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2026-05-29T07:49:49Z",
+    "title": "TIER TO-DO LIST"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T10:44:23+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/53"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#49:opened",
+   "payload": {
+    "author": "JaimeLadero-etsidi",
+    "body": "A la hora de desarrollar los ataques en el tablero, he pensado que podr\u00eda ser interesante separar las clases de animales seg\u00fan el entorno en el que act\u00faan. Es decir, crear una clase base general Animal y, a partir de ella, dos clases derivadas: AnimalTablero y AnimalArena. Esto se debe a que no comparten muchos atributos ni funciones, por lo que mantenerlas separadas podr\u00eda mejorar la organizaci\u00f3n y claridad del c\u00f3digo. No estoy seguro de si a estas alturas ws buena idea hacer este cambio.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Animales tablero y animales arena"
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T18:55:05+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/49"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#44:opened",
+   "payload": {
+    "author": "Jooleean",
+    "body": "La posici\u00f3n del cursor debe ser de tipo float., no int.\nLas coordenadas de tablero deber\u00edan corresponderse con las de la matriz, es decir [0][0] para arriba a la izquierda y [8][8] para abajo a la derecha.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Correciones necesarias"
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T18:25:18+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/44"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#41:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "Los personajes cuando pierden y mueren en la arena, no deber\u00edamos de eliminarlos del array de personajes, es mejor ponerles una etiqueta de muertos. Adem\u00e1s esto permite el hechizo de revivir.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Muerte personajes"
+   },
+   "source": "github",
+   "timestamp": "2026-04-20T11:17:19+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/41"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#37:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "El coordinador (Juego) es el puente. El flujo ser\u00eda as\u00ed:\n\nFase Tablero: El jugador mueve una Gallina (J1) a la casilla de un Cerdo (J2).\n\nDetecci\u00f3n: El Tablero detecta que en esa casilla ya hay un enemigo. Se bloquea y levanta una \"bandera\" (ej. devuelve un estado o cambia una variable) indicando: \"\u00a1Hay conflicto entre Gallina y Cerdo!\".\n\nTransici\u00f3n (Juego interviene): Juego detecta esa bandera. Le pide al Tablero los punteros de esos dos animales.\n\nCarga de Arena: Juego cambia el estado a BATALLA y le inyecta a la Arena esos dos punteros: miArena->cargarCombatientes(punteroGallina, punteroCerdo);\n\nCombate: Arena actualiza y dibuja solo a esos dos animales. (Nota: los animales tendr\u00e1n que tener coordenadas de tablero int x,y y coordenadas de arena float arenaX, arenaY).\n\nResoluci\u00f3n: La Gallina pierde toda la vida. La Arena avisa a Juego que el combate termin\u00f3.\n\nLimpieza: Juego vuelve al estado TABLERO. Le dice al Tablero: \"La Gallina muri\u00f3\". El Tablero hace delete de la Gallina, pone su puntero en la matriz a nullptr, y actualiza la casilla del Cerdo.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Conexi\u00f3n Tablero-Arena"
+   },
+   "source": "github",
+   "timestamp": "2026-04-15T19:07:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/37"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#31:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "Ahora el tablero tiene atributos y m\u00e9todos redundantes.\nEst\u00e1n duplicadas para el Jugador 1 y luego para el Jugador 2.\nSer\u00eda m\u00e1s elegante identificar al jugador usando arrays.\nEl J1 ser\u00eda el \u00edndice 0 y el J2 el \u00edndice 1.\n\nQuedar\u00edan algunos atributos as\u00ed:\n`int cursor_fila[2];`\n`int fila_seleccionada[2];`\n`bool hay_pieza_seleccionada[2];`\n\nPara los m\u00e9todos solo har\u00eda falta recibir el id del jugador, como ejemplo:\n`void Tablero::moverCursor(int idJugador, int fila_aumentada, int columna_aumentada)`\n\nGracias a esto los imputs del coordinador Juego simplemente le dicen al tablero qui\u00e9n est\u00e1 tocando el teclado:\n```\nvoid Juego::procesarTeclaPresionada(unsigned char key) // J1 (\u00edndice 0)\n{\n    // ...\n    case TABLERO:\n        if (key == 'w' || key == 'W') miTablero->moverCursor(0, 0, 1);\n        // ...\n        if (key == '.') miTablero->seleccionarCasilla(0);\n        break;\n}\n\nvoid Juego::procesarTeclaEspecialPresionada(int key) // J2 (\u00edndice 1)\n{\n    // ...\n    case TABLERO:\n        if (key == GLUT_KEY_UP) miTablero->moverCursor(1, 0, 1);\n        // ...\n        if (key == '.') miTablero->seleccionarCasilla(1);\n        break;\n}\n```",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2026-04-11T12:17:11Z",
+    "title": "Tablero"
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T22:13:11+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/31"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#29:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "Ideas varias sobre el men\u00fa principal:\n\n* De momento al elegir JUGAR pasa directamente al TABLERO, falta una pantalla que te deje elegir bando etc.\n* En OPCIONES qu\u00e9 se puede cambiar? volumen, algo del juego?\n* Los CONTROLES muestran los que hemos programados nosotros. Se puede que el jugador los pueda cambiar?\n* Los CREDITOS muestran nuestros nombres. Meter el easter egg aqu\u00ed. Quiz\u00e1 haciendo click en algo.\n\n* La selecci\u00f3n creo que es m\u00e1s coherente con el juego si es por teclado con las flechas y pulsando Intro para elegir\n* Hacer feedback gr\u00e1fico de qu\u00e9 opci\u00f3n est\u00e1 seleccionada (ideas: c\u00edrculo al lado; recuadro bajo el texto que palpite ligeramente, me gustan las animaciones que palpitan como el tractor; que al moverte eligiendo desaparezca suavemente el recuadro y aparezca en el siguiente o quiz\u00e1 se desplace con animaci\u00f3n de una a otra)",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Men\u00fa principal"
+   },
+   "source": "github",
+   "timestamp": "2026-04-09T20:43:02+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/29"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#27:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "\u00bfC\u00f3mo hacer el desacople de la parte l\u00f3gica de la gr\u00e1fica?",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "question"
+    ],
+    "last_edited_at": null,
+    "title": "Desacople l\u00f3gico-gr\u00e1fico"
+   },
+   "source": "github",
+   "timestamp": "2026-04-03T10:46:13+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/27"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#21:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "\u00bfEs mejor para nuestro caso hacer un mueve() global o un mueve para cada clase? Quiz\u00e1 un mueve para la clase grande de animal.",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "question"
+    ],
+    "last_edited_at": null,
+    "title": "Movimiento personajes"
+   },
+   "source": "github",
+   "timestamp": "2026-03-20T15:56:27+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/21"
+  },
+  {
+   "evidence_id": "issue:AlvarOnce/rancho#19:opened",
+   "payload": {
+    "author": "AlvarOnce",
+    "body": "Al pulsar dos flechas en direcciones opuestas, la gallina se queda quieta. Esto entorpece la movilidad en el campo de batalla. Habr\u00eda que quedarse con la \u00faltima que se puls\u00f3, incluso si se pulsan exactamente a la vez",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": null,
+    "title": "Solucionar conflictos de movimiento "
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T23:44:39+00:00",
+   "url": "https://github.com/AlvarOnce/rancho/issues/19"
+  }
+ ],
+ "repo": "AlvarOnce/rancho",
+ "window": "pre_t"
+}

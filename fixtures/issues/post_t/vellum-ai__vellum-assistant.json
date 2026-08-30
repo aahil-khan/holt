@@ -1,0 +1,115 @@
+{
+ "captured_at": "2026-08-30T10:11:39.574455+00:00",
+ "content_sha256": "594030aa571f33cd41ee0b944932fcd3181d03c3fe9c724e884525f297c2a148",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#32404:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "devin-ai-integration",
+      "author_is_bot": true,
+      "number": 33452
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:21:07+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/32404"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#31211:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T23:02:41+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/31211"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30942:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T15:14:48+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30942"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30912:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:16:44+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30912"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30896:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T21:48:38+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30896"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30868:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T21:48:29+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30868"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30795:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:16:31+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30795"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30789:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:16:49+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30789"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30754:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:16:35+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30754"
+  },
+  {
+   "evidence_id": "issue:vellum-ai/vellum-assistant#30737:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T15:15:02+00:00",
+   "url": "https://github.com/vellum-ai/vellum-assistant/issues/30737"
+  }
+ ],
+ "repo": "vellum-ai/vellum-assistant",
+ "window": "post_t"
+}

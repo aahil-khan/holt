@@ -1,0 +1,1862 @@
+{
+ "captured_at": "2026-08-30T10:09:41.192975+00:00",
+ "content_sha256": "1c633009c1c2db1a839747bc189b1ff22ef5ccf464bdf871ef51dc745f0d0bcd",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526488:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T22:19:27+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526488"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526437:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T13:58:17+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526437"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526426:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "phanirithvij",
+      "author_is_bot": false,
+      "number": 526669
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:39:45+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526426"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526424:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SebastianStork",
+      "author_is_bot": false,
+      "number": 526430
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T16:42:13+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526424"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526423:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "adamcstephens",
+      "author_is_bot": false,
+      "number": 531974
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T15:29:58+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526423"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526360:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "IogaMaster",
+      "author_is_bot": false,
+      "number": 526447
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T22:23:06+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526360"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526353:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526526
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T15:13:49+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526353"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526351:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526527
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T06:16:57+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526351"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526350:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marcusramberg",
+      "author_is_bot": false,
+      "number": 525963
+     },
+     {
+      "author": "nixpkgs-ci",
+      "author_is_bot": true,
+      "number": 525970
+     },
+     {
+      "author": "nixpkgs-ci",
+      "author_is_bot": true,
+      "number": 525971
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T21:18:54+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526350"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526349:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526526
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T15:13:52+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526349"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526347:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526526
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T15:13:55+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526347"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526345:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526526
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T15:13:57+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526345"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526343:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526527
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T06:16:56+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526343"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526341:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526527
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T06:16:56+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526341"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526339:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526526
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T15:14:00+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526339"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526338:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 526529
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:24:19+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526338"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526285:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "NotAShelf",
+      "author_is_bot": false,
+      "number": 526310
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:58:12+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526285"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526276:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "samestep",
+      "author_is_bot": false,
+      "number": 527216
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T18:09:01+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526276"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526275:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MattSturgeon",
+      "author_is_bot": false,
+      "number": 526277
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T17:11:47+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526275"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526188:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Golbinex",
+      "author_is_bot": false,
+      "number": 483921
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T19:28:52+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526188"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#526082:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ccicnce113424",
+      "author_is_bot": false,
+      "number": 531252
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T19:20:15+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/526082"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525939:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "pbsds",
+      "author_is_bot": false,
+      "number": 527337
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T20:12:37+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525939"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525926:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522574
+     },
+     {
+      "author": "nixpkgs-ci",
+      "author_is_bot": true,
+      "number": 525953
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T14:37:12+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525926"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525700:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T07:14:08+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525700"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525683:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Hythera",
+      "author_is_bot": false,
+      "number": 525720
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T09:05:42+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525683"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525631:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T12:25:08+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525631"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525627:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T22:34:55+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525627"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525610:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T16:27:31+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525610"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525573:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Gliczy",
+      "author_is_bot": false,
+      "number": 531589
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:41:11+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525573"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525513:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 518587
+     },
+     {
+      "author": "DeeUnderscore",
+      "author_is_bot": false,
+      "number": 519107
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:36:39+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525513"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525511:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MiniHarinn",
+      "author_is_bot": false,
+      "number": 499189
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:26:07+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525511"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525502:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 520620
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:35:41+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525502"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525501:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 520620
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:35:44+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525501"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525500:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 520620
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:35:46+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525500"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525496:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 503502
+     },
+     {
+      "author": "niklaskorz",
+      "author_is_bot": false,
+      "number": 525560
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:36:58+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525496"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525495:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 503502
+     },
+     {
+      "author": "niklaskorz",
+      "author_is_bot": false,
+      "number": 525560
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:36:56+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525495"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525494:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 503502
+     },
+     {
+      "author": "niklaskorz",
+      "author_is_bot": false,
+      "number": 525560
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:36:54+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525494"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525493:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jrobsonchase",
+      "author_is_bot": false,
+      "number": 478907
+     },
+     {
+      "author": "niklaskorz",
+      "author_is_bot": false,
+      "number": 525560
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T20:29:00+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525493"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525490:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 520620
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:35:49+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525490"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525488:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jrobsonchase",
+      "author_is_bot": false,
+      "number": 478907
+     },
+     {
+      "author": "niklaskorz",
+      "author_is_bot": false,
+      "number": 525560
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:25:54+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525488"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525467:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sternenseemann",
+      "author_is_bot": false,
+      "number": 531655
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T16:40:00+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525467"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525365:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Jappie3",
+      "author_is_bot": false,
+      "number": 526068
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T09:25:02+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525365"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525314:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ninelore",
+      "author_is_bot": false,
+      "number": 526934
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T19:08:54+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525314"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525304:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T17:30:11+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525304"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525302:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marcusramberg",
+      "author_is_bot": false,
+      "number": 525980
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:08:38+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525302"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525301:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "GaetanLepage",
+      "author_is_bot": false,
+      "number": 525155
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T21:35:11+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525301"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525300:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:37:13+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525300"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525298:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marcusramberg",
+      "author_is_bot": false,
+      "number": 525980
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:08:38+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525298"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525297:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 518799
+     },
+     {
+      "author": "imincik",
+      "author_is_bot": false,
+      "number": 543748
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T13:23:41+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525297"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525296:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 541160
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T20:08:34+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525296"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525292:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 541160
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-12T20:08:33+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525292"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525290:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marcusramberg",
+      "author_is_bot": false,
+      "number": 525980
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:08:38+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525290"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525289:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "marcusramberg",
+      "author_is_bot": false,
+      "number": 525980
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:08:37+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525289"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525288:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "applePrincess",
+      "author_is_bot": false,
+      "number": 525431
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T23:46:53+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525288"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525287:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nevivurn",
+      "author_is_bot": false,
+      "number": 515309
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T21:29:44+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525287"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525282:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "fabaff",
+      "author_is_bot": false,
+      "number": 518391
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T20:12:09+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525282"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525281:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "fabaff",
+      "author_is_bot": false,
+      "number": 518391
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T20:12:19+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525281"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525280:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "fabaff",
+      "author_is_bot": false,
+      "number": 518391
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T20:12:36+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525280"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525274:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 491246
+     },
+     {
+      "author": "nixpkgs-ci",
+      "author_is_bot": true,
+      "number": 525512
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:25:07+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525274"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525272:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "fabaff",
+      "author_is_bot": false,
+      "number": 518391
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T20:12:51+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525272"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525202:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T09:36:32+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525202"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525136:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "JustinLex",
+      "author_is_bot": false,
+      "number": 529475
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T09:54:10+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525136"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525135:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T08:38:41+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525135"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#525082:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "geri1701",
+      "author_is_bot": false,
+      "number": 534256
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T17:21:33+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/525082"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524881:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "isabelroses",
+      "author_is_bot": false,
+      "number": 538371
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T14:57:38+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524881"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524846:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T18:49:58+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524846"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524797:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dtomvan",
+      "author_is_bot": false,
+      "number": 524960
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T18:56:03+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524797"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524790:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 524933
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:27:45+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524790"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524789:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 524933
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:28:00+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524789"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524787:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "thesn10",
+      "author_is_bot": false,
+      "number": 552043
+     },
+     {
+      "author": "nixpkgs-ci",
+      "author_is_bot": true,
+      "number": 553009
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T15:10:36+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524787"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524786:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 524933
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:28:08+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524786"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524785:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 524933
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:29:19+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524785"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524784:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 524933
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:29:28+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524784"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524782:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T14:58:59+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524782"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524778:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nevivurn",
+      "author_is_bot": false,
+      "number": 515309
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T21:29:44+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524778"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524777:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T14:58:45+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524777"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524776:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 507829
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T22:15:01+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524776"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524774:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nevivurn",
+      "author_is_bot": false,
+      "number": 515309
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T21:29:44+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524774"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524772:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "r-ryantm",
+      "author_is_bot": false,
+      "number": 507829
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T22:14:41+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524772"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524771:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "stigtsp",
+      "author_is_bot": false,
+      "number": 533010
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T05:19:56+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524771"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524770:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T16:21:57+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524770"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524689:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ZainKergaye",
+      "author_is_bot": false,
+      "number": 529739
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T22:28:51+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524689"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524668:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Qubasa",
+      "author_is_bot": false,
+      "number": 521906
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T21:13:24+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524668"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524585:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T12:55:20+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524585"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524540:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:30:26+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524540"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524389:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Atemu",
+      "author_is_bot": false,
+      "number": 530286
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T02:10:54+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524389"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524341:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Biswa96",
+      "author_is_bot": false,
+      "number": 532063
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T15:27:51+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524341"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#524215:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "me-and",
+      "author_is_bot": false,
+      "number": 524430
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T03:02:00+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/524215"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523878:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anglesideangle",
+      "author_is_bot": false,
+      "number": 523894
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T12:25:51+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523878"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523771:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T09:26:57+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523771"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523714:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T19:58:15+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523714"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523712:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "infinisil",
+      "author_is_bot": false,
+      "number": 533376
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T23:34:35+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523712"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523527:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T16:12:06+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523527"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523386:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kilyanni",
+      "author_is_bot": false,
+      "number": 523461
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T08:12:05+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523386"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523378:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DaGenix",
+      "author_is_bot": false,
+      "number": 526197
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:31:39+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523378"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523332:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nekowinston",
+      "author_is_bot": false,
+      "number": 523948
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T11:37:19+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523332"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523283:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "staticdev",
+      "author_is_bot": false,
+      "number": 524498
+     },
+     {
+      "author": "barrelful",
+      "author_is_bot": false,
+      "number": 547458
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T17:29:05+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523283"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523272:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T06:30:48+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523272"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523152:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "lucasfcnunes",
+      "author_is_bot": false,
+      "number": 548856
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T01:24:55+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523152"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523144:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mksafavi",
+      "author_is_bot": false,
+      "number": 537959
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T13:09:05+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523144"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#523080:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:46:37+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/523080"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522990:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SandaruKasa",
+      "author_is_bot": false,
+      "number": 523053
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:53:39+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522990"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522895:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dotlambda",
+      "author_is_bot": false,
+      "number": 543999
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T12:14:03+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522895"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522822:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ItsShamed",
+      "author_is_bot": false,
+      "number": 523535
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T00:15:49+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522822"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522679:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Feyorsh",
+      "author_is_bot": false,
+      "number": 541557
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:33:58+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522679"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522565:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kuflierl",
+      "author_is_bot": false,
+      "number": 522835
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:30:08+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522565"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522564:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kuflierl",
+      "author_is_bot": false,
+      "number": 522835
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:30:33+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522564"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522563:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kuflierl",
+      "author_is_bot": false,
+      "number": 522835
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:30:46+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522563"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522562:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kuflierl",
+      "author_is_bot": false,
+      "number": 522835
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:31:00+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522562"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522561:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kuflierl",
+      "author_is_bot": false,
+      "number": 522835
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:31:12+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522561"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522560:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kuflierl",
+      "author_is_bot": false,
+      "number": 522835
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:31:20+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522560"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522555:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522508
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:32:03+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522555"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522550:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "LeSuisse",
+      "author_is_bot": false,
+      "number": 521942
+     },
+     {
+      "author": "nixpkgs-ci",
+      "author_is_bot": true,
+      "number": 529308
+     },
+     {
+      "author": "LeSuisse",
+      "author_is_bot": false,
+      "number": 529435
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T23:07:12+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522550"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522547:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522508
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:32:17+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522547"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522546:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522508
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:32:26+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522546"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522545:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522508
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:32:37+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522545"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522544:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522508
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:32:47+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522544"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522543:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522508
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:33:00+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522543"
+  },
+  {
+   "evidence_id": "issue:NixOS/nixpkgs#522542:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Scrumplex",
+      "author_is_bot": false,
+      "number": 522508
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T18:33:13+00:00",
+   "url": "https://github.com/NixOS/nixpkgs/issues/522542"
+  }
+ ],
+ "repo": "NixOS/nixpkgs",
+ "window": "post_t"
+}

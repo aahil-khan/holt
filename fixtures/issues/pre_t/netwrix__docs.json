@@ -1,0 +1,2396 @@
+{
+ "captured_at": "2026-08-30T10:10:54.153752+00:00",
+ "content_sha256": "f6392dfe072d3d4950473673c1bed5b0d77a3d04238dd41fd17574ac83835d20",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:netwrix/docs#1038:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin maintenance fix: `claude-issue-labeler.yml` Step 4 was incorrectly applying product labels and notifying codeowner teams on Admin Support PR review tracking issues (e.g., issue #1035 for PR #1034).\n\nIdentified root cause and implemented fix \u2014 added early-exit guard in Step 4 when issue title matches `^Admin: PR review`, mirroring the existing `kb/review` early-exit pattern (data-export-staging #49).\n\nFix PR: #1037\nAutomation tracking: #1036",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "automation"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: Fix claude-issue-labeler.yml \u2014 codeowner notification firing on Admin Support tracking issues"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:30:41+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1038"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1038:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:31:09+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1038"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1036:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin Support PR review tracking issues in `netwrix/docs` are triggering codeowner team mentions and product label application via the issue labeler workflow.\n\n## What's happening\n\nWhen `auto-create-pr-tracking-issues.yml` creates a tracking issue for an admin PR review, `claude-issue-labeler.yml` fires on issue open. Step 4 reads the CODEOWNERS for all files changed in the linked PR and applies those product labels + notifies the corresponding codeowner teams on the tracking issue. This is incorrect \u2014 admin tracking issues are internal workflow artifacts, not content issues for product teams to act on.\n\n## Example\n\nIssue #1035 (admin review of training PR #1034) received labels `1secure`, `access-analyzer`, `identity-manager`, `pingcastle`, `AI:docs`, `AI:site` and triggered codeowner notifications to all four product teams \u2014 none of whom needed to be involved.\n\n## Current fix (kb/review)\n\nStep 4 already has an early exit when `kb/review` label is present (added in PR #945, tracked in `netwrix-corp/data-export-staging#49`). Admin Support tracking issues need the same treatment.\n\n## Fix needed\n\nIn `claude-issue-labeler.yml` Step 4, add an early exit condition for Admin Support tracking issues. Options:\n- Check for an `admin` label (requires `auto-create-pr-tracking-issues.yml` to set it on the admin path)\n- Check if issue title matches the pattern `Admin: PR review \u2014`\n\nRecommended: title-pattern check is simpler and requires no changes to Workflow 1. Add alongside the existing `kb/review` check:\n```bash\nif echo \"$ISSUE_TITLE\" | grep -q \"^Admin: PR review\"; then\n  echo \"Admin Support tracking issue \u2014 skipping codeowner notification\"\n  exit 0\nfi\n```\n\nAlso evaluate whether Step 3 (label assignment) should similarly skip admin tracking issues to avoid applying product labels at all.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "automation"
+    ],
+    "last_edited_at": null,
+    "title": "Fix claude-issue-labeler.yml \u2014 skip codeowner notification for Admin Support tracking issues"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:48:54+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1036"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1036:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "hilram7",
+      "author_is_bot": false,
+      "number": 1037
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:16:51+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1036"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1035:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review of netwrix/docs PR #1034 (author: @robin-stefani).\n\nPR: https://github.com/netwrix/docs/pull/1034",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:site",
+     "AI:docs",
+     "1secure",
+     "access-analyzer",
+     "identity-manager",
+     "pingcastle"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: PR review \u2014 Training may29 (PR #1034)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:06:48+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1035"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1035:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "robin-stefani",
+      "author_is_bot": false,
+      "number": 1034
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:38:37+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1035"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1028:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Review of netwrix/docs PR #762 (author: ivan-zamkovyi-nwx) \u2014 SSL/TLS certificate documentation for Directory Manager 11.1.\n\nPR: https://github.com/netwrix/docs/pull/762\n\n**Changes:**\n- New KB article: SSL Certificate Connection Failures (`kb/.../ssl_certificate_connection_failures.md`)\n- New requirements page: SSL Certificate for LDAP/Authentication\n- Enhanced upgrade guide: pre-upgrade certificate verification step + troubleshooting\n- 2 supporting screenshots\n\n**Status:** Merged \u2705",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "kb/published"
+    ],
+    "last_edited_at": null,
+    "title": "KB review: SSL/TLS certificate documentation for Directory Manager (PR #762)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:39:56+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1028"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1028:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:40:18+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1028"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1018:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review of netwrix/docs PR #1017 (author: @nwx-kb-team).\n\nPR: https://github.com/netwrix/docs/pull/1017",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "kb/review",
+     "automation"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: PR review \u2014 Testing KB Ops workflow for Admin Review tracking Issue \u2014 Added space after introductory sentence - V2 (PR #1017)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:09:58+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1018"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1018:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nwx-kb-team",
+      "author_is_bot": false,
+      "number": 1017
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:12:38+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1018"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1015:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "KB article PR review \u2014 netwrix/docs PR #1014 (author: @hilram7).\n\nPR: https://github.com/netwrix/docs/pull/1014",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "kb/review"
+    ],
+    "last_edited_at": null,
+    "title": "KB review: Testing KB Ops workflow for KB Review tracking Issue \u2014 Added space after Title (PR #1014)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:36:43+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1015"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1015:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "hilram7",
+      "author_is_bot": false,
+      "number": 1014
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:52:06+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1015"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1013:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Periodically review and triage open Dependabot PRs in `netwrix/docs`.\n\n**Tool:** Run `/review-dependabot` in Claude Code \u2014 outputs a MERGE / REVIEW / SKIP triage table for all open Dependabot PRs with build statuses.\n\n- **MERGE:** Build passed, patch bump \u2014 approve and merge to `dev`, sync to `main`\n- **REVIEW:** Docusaurus/react/algolia, failed build, or big version jump \u2014 do local build check first (`npm install` \u2192 `npm run clear` \u2192 `npm run start` \u2192 browse site)\n- **SKIP:** Major version bumps \u2014 leave for James\n\nIf a PR can't rebase: use the recreate button on the PR, or ask Claude to update the dependency directly.\n\n**Parent:** #1011",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "automation",
+     "process"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: Triage and merge Dependabot PRs (backup admin coverage)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:06:00+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1013"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1012:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Review and merge incoming PRs to `netwrix/docs` during periods when James Haytko is unavailable.\n\n**Workflow:** Wait for all build workflows to pass \u2192 merge to `dev` \u2192 run sync dev to main action.\nIf sync keeps failing, check for recently merged broken links \u2014 that's the usual cause.\nFor PRs from forked repos: manually approve workflows to run before they execute.\n\n**Parent:** #1011",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "process"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: Review and merge incoming PRs (backup admin coverage)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:05:55+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1012"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1011:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Hilary Ramirez and James Haytko co-manage `netwrix/docs`. James is primary admin; Hilary is backup admin and primary for all KB content. Both have equal repo rights.\n\nThis issue tracks the documented process and ongoing responsibilities for Hilary's backup admin role, including periods when James is unavailable.\n\n**Sub-issues:**\n- [x] Admin: Review and merge incoming PRs (backup admin coverage)\n- [x] Admin: Triage and merge Dependabot PRs (backup admin coverage)\n\n**Reference:** `KB-Operations-Notes/GitHub Repo-wide Projects/Maintaining docs repo as primary admin/`",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "process"
+    ],
+    "last_edited_at": "2026-06-03T00:27:45Z",
+    "title": "Process: Docs repo co-admin coverage \u2014 backup admin protocol (cross-team with James Haytko)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:05:43+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1011"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1009:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "## Background\n\nIssue #1001 (filed by an external org member, `imawais004`) appeared on the KB Operations board with no priority set. Investigation confirmed it was added manually by the issue author via the GitHub Projects dropdown \u2014 not by automation.\n\n## Key Finding\n\n**Missing priority = reliable signal of unauthorized addition.** All board automation sets at minimum P2 at item creation time. Any item with no priority was added outside of automation.\n\n## Resolution\n\n### README added \u2705\nAdded a README to project settings making clear it's a personal ops board: *\"Personal tracking board for @hilram7 \u2014 items are added by automation. Do not add issues manually.\"*\n\n### Project board does not surface in new issue form \u2705\nThe KB Operations board does not appear in the Projects dropdown when org members create new issues in `netwrix/docs`. The only way to add an item is by going to the board directly and using \"Add items\" \u2014 a deliberate action, not an accidental one. This significantly reduces the risk of unauthorized additions.\n\n## Decision\n\nAutomation (scheduled GHA audit or n8n webhook) is not warranted. The README + board visibility behavior together are sufficient mitigation. The residual risk \u2014 a deliberate manual add \u2014 is low enough that ongoing automation overhead is not justified. Tabled indefinitely.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "automation",
+     "process"
+    ],
+    "last_edited_at": "2026-05-29T23:41:47Z",
+    "title": "Prevent unauthorized issues from appearing on KB Operations project board"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T17:55:06+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1009"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1009:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:41:48+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1009"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1008:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Product filter is live (PR #92). Version filtering is the remaining piece.\n\n## Background\nThis issue resurfaced due to a customer request on the Netwrix community forum asking for deeper filtering by version:\nhttps://community.netwrix.com/t/product-filter-in-docs-deeper-filter-by-version/131341\n\n## Blocker\n~~Algolia `attributesForFaceting` does not include `version` \u2014 this must be configured by the web team (Andrei Sirbu) in the Algolia dashboard before code changes can go live.~~\n\n**Resolved:** Andrei added `product_version` as a facet (already populated with clean values like `\"8.0\"`, `\"7.5\"`). Frontend will use `product_version` instead of `version` to avoid a full re-index.\n\n## Steps to complete\n\n- [x] **Algolia dashboard** \u2014 `product_version` facet added and populated (web team)\n- [x] ~~**Frontmatter** \u2014 Confirm index can derive version from URL path or add `version:` field to doc frontmatter~~ \u2014 **Not needed.** `product_version` is already populated directly by Andrei's crawler config; no frontmatter changes required.\n- [x] ~~**Re-index**~~ \u2014 **Not needed.** `product_version` was already populated at the time the facet was added; no full re-index required.\n- [x] **Uncomment code** \u2014 Completed. Both `SearchBar/index.js` and `SearchPage/index.js` updated to use `product_version`, filter blocks uncommented, `selectedVersionsRef` wired into `transformSearchClient` so the modal filters at request time.\n\n## Status\nVersion filtering is working in both the modal and the full search results page on `feature/enhance-algolia-search`. Ready for PR once known issue below is resolved or accepted.\n\n## Known issue\nVersion selection is not always preserved when navigating from the modal to the full search results page via \"See all results.\" Product selection carries over correctly. Version needs to be reselected on the search results page. Likely a timing issue with the `refreshSearch()` 50ms timeout \u2014 `ResultsFooter` may not re-render before the user clicks. To be investigated separately.\n\n## Related\n- Asana task: https://app.asana.com/1/46926129243726/project/505574665637794/task/1215123860428652\n- Branch: `feature/enhance-algolia-search`",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:site"
+    ],
+    "last_edited_at": "2026-05-27T14:51:06Z",
+    "title": "Enable version filtering in Algolia search"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T17:30:49+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1008"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1007:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "KB article PR review \u2014 netwrix/docs PR #998 (author: @krzysztofstaszalek).\n\nPR: https://github.com/netwrix/docs/pull/998",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "kb",
+     "endpoint-protector",
+     "kb/review"
+    ],
+    "last_edited_at": null,
+    "title": "KB review: Eppminor20260525kb (PR #998)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T16:38:59+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1007"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1007:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T13:54:05+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1007"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#1001:opened",
+   "payload": {
+    "author": "imawais004",
+    "body": "### Issue type (optional)\n\nThe documentation has broken links.\n\n### Affected product and version (optional)\n\nDirectory Manager 11.1\n\n### Issue\n\nThe download link for the standalone security utility for the advisory [ADV-2025-014](https://community.netwrix.com/t/adv-2025-014-critical-vulnerabilities-in-netwrix-directory-manager-formerly-imanami-groupid-v11/13951)] is incorrect in the following doc:\n\nhttps://docs.netwrix.com/docs/directorymanager/11_1/install/securityutility.\n\n\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\nThe correct link is below:\n\nhttps://releases.netwrix.com/products/groupid/11.1/NDM11-ADV-2025-014-Utility.zip\n\nIt needs to be updated.",
+    "body_truncated": false,
+    "comments": 4,
+    "labels": [
+     "AI:docs",
+     "directory-manager",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Broken Link for [ADV-2025-014] in the NDM Doc"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T06:22:35+00:00",
+   "url": "https://github.com/netwrix/docs/issues/1001"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#996:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review of netwrix/docs PR #987 (author: @DanPiazza-Netwrix) \u2014 merged 2026-05-22.\n\nApplies security fixes from #986 to `claude-doc-pr.yml` to resolve two CodeQL high-severity alerts: adds fork guard to `doc-review` job (alert #82) and pins checkout to `headRefOid` SHA to eliminate TOCTOU race in `doc-followup` job (alert #61).\n\nPR: https://github.com/netwrix/docs/pull/987",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Admin: PR review \u2014 fix(claude-doc-pr): close untrusted-checkout alerts #82 and #61 (PR #987)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:41:36+00:00",
+   "url": "https://github.com/netwrix/docs/issues/996"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#996:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:42:22+00:00",
+   "url": "https://github.com/netwrix/docs/issues/996"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#995:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review of netwrix/docs PR #986 (author: @DanPiazza-Netwrix) \u2014 merged 2026-05-22.\n\nAdds `.github/workflows/claude-code-review.yml` \u2014 a Claude-powered code review bot for non-documentation PRs to `dev`. Uses `paths-ignore` mirroring the doc reviewer for a clean boundary. Supports `@claude` follow-up commands in PR comments.\n\nPR: https://github.com/netwrix/docs/pull/986",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "automation",
+     "process"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: PR review \u2014 feat: add Claude code review bot for non-doc PRs (PR #986)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:41:31+00:00",
+   "url": "https://github.com/netwrix/docs/issues/995"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#995:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:42:20+00:00",
+   "url": "https://github.com/netwrix/docs/issues/995"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#994:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review of netwrix/docs PR #985 (author: @DanPiazza-Netwrix) \u2014 merged 2026-05-22.\n\nRemoves the Typo Tolerance toggle from the search modal and search page. Hardcodes `typoTolerance: false` (previous default) in `SearchBar` and `SearchPage`. Deletes ~207 lines of toggle UI, state, and component code.\n\nPR: https://github.com/netwrix/docs/pull/985",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:site",
+     "javascript"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: PR review \u2014 fix: remove Typo Tolerance toggle from search UI (PR #985)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:41:29+00:00",
+   "url": "https://github.com/netwrix/docs/issues/994"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#994:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:42:18+00:00",
+   "url": "https://github.com/netwrix/docs/issues/994"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#993:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review of netwrix/docs PR #984 (author: @DanPiazza-Netwrix) \u2014 merged 2026-05-22.\n\nRestores stale `docs/changetracker/8.1/integration/api/reference/*` path to `.gitignore` and adds a `cleanup-legacy-dirs.mjs` script wired into `prestart`/`prebuild`/`preci` to auto-remove the directory on next build.\n\nPR: https://github.com/netwrix/docs/pull/984",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:site",
+     "change-tracker",
+     "automation"
+    ],
+    "last_edited_at": null,
+    "title": "Admin: PR review \u2014 fix: clean up stale integration/api/reference files (PR #984)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:41:22+00:00",
+   "url": "https://github.com/netwrix/docs/issues/993"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#993:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T19:42:15+00:00",
+   "url": "https://github.com/netwrix/docs/issues/993"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#974:opened",
+   "payload": {
+    "author": "FierseNicky",
+    "body": "**Page:** https://docs.netwrix.com/docs/1secure/admin/organizations/sourcesandconnectors/computer\n\n**Issue or question:**\nFormat for OU not specified in Step 7. 'Select the Manual or AD Container option button.' under the AD Container section.\nRequested change: \n Container Name \u2013 Specify the name of the container to crawl its computers. Use the format: \"OU\" or \"OU/Sub OU\". \n",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "AI:docs",
+     "1secure",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Feedback: https://docs.netwrix.com/docs/1secure/admin/organizations/sourcesandconnectors/computer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T11:55:24+00:00",
+   "url": "https://github.com/netwrix/docs/issues/974"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#973:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Review of netwrix/docs PR #873 (author: toniop-netwrix) \u2014 PPE fixes and new KB article.\n\nPR: https://github.com/netwrix/docs/pull/873\n\nStatus: Merged 2026-05-12 \u2705",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "kb",
+     "password-policy-enforcer",
+     "kb/review",
+     "kb/published"
+    ],
+    "last_edited_at": null,
+    "title": "KB review: PPE fixes and new KB article (PR #873)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T18:21:10+00:00",
+   "url": "https://github.com/netwrix/docs/issues/973"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#973:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T18:22:04+00:00",
+   "url": "https://github.com/netwrix/docs/issues/973"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#972:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Review of netwrix/docs PR #890 (author: tay-caliguiri) \u2014 typo fix in Access Analyzer upgrade FAQ.\n\nPR: https://github.com/netwrix/docs/pull/890\n\nStatus: Merged 2026-05-12 \u2705",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "kb",
+     "access-analyzer",
+     "kb/review",
+     "kb/published"
+    ],
+    "last_edited_at": null,
+    "title": "KB review: Update access-analyzer-upgrade-faq.md (PR #890)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T18:21:05+00:00",
+   "url": "https://github.com/netwrix/docs/issues/972"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#972:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T18:22:04+00:00",
+   "url": "https://github.com/netwrix/docs/issues/972"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#944:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Review of netwrix/docs PR #940 (author: nwx-natew, fork: `nwx-natew/natew-Managed-Objects-Disappear-removal`) \u2014 deletes `docs/kb/auditor/features-and-operations/glossaries-and-faqs/managed-objects-disappear-after-disk-space-on-system-drive-fills-up.md`, a KB article that only applies to unsupported versions of Netwrix Auditor. Keeping it in current docs creates confusion for users on supported versions.\n\n**Verification completed:**\n- No cross-references or links to the deleted file found in the docs tree\n- Article not linked from versioned docs tree \u2014 no sidebar or link updates needed\n- Deletion is clean and safe to merge\n\n**Status: Blocked** \u2014 author (nwx-natew) does not have repo write access due to missing SSO group membership in the GitHub org. They have been directed to contact IT to be added to the SSO group. Once access is resolved, they should recreate the PR from a branch on the main repo (not a fork) so CI/auto-fix workflows can run.\n\n**Action needed:** Re-review and approve once author has correct access and submits from a non-fork branch.\n\nPR: https://github.com/netwrix/docs/pull/940",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "auditor",
+     "kb/review"
+    ],
+    "last_edited_at": null,
+    "title": "Remove outdated KB article: Managed Objects Disappear after disk space fills up \u2014 Auditor (PR #940)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:20:46+00:00",
+   "url": "https://github.com/netwrix/docs/issues/944"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#944:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T17:39:28+00:00",
+   "url": "https://github.com/netwrix/docs/issues/944"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#943:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Review of netwrix/docs PR #941 (author: BNel-netwrix) \u2014 adds KB article covering SubAuthentication filter conflict with Fortinet to the PPE KB section.\n\nPR: https://github.com/netwrix/docs/pull/941",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "kb",
+     "password-policy-enforcer",
+     "kb/review"
+    ],
+    "last_edited_at": null,
+    "title": "Add KB article: PPE SubAuthentication filter conflict with Fortinet (PR #941)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:12:37+00:00",
+   "url": "https://github.com/netwrix/docs/issues/943"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#943:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:13:45+00:00",
+   "url": "https://github.com/netwrix/docs/issues/943"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#937:opened",
+   "payload": {
+    "author": "FierseNicky",
+    "body": "**Page:** https://docs.netwrix.com/docs/1secure/admin/organizations/sourcesandconnectors/computer\n\n**Issue or question:**\nStep 7: No format for the OU is specified in the instructions for adding the AD container.\nChanges for the instructions:\nAD Container \u2013 Select this option to crawl the computers within an Active Directory container, then specify:\n\nDomain Name \u2013 Specify the FQDN of the domain the container exists in.\nContainer Name \u2013 \u2022\tContainer Name \u2013 Specify the name of the container to crawl its computers. Use the format: \"OU\" or \"OU/Sub OU\". \nDetection Interval \u2013 Specify the time interval (in hours and minutes) after which the source group will automatically detect the computers for auditing.\nSource Group \u2013 Specify a name for the group to which the data source will belong. Grouping sources, such as computers, allows them to share a common configuration and makes it easier to manage related sources together.\n\n<!-- retrigger -->",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "1secure"
+    ],
+    "last_edited_at": "2026-05-19T17:24:18Z",
+    "title": "Feedback: https://docs.netwrix.com/docs/1secure/admin/organizations/sourcesandconnectors/computer"
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T21:44:23+00:00",
+   "url": "https://github.com/netwrix/docs/issues/937"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#929:opened",
+   "payload": {
+    "author": "a58strod",
+    "body": "**Page:** https://docs.netwrix.com/docs/policypak/gettingstarted/cloudmanual/interface/companydetails/companyadministrator/rolemanagement\n\n**Issue or question:**\n\nThe screenshots and descriptions of the roles is not accurate or non-existent.  For instance, Join Token Manager is not even listed.\n\n<!-- retrigger -->",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs",
+     "policypak"
+    ],
+    "last_edited_at": "2026-05-19T17:24:14Z",
+    "title": "Feedback: Role Management Doesn't Reflect Current Version"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T19:59:23+00:00",
+   "url": "https://github.com/netwrix/docs/issues/929"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#927:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review of netwrix/docs PR #914 (author: BNel-netwrix) \u2014 adds missing Password Reset link in Duo and PPE Client documentation. Review and merge as repo admin.\n\nPR: https://github.com/netwrix/docs/pull/914",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "kb",
+     "password-policy-enforcer",
+     "password-reset",
+     "kb/review"
+    ],
+    "last_edited_at": null,
+    "title": "Add KB article: Password Reset missing link when Duo MFA and PPE Client are installed (PR #914)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T18:26:43+00:00",
+   "url": "https://github.com/netwrix/docs/issues/927"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#927:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:14:56+00:00",
+   "url": "https://github.com/netwrix/docs/issues/927"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#918:opened",
+   "payload": {
+    "author": "Z4o5Op0YYZDh",
+    "body": "**Page:** https://docs.netwrix.com/docs/dataclassification/5_7/introduction/requirements/hardwarerequirements\n\n**Issue or question:**\n\nIn the table within the SQL Server section, the Hard disk details are as follows:\n\n> Estimate required disk space assuming 1012 KB per indexed object. For example, for 5, 000, 000 objects, the database size will be approximately 50 GB. See also Deployment Planning.\n\nIf each indexed object uses 1,012 KB of storage, then 5,000,000 objects would take ~4,825 GB of storage, not 50 GB.  If, however, each indexed object uses 10 to 12 KB of storage, then 5,000,000 objects would take ~47 to 57 GB of storage.\nI suspect the Hard disk details should be listed as \"10 to 12 KB per indexed object\", not \"1012 KB per indexed object\".\n\n____________________\n\nFurther down the page, in the hardware sizing table, the SQL Server requirements for all three environment sizes is listed as \n\n>  Disk Space Consumption: 10\n> \u2022 12 KB per indexed object SSD storage\n\nAgain, I suspect this should be listed as \"10 to 12 KB per indexed object\".\n\n<!-- retrigger -->",
+    "body_truncated": false,
+    "comments": 4,
+    "labels": [
+     "AI:docs",
+     "data-classification",
+     "content:fix"
+    ],
+    "last_edited_at": "2026-05-19T17:24:12Z",
+    "title": "Feedback: https://docs.netwrix.com/docs/dataclassification/5_7/introduction/requirements/hardwarerequirements"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T13:21:16+00:00",
+   "url": "https://github.com/netwrix/docs/issues/918"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#895:opened",
+   "payload": {
+    "author": "mikebratton85",
+    "body": "**Page:** https://docs.netwrix.com/docs/directorymanager/11_1/managementshell/group/setgroup\n\n**Guidance needed on using the -Clear attribute. Specifically trying to clear the ManagedBy and AdditionalOwner attributes:**\n\n<!-- retrigger -->",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "directory-manager",
+     "content:add"
+    ],
+    "last_edited_at": "2026-05-19T17:24:11Z",
+    "title": "Feedback: https://docs.netwrix.com/docs/directorymanager/11_1/managementshell/group/setgroup"
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T17:17:46+00:00",
+   "url": "https://github.com/netwrix/docs/issues/895"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#891:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "## Summary\n\n`kb_allowlist.json` and 9 versioned KB files under `docs/accessanalyzer/2601/kb/` were tracked in git as committed files. Because they are regenerated on every build by `scripts/copy-kb-to-versions.mjs` (wired as `prestart`/`prebuild`), they produced a permanent diff in every writer's local git status \u2014 causing confusion about whether to commit them.\n\n## Changes\n\n- `.gitignore` \u2014 added `kb_allowlist.json`\n- `CLAUDE.md` line 57 \u2014 corrected inaccurate description of `kb_allowlist.json` (it is a generated artifact, not a control file)\n- Ran `git rm --cached` on all 10 files to remove from git index without deleting from disk\n\n## PR\n\nhttps://github.com/netwrix/docs/pull/871 \u2014 Approved and merged into production\n\n## Status\n\nMerged to `dev`. Verified: `npm start` runs cleanly, none of the 10 files appear in `git status`, KB articles load correctly in sidebar.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "kb",
+     "automation",
+     "process"
+    ],
+    "last_edited_at": "2026-05-11T19:02:40Z",
+    "title": "Fix: Remove auto-generated KB files from git tracking (kb_allowlist.json + versioned KB copies)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T19:00:02+00:00",
+   "url": "https://github.com/netwrix/docs/issues/891"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#891:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T19:03:08+00:00",
+   "url": "https://github.com/netwrix/docs/issues/891"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#889:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "Admin review/approval requested for the following PR:\n- https://github.com/netwrix/docs/pull/888",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "process"
+    ],
+    "last_edited_at": null,
+    "title": "PR Review Required"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T17:40:00+00:00",
+   "url": "https://github.com/netwrix/docs/issues/889"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#889:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T18:16:24+00:00",
+   "url": "https://github.com/netwrix/docs/issues/889"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#862:opened",
+   "payload": {
+    "author": "ellwong-spec",
+    "body": "**Page:** https://docs.netwrix.com/docs/directorymanager/11_0/\n\n**Issue or question:**\n\nI keep getting this notification via email. \"You are scheduled for an on-call shift in the future, but have no cell phone number recorded in Oncall. Please go to [GroupID](https://groupid.linkedin.biz/GroupID11/IdentityManagement/Users/Properties) (go/groupid) and update your Mobile number. Changes may take up to 24 hours to propagate.\"\n\nand then when I go to upload my phone number I get an error message \"Unable to update user. The error is: Access is denied.\"\n\n<!-- retrigger -->",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "AI:docs",
+     "directory-manager"
+    ],
+    "last_edited_at": "2026-05-19T17:24:07Z",
+    "title": "Feedback: https://docs.netwrix.com/docs/directorymanager/11_0/"
+   },
+   "source": "github",
+   "timestamp": "2026-05-05T23:37:57+00:00",
+   "url": "https://github.com/netwrix/docs/issues/862"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#831:opened",
+   "payload": {
+    "author": "Thevalier",
+    "body": "**Page:** https://docs.netwrix.com/docs/passwordsecure/9_2/configuration/advancedview/operationandsetup/dashboardandwidgets/keyboard_shortcuts\n\n**Issue or question:**\nWould like to have some shortcut for transfer the One-Time-Password .\n\n<!-- retrigger -->",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "password-secure",
+     "product-proposal"
+    ],
+    "last_edited_at": "2026-05-19T17:24:04Z",
+    "title": "Feedback: https://docs.netwrix.com/docs/passwordsecure/9_2/configuration/advancedview/operationandsetup/dashboardandwidgets/keyboard_shortcuts"
+   },
+   "source": "github",
+   "timestamp": "2026-04-30T08:00:32+00:00",
+   "url": "https://github.com/netwrix/docs/issues/831"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#807:opened",
+   "payload": {
+    "author": "antonyclokeaf-web",
+    "body": "**Page:** https://docs.netwrix.com/docs/platgovnetsuiteflashlight/\n\n**Issue or question:**\nHello, \n\nI am a NetSuite administrator and was wondering if this product was still usable, licensing etc. \nI cannot see anything other than its original documentation on the netwrix website. \n\nLooking forward to hearing from you ",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Feedback: https://docs.netwrix.com/docs/platgovnetsuiteflashlight/"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T10:51:59+00:00",
+   "url": "https://github.com/netwrix/docs/issues/807"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#807:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T10:54:41+00:00",
+   "url": "https://github.com/netwrix/docs/issues/807"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#799:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "**Page:** https://docs.netwrix.com/docs/directorymanager/11_1\n\n**Issue or question:**\n\nWhat is IAM? The acronym should be defined in the document when it gets presented.",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "AI:docs",
+     "directory-manager",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Feedback: https://docs.netwrix.com/docs/directorymanager/11_1"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T23:36:03+00:00",
+   "url": "https://github.com/netwrix/docs/issues/799"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#799:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T22:55:12+00:00",
+   "url": "https://github.com/netwrix/docs/issues/799"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#798:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "**Page:** https://docs.netwrix.com/docs/directorymanager/11_1\n\n**Issue or question:**\n\nWhat is IAM?",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "AI:docs",
+     "directory-manager"
+    ],
+    "last_edited_at": null,
+    "title": "Feedback: https://docs.netwrix.com/docs/directorymanager/11_1"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T23:33:26+00:00",
+   "url": "https://github.com/netwrix/docs/issues/798"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#798:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T22:55:19+00:00",
+   "url": "https://github.com/netwrix/docs/issues/798"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#697:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation is incomplete.\n\n### Affected product and version (optional)\n\nPrivilege Secure 25.12\n\n### Issue\n\nAdd some explanation about what domain sync is and why it's important. \nhttps://docs.netwrix.com/docs/privilegesecure/25_12/kb/active-directory-configuration/active-directory-ad-users-groups-or-computers-not-available-to-add-to-sbpam\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "kb",
+     "privilege-secure",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Add context to Active Directory (AD) Users, Groups, or Computers Not Available to Add to SbPAM kb article"
+   },
+   "source": "github",
+   "timestamp": "2026-04-01T16:02:43+00:00",
+   "url": "https://github.com/netwrix/docs/issues/697"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#697:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-01T16:08:01+00:00",
+   "url": "https://github.com/netwrix/docs/issues/697"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#677:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nAuditor 10.8\n\n### Issue\n\nThis line \"Date timestamp for when the review was creation\" should say \"Date timestamp for when the review was created.\"\n\nYou can find this typo in 10.8, 10.7, and 10.6.\n\nhttps://docs.netwrix.com/docs/auditor/10_6/accessreviews/owneroverview/pendingreviews\nhttps://docs.netwrix.com/docs/auditor/10_7/accessreviews/owneroverview/pendingreviews\nhttps://docs.netwrix.com/docs/auditor/10_8/accessreviews/owneroverview/pendingreviews\n\nIf you get notified on this issue, don't worry about it - this is just a test for the notifications for issues. Claude will auto-fix the typo.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "AI:docs",
+     "auditor",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Review was creation should be review was created"
+   },
+   "source": "github",
+   "timestamp": "2026-03-26T16:37:02+00:00",
+   "url": "https://github.com/netwrix/docs/issues/677"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#677:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jth-nw",
+      "author_is_bot": false,
+      "number": 678
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-30T10:15:42+00:00",
+   "url": "https://github.com/netwrix/docs/issues/677"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#668:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\n_No response_\n\n### Issue\n\nThe .NET script documentation needs improvement. The steps need more explanation/context.\n\nhttps://docs.netwrix.com/docs/threatprevention/8_0/admin/policies/configuration/actions/netscript\n\n[content removed \u2014 code of conduct violation]\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "AI:docs",
+     "threat-prevention",
+     "content:fix"
+    ],
+    "last_edited_at": "2026-03-25T15:05:00Z",
+    "title": "Fix: The .NET script documentation needs better flow"
+   },
+   "source": "github",
+   "timestamp": "2026-03-25T15:00:11+00:00",
+   "url": "https://github.com/netwrix/docs/issues/668"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#668:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-26T16:30:46+00:00",
+   "url": "https://github.com/netwrix/docs/issues/668"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#666:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nThreat Prevention 8.0\n\n### Issue\n\nThere's a typo here: \"thae\" should be \"the\"\nhttps://docs.netwrix.com/docs/threatprevention/8_0/admin/policies/configuration/actions/netscript\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "threat-prevention",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Typo in .NET script doc"
+   },
+   "source": "github",
+   "timestamp": "2026-03-25T14:49:11+00:00",
+   "url": "https://github.com/netwrix/docs/issues/666"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#666:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-26T16:30:40+00:00",
+   "url": "https://github.com/netwrix/docs/issues/666"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#657:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has broken links.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/changetracker/8_1/install/agent/windows has a malformed link \u2014 '[ Agent First Run]' has an extra space after the opening bracket. It should be '[Agent First Run]'.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Malformed link text on Change Tracker Windows agent install page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:36:59+00:00",
+   "url": "https://github.com/netwrix/docs/issues/657"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#657:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:42:29+00:00",
+   "url": "https://github.com/netwrix/docs/issues/657"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#655:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\n1Secure\n\n### Issue\n\nThe SharePoint Online integration page has a malformed link \u2014 the text reads '[ Microsoft 365 Permissions]' with an extra leading space inside the brackets. It should be '[Microsoft 365 Permissions]'\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug",
+     "AI:docs",
+     "1secure",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Malformed link text in SharePoint Online integration page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:34:05+00:00",
+   "url": "https://github.com/netwrix/docs/issues/655"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#655:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:42:59+00:00",
+   "url": "https://github.com/netwrix/docs/issues/655"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#653:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\n1Secure\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/1secure/admin/searchandreports/billableusers says 'You shall receive a report in XLSX to your login email.' The word 'shall' is outdated \u2014 change it to 'will'.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "1secure",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Outdated modal verb \"shall\" in billable users docs"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:26:35+00:00",
+   "url": "https://github.com/netwrix/docs/issues/653"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#653:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:43:14+00:00",
+   "url": "https://github.com/netwrix/docs/issues/653"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#651:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\nAuditor 10.8\n\n### Issue\n\nThe prerequisites page for Auditor 10.8 mentions .NET 4.7 but it should say .NET 4.8.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug",
+     "auditor",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Wrong .NET version"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:20:47+00:00",
+   "url": "https://github.com/netwrix/docs/issues/651"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#651:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:43:22+00:00",
+   "url": "https://github.com/netwrix/docs/issues/651"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#650:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says courses are available but doesn't specify which ones.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\nAdd a sentence listing the available courses: 'Available courses include Change Tracker Fundamentals and Change Tracker Administration.'",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Specify which courses are available"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:19:48+00:00",
+   "url": "https://github.com/netwrix/docs/issues/650"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#650:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:42:42+00:00",
+   "url": "https://github.com/netwrix/docs/issues/650"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#649:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\nPrivilege Secure 4.2\n\n### Issue\n\nThe pages at https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/resourcesandgroups and https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/credentials both refer to 'click on Settings' but the button is labeled 'Configuration'. Please fix both pages.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "privilege-secure",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: 'Settings' button is actually called 'Configuration'."
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:13:36+00:00",
+   "url": "https://github.com/netwrix/docs/issues/649"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#649:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:42:39+00:00",
+   "url": "https://github.com/netwrix/docs/issues/649"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#648:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\nAuditor 10.8\n\n### Issue\n\nThe screenshot on https://docs.netwrix.com/docs/auditor/10_8/install/guide is outdated and shows the old UI.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "auditor",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Outdated screenshot on Auditor install page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:08:15+00:00",
+   "url": "https://github.com/netwrix/docs/issues/648"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#648:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:12:06+00:00",
+   "url": "https://github.com/netwrix/docs/issues/648"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#647:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Issue\n\nThe search should include versions for products.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_\n\n### Browsers (optional)\n\n_No response_\n\n### Operating system (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug",
+     "AI:site"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: I want search to include versions."
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T21:59:12+00:00",
+   "url": "https://github.com/netwrix/docs/issues/647"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#647:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:12:19+00:00",
+   "url": "https://github.com/netwrix/docs/issues/647"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#645:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation is inaccurate.\n\n### Affected product and version (optional)\n\n_No response_\n\n### Issue\n\nThe documentation is wrong about the installation steps.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "AI:docs",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Installation steps are wrong"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T21:49:48+00:00",
+   "url": "https://github.com/netwrix/docs/issues/645"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#645:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:12:16+00:00",
+   "url": "https://github.com/netwrix/docs/issues/645"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#642:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation is inaccurate.\n\n### Affected product and version (optional)\n\n_No response_\n\n### Issue\n\nThe documentation is wrong about the installation steps.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "AI:docs",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Installation steps are wrong"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T21:39:12+00:00",
+   "url": "https://github.com/netwrix/docs/issues/642"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#642:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:12:12+00:00",
+   "url": "https://github.com/netwrix/docs/issues/642"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#640:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T21:23:43+00:00",
+   "url": "https://github.com/netwrix/docs/issues/640"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#640:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T22:12:09+00:00",
+   "url": "https://github.com/netwrix/docs/issues/640"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#636:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:42:49+00:00",
+   "url": "https://github.com/netwrix/docs/issues/636"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#636:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T21:23:30+00:00",
+   "url": "https://github.com/netwrix/docs/issues/636"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#633:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:31:50+00:00",
+   "url": "https://github.com/netwrix/docs/issues/633"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#633:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:42:23+00:00",
+   "url": "https://github.com/netwrix/docs/issues/633"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#629:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:15:14+00:00",
+   "url": "https://github.com/netwrix/docs/issues/629"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#629:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:30:10+00:00",
+   "url": "https://github.com/netwrix/docs/issues/629"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#625:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:00:37+00:00",
+   "url": "https://github.com/netwrix/docs/issues/625"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#625:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:14:59+00:00",
+   "url": "https://github.com/netwrix/docs/issues/625"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#621:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T19:48:36+00:00",
+   "url": "https://github.com/netwrix/docs/issues/621"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#621:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T20:00:19+00:00",
+   "url": "https://github.com/netwrix/docs/issues/621"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#617:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T19:04:18+00:00",
+   "url": "https://github.com/netwrix/docs/issues/617"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#617:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T19:47:55+00:00",
+   "url": "https://github.com/netwrix/docs/issues/617"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#613:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T18:41:17+00:00",
+   "url": "https://github.com/netwrix/docs/issues/613"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#613:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T19:03:00+00:00",
+   "url": "https://github.com/netwrix/docs/issues/613"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#610:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nChange Tracker 8.1\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says \"certification is not currently available at this time.\" The word \"currently\" is redundant with \"at this time\" \u2014 please remove \"currently\" from the sentence.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Redundant wording on Change Tracker certification page"
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T18:25:32+00:00",
+   "url": "https://github.com/netwrix/docs/issues/610"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#610:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T18:40:26+00:00",
+   "url": "https://github.com/netwrix/docs/issues/610"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#567:opened",
+   "payload": {
+    "author": "jeremymoskowitz-netwrix",
+    "body": "Reviewer access change please:\n\u2022\tCurrent PolicyPak reviewer / docs approver is Bodgan Turlea. Change that please to Sacha Martens.\n\u2022\tCurrent PPE and Password reset docs approver is.. I don\u2019t know. Change that please also to Sacha Martens.\n\nAuthor access change plase:\t\n- Password Enforcer and Password reset docs \u2026 Please give me (Jeremy), Tonio Perota, Alena Mitrafanava and Sacha Martens access to write.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "policypak",
+     "password-policy-enforcer",
+     "password-reset",
+     "process"
+    ],
+    "last_edited_at": null,
+    "title": "Change the following writers and approvers for PolicyPak and Password Policy Enforcer and Password Policy Reset"
+   },
+   "source": "github",
+   "timestamp": "2026-03-19T14:15:22+00:00",
+   "url": "https://github.com/netwrix/docs/issues/567"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#564:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\n_No response_\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says 'certification is not currently available at this time.' The word 'currently' is redundant with 'at this time' \u2014 please remove it.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: certification is not currently available at this time\" \u2014 \"currently\" is redundant with \"at this time"
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T18:11:58+00:00",
+   "url": "https://github.com/netwrix/docs/issues/564"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#564:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-23T18:40:34+00:00",
+   "url": "https://github.com/netwrix/docs/issues/564"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#559:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\n_No response_\n\n### Affected product and version (optional)\n\n_No response_\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/partner/implementation/change-tracker says 'certification is not currently available at this time.' The word 'currently' is redundant with 'at this time' \u2014 please remove it.\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "change-tracker",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: certification is not currently available at this time\" \u2014 \"currently\" is redundant with \"at this time"
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T17:43:29+00:00",
+   "url": "https://github.com/netwrix/docs/issues/559"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#559:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T18:11:33+00:00",
+   "url": "https://github.com/netwrix/docs/issues/559"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#558:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nPrivilege Secure 4.2\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/resourcesandgroups has a typo in the first paragraph \u2014 'resoruces'\n   should be 'resources'\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "privilege-secure",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Typo 2"
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T17:30:38+00:00",
+   "url": "https://github.com/netwrix/docs/issues/558"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#558:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T18:11:37+00:00",
+   "url": "https://github.com/netwrix/docs/issues/558"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#555:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\nPrivilege Secure 4.2\n\n### Issue\n\nThe page at https://docs.netwrix.com/docs/privilegesecure/4_2/admin/interface/resourcesandgroups has a typo in the first paragraph \u2014 'resoruces' should be 'resources'\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs",
+     "privilege-secure",
+     "content:fix"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Typo"
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T17:23:09+00:00",
+   "url": "https://github.com/netwrix/docs/issues/555"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#555:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-18T17:30:02+00:00",
+   "url": "https://github.com/netwrix/docs/issues/555"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#220:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "Feature works but could be improved. [content removed \u2014 code of conduct violation]. Actually, I found a vulnerability in auth.js line 52:\n\n```javascript\npassword = req.body.password // no validation\n```\n\nThis allows SQL injection.\n\n---\n**Test Info:** This is Test 16 - second edit adds security vulnerability. Should close the issue.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": "2026-02-13T20:20:58Z",
+    "title": "TEST 16: Feature improvement suggestion"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:10:52+00:00",
+   "url": "https://github.com/netwrix/docs/issues/220"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#220:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:21:37+00:00",
+   "url": "https://github.com/netwrix/docs/issues/220"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#219:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "Can't install Auditor. The damn installer keeps crashing.\n\nAlso, I noticed there's a hardcoded password in the config file:\nadmin_password = \"default123\"\n\nSomeone needs to fix this garbage.\n\n---\n**Test Info:** This is Test 15 - has both conduct violation AND security issue. Security should take priority and close the issue immediately.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "TEST 15: Installation problem with offensive content and security issue"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:10:40+00:00",
+   "url": "https://github.com/netwrix/docs/issues/219"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#219:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:11:41+00:00",
+   "url": "https://github.com/netwrix/docs/issues/219"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#218:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "How does OAuth work in this system? Looking for documentation.\n\n---\n**Test Info:** This is Test 14 - will add a comment to test that labeling doesn't retrigger on comment events.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "TEST 14: OAuth authentication question"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:10:27+00:00",
+   "url": "https://github.com/netwrix/docs/issues/218"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#218:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:29:50+00:00",
+   "url": "https://github.com/netwrix/docs/issues/218"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#217:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "Please add a deployment guide for Docker environments.\n\nSpecific areas to cover:\n- Dockerfile configuration\n- Container orchestration\n- Volume management\n\n---\n**Test Info:** This is Test 13 - edited to change from Kubernetes to Docker. User labels (AI:docs, bug) should be preserved even though they don't match content.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "AI:docs"
+    ],
+    "last_edited_at": "2026-02-13T20:20:16Z",
+    "title": "TEST 13: Add deployment guide for Kubernetes"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:10:14+00:00",
+   "url": "https://github.com/netwrix/docs/issues/217"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#217:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:16+00:00",
+   "url": "https://github.com/netwrix/docs/issues/217"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#216:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "Security flaw in authentication flow. The system allows bypass through a specific sequence of requests.\n\nWait, I shouldn't post this publicly. Please contact me directly at test@example.com\n\n---\n**Test Info:** This is Test 12 - major content change from typo to security issue. Should be closed by security screening.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug",
+     "AI:docs"
+    ],
+    "last_edited_at": "2026-02-13T20:19:52Z",
+    "title": "TEST 12: Documentation typo in glossary"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:10:02+00:00",
+   "url": "https://github.com/netwrix/docs/issues/216"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#216:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:20:56+00:00",
+   "url": "https://github.com/netwrix/docs/issues/216"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#215:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "The export feature doesn't work with large datasets. [content removed \u2014 code of conduct violation] I'm extremely frustrated.\n\nSteps to reproduce:\n1. Select 10,000+ records\n2. Click export\n3. Browser hangs\n\n---\n**Test Info:** This is Test 9 - edited to add code of conduct violation.",
+    "body_truncated": false,
+    "comments": 3,
+    "labels": [
+     "bug"
+    ],
+    "last_edited_at": "2026-02-13T20:20:04Z",
+    "title": "TEST 9: Export feature doesn't work"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:09:49+00:00",
+   "url": "https://github.com/netwrix/docs/issues/215"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#215:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:32:09+00:00",
+   "url": "https://github.com/netwrix/docs/issues/215"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#214:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "The search isn't returning results for products.\n\n---\n**Test Info:** This is Test 8 - will add a comment with code of conduct violation.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "bug",
+     "AI:site"
+    ],
+    "last_edited_at": null,
+    "title": "TEST 8: Bug in search functionality"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:09:35+00:00",
+   "url": "https://github.com/netwrix/docs/issues/214"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#214:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:31+00:00",
+   "url": "https://github.com/netwrix/docs/issues/214"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#213:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "The new dashboard is completely broken. [content removed \u2014 code of conduct violation]\n\nHere's how to reproduce the bug:\n1. Navigate to /dashboard\n2. Click \"View Reports\"\n3. Page crashes\n\n[content removed \u2014 code of conduct violation]\n\n---\n**Test Info:** This is Test 7 - contains code of conduct violations that should be sanitized.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug",
+     "AI:site"
+    ],
+    "last_edited_at": "2026-02-13T20:10:43Z",
+    "title": "TEST 7: This feature is terrible"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:09:23+00:00",
+   "url": "https://github.com/netwrix/docs/issues/213"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#213:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:33+00:00",
+   "url": "https://github.com/netwrix/docs/issues/213"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#211:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "It would be great to have a dark mode option for the UI. Many users work in low-light environments and this would improve accessibility.\n\nBenefits:\n- Reduced eye strain\n- Better battery life on OLED screens\n- Follows modern UI trends\n\nThanks for considering!\n\n---\n**Test Info:** This is Test 6 - clean issue, should pass code of conduct check.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:site"
+    ],
+    "last_edited_at": null,
+    "title": "TEST 6: Feature request for dark mode"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:09:09+00:00",
+   "url": "https://github.com/netwrix/docs/issues/211"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#211:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:35+00:00",
+   "url": "https://github.com/netwrix/docs/issues/211"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#210:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "What's the best way to optimize database queries in this codebase?\n\n---\n**Test Info:** This is Test 5 - will add a clean comment, then edit it to add vulnerability.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "TEST 5: Performance optimization question"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:08:54+00:00",
+   "url": "https://github.com/netwrix/docs/issues/210"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#210:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:18:38+00:00",
+   "url": "https://github.com/netwrix/docs/issues/210"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#209:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "How does the API authentication work? I'm trying to integrate with your system.\n\n---\n**Test Info:** This is Test 4 - will add a comment with security vulnerability.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "TEST 4: Question about API authentication"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:08:42+00:00",
+   "url": "https://github.com/netwrix/docs/issues/209"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#209:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:18:43+00:00",
+   "url": "https://github.com/netwrix/docs/issues/209"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#208:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "How does the API authentication work? I'm trying to integrate with your system.\n\n---\n**Test Info:** This is Test 4 - will add a comment with security vulnerability.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "TEST 4: Question about API authentication"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:07:09+00:00",
+   "url": "https://github.com/netwrix/docs/issues/208"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#208:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:36+00:00",
+   "url": "https://github.com/netwrix/docs/issues/208"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#207:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "The login page takes about 5 seconds to load because of a vulnerability.\n\nI found the issue - there's an XSS vulnerability at line 23:\n```javascript\ndocument.getElementById('welcome').innerHTML = userInput;\n```\n\nInject: `<script>alert(document.cookie)</script>`\n\n---\n**Test Info:** This is Test 3 - edited to add security vulnerability (bypass prevention test).",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "bug",
+     "AI:site"
+    ],
+    "last_edited_at": "2026-02-13T20:17:29Z",
+    "title": "TEST 3: Login page loading slowly"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:06:57+00:00",
+   "url": "https://github.com/netwrix/docs/issues/207"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#207:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:18:21+00:00",
+   "url": "https://github.com/netwrix/docs/issues/207"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#206:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "I found a SQL injection vulnerability in the login endpoint.\n\nVulnerable code at `/api/auth/login.js` line 42:\n```javascript\nconst query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;\n```\n\nExploit:\n- Username: `admin' OR '1'='1' --`\n- Password: anything\n\nThis bypasses authentication and logs you in as admin.\n\n---\n**Test Info:** This is Test 2 - should trigger security screening and close the issue.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "TEST 2: SQL injection vulnerability in login endpoint"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:06:41+00:00",
+   "url": "https://github.com/netwrix/docs/issues/206"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#206:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:08:10+00:00",
+   "url": "https://github.com/netwrix/docs/issues/206"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#205:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "Can't install Password Secure 9.3 on Windows Server 2022.\n\nError message: \"Installation failed at step 3\"\n\nSteps to reproduce:\n1. Download installer from website\n2. Run as administrator\n3. Installation fails at \"Configuring services\" step\n\nEnvironment:\n- OS: Windows Server 2022\n- Version: Latest from website\n\n---\n**Test Info:** This is Test 11 - edited to change from 1Secure to Password Secure to test label updates.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "AI:docs",
+     "password-secure"
+    ],
+    "last_edited_at": "2026-02-13T20:19:39Z",
+    "title": "TEST 11: Installation issue with 1Secure"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:03:02+00:00",
+   "url": "https://github.com/netwrix/docs/issues/205"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#205:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:38+00:00",
+   "url": "https://github.com/netwrix/docs/issues/205"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#204:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "The API reference for Netwrix Auditor 10.8 has a typo on page 5.\n\nCurrent text: \"authentification\"\nShould be: \"authentication\"\n\nURL: https://docs.netwrix.com/...\n\n---\n**Test Info:** This is Test 10 - verifying template labels are applied and skill adds product-specific labels.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "bug",
+     "AI:docs",
+     "auditor"
+    ],
+    "last_edited_at": null,
+    "title": "TEST 10: Typo in API reference"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:02:48+00:00",
+   "url": "https://github.com/netwrix/docs/issues/204"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#204:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:48+00:00",
+   "url": "https://github.com/netwrix/docs/issues/204"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#203:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "The installation guide mentions running `npm install` but doesn't specify which directory to run it in. Can you clarify this?\n\nSteps I followed:\n1. Cloned the repository\n2. Ran npm install in the root directory\n3. Got some warnings about peer dependencies\n\nExpected: The guide should specify the correct directory.\n\n---\n**Test Info:** This is Test 1 from the progressive test plan - verifying basic pipeline functionality.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:site",
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "TEST 1: Documentation clarification for installation steps"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:02:33+00:00",
+   "url": "https://github.com/netwrix/docs/issues/203"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#203:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:49+00:00",
+   "url": "https://github.com/netwrix/docs/issues/203"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#202:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "I can see all customer's passwords in Password Secure.\n",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "1secure"
+    ],
+    "last_edited_at": "2026-02-13T19:54:23Z",
+    "title": "Add: \"in order to\" should be \"to\" for conciseness"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T19:51:25+00:00",
+   "url": "https://github.com/netwrix/docs/issues/202"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#202:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T19:55:22+00:00",
+   "url": "https://github.com/netwrix/docs/issues/202"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#200:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Feature type (optional)\n\n_No response_\n\n### What functionality would you like to add?\n\nadd a search that filters by version\n\n### Use case or justification (optional)\n\n_No response_\n\n### Browsers (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:site"
+    ],
+    "last_edited_at": null,
+    "title": "Add: add search that filters by version"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T19:41:04+00:00",
+   "url": "https://github.com/netwrix/docs/issues/200"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#200:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:51+00:00",
+   "url": "https://github.com/netwrix/docs/issues/200"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#199:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "I can see all the customer's passwords in the 1secure docs.",
+    "body_truncated": false,
+    "comments": 2,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "passwords in 1secure docs"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T19:21:42+00:00",
+   "url": "https://github.com/netwrix/docs/issues/199"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#199:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T19:22:48+00:00",
+   "url": "https://github.com/netwrix/docs/issues/199"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#198:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "I can see all the customer's passwords in the 1Secure docs.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs",
+     "1secure"
+    ],
+    "last_edited_at": "2026-02-13T19:19:13Z",
+    "title": "Fix: \"in order to\" should be \"to\" for conciseness"
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T19:16:04+00:00",
+   "url": "https://github.com/netwrix/docs/issues/198"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#198:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:29:59+00:00",
+   "url": "https://github.com/netwrix/docs/issues/198"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#174:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Issue type (optional)\n\nThe documentation has errors in grammar, punctuation, or spelling.\n\n### Affected product and version (optional)\n\n1Secure\n\n### Issue\n\nhttps://docs.netwrix.com/docs/1secure/admin/searchandreports/overview\n\n\"Netwrix 1Secure provides a convenient search interface for investigating incidents, suspicious activities, collected across the entire IT infrastructure. Netwrix 1Secure allows creating flexible searches in order to receive precise results on who changed what, when, or where, for example.\"\n\n\"in order to\" should be \"to\" for conciseness\n\n### Reproduction steps (optional)\n\n_No response_\n\n### Solution (optional)\n\n_No response_",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "Fix: Change \"in order to\" to \"to\" in 1Secure docs"
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T16:20:25+00:00",
+   "url": "https://github.com/netwrix/docs/issues/174"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#174:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:53+00:00",
+   "url": "https://github.com/netwrix/docs/issues/174"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#173:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Affected product and version (optional)\n\nPassword Policy Enforcer 10.2, Password Policy Enforcer 11.0, Password Policy Enforcer 11.1\n\n### Content type (optional)\n\nQuick start guide\n\n### Content to add\n\nPlease add a quickstart guide for Password Policy Enforcer.\n\nUsers could use a single document that they can follow and get started by the end of the document.\n\nThis should be a concise, step-by-step guide that helps users get up and running with Password Policy Enforcer quickly.\n\n### Use case or justification\n\nUsers need a streamlined way to get started with Password Policy Enforcer without having to navigate through multiple documentation pages. A quickstart guide would provide a single, focused document that takes users from installation through initial configuration and basic usage, improving the onboarding experience.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": "2026-02-12T16:19:19Z",
+    "title": "Please add a quickstart guide for Password Policy Enforcer"
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T16:18:19+00:00",
+   "url": "https://github.com/netwrix/docs/issues/173"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#173:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:55+00:00",
+   "url": "https://github.com/netwrix/docs/issues/173"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#172:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Affected product and version (optional)\n\n1Secure\n\n### Content type (optional)\n\n_No response_\n\n### Content to add\n\nIt would be great to add a quickstart guide for Password Secure that gives users a way to get started quickly, all in one document.\n\n### Use case or justification\n\nIt would be good for users to have a single document that allows them to follow along and get started by the end of the document.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "Add: Quickstart guide for Password Secure"
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T16:16:49+00:00",
+   "url": "https://github.com/netwrix/docs/issues/172"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#172:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:58+00:00",
+   "url": "https://github.com/netwrix/docs/issues/172"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#171:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Affected product and version (optional)\n\nAuditor 10.8\n\n### Content type (optional)\n\n_No response_\n\n### Content to add\n\nIt would be nice to add a quick start guide for Auditor that helps users get started more quickly. \n\n### Use case or justification\n\nIt would be good for users to have a one page document that they can go to and follow along and get started successfully.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "Add: Quickstart guide for Auditor"
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T16:15:20+00:00",
+   "url": "https://github.com/netwrix/docs/issues/171"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#171:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-13T20:31:59+00:00",
+   "url": "https://github.com/netwrix/docs/issues/171"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#170:opened",
+   "payload": {
+    "author": "jth-nw",
+    "body": "### Affected product and version (optional)\n\n_No response_\n\n### Content type (optional)\n\n_No response_\n\n### Content to add\n\nIt would be great to add a quickstart guide for Directory Manager as a one page document that tells the user everything the user needs to know to get started with Directory Manager.\n\n### Use case or justification\n\nIt would be nice to have a document that helps the user get started more quickly, maybe without describing all the context and options.",
+    "body_truncated": false,
+    "comments": 1,
+    "labels": [
+     "AI:docs"
+    ],
+    "last_edited_at": null,
+    "title": "Add: Quickstart guide for DirectoryManager"
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T16:14:03+00:00",
+   "url": "https://github.com/netwrix/docs/issues/170"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#170:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-12T16:16:25+00:00",
+   "url": "https://github.com/netwrix/docs/issues/170"
+  },
+  {
+   "evidence_id": "issue:netwrix/docs#15:opened",
+   "payload": {
+    "author": "hilram7",
+    "body": "**Page:**  \n`docs/passwordreset/3.3/what_new.md`\n\n**Broken link:**  \nNetwrix Password Reset v3.3 Bug Fix List PDF  \nhttps://helpcenter.netwrix.com/bundle/PasswordReset_3.3_ReleaseNotes/resource/Netwrix_PasswordReset_3.3_BugFixList.pdf\n\n**Current behavior:**  \nThe link redirects to the docs site home page.\n\n**Expected behavior:**  \nLink should point to the correct Bug Fix List PDF (or be replaced/removed if no longer available).\n\n**Notes:**  \nThis appears to be a legacy Help Center URL. I don\u2019t have the updated PDF link, so flagging for the code-owning `docs:passwordreset` team to investigate and update as appropriate.\n",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": "2026-01-04T21:17:37Z",
+    "title": "Broken PDF link in Password Reset 3.3 release notes (old Help Center URL)"
+   },
+   "source": "github",
+   "timestamp": "2026-01-04T21:08:15+00:00",
+   "url": "https://github.com/netwrix/docs/issues/15"
+  }
+ ],
+ "repo": "netwrix/docs",
+ "window": "pre_t"
+}

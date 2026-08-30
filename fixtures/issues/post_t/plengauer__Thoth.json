@@ -1,0 +1,25 @@
+{
+ "captured_at": "2026-08-30T10:21:42.771647+00:00",
+ "content_sha256": "1627823bf2689273ec26fe9c3407200b1ce7d2cd984aad0face8d370ec719e06",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:plengauer/Thoth#3506:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "copilot-swe-agent",
+      "author_is_bot": true,
+      "number": 3507
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T00:10:20+00:00",
+   "url": "https://github.com/plengauer/Thoth/issues/3506"
+  }
+ ],
+ "repo": "plengauer/Thoth",
+ "window": "post_t"
+}

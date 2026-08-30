@@ -1,0 +1,1296 @@
+{
+ "captured_at": "2026-08-30T10:19:51.186067+00:00",
+ "content_sha256": "e03dcbc8b2717aa3fa464cd5063cf84e77b6e781d29b6ebd72b6713a9937e950",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:home-assistant/core#172681:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:34:17+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172681"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172679:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T19:29:24+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172679"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172677:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 172701
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:58:27+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172677"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172675:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T18:06:01+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172675"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172674:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T07:40:03+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172674"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172668:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T21:39:45+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172668"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172661:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T08:04:42+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172661"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172643:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T03:41:09+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172643"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172632:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 172700
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:47:39+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172632"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172631:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T04:43:21+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172631"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172628:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T12:16:13+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172628"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172620:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-06T05:34:13+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172620"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172618:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 172816
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T08:37:18+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172618"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172605:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T05:02:53+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172605"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172604:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 180522
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T17:29:28+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172604"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172599:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mattweinb",
+      "author_is_bot": false,
+      "number": 1155
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T21:56:42+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172599"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172579:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T14:12:56+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172579"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172570:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 174079
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T04:44:18+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172570"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172563:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 172712
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:49:58+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172563"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172554:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jamesonuk",
+      "author_is_bot": false,
+      "number": 172857
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T19:45:57+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172554"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172552:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T13:19:57+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172552"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172508:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chemelli74",
+      "author_is_bot": false,
+      "number": 174138
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T06:20:58+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172508"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172485:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T09:34:54+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172485"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172478:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T10:58:08+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172478"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172475:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T15:18:01+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172475"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172466:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AlCalzone",
+      "author_is_bot": false,
+      "number": 1442
+     },
+     {
+      "author": "AlCalzone",
+      "author_is_bot": false,
+      "number": 172740
+     },
+     {
+      "author": "AlCalzone",
+      "author_is_bot": false,
+      "number": 173309
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T08:44:54+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172466"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172662:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T10:34:42+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172662"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172453:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Markus98",
+      "author_is_bot": false,
+      "number": 173037
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T12:04:12+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172453"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172447:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Xirt",
+      "author_is_bot": false,
+      "number": 172559
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:24:01+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172447"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172443:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "starkillerOG",
+      "author_is_bot": false,
+      "number": 172927
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T16:04:59+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172443"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172421:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "bieniu",
+      "author_is_bot": false,
+      "number": 172756
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:57:44+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172421"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172419:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 174118
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T09:10:38+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172419"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172415:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 174117
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T14:09:17+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172415"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172413:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mib1185",
+      "author_is_bot": false,
+      "number": 175129
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T12:32:02+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172413"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172395:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "peteS-UK",
+      "author_is_bot": false,
+      "number": 172906
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T11:45:31+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172395"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172388:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T10:09:41+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172388"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172374:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T16:43:22+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172374"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172361:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173800
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T21:35:53+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172361"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172307:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T19:17:48+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172307"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172306:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T20:22:53+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172306"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172253:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:40:13+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172253"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172241:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T16:26:31+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172241"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172232:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MartinHjelmare",
+      "author_is_bot": false,
+      "number": 173258
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T19:39:21+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172232"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172229:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:10:14+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172229"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172228:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ironiridis",
+      "author_is_bot": false,
+      "number": 176736
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T12:03:41+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172228"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172206:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Lash-L",
+      "author_is_bot": false,
+      "number": 172277
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T06:19:25+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172206"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172202:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T16:27:12+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172202"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172164:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "RaHehl",
+      "author_is_bot": false,
+      "number": 174948
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-29T13:13:55+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172164"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172151:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T10:34:14+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172151"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172146:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Diegorro98",
+      "author_is_bot": false,
+      "number": 172946
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T20:13:27+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172146"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172133:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "iMicknl",
+      "author_is_bot": false,
+      "number": 176283
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T13:01:30+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172133"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172099:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T19:30:29+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172099"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172077:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T16:55:56+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172077"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#172020:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T21:33:19+00:00",
+   "url": "https://github.com/home-assistant/core/issues/172020"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171989:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T02:04:24+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171989"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171980:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T12:10:30+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171980"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171940:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "iMicknl",
+      "author_is_bot": false,
+      "number": 175374
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T15:38:37+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171940"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171938:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "MarvinSchenkel",
+      "author_is_bot": false,
+      "number": 4620
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T09:44:25+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171938"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171881:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "johanzander",
+      "author_is_bot": false,
+      "number": 172587
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:12:44+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171881"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171880:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 174120
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T18:31:45+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171880"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171875:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "epenet",
+      "author_is_bot": false,
+      "number": 173880
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T21:14:40+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171875"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171874:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "epenet",
+      "author_is_bot": false,
+      "number": 173888
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T13:25:14+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171874"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171873:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173868
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T12:04:54+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171873"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171872:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173867
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T12:05:07+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171872"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171871:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173857
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T10:05:37+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171871"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171870:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173855
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T09:57:28+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171870"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171869:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173854
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T09:57:15+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171869"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171868:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173850
+     },
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173865
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T09:02:10+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171868"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171867:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "some-random-climber",
+      "author_is_bot": false,
+      "number": 173849
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T08:49:28+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171867"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171865:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T18:35:42+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171865"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171752:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T21:04:32+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171752"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171728:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173760
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:21:16+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171728"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171726:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173758
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T16:59:24+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171726"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171725:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "joostlek",
+      "author_is_bot": false,
+      "number": 178931
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T14:26:14+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171725"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171724:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173756
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T16:58:53+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171724"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171722:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173755
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:22:09+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171722"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171721:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173754
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T17:00:13+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171721"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171720:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173753
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:30:31+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171720"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171718:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173752
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T17:00:57+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171718"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171716:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173751
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:30:22+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171716"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171715:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173750
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T17:01:37+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171715"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171714:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173749
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T17:02:04+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171714"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171713:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173747
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T17:02:46+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171713"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171712:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173746
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:30:14+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171712"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171709:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173745
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:26:18+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171709"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171708:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "wlcrs",
+      "author_is_bot": false,
+      "number": 172705
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:21:28+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171708"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171703:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 172506
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:38:04+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171703"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171666:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T17:48:04+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171666"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171640:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T13:23:50+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171640"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171590:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T17:34:15+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171590"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171580:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173734
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T08:08:44+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171580"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171576:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173735
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T16:58:07+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171576"
+  },
+  {
+   "evidence_id": "issue:home-assistant/core#171574:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "frenck",
+      "author_is_bot": false,
+      "number": 173736
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T15:24:06+00:00",
+   "url": "https://github.com/home-assistant/core/issues/171574"
+  }
+ ],
+ "repo": "home-assistant/core",
+ "window": "post_t"
+}

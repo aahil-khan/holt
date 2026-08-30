@@ -1,0 +1,739 @@
+{
+ "captured_at": "2026-08-30T10:20:11.667661+00:00",
+ "content_sha256": "9a52ff50fbe32535c88155993282759518717e19e411ea3403d9253d8cd700ad",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#477:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T06:47:06+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/477"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#476:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vedant7007",
+      "author_is_bot": false,
+      "number": 484
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:50:59+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/476"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#475:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vedant7007",
+      "author_is_bot": false,
+      "number": 483
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:51:04+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/475"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#474:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vedant7007",
+      "author_is_bot": false,
+      "number": 482
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:51:11+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/474"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#473:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vedant7007",
+      "author_is_bot": false,
+      "number": 479
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:51:34+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/473"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#472:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vedant7007",
+      "author_is_bot": false,
+      "number": 478
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:51:42+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/472"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#470:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 502
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T09:33:04+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/470"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#469:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 488
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:50:27+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/469"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#468:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 487
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:50:33+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/468"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#467:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 486
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:50:44+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/467"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#466:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 485
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:50:51+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/466"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#465:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:22:52+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/465"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#464:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ArshiBansal",
+      "author_is_bot": false,
+      "number": 496
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T08:18:18+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/464"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#463:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dreynox",
+      "author_is_bot": false,
+      "number": 679
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T15:37:35+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/463"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#462:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "codewithakshyaaa",
+      "author_is_bot": false,
+      "number": 495
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:13:29+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/462"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#447:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "angelina-2206",
+      "author_is_bot": false,
+      "number": 597
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T18:59:20+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/447"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#431:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T16:22:57+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/431"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#418:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:22:27+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/418"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#417:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "angelina-2206",
+      "author_is_bot": false,
+      "number": 436
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:58:39+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/417"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#410:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "basantnema31",
+      "author_is_bot": false,
+      "number": 559
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T18:12:01+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/410"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#398:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshiikaa001",
+      "author_is_bot": false,
+      "number": 695
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T11:32:35+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/398"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#397:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "swarupio",
+      "author_is_bot": false,
+      "number": 698
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T01:36:53+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/397"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#396:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T14:29:39+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/396"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#347:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dreynox",
+      "author_is_bot": false,
+      "number": 673
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T14:48:24+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/347"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#346:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aryanm9026",
+      "author_is_bot": false,
+      "number": 776
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T16:10:31+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/346"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#344:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Dasmat13",
+      "author_is_bot": false,
+      "number": 819
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T14:52:19+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/344"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#337:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:04:56+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/337"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#334:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:22:40+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/334"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#333:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dreynox",
+      "author_is_bot": false,
+      "number": 668
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T11:13:40+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/333"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#331:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:23:05+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/331"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#321:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "madsysharma",
+      "author_is_bot": false,
+      "number": 731
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-05T05:56:11+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/321"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#320:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aaniya22",
+      "author_is_bot": false,
+      "number": 963
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T04:25:16+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/320"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#319:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "madsysharma",
+      "author_is_bot": false,
+      "number": 725
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T07:43:09+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/319"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#317:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T06:47:17+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/317"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#316:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Krish-Makadiya",
+      "author_is_bot": false,
+      "number": 562
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T03:26:01+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/316"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#315:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SathvikaSingoti",
+      "author_is_bot": false,
+      "number": 588
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T08:18:47+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/315"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#296:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T09:05:28+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/296"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#254:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T09:03:44+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/254"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#238:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "saurabhhhcodes",
+      "author_is_bot": false,
+      "number": 947
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T04:52:00+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/238"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#234:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:04:57+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/234"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#192:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mayannkkk19",
+      "author_is_bot": false,
+      "number": 456
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:51:51+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/192"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#184:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mayannkkk19",
+      "author_is_bot": false,
+      "number": 602
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T06:12:56+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/184"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#179:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sachin-mahato25",
+      "author_is_bot": false,
+      "number": 460
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:50:33+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/179"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#168:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "babligariya04-maker",
+      "author_is_bot": false,
+      "number": 716
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T19:06:45+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/168"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#167:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aaniya22",
+      "author_is_bot": false,
+      "number": 964
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T13:35:01+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/167"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#164:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "pooja-0206",
+      "author_is_bot": false,
+      "number": 684
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T17:32:05+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/164"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#70:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T06:47:21+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/70"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#68:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T08:14:12+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/68"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#38:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:57:59+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/38"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#28:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T06:47:14+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/28"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#27:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T06:57:20+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/27"
+  },
+  {
+   "evidence_id": "issue:knoxiboy/DoubtDesk#22:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "navyamittal2245",
+      "author_is_bot": false,
+      "number": 454
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:51:57+00:00",
+   "url": "https://github.com/knoxiboy/DoubtDesk/issues/22"
+  }
+ ],
+ "repo": "knoxiboy/DoubtDesk",
+ "window": "post_t"
+}

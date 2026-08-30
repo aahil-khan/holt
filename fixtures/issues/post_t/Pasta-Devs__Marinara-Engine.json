@@ -1,0 +1,139 @@
+{
+ "captured_at": "2026-08-30T10:10:00.954674+00:00",
+ "content_sha256": "a086cd160ca1e991e7efd1a58f830607a0537cc6997a1975e8b0bc7853cd792b",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1760:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T01:33:34+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1760"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1758:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:15:13+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1758"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1755:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:25:38+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1755"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1726:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:11:42+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1726"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1716:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:11:06+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1716"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1702:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T02:04:30+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1702"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1673:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:13:51+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1673"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1669:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T08:37:42+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1669"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1578:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:15:09+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1578"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1572:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:16:13+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1572"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1533:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:18:42+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1533"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1529:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T01:49:06+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1529"
+  },
+  {
+   "evidence_id": "issue:Pasta-Devs/Marinara-Engine#1528:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T01:48:46+00:00",
+   "url": "https://github.com/Pasta-Devs/Marinara-Engine/issues/1528"
+  }
+ ],
+ "repo": "Pasta-Devs/Marinara-Engine",
+ "window": "post_t"
+}

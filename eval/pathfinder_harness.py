@@ -1,0 +1,127 @@
+"""Score Path Finder against the comparators that could make it unnecessary.
+
+Precision at k, computed per repository and averaged. Never pooled: on pool 1
+one repository holds 71 of 114 realised entry points, and pooling would let it
+decide the result on its own.
+
+Comparators, all on the identical candidate set:
+
+  random        the base rate. Any ranking must beat picking blind.
+  recency       newest issue first. The obvious free heuristic.
+  good_first    GitHub's own beginner labels first. **The one that matters** --
+                Holt's whole premise is that existing signals do not tell a
+                contributor what they need, and if the label ties us here the
+                feature has no argument for existing.
+
+Run:  PYTHONPATH=. uv run python eval/pathfinder_harness.py [--replay]
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import statistics
+from pathlib import Path
+
+from eval.labels import pathfinder
+from holt.agent.signals import build_threads, compute
+from holt.agent.stages import find_paths
+from holt.evidence.fixtures import FixtureProvider
+from holt.model import OpenAIModel, ReplayModel, TRAJECTORY_DIR
+from holt.types import Window
+
+ISSUE_ROOT = Path("fixtures/issues")
+K = 3
+
+BEGINNER = ("good first issue", "good-first-issue", "beginner", "easy",
+            "starter", "first-timers-only", "help wanted", "e-easy")
+
+
+def is_beginner(record) -> bool:
+    return any(
+        any(b in label.lower() for b in BEGINNER)
+        for label in (record.payload.get("labels") or [])
+    )
+
+
+def precision_at_k(ranked_keys: list[str], hits: set[str], k: int = K) -> float | None:
+    top = ranked_keys[:k]
+    return (sum(1 for x in top if x in hits) / len(top)) if top else None
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--replay", action="store_true")
+    ap.add_argument("--pool", default="eval/pool.json")
+    ap.add_argument("--labels", default="eval/results_labels.json")
+    args = ap.parse_args()
+
+    ipre = FixtureProvider(Window.PRE_T, root=ISSUE_ROOT)
+    ipost = FixtureProvider(Window.POST_T, root=ISSUE_ROOT)
+    ppre = FixtureProvider(Window.PRE_T)
+
+    lab = json.loads(Path(args.labels).read_text())["l1"]
+    viable = {
+        s for s, r in lab.items()
+        if r["qualifying_merges"] >= 2 and r["distinct_qualifying_contributors"] >= 2
+    }
+    repos = [s for s in json.loads(Path(args.pool).read_text())["repos"] if s in viable]
+
+    scores = {"holt": [], "recency": [], "good_first": [], "random": []}
+    skipped_small = skipped_empty = 0
+    spend = 0.0
+    edited = candidates_total = 0
+
+    for slug in repos:
+        try:
+            pre_i, post_i, pre_p = ipre.fetch(slug), ipost.fetch(slug), ppre.fetch(slug)
+        except FileNotFoundError:
+            continue
+        truth = pathfinder.score(list(pre_i) + list(pre_p), post_i)
+        if not truth["scorable"]:
+            skipped_small += 1
+            continue
+        if truth["realised"] == 0:
+            skipped_empty += 1
+            continue
+
+        cand = pathfinder.candidates(pre_i)
+        hits = set(truth["realised_keys"])
+        edited += truth["edited_after_cutoff"]
+        candidates_total += truth["candidates"]
+
+        by_recent = sorted(cand.values(), key=lambda r: r.timestamp, reverse=True)
+        scores["recency"].append(precision_at_k([pathfinder.issue_key(r.evidence_id) for r in by_recent], hits))
+        by_label = [r for r in by_recent if is_beginner(r)] + [r for r in by_recent if not is_beginner(r)]
+        scores["good_first"].append(precision_at_k([pathfinder.issue_key(r.evidence_id) for r in by_label], hits))
+        scores["random"].append(truth["base_rate"])
+
+        path = TRAJECTORY_DIR / "pathfinder" / (slug.replace("/", "__") + ".jsonl")
+        model = ReplayModel(path) if args.replay else OpenAIModel(path)
+        sig = compute(build_threads(pre_p)).as_dict()
+        ranked = find_paths(slug, list(cand.values()),
+                            {k: sig[k] for k in ("outsider_merged", "outsider_threads",
+                                                 "median_first_response_hours")}, model)
+        keys = [pathfinder.issue_key(r["evidence_id"]) for r in ranked]
+        scores["holt"].append(precision_at_k(keys, hits))
+        spend += getattr(model.usage, "cost_usd", 0.0)
+        print(f"  {slug:<38} p@{K} holt={scores['holt'][-1]:.2f} "
+              f"gfi={scores['good_first'][-1]:.2f} recent={scores['recency'][-1]:.2f} "
+              f"base={truth['base_rate']:.2f}", flush=True)
+
+    n = len(scores["holt"])
+    print(f"\nprecision@{K}, mean over {n} scorable repositories")
+    print(f"(excluded: {skipped_small} under the 10-issue floor, "
+          f"{skipped_empty} with no realised entry point)\n")
+    for name in ("random", "recency", "good_first", "holt"):
+        vals = [v for v in scores[name] if v is not None]
+        if vals:
+            print(f"  {name:<12} {statistics.mean(vals):.3f}")
+    if candidates_total:
+        print(f"\nissue bodies edited after the cutoff: {edited}/{candidates_total} "
+              f"({100*edited/candidates_total:.1f}%) — the known leak, measured")
+    print(f"spend: ${spend:.3f}")
+
+
+if __name__ == "__main__":
+    main()

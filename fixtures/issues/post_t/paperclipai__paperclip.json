@@ -1,0 +1,516 @@
+{
+ "captured_at": "2026-08-30T10:21:24.928345+00:00",
+ "content_sha256": "711544b0e0d22c09ca1c5aa49e64fca1f5dc06a74a35a2ed3299f32beef66240",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:paperclipai/paperclip#7281:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "isak-ialogics",
+      "author_is_bot": false,
+      "number": 185
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T14:25:55+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/7281"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#7255:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T03:57:11+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/7255"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#7237:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T21:30:12+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/7237"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#7233:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T23:02:36+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/7233"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6913:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "isak-ialogics",
+      "author_is_bot": false,
+      "number": 32
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:55:46+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6913"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6798:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "isak-ialogics",
+      "author_is_bot": false,
+      "number": 30
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T22:41:50+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6798"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6797:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T21:30:38+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6797"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6784:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "le-czs",
+      "author_is_bot": false,
+      "number": 6786
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T17:22:19+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6784"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6717:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T21:31:15+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6717"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6715:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T20:49:38+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6715"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6686:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T21:32:48+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6686"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6672:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T03:55:47+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6672"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6647:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "qbamca",
+      "author_is_bot": false,
+      "number": 6648
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T03:52:41+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6647"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6630:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T01:15:46+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6630"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6625:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "isak-ialogics",
+      "author_is_bot": false,
+      "number": 5
+     },
+     {
+      "author": "serenakeyitan",
+      "author_is_bot": false,
+      "number": 4416
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T03:55:08+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6625"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6608:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:52:43+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6608"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6606:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T03:30:09+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6606"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6599:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "isak-ialogics",
+      "author_is_bot": false,
+      "number": 6
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T21:53:58+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6599"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6552:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T17:15:34+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6552"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6529:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "cryppadotta",
+      "author_is_bot": false,
+      "number": 9650
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T02:45:13+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6529"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6517:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T03:56:14+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6517"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6514:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ramon-nassa",
+      "author_is_bot": false,
+      "number": 5671
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T02:13:25+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6514"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6499:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T00:19:24+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6499"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6477:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:53:36+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6477"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6470:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "brandonburr",
+      "author_is_bot": false,
+      "number": 6469
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:52:55+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6470"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6415:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T17:56:56+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6415"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6406:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T04:00:34+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6406"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6391:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T00:19:35+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6391"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6389:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-29T22:49:57+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6389"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6347:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T22:58:41+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6347"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6344:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T19:38:36+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6344"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6281:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T17:15:24+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6281"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6264:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T20:18:19+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6264"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6233:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T18:44:13+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6233"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6215:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ramon-nassa",
+      "author_is_bot": false,
+      "number": 5671
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T02:13:25+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6215"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6195:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T14:35:19+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6195"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6189:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T22:36:36+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6189"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6072:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sunghere",
+      "author_is_bot": false,
+      "number": 5213
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-12T04:53:53+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6072"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6007:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T22:41:33+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6007"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#6002:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T04:23:15+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/6002"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#5987:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T16:21:15+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/5987"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#5974:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T21:55:50+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/5974"
+  },
+  {
+   "evidence_id": "issue:paperclipai/paperclip#5971:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T03:50:48+00:00",
+   "url": "https://github.com/paperclipai/paperclip/issues/5971"
+  }
+ ],
+ "repo": "paperclipai/paperclip",
+ "window": "post_t"
+}

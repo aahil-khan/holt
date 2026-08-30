@@ -1,0 +1,507 @@
+{
+ "captured_at": "2026-08-30T10:10:58.389361+00:00",
+ "content_sha256": "50ee2e9e820f2aeed6b06cb694c3e8eac2e47135f4ef0c012e8d6c6a0a261f3c",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#461:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 494
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T01:27:01+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/461"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#459:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 495
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T02:54:04+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/459"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#458:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T21:10:30+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/458"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#456:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "seilk",
+      "author_is_bot": false,
+      "number": 457
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:31:03+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/456"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#455:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 496
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T02:54:07+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/455"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#447:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sourrris",
+      "author_is_bot": false,
+      "number": 450
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T16:23:25+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/447"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#431:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SoulSniper-V2",
+      "author_is_bot": false,
+      "number": 449
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:31:21+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/431"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#430:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T16:33:58+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/430"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#426:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 466
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:26:20+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/426"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#403:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T19:14:55+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/403"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#401:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 482
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T03:14:44+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/401"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#394:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T02:32:23+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/394"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#393:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ElliotSlusky",
+      "author_is_bot": false,
+      "number": 579
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T20:59:04+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/393"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#390:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 480
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T02:31:06+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/390"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#388:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ElliotSlusky",
+      "author_is_bot": false,
+      "number": 617
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T21:18:10+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/388"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#380:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gilbert-barajas",
+      "author_is_bot": false,
+      "number": 493
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T23:59:49+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/380"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#378:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:12:13+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/378"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#356:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T00:00:24+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/356"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#342:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T20:26:13+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/342"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#337:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T23:12:44+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/337"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#335:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 545
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T01:21:58+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/335"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#329:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T00:00:27+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/329"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#298:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T15:40:31+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/298"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#297:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 465
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:26:14+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/297"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#276:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T02:32:22+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/276"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#266:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 471
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:25:16+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/266"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#263:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 529
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T21:10:11+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/263"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#252:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 469
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:17:35+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/252"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#251:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gilbert-barajas",
+      "author_is_bot": false,
+      "number": 542
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T23:13:35+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/251"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#250:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T15:40:21+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/250"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#228:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ElliotSlusky",
+      "author_is_bot": false,
+      "number": 581
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T02:12:08+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/228"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#225:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 467
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:57:47+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/225"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#220:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ElliotSlusky",
+      "author_is_bot": false,
+      "number": 587
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T23:11:34+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/220"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#219:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ElliotSlusky",
+      "author_is_bot": false,
+      "number": 618
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T00:37:22+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/219"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#218:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jonsaadfalcon",
+      "author_is_bot": false,
+      "number": 547
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T02:31:52+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/218"
+  },
+  {
+   "evidence_id": "issue:open-jarvis/OpenJarvis#195:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T02:32:20+00:00",
+   "url": "https://github.com/open-jarvis/OpenJarvis/issues/195"
+  }
+ ],
+ "repo": "open-jarvis/OpenJarvis",
+ "window": "post_t"
+}

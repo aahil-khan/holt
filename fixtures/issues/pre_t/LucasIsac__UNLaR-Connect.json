@@ -1,0 +1,34 @@
+{
+ "captured_at": "2026-08-30T10:18:30.681355+00:00",
+ "content_sha256": "4d00c00314e79da0466f8f0d3277093d84f34e9bdb10304303ee6cb8f2e93f2c",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:LucasIsac/UNLaR-Connect#1:opened",
+   "payload": {
+    "author": "leo01102",
+    "body": "Inicializar el proyecto Next.js 14 (App Router) en el repositorio y configurar Tailwind CSS con la paleta de colores premium y directrices del agente.",
+    "body_truncated": false,
+    "comments": 0,
+    "labels": [],
+    "last_edited_at": null,
+    "title": "Setup de Next.js 14, Tailwind CSS y estructura monol\u00edtica"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:20:59+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/issues/1"
+  },
+  {
+   "evidence_id": "issue:LucasIsac/UNLaR-Connect#1:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:27:14+00:00",
+   "url": "https://github.com/LucasIsac/UNLaR-Connect/issues/1"
+  }
+ ],
+ "repo": "LucasIsac/UNLaR-Connect",
+ "window": "pre_t"
+}

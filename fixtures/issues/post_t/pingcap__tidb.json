@@ -1,0 +1,813 @@
+{
+ "captured_at": "2026-08-30T10:21:33.938192+00:00",
+ "content_sha256": "569d9d65383f15b0132ba523bb6fba4ce3dd194ba90022f54983202f126b23e9",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:pingcap/tidb#68799:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ekexium",
+      "author_is_bot": false,
+      "number": 68779
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T11:21:30+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68799"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68773:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "time-and-fate",
+      "author_is_bot": false,
+      "number": 68772
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T02:43:08+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68773"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68770:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "panmuyun",
+      "author_is_bot": false,
+      "number": 68826
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T05:31:08+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68770"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68758:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "lance6716",
+      "author_is_bot": false,
+      "number": 68765
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T02:12:38+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68758"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68750:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T01:53:31+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68750"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68749:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T12:06:20+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68749"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68722:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "windtalker",
+      "author_is_bot": false,
+      "number": 69088
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T08:38:41+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68722"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68715:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ekexium",
+      "author_is_bot": false,
+      "number": 68720
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T01:49:53+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68715"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68682:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YangKeao",
+      "author_is_bot": false,
+      "number": 70343
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:43:55+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68682"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68660:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T05:48:23+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68660"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68659:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68665
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T02:54:42+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68659"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68653:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vuphamwa-del",
+      "author_is_bot": false,
+      "number": 68652
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:24:32+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68653"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68638:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 69370
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T08:07:56+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68638"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68633:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "King-Dylan",
+      "author_is_bot": false,
+      "number": 68685
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T13:43:12+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68633"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68583:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T06:23:12+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68583"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68550:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "natori-hrj",
+      "author_is_bot": false,
+      "number": 68697
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T09:43:10+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68550"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68545:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "solotzg",
+      "author_is_bot": false,
+      "number": 69049
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T08:05:37+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68545"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68527:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T08:33:19+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68527"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68461:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T12:40:54+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68461"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68452:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "qw4990",
+      "author_is_bot": false,
+      "number": 68961
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T16:27:35+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68452"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68448:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 69209
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T09:19:49+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68448"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68411:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Leavrth",
+      "author_is_bot": false,
+      "number": 68412
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T09:39:50+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68411"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68375:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68669
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:00:56+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68375"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68365:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68679
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T12:12:54+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68365"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68352:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "lcwangchao",
+      "author_is_bot": false,
+      "number": 69091
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T03:43:08+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68352"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68316:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T02:22:33+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68316"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68288:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 69226
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T10:05:33+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68288"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68272:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68791
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T13:44:06+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68272"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68271:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68793
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T13:44:14+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68271"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68270:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68794
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T09:25:42+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68270"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68266:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68798
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T02:42:11+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68266"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68260:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68800
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T19:41:50+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68260"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68258:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68801
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T13:49:50+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68258"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68254:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68804
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T10:01:05+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68254"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68253:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68806
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T09:25:49+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68253"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68240:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T07:33:41+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68240"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68239:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68809
+     },
+     {
+      "author": "wuhuizuo",
+      "author_is_bot": false,
+      "number": 4724
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T06:01:24+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68239"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68213:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68811
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T07:59:12+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68213"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68211:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T09:02:49+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68211"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68210:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68814
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T14:23:18+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68210"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68204:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 69275
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T03:00:27+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68204"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68192:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68900
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T03:01:24+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68192"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68179:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yongman",
+      "author_is_bot": false,
+      "number": 67935
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:30:41+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68179"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68171:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Leavrth",
+      "author_is_bot": false,
+      "number": 68170
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T05:36:32+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68171"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68167:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 69251
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T04:02:46+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68167"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68164:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "zimulala",
+      "author_is_bot": false,
+      "number": 68303
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T11:09:39+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68164"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68118:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "disksing",
+      "author_is_bot": false,
+      "number": 68119
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:01:45+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68118"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68101:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 68106
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T13:04:08+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68101"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68090:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "JmPotato",
+      "author_is_bot": false,
+      "number": 68091
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T05:20:22+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68090"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68085:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YuhaoZhang00",
+      "author_is_bot": false,
+      "number": 67941
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T11:15:15+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68085"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#68012:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "wshwsh12",
+      "author_is_bot": false,
+      "number": 68949
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T09:23:54+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/68012"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#67946:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "flaky-claw",
+      "author_is_bot": false,
+      "number": 69262
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-25T09:09:42+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/67946"
+  },
+  {
+   "evidence_id": "issue:pingcap/tidb#67923:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "OliverS929",
+      "author_is_bot": false,
+      "number": 69330
+     },
+     {
+      "author": "OliverS929",
+      "author_is_bot": false,
+      "number": 69628
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T04:23:37+00:00",
+   "url": "https://github.com/pingcap/tidb/issues/67923"
+  }
+ ],
+ "repo": "pingcap/tidb",
+ "window": "post_t"
+}

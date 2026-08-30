@@ -1,0 +1,19 @@
+{
+ "captured_at": "2026-08-30T10:20:02.728251+00:00",
+ "content_sha256": "e88500b00e4590d2c24880303b51cd6a328b4970fe39ff0458f9db6c10117d91",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:jasoncarreira/mimir#376:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:27:36+00:00",
+   "url": "https://github.com/jasoncarreira/mimir/issues/376"
+  }
+ ],
+ "repo": "jasoncarreira/mimir",
+ "window": "post_t"
+}

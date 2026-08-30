@@ -1,0 +1,535 @@
+{
+ "captured_at": "2026-08-30T10:11:29.725878+00:00",
+ "content_sha256": "c9675a4efdc984cc0c99ae3e765b1ff813af4083304dc0554852330b4b8cef4d",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:utksh1/SecuScan#452:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "eshaanag",
+      "author_is_bot": false,
+      "number": 454
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:40:18+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/452"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#446:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 450
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:57:55+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/446"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#445:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 449
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:20:22+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/445"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#444:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:40+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/444"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#438:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "upasana-2006",
+      "author_is_bot": false,
+      "number": 439
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:54:56+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/438"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#425:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DeepeshKafalatiya",
+      "author_is_bot": false,
+      "number": 457
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:30:52+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/425"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#424:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "madsysharma",
+      "author_is_bot": false,
+      "number": 455
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:16:33+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/424"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#423:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DeepeshKafalatiya",
+      "author_is_bot": false,
+      "number": 456
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:46:54+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/423"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#413:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:42+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/413"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#402:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 593
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T03:13:57+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/402"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#401:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "smirk-dev",
+      "author_is_bot": false,
+      "number": 484
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T08:06:24+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/401"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#380:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:11:38+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/380"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#372:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T17:38:00+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/372"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#371:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T10:20:20+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/371"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#328:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:45+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/328"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#311:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 331
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:39:36+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/311"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#303:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T17:54:55+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/303"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#302:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T17:54:35+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/302"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#276:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T07:43:39+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/276"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#250:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 1455
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T05:53:25+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/250"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#245:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Aditi-24-05",
+      "author_is_bot": false,
+      "number": 364
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:57:25+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/245"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#243:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "divyansha12",
+      "author_is_bot": false,
+      "number": 274
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:04:24+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/243"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#235:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "khat190",
+      "author_is_bot": false,
+      "number": 403
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:01:09+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/235"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#234:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "khat190",
+      "author_is_bot": false,
+      "number": 488
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:57:56+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/234"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#225:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 604
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T21:02:41+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/225"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#222:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:47+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/222"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#216:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 602
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:51:24+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/216"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#213:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "deepsikha-dash",
+      "author_is_bot": false,
+      "number": 1984
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T19:36:43+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/213"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#212:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T10:54:12+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/212"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#211:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 384
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T21:09:41+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/211"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#209:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 382
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:37:49+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/209"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#206:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 369
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:28:16+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/206"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#205:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 368
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:33:44+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/205"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#199:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 278
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T18:52:36+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/199"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#107:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SaumyaT-21",
+      "author_is_bot": false,
+      "number": 275
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T14:48:38+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/107"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#35:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 1990
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T19:36:31+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/35"
+  },
+  {
+   "evidence_id": "issue:utksh1/SecuScan#36:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pragati5-DEBUG",
+      "author_is_bot": false,
+      "number": 486
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T07:56:38+00:00",
+   "url": "https://github.com/utksh1/SecuScan/issues/36"
+  }
+ ],
+ "repo": "utksh1/SecuScan",
+ "window": "post_t"
+}

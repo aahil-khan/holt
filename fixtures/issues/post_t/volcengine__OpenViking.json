@@ -1,0 +1,329 @@
+{
+ "captured_at": "2026-08-30T10:11:48.847329+00:00",
+ "content_sha256": "190b8e56f73e70aba87d31791577fb2c48e2cb4c7a7c3eccfa99617cc80657e7",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:volcengine/OpenViking#2330:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "huangruiteng",
+      "author_is_bot": false,
+      "number": 3231
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T03:51:36+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/2330"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#2294:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T13:41:12+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/2294"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#2273:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T07:01:56+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/2273"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#2118:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T06:51:10+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/2118"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#2015:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T12:24:15+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/2015"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1951:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T17:04:28+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1951"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1942:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "t0saki",
+      "author_is_bot": false,
+      "number": 3099
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-09T09:53:37+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1942"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1713:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T03:16:05+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1713"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1706:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T09:47:28+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1706"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1705:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T03:15:56+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1705"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1694:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "qin-ctx",
+      "author_is_bot": false,
+      "number": 3254
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T08:01:18+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1694"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1682:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T13:47:58+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1682"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1662:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T06:54:18+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1662"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1581:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T09:53:02+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1581"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1550:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T06:50:07+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1550"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1549:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T03:15:59+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1549"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1414:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T03:09:34+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1414"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1387:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yeyitech",
+      "author_is_bot": false,
+      "number": 2640
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T17:32:24+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1387"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1381:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T13:34:06+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1381"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1251:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-24T03:56:44+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1251"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1172:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T13:47:54+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1172"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1092:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T12:20:08+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1092"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1082:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yeyitech",
+      "author_is_bot": false,
+      "number": 1519
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T09:47:29+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1082"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1073:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T09:47:30+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1073"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1066:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T09:47:29+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1066"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#1047:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T12:13:11+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/1047"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#989:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T08:21:35+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/989"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#969:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T06:28:48+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/969"
+  },
+  {
+   "evidence_id": "issue:volcengine/OpenViking#911:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:19:53+00:00",
+   "url": "https://github.com/volcengine/OpenViking/issues/911"
+  }
+ ],
+ "repo": "volcengine/OpenViking",
+ "window": "post_t"
+}

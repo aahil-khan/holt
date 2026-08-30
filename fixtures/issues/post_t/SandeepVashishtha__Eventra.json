@@ -1,0 +1,1365 @@
+{
+ "captured_at": "2026-08-30T10:18:57.335355+00:00",
+ "content_sha256": "51004b09fe125a6d31081f1b426bae5b1438ebabf0eefe9c09e09ad64f99eb5d",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5169:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nancysangani",
+      "author_is_bot": false,
+      "number": 7222
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T14:17:40+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5169"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5166:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ABHImaybeJEET",
+      "author_is_bot": false,
+      "number": 5812
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:46:06+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5166"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5164:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Srushti-Kamble14",
+      "author_is_bot": false,
+      "number": 5205
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:35:56+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5164"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5163:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Srushti-Kamble14",
+      "author_is_bot": false,
+      "number": 5201
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:34:40+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5163"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5162:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Srushti-Kamble14",
+      "author_is_bot": false,
+      "number": 5197
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:34:12+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5162"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5161:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Srushti-Kamble14",
+      "author_is_bot": false,
+      "number": 5195
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:34:00+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5161"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5160:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Srushti-Kamble14",
+      "author_is_bot": false,
+      "number": 5192
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:33:29+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5160"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5157:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilmodi29",
+      "author_is_bot": false,
+      "number": 5158
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:42:19+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5157"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5155:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilmodi29",
+      "author_is_bot": false,
+      "number": 5156
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:43:15+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5155"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5152:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilmodi29",
+      "author_is_bot": false,
+      "number": 5153
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:43:07+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5152"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5149:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilmodi29",
+      "author_is_bot": false,
+      "number": 5150
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:42:59+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5149"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5147:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilmodi29",
+      "author_is_bot": false,
+      "number": 5148
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:42:41+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5147"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5139:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 16796
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T10:04:18+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5139"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5137:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 16541
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T09:22:03+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5137"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5136:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 16488
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T09:21:43+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5136"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5135:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 16785
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T10:00:48+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5135"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5134:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 16801
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T10:13:02+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5134"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5133:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Rakshak05",
+      "author_is_bot": false,
+      "number": 16788
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T10:01:49+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5133"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5130:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aarushlohit",
+      "author_is_bot": false,
+      "number": 5206
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:36:13+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5130"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5129:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aarushlohit",
+      "author_is_bot": false,
+      "number": 5204
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:35:41+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5129"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5128:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aarushlohit",
+      "author_is_bot": false,
+      "number": 5203
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:35:27+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5128"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5091:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AnushKamble",
+      "author_is_bot": false,
+      "number": 5107
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:32:13+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5091"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5086:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kanwar05",
+      "author_is_bot": false,
+      "number": 5202
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:12:42+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5086"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5082:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5185
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:56:18+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5082"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5080:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5191
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:33:01+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5080"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5079:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5198
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:34:30+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5079"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5078:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5211
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:38:35+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5078"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5077:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nancysangani",
+      "author_is_bot": false,
+      "number": 7211
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:31:07+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5077"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5070:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5218
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:40:16+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5070"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5067:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5223
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:44:33+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5067"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5066:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5224
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:44:42+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5066"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5065:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5228
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:45:25+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5065"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5064:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5238
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:47:36+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5064"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5061:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gTanusri",
+      "author_is_bot": false,
+      "number": 8082
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T16:30:23+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5061"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5060:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5261
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T11:50:28+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5060"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5059:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anuragbraveboy-sudo",
+      "author_is_bot": false,
+      "number": 5267
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:17:10+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5059"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5058:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "thakurakanksha288",
+      "author_is_bot": false,
+      "number": 8134
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T01:41:27+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5058"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5042:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 10877
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T16:36:31+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5042"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5041:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 10876
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T07:04:57+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5041"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5015:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T09:54:30+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5015"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5012:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 7375
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:03:02+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5012"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5011:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 7373
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:49:30+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5011"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5009:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 7368
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:19:41+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5009"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5008:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 7364
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:42:52+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5008"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#5006:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 7258
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:36:51+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/5006"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4977:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SuhridXSingh",
+      "author_is_bot": false,
+      "number": 5013
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:04:08+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4977"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4976:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SuhridXSingh",
+      "author_is_bot": false,
+      "number": 5005
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:03:57+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4976"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4974:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SuhridXSingh",
+      "author_is_bot": false,
+      "number": 5004
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:03:51+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4974"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4972:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SuhridXSingh",
+      "author_is_bot": false,
+      "number": 5003
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:03:36+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4972"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4969:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SuhridXSingh",
+      "author_is_bot": false,
+      "number": 4998
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:03:38+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4969"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4968:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SuhridXSingh",
+      "author_is_bot": false,
+      "number": 4994
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:03:39+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4968"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4954:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T17:42:48+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4954"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4950:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 4965
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:21:50+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4950"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4949:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 4963
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:27:40+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4949"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4948:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Prateek2007-cmd",
+      "author_is_bot": false,
+      "number": 4962
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:27:31+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4948"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4910:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 10875
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T07:05:05+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4910"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4849:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T06:29:40+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4849"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4806:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "eshaanag",
+      "author_is_bot": false,
+      "number": 7226
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T14:16:04+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4806"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4801:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YAXH64",
+      "author_is_bot": false,
+      "number": 5937
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T19:04:49+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4801"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4800:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YAXH64",
+      "author_is_bot": false,
+      "number": 7057
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:07:55+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4800"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4798:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YAXH64",
+      "author_is_bot": false,
+      "number": 5815
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:46:15+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4798"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4794:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nisha-bugalia",
+      "author_is_bot": false,
+      "number": 5074
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:03:16+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4794"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4790:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YAXH64",
+      "author_is_bot": false,
+      "number": 5803
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T18:45:01+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4790"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4787:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pcmhacker-piro",
+      "author_is_bot": false,
+      "number": 4835
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:48:50+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4787"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4785:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T18:27:05+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4785"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4764:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "keerthanakh89",
+      "author_is_bot": false,
+      "number": 4767
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:29:52+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4764"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4763:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "VEDIKAGULWANI",
+      "author_is_bot": false,
+      "number": 4769
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:38:22+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4763"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4761:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "VEDIKAGULWANI",
+      "author_is_bot": false,
+      "number": 4766
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:38:44+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4761"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4696:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T04:38:29+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4696"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4691:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pratyush-Panda-2006",
+      "author_is_bot": false,
+      "number": 7962
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-09T17:04:23+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4691"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4672:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilmodi29",
+      "author_is_bot": false,
+      "number": 4675
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T16:36:20+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4672"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4669:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "akhilmodi29",
+      "author_is_bot": false,
+      "number": 4670
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T16:36:10+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4669"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4658:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T13:01:35+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4658"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4657:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T16:27:41+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4657"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4656:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T13:01:37+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4656"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4643:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "gowthamrdyy",
+      "author_is_bot": false,
+      "number": 4649
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T03:20:07+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4643"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4642:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AnushKamble",
+      "author_is_bot": false,
+      "number": 5570
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T10:13:09+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4642"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4641:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T16:27:41+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4641"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4640:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T16:27:42+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4640"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4633:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Premshaw23",
+      "author_is_bot": false,
+      "number": 4634
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T16:06:43+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4633"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4631:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Premshaw23",
+      "author_is_bot": false,
+      "number": 4632
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T16:22:35+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4631"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4605:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 10874
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T07:05:52+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4605"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4604:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 10873
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T16:35:48+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4604"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4603:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ionfwsrijan",
+      "author_is_bot": false,
+      "number": 10872
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T16:42:38+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4603"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4597:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AnushKamble",
+      "author_is_bot": false,
+      "number": 5569
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T10:12:57+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4597"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4596:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nancysangani",
+      "author_is_bot": false,
+      "number": 7213
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-04T11:01:14+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4596"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4595:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T16:27:42+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4595"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4594:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T13:02:09+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4594"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4577:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T10:50:46+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4577"
+  },
+  {
+   "evidence_id": "issue:SandeepVashishtha/Eventra#4571:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T10:48:45+00:00",
+   "url": "https://github.com/SandeepVashishtha/Eventra/issues/4571"
+  }
+ ],
+ "repo": "SandeepVashishtha/Eventra",
+ "window": "post_t"
+}

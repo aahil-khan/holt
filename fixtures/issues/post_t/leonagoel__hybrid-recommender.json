@@ -1,0 +1,952 @@
+{
+ "captured_at": "2026-08-30T10:20:31.273946+00:00",
+ "content_sha256": "eeeec1e44f667513cbbba9301486559f066ca906ec4581cdb0e3ec1f0dd5b4c6",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#972:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nek1912",
+      "author_is_bot": false,
+      "number": 1041
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:44:34+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/972"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#950:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "taraanabhavnani",
+      "author_is_bot": false,
+      "number": 1016
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T12:51:14+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/950"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#948:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Aarushiprajapati",
+      "author_is_bot": false,
+      "number": 984
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:29:46+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/948"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#947:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Aarushiprajapati",
+      "author_is_bot": false,
+      "number": 983
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:29:07+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/947"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#946:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "shubhamjrd4559-sudo",
+      "author_is_bot": false,
+      "number": 985
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:30:29+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/946"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#945:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nek1912",
+      "author_is_bot": false,
+      "number": 1040
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:34:00+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/945"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#932:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T09:02:24+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/932"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#931:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T09:01:33+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/931"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#930:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T09:02:11+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/930"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#929:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ridanshi",
+      "author_is_bot": false,
+      "number": 1268
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:46:03+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/929"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#928:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ridanshi",
+      "author_is_bot": false,
+      "number": 1269
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:47:44+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/928"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#927:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ridanshi",
+      "author_is_bot": false,
+      "number": 1270
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:48:11+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/927"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#926:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ridanshi",
+      "author_is_bot": false,
+      "number": 1271
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:49:37+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/926"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#925:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Ridanshi",
+      "author_is_bot": false,
+      "number": 1272
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:50:39+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/925"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#924:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1313
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T18:12:13+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/924"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#923:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1035
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:37:30+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/923"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#922:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1308
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:49:26+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/922"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#921:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1034
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:34:35+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/921"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#920:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1255
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:38:19+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/920"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#919:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1236
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:31:41+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/919"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#918:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1242
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:34:12+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/918"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#917:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 1243
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:35:36+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/917"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#916:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "eshaanag",
+      "author_is_bot": false,
+      "number": 1124
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T05:53:34+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/916"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#915:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "eshaanag",
+      "author_is_bot": false,
+      "number": 1126
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T05:54:01+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/915"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#914:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nancy-verma780",
+      "author_is_bot": false,
+      "number": 1420
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T17:47:06+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/914"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#905:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "siddharth277",
+      "author_is_bot": false,
+      "number": 1013
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:54:54+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/905"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#902:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "siddharth277",
+      "author_is_bot": false,
+      "number": 1011
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:53:38+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/902"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#900:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "siddharth277",
+      "author_is_bot": false,
+      "number": 1008
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:50:00+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/900"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#898:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "siddharth277",
+      "author_is_bot": false,
+      "number": 1006
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T07:47:47+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/898"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#895:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "basantnema31",
+      "author_is_bot": false,
+      "number": 1107
+     },
+     {
+      "author": "basantnema31",
+      "author_is_bot": false,
+      "number": 1108
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T15:52:43+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/895"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#894:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "basantnema31",
+      "author_is_bot": false,
+      "number": 1109
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T16:00:08+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/894"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#893:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "basantnema31",
+      "author_is_bot": false,
+      "number": 1110
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T14:50:10+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/893"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#891:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "koushik-gupta",
+      "author_is_bot": false,
+      "number": 1326
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T16:35:06+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/891"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#890:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Asritha11111",
+      "author_is_bot": false,
+      "number": 1264
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:44:08+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/890"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#889:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nancy-verma780",
+      "author_is_bot": false,
+      "number": 1419
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T17:45:27+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/889"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#888:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nancy-verma780",
+      "author_is_bot": false,
+      "number": 1421
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T17:55:53+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/888"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#887:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "koushik-gupta",
+      "author_is_bot": false,
+      "number": 1669
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T06:57:21+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/887"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#876:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "siddharth277",
+      "author_is_bot": false,
+      "number": 1015
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T07:09:02+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/876"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#875:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Kokila-chandrakar",
+      "author_is_bot": false,
+      "number": 1046
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:50:24+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/875"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#873:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "siddharth277",
+      "author_is_bot": false,
+      "number": 1017
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T12:51:53+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/873"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#862:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Premshaw23",
+      "author_is_bot": false,
+      "number": 1020
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:01:06+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/862"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#860:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Premshaw23",
+      "author_is_bot": false,
+      "number": 1021
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T13:05:30+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/860"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#858:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:54:01+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/858"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#856:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:54:09+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/856"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#854:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:54:15+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/854"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#852:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:54:20+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/852"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#850:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:54:27+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/850"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#848:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:54:33+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/848"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#846:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T08:54:38+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/846"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#824:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "sanrishi",
+      "author_is_bot": false,
+      "number": 825
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:19:30+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/824"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#681:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T13:31:21+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/681"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#621:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:37+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/621"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#620:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:37+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/620"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#619:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:36+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/619"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#618:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vbarik317-droid",
+      "author_is_bot": false,
+      "number": 1299
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T15:32:20+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/618"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#617:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:36+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/617"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#558:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:36+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/558"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#557:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:35+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/557"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#556:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:35+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/556"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#555:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:35+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/555"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#553:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:35+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/553"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#552:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:34+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/552"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#551:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:34+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/551"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#548:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:34+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/548"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#547:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T17:41:33+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/547"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#397:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "PrishaNagpal",
+      "author_is_bot": false,
+      "number": 1257
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:39:07+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/397"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#392:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "PrishaNagpal",
+      "author_is_bot": false,
+      "number": 1254
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T17:37:54+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/392"
+  },
+  {
+   "evidence_id": "issue:leonagoel/hybrid-recommender#358:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T07:05:28+00:00",
+   "url": "https://github.com/leonagoel/hybrid-recommender/issues/358"
+  }
+ ],
+ "repo": "leonagoel/hybrid-recommender",
+ "window": "post_t"
+}

@@ -1,0 +1,1250 @@
+{
+ "captured_at": "2026-08-30T10:18:29.990384+00:00",
+ "content_sha256": "2fca01dfddcc96e82764518d6e95d5761916db51c2122f2d93cb69b638866743",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2202:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mahi-8758",
+      "author_is_bot": false,
+      "number": 2464
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:12:23+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2202"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2201:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ArnavJoshi6391",
+      "author_is_bot": false,
+      "number": 2203
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:43:51+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2201"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2200:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:29:46+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2200"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2192:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "KaparthyReddy",
+      "author_is_bot": false,
+      "number": 2213
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:42:35+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2192"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2185:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nishtha-agarwal-211",
+      "author_is_bot": false,
+      "number": 2423
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:46:31+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2185"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2183:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nishtha-agarwal-211",
+      "author_is_bot": false,
+      "number": 2188
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:44:12+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2183"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2182:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T04:34:53+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2182"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2178:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "darshiB27",
+      "author_is_bot": false,
+      "number": 2403
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:59:37+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2178"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2170:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:33:52+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2170"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2165:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Nilamma19",
+      "author_is_bot": false,
+      "number": 2381
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:01:53+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2165"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2158:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chavanGaneshDatta",
+      "author_is_bot": false,
+      "number": 2209
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:43:14+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2158"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2143:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Thacker-Meet",
+      "author_is_bot": false,
+      "number": 3085
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T11:06:05+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2143"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2140:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nyxsky404",
+      "author_is_bot": false,
+      "number": 2147
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T07:29:48+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2140"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2128:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "iammissmiller",
+      "author_is_bot": false,
+      "number": 3419
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T04:12:36+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2128"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2113:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pranav-IIITM",
+      "author_is_bot": false,
+      "number": 3219
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T04:32:49+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2113"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2110:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pranav-IIITM",
+      "author_is_bot": false,
+      "number": 3216
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T11:02:38+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2110"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2109:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pranav-IIITM",
+      "author_is_bot": false,
+      "number": 3174
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T16:08:36+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2109"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2107:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pranav-IIITM",
+      "author_is_bot": false,
+      "number": 3165
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:02:05+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2107"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2106:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pranav-IIITM",
+      "author_is_bot": false,
+      "number": 2150
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:45:25+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2106"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2104:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pranav-IIITM",
+      "author_is_bot": false,
+      "number": 2145
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:43:44+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2104"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2102:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "thakurakanksha288",
+      "author_is_bot": false,
+      "number": 3627
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T07:40:53+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2102"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2098:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "shambhushekharsinha-engg",
+      "author_is_bot": false,
+      "number": 5934
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-20T18:18:24+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2098"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2095:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "shambhushekharsinha-engg",
+      "author_is_bot": false,
+      "number": 5850
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T08:18:00+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2095"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2094:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "shambhushekharsinha-engg",
+      "author_is_bot": false,
+      "number": 5846
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T13:37:35+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2094"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2085:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "devanshyadav0001",
+      "author_is_bot": false,
+      "number": 2123
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T18:37:59+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2085"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2081:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T07:23:22+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2081"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2071:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T18:39:23+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2071"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2069:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T18:22:53+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2069"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2046:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vipul674",
+      "author_is_bot": false,
+      "number": 2045
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:48:06+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2046"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2032:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Adityarane012",
+      "author_is_bot": false,
+      "number": 2180
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:43:00+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2032"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2018:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T16:28:04+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2018"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#2017:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "AnushKamble",
+      "author_is_bot": false,
+      "number": 2022
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:14:55+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/2017"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1987:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "riddhima25bet10005-a11y",
+      "author_is_bot": false,
+      "number": 1997
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:50:23+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1987"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1983:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "riddhima25bet10005-a11y",
+      "author_is_bot": false,
+      "number": 1996
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T00:31:56+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1983"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1980:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshika1179",
+      "author_is_bot": false,
+      "number": 2155
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:44:52+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1980"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1978:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:57:13+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1978"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1975:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:54:52+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1975"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1962:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pcmhacker-piro",
+      "author_is_bot": false,
+      "number": 1974
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:39:36+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1962"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1879:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "vbarik317-droid",
+      "author_is_bot": false,
+      "number": 2196
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T11:15:13+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1879"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1875:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "poonam072",
+      "author_is_bot": false,
+      "number": 4900
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T10:00:32+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1875"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1856:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "krishpatel2-prog",
+      "author_is_bot": false,
+      "number": 2076
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:46:31+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1856"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1798:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "imposterbharathkumarburugu15-cpu",
+      "author_is_bot": false,
+      "number": 1880
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:55:17+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1798"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1797:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "REHAN-503",
+      "author_is_bot": false,
+      "number": 3720
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T18:36:07+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1797"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1793:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "meetparmar392005",
+      "author_is_bot": false,
+      "number": 1825
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T11:16:18+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1793"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1792:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ScarsAndSource",
+      "author_is_bot": false,
+      "number": 3357
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T10:30:44+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1792"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1760:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "armanpanigrahi59",
+      "author_is_bot": false,
+      "number": 8608
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T16:32:32+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1760"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1728:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T18:32:45+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1728"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1717:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "chetisha28",
+      "author_is_bot": false,
+      "number": 2064
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:47:15+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1717"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1677:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "zairahussain27",
+      "author_is_bot": false,
+      "number": 1718
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T22:00:48+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1677"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1604:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Suyash2527",
+      "author_is_bot": false,
+      "number": 2380
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:02:12+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1604"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1587:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aaniya22",
+      "author_is_bot": false,
+      "number": 4095
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T07:32:00+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1587"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1586:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "parneetbrar234-svg",
+      "author_is_bot": false,
+      "number": 2030
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:49:37+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1586"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1585:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Vishvadharman",
+      "author_is_bot": false,
+      "number": 3820
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T09:04:55+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1585"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1584:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Apurva-Lakhe",
+      "author_is_bot": false,
+      "number": 3938
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T08:22:02+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1584"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1579:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "(ghost)",
+      "author_is_bot": false,
+      "number": 5775
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T19:00:59+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1579"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1577:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "(ghost)",
+      "author_is_bot": false,
+      "number": 5804
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T03:44:24+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1577"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1576:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "tamilr0727-ux",
+      "author_is_bot": false,
+      "number": 2241
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:08:44+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1576"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1571:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "tamilr0727-ux",
+      "author_is_bot": false,
+      "number": 2229
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:26:14+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1571"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1566:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "REHAN-503",
+      "author_is_bot": false,
+      "number": 3931
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T08:06:19+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1566"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1565:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "REHAN-503",
+      "author_is_bot": false,
+      "number": 3993
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:50:18+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1565"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1562:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "shrutisd739",
+      "author_is_bot": false,
+      "number": 4790
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T17:40:41+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1562"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1548:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "mayank200529",
+      "author_is_bot": false,
+      "number": 4094
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T07:32:11+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1548"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1545:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ARPANPATRA111",
+      "author_is_bot": false,
+      "number": 4713
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T16:10:36+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1545"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1538:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "imuniqueshiv",
+      "author_is_bot": false,
+      "number": 4104
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T07:30:59+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1538"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1536:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mohammedsami001",
+      "author_is_bot": false,
+      "number": 3984
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T07:37:37+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1536"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1534:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ARPANPATRA111",
+      "author_is_bot": false,
+      "number": 5940
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T16:08:14+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1534"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1533:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Vishvadharman",
+      "author_is_bot": false,
+      "number": 4041
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T07:36:00+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1533"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1532:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "purvasatav",
+      "author_is_bot": false,
+      "number": 3899
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T17:41:10+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1532"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1531:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ARPANPATRA111",
+      "author_is_bot": false,
+      "number": 4712
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T16:10:50+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1531"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1529:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YerraguntaAjayKumar",
+      "author_is_bot": false,
+      "number": 3147
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T15:10:42+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1529"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1527:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "REHAN-503",
+      "author_is_bot": false,
+      "number": 4006
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:49:20+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1527"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1526:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ShafinNigamana",
+      "author_is_bot": false,
+      "number": 4023
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T17:46:48+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1526"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1525:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "realtushartyagi",
+      "author_is_bot": false,
+      "number": 5840
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T03:39:55+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1525"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1520:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Mohammedsami001",
+      "author_is_bot": false,
+      "number": 2415
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T21:45:34+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1520"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1519:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Luffy-456",
+      "author_is_bot": false,
+      "number": 2235
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T09:42:06+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1519"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1518:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ARPANPATRA111",
+      "author_is_bot": false,
+      "number": 4711
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T16:11:06+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1518"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1517:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "RavindiFernando",
+      "author_is_bot": false,
+      "number": 5763
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T19:02:41+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1517"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1514:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Apurva-Lakhe",
+      "author_is_bot": false,
+      "number": 1943
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T10:52:53+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1514"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1510:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "tamoghnodeb",
+      "author_is_bot": false,
+      "number": 1885
+     },
+     {
+      "author": "tamoghnodeb",
+      "author_is_bot": false,
+      "number": 2418
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T11:14:27+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1510"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1509:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "YerraguntaAjayKumar",
+      "author_is_bot": false,
+      "number": 3291
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T10:44:16+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1509"
+  },
+  {
+   "evidence_id": "issue:JhaSourav07/commitpulse#1508:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "kanishka-2007-tech",
+      "author_is_bot": false,
+      "number": 3973
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T07:38:24+00:00",
+   "url": "https://github.com/JhaSourav07/commitpulse/issues/1508"
+  }
+ ],
+ "repo": "JhaSourav07/commitpulse",
+ "window": "post_t"
+}

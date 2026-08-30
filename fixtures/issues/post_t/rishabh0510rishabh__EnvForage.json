@@ -1,0 +1,691 @@
+{
+ "captured_at": "2026-08-30T10:21:50.570798+00:00",
+ "content_sha256": "03171b35c79022847aa056b0cbd429fa07c56705fe1bb33b63d28c2ba3a2bb7c",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#451:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T10:19:26+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/451"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#448:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "angelina-2206",
+      "author_is_bot": false,
+      "number": 1041
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T16:08:14+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/448"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#447:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "angelina-2206",
+      "author_is_bot": false,
+      "number": 471
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:58:22+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/447"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#446:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "angelina-2206",
+      "author_is_bot": false,
+      "number": 468
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T06:47:42+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/446"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#440:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pantkartik",
+      "author_is_bot": false,
+      "number": 585
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:56:54+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/440"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#439:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "madsysharma",
+      "author_is_bot": false,
+      "number": 470
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:47:30+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/439"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#438:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 458
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:18:07+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/438"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#437:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 457
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:12:34+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/437"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#436:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "anshul23102",
+      "author_is_bot": false,
+      "number": 456
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:08:38+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/436"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#435:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "paripnj",
+      "author_is_bot": false,
+      "number": 469
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:45:27+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/435"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#432:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ABHImaybeJEET",
+      "author_is_bot": false,
+      "number": 455
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T07:13:27+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/432"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#411:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "dhanasai2",
+      "author_is_bot": false,
+      "number": 461
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T08:56:51+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/411"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#392:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "paripnj",
+      "author_is_bot": false,
+      "number": 434
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:05:40+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/392"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#391:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jhnavi25",
+      "author_is_bot": false,
+      "number": 453
+     },
+     {
+      "author": "jhnavi25",
+      "author_is_bot": false,
+      "number": 486
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:26:34+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/391"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#390:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "knoxiboy",
+      "author_is_bot": false,
+      "number": 463
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:30:31+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/390"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#388:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "knoxiboy",
+      "author_is_bot": false,
+      "number": 462
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:28:35+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/388"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#386:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "knoxiboy",
+      "author_is_bot": false,
+      "number": 416
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:58:12+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/386"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#384:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Srushti-Kamble14",
+      "author_is_bot": false,
+      "number": 445
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:19:04+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/384"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#383:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Srushti-Kamble14",
+      "author_is_bot": false,
+      "number": 444
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:17:10+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/383"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#361:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T19:19:29+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/361"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#342:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "amarakaushal-max",
+      "author_is_bot": false,
+      "number": 589
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T13:53:50+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/342"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#334:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Gunjan10-droid",
+      "author_is_bot": false,
+      "number": 467
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T13:41:10+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/334"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#306:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SriyaMeenakshi",
+      "author_is_bot": false,
+      "number": 582
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T21:04:11+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/306"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#299:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SriyaMeenakshi",
+      "author_is_bot": false,
+      "number": 507
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T09:09:01+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/299"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#298:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SaumyaSngh323",
+      "author_is_bot": false,
+      "number": 1
+     },
+     {
+      "author": "SaumyaSngh323",
+      "author_is_bot": false,
+      "number": 1040
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T11:36:58+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/298"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#297:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Pantkartik",
+      "author_is_bot": false,
+      "number": 586
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T20:55:56+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/297"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#295:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "DeveshKadam06",
+      "author_is_bot": false,
+      "number": 1037
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-22T06:40:15+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/295"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#280:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:29:55+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/280"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#199:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T08:07:06+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/199"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#194:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T08:06:55+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/194"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#192:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nicoloangileri",
+      "author_is_bot": false,
+      "number": 982
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T08:32:03+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/192"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#190:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T17:24:06+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/190"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#189:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T08:06:49+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/189"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#172:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:09:28+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/172"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#153:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "bashyamharika",
+      "author_is_bot": false,
+      "number": 429
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T06:00:04+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/153"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#149:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "the404packet",
+      "author_is_bot": false,
+      "number": 431
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T07:20:29+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/149"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#147:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:08:39+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/147"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#145:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T16:11:14+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/145"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#144:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "bhoomisingh00079",
+      "author_is_bot": false,
+      "number": 989
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T05:30:03+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/144"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#110:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:07:27+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/110"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#79:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T07:19:24+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/79"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#77:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ananyaswork",
+      "author_is_bot": false,
+      "number": 245
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:55:18+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/77"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#72:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:05:58+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/72"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#58:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "samalbishnupriya06-stack",
+      "author_is_bot": false,
+      "number": 1005
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-17T14:52:34+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/58"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#55:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "nikitatripathi10",
+      "author_is_bot": false,
+      "number": 1032
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T08:24:43+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/55"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#54:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-21T17:15:30+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/54"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#48:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:03:23+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/48"
+  },
+  {
+   "evidence_id": "issue:rishabh0510rishabh/EnvForage#47:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T14:02:33+00:00",
+   "url": "https://github.com/rishabh0510rishabh/EnvForage/issues/47"
+  }
+ ],
+ "repo": "rishabh0510rishabh/EnvForage",
+ "window": "post_t"
+}

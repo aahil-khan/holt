@@ -1,0 +1,169 @@
+{
+ "captured_at": "2026-08-30T10:22:10.043003+00:00",
+ "content_sha256": "93c373a47c078a39ce3c90b37210990fb04700acedf5d907b0d8d1b7d7fe9860",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#1724:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:48:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/1724"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#1121:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:48:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/1121"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#1113:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:48:24+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/1113"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#843:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:48:35+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/843"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#790:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:48:42+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/790"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#597:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:49:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/597"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#582:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:49:13+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/582"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#560:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T15:37:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/560"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#557:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T15:37:59+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/557"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#521:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:49:21+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/521"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#494:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:49:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/494"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#256:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:49:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/256"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#229:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:49:46+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/229"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#228:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:49:55+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/228"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#183:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T15:38:18+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/183"
+  },
+  {
+   "evidence_id": "issue:spaceandtimefdn/sxt-proof-of-sql#149:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:50:04+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/issues/149"
+  }
+ ],
+ "repo": "spaceandtimefdn/sxt-proof-of-sql",
+ "window": "post_t"
+}

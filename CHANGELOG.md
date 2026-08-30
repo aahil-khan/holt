@@ -739,3 +739,57 @@ is explicitly told to return an empty quote rather than describe silence.
 **Not yet re-measured.** The prompt change invalidates recorded trajectories by
 design, and the corrected figure will come from the final frozen run rather than
 being estimated here.
+
+---
+
+## Iteration 12 — Path Finder, first result: it ties the label it was meant to beat (2026-08-30)
+
+**Tried.** Extend Holt from a verdict to an action: given a repository judged
+viable, rank the issues open at the cutoff by how likely an outsider is to land a
+merged pull request resolving them.
+
+**Ground truth was designed before any implementation**
+([`eval/PATHFINDER-DESIGN.md`](eval/PATHFINDER-DESIGN.md)). An issue is a
+*realised entry point* if it was later closed by a merged pull request from
+someone who had not already landed work there — mechanical, and reusing L1's
+outsider definition so there is one definition rather than two.
+
+**Feasibility was counted, not assumed.** 1,184 candidate issues across 14 viable
+pool-1 repositories, 114 realised, a **9.6% base rate**.
+
+**Result on pool 1 — precision@3, per repository, averaged:**
+
+| Method | precision@3 |
+|---|---|
+| recency (newest first) | 0.042 |
+| random (the base rate) | 0.119 |
+| **`good first issue` label** | **0.125** |
+| **Holt** | **0.125** |
+
+**This meets cut condition 2, written before the feature existed:** *"the
+`good first issue` comparator matches Holt's precision — the feature then has no
+argument for existing."* It ties GitHub's own label and barely beats chance.
+
+Underneath the tie, Holt wins decisively on `NixOS/nixpkgs` (0.67 against the
+label's 0.00) and loses on `career-pilot` and `space-station-14` (0.00 against
+0.33). Six of eight scorable repositories score zero for every method. **n = 8 is
+too thin to separate anything**, which is the per-repository variance the design
+document flagged as the main risk, arriving exactly as predicted.
+
+**Pre-committed before seeing pool 2:** the combined result across both pools is
+the answer. Pool 2's issues are being crawled and will roughly double the scorable
+set. If Path Finder ties or loses on the combined set it is cut, and this entry
+stands as the record. Choosing whichever pool flatters the feature is the failure
+mode this commitment exists to prevent.
+
+**A measurement bug caught before it shipped as a finding.** The first version
+reported that **100% of issue bodies were edited after the cutoff** — an alarming
+leak. It was false: `updatedAt` bumps on any comment or label change, so it
+measured "had activity" rather than "was edited". Corrected to `lastEditedAt`,
+the real figure is **9 of 935, 1.0%**. Had it shipped, it would have been a
+self-inflicted wound: a leak loudly disclosed that did not exist.
+
+**Also declared before scoring:** repositories with zero realised entry points are
+excluded from the mean, because precision@k is identically zero there for every
+method including the comparators. On pool 1 that is 6 of 14 — which is itself a
+fact worth reporting about how rare these opportunities are.

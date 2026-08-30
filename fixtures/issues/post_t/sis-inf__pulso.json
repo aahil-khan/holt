@@ -1,0 +1,389 @@
+{
+ "captured_at": "2026-08-30T10:22:06.350080+00:00",
+ "content_sha256": "bed2f75289ba0ba2fbf67ab85481f55edbd5b2f231ac1ac78421fe89d59002b4",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:sis-inf/pulso#301:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T20:40:36+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/301"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#300:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:25:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/300"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#299:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T13:47:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/299"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#298:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T19:56:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/298"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#297:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:21:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/297"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#296:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T14:02:34+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/296"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#295:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T03:12:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/295"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#294:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:23:27+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/294"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#293:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T00:53:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/293"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#292:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:22:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/292"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#291:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T21:26:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/291"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#290:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T18:39:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/290"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#289:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T01:05:45+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/289"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#288:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T21:26:37+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/288"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#287:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T04:20:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/287"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#286:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T04:24:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/286"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#285:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T04:25:32+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/285"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#284:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:25:55+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/284"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#283:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T21:26:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/283"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#282:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:51:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/282"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#276:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:01:19+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/276"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#274:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T02:51:05+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/274"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#273:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T04:35:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/273"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#272:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:01:32+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/272"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#270:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T03:39:35+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/270"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#268:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T02:17:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/268"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#267:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T05:01:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/267"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#226:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:22:25+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/226"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#223:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T01:24:01+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/223"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#217:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-16T17:13:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/217"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#161:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T18:02:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/161"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#160:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T03:14:00+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/160"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#159:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T14:45:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/159"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#158:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T23:45:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/158"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#110:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T03:13:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/110"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#107:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-10T01:30:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/107"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#105:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T06:56:25+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/105"
+  },
+  {
+   "evidence_id": "issue:sis-inf/pulso#95:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T01:58:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/issues/95"
+  }
+ ],
+ "repo": "sis-inf/pulso",
+ "window": "post_t"
+}

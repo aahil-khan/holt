@@ -1,0 +1,561 @@
+{
+ "captured_at": "2026-08-30T10:10:33.269009+00:00",
+ "content_sha256": "d62df36ce8ae2f978b7f4b482885276e5daa59955b119d3a05f36d3fc6343694",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2539:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "aishwary-vansh",
+      "author_is_bot": false,
+      "number": 2540
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T04:56:52+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2539"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2530:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 2840
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:02:29+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2530"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2529:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 2829
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:04:44+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2529"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2528:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:20:20+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2528"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2527:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 2817
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:06:50+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2527"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2526:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 2816
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:07:22+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2526"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2525:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 2811
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T10:32:08+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2525"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2352:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Akshita-2307",
+      "author_is_bot": false,
+      "number": 2483
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T04:58:01+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2352"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2321:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "jainiksha",
+      "author_is_bot": false,
+      "number": 4120
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T19:25:53+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2321"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#2000:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "awaleshreya",
+      "author_is_bot": false,
+      "number": 2330
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:25:43+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/2000"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1968:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "RamanKumar-Dev",
+      "author_is_bot": false,
+      "number": 2906
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:22:30+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1968"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1965:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T11:59:36+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1965"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1957:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "yashitripathi2007",
+      "author_is_bot": false,
+      "number": 3067
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T21:31:57+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1957"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1953:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:00:22+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1953"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1952:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2541
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:39:41+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1952"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1951:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "Shabi225",
+      "author_is_bot": false,
+      "number": 2468
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:00:46+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1951"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1947:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2543
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:48:10+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1947"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1946:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2544
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:47:18+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1946"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1944:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "udaycodespace",
+      "author_is_bot": false,
+      "number": 4066
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-19T15:24:38+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1944"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1938:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T05:52:33+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1938"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1935:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2557
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T15:00:22+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1935"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1934:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2558
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:46:25+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1934"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1933:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2559
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:44:25+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1933"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1931:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2562
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:41:40+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1931"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1929:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2563
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:38:52+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1929"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1928:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2564
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:37:16+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1928"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1926:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ShaktiShrey-01",
+      "author_is_bot": false,
+      "number": 2587
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-03T09:43:27+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1926"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1925:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2565
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:35:25+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1925"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1918:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "advikdivekar",
+      "author_is_bot": false,
+      "number": 2566
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:33:35+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1918"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1915:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ShaktiShrey-01",
+      "author_is_bot": false,
+      "number": 2588
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:10:59+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1915"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1913:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "GungunW-0903",
+      "author_is_bot": false,
+      "number": 3400
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-08T18:24:47+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1913"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1911:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "eshaanag",
+      "author_is_bot": false,
+      "number": 2315
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-15T11:15:23+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1911"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1906:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ShaktiShrey-01",
+      "author_is_bot": false,
+      "number": 3329
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-11T15:49:42+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1906"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1904:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "SoumyaJain9",
+      "author_is_bot": false,
+      "number": 2954
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T21:48:55+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1904"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1899:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ShaktiShrey-01",
+      "author_is_bot": false,
+      "number": 2955
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-05T21:38:03+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1899"
+  },
+  {
+   "evidence_id": "issue:anurag3407/career-pilot#1898:closed",
+   "payload": {
+    "closing_prs": [
+     {
+      "author": "ShaktiShrey-01",
+      "author_is_bot": false,
+      "number": 2916
+     }
+    ],
+    "resolved_by_merged_pr": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-04T20:10:14+00:00",
+   "url": "https://github.com/anurag3407/career-pilot/issues/1898"
+  }
+ ],
+ "repo": "anurag3407/career-pilot",
+ "window": "post_t"
+}

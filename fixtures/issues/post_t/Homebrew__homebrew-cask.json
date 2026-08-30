@@ -1,0 +1,39 @@
+{
+ "captured_at": "2026-08-30T10:09:28.190084+00:00",
+ "content_sha256": "4100008dfb1c2c53490477bb8ba52b6d4150209f6917ef3131179be56f884327",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "issue:Homebrew/homebrew-cask#266964:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T07:39:02+00:00",
+   "url": "https://github.com/Homebrew/homebrew-cask/issues/266964"
+  },
+  {
+   "evidence_id": "issue:Homebrew/homebrew-cask#266563:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T00:29:57+00:00",
+   "url": "https://github.com/Homebrew/homebrew-cask/issues/266563"
+  },
+  {
+   "evidence_id": "issue:Homebrew/homebrew-cask#264804:closed",
+   "payload": {
+    "closing_prs": [],
+    "resolved_by_merged_pr": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-23T00:30:08+00:00",
+   "url": "https://github.com/Homebrew/homebrew-cask/issues/264804"
+  }
+ ],
+ "repo": "Homebrew/homebrew-cask",
+ "window": "post_t"
+}
