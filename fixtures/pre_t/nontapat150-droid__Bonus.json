@@ -1,0 +1,4322 @@
+{
+ "captured_at": "2026-08-29T20:10:30.875010+00:00",
+ "content_sha256": "a43b2414a453bdf89f5e61b4f7f75dfa88e3512a80bb8423189837e426a5a14a",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:nontapat150-droid/Bonus:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": null,
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "PHP",
+    "pushed_at": "2026-06-10T13:02:28Z",
+    "stargazer_count": 0
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T08:24:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#142:opened",
+   "payload": {
+    "additions": 98,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "api/notifications/save_notification.php",
+     "config/onesignal.php",
+     "index.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e41\u0e08\u0e49\u0e07\u0e40\u0e15\u0e37\u0e2d\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:31:26+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/142"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#142:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:31:32+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/142"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#141:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e1a\u0e31\u0e04"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:01:38+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/141"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#141:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:01:47+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/141"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#140:opened",
+   "payload": {
+    "additions": 47,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 13,
+    "files": [
+     "api/inventory/delete_item.php",
+     "index.php",
+     "tools/repair_swapped_inventory.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e17\u0e38\u0e01\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e07\u0e07\u0e07\u0e07\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:57:03+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/140"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#140:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:57:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/140"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#139:opened",
+   "payload": {
+    "additions": 7,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "assets/js/inventory.js",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "555"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:32:48+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/139"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#139:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:33:06+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/139"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#138:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e2b\u0e19\u0e49\u0e32\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:28:43+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/138"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#138:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:29:06+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/138"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#137:opened",
+   "payload": {
+    "additions": 14,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e2b\u0e19\u0e49\u0e32\u0e15\u0e48\u0e32\u0e07\u0e25\u0e2d\u0e22"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:24:22+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/137"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#137:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:24:39+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/137"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#136:opened",
+   "payload": {
+    "additions": 0,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "api/inventory/get_stock.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e15\u0e32\u0e23\u0e32\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:14:17+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/136"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#136:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:14:52+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/136"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#135:opened",
+   "payload": {
+    "additions": 26,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 19,
+    "files": [
+     "api/inventory/add_sn_fast.php",
+     "api/inventory/check_outbound.php",
+     "api/inventory/get_history.php",
+     "api/inventory/get_master.php",
+     "api/inventory/get_my_today_items.php",
+     "api/inventory/get_stock.php",
+     "api/inventory/import_inbound.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e2a\u0e34\u0e19\u0e04\u0e49\u0e32\u0e32\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:06:00+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/135"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#135:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T13:06:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/135"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#134:opened",
+   "payload": {
+    "additions": 2,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e2a\u0e34\u0e19\u0e04\u0e49\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:52:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/134"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#134:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:52:26+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/134"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#133:opened",
+   "payload": {
+    "additions": 155,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 21,
+    "files": [
+     "api/inventory/delete_sn.php",
+     "assets/js/inventory.js",
+     "tools/repair_swapped_inventory.php",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e04\u0e25\u0e31\u0e071"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:48:51+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/133"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#133:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:48:59+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/133"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#132:opened",
+   "payload": {
+    "additions": 2,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:27:19+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/132"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#132:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:27:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/132"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#131:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "views/modules/start_day.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:15:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/131"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#131:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:15:12+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/131"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#130:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "views/modules/oil_form.php"
+    ],
+    "title": "\u0e2d\u0e31\u0e1b\u0e42\u0e2b\u0e25\u0e14\u0e44\u0e1f\u0e25\u0e4c"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:08:30+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/130"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#130:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:08:53+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/130"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#129:opened",
+   "payload": {
+    "additions": 3,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e2d\u0e31\u0e1b\u0e42\u0e2b\u0e25\u0e14\u0e44\u0e1f\u0e25\u0e4c\u0e04\u0e48\u0e32\u0e41\u0e23\u0e01\u0e40\u0e02\u0e49\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:03:19+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/129"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#129:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:03:51+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/129"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#128:opened",
+   "payload": {
+    "additions": 4,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "555"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:24:01+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/128"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#128:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:24:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/128"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#127:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "views/modules/inventory_app.php"
+    ],
+    "title": "111"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:08:10+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/127"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#127:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:08:24+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/127"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#126:opened",
+   "payload": {
+    "additions": 18,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 13,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e15\u0e32\u0e23\u0e32\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:02:36+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/126"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#126:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:02:47+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/126"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#125:opened",
+   "payload": {
+    "additions": 38,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 67,
+    "files": [
+     "api/dispatch/auto_assign.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e0244"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:39:21+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/125"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#125:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:39:29+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/125"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#124:opened",
+   "payload": {
+    "additions": 335,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 35,
+    "files": [
+     "AUTO_DISPATCH_CLUSTERING.md",
+     "api/dispatch/auto_assign.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e41\u0e08\u0e01\u0e08\u0e48\u0e32\u0e22\u0e07\u0e32\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:29:29+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/124"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#124:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:29:38+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/124"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#123:opened",
+   "payload": {
+    "additions": 660,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 20,
+    "files": [
+     "DISPATCH_JOB_COMPLETION_GUIDE.md",
+     "IMPLEMENTATION_SUMMARY.md",
+     "api/dispatch/get_job_stats.php",
+     "api/dispatch/update_job_status.php",
+     "assets/js/dispatch.js",
+     "sql/migration_add_job_logs.sql"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e40\u0e04\u0e2a\u0e07\u0e32\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:14:25+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/123"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#123:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T14:14:32+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/123"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#122:opened",
+   "payload": {
+    "additions": 1083,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1033,
+    "files": [
+     "api/dispatch/auto_assign.php",
+     "api/dispatch/optimize_route.php",
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49 UI \u0e41\u0e1c\u0e19\u0e17\u0e35\u0e48"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:58:25+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/122"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#122:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:58:33+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/122"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#121:opened",
+   "payload": {
+    "additions": 547,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 110,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e15\u0e32\u0e23\u0e32\u0e0788"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:39:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/121"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#121:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:39:43+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/121"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#120:opened",
+   "payload": {
+    "additions": 60,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 60,
+    "files": [
+     "assets/js/dispatch.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e15\u0e32\u0e23\u0e32\u0e0766"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T09:00:34+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/120"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#120:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T09:00:42+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/120"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#119:opened",
+   "payload": {
+    "additions": 47,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 72,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e15\u0e32\u0e23\u0e32\u0e0755"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:36:10+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/119"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#119:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:36:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/119"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#118:opened",
+   "payload": {
+    "additions": 68,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 66,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e15\u0e32\u0e23\u0e32\u0e073"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:25:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/118"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#118:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:25:34+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/118"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#117:opened",
+   "payload": {
+    "additions": 67,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 51,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e15\u0e32\u0e23\u0e32\u0e071"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:15:59+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/117"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#117:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:16:05+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/117"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#116:opened",
+   "payload": {
+    "additions": 102,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 72,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e15\u0e32\u0e23\u0e32\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:09:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/116"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#116:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:09:29+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/116"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#115:opened",
+   "payload": {
+    "additions": 11,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 10,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e04\u0e2d\u0e25\u0e31\u0e21\u0e21"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:21:19+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/115"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#115:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:21:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/115"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#114:opened",
+   "payload": {
+    "additions": 7,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e04\u0e2d\u0e25\u0e31\u0e21"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:14:31+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/114"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#114:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:14:39+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/114"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#113:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e1b\u0e23\u0e38\u0e07\u0e2b\u0e19\u0e49\u0e32\u0e41\u0e1c\u0e19\u0e17\u0e35\u0e48"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:10:41+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/113"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#113:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:10:50+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/113"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#112:opened",
+   "payload": {
+    "additions": 68,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 75,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02 UI"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:33:51+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/112"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#112:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:34:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/112"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#111:opened",
+   "payload": {
+    "additions": 60,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 53,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e2d\u0e31\u0e1b\u0e42\u0e2b\u0e25\u0e14\u0e44\u0e1f\u0e25\u0e4c"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:16:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/111"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#111:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:16:26+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/111"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#110:opened",
+   "payload": {
+    "additions": 81,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 29,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e41\u0e1c\u0e19\u0e17\u0e35\u0e482"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:08:26+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/110"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#110:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:08:36+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/110"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#109:opened",
+   "payload": {
+    "additions": 3,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e41\u0e1c\u0e19\u0e17\u0e35\u0e48"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:04:08+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/109"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#109:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:04:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/109"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#108:opened",
+   "payload": {
+    "additions": 52,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e41\u0e1c\u0e19\u0e17\u0e35\u0e48"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:00:46+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/108"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#108:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:00:55+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/108"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#107:opened",
+   "payload": {
+    "additions": 301,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 211,
+    "files": [
+     "assets/js/datepicker.js",
+     "index.php",
+     "views/modules/system_history.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e1b\u0e0f\u0e34\u0e17\u0e34\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:49:59+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/107"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#107:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:50:07+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/107"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#106:opened",
+   "payload": {
+    "additions": 208,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "views/modules/system_history.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e1b\u0e0f\u0e34\u0e17\u0e34\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:41:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/106"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#106:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T01:41:31+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/106"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#105:opened",
+   "payload": {
+    "additions": 151,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     "api/announcements/manage.php",
+     "index.php"
+    ],
+    "title": "\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21\u0e27\u0e34\u0e48\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:04:48+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/105"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#105:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:04:57+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/105"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#104:opened",
+   "payload": {
+    "additions": 58,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "api/announcements/manage.php"
+    ],
+    "title": "\u0e41\u0e16\u0e1a"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:58:54+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/104"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#104:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:59:01+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/104"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#103:opened",
+   "payload": {
+    "additions": 64,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 36,
+    "files": [
+     "api/notifications/mark_read.php",
+     "assets/js/notifications.js"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e1b\u0e23\u0e38\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:51:58+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/103"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#103:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:52:22+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/103"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#102:opened",
+   "payload": {
+    "additions": 252,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 40,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e2d\u0e31\u0e1e\u0e40\u0e14\u0e15\u0e01\u0e32\u0e23\u0e41\u0e08\u0e49\u0e07\u0e40\u0e15\u0e37\u0e2d\u0e19\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e0b\u0e49\u0e33"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:38:09+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/102"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#102:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:38:16+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/102"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#101:opened",
+   "payload": {
+    "additions": 26,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 22,
+    "files": [
+     "assets/js/notifications.js",
+     "index.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:35:52+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/101"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#101:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:36:03+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/101"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#100:opened",
+   "payload": {
+    "additions": 14,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "api/oil/edit_record.php"
+    ],
+    "title": "\u0e2d\u0e31\u0e1e\u0e40\u0e14\u0e1522"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:30:24+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/100"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#100:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:30:32+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/100"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#99:opened",
+   "payload": {
+    "additions": 13,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "api/oil/submit_record.php"
+    ],
+    "title": "Update submit_record.php"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:26:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/99"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#99:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:26:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/99"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#98:opened",
+   "payload": {
+    "additions": 138,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 50,
+    "files": [
+     "api/notifications/delete_notification.php",
+     "api/notifications/get_notifications.php",
+     "api/notifications/save_notification.php",
+     "assets/js/notifications.js"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07\u0e41\u0e08\u0e49\u0e07\u0e40\u0e15\u0e37\u0e2d\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:24:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/98"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#98:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:24:40+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/98"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#97:opened",
+   "payload": {
+    "additions": 41,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 97,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e2d\u0e31\u0e1e\u0e40\u0e14\u0e15"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:18:01+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/97"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#97:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:18:10+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/97"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#96:opened",
+   "payload": {
+    "additions": 93,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "api/oil/recalculate.php",
+     "assets/js/oil.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e2d\u0e31\u0e1e\u0e40\u0e14\u0e15"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:14:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/96"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#96:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:14:12+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/96"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#95:opened",
+   "payload": {
+    "additions": 139,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 92,
+    "files": [
+     "api/notifications/save_notification.php",
+     "assets/js/notifications.js",
+     "index.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e23\u0e30\u0e1a\u0e1a\u0e01\u0e32\u0e23\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e2a\u0e48\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:10:54+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/95"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#95:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:11:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/95"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#94:opened",
+   "payload": {
+    "additions": 12,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 9,
+    "files": [
+     "api/oil/delete_record.php",
+     "api/oil/edit_record.php",
+     "api/oil/submit_record.php"
+    ],
+    "title": "\u0e2d\u0e31\u0e1e\u0e40\u0e14\u0e15\u0e23\u0e30\u0e1a\u0e1a"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:05:43+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/94"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#94:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:05:51+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/94"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#93:opened",
+   "payload": {
+    "additions": 111,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 29,
+    "files": [
+     "api/notifications/get_notifications.php",
+     "assets/js/notifications.js"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07\u0e41\u0e08\u0e49\u0e07\u0e40\u0e15\u0e37\u0e2d\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:01:52+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/93"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#93:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:02:01+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/93"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#92:opened",
+   "payload": {
+    "additions": 104,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 64,
+    "files": [
+     "api/oil/delete_record.php",
+     "api/oil/edit_record.php",
+     "api/oil/submit_record.php"
+    ],
+    "title": "\u0e2d\u0e31\u0e1b\u0e40\u0e14\u0e15\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:00:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/92"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#92:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:00:20+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/92"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#91:opened",
+   "payload": {
+    "additions": 7,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e01\u0e32\u0e23\u0e41\u0e2a\u0e14\u0e07\u0e1c\u0e25\u0e15\u0e32\u0e23\u0e32\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:33:02+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/91"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#91:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:33:10+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/91"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#90:opened",
+   "payload": {
+    "additions": 73,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 11,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e2a\u0e48\u0e07\u0e2d\u0e2d\u0e01"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:18:30+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/90"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#90:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:18:39+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/90"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#89:opened",
+   "payload": {
+    "additions": 158,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 98,
+    "files": [
+     "api/oil/get_records.php",
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e15\u0e31\u0e27\u0e01\u0e23\u0e2d\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:08:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/89"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#89:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:08:36+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/89"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#88:opened",
+   "payload": {
+    "additions": 13,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "api/users/approve.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07\u0e23\u0e30\u0e1a\u0e1a\u0e2d\u0e19\u0e38\u0e21\u0e31\u0e15\u0e34"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:38:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/88"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#88:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:38:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/88"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#87:opened",
+   "payload": {
+    "additions": 24,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e44\u0e21\u0e48\u0e02\u0e36\u0e49\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:36:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/87"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#87:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:36:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/87"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#86:opened",
+   "payload": {
+    "additions": 14,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 11,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e44\u0e21\u0e48\u0e02\u0e36\u0e49\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:31:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/86"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#86:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:31:35+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/86"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#85:opened",
+   "payload": {
+    "additions": 54,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 22,
+    "files": [
+     "assets/js/users.js",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e15\u0e01\u0e41\u0e15\u0e48\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:30:45+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/85"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#85:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:30:55+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/85"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#84:opened",
+   "payload": {
+    "additions": 14,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 15,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e44\u0e21\u0e48\u0e02\u0e36\u0e49\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:27:16+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/84"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#84:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:27:23+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/84"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#83:opened",
+   "payload": {
+    "additions": 27,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 17,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e15\u0e32\u0e23\u0e32\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:22:55+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/83"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#83:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T06:23:02+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/83"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#82:opened",
+   "payload": {
+    "additions": 102,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 24,
+    "files": [
+     "assets/js/users.js",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e1f\u0e31\u0e07\u0e01\u0e4c\u0e0a\u0e31\u0e48\u0e19\u0e19\u0e34\u0e14\u0e2b\u0e19\u0e48\u0e2d\u0e22"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:37:38+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/82"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#82:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:37:52+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/82"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#81:opened",
+   "payload": {
+    "additions": 10,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e19\u0e49\u0e33\u0e21\u0e31\u0e1911"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:37:01+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/81"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#81:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:37:08+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/81"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#80:opened",
+   "payload": {
+    "additions": 44,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "assets/js/common.js"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:32:53+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/80"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#80:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:33:01+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/80"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#79:opened",
+   "payload": {
+    "additions": 45,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 107,
+    "files": [
+     "api/oil/edit_record.php",
+     "api/oil/submit_record.php",
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19\u0e41\u0e01\u0e49\u0e23\u0e2d\u0e1a\u0e17\u0e35\u0e48\u0e25\u0e49\u0e32\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:25:38+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/79"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#79:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:25:45+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/79"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#78:opened",
+   "payload": {
+    "additions": 40,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 30,
+    "files": [
+     "views/layouts/sidebar.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07\u0e41\u0e16\u0e1a\u0e02\u0e49\u0e32\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:18:05+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/78"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#78:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:18:21+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/78"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#77:opened",
+   "payload": {
+    "additions": 76,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 15,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "88"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:15:07+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/77"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#77:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:15:25+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/77"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#76:opened",
+   "payload": {
+    "additions": 74,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 14,
+    "files": [
+     "api/oil/edit_record.php",
+     "api/oil/submit_record.php",
+     "assets/js/oil.js",
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19\u0e40\u0e2a\u0e23\u0e47\u0e08\u0e2a\u0e21\u0e1a\u0e39\u0e23\u0e13\u0e4c"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:07:03+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/76"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#76:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:07:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/76"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#75:opened",
+   "payload": {
+    "additions": 92,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 17,
+    "files": [
+     "api/history/get_logs.php",
+     "assets/js/system_history.js",
+     "views/modules/system_history.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e23\u0e30\u0e1a\u0e1a\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e14\u0e39\u0e41\u0e1a\u0e1a\u0e23\u0e32\u0e22\u0e27\u0e31\u0e19-\u0e40\u0e14\u0e37\u0e2d\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:06:07+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/75"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#75:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:06:16+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/75"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#74:opened",
+   "payload": {
+    "additions": 267,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 49,
+    "files": [
+     "api/history/get_logs.php",
+     "assets/js/system_history.js",
+     "index.php",
+     "views/layouts/sidebar.php",
+     "views/modules/system_history.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e23\u0e30\u0e1a\u0e1a\u0e42\u0e0a\u0e27\u0e4c\u0e1b\u0e23\u0e30\u0e27\u0e31\u0e15\u0e34"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:55:48+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/74"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#74:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:55:59+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/74"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#73:opened",
+   "payload": {
+    "additions": 8,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19\u0e40\u0e2a\u0e23\u0e47\u0e08\u0e41\u0e25\u0e49\u0e27"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:28:37+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/73"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#73:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:28:44+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/73"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#72:opened",
+   "payload": {
+    "additions": 52,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "assets/js/start_day.js",
+     "views/modules/start_day.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e1b\u0e23\u0e30\u0e27\u0e31\u0e15\u0e34"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:19:19+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/72"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#72:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:19:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/72"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#71:opened",
+   "payload": {
+    "additions": 33,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "assets/js/start_day.js",
+     "views/modules/start_day.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e23\u0e30\u0e1a\u0e1a\u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:09:48+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/71"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#71:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:09:57+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/71"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#70:opened",
+   "payload": {
+    "additions": 10,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 11,
+    "files": [
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:08:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/70"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#70:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:08:36+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/70"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#69:opened",
+   "payload": {
+    "additions": 6,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:03:21+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/69"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#69:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:03:29+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/69"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#68:opened",
+   "payload": {
+    "additions": 208,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 62,
+    "files": [
+     "api/start_day/get_history.php",
+     "assets/js/start_day.js",
+     "views/modules/start_day.php"
+    ],
+    "title": "\u0e17\u0e33\u0e1b\u0e23\u0e30\u0e27\u0e31\u0e15\u0e34\u0e04\u0e48\u0e32\u0e41\u0e23\u0e01\u0e40\u0e02\u0e49\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:01:47+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/68"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#68:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:01:56+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/68"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#67:opened",
+   "payload": {
+    "additions": 225,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 350,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:00:02+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/67"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#67:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T04:00:09+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/67"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#66:opened",
+   "payload": {
+    "additions": 17,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:52:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/66"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#66:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:52:36+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/66"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#65:opened",
+   "payload": {
+    "additions": 176,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 94,
+    "files": [
+     "api/start_day/submit.php",
+     "assets/js/start_day.js",
+     "views/modules/start_day.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e23\u0e30\u0e1a\u0e1a\u0e04\u0e48\u0e32\u0e41\u0e23\u0e01\u0e40\u0e02\u0e49\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:47:42+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/65"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#65:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:48:05+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/65"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#64:opened",
+   "payload": {
+    "additions": 156,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 136,
+    "files": [
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e01\u0e23\u0e32\u0e1f\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:45:24+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/64"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#64:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:45:30+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/64"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#63:opened",
+   "payload": {
+    "additions": 0,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "assets/js/oil_report.js"
+    ],
+    "title": "\u0e41\u0e01\u0e1b\u0e38\u0e48\u0e21\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:38:09+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/63"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#63:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:38:17+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/63"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#62:opened",
+   "payload": {
+    "additions": 82,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 23,
+    "files": [
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:33:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/62"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#62:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:33:22+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/62"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#61:opened",
+   "payload": {
+    "additions": 222,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 24,
+    "files": [
+     "assets/js/start_day.js",
+     "index.php",
+     "views/layouts/sidebar.php",
+     "views/modules/oil_form.php",
+     "views/modules/start_day.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e2b\u0e19\u0e49\u0e32\u0e41\u0e23\u0e01\u0e40\u0e02\u0e49\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:30:41+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/61"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#61:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:30:50+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/61"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#60:opened",
+   "payload": {
+    "additions": 85,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 44,
+    "files": [
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e19\u0e49\u0e33\u0e21\u0e31\u0e1922"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:24:34+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/60"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#60:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:24:42+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/60"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#59:opened",
+   "payload": {
+    "additions": 680,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 128,
+    "files": [
+     "api/oil/delete_record.php",
+     "api/oil/edit_record.php",
+     "api/oil/get_records.php",
+     "api/oil/submit_record.php",
+     "assets/js/inventory.js",
+     "assets/js/oil_report.js",
+     "index.php",
+     "tools/db_update.php",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:21:14+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/59"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#59:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:21:22+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/59"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#58:opened",
+   "payload": {
+    "additions": 14,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 15,
+    "files": [
+     "views/layouts/sidebar.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e1b\u0e38\u0e48\u0e21 \u0e04\u0e48\u0e32\u0e41\u0e23\u0e01\u0e40\u0e02\u0e49\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:19:20+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/58"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#58:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:19:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/58"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#57:opened",
+   "payload": {
+    "additions": 61,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "assets/js/checkin.js"
+    ],
+    "title": "Update checkin.js"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:55:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/57"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#57:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:55:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/57"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#56:opened",
+   "payload": {
+    "additions": 5,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e04\u0e25\u0e31\u0e071"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:39:45+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/56"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#56:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:39:52+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/56"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#55:opened",
+   "payload": {
+    "additions": 41,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "assets/js/inventory.js",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:33:09+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/55"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#55:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:33:16+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/55"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#54:opened",
+   "payload": {
+    "additions": 4,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "assets/js/checkin.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e1b\u0e38\u0e48\u0e21\u0e41\u0e01\u0e49\u0e44\u0e02"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:24:50+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/54"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#54:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:25:49+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/54"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#53:opened",
+   "payload": {
+    "additions": 73,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "api/oil/edit_record.php",
+     "api/oil/import_records.php",
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:21:42+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/53"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#53:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:21:49+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/53"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#52:opened",
+   "payload": {
+    "additions": 50,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 39,
+    "files": [
+     "assets/js/checkin.js",
+     "views/modules/checkin.php"
+    ],
+    "title": "\u0e1b\u0e38\u0e48\u0e21\u0e41\u0e01\u0e49\u0e44\u0e02\u0e43\u0e0a\u0e49\u0e44\u0e21\u0e48\u0e44\u0e14\u0e49"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:08:07+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/52"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#52:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:08:38+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/52"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#51:opened",
+   "payload": {
+    "additions": 482,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 24,
+    "files": [
+     "api/notifications/get_notifications.php",
+     "api/notifications/get_teams.php",
+     "api/notifications/mark_read.php",
+     "api/notifications/save_notification.php",
+     "api/oil/get_records.php",
+     "api/oil/submit_record.php",
+     "assets/js/notifications.js",
+     "assets/js/oil.js",
+     "assets/js/oil_report.js",
+     "index.php",
+     "sql/migration_add_notifications_tables.sql",
+     "views/modules/oil_form.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:02:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/51"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#51:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:02:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/51"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#50:opened",
+   "payload": {
+    "additions": 166,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 152,
+    "files": [
+     "api/checkin/edit.php",
+     "assets/js/checkin.js",
+     "views/modules/checkin.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e49\u0e1b\u0e38\u0e48\u0e21\u0e17\u0e35\u0e48\u0e43\u0e0a\u0e49\u0e44\u0e21\u0e48\u0e44\u0e14\u0e49"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:57:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/50"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#50:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:57:16+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/50"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#49:opened",
+   "payload": {
+    "additions": 49,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 67,
+    "files": [
+     "api/checkin/edit.php",
+     "assets/js/checkin.js",
+     "views/modules/checkin.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e23\u0e2d\u0e1a\u0e17\u0e35\u0e48 2"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:49:33+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/49"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#49:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:49:42+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/49"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#48:opened",
+   "payload": {
+    "additions": 37,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 27,
+    "files": [
+     "assets/js/common.js",
+     "assets/js/inventory.js",
+     "views/modules/checkin.php",
+     "views/modules/dispatch_map.php",
+     "views/modules/inventory_app.php",
+     "views/modules/oil_form.php",
+     "views/modules/oil_report.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e1b\u0e38\u0e48\u0e21"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:39:58+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/48"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#48:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:40:06+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/48"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#47:opened",
+   "payload": {
+    "additions": 65,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 94,
+    "files": [
+     "api/inventory/import_inbound.php",
+     "assets/js/inventory.js",
+     "sql/schema.sql",
+     "views/layouts/sidebar.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e1f\u0e31\u0e07\u0e01\u0e4c\u0e0a\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:34:06+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/47"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#47:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:34:14+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/47"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#46:opened",
+   "payload": {
+    "additions": 76,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 28,
+    "files": [
+     "assets/js/checkin.js",
+     "index.php",
+     "login.php",
+     "views/layouts/sidebar.php",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e1f\u0e31\u0e07\u0e01\u0e4c\u0e0a\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:44:05+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/46"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#46:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:44:13+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/46"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#45:opened",
+   "payload": {
+    "additions": 79,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 14,
+    "files": [
+     "assets/js/dispatch.js",
+     "index.php",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "000"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:54:55+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/45"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#45:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:55:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/45"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#44:opened",
+   "payload": {
+    "additions": 134,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 88,
+    "files": [
+     "login.php",
+     "views/modules/oil_report.php"
+    ],
+    "title": "999"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:33:36+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/44"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#44:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:33:45+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/44"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#43:opened",
+   "payload": {
+    "additions": 128,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 127,
+    "files": [
+     "index.php",
+     "views/layouts/sidebar.php",
+     "views/modules/checkin.php",
+     "views/modules/dispatch_map.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "33"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:24:32+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/43"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#43:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:24:40+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/43"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#42:opened",
+   "payload": {
+    "additions": 35,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "index.php"
+    ],
+    "title": "Update index.php"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:37:45+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/42"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#42:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:37:55+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/42"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#41:opened",
+   "payload": {
+    "additions": 20,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "index.php"
+    ],
+    "title": "55"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:25:54+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/41"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#41:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:26:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/41"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#40:opened",
+   "payload": {
+    "additions": 146,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 116,
+    "files": [
+     "views/modules/checkin.php",
+     "views/modules/inventory_app.php",
+     "views/modules/oil_form.php"
+    ],
+    "title": "88"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:11:11+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/40"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#40:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:11:21+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/40"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#39:opened",
+   "payload": {
+    "additions": 59,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "index.php",
+     "views/modules/checkin.php",
+     "views/modules/inventory_app.php",
+     "views/modules/oil_form.php"
+    ],
+    "title": "pp"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:56:49+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/39"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#39:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:56:59+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/39"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#38:opened",
+   "payload": {
+    "additions": 791,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 458,
+    "files": [
+     "index.php",
+     "refactor.js",
+     "refactor.py",
+     "views/layouts/sidebar.php",
+     "views/modules/checkin.php",
+     "views/modules/dispatch_map.php",
+     "views/modules/inventory_app.php",
+     "views/modules/oil_form.php",
+     "views/modules/oil_report.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "op"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:29:07+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/38"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#38:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:29:16+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/38"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#37:opened",
+   "payload": {
+    "additions": 73,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 47,
+    "files": [
+     "api/checkin/delete_image.php",
+     "api/checkin/edit.php",
+     "api/checkin/submit.php",
+     "config/db.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e23\u0e2d\u0e1a\u0e17\u0e35\u0e48 1"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T09:06:10+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/37"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#37:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T09:06:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/37"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#36:opened",
+   "payload": {
+    "additions": 8,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "assets/js/checkin.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e40\u0e0a\u0e47\u0e04\u0e2d\u0e34\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:38:46+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/36"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#36:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:38:58+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/36"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#35:opened",
+   "payload": {
+    "additions": 17799,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 67,
+    "deletions": 414,
+    "files": [
+     ".agents/skills/impeccable/SKILL.md",
+     ".agents/skills/impeccable/agents/impeccable-asset-producer.md",
+     ".agents/skills/impeccable/reference/adapt.md",
+     ".agents/skills/impeccable/reference/animate.md",
+     ".agents/skills/impeccable/reference/audit.md",
+     ".agents/skills/impeccable/reference/bolder.md",
+     ".agents/skills/impeccable/reference/brand.md",
+     ".agents/skills/impeccable/reference/clarify.md",
+     ".agents/skills/impeccable/reference/codex.md",
+     ".agents/skills/impeccable/reference/cognitive-load.md",
+     ".agents/skills/impeccable/reference/color-and-contrast.md",
+     ".agents/skills/impeccable/reference/colorize.md",
+     ".agents/skills/impeccable/reference/craft.md",
+     ".agents/skills/impeccable/reference/critique.md",
+     ".agents/skills/impeccable/reference/delight.md",
+     ".agents/skills/impeccable/reference/distill.md",
+     ".agents/skills/impeccable/reference/document.md",
+     ".agents/skills/impeccable/reference/extract.md",
+     ".agents/skills/impeccable/reference/harden.md",
+     ".agents/skills/impeccable/reference/heuristics-scoring.md"
+    ],
+    "title": "UX"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:37:57+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/35"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#35:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:38:06+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/35"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#34:opened",
+   "payload": {
+    "additions": 178,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 120,
+    "files": [
+     "api/inventory/import_inbound.php",
+     "api/inventory/validate_import.php",
+     "assets/js/inventory.js",
+     "sql/update_inventory_schema.sql",
+     "tools/db_update.php"
+    ],
+    "title": "UII"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:18:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/34"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#34:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:18:23+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/34"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#33:opened",
+   "payload": {
+    "additions": 227,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 16,
+    "files": [
+     "api/checkin/delete_image.php",
+     "api/checkin/edit.php",
+     "assets/js/checkin.js",
+     "config/db.php",
+     "views/modules/checkin.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e23\u0e30\u0e1a\u0e1a"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:15:43+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/33"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#33:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T08:16:14+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/33"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#32:opened",
+   "payload": {
+    "additions": 297,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 441,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "UI"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:45:32+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/32"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#32:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:45:40+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/32"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#31:opened",
+   "payload": {
+    "additions": 293,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 362,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e15\u0e01\u0e41\u0e15\u0e48\u0e07\u0e41\u0e08\u0e01\u0e08\u0e48\u0e32\u0e22\u0e07\u0e32\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:36:44+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/31"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#31:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:36:51+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/31"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#30:opened",
+   "payload": {
+    "additions": 258,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 46,
+    "files": [
+     "api/checkin/delete.php",
+     "api/checkin/edit.php",
+     "assets/js/checkin.js",
+     "views/modules/checkin.php"
+    ],
+    "title": "\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e23\u0e30\u0e1a\u0e1a\u0e02\u0e2d\u0e07\u0e40\u0e0a\u0e47\u0e04\u0e2d\u0e34\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:32:05+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/30"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#30:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:32:39+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/30"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#29:opened",
+   "payload": {
+    "additions": 185,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 298,
+    "files": [
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e08\u0e01\u0e08\u0e48\u0e32\u0e22"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:16:20+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/29"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#29:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:16:29+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/29"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#28:opened",
+   "payload": {
+    "additions": 3,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "assets/js/dispatch.js"
+    ],
+    "title": "Update dispatch.js"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:02:26+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/28"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#28:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:02:34+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/28"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#27:opened",
+   "payload": {
+    "additions": 1,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "assets/js/dispatch.js"
+    ],
+    "title": "Update dispatch.js"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:58:59+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/27"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#27:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:59:06+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/27"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#26:opened",
+   "payload": {
+    "additions": 2,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "assets/js/dispatch.js"
+    ],
+    "title": "Update dispatch.js"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:56:16+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/26"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#26:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:56:23+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/26"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#25:opened",
+   "payload": {
+    "additions": 31,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 11,
+    "files": [
+     "api/dispatch/get_jobs.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e41\u0e08\u0e01\u0e08\u0e48\u0e32\u0e22\u0e07\u0e32\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:48:19+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/25"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#25:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:48:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/25"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#24:opened",
+   "payload": {
+    "additions": 102,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 14,
+    "files": [
+     "api/dispatch/get_jobs.php",
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e17\u0e35\u0e21\u0e07\u0e32\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:21:46+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/24"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#24:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:21:55+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/24"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#23:opened",
+   "payload": {
+    "additions": 10,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "views/layouts/sidebar.php"
+    ],
+    "title": "sidebar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:13:13+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/23"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#23:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:13:24+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/23"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#22:opened",
+   "payload": {
+    "additions": 84,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "api/dispatch/get_job_history.php",
+     "api/dispatch/update_job_status.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e44\u0e02\u0e17\u0e35\u0e21"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:03:41+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/22"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#22:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:03:49+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/22"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#21:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "\u0e41\u0e01\u0e49 navbar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:01:55+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/21"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#21:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:03:00+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/21"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#20:opened",
+   "payload": {
+    "additions": 90,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 25,
+    "files": [
+     "views/layouts/sidebar.php"
+    ],
+    "title": "navbar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T05:12:21+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/20"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#20:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T05:12:31+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/20"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#19:opened",
+   "payload": {
+    "additions": 650,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 181,
+    "files": [
+     "api/checkin/get_history.php",
+     "api/users/get_users.php",
+     "api/users/save_user.php",
+     "assets/js/users.js",
+     "sidebar.php",
+     "sql/migration_add_sales_allow_late_time.sql",
+     "sql/schema.sql",
+     "views/layouts/sidebar.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e10\u0e32\u0e19\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T04:56:56+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/19"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#19:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T04:57:04+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/19"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#18:opened",
+   "payload": {
+    "additions": 64,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 84,
+    "files": [
+     "views/modules/checkin.php",
+     "views/modules/dispatch_map.php",
+     "views/modules/inventory_app.php",
+     "views/modules/oil_report.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e2b\u0e19\u0e49\u0e32\u0e08\u0e2d\u0e21\u0e37\u0e2d\u0e16\u0e37\u0e2d"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T04:37:02+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/18"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#18:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T04:37:12+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/18"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#17:opened",
+   "payload": {
+    "additions": 601,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 27,
+    "files": [
+     "CHANGES_SUMMARY.md",
+     "IMPORT_GUIDE.md",
+     "api/inventory/import_inbound.php",
+     "api/inventory/validate_import.php",
+     "assets/js/inventory.js",
+     "tools/create_import_template.php",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e2d\u0e31\u0e1b\u0e42\u0e2b\u0e25\u0e14\u0e04\u0e25\u0e31\u0e07\u0e44\u0e21\u0e48\u0e44\u0e14\u0e49"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T04:29:22+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/17"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#17:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T04:29:29+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/17"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#16:opened",
+   "payload": {
+    "additions": 523,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 463,
+    "files": [
+     "api/dispatch/upload_jobs.php",
+     "api/oil/edit_record.php",
+     "api/oil/get_records.php",
+     "api/oil/import_records.php",
+     "api/oil/submit_record.php",
+     "assets/js/oil_report.js",
+     "views/modules/oil_form.php",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e23\u0e30\u0e1a\u0e1a\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:10:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/16"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#16:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T03:10:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/16"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#15:opened",
+   "payload": {
+    "additions": 171,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 218,
+    "files": [
+     "api/oil/get_records.php",
+     "api/oil/import_excel.php",
+     "assets/js/oil_report.js",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:11:10+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/15"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#15:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:11:19+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/15"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#14:opened",
+   "payload": {
+    "additions": 583,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 747,
+    "files": [
+     "api/inventory/confirm_outbound.php",
+     "assets/js/inventory.js"
+    ],
+    "title": "\u0e04\u0e25\u0e31\u0e07\u0e40\u0e1a\u0e34\u0e01\u0e2a\u0e34\u0e19\u0e04\u0e49\u0e32"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:09:18+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/14"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#14:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:09:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/14"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#13:opened",
+   "payload": {
+    "additions": 684,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 14,
+    "files": [
+     "api/oil/delete_all.php",
+     "api/oil/delete_record.php",
+     "api/oil/import_excel.php",
+     "api/oil/submit_record.php",
+     "assets/js/oil.js",
+     "assets/js/oil_report.js",
+     "tools/db_insert_test.php",
+     "uploads/import_logs/import_exception_20260527_104858.log",
+     "uploads/import_logs/import_exception_20260527_104922.log",
+     "uploads/import_logs/import_exception_20260527_104927.log",
+     "uploads/import_logs/import_exception_20260527_104931.log",
+     "views/modules/oil_form.php",
+     "views/modules/oil_report.php"
+    ],
+    "title": "\u0e40\u0e15\u0e34\u0e21\u0e19\u0e49\u0e33\u0e21\u0e31\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T09:12:15+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/13"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#13:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T09:12:40+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/13"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#12:opened",
+   "payload": {
+    "additions": 1127,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 231,
+    "files": [
+     "api/inventory/add_qty.php",
+     "api/inventory/check_transfer.php",
+     "api/inventory/delete_all.php",
+     "api/inventory/delete_history.php",
+     "api/inventory/get_history.php",
+     "api/inventory/get_master.php",
+     "api/inventory/get_my_today_items.php",
+     "api/inventory/get_stock.php",
+     "api/inventory/outbound_qty.php",
+     "api/inventory/submit_transfer.php",
+     "api/inventory/transfer_qty.php",
+     "assets/js/inventory.js",
+     "sql/schema.sql",
+     "test.php",
+     "test_get_stock.php",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e23\u0e30\u0e1a\u0e1a\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T09:09:05+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/12"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#12:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T09:09:20+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/12"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#11:opened",
+   "payload": {
+    "additions": 479,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 115,
+    "files": [
+     "api/inventory/delete_all.php",
+     "api/inventory/delete_history.php",
+     "api/inventory/delete_item.php",
+     "api/inventory/delete_model.php",
+     "api/inventory/get_stock.php",
+     "api/inventory/import_inbound.php",
+     "assets/js/inventory.js",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:04:00+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/11"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#11:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:04:09+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/11"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#10:opened",
+   "payload": {
+    "additions": 205,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 48,
+    "files": [
+     "sidebar.php",
+     "views/layouts/sidebar.php"
+    ],
+    "title": "\u0e1b\u0e23\u0e31\u0e1a\u0e41\u0e15\u0e48\u0e07\u0e41\u0e16\u0e1a\u0e14\u0e49\u0e32\u0e19\u0e02\u0e49\u0e32\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:00:42+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/10"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#10:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T08:01:30+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/10"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#9:opened",
+   "payload": {
+    "additions": 648,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 168,
+    "files": [
+     "api/checkin/get_history.php",
+     "api/checkin/settings.php",
+     "api/inventory/add_sn_fast.php",
+     "api/inventory/confirm_outbound.php",
+     "api/inventory/delete_all.php",
+     "api/inventory/get_history.php",
+     "api/inventory/get_outbound_targets.php",
+     "assets/js/checkin.js",
+     "assets/js/inventory.js",
+     "sql/schema.sql",
+     "views/modules/checkin.php",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e23\u0e30\u0e1a\u0e1a\u0e04\u0e25\u0e31\u0e07\u0e41\u0e25\u0e30\u0e40\u0e0a\u0e47\u0e04\u0e2d\u0e34\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:19:49+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/9"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#9:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:19:59+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/9"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#8:opened",
+   "payload": {
+    "additions": 121,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 44,
+    "files": [
+     "api/inventory/get_stock.php",
+     "assets/js/inventory.js",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e23\u0e30\u0e1a\u0e1a\u0e04\u0e25\u0e31\u0e071"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T05:07:10+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/8"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#8:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T05:07:20+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/8"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#7:opened",
+   "payload": {
+    "additions": 454,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 20,
+    "deletions": 87,
+    "files": [
+     "api/checkin/get_checkins.php",
+     "api/dispatch/auto_assign.php",
+     "api/inventory/confirm_outbound.php",
+     "api/inventory/get_history.php",
+     "api/inventory/get_products.php",
+     "assets/js/checkin.js",
+     "assets/js/dispatch.js",
+     "assets/js/inventory.js",
+     "assets/uploads/checkins/checkin_2_1779855627_6a16710b91f35.png",
+     "assets/uploads/checkins/checkin_2_1779855636_6a16711426a2f.png",
+     "assets/uploads/checkins/checkin_2_1779855648_6a167120f40cb.png",
+     "assets/uploads/checkins/checkin_2_1779855650_6a167122249c2.png",
+     "assets/uploads/checkins/checkin_2_1779855654_6a16712622320.png",
+     "assets/uploads/checkins/checkin_2_1779855658_6a16712ae49c5.png",
+     "assets/uploads/checkins/checkin_2_1779855663_6a16712f0e1a5.png",
+     "assets/uploads/checkins/checkin_2_1779856005_6a167285080e0.png",
+     "sql/schema.sql",
+     "test_checkins.php",
+     "views/modules/checkin.php",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e23\u0e30\u0e1a\u0e1a\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:49:34+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/7"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#7:closed",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:51:02+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/7"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#7:comment:0",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "body": "\u0e04\u0e27\u0e22"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:01:26+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/7"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#6:opened",
+   "payload": {
+    "additions": 412,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 172,
+    "files": [
+     "api/oil/get_records.php",
+     "api/oil/get_team_plates.php",
+     "api/users/get_teams.php",
+     "api/users/get_users.php",
+     "api/users/save_user.php",
+     "assets/js/oil.js",
+     "assets/js/oil_report.js",
+     "assets/js/users.js",
+     "sql/schema.sql",
+     "views/modules/oil_form.php",
+     "views/modules/oil_report.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e01\u0e32\u0e23\u0e1c\u0e39\u0e01\u0e17\u0e35\u0e21"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:57:09+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/6"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#6:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:57:20+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/6"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#5:opened",
+   "payload": {
+    "additions": 269,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 69,
+    "files": [
+     "api/users/approve.php",
+     "api/users/get_pending.php",
+     "login.php",
+     "views/modules/user_settings.php"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e25\u0e07\u0e17\u0e30\u0e40\u0e1a\u0e35\u0e22\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:30:36+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/5"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#5:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:30:44+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/5"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#4:opened",
+   "payload": {
+    "additions": 463,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 101,
+    "files": [
+     "api/inventory/add_qty.php",
+     "api/inventory/add_sn_fast.php",
+     "api/inventory/get_master.php",
+     "api/inventory/import_inbound.php",
+     "assets/js/inventory.js",
+     "views/modules/inventory_app.php"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e04\u0e25\u0e31\u0e07"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:12:57+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/4"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#4:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:13:07+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/4"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#3:opened",
+   "payload": {
+    "additions": 51,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 19,
+    "files": [
+     "api/dispatch/upload_jobs.php",
+     "assets/js/dispatch.js"
+    ],
+    "title": "\u0e41\u0e01\u0e49\u0e2d\u0e31\u0e1b\u0e42\u0e2b\u0e25\u0e14\u0e44\u0e1f\u0e25\u0e4c\u0e43\u0e19\u0e41\u0e08\u0e01\u0e08\u0e48\u0e32\u0e22\u0e07\u0e32\u0e19\u0e44\u0e21\u0e48\u0e44\u0e14\u0e49"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:56:28+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/3"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#3:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:56:44+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/3"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#2:opened",
+   "payload": {
+    "additions": 780,
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 230,
+    "files": [
+     "api/dispatch/bulk_delete.php",
+     "api/dispatch/clear_assignments.php",
+     "api/dispatch/delete_all_jobs.php",
+     "api/dispatch/upload_jobs.php",
+     "assets/js/dispatch.js",
+     "views/modules/dispatch_map.php"
+    ],
+    "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e41\u0e08\u0e01\u0e08\u0e48\u0e32\u0e22\u0e07\u0e32\u0e19"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:23:17+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/2"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#2:merged",
+   "payload": {
+    "author": "nontapat150-droid",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:23:27+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/2"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#1:opened",
+   "payload": {
+    "additions": 205,
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 21,
+    "files": [
+     "api/checkin/submit.php",
+     "assets/js/checkin.js",
+     "index.php",
+     "sidebar.php",
+     "views/layouts/sidebar.php",
+     "views/modules/checkin.php"
+    ],
+    "title": "check in"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:10:03+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/1"
+  },
+  {
+   "evidence_id": "pr:nontapat150-droid/Bonus#1:merged",
+   "payload": {
+    "author": "Renjisans",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T02:21:30+00:00",
+   "url": "https://github.com/nontapat150-droid/Bonus/pull/1"
+  }
+ ],
+ "repo": "nontapat150-droid/Bonus",
+ "window": "pre_t"
+}

@@ -36,6 +36,7 @@ PRICES = {
 # stage is promoted only if the pilot shows it needs to be.
 STAGE_MODELS: dict[str, str] = {
     "baseline": SMALL,
+    "baseline_matched": SMALL,
     "classify": SMALL,
     "opportunity": SMALL,
     "outcomes": SMALL,

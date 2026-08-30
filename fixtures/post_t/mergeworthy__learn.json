@@ -1,0 +1,139 @@
+{
+ "captured_at": "2026-08-29T20:07:25.319889+00:00",
+ "content_sha256": "ea00561240e29b598e89423686879bc485d0d20c5d5b7da37c856298b4b2e08a",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "pr:mergeworthy/learn#48:opened",
+   "payload": {
+    "additions": 1,
+    "author": "hamza-0987",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "fix: typo contibution -> contribution"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T20:08:07+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/48"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#48:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T20:08:36+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/48"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#47:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Eatingpigx",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "Fix typo: contribution in README"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T08:44:37+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/47"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#47:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T08:45:00+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/47"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#47:comment:0",
+   "payload": {
+    "author": "Eatingpigx",
+    "author_is_bot": false,
+    "body": "@claude "
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T08:45:59+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/47"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#46:opened",
+   "payload": {
+    "additions": 5,
+    "author": "WaterXiao-git",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "README.md",
+     "guides/finding-good-first-issues.md",
+     "guides/reading-a-codebase.md",
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "Fix multiple typos in documentation"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T17:00:21+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/46"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#46:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T17:00:46+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/46"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#45:opened",
+   "payload": {
+    "additions": 1,
+    "author": "YaMike-999",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "resources/javascript/curated-links.md"
+    ],
+    "title": "add eloquent js issue 6"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:42:07+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/45"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#45:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-01T19:42:32+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/45"
+  }
+ ],
+ "repo": "mergeworthy/learn",
+ "window": "post_t"
+}

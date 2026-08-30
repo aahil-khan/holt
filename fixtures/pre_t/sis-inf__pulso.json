@@ -1,0 +1,5160 @@
+{
+ "captured_at": "2026-08-29T20:26:51.187483+00:00",
+ "content_sha256": "4c133dd7aaf539060995443b9638be82ef1400836df5e6d9d565795fb2016392",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:sis-inf/pulso:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Monitor de infraestructura ligero",
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "C++",
+    "pushed_at": "2026-08-01T23:47:31Z",
+    "stargazer_count": 1
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T15:05:13+00:00",
+   "url": "https://github.com/sis-inf/pulso"
+  },
+  {
+   "evidence_id": "repo:sis-inf/pulso:readme",
+   "payload": {
+    "commit_oid": "2bfb5fefb847b4540ea3496613bf51b823f10637",
+    "kind": "readme",
+    "text": "# Pulso\n\nPlataforma en C++ para gestionar y monitorear informaci\u00f3n clave de forma eficiente.\n\n## \u00bfQu\u00e9 es?\n\nPulso es una aplicaci\u00f3n desarrollada en C++ que permite gestionar y visualizar informaci\u00f3n relevante de manera centralizada. Est\u00e1 pensada para ofrecer alto rendimiento y control directo sobre los recursos del sistema.\n\n## \u00bfPara qui\u00e9n es?\n\nPulso est\u00e1 dirigido a:\n\n- Desarrolladores que trabajan con sistemas de alto rendimiento\n- Equipos que requieren herramientas eficientes y ligeras\n- Proyectos que necesitan control preciso sobre memoria y procesamiento\n\n## \u00bfQu\u00e9 problema resuelve?\n\nPulso ayuda a resolver:\n\n- La dispersi\u00f3n de informaci\u00f3n en m\u00faltiples fuentes\n- La falta de herramientas r\u00e1pidas y eficientes\n- El alto consumo de recursos en soluciones tradicionales\n\nGracias a su implementaci\u00f3n en C++, Pulso permite una ejecuci\u00f3n m\u00e1s r\u00e1pida y optimizada.\n\n## Instalaci\u00f3n\n\n**Requisitos del sistema**\n- Sistema operativo: Windows, Linux o macOS\n- Compilador de C++ (GCC, Clang o MSVC)\n- CMake (recomendado)\n- Git\n\n### Pasos b\u00e1sicos\n\n```bash\n# Clonar el repositorio\ngit clone https://github.com/tu-usuario/pulso.git\n\n# Entrar al proyecto\ncd pulso\n```\n\n---\n\n> [!NOTE]\n> Estos pasos corresponden a la versi\u00f3n final esperada del proyecto.\n\n```bash\n# Crear carpeta de build\nmkdir build && cd build\n\n# Generar archivos de compilaci\u00f3n\ncmake ..\n\n# Compilar\ncmake --build .\n```\n\nUso r\u00e1pido:\n\n```bash\n# Ejecutar el programa (puede variar seg\u00fan el sistema)\n./pulso\n```\n\nEn Windows:\n\n```bash\npulso.exe\n```\n\n---\n## Ejemplo basico de uso esperado\n\n```bash\n# Entrada\n./pulso\n\n# Salida\n\u00a1Bienvenido a Pulso!\nSeleccione una opci\u00f3n:\n1. Ver estado\n2. Actualizar datos\n3. Salir\n\n# Entrada\n> 1\n\n# Salida\nEstado del sistema: OK\n```\n\n**Usando argumentos:**\n\n```bash\n# Entrada\n./pulso --status\n\n# Salida:\nEstado del sistema: OK\nProcesos activos: 5\nUso de recursos: Normal\nCPU:\n- Uso: 23%\n- N\u00facleos activos: 4\n\nMemoria (RAM):\n- Uso: 3.2 GB / 8 GB\n- Disponible: 4.8 GB\n\nDisco:\n- Uso: 120 GB / 256 GB\n- Espacio libre: 136 GB\n\nRed:\n- Descarga: 12 Mbps\n- Subida: 3 Mbps\n- Estado: Conectado\n```\n\n---\n> [!IMPORTANT]\n> Este proyecto se encuentra en desarrollo activo. Los pasos de instalaci\u00f3n y ejecuci\u00f3n pueden cambiar en futuras versiones.\n---\n## Compilaci\u00f3n con Makefile (sin CMake)\n \nPara entornos ligeros donde CMake no est\u00e1 disponible, el proyecto incluye un\n`Makefile` alternativo listo para usar.\n \n### Requisitos\n \n| Herramienta | Versi\u00f3n m\u00ednima |\n|-------------|---------------|\n| `g++` / `clang++` | C++17 |\n| GNU Make | 4.x |\n \n### Uso r\u00e1pido\n \n```bash\n# Compilar el proyecto\nmake\n \n# Usar un compilador distinto (ej. clang++)\nmake CXX=clang++\n \n# Ejecutar los tests\nmake test\n \n# Eliminar artefactos de compilaci\u00f3n\nmake clean\n```\n \n### Variables configurables\n \n| Variable | Valor por defecto | Descripci\u00f3n |\n|----------|------------------|-------------|\n| `CXX` | `g++` | Compilador C++ |\n| `CXXFLAGS` | `-std=c++17 -Wall` | Flags de compilaci\u00f3n |\n \n> **Nota:** el operador `?=` en `CXX` permite sobreescribir el compilador\n> desde la l\u00ednea de comandos o desde la variable de entorno del sistema sin\n> modificar el Makefile.\n \n### Estructura esperada\n \n```\nproject/\n\u251c\u2500\u2500 src/          # Fuentes principales (*.cpp)\n\u251c\u2500\u2500 tests/        # Fuentes de pruebas  (*.cpp)\n\u251c\u2500\u2500 build/        # Artefactos generados (ignorado por git)\n\u2514\u2500\u2500 Makefile\n```\n \n### Recompilaci\u00f3n incremental\n \nEl Makefile compila \u00fanicamente los archivos `.cpp` que hayan cambiado desde\nla \u00faltima build, gracias al seguimiento de dependencias de Make sobre los\narchivos objeto (`.o`) en `build/`.\n\n---\n\n## Documentaci\u00f3n\nVer la carpeta [docs/](docs/)\n\n## Contribuir\nVer [CONTRIBUTING.md](CONTRIBUTING.md)\n\n## Licencia\nMIT \u2014 ver [LICENSE](LICENSE)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:05:39+00:00",
+   "url": "https://github.com/sis-inf/pulso/blob/2bfb5fefb847b4540ea3496613bf51b823f10637/README.md"
+  },
+  {
+   "evidence_id": "repo:sis-inf/pulso:contributing",
+   "payload": {
+    "commit_oid": "2bfb5fefb847b4540ea3496613bf51b823f10637",
+    "kind": "contributing",
+    "text": "# C\u00f3mo contribuir a este proyecto\r\n\r\nGracias por tu inter\u00e9s en contribuir. Este proyecto usa\r\nel **Forking Workflow**. Lee este documento antes de empezar.\r\n\r\n---\r\n\r\n## Flujo de trabajo\r\n\r\n### 1. Haz fork del repositorio\r\nBot\u00f3n **Fork** en la esquina superior derecha de GitHub.  \r\n\r\nAseg\u00farate que el **owner** sea tu cuenta de GithHub, luego click al bot\u00f3n de color verde: \"**Create Fork**\".\r\nAhora deber\u00edas tener un repositorio en tu **cuenta personal** de GitHub llamado **tu_nombre_usuario/nombre_repositorio**. \r\n\r\n*Ejemplo.-* **Atoxny/pulso**\r\n\r\n### 2. Clona tu fork\r\nDesde el apartado **Code** del repositorio en tu cuenta personal realiza la clonaci\u00f3n con los siguientes pasos:\r\n1.   Click al bot\u00f3n de color verde **\"<> Code\"**.\r\n2.   Selecciona Local -> HTTPS.\r\n3.   Copia la URL.\r\n4.   Desde tu computadora (port\u00e1til o de escritorio), en la carpeta donde quieres clonar el repositorio, abre la terminal de GitBash haciendo click derecho dentro la carpeta.\r\n5.   En la terminal de GitBash escribe los siguientes comandos:\r\n\r\n```bash\r\n# Clonar el repositorio\r\n# Recuerda PEGAR la URL que copiaste en lugar del URL de ejemplo :D\r\ngit clone https://github.com/TU-USUARIO/PROYECTO.git\r\n\r\n# Moverte dentro la carpeta donde se clon\u00f3 el repositorio\r\ncd PROYECTO\r\n```\r\n\r\n### 3. Agrega el repo original como upstream \r\nPara estar al tanto de las modificaciones que se realicen en el **repositorio original (sis-inf/pulso)** debes agregar el repositorio original como un upstream de la siguiente manera en la terminal de GitBash, puedes **copiar** el siguiente comando:\r\n```bash\r\ngit remote add upstream https://github.com/sis-inf/pulso.git\r\n```\r\nRevisa si se agreg\u00f3 de manera exitosa el repositorio como upstream.\r\n```bash\r\ngit remote -v\r\n# Deberia salirte como resultado, luego de ingresar ese comando, lo siguiente:\r\norigin https://github.com/TU-USUARIO/pulso.git (fetch)\r\norigin https://github.com/TU-USUARIO/pulso.git (push)\r\nupstream https://github.com/sis-inf/pulso.git (fetch)\r\nupstream https://github.com/sis-inf/puslo.git (push)\r\n```\r\nAseg\u00farate de que te aparezca en **origin** tu nombre de usuario en el apartado ***TU-USUARIO***, mientras que en **upstream** el nombre de ***sis-inf***. \r\n\r\nEn caso de existir alg\u00fan error revisar el apartado [Errores comunes](#errores-comunes).\r\n\r\n### 4. Sincroniza antes de trabajar\r\n**Realiza** este paso **SIEMPRE ANTES** de empezar a trabajar en un nuevo Issue para tener tu repositorio al dia :D\r\n```bash\r\n# Moverte a la rama dev\r\ngit checkout dev\r\n# Trae los cambios del repositorio original a tu repositorio local\r\ngit pull upstream dev\r\n```\r\n\r\n### 5. Crea tu rama de trabajo\r\nRecuerda trabajar con ramas. El nombre de la rama que debes utilizar para tu Issue esta siempre en la descripcion del mismo, ya sea en el apartado **\"Rama sugerida\"** o simplemente **\"Rama\"**.\r\n\r\n***tipo/descripcion-corta = el nombre de la Rama sugerida***\r\n```bash\r\n# Crear y moverte a la rama que crear\u00e1s\r\ngit checkout -b tipo/descripcion-corta\r\n```\r\n\r\nEjemplos de nombres de rama:\r\n```\r\nfeat/endpoint-metricas-cpu\r\ndocs/readme-instalacion\r\nfix/calculo-ram-incorrecto\r\ntest/pruebas-unitarias-cpu\r\nchore/configurar-github-actions\r\nsecurity/analisis-dependencias\r\n```\r\n\r\n### 6. Trabaja y haz commits peque\u00f1os\r\n*\"Un cambio, un commit\".*\r\n\r\nTrabajar con commits permite tener \"Checkpoints\" y mantener un historial del trabajo que haz realizado. Normalmente llevan una descripcion corta tal y como se muestra en el ejemplo de abajo. \r\n\r\nLa descripcion del commit debe ser de forma imperativa y concisa: *\"docs: actualizar gu\u00eda de instalaci\u00f3n\", \"fix: corregir error en validaci\u00f3n de usuario\"*, entre otros.\r\n\r\nEl commit debe responder a la pregunta: *\"\u00bfQu\u00e9 hace este cambio?\"*\r\n```bash\r\ngit add .\r\ngit commit -m \"tipo: descripci\u00f3n corta en presente\"\r\n```\r\nPara saber de que *tipo* debes realizar el commit revisa el apartado de [convenci\u00f3n de commits](#convenci\u00f3n-de-commits).\r\n### 7. Sube tu rama a tu fork\r\n\r\n***tipo/descripcion-corta = el nombre de la rama donde trabajaste.***\r\n```bash\r\ngit push origin tipo/descripcion-corta\r\n```\r\n\r\n### 8. Abre un Pull Request\r\n1. Ve a tu Fork en GitHub, aquel repositorio que est\u00e1 en tu cuenta personal.\r\n2. Click en el banner de color amarillo: \"Compare & pull request\"\r\n   En caso de que no aparezca: \r\n     * Dir\u00edgete a la pesta\u00f1a `Pull Requests`-> `New Pull Request`\r\n3. Verifica el  destino del PR\r\n   - Base repository: `sis-inf/pulso` \u2192 base `dev` <- Importante que este en `dev`\r\n   - Head repository: `TU-USUARIO/pulso` \u2192 compare `tu-rama`\r\n4. Edita la descripci\u00f3n y el t\u00edtulo del PR seg\u00fan los cambios que hayas realizado sin olvidarte de agregar al `Closes #` el numero del Issue que realizaste.\r\n---\r\n\r\n## Convenci\u00f3n de commits\r\n\r\n| Tipo | Cu\u00e1ndo usarlo |\r\n|---|---|\r\n| `feat:` | Nueva funcionalidad |\r\n| `fix:` | Correcci\u00f3n de error |\r\n| `docs:` | Documentaci\u00f3n |\r\n| `test:` | Pruebas |\r\n| `chore:` | Configuraci\u00f3n o CI/CD |\r\n| `refactor:` | Mejora sin cambiar comportamiento |\r\n| `security:` | Mejora de seguridad |\r\n\r\n### Ejemplos\r\n\r\n- feat: agregar endpoint /metrics para CPU\r\n- fix: corregir c\u00e1lculo de porcentaje de RAM\r\n- docs: agregar gu\u00eda de instalaci\u00f3n en Windows\r\n- test: agregar pruebas unitarias para m\u00f3dulo de disco\r\n- chore: configurar GitHub Actions para CI\r\n\r\n---\r\n\r\n## Reglas importantes\r\n\r\n- \u274c Nunca hagas push directo a `main` o `dev`\r\n- \u274c Nunca trabajes directamente en `main` o `dev`\r\n- \u274c No agregar archivos de otros lenguajes que no pertenezcan al proyecto C++\r\n- \u2705 Un issue = una rama = un PR\r\n- \u2705 Todo PR debe ser abierto contra la rama `dev` y NO contra `main`\r\n- \u2705 Todo PR debe referenciar su issue con `Closes #N`\r\n- \u2705 El PR debe pasar el CI antes de ser mergeado\r\n- \u2705 Todo PR necesita al menos una revisi\u00f3n\r\n\r\n---\r\n\r\n## Ramas del proyecto\r\n\r\n| Rama | Prop\u00f3sito |\r\n|---|---|\r\n| `main` | Versi\u00f3n estable \u2014 solo recibe merges desde `dev` |\r\n| `dev` | Rama de desarrollo principal |\r\n| `feat/*` | Nuevas funcionalidades |\r\n| `fix/*` | Correcciones |\r\n| `docs/*` | Documentaci\u00f3n |\r\n| `test/*` | Pruebas |\r\n| `chore/*` | Configuraci\u00f3n |\r\n\r\n---\r\n\r\n## \u00bfNo sabes por d\u00f3nde empezar?\r\n\r\n1. Revisa los issues abiertos con la etiqueta `good first issue`\r\n2. Comenta en el issue que quieres trabajarlo\r\n3. Espera confirmaci\u00f3n antes de empezar\r\n4. Sigue los pasos de este documento\r\n\r\n## Errores comunes\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:05:39+00:00",
+   "url": "https://github.com/sis-inf/pulso/blob/2bfb5fefb847b4540ea3496613bf51b823f10637/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#303:opened",
+   "payload": {
+    "additions": 67,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/storage/storage.cpp",
+     "src/storage/storage.hpp"
+    ],
+    "title": "feat(storage): implementar m\u00e9todo getPromedio en storage.cpp \u2014 promedio de m\u00e9tricas en ventana de tiempo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:59:19+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/303"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#302:opened",
+   "payload": {
+    "additions": 53,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/CMakeLists.txt",
+     "tests/automatizados/test_disk_usage.cpp"
+    ],
+    "title": "test: pruebas unitarias para getDiskUsage \u2014 verificar consistencia total/used/free"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:09:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/302"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#281:opened",
+   "payload": {
+    "additions": 2404,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 60,
+    "deletions": 382,
+    "files": [
+     ".clang-format",
+     ".gitignore",
+     "CMakeLists.txt",
+     "CONTRIBUTING.md",
+     "Makefile",
+     "cmake/Dependencies.cmake",
+     "docs/arquitectura.md",
+     "examples/README.md",
+     "examples/prometheus.yml",
+     "pulso.toml",
+     "src/CMakeLists.txt",
+     "src/README.md",
+     "src/cli/arg_parser.cpp",
+     "src/cli/arg_parser.h",
+     "src/collectors/cpu/cpu_usage.cpp",
+     "src/collectors/cpu/cpu_usage.hpp",
+     "src/collectors/error_recoleccion.hpp",
+     "src/collectors/icollector.hpp",
+     "src/collectors/memory/ram_usage.cpp",
+     "src/collectors/memory/ram_usage.hpp"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:39:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/281"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#281:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:39:35+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/281"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#280:opened",
+   "payload": {
+    "additions": 135,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/formatters/formatter_csv.cpp",
+     "src/formatters/formatter_csv.hpp"
+    ],
+    "title": "feat(formatters): implementar FormatterCSV \u2014 exportar m\u00e9tricas en formato CSV con cabecera #269"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T12:06:31+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/280"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#280:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:59:37+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/280"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#279:opened",
+   "payload": {
+    "additions": 48,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 15,
+    "files": [
+     "src/http/handler_health.cpp",
+     "src/http/handler_health.hpp"
+    ],
+    "title": "feat(http): implementar handler_health \u2014 endpoint GET /health para health-check del agente #271"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T02:29:24+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/279"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#279:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:59:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/279"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#278:opened",
+   "payload": {
+    "additions": 41,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 57,
+    "files": [
+     "src/utils/logging/logger.cpp",
+     "src/utils/logging/logger.hpp"
+    ],
+    "title": "feat(utils): implementar logger con niveles DEBUG/INFO/WARN/ERROR #275"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T02:15:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/278"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#278:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:58:21+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/278"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#277:opened",
+   "payload": {
+    "additions": 63,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 48,
+    "files": [
+     "src/collectors/cpu/cpu_usage.cpp"
+    ],
+    "title": "fix: corregir cpu_usage.cpp para calcular porcentaje entre dos lecturas #216"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T01:45:27+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/277"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#277:merged",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:57:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/277"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#266:opened",
+   "payload": {
+    "additions": 91,
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/platform/linux/collector_memory.cpp",
+     "src/platform/linux/collector_memory.hpp"
+    ],
+    "title": "feat: implementar CollectorMemory para Linux"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T21:44:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/266"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#266:merged",
+   "payload": {
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:54:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/266"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#265:opened",
+   "payload": {
+    "additions": 80,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/http/handler_metrics.cpp",
+     "src/http/handler_metrics.hpp"
+    ],
+    "title": "feat(http): implementar endpoint /metrics"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T05:40:06+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/265"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#265:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:53:32+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/265"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#264:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/collectors/cpu/cpu_usage.hpp"
+    ],
+    "title": "fix: agregar include guards con patr\u00f3n PULSO_CPU_CPU_USAGE_HPP"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:23:01+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/264"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#264:merged",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:11:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/264"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#263:opened",
+   "payload": {
+    "additions": 124,
+    "author": "111000111-707",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "cmake/Dependencies.cmake",
+     "tests/formatters/test_formatter_json.cpp"
+    ],
+    "title": "Agrega pruebas unitarias para FormatterJSON"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:53:37+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/263"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#263:merged",
+   "payload": {
+    "author": "111000111-707",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:10:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/263"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#262:opened",
+   "payload": {
+    "additions": 34,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 82,
+    "files": [
+     "src/main.cpp"
+    ],
+    "title": "fix: add minimal startup structure to main.cpp - Closes #214"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T01:25:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/262"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#262:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:10:07+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/262"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#261:opened",
+   "payload": {
+    "additions": 41,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "examples/README.md",
+     "examples/prometheus.yml"
+    ],
+    "title": "docs: crear ejemplo de integraci\u00f3n con Prometheus #109"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:25:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/261"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#261:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:30:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/261"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#260:opened",
+   "payload": {
+    "additions": 0,
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/CMakeLists.txt"
+    ],
+    "title": "chore: eliminar referencia a archivos inexistentes en CMakeLists.txt"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:48:06+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/260"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#260:merged",
+   "payload": {
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:29:26+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/260"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#259:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "src/collectors/cpu/cpu_usage.hpp"
+    ],
+    "title": "fix: agregar protecci\u00f3n contra inclusi\u00f3n m\u00faltiple en headers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T18:36:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/259"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#259:closed",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:29:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/259"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#259:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise la tarea que se solicita en el Issue, debe implicar a estos 4 archivos \r\nsrc/core/types.hpp \r\nsrc/collectors/cpu/cpu_usage.hpp\r\nsrc/collectors/memory/ram_usage.hpp\r\nsrc/storage/schema.hpp"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:29:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/259"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#258:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/collectors/cpu/cpu_usage.hpp"
+    ],
+    "title": "fix: agregar include guards a headers existentes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:42:02+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/258"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#258:closed",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:45:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/258"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#258:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise la tarea del issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T17:45:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/258"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#257:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/collectors/cpu/cpu_usage.h"
+    ],
+    "title": "fix: agregar include guards a headers existentes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:54:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/257"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#257:closed",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:29:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/257"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#257:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "La Solicitud tiene conflictos"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:29:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/257"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#256:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/cpu/cpu_usage.hpp"
+    ],
+    "title": "fix(cpu): corregir estructura de archivos en collectors/cpu"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T02:20:30+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/256"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#256:merged",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:28:34+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/256"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#255:opened",
+   "payload": {
+    "additions": 45,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/http/handler_prometheus.cpp",
+     "src/http/handler_prometheus.hpp"
+    ],
+    "title": "Feat/endpoint prometheus 21"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T01:24:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/255"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#255:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:28:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/255"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#254:opened",
+   "payload": {
+    "additions": 62,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "src/collectors/memory/ram_usage.cpp",
+     "src/collectors/memory/ram_usage.hpp"
+    ],
+    "title": "fix: corregir getRamUsage() para retornar los tres campos requeridos por el contrato - Closes #215"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:58:25+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/254"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#254:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:27:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/254"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#252:opened",
+   "payload": {
+    "additions": 9,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "CMakeLists.txt"
+    ],
+    "title": "fix: corregir CMakeLists.txt ra\u00edz para referenciar solo archivos C++ existentes - Closes#212"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:31:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/252"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#252:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:27:21+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/252"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#251:opened",
+   "payload": {
+    "additions": 31,
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/http/handler_health.cpp",
+     "src/http/handler_health.hpp"
+    ],
+    "title": "feat(http): implementar endpoint /health "
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:52:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/251"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#251:merged",
+   "payload": {
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:26:57+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/251"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#250:opened",
+   "payload": {
+    "additions": 10,
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/cli/arg_parser.cpp"
+    ],
+    "title": "feat: a\u00f1adir versi\u00f3n est\u00e1tica y comando --version"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T16:46:39+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/250"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#250:merged",
+   "payload": {
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:32:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/250"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#249:opened",
+   "payload": {
+    "additions": 5,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".gitignore"
+    ],
+    "title": "fix: corregir el archivo .gitignore para excluir artefactos de compilacion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T12:20:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/249"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#249:merged",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:32:27+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/249"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#248:opened",
+   "payload": {
+    "additions": 42,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 100,
+    "files": [
+     "src/README.md"
+    ],
+    "title": "fix: corregir src/README.md para que refleje la estructura real del proyecto"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T11:32:35+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/248"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#248:merged",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:31:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/248"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#247:opened",
+   "payload": {
+    "additions": 12,
+    "author": "qorexdevs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "src/core/types.hpp"
+    ],
+    "title": "fix: alinear campos de Metrica y Snapshot - Closes #218"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:43:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/247"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#247:merged",
+   "payload": {
+    "author": "qorexdevs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:31:28+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/247"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#246:opened",
+   "payload": {
+    "additions": 32,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/CMakeLists.txt"
+    ],
+    "title": "fix: corregir CMakeLists.txt en src para incluir los archivos fuente reales - Closes#213"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:50:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/246"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#246:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:30:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/246"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#245:opened",
+   "payload": {
+    "additions": 85,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 13,
+    "files": [
+     "src/collectors/error_recoleccion.hpp",
+     "src/collectors/icollector.hpp",
+     "src/platform/linux/collector_disk.cpp",
+     "src/platform/linux/collector_disk.hpp"
+    ],
+    "title": "feat(collectors): implementar CollectorDisk para Linux #94"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T04:00:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/245"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#245:merged",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:30:16+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/245"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#244:opened",
+   "payload": {
+    "additions": 18,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 13,
+    "files": [
+     "docs/arquitectura.md"
+    ],
+    "title": "fix: corregir docs/arquitectura.md para que el diagrama Mermaid sea v\u00e1lido #220"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T01:11:26+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/244"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#244:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:29:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/244"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#243:opened",
+   "payload": {
+    "additions": 21,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 70,
+    "files": [
+     "src/collectors/memory/ram_usage.cpp",
+     "src/collectors/memory/ram_usage.hpp",
+     "src/utils/ram_usage.cpp"
+    ],
+    "title": "fix: crear directorio collectors/memory con los archivos del collector existente #219"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T00:23:17+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/243"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#243:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T22:29:17+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/243"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#242:opened",
+   "payload": {
+    "additions": 2,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/arquitectura.md"
+    ],
+    "title": "fix: corregir docs/arquitectura.md para que el diagrama Mermaid sea v\u00e1lido #220"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T23:44:23+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/242"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#242:closed",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T00:01:04+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/242"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#242:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise la tarea solicitada en el Issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T00:01:04+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/242"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#241:opened",
+   "payload": {
+    "additions": 14,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "src/platform/linux/collector_cpu.cpp",
+     "src/platform/linux/collector_cpu.hpp"
+    ],
+    "title": "fix: agregar namespace pulso::collectors a cpu_usage.hpp y cpu_usage.cpp #221"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T23:02:21+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/241"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#241:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T00:00:21+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/241"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#240:opened",
+   "payload": {
+    "additions": 20,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/storage/schema.cpp",
+     "src/storage/schema.hpp"
+    ],
+    "title": "fix: corregir la documentaci\u00f3n Doxygen en schema.cpp para que sea v\u00e1lida - Closes #229"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T08:16:09+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/240"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#240:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T23:59:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/240"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#239:opened",
+   "payload": {
+    "additions": 54,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/collectors/cpu/cpu_usage.cpp",
+     "src/collectors/cpu/cpu_usage.h"
+    ],
+    "title": "fix: corregir cpu_usage.hpp para que CollectorCPU herede de ICollector - Closes #224"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T07:51:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/239"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#239:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T23:59:19+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/239"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#238:opened",
+   "payload": {
+    "additions": 8,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "CONTRIBUTING.md"
+    ],
+    "title": "fix: align contributing guide with current workflow - Closes #232"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:56:26+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/238"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#238:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T23:58:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/238"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#237:opened",
+   "payload": {
+    "additions": 0,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 105,
+    "files": [
+     "src/utils/system_metrics.py",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "fix: remove misplaced Python utility files - Closes #211"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T04:29:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/237"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#237:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T23:58:09+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/237"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#236:opened",
+   "payload": {
+    "additions": 137,
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/sampler/sampler.cpp",
+     "src/sampler/sampler.hpp"
+    ],
+    "title": "feat: implementar sampler thread"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T01:25:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/236"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#236:merged",
+   "payload": {
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:51:35+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/236"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#235:opened",
+   "payload": {
+    "additions": 148,
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/sampler/sampler.cpp",
+     "src/sampler/sampler.hpp"
+    ],
+    "title": "feat: implementar sampler thread - Closes #102"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T23:33:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/235"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#235:closed",
+   "payload": {
+    "author": "JuanPinaya",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T23:52:39+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/235"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#234:opened",
+   "payload": {
+    "additions": 2,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "src/collectors/memory/ram_usage.cpp"
+    ],
+    "title": "fix: corregir el mensaje de error en getRamUsage() para que incluya informaci\u00f3n \u00fatil"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T19:20:41+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/234"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#234:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:50:39+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/234"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#233:opened",
+   "payload": {
+    "additions": 1,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/storage/storage.cpp"
+    ],
+    "title": "fix: agregar namespace pulso::storage a schema.hpp y schema.cpp"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T19:02:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/233"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#233:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T03:50:09+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/233"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#210:opened",
+   "payload": {
+    "additions": 120,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/platform/linux/collector_cpu.cpp",
+     "src/platform/linux/collector_cpu.hpp"
+    ],
+    "title": "feat(collectors): implementar CollectorCPU para Linux"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T21:53:31+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/210"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#210:merged",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T22:48:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/210"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#210:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T22:48:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/210"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#209:opened",
+   "payload": {
+    "additions": 175,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/CMakeLists.txt",
+     "tests/storage/test_storage.cpp"
+    ],
+    "title": "test: pruebas unitarias de Storage - Closes #103"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T21:01:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/209"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#209:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T02:26:19+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/209"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#208:opened",
+   "payload": {
+    "additions": 98,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/http/handler_history.cpp",
+     "src/http/handler_history.hpp"
+    ],
+    "title": "feat(http): implementar endpoint /metrics/history"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T20:31:02+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/208"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#208:merged",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T02:25:35+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/208"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#207:opened",
+   "payload": {
+    "additions": 3,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "Makefile",
+     "src/CMakeLists.txt"
+    ],
+    "title": "chore: a\u00f1adir flags de compilaci\u00f3n seguros"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T14:48:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/207"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#207:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T14:52:09+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/207"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#207:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T14:52:02+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/207"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#206:opened",
+   "payload": {
+    "additions": 2,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/CMakeLists.txt"
+    ],
+    "title": "chore: a\u00f1adir flags de compilaci\u00f3n seguros"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T03:38:30+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/206"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#206:closed",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T05:35:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/206"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#206:comment:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "Hola @unknowangxl Veo que los flags requeridos (`-Wall -Wextra -Wpedantic -O2`) fueron a\u00f1adidos correctamente mediante `target_compile_options`, y tambi\u00e9n se respet\u00f3 el criterio de no incluir `-Werror`.\r\n\r\nSin embargo, la issue menciona expl\u00edcitamente \u201cAplicar en CMake y Makefile\u201d, y actualmente el repositorio s\u00ed contiene un `Makefile` con `CXXFLAGS`, por lo que quedar\u00eda pendiente actualizarlo para mantener consistencia entre ambos sistemas de compilaci\u00f3n y cumplir con todos los criterios de aceptaci\u00f3n de la issue.\r\n\r\nCon esos ajustes y verificando compilaci\u00f3n limpia sin warnings, la PR quedar\u00eda alineada con todos los criterios de aceptaci\u00f3n.\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T05:35:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/206"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#205:opened",
+   "payload": {
+    "additions": 110,
+    "author": "claudiaatanacio-cloud",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/formatters/formatter_json.cpp",
+     "src/formatters/formatter_json.hpp"
+    ],
+    "title": "feat: implementar FormatterJSON"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T15:20:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/205"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#205:merged",
+   "payload": {
+    "author": "claudiaatanacio-cloud",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T00:53:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/205"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#204:opened",
+   "payload": {
+    "additions": 24,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "pulso.toml"
+    ],
+    "title": "docs: crear archivo pulso.toml de ejemplo - Closes#108"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T02:47:34+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/204"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#204:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T00:53:04+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/204"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#203:opened",
+   "payload": {
+    "additions": 133,
+    "author": "MariaPS0023",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/utils/logging/logger.cpp",
+     "src/utils/logging/logger.hpp"
+    ],
+    "title": "feat(utils): implementar sistema de logging b\u00e1sico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T20:50:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/203"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#203:merged",
+   "payload": {
+    "author": "MariaPS0023",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T01:39:00+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/203"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#202:opened",
+   "payload": {
+    "additions": 51,
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 54,
+    "files": [
+     ".clang-format",
+     "src/main.cpp"
+    ],
+    "title": "chore: a\u00f1adir .clang-format con estilo LLVM e IndentWidth 2"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T05:38:48+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/202"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#202:merged",
+   "payload": {
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T17:04:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/202"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#201:opened",
+   "payload": {
+    "additions": 74,
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/core/SystemMonitor.cpp",
+     "src/core/SystemMonitor.hpp"
+    ],
+    "title": "feat: crear clase SystemMonitor"
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T20:13:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/201"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#201:merged",
+   "payload": {
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T00:43:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/201"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#200:opened",
+   "payload": {
+    "additions": 74,
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 65,
+    "files": [
+     "src/core/SystemMonitor.cpp",
+     "src/core/SystemMonitor.hpp",
+     "src/main.cpp"
+    ],
+    "title": "feat: crear clase SystemMonitor"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T16:59:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/200"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#200:closed",
+   "payload": {
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:30:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/200"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#200:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "El pull request tiene conflictos."
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:30:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/200"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#199:opened",
+   "payload": {
+    "additions": 17,
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/config/config.hpp"
+    ],
+    "title": "feat: add MonitorConfig structure"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T16:27:02+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/199"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#199:merged",
+   "payload": {
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:16:31+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/199"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#198:opened",
+   "payload": {
+    "additions": 6,
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/CMakeLists.txt"
+    ],
+    "title": "chore: configure src include directories"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T16:05:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/198"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#198:merged",
+   "payload": {
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:14:34+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/198"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#197:opened",
+   "payload": {
+    "additions": 32,
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tests/test_console_formatter.cpp"
+    ],
+    "title": "test: validar formateador de consola con GTest"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T04:18:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/197"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#197:merged",
+   "payload": {
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:10:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/197"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#194:opened",
+   "payload": {
+    "additions": 191,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "src/cli/arg_parser.cpp",
+     "src/cli/arg_parser.h",
+     "src/main.cpp"
+    ],
+    "title": "feat: implement basic command-line argument parser - Closes #29"
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T02:31:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/194"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#194:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T01:08:28+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/194"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#193:opened",
+   "payload": {
+    "additions": 48,
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "src/main.cpp",
+     "src/utils/ram_usage.cpp",
+     "src/utils/ram_usage.hpp"
+    ],
+    "title": "feat: implementar lectura de RAM desde /proc/meminfo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T20:52:41+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/193"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#193:merged",
+   "payload": {
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T02:12:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/193"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#192:opened",
+   "payload": {
+    "additions": 29,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "tests/CMakeLists.txt",
+     "tests/test_config.cpp"
+    ],
+    "title": "test: configurar Google Test y primera prueba "
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T05:44:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/192"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#192:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T02:11:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/192"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#192:comment:0",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "body": "La estructura MonitorConfig referenciada en el issue no existe en el proyecto. \r\nEl equivalente implementado es Config (src/config/config.hpp, PR #91) con el campo sampler.intervalo_segundos = 10. La prueba se adapt\u00f3 a la estructura real del proyecto para mantener coherencia con el c\u00f3digo mergeado."
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T05:45:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/192"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#191:opened",
+   "payload": {
+    "additions": 1,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/CMakeLists.txt"
+    ],
+    "title": "chore: configurar CMakeLists.txt m\u00ednimo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T04:59:17+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/191"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#191:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-19T02:09:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/191"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#190:opened",
+   "payload": {
+    "additions": 107,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 183,
+    "files": [
+     "CMakeLists.txt",
+     "Makefile",
+     "src/collectors/cpu/cpu_usage.cpp",
+     "src/collectors/cpu/cpu_usage.h"
+    ],
+    "title": "chore: a\u00f1adir flags de compilaci\u00f3n seguros - Wall -Wextra -Wpedantic \u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T03:08:15+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/190"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#190:closed",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T04:06:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/190"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#190:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Los archivos que intenta incorporar no complen con la asginacion de la tarea"
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T04:06:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/190"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#189:opened",
+   "payload": {
+    "additions": 76,
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/formatters/formatter_prometheus.cpp",
+     "src/formatters/formatter_prometheus.hpp"
+    ],
+    "title": "feat(formatters): implementar FormatterPrometheus"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T14:44:23+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/189"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#189:merged",
+   "payload": {
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T04:05:16+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/189"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#189:comment:0",
+   "payload": {
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "body": "Inge, durante la implementaci\u00f3n observ\u00e9 que iformatter.hpp llama a core/snapshot.hpp, pero ese archivo actualmente no existe en el repositorio. Por tal motivo el editor me mostro errores de include relacionados con Snapshot.\r\n\r\nPara respetar el alcance del issue y el criterio de no modificar archivos fuera de los listados, no alter\u00e9 iformatter.hpp ni agregu\u00e9 archivos adicionales fuera de formatter_prometheus.hpp y formatter_prometheus.cpp.\r\n\r\nLa implementaci\u00f3n se realiz\u00f3 siguiendo la interfaz y estructura actualmente definidas en el proyecto.\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T14:46:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/189"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#188:opened",
+   "payload": {
+    "additions": 196,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/storage/storage.cpp",
+     "src/storage/storage.hpp"
+    ],
+    "title": "feat(storage): implementar clase Storage con SQLiteCpp"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T05:13:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/188"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#188:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-18T04:01:23+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/188"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#187:opened",
+   "payload": {
+    "additions": 0,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "Merge pull request #186 from sis-inf/main"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T01:29:47+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/187"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#187:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T01:29:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/187"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#186:opened",
+   "payload": {
+    "additions": 29,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "docs/arquitectura.md"
+    ],
+    "title": "dev"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T01:28:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/186"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#186:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T01:29:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/186"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#185:opened",
+   "payload": {
+    "additions": 48,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/storage/schema.cpp",
+     "src/storage/schema.hpp"
+    ],
+    "title": "feat(storage): definir esquema SQLite y migraci\u00f3n inicial #88"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T00:08:48+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/185"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#185:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T00:59:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/185"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#185:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-16T00:58:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/185"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#184:opened",
+   "payload": {
+    "additions": 62,
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 81,
+    "files": [
+     "docs/arquitectura.md"
+    ],
+    "title": "docs: completar arquitectura.md con ADR y flujo de datos detallado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T03:40:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/184"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#184:merged",
+   "payload": {
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T16:20:27+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/184"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#183:opened",
+   "payload": {
+    "additions": 50,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/storage/schema.cpp",
+     "src/storage/schema.hpp"
+    ],
+    "title": "feat(storage): definir esquema SQLite y migraci\u00f3n inicial #88"
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T03:19:36+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/183"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#183:closed",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T16:19:26+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/183"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#183:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "No cumple con la solicitud del issue."
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T16:19:26+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/183"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#182:opened",
+   "payload": {
+    "additions": 49,
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/memory/ram_usage.cpp"
+    ],
+    "title": "feat(collectors): implementar CollectorMemory"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T15:01:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/182"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#182:merged",
+   "payload": {
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T17:33:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/182"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#182:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T17:33:04+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/182"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#181:opened",
+   "payload": {
+    "additions": 939,
+    "author": "Nextisland",
+    "author_is_bot": false,
+    "changed_files": 23,
+    "deletions": 52,
+    "files": [
+     "CHANGELOG.md",
+     "CMakeLists.txt",
+     "Makefile",
+     "README.md",
+     "cmake/Dependencies.cmake",
+     "docs/arquitectura.md",
+     "docs/casos-de-uso.md",
+     "docs/colectores.md",
+     "docs/flujo-datos.md",
+     "docs/instalacion.md",
+     "docs/preguntas-frecuentes.md",
+     "src/collectors/disk/disk_usage.cpp",
+     "src/collectors/disk/disk_usage.h",
+     "src/collectors/icollector.hpp",
+     "src/collectors/memory/ram_usage.h",
+     "src/collectors/network/net_usage.cpp",
+     "src/collectors/network/net_usage.h",
+     "src/collectors/network/network_io.cpp",
+     "src/formatters/iformatter.hpp",
+     "src/main.cpp"
+    ],
+    "title": "Docs/colectores guia"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T12:28:58+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/181"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#181:closed",
+   "payload": {
+    "author": "Nextisland",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T17:35:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/181"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#181:comment:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "Hola, gracias por querer aportar al proyecto.\nEn este momento estamos limitando temporalmente las contribuciones abiertas para evitar conflictos y poder revisar todo con calidad.\nApenas habilitemos la opcion de recibir aportes de la comunidad, estaremos encantados de recibir tu aporte."
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T17:40:04+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/181"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#180:opened",
+   "payload": {
+    "additions": 8,
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/estandares-codigo.md"
+    ],
+    "title": "fix(docs): corregir inconsistencia de idioma y a\u00f1adir secci\u00f3n de deci\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T03:16:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/180"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#180:merged",
+   "payload": {
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T17:43:57+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/180"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#180:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T17:43:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/180"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#179:opened",
+   "payload": {
+    "additions": 110,
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "tests/CMakeLists.txt",
+     "tests/core/test_types.cpp"
+    ],
+    "title": "test(core): agregar pruebas unitarias para Metrica y Snapshot"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T01:19:02+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/179"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#179:merged",
+   "payload": {
+    "author": "Ka-rri",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T00:11:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/179"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#178:opened",
+   "payload": {
+    "additions": 161,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/config/config.cpp",
+     "src/config/config.hpp"
+    ],
+    "title": "feat(config): implementar loader de configuraci\u00f3n TOML - Closes#91"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T16:57:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/178"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#178:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T00:10:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/178"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#177:opened",
+   "payload": {
+    "additions": 69,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/network/net_usage.cpp"
+    ],
+    "title": "feat: implementar CollectorNetwork - Closes #154"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T03:31:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/177"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#177:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T04:20:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/177"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#177:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T04:20:15+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/177"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#176:opened",
+   "payload": {
+    "additions": 38,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/disk/disk_usage.cpp"
+    ],
+    "title": "feat: implementar CollectorDisk para espacio en disco - Closes #153"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T03:16:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/176"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#176:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T04:21:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/176"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#176:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T04:21:26+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/176"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#175:opened",
+   "payload": {
+    "additions": 27,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/memory/ram_usage.h"
+    ],
+    "title": "feat(collectors): agregar header ram_usage.h con declaraci\u00f3n de getRamUsage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T03:03:45+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/175"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#175:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T04:23:48+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/175"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#175:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T04:23:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/175"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#174:opened",
+   "payload": {
+    "additions": 24,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 56,
+    "files": [
+     "docs/arquitectura.md"
+    ],
+    "title": "docs: agregar arquitectura del sistema Pulso con m\u00f3dulos y diagrama M\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T02:50:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/174"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#174:merged",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-15T00:10:02+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/174"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#173:opened",
+   "payload": {
+    "additions": 10,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/network/net_usage.h"
+    ],
+    "title": "feat(collectors): agregar header net_usage.h con declaraci\u00f3n de getNetUsage - Closes#157"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T02:15:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/173"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#173:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T02:16:27+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/173"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#172:opened",
+   "payload": {
+    "additions": 14,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/disk/disk_usage.h"
+    ],
+    "title": "feat(collectors): add disk_usage header declaration - Closes #156"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T00:53:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/172"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#172:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T02:09:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/172"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#171:opened",
+   "payload": {
+    "additions": 83,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/collectors/network/net_usage.cpp",
+     "src/collectors/network/net_usage.h"
+    ],
+    "title": "feat: implementar CollectorNetwork - Closes #154"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T00:52:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/171"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#171:closed",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:34:30+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/171"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#171:comment:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "Hola @Alex-Calle-P , revisando el PR vi que adem\u00e1s de `net_usage.cpp` tambi\u00e9n se agreg\u00f3 `net_usage.h`.\r\nSeg\u00fan el alcance de esta issue, \u00fanicamente correspond\u00eda implementar `net_usage.cpp`, mientras que el header pertenece a otra tarea separada.\r\n\r\n\u00bfPodr\u00edas remover `net_usage.h` de este PR para mantener el scope de la issue limpio y evitar solapamiento con otras contribuciones?\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:34:30+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/171"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#170:opened",
+   "payload": {
+    "additions": 46,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/collectors/disk/disk_usage.cpp",
+     "src/collectors/disk/disk_usage.h"
+    ],
+    "title": "feat: implementar CollectorDisk para espacio en disco - Closes #153"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T00:20:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/170"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#170:closed",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:31:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/170"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#170:comment:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "Hola @Alex-Calle-P , revisando el PR vi que adem\u00e1s del archivo correspondiente a esta issue (`disk_usage.cpp`) se incluy\u00f3 otro archivo (`disk_usage.h`) que pertenece a una issue distinta.\r\n\u00bfPodr\u00edas remover ese archivo de este PR y dejar \u00fanicamente los cambios relacionados con esta tarea? As\u00ed mantenemos los PRs enfocados y evitamos conflictos con el trabajo de otros contribuidores."
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:31:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/170"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#169:opened",
+   "payload": {
+    "additions": 47,
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "CMakeLists.txt",
+     "cmake/Dependencies.cmake"
+    ],
+    "title": "chore: integrar dependencias externas con FetchContent"
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T19:27:27+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/169"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#169:merged",
+   "payload": {
+    "author": "NandoTheDreamer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:20:36+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/169"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#169:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:20:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/169"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#168:opened",
+   "payload": {
+    "additions": 33,
+    "author": "Carlosx334",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/test/java/edu/sisinf/estante/util/ValidadorSQLTest.java"
+    ],
+    "title": "test: pruebas unitarias para ValidadorSQL con JUnit #181"
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T04:46:05+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/168"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#168:closed",
+   "payload": {
+    "author": "Carlosx334",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:23:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/168"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#168:comment:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "Esta PR no pertenece al proyecto Pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T01:23:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/168"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#167:opened",
+   "payload": {
+    "additions": 698,
+    "author": "claudiaatanacio-cloud",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 52,
+    "files": [
+     "CHANGELOG.md",
+     "Makefile",
+     "README.md",
+     "docs/arquitectura.md",
+     "docs/casos-de-uso.md",
+     "docs/flujo-datos.md",
+     "docs/instalacion.md",
+     "docs/preguntas-frecuentes.md",
+     "src/collectors/icollector.hpp",
+     "src/collectors/network/network_io.cpp",
+     "src/formatters/formatter_json.cpp",
+     "src/formatters/formatter_json.hpp",
+     "src/formatters/iformatter.hpp",
+     "src/main.cpp",
+     "src/utils/console_formatter.cpp",
+     "src/utils/disk_usage.cpp",
+     "src/utils/signal_handler.cpp"
+    ],
+    "title": "Feat/formatter json 16"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T19:45:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/167"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#167:closed",
+   "payload": {
+    "author": "claudiaatanacio-cloud",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T23:55:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/167"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#167:comment:0",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "body": "@claudiaatanacio-cloud El PR debe estar contra la rama `dev` y no contra la rama `main`. Adem\u00e1s solo modifica/crea los archivos que se piden en el Issue. \ud83d\ude04"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T20:16:49+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/167"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#167:comment:1",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "Hola @claudiaatanacio-cloud  , comentarte que en tu PR se colaron varios commits ajenos a tu trabajo. Estas trabajando sobre una rama contaminada, recuerda siempre actualizar la rama `main` y rama `dev` del proyecto cada vez que vayas a comenzar un nuevo trabajo y despues de actualizar crear la rama correspondiente al trabajo solicitado en la issue y abrir un PR contra `dev` y no contra la rama `main`"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T23:53:49+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/167"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#166:opened",
+   "payload": {
+    "additions": 62,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/core/MetricSnapshot.hpp",
+     "src/escuadra/math/stats.py"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:55:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/166"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#166:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:55:16+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/166"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#165:opened",
+   "payload": {
+    "additions": 116,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "Makefile",
+     "README.md"
+    ],
+    "title": "chore: configurar Makefile alternativo - Closes#34"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:53:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/165"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#165:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T16:43:16+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/165"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#164:opened",
+   "payload": {
+    "additions": 3,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "CMakeLists.txt"
+    ],
+    "title": "chore: a\u00f1adir flags de compilaci\u00f3n seguros -Wall -Wextra -Wpedantic -\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T02:05:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/164"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#164:closed",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:38:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/164"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#164:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "no cumple el trabajo solicitado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:38:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/164"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#163:opened",
+   "payload": {
+    "additions": 40,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/core/MetricSnapshot.hpp"
+    ],
+    "title": "feat: agregar struct MetricSnapshot con isValid() y timestamp - Close\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T01:56:19+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/163"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#163:merged",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:37:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/163"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#162:opened",
+   "payload": {
+    "additions": 40,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 56,
+    "files": [
+     "docs/arquitectura.md",
+     "src/escuadra/math/stats.py"
+    ],
+    "title": "docs: agregar arquitectura del sistema con diagrama Mermaid - Closes #48"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T01:43:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/162"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#162:closed",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:37:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/162"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#162:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "No cumple el trabajo solicitado"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:37:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/162"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#151:opened",
+   "payload": {
+    "additions": 95,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/preguntas-frecuentes.md"
+    ],
+    "title": "docs: crear docs/preguntas-frecuentes.md con FAQ del proyecto - Closes#53"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T20:36:00+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/151"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#151:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T01:22:24+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/151"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#151:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T01:14:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/151"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#150:opened",
+   "payload": {
+    "additions": 83,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "docs/instalacion.md"
+    ],
+    "title": "docs: Completar docs/instalacion.md con gu\u00eda de instalaci\u00f3n paso a paso - Closes#46"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T20:11:30+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/150"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#150:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T01:25:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/150"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#150:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T01:19:31+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/150"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#149:opened",
+   "payload": {
+    "additions": 63,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/main.cpp",
+     "src/utils/signal_handler.cpp"
+    ],
+    "title": "feat: implementar loop de monitoreo con sleep - Closes#33"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T19:57:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/149"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#149:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:23:31+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/149"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#149:review:0",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:23:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/149"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#148:opened",
+   "payload": {
+    "additions": 24,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/CMakeLists.txt",
+     "src/escuadra/math/stats.py"
+    ],
+    "title": "chore: configurar CMakeLists.txt m\u00ednimo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T16:52:15+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/148"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#148:closed",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:36:41+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/148"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#148:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revisa el lenguaje de programaci\u00f3n del proyecto"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T03:36:41+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/148"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#147:opened",
+   "payload": {
+    "additions": 51,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/formatters/iformatter.hpp"
+    ],
+    "title": "feat(formatters): definir interfaz abstracta IFormatter #87"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T02:48:17+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/147"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#147:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:49:45+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/147"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#146:opened",
+   "payload": {
+    "additions": 35,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/network/network_io.cpp"
+    ],
+    "title": "feat: implementar lectura de red desde /proc/net/dev #37"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T02:31:58+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/146"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#146:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:49:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/146"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#145:opened",
+   "payload": {
+    "additions": 61,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 20,
+    "files": [
+     "docs/arquitectura.md"
+    ],
+    "title": "docs: dise\u00f1ar y documentar la arquitectura del sistema completado y corregido - Closes #4"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T02:25:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/145"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#145:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:48:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/145"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#144:opened",
+   "payload": {
+    "additions": 13,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/utils/signal_handler.cpp"
+    ],
+    "title": "feat: a\u00f1adir manejo de se\u00f1al SIGINT para salida limpia #35"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T02:12:47+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/144"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#144:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:48:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/144"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#143:opened",
+   "payload": {
+    "additions": 88,
+    "author": "Carlosx334",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 42,
+    "files": [
+     "src/escuadra/math/stats.py",
+     "tests/plan/plan-de-pruebas.md"
+    ],
+    "title": "Feat/basic stats functions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T02:08:24+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/143"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#143:merged",
+   "payload": {
+    "author": "Carlosx334",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:47:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/143"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#142:opened",
+   "payload": {
+    "additions": 27,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/utils/console_formatter.cpp",
+     "src/utils/disk_usage.cpp"
+    ],
+    "title": "feat: crear formateador de salida a consola #31"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T02:04:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/142"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#142:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:47:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/142"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#141:opened",
+   "payload": {
+    "additions": 14,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/utils/disk_usage.cpp"
+    ],
+    "title": "feat: a\u00f1adir lectura de disco con statvfs - Closes #30"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T01:26:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/141"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#141:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:47:04+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/141"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#140:opened",
+   "payload": {
+    "additions": 20,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 19,
+    "files": [
+     "docs/casos-de-uso.md"
+    ],
+    "title": "docs: casos de uso - Closes #47"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T00:42:42+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/140"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#140:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:46:21+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/140"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#139:opened",
+   "payload": {
+    "additions": 66,
+    "author": "Carlosx334",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 42,
+    "files": [
+     "tests/plan/plan-de-pruebas.md"
+    ],
+    "title": "test: completar plan de pruebas para el issue #7"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T00:25:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/139"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#139:merged",
+   "payload": {
+    "author": "Carlosx334",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:44:09+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/139"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#138:opened",
+   "payload": {
+    "additions": 65,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/flujo-datos.md"
+    ],
+    "title": "docs: agregar flujo de datos del sistema Pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T23:50:39+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/138"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#138:merged",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:43:36+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/138"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#137:opened",
+   "payload": {
+    "additions": 46,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/collectors/icollector.hpp"
+    ],
+    "title": "feat(collectors): definir interfaz abstracta ICollector - Closes#86"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T23:46:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/137"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#137:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:43:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/137"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#136:opened",
+   "payload": {
+    "additions": 6,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "CHANGELOG.md"
+    ],
+    "title": "docs: corregir y estandarizar CHANGELOG del proyecto Pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T23:34:05+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/136"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#136:merged",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:42:27+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/136"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#135:opened",
+   "payload": {
+    "additions": 23,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/instalacion.md"
+    ],
+    "title": "docs: crear gu\u00eda de instalaci\u00f3n de Pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T23:18:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/135"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#135:merged",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T13:42:07+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/135"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#134:opened",
+   "payload": {
+    "additions": 158,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "dev"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:35:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/134"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#134:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:35:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/134"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#133:opened",
+   "payload": {
+    "additions": 178,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 24,
+    "files": [
+     "docs/arquitectura.md",
+     "docs/casos-de-uso.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "docs: casos de uso - closes #47"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T03:58:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/133"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#133:closed",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:28:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/133"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#133:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "revise los archivos que esta tratando de incorporar a la rama"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:28:20+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/133"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#132:opened",
+   "payload": {
+    "additions": 219,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 14,
+    "files": [
+     "CHANGELOG.md",
+     "docs/arquitectura.md",
+     "docs/flujo-datos.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "docs: agregar flujo de datos del sistema Pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T23:56:36+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/132"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#132:closed",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:27:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/132"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#132:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise los archivos que esta tratando de incorporar a la rama, as\u00ed como la tarea que se pide en el issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:27:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/132"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#131:opened",
+   "payload": {
+    "additions": 167,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 14,
+    "files": [
+     "CHANGELOG.md",
+     "docs/arquitectura.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "docs: corregir y estandarizar CHANGELOG del proyecto Pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T23:28:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/131"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#131:closed",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:26:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/131"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#131:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise el lenguaje del proyecto y los archivos que trata de incorporar a la rama"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:26:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/131"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#130:opened",
+   "payload": {
+    "additions": 249,
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md",
+     "docs/instalacion.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "docs: crear gu\u00eda de instalaci\u00f3n de Pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T20:55:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/130"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#130:closed",
+   "payload": {
+    "author": "Nailea615",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:26:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/130"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#130:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "revise los archivos que esta tratando de incorporar a la rama"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:26:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/130"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#129:opened",
+   "payload": {
+    "additions": 231,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md",
+     "src/cli/arg_parser.cpp",
+     "src/cli/arg_parser.h",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "feat: implementar parser de argumentos CLI b\u00e1sico"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T03:49:25+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/129"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#129:closed",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T23:01:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/129"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#129:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise el lenguaje del proyecto y la tarea del issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T23:01:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/129"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#128:opened",
+   "payload": {
+    "additions": 161,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 10,
+    "files": [
+     ".clang-format",
+     "docs/arquitectura.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "chore: a\u00f1adir .clang-format con estilo Google/LLVM"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T03:44:43+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/128"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#128:closed",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:25:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/128"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#128:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise el lenguaje del proyecto, ademas la tarea del issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:25:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/128"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#127:opened",
+   "payload": {
+    "additions": 205,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md",
+     "src/monitor/system_monitor.cpp",
+     "src/monitor/system_monitor.h",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "feat: crear clase SystemMonitor"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T03:41:32+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/127"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#127:closed",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T23:00:57+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/127"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#127:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise el lenguaje del proyecto adem\u00e1s de la tarea del issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T23:00:57+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/127"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#126:opened",
+   "payload": {
+    "additions": 211,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md",
+     "include/pulso/config.hpp",
+     "src/utils/system_metrics.py",
+     "tests/CMakeLists.txt",
+     "tests/automatizados/unit/test_monitor_config.cpp",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "test: configurar Google Test y primera prueba de MonitorConfig"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T03:37:00+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/126"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#126:closed",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:25:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/126"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#126:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise el lenguaje de programaci\u00f3n del proyecto, adem\u00e1s revise lo que se solicita en el issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:25:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/126"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#125:opened",
+   "payload": {
+    "additions": 231,
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md",
+     "src/collectors/ram/ram_usage.cpp",
+     "src/collectors/ram/ram_usage.h",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "feat: implementar lectura de RAM desde /proc/meminfo"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T03:27:53+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/125"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#125:closed",
+   "payload": {
+    "author": "brisa-ths",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T22:59:37+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/125"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#125:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise el lenguaje oficial del proyecto, adem\u00e1s revise lo que se pide en el issue, "
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T22:59:37+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/125"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#124:opened",
+   "payload": {
+    "additions": 203,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "docs: dise\u00f1ar y documentar la arquitectura del sistema completado - Closes #4"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T02:45:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/124"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#124:closed",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:24:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/124"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#124:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Revise el lenguaje del proyecto, adem\u00e1s revise la tarea del issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-09T22:24:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/124"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#123:opened",
+   "payload": {
+    "additions": 105,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 11,
+    "files": [
+     ".clang-format",
+     ".editorconfig",
+     "CMakeLists.txt",
+     "docs/glosario.md",
+     "docs/referencias.md",
+     "docs/requerimientos.md",
+     "src/CMakeLists.txt",
+     "src/core/types.hpp",
+     "src/main.cpp",
+     "tests/CMakeLists.txt"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T00:04:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/123"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#123:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T00:04:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/123"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#122:opened",
+   "payload": {
+    "additions": 44,
+    "author": "akasoem1703",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "docs/arquitectura.md"
+    ],
+    "title": "Fix/docs arquitectura"
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T20:39:07+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/122"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#122:merged",
+   "payload": {
+    "author": "akasoem1703",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T01:47:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/122"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#121:opened",
+   "payload": {
+    "additions": 42,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/core/types.hpp"
+    ],
+    "title": "feat(core): definir estructuras Metrica, Snapshot y excepciones del dominio"
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T05:36:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/121"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#121:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T16:54:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/121"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#120:opened",
+   "payload": {
+    "additions": 12,
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     ".clang-format",
+     ".editorconfig"
+    ],
+    "title": "chore: agregar configuracion de clang-format y .editorconfig Closes #84"
+   },
+   "source": "github",
+   "timestamp": "2026-05-03T23:38:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/120"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#120:merged",
+   "payload": {
+    "author": "YORDY-SG",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T16:54:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/120"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#119:opened",
+   "payload": {
+    "additions": 127,
+    "author": "brayaDosantos",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 13,
+    "files": [
+     "docs/despliegue.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "fix(docs): completar despliegue pulso - Closes #71"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T19:07:29+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/119"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#119:closed",
+   "payload": {
+    "author": "brayaDosantos",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T16:53:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/119"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#119:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Debe revisar los archivos que va modificando en cada rama."
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T16:53:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/119"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#118:opened",
+   "payload": {
+    "additions": 157,
+    "author": "brayaDosantos",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 8,
+    "files": [
+     "docs/api.md",
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "Fix/docs api pulso"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T18:49:01+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/118"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#118:closed",
+   "payload": {
+    "author": "brayaDosantos",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T16:53:16+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/118"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#118:comment:0",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "body": "Solo debe trabajar en los archivos indicados, revise los archivos que envio en la solicitud"
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T16:53:16+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/118"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#117:opened",
+   "payload": {
+    "additions": 15,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 6,
+    "files": [
+     "CMakeLists.txt",
+     "src/CMakeLists.txt",
+     "tests/CMakeLists.txt"
+    ],
+    "title": "chore: configurar CMakeLists.txt ra\u00edz con est\u00e1ndar C++17 y opciones b\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T01:47:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/117"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#117:merged",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T04:13:32+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/117"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#116:opened",
+   "payload": {
+    "additions": 11,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/requerimientos.md"
+    ],
+    "title": "fix(docs): completar requerimientos.md \u2014 agregar RNF y RS - Closes#70"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T01:07:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/116"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#116:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T04:13:06+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/116"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#115:opened",
+   "payload": {
+    "additions": 114,
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "src/utils/system_metrics.py",
+     "tests/fixtures/proc_stat_sample",
+     "tests/test_system_metrics.py"
+    ],
+    "title": "feat(metrics): agregar lectura de /proc/stat con path configurable y \u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T01:07:04+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/115"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#115:merged",
+   "payload": {
+    "author": "edsonhuanaco-commits",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T04:12:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/115"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#114:opened",
+   "payload": {
+    "additions": 15,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 26,
+    "files": [
+     "docs/glosario.md"
+    ],
+    "title": "docs: completar glosario del proyecto - Closes #10"
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T17:18:26+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/114"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#114:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T17:20:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/114"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#113:opened",
+   "payload": {
+    "additions": 9,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/referencias.md"
+    ],
+    "title": "docs: recursos y bibliografia del proyecto - Closes #54"
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T01:12:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/113"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#113:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T04:31:51+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/113"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#112:opened",
+   "payload": {
+    "additions": 26,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/glosario.md"
+    ],
+    "title": "docs: Agregar 25 terminos a glosario.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-30T15:07:06+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/112"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#112:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T04:31:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/112"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#111:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     ".clang-format",
+     "src/main.cpp"
+    ],
+    "title": "chore: add clang-format rules"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T17:27:28+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/111"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#111:merged",
+   "payload": {
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-01T04:30:36+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/111"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#81:opened",
+   "payload": {
+    "additions": 0,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "Merge pull request #80 from sis-inf/dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T02:02:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/81"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#81:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T02:02:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/81"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#80:opened",
+   "payload": {
+    "additions": 258,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "docs/diseno-clases.md",
+     "src/collectors/cpu/cpu_usage.cpp",
+     "src/collectors/cpu/cpu_usage.h"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T02:01:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/80"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#80:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T02:02:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/80"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#79:opened",
+   "payload": {
+    "additions": 152,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/collectors/cpu/cpu_usage.cpp",
+     "src/collectors/cpu/cpu_usage.h"
+    ],
+    "title": "feat: implement CPU usage reader from /proc/stat - Closes #24"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T05:13:03+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/79"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#79:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T01:41:10+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/79"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#78:opened",
+   "payload": {
+    "additions": 106,
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/diseno-clases.md"
+    ],
+    "title": "docs: crear docs/diseno-clases.md con el dise\u00f1o inicial de clases C++"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T04:42:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/78"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#78:merged",
+   "payload": {
+    "author": "unknowangxl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T01:40:08+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/78"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#77:opened",
+   "payload": {
+    "additions": 0,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "Merge pull request #76 from sis-inf/dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T02:44:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/77"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#77:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T02:44:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/77"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#76:opened",
+   "payload": {
+    "additions": 111,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 0,
+    "files": [
+     "CMakeLists.txt",
+     "docs/casos-de-uso.md",
+     "docs/flujo-de-trabajo.md",
+     "docs/img/commit_push.png",
+     "docs/img/fork.png",
+     "docs/img/pull_request.png",
+     "docs/img/rama.png",
+     "docs/monitor-config.md",
+     "src/CMakeLists.txt",
+     "src/alertas/.gitkeep",
+     "src/main.cpp",
+     "src/monitor/.gitkeep",
+     "src/utils/logging/.gitkeep",
+     "tests/CMakeLists.txt"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T02:43:39+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/76"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#76:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T02:43:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/76"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#75:opened",
+   "payload": {
+    "additions": 15,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "CMakeLists.txt",
+     "src/CMakeLists.txt",
+     "src/alertas/.gitkeep",
+     "src/main.cpp",
+     "src/monitor/.gitkeep",
+     "src/utils/logging/.gitkeep",
+     "tests/CMakeLists.txt"
+    ],
+    "title": "Fix/chore estructura src"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T01:38:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/75"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#75:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T01:38:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/75"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#74:opened",
+   "payload": {
+    "additions": 19,
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "docs/flujo-de-trabajo.md",
+     "docs/img/commit_push.png",
+     "docs/img/fork.png",
+     "docs/img/pull_request.png",
+     "docs/img/rama.png"
+    ],
+    "title": "docs: gu\u00eda paso a paso del flujo de trabajo #9"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T00:46:38+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/74"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#74:merged",
+   "payload": {
+    "author": "Alex-Calle-P",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T01:46:15+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/74"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#67:opened",
+   "payload": {
+    "additions": 28,
+    "author": "Vizalla",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/monitor-config.md"
+    ],
+    "title": "feat: propuesta struct MonitorConfig"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T16:53:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/67"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#67:merged",
+   "payload": {
+    "author": "Vizalla",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:11:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/67"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#66:opened",
+   "payload": {
+    "additions": 0,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "Merge pull request #64 from sis-inf/dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:34:23+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/66"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#66:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:34:30+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/66"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#65:opened",
+   "payload": {
+    "additions": 49,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/casos-de-uso.md"
+    ],
+    "title": "docs: definir actores y casos de uso del sistema #19"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:33:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/65"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#65:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:34:58+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/65"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#64:opened",
+   "payload": {
+    "additions": 109,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "docs/metricas.md",
+     "docs/requerimientos.md",
+     "docs/seguridad.md"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:33:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/64"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#64:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:34:01+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/64"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#63:opened",
+   "payload": {
+    "additions": 12,
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "docs/requerimientos.md"
+    ],
+    "title": "docs: definir requerimientos no funcionales del proyecto #3"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:22:22+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/63"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#63:merged",
+   "payload": {
+    "author": "baltazar-rodrigo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:33:19+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/63"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#62:opened",
+   "payload": {
+    "additions": 66,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/seguridad.md"
+    ],
+    "title": "docs: add seguridad.md with system security considerations - Closes #55"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:08:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/62"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#62:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:32:54+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/62"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#61:opened",
+   "payload": {
+    "additions": 31,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/metricas.md"
+    ],
+    "title": "docs: add metricas.md describing monitored infrastructure metrics - Closes #49"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T02:51:37+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/61"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#61:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T03:32:40+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/61"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#60:opened",
+   "payload": {
+    "additions": 0,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "Merge pull request #59 from sis-inf/dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:59:57+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/60"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#60:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T22:00:05+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/60"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#59:opened",
+   "payload": {
+    "additions": 103,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 9,
+    "files": [
+     "CONTRIBUTING.md",
+     "docs/compilacion-linux.md",
+     "tests/casos/funcionales/casos-prueba-funcionales.md"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:59:25+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/59"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#59:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:59:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/59"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#58:opened",
+   "payload": {
+    "additions": 29,
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/compilacion-linux.md"
+    ],
+    "title": "docs: agregar gu\u00eda de compilaci\u00f3n en Linux"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T19:52:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/58"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#58:merged",
+   "payload": {
+    "author": "Emerick99",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:58:44+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/58"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#57:opened",
+   "payload": {
+    "additions": 12,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tests/casos/funcionales/casos-prueba-funcionales.md"
+    ],
+    "title": "test: dise\u00f1ar casos de prueba funcionales - Closes#8"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T16:00:05+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/57"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#57:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:58:24+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/57"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#56:opened",
+   "payload": {
+    "additions": 62,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 9,
+    "files": [
+     "CONTRIBUTING.md"
+    ],
+    "title": "docs: completar el archivo CONTRIBUTING.md - Closes #17"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T20:25:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/56"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#56:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:57:59+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/56"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#45:opened",
+   "payload": {
+    "additions": 175,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 7,
+    "files": [
+     ".gitignore",
+     "CHANGELOG.md",
+     "README.md"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T01:36:06+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/45"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#45:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T01:36:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/45"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#44:opened",
+   "payload": {
+    "additions": 25,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "CHANGELOG.md"
+    ],
+    "title": "docs: add initial CHANGELOG.md following Keep a Changelog format - Closes #16"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T03:51:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/44"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#44:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T01:30:46+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/44"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#43:opened",
+   "payload": {
+    "additions": 34,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     ".gitignore"
+    ],
+    "title": "chore: update rules in gitignore for C/C++ - Closes #20"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T03:38:02+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/43"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#43:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T01:30:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/43"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#38:opened",
+   "payload": {
+    "additions": 116,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "README.md"
+    ],
+    "title": "docs: complete README with installation, usage and system monitoring example - Closes #1"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T03:14:23+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/38"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#38:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T01:30:12+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/38"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#21:opened",
+   "payload": {
+    "additions": 0,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "Sync with main"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T02:00:18+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/21"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#21:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T02:00:31+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/21"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#15:opened",
+   "payload": {
+    "additions": 130,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 1,
+    "files": [
+     "docs/requerimientos.md",
+     "src/README.md",
+     "src/collectors/cpu/.gitkeep",
+     "src/collectors/disk/.gitkeep",
+     "src/collectors/memory/.gitkeep",
+     "src/collectors/network/.gitkeep",
+     "src/config/.gitkeep",
+     "src/core/.gitkeep",
+     "src/logging/.gitkeep",
+     "src/monitor/.gitkeep",
+     "src/platform/.gitkeep",
+     "src/platform/linux/.gitkeep",
+     "src/platform/windows/.gitkeep",
+     "src/utils/.gitkeep"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:36:52+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/15"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#15:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:37:11+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/15"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#14:opened",
+   "payload": {
+    "additions": 186,
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/estandares-codigo.md"
+    ],
+    "title": "Dev"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:34:24+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/14"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#14:merged",
+   "payload": {
+    "author": "erwinsaul",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:34:33+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/14"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#13:opened",
+   "payload": {
+    "additions": 10,
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/requerimientos.md"
+    ],
+    "title": "docs: agregar 8 requerimientos funcionales y explicaci\u00f3n introductoria"
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T01:41:07+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/13"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#13:merged",
+   "payload": {
+    "author": "Atoxny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:36:13+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/13"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#12:opened",
+   "payload": {
+    "additions": 120,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 0,
+    "files": [
+     "src/README.md",
+     "src/collectors/cpu/.gitkeep",
+     "src/collectors/disk/.gitkeep",
+     "src/collectors/memory/.gitkeep",
+     "src/collectors/network/.gitkeep",
+     "src/config/.gitkeep",
+     "src/core/.gitkeep",
+     "src/logging/.gitkeep",
+     "src/monitor/.gitkeep",
+     "src/platform/.gitkeep",
+     "src/platform/linux/.gitkeep",
+     "src/platform/windows/.gitkeep",
+     "src/utils/.gitkeep"
+    ],
+    "title": "chore: initialize src directory structure - Closes #5"
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T16:48:49+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/12"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#12:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:35:50+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/12"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#11:opened",
+   "payload": {
+    "additions": 186,
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/estandares-codigo.md"
+    ],
+    "title": "docs: add C++ style guide based on Google conventions - Closes #6"
+   },
+   "source": "github",
+   "timestamp": "2026-04-21T03:19:14+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/11"
+  },
+  {
+   "evidence_id": "pr:sis-inf/pulso#11:merged",
+   "payload": {
+    "author": "LinoSimon20",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-22T02:33:56+00:00",
+   "url": "https://github.com/sis-inf/pulso/pull/11"
+  }
+ ],
+ "repo": "sis-inf/pulso",
+ "window": "pre_t"
+}

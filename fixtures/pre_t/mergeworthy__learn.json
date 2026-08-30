@@ -1,0 +1,714 @@
+{
+ "captured_at": "2026-08-29T20:07:22.561323+00:00",
+ "content_sha256": "306f3dbd6f9c4dcfc333508a9fbb41301e5922dae43e592e856f805e4ba0e5d7",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:mergeworthy/learn:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Open source contribution resources for developers learning to ship their first PR. Maintained by Mergeworthy.",
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": null,
+    "pushed_at": "2026-04-27T11:37:23Z",
+    "stargazer_count": 0
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:32:04+00:00",
+   "url": "https://github.com/mergeworthy/learn"
+  },
+  {
+   "evidence_id": "repo:mergeworthy/learn:readme",
+   "payload": {
+    "commit_oid": "a65ffca29f9e4d37cfd13f940993f07fdd434dc8",
+    "kind": "readme",
+    "text": "# learn\n\n> Your guide to making your first open source contibution.\n\nOpen source can feel like a closed club. It isn't \u2014 but the door is hard to find. This repo is a curated, community-maintained set of resources that help developpers go from \"I've never merged a PR\" to \"I just shipped my first contribution.\"\n\n## What this repo is\n\nA small, focused collection of:\n\n- **Guides** that explain the parts of open source nobody documents \u2014 how to read an unfamiliar codebase, how to spot a beginner-friendly issue, what to check before opening a PR.\n- **Curated resource lists** organized by language, maintained by the community.\n- **A safe place to make your first contribution.** Every guide and resource list in here was added by someone \u2014 and we'd love for the next addition to be yours. See [CONTRIBUTING.md](CONTRIBUTING.md).\n\n## Who it's for\n\n- You've never opened a pull request, or you've opened one or two and want to keep going.\n- You know a language well enough to read code, but the social mechanics of open source are unfamiliar.\n- You'd like a low-stakes first PR before contributing to a project where the maintainer is a stranger.\n\nThere is nothing in here you need to \"qualify\" for. If you can read this README, you can contribute to this repo.\n\n## How to use it\n\nThree paths, pick whichever fits:\n\n1. **Browse [/guides](guides/)** if you want to read about how to find issues, read codebases, and prepare PRs before doing one.\n2. **Browse [/resources](resources/)** if you want curated links for your language \u2014 tutorials, beginner-friendly project lists, and reference material.\n3. **Contribute back to this repo** as your first PR. Open the [issues tab](https://github.com/mergeworthy/learn/issues), find one labeled `good first issue`, and follow [CONTRIBUTING.md](CONTRIBUTING.md). Most issues take 5\u201315 minutes.\n\n## See where your GitHub profile stands today\n\nIf you want a snapshot of your current open source footprint \u2014 what languages you've used, where your gaps are, what kind of contributions would help you grow \u2014 try the free [Mergeworthy analyzer](https://mergeworthy.com/analyzer). No signup required.\n\n## Contribute\n\nThis repo is itself a great place to make your first contribution. We've kept the bar deliberately low: typo fixes, link additions, and adding your name to the [contributors wall](contributors.md) all count. See [CONTRIBUTING.md](CONTRIBUTING.md) for a step-by-step walkthrough \u2014 written for total beginners, with no assumed knowledge.\n\n## License\n\n[MIT](LICENSE) \u2014 use anything in here however you'd like.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:37:22+00:00",
+   "url": "https://github.com/mergeworthy/learn/blob/a65ffca29f9e4d37cfd13f940993f07fdd434dc8/README.md"
+  },
+  {
+   "evidence_id": "repo:mergeworthy/learn:contributing",
+   "payload": {
+    "commit_oid": "a65ffca29f9e4d37cfd13f940993f07fdd434dc8",
+    "kind": "contributing",
+    "text": "# Contributing\n\nWelcome. If this is your first open source contribution, you're in the right place. This guide walks through every step assuming you've never done it before. If you already know parts of this, skim past them.\n\nThere is no such thing as a contribution that's \"too small\" here. Fixing a typo is a real contribution. Adding one link to a resource list is a real contribution. Adding your name to [contributors.md](contributors.md) is a real contribution.\n\n## The full walkthrough\n\n### 1. Find an issue to work on\n\nGo to the [issues tab](https://github.com/mergeworthy/learn/issues) and look for ones labeled `good first issue`. Each issue has acceptance criteria (what \"done\" looks like) and an estimated time.\n\n> **What this means:** An \"issue\" on GitHub is just a task someone has written down. Anyone can pick one up.\n\n**Comment on the issue to claim it before you start working** \u2014 something like *\"I'd like to take this on\"* is enough. This prevents two people from doing the same work. If you don't see a response within a day or two, go ahead anyway.\n\n### 2. Fork the repo\n\nOn the [repo's homepage](https://github.com/mergeworthy/learn), click the **Fork** button in the top-right.\n\n> **What this means:** A \"fork\" is your own personal copy of the repo, hosted on your GitHub account. You can change anything in your fork without affecting the original.\n\n<!-- TODO: screenshot of the Fork button -->\n\n### 3. Clone your fork\n\nOpen a terminal and run (replace `your-username` with your actual GitHub username):\n\n```bash\ngit clone https://github.com/your-username/learn.git\ncd learn\n```\n\n> **What this means:** \"Clone\" downloads your fork onto your laptop so you can edit files locally.\n\n### 4. Create a branch\n\n```bash\ngit checkout -b add-resource/your-name\n```\n\nBranch names should follow this pattern:\n\n- `add-resource/your-name` \u2014 adding to a resources list\n- `fix-typo/short-description` \u2014 fixing a typo (e.g. `fix-typo/readme-contribution`)\n- `add-guide/short-description` \u2014 adding or expanding a guide\n- `update-contributors/your-name` \u2014 adding yourself to contributors.md\n\n> **What this means:** A \"branch\" is a separate line of work. Creating one keeps your changes isolated and easy to review.\n\n### 5. Make your change\n\nEdit files in your text editor. Save when you're done.\n\nFor typo fixes: just fix the typo. Don't reformat surrounding text or rewrite paragraphs \u2014 keep the diff small and focused on what the issue asked for.\n\nFor resource additions: keep the format consistent with the surrounding entries (alphabetical order, one-line description after an em dash).\n\n### 6. Commit your change\n\n```bash\ngit add .\ngit commit -m \"Fix typo: contribution in README\"\n```\n\nCommit message format: a short imperative line that finishes the sentence *\"This commit will...\"*. Examples:\n\n- `Fix typo: contribution in README`\n- `Add Real Python to python/curated-links.md`\n- `Add myself to contributors.md`\n\n> **What this means:** A \"commit\" is a saved snapshot of your changes with a message explaining what changed.\n\n<!-- TODO: screenshot of a clean commit message -->\n\n### 7. Push your branch\n\n```bash\ngit push origin add-resource/your-name\n```\n\n> **What this means:** \"Push\" uploads your local changes to your fork on GitHub.\n\n### 8. Open a pull request\n\nGo to your fork on GitHub. You'll see a banner suggesting you open a pull request from your branch \u2014 click **Compare & pull request**.\n\nFill in the PR template (it's already pre-filled with the right structure). Reference the issue number you're closing with `Closes #12` (or whatever the number is) so the issue closes automatically when the PR merges.\n\n> **What this means:** A \"pull request\" (PR) is a proposal: *\"Here's a change I'd like you to merge into the main repo.\"* Maintainers review it, may suggest changes, and then merge it.\n\n### 9. Respond to review\n\nA maintainer will review your PR. Common things you might hear:\n\n- *\"Can you also do X?\"* \u2014 make the change, commit, push to the same branch. The PR updates automatically.\n- *\"This looks good, merging.\"* \u2014 you're done. Celebrate.\n- *\"Could you adjust this to match the style of the surrounding code?\"* \u2014 totally normal feedback, not a rejection.\n\nReviews are not personal. They are how every PR \u2014 including ones from senior engineers \u2014 gets better.\n\n### 10. Merge\n\nOnce a maintainer merges your PR, your contribution is officially part of the project. Your username appears in the contributors graph. Your commit shows up in `git log`. You've done it.\n\nNow go add yourself to [contributors.md](contributors.md) if you haven't already.\n\n## Stuck is normal\n\nEvery developer who has ever opened a PR has, at some point, been stuck. Specifically stuck on:\n\n- *\"Git is doing something weird and I don't understand\"* \u2014 extremely common. Search for the exact error message; the answer is almost always on Stack Overflow.\n- *\"I think I broke my fork\"* \u2014 you almost certainly haven't. Worst case, delete the fork on GitHub and re-fork. Nothing is permanent until it's merged into the main repo.\n- *\"I don't know if my change is good enough to submit\"* \u2014 submit it anyway. The worst that happens is someone suggests an improvement.\n\nIf you're stuck for more than 30 minutes:\n\n1. **Comment on the issue** describing what you tried and where you got stuck. Be specific (paste the error, paste the command). Maintainers and other contributors are happy to help.\n2. **Don't delete your work.** Even broken progress is useful \u2014 share it.\n\n## PR conventions summary\n\n| Thing | Convention |\n|---|---|\n| Branch name | `add-resource/your-name`, `fix-typo/short-description`, etc. |\n| Commit message | Imperative, finishes \"This commit will...\" |\n| PR title | Same style as commit message |\n| PR body | Use the template \u2014 fill in what the PR does and check the boxes |\n| Linked issue | Add `Closes #N` so the issue auto-closes on merge |\n\n## What we'll never do\n\n- Reject a PR for being \"too small.\"\n- Reject a PR without explaining why.\n- Make you feel bad for asking a basic question.\n\nWelcome.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T11:37:22+00:00",
+   "url": "https://github.com/mergeworthy/learn/blob/a65ffca29f9e4d37cfd13f940993f07fdd434dc8/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#44:opened",
+   "payload": {
+    "additions": 1,
+    "author": "MaxwellM34",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/reading-a-codebase.md"
+    ],
+    "title": "fix: correct typo 'unfimiliar' \u2192 'unfamiliar' in reading-a-codebase.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:06:57+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/44"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#44:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:07:19+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/44"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#42:opened",
+   "payload": {
+    "additions": 1,
+    "author": "xiajixi76-beep",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "fix: correct typo comitting \u2192 committing in checklist"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T05:28:32+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/42"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#42:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T05:28:51+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/42"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#41:opened",
+   "payload": {
+    "additions": 3,
+    "author": "tcuong53-cell",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "README.md"
+    ],
+    "title": "fix: Fix typo: \"developpers\" \u2192 \"developers\" in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T00:40:23+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/41"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#40:opened",
+   "payload": {
+    "additions": 2,
+    "author": "tcuong53-cell",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "README.md"
+    ],
+    "title": "fix: Fix typo: \"contibution\" \u2192 \"contribution\" in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T00:38:40+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/40"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#39:opened",
+   "payload": {
+    "additions": 1,
+    "author": "magnet78",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "fix: correct typo 'comitting' -> 'committing'"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T16:09:41+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/39"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#38:opened",
+   "payload": {
+    "additions": 1,
+    "author": "magnet78",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/reading-a-codebase.md"
+    ],
+    "title": "fix: correct typo 'unfimiliar' -> 'unfamiliar'"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T16:09:24+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/38"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#37:opened",
+   "payload": {
+    "additions": 1,
+    "author": "magnet78",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/finding-good-first-issues.md"
+    ],
+    "title": "fix: correct typo 'responsivness' -> 'responsiveness'"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T16:09:08+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/37"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#36:opened",
+   "payload": {
+    "additions": 2,
+    "author": "magnet78",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "README.md"
+    ],
+    "title": "fix: correct typos in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T16:08:52+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/36"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#36:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T16:09:21+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/36"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#35:opened",
+   "payload": {
+    "additions": 1,
+    "author": "tcuong53-cell",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "guides/finding-good-first-issues.md"
+    ],
+    "title": "fix: Fix typo: \"responsivness\" \u2192 \"responsiveness\" in finding-good-first-issue"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T15:56:25+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/35"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#34:opened",
+   "payload": {
+    "additions": 2,
+    "author": "tcuong53-cell",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "guides/reading-a-codebase.md"
+    ],
+    "title": "fix: Fix typo: \"unfimiliar\" \u2192 \"unfamiliar\" in reading-a-codebase.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T15:54:10+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/34"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#33:opened",
+   "payload": {
+    "additions": 2,
+    "author": "tcuong53-cell",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "fix: Fix typo: \"comitting\" \u2192 \"committing\" in your-first-pr-checklist.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T15:51:48+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/33"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#33:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-21T15:52:17+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/33"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#32:opened",
+   "payload": {
+    "additions": 5,
+    "author": "guvennsade-tech",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "README.md",
+     "guides/finding-good-first-issues.md",
+     "guides/reading-a-codebase.md",
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "docs: fix 5 typos across README and guides"
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T19:41:34+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/32"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#32:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-20T19:41:58+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/32"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#31:opened",
+   "payload": {
+    "additions": 4,
+    "author": "MichisGitIsKing",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "README.md",
+     "guides/reading-a-codebase.md",
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "fix: correct typos in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T06:47:47+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/31"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#30:opened",
+   "payload": {
+    "additions": 3,
+    "author": "MichisGitIsKing",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "contributors.md",
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "Claim contributor slot 6 in contributors.md"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T06:04:16+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/30"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#29:opened",
+   "payload": {
+    "additions": 2,
+    "author": "MichisGitIsKing",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "guides/reading-a-codebase.md",
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "Fix typo: comitting - in PR checklist heading"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T05:15:37+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/29"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#29:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-17T05:15:58+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/29"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#28:opened",
+   "payload": {
+    "additions": 1,
+    "author": "algojogacor",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "Fix typo: contibution \u2192 contribution in README"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T04:08:46+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/28"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#28:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-14T04:09:13+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/28"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#27:opened",
+   "payload": {
+    "additions": 5,
+    "author": "linbo328",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 5,
+    "files": [
+     "README.md",
+     "guides/finding-good-first-issues.md",
+     "guides/reading-a-codebase.md",
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "docs: fix typos across README and guide files"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T23:10:47+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/27"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#27:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T23:11:15+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/27"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#26:opened",
+   "payload": {
+    "additions": 1,
+    "author": "freya-docs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "resources/python/curated-links.md"
+    ],
+    "title": "Add Total TypeScript link to curated links"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T08:08:23+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/26"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#25:opened",
+   "payload": {
+    "additions": 1,
+    "author": "freya-docs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "resources/python/curated-links.md"
+    ],
+    "title": "Add Real Python resource to curated links"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T08:04:47+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/25"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#25:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-13T08:05:14+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/25"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#24:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Jah-yee",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/finding-good-first-issues.md"
+    ],
+    "title": "fix: correct typo responsivness to responsiveness"
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T19:25:57+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/24"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#24:closed",
+   "payload": {
+    "author": "Jah-yee",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T19:26:06+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/24"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#24:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-12T19:26:26+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/24"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#23:opened",
+   "payload": {
+    "additions": 1,
+    "author": "syy-shark",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "Fix typo: contribution in README"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T09:12:27+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/23"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#23:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-11T09:12:58+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/23"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#22:opened",
+   "payload": {
+    "additions": 2,
+    "author": "q404365631",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "README.md",
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "[Docs] Fix typos: contibution \u2192 contribution, comitting \u2192 committing"
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T02:40:31+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/22"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#22:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T02:40:53+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/22"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#21:opened",
+   "payload": {
+    "additions": 2,
+    "author": "shivam22-source",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "resources/javascript/curated-links.md"
+    ],
+    "title": "Add Eloquent JavaScript to curated links"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T20:20:00+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/21"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#21:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-02T20:20:19+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/21"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#20:opened",
+   "payload": {
+    "additions": 1,
+    "author": "system-conf",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "fix: correct typo 'developpers' to 'developers' in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:26:19+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/20"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#19:opened",
+   "payload": {
+    "additions": 1,
+    "author": "system-conf",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/finding-good-first-issues.md"
+    ],
+    "title": "fix: correct typo 'responsivness' to 'responsiveness'"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:26:16+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/19"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#18:opened",
+   "payload": {
+    "additions": 1,
+    "author": "system-conf",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/reading-a-codebase.md"
+    ],
+    "title": "fix: correct typo 'unfimiliar' to 'unfamiliar'"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:26:13+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/18"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#17:opened",
+   "payload": {
+    "additions": 1,
+    "author": "system-conf",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "guides/your-first-pr-checklist.md"
+    ],
+    "title": "fix: correct typo 'comitting' to 'committing'"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:26:10+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/17"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#16:opened",
+   "payload": {
+    "additions": 1,
+    "author": "system-conf",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "README.md"
+    ],
+    "title": "fix: correct typo 'contibution' to 'contribution' in README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:26:07+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/16"
+  },
+  {
+   "evidence_id": "pr:mergeworthy/learn#16:review:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "Hi! This looks like your first pull request to this repo \u2014 welcome. \ud83c\udf89\n\nA maintainer will take a look soon. While you wait:\n- Make sure CI is green (the markdown lint check is informational and won't block your merge).\n- Feel free to update the PR with more commits if you spot something \u2014 we won't squash until merge.\n- If we ask for changes, that's normal \u2014 every PR, including ones from senior engineers, gets feedback.\n\nThanks for contributing.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:26:31+00:00",
+   "url": "https://github.com/mergeworthy/learn/pull/16"
+  }
+ ],
+ "repo": "mergeworthy/learn",
+ "window": "pre_t"
+}

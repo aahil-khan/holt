@@ -628,3 +628,60 @@ evidence from the wrong side" was a wider claim than the code makes good.
 **Decision.** All published in the README under "What this result depends on".
 None of it improves the score. A reader finding these unaided would discount
 everything else; a reader finding them declared has one fewer reason to.
+
+---
+
+## Iteration 10 — an evidence-matched ablation (2026-08-30)
+
+**Tried.** A single prompt given *everything Holt sees* — the same arithmetic
+signals, the same twelve-thread digest Stage C reads, the same three-valued
+verdict — to isolate what the orchestration is worth once evidence access is
+held constant.
+
+**A naming correction, made before reporting the numbers.** This is an
+**ablation, not a baseline**. The brief defines a baseline as a reasonable basic
+way to handle the task *before* using the solution; a person assessing a
+repository does not have a temporal-holdout GraphQL crawler that reconstructs
+pre-cutoff pull request threads. That evidence layer *is* Holt. Feeding its
+output to a prompt measures the pipeline's orchestration, not a competitor. The
+baseline remains README-and-metadata.
+
+**Evidence.** Mean over three runs, 22 graded repositories:
+
+| Configuration | MCC | Sensitivity | Specificity | Verdicts stable across runs |
+|---|---|---|---|---|
+| baseline (README only) | 0.21 ±0.13 | 0.67 | 0.54 | 18/22 |
+| ablation: same evidence, one prompt | **0.53 ±0.05** | 0.93 | 0.54 | 20/22 |
+| Holt (full pipeline) | 0.49 ±0.00 | 0.93 | 0.50 | **22/22** |
+
+**Where the improvement comes from, which is what an ablation is for:**
+
+| Change | MCC |
+|---|---|
+| README-only → the same evidence Holt reads | **0.21 → 0.53** |
+| single prompt → staged pipeline | 0.53 → 0.49 |
+
+Reading contribution history instead of a landing page is worth **+0.32 MCC**.
+The orchestration on top of it buys **no measurable accuracy**.
+
+**Is the 0.53 against 0.49 real? No.** McNemar p = 1.00 in all three runs. The
+two configurations disagree on exactly two repositories out of 22 and each gets
+one right: the ablation correctly rejects `NousResearch/hermes-agent`, Holt
+correctly rejects `runelite/plugin-hub`. Reporting the ablation as beating Holt
+would be the same overclaim, in the other direction, that we corrected in
+iteration 8.
+
+**What orchestration does buy, measurably:** 22/22 run-to-run verdict stability
+against 20/22 and 18/22. A deterministic verdict function cannot disagree with
+itself. That is reproducibility rather than accuracy, and it is a narrower claim
+than the one this project started with.
+
+**Decision.** Both results published. The baseline comparison is
+README-only 0.21 → Holt 0.49; the ablation explains where that gain came from.
+The uncomfortable half — that the staged pipeline adds no accuracy over one
+well-prompted call with identical evidence — stays in the README rather than
+being reframed away.
+
+**What it points at.** Specificity is 0.50–0.54 across *every* method including
+the constant answers. We reject non-viable repositories at close to chance, and
+rejection is the thing this project exists to do. That is the next entry.

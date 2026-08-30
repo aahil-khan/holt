@@ -23,6 +23,7 @@ import math
 from pathlib import Path
 
 from holt import baseline as baseline_solution
+from holt import baseline_matched
 from holt.agent.pipeline import analyze
 from holt.evidence.fixtures import FixtureProvider
 from holt.model import OpenAIModel, ReplayModel, TRAJECTORY_DIR
@@ -155,7 +156,9 @@ def main() -> None:
         repos = repos[: args.limit]
 
     pre = FixtureProvider(Window.PRE_T)
-    calls: dict[str, dict[str, Verdict]] = {"baseline": {}, "holt": {}, "name_only": {}}
+    calls: dict[str, dict[str, Verdict]] = {
+        "baseline": {}, "baseline_matched": {}, "holt": {}, "name_only": {}
+    }
     popularity: dict[str, int] = {}
     spend = 0.0
 
@@ -174,6 +177,7 @@ def main() -> None:
 
         m = client(slug)
         calls["baseline"][slug] = baseline_solution.assess(slug, pre, m).verdict
+        calls["baseline_matched"][slug] = baseline_matched.assess(slug, pre, m).verdict
         assessment, _ = analyze(slug, pre, m)
         calls["holt"][slug] = assessment.verdict
         probe = m.complete(
@@ -215,7 +219,7 @@ def main() -> None:
     })
 
     order = {"always_viable": 0, "never_viable": 1, "name_only": 2,
-             "popularity": 3, "baseline": 4, "holt": 5}
+             "popularity": 3, "baseline": 4, "baseline_matched": 5, "holt": 6}
     results.sort(key=lambda r: order.get(r["method"], 9))
     print(f"\n{'method':<15} {'MCC':>6} {'balAcc':>7} {'F1':>6} {'sens':>6} {'spec':>6} {'P@10':>6}")
     for r in results:

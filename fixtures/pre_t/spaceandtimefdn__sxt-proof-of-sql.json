@@ -1,0 +1,4207 @@
+{
+ "captured_at": "2026-08-29T20:27:35.559024+00:00",
+ "content_sha256": "9041a467632c6ac731f8d9980d5ee05579cd4cfe695de94fb7114941be1e7a9f",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:spaceandtimefdn/sxt-proof-of-sql:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Space and Time | Proof of SQL",
+    "homepage_url": "",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Rust",
+    "pushed_at": "2026-08-05T07:35:15Z",
+    "stargazer_count": 5388
+   },
+   "source": "github",
+   "timestamp": "2024-04-25T17:30:50+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql"
+  },
+  {
+   "evidence_id": "repo:spaceandtimefdn/sxt-proof-of-sql:readme",
+   "payload": {
+    "commit_oid": "1bf50a639b83014dd169a21a62572ed6fdb72c1d",
+    "kind": "readme",
+    "text": "crates/proof-of-sql/README.md"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T00:42:02+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/blob/1bf50a639b83014dd169a21a62572ed6fdb72c1d/README.md"
+  },
+  {
+   "evidence_id": "repo:spaceandtimefdn/sxt-proof-of-sql:contributing",
+   "payload": {
+    "commit_oid": "1bf50a639b83014dd169a21a62572ed6fdb72c1d",
+    "kind": "contributing",
+    "text": "<h1 align=\"center\" style=\"border-bottom: none;\">Contributing to our Proof of SQL Repository</h1>\n<p align=\"center\">\n  <a href=\"https://www.conventionalcommits.org/en/v1.0.0/\">\n    <img alt=\"semantic-release: conventional-commits\" src=\"https://img.shields.io/badge/semantic--release-conventional--commits-blueviolet\">\n  </a>\n</p>\n\nThe following guideline is heavily based on the [Angular Project Guideline](https://github.com/angular/angular/blob/main/CONTRIBUTING.md). As a contributor, here are the rules we would like you to follow:\n\n - [Getting Started](#getting-started)\n   - [Install Rust](#install-rust)\n   - [Fork the Repository](#fork-the-repository)\n - [Submission Guidelines](#submit)\n   - [Submitting a Pull Request (PR)](#submit-pr)\n   - [Addressing review feedback](#address-review)\n   - [Updating the commit message](#updating-commit-message)\n   - [Running Code Coverage Locally](#coverage-locally)\n   - [After your pull request is merged](#after-pr-merged)\n - [Coding Rules](#rules)\n - [Commit Message Guidelines](#commit-guidelines)\n   - [Commit Message Format](#commit)\n   - [Commit Message Header](#commit-message-header)\n     - [Type](#type)\n     - [Summary](#summary)\n   - [Commit Message Body](#commit-message-body)\n   - [Commit Message Footer](#commit-message-footer)\n   - [Revert Commits](#revert)\n   - [Commit Examples](#commit-examples)\n   - [Automatic Semantic Release](#semantic-release)\n\n## <a name=\"getting-started\"></a> Getting Started\n### <a name=\"install-rust\"></a> Install Rust\nTo contribute to this project, you'll need to have Rust installed on your machine. Follow the steps below to install Rust and set up your development environment:\n\n1. Install Rust.\n   - Rust's official installer is called `rustup`, which makes it easy to install and manage Rust versions.\n   - To install Rust, open your terminal and run the following command:\n     ```bash\n     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n     ```\n   - Follow the on-screen instructions to complete the installation.\n\n2. Verify your installation.\n   - Once Rust is installed, verify the installation by checking the version:\n     ```bash\n     rustc --version\n     ```\n   - This should display the version of Rust that was installed.\n\n3. Set up your environment.\n   - After installation, `rustup` will configure your environment automatically, adding Rust to your system's PATH. If needed, you can reload your shell with:\n     ```bash\n     source $HOME/.cargo/env\n     ```\n\n4. Update Rust.\n   - To ensure you are using the latest version of Rust, you can update Rust at any time by running:\n     ```bash\n     rustup update\n     ```\n\n5. Additional tools.\n   - You may also want to install some common tools used in Rust development, like `cargo` (Rust\u2019s package manager and build system) and `rustfmt` (code formatting):\n     ```bash\n     rustup component add rustfmt\n     rustup component add clippy\n     ```\n   - You will also need to install [lld](https://lld.llvm.org/) which will be required for running tests. For example on Debian based systems you can install it using the package manager:\n     ```bash\n     apt install lld\n     ```\n\nIf you run into any issues, please refer to the [official Rust documentation](https://www.rust-lang.org/learn/get-started) for troubleshooting and more detailed installation instructions.\n\n### <a name=\"fork-the-repository\"></a> Fork the Repository\nIn order to contribute it is necessary to fork the repository. Follow the steps below to do so:\n\n1. Navigate to the repository.\n   - Go to the main page of the repository on GitHub at https://github.com/spaceandtimelabs/sxt-proof-of-sql.\n\n2. Fork the repository.\n   - Click the \"Fork\" button in the upper-right corner of the repository page. This will create a copy of the repository under your GitHub account.\n\n3. Clone your forked repository.\n   - Once the fork is complete, you need to clone it to your local machine. Run the following command in your terminal:\n     ```bash\n     git clone https://github.com/YOUR_USERNAME/sxt-proof-of-sql.git\n     ```\n   - Replace `YOUR_USERNAME` with your GitHub username.\n\n4. Navigate to the repository's directory.\n   - Change into the newly cloned repository directory:\n     ```bash\n     cd sxt-proof-of-sql\n     ```\n\n5. Add the original repository as a remote (optional but recommended).\n   - This allows you to keep your fork up to date with changes from the original repository:\n     ```bash\n     git remote add upstream https://github.com/spaceandtimelabs/sxt-proof-of-sql.git\n     git remote add origin https://github.com/YOUR_USERNAME/sxt-proof-of-sql.git\n     ```\n   - Replace `YOUR_USERNAME` with your GitHub username.\n\n6. Start making your changes.\n   - Now you are ready to create a new branch and make your contributions!\n\n## <a name=\"submit\"></a> Submission Guidelines\n\nThis project is built using the [Cargo build system](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html).\n\nThe general flow you can follow when implementing a new feature/bugfix/docs/test is:\n\n1. Create a GitHub issue to keep track of the task you are implementing.\n \nThe most relevant fields in the issue are: `assignees`, `projects`, `milestone`, `development`, and `description`. Those fields are not mandatory, but they may help in the future to easily fetch information related to a specific feature, such as the time it took from implementation until completeness, and which PRs are associated with which feature (many PRs can be related to a single feature/issue).\n\n2. From the created issue panel, use the `main` branch to generate a new branch that will be tied with the issue. In this case, when a Pull Request tied with the branch is merged, the issue will be automatically closed.\n\n3. Whenever you are done implementing the modifications in your branch, make a Pull Request to merge your changes into the main branch. Try to always assign someone to review your Pull Request. Since we are using an automatic release process to version our code, you should follow a strict pattern in your commit messages (below for more descriptions). It is advised that you name your Pull Request according to our semantic release rules, given that the commit message is automatically the same as the Pull Request title. For instance, name the PR as \"feat: add hadamard product\" and do not name the PR as \"Adding hadamard product\". Always test your code locally before any pull request is submitted.\n\n4. In the case of many commit messages to your branch, force the Pull Request to merge as a squashed merge.\n\n5. <a name=\"delete-merged-branch-and-check-related-issues\"></a>After the merge is done, delete your branch from the repository and check that related issues were indeed closed.\n\n### <a name=\"submit-pr\"></a> Submitting a Pull Request (PR)\n\nBefore you submit your Pull Request (PR) consider the following guidelines:\n\n> **IMPORTANT:** Please note that PRs without activity for 30 days will be automatically closed as stale. If your PR is closed due to inactivity but you would like to continue working on it, please feel free to reopen it when you're ready to continue.\n\n1. Make your changes in a new git branch:\n\n   In case you haven't generated a new branch yet, use the following command to create a new branch from the main:\n     ```shell\n     git checkout -b my-feature-branch main\n     ```\n\n  Otherwise, only checkout your branch:\n\n    ```shell\n     git checkout my-feature-branch\n     ```\n\n2. Create your patch, **including appropriate test cases**.\n\n3. Follow our [Coding Rules](#rules).\n\n4. <a name=\"test-suite\"></a>Run the entire test suite to ensure tests are passing.\n\n    ```shell\n    cargo test --all-features\n    ```\n\n    <details>\n    <summary>\n    Workaround for non-Linux and/or non-GPU machines.\n    </summary>\n\n    * Workaround #1: enable the CPU version of Blitzar by setting the `BLITZAR_BACKEND` environment variable. Example:\n        ```bash\n        export BLITZAR_BACKEND=cpu\n        cargo test --all-features\n        ```\n    * Workaround #2: disable the `blitzar` feature in the repo. Example\n        ```bash\n        cargo test --no-default-features --features=\"arrow rayon ark-ec/parallel ark-poly/parallel ark-ff/asm\"\n        ```\n\n    </details>\n\n5. <a name=\"code-quality-checks\"></a>Run the following code quality checks locally so that the code is not only correct but also clean.\n\n    ```shell\n    source scripts/run_ci_checks.sh\n    ```\n\n6. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.\n\n     ```shell\n     git add <modified files>\n     git commit\n     ```\n\n    Note: Only add relevant files. Avoid adding binary files, as they frequently waste storage resources. Consider adding only text files (.rs, .cc, .json, .toml, etc). Files that should NOT be committed should instead be added\n    to `.gitignore`.\n\n7.  Push your branch to GitHub:\n\n    ```shell\n    git push origin my-feature-branch\n    ```\n\n8.  In GitHub, send a pull request to `sxt-proof-of-sql:main`.\n\nOur proof of SQL repository triggers automatically a workflow to test the code whenever a Pull Request is submitted or a commit is pushed to an existing PR. Before closing the PR, always verify that those tests are indeed passing.\n\nNOTE: <a name=\"ci-review-note\"></a>**We will not review a PR if CI (except for `Check Approver` since this requires a review) doesn't pass. We are happy to help you if you can't figure out how to get the CI to pass but it is your responsibility to make sure they pass.**\n\nAlso, to ease this process of using git, you can try to use [vscode](https://code.visualstudio.com/). Vscode has some nice extensions to manage your git workflow.\n\n### <a name=\"address-review\"></a> Addressing review feedback\n\nIf we ask for changes via code reviews then:\n\n1. Make the required updates to the code.\n\n2. [Re-run the entire test suite](#test-suite) to ensure tests are still passing.\n\n3. [Re-run the code quality checks](#code-quality-checks) to ensure that the code is still clean.\n\n4. Create a fixup commit and push to your GitHub repository (this will update your Pull Request):\n\n    ```shell\n    # Create a fixup commit to fix up the last commit on the branch:\n    git commit --all --fixup HEAD\n    git push\n    ```\n\n    or\n\n    ```shell\n    # Create a fixup commit to fix up commit with SHA <COMMIT_SHA>:\n    git commit --fixup <SHA>\n    ```\n\n    For more info on working with fixup commits see [here](https://github.com/angular/angular/blob/main/docs/FIXUP_COMMITS.md).\n\n5. In order to ensure that we do not pollute the main branch with poorly written commit messages, before the PR can be merged, we require that the commits in your branch be clean. In particular, this means that you should rebase instead of merge in order to catch up to main. Additionally, any commits of the variety `address review comments` should be turned into a fixup commit instead.\n\n### <a name=\"updating-commit-message\"></a> Updating the commit message\n\nA reviewer might often suggest changes to a commit message (for example, to add more context for a change or adhere to our [commit message guidelines](#commit)).\nIn order to update the commit message of the last commit on your branch:\n\n1. Check out your branch:\n\n    ```shell\n    git checkout my-fix-branch\n    ```\n\n2. Amend the last commit and modify the commit message:\n\n    ```shell\n    git commit --amend\n    ```\n\n3. Push to your GitHub repository:\n\n    ```shell\n    git push --force-with-lease\n    ```\n\nNOTE: If you need to update the commit message of an earlier commit, you can use `git rebase` in interactive mode. See the [git docs](https://git-scm.com/docs/git-rebase#_interactive_mode) for more details.\n\n### <a name=\"coverage-locally\"></a> Running Code Coverage Locally \nTo run code coverage locally, install `cargo-llvm-cov` by following the instructions here: [cargo-llvm-cov Installation](https://github.com/taiki-e/c",
+    "text_original_chars": 25074,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T00:42:02+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/blob/1bf50a639b83014dd169a21a62572ed6fdb72c1d/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2190:opened",
+   "payload": {
+    "additions": 39,
+    "author": "tristanwork",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 64,
+    "files": [
+     "crates/proof-of-sql-planner/tests/e2e_tests.rs"
+    ],
+    "title": "Cache Dory setup in planner e2e tests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:47:13+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2190"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2189:opened",
+   "payload": {
+    "additions": 40,
+    "author": "meaqua9420",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 27,
+    "files": [
+     "crates/proof-of-sql/src/base/encode/scalar_varint.rs",
+     "crates/proof-of-sql/src/base/encode/varint_trait.rs",
+     "crates/proof-of-sql/src/base/encode/zigzag.rs",
+     "crates/proof-of-sql/src/base/scalar/scalar.rs"
+    ],
+    "title": "refactor: blanket impl VarInt for Scalar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:46:45+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2189"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2188:opened",
+   "payload": {
+    "additions": 27,
+    "author": "kejuunuy",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "src/tests/additional_tests.rs"
+    ],
+    "title": "test: improve test coverage for core SQL proof modules (#560)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:14:46+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2188"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2187:opened",
+   "payload": {
+    "additions": 44,
+    "author": "Satya8208",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/limbs.rs"
+    ],
+    "title": "test: cover standard limb serialization helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T11:12:58+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2187"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2186:opened",
+   "payload": {
+    "additions": 290,
+    "author": "orenodinner",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/verification_builder_test.rs"
+    ],
+    "title": "test: cover verification builder accounting"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T10:05:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2186"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2185:opened",
+   "payload": {
+    "additions": 88,
+    "author": "daniel7an",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/aggregate_group_by_no_blitzar_test.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs"
+    ],
+    "title": "test: cover aggregate plans without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:21:58+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2185"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2184:opened",
+   "payload": {
+    "additions": 91,
+    "author": "daniel7an",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/slice_union_exec_no_blitzar_test.rs"
+    ],
+    "title": "test: cover slice and union without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:15:57+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2184"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2184:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nAdds non-`blitzar`-gated tests to validate `slice_exec` and `union_exec` using the naive commitment backend.\n\n**Changes:**\n- Introduces a new test module covering slice and union proofs with `NaiveEvaluationProof`.\n- Registers the new test module in `proof_plans::mod.rs` under `#[cfg(test)]`.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 3 comments.\n\n| File | Description |\n| ---- | ----------- |\n| crates/proof-of-sql/src/sql/proof_plans/slice_union_exec_no_blitzar_test.rs | Adds slice/union proof tests using `NaiveEvaluationProof` and `OwnedTableTestAccessor`. |\n| crates/proof-of-sql/src/sql/proof_plans/mod.rs | Includes the new test module in the `proof_plans` test build. |\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/spaceandtimefdn/sxt-proof-of-sql/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:16:32+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2184"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2183:opened",
+   "payload": {
+    "additions": 74,
+    "author": "daniel7an",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/sort_merge_join_exec_no_blitzar_test.rs"
+    ],
+    "title": "test: cover sort merge join without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:11:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2183"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2183:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nAdds a no-blitzar test for `SortMergeJoinExec` using the naive commitment backend, ensuring the sort-merge join can be proven and verified without the blitzar feature.\n\n**Changes:**\n- New test file `sort_merge_join_exec_no_blitzar_test.rs` verifying sort-merge join with `NaiveEvaluationProof`.\n- Registered the new test module in `mod.rs` under `#[cfg(test)]`.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated no comments.\n\n| File | Description |\n| ---- | ----------- |\n| crates/proof-of-sql/src/sql/proof_plans/sort_merge_join_exec_no_blitzar_test.rs | Adds a test exercising sort-merge join via the naive commitment backend. |\n| crates/proof-of-sql/src/sql/proof_plans/mod.rs | Wires up the new test module. |\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/spaceandtimefdn/sxt-proof-of-sql/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:11:20+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2183"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2182:opened",
+   "payload": {
+    "additions": 100,
+    "author": "daniel7an",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/projection_exec_no_blitzar_test.rs"
+    ],
+    "title": "test: cover projection exec without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:05:49+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2182"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2182:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nAdds a blitzar-independent test module for `ProjectionExec` to improve test coverage when the `blitzar` feature is disabled.\n\n**Changes:**\n- New test file using `NaiveEvaluationProof` to verify projection proving/verification works without blitzar.\n- New test asserting projection metadata (column result fields, column references, table references).\n- Registered the new test module in `mod.rs` under `#[cfg(test)]`.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated no comments.\n\n| File | Description |\n| ---- | ----------- |\n| crates/proof-of-sql/src/sql/proof_plans/projection_exec_no_blitzar_test.rs | New tests for `ProjectionExec` using the naive commitment backend. |\n| crates/proof-of-sql/src/sql/proof_plans/mod.rs | Registers the new test module. |\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/spaceandtimefdn/sxt-proof-of-sql/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T09:06:22+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2182"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2181:opened",
+   "payload": {
+    "additions": 90,
+    "author": "ajinkyaexams-design",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_operation_error.rs"
+    ],
+    "title": "test: cover column operation errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T08:31:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2181"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2180:opened",
+   "payload": {
+    "additions": 115,
+    "author": "roblindsay24",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/scalar/mont_scalar_test.rs"
+    ],
+    "title": "test: cover mont scalar primitive conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T04:35:42+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2180"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2179:opened",
+   "payload": {
+    "additions": 28,
+    "author": "endscene665",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table_utility.rs"
+    ],
+    "title": "test: cover table utility constructors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:15:37+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2179"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2178:opened",
+   "payload": {
+    "additions": 35,
+    "author": "endscene665",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/arrow_schema_utility.rs"
+    ],
+    "title": "test: cover Arrow schema conversion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T00:01:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2178"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2177:opened",
+   "payload": {
+    "additions": 60,
+    "author": "endscene665",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table_ref.rs"
+    ],
+    "title": "test: cover table ref parsing"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T23:47:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2177"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2176:opened",
+   "payload": {
+    "additions": 128,
+    "author": "endscene665",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/record_batch_conversion.rs"
+    ],
+    "title": "test: cover record batch column conversion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T22:07:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2176"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2175:opened",
+   "payload": {
+    "additions": 23,
+    "author": "endscene665",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_field_test.rs",
+     "crates/proof-of-sql/src/base/database/mod.rs"
+    ],
+    "title": "test: cover column field round trip"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T21:41:09+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2175"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2174:opened",
+   "payload": {
+    "additions": 23,
+    "author": "endscene665",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/mod.rs",
+     "crates/proof-of-sql/src/base/database/table_evaluation_test.rs"
+    ],
+    "title": "test: cover table evaluation accessors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T21:33:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2174"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2173:opened",
+   "payload": {
+    "additions": 202,
+    "author": "Ishant5436",
+    "author_is_bot": false,
+    "changed_files": 30,
+    "deletions": 48,
+    "files": [
+     ".github/workflows/bounty-spam-sentinel.yml",
+     "SECURITY_MAINTENANCE.md",
+     "crates/proof-of-sql-benches/src/main.rs",
+     "crates/proof-of-sql-planner/examples/albums/main.rs",
+     "crates/proof-of-sql-planner/examples/avocado-prices/main.rs",
+     "crates/proof-of-sql-planner/examples/books/main.rs",
+     "crates/proof-of-sql-planner/examples/brands/main.rs",
+     "crates/proof-of-sql-planner/examples/census/main.rs",
+     "crates/proof-of-sql-planner/examples/countries/main.rs",
+     "crates/proof-of-sql-planner/examples/dinosaurs/main.rs",
+     "crates/proof-of-sql-planner/examples/dog_breeds/main.rs",
+     "crates/proof-of-sql-planner/examples/hello_world/main.rs",
+     "crates/proof-of-sql-planner/examples/plastics/main.rs",
+     "crates/proof-of-sql-planner/examples/posql_db/main.rs",
+     "crates/proof-of-sql-planner/examples/programming_books/main.rs",
+     "crates/proof-of-sql-planner/examples/rockets/main.rs",
+     "crates/proof-of-sql-planner/examples/space/main.rs",
+     "crates/proof-of-sql-planner/examples/stocks/main.rs",
+     "crates/proof-of-sql-planner/examples/sushi/main.rs",
+     "crates/proof-of-sql-planner/examples/tech_gadget_prices/main.rs"
+    ],
+    "title": "perf: Cache Dory Setups to significantly speed up tests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T19:29:57+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2173"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2172:opened",
+   "payload": {
+    "additions": 138,
+    "author": "NguyenCong2k",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/fold_log_expr.rs"
+    ],
+    "title": "test: cover fold log expression"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T17:16:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2172"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2171:opened",
+   "payload": {
+    "additions": 102,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/table_exec.rs"
+    ],
+    "title": "test: cover table exec paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:19:32+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2171"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2170:opened",
+   "payload": {
+    "additions": 106,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/column_expr.rs"
+    ],
+    "title": "test: cover column expression accessors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:12:37+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2170"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2169:opened",
+   "payload": {
+    "additions": 148,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/filter_util.rs"
+    ],
+    "title": "test: cover column filtering utilities"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:06:59+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2169"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2168:opened",
+   "payload": {
+    "additions": 72,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/literal_expr.rs"
+    ],
+    "title": "test: cover literal expression evaluation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:02:57+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2168"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2167:opened",
+   "payload": {
+    "additions": 85,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table_ref.rs"
+    ],
+    "title": "test: cover table reference parsing"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:59:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2167"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2166:opened",
+   "payload": {
+    "additions": 97,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/provable_result_column.rs"
+    ],
+    "title": "test: cover provable result column serialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:55:48+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2166"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2165:opened",
+   "payload": {
+    "additions": 104,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column.rs"
+    ],
+    "title": "test: cover constant columns from literals"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:46:24+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2165"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2164:opened",
+   "payload": {
+    "additions": 52,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table.rs"
+    ],
+    "title": "test: cover table accessor helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:39:13+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2164"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2163:opened",
+   "payload": {
+    "additions": 62,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/database/literal_value.rs"
+    ],
+    "title": "test: cover literal value scalar conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:32:40+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2163"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2162:opened",
+   "payload": {
+    "additions": 32,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_commitment_evaluation_proof_test.rs"
+    ],
+    "title": "test: cover dynamic dory prover guards"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:14:46+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2162"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2161:opened",
+   "payload": {
+    "additions": 79,
+    "author": "ManmohanBuildsProducts",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 40,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/query_commitments.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_commitment_evaluation_proof_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_commitment_evaluation_proof_test.rs"
+    ],
+    "title": "test: reduce query commitments setup size"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:02:07+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2161"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2161:comment:0",
+   "payload": {
+    "author": "ManmohanBuildsProducts",
+    "author_is_bot": false,
+    "body": "This PR is ready for maintainer review. The slice is intentionally narrow: it only reduces unused `PublicParameters::test_rand` setup size in the query commitments accessor test, with no production logic changes. Local checks listed in the body pass; the focused blitzar test needs Linux because `blitzar-sys` rejects macOS during build."
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T18:53:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2161"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2161:comment:1",
+   "payload": {
+    "author": "ManmohanBuildsProducts",
+    "author_is_bot": false,
+    "body": "Pushed a follow-up commit that directly targets the slow Dory evaluation proof tests from #557. It caches repeated `PublicParameters` / `VerifierSetup` construction with `LazyLock` in both fixed and dynamic Dory evaluation test modules, while keeping the same proof assertions and random proof inputs.\\n\\nAdditional local validation now passes:\\n- `cargo fmt --all -- --check`\\n- `git diff --check`\\n- `bash scripts/check_commits.sh`\\n- `cargo test -p proof-of-sql --lib --no-default-features --features test proof_primitive::dory::dory_commitment_evaluation_proof_test -- --nocapture` (4 passed)\\n- `cargo test -p proof-of-sql --lib --no-default-features --features test proof_primitive::dory::dynamic_dory_commitment_evaluation_proof_test -- --nocapture` (5 passed)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T19:07:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2161"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2160:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/eval_vmv_re_test.rs"
+    ],
+    "title": "test: reduce eval vmv setup size"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:58:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2160"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2159:opened",
+   "payload": {
+    "additions": 31,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/polynomial/interpolate_test.rs"
+    ],
+    "title": "test: cover sparse degree-five interpolation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:33:47+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2159"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2158:opened",
+   "payload": {
+    "additions": 43,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/make_sumcheck_state.rs"
+    ],
+    "title": "test: cover zerosum sumcheck state construction"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:44:57+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2158"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2157:opened",
+   "payload": {
+    "additions": 60,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/aliased_dyn_proof_expr.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/table_expr.rs"
+    ],
+    "title": "test: cover sql proof expression wrappers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:33:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2157"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2156:opened",
+   "payload": {
+    "additions": 122,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/proof_expr_decimal_trait_test.rs"
+    ],
+    "title": "test: cover decimal proof expr helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:23:11+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2156"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2155:opened",
+   "payload": {
+    "additions": 49,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/evm_proof_plan/error.rs"
+    ],
+    "title": "test: cover evm proof plan errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:17:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2155"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2154:opened",
+   "payload": {
+    "additions": 45,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/provable_result_column.rs"
+    ],
+    "title": "test: cover provable result column serialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:10:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2154"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2153:opened",
+   "payload": {
+    "additions": 41,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "crates/proof-of-sql/src/base/encode/u256.rs"
+    ],
+    "title": "test: cover u256 scalar conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:07:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2153"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2152:opened",
+   "payload": {
+    "additions": 44,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/query_result.rs"
+    ],
+    "title": "test: cover query coercion error mapping"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:04:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2152"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2151:opened",
+   "payload": {
+    "additions": 38,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/limbs.rs"
+    ],
+    "title": "test: cover limb serialization order"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T12:00:32+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2151"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2150:opened",
+   "payload": {
+    "additions": 19,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/binary.rs"
+    ],
+    "title": "test: cover standard binary serialization details"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T11:57:19+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2150"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2149:opened",
+   "payload": {
+    "additions": 60,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/arrow_schema_utility.rs"
+    ],
+    "title": "test: cover Arrow schema compatibility conversion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T11:53:02+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2149"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2148:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Entr0zy",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/extended_dory_inner_product_test.rs"
+    ],
+    "title": "test: reduce extended dory setup size"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T11:13:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2148"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2147:opened",
+   "payload": {
+    "additions": 135,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/shift.rs"
+    ],
+    "title": "test: cover shift gadget without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T11:08:09+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2147"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2146:opened",
+   "payload": {
+    "additions": 30,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 129,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_inner_product_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/state.rs"
+    ],
+    "title": "test: reduce dory inner product setup work"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T08:14:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2146"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2145:opened",
+   "payload": {
+    "additions": 95,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table_ref.rs"
+    ],
+    "title": "test: cover table ref conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T07:52:49+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2145"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2143:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql-benches/benches/bench_append_rows.rs"
+    ],
+    "title": "test: reduce append rows bench setup size"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:46:33+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2143"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2142:opened",
+   "payload": {
+    "additions": 4,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "crates/proof-of-sql-planner/examples/census/main.rs",
+     "crates/proof-of-sql-planner/examples/dog_breeds/main.rs",
+     "crates/proof-of-sql-planner/examples/space/main.rs",
+     "crates/proof-of-sql-planner/examples/wood_types/main.rs"
+    ],
+    "title": "test: reduce remaining planner example setup sizes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:34:25+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2142"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2141:opened",
+   "payload": {
+    "additions": 8,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 8,
+    "files": [
+     "crates/proof-of-sql-planner/examples/albums/main.rs",
+     "crates/proof-of-sql-planner/examples/avocado-prices/main.rs",
+     "crates/proof-of-sql-planner/examples/books/main.rs",
+     "crates/proof-of-sql-planner/examples/brands/main.rs",
+     "crates/proof-of-sql-planner/examples/countries/main.rs",
+     "crates/proof-of-sql-planner/examples/dinosaurs/main.rs",
+     "crates/proof-of-sql-planner/examples/rockets/main.rs",
+     "crates/proof-of-sql-planner/examples/vehicles/main.rs"
+    ],
+    "title": "test: reduce more planner example setup sizes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:30:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2141"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2140:opened",
+   "payload": {
+    "additions": 117,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/column_commitments.rs"
+    ],
+    "title": "test: cover column commitments without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:11:02+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2140"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2139:opened",
+   "payload": {
+    "additions": 102,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/column_commitment_metadata.rs"
+    ],
+    "title": "test: cover metadata max bounds"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:06:33+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2139"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2138:opened",
+   "payload": {
+    "additions": 31,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/column_bounds.rs"
+    ],
+    "title": "test: cover uint8 column bounds"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:03:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2138"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2137:opened",
+   "payload": {
+    "additions": 23,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/ref_into.rs"
+    ],
+    "title": "test: cover ref into blanket conversion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T23:00:30+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2137"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2136:opened",
+   "payload": {
+    "additions": 22,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/utils/parse.rs"
+    ],
+    "title": "test: cover bigdecimal parsing edge cases"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:58:35+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2136"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2135:opened",
+   "payload": {
+    "additions": 69,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/pack_scalars.rs"
+    ],
+    "title": "test: cover pack scalar commit modification"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:53:11+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2135"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2134:opened",
+   "payload": {
+    "additions": 59,
+    "author": "mavis105",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/offset_to_bytes.rs"
+    ],
+    "title": "test: cover offset byte encoding boundaries"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:49:04+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2134"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2134:closed",
+   "payload": {
+    "author": "mavis105",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:52:42+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2134"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2134:comment:0",
+   "payload": {
+    "author": "mavis105",
+    "author_is_bot": false,
+    "body": "Closing this because I found an earlier overlapping coverage PR (#2124) for the same `OffsetToBytes` helper after opening it. I do not want to add duplicate review noise to #560."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:52:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2134"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2133:opened",
+   "payload": {
+    "additions": 146,
+    "author": "gshaowei6",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/subtract_expr_eval_test.rs"
+    ],
+    "title": "test: cover subtract expression evaluation paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:44:12+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2133"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2132:opened",
+   "payload": {
+    "additions": 42,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/filter_util_test.rs"
+    ],
+    "title": "test: cover filter utility primitives"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:43:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2132"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2131:opened",
+   "payload": {
+    "additions": 23,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/slice_ops/batch_inverse_test.rs"
+    ],
+    "title": "test: cover scaled batch inversion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:37:30+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2131"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2130:opened",
+   "payload": {
+    "additions": 33,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/first_round_builder_state_test.rs",
+     "crates/proof-of-sql/src/sql/proof/mod.rs"
+    ],
+    "title": "test: cover first round builder state"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:34:20+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2130"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2129:opened",
+   "payload": {
+    "additions": 26,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/slice_ops/inner_product_test.rs"
+    ],
+    "title": "test: cover inner product ref casting"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:27:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2129"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2128:opened",
+   "payload": {
+    "additions": 221,
+    "author": "gshaowei6",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/mod.rs",
+     "crates/proof-of-sql/src/sql/proof/provable_query_result_core_test.rs"
+    ],
+    "title": "test: cover provable query result core paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:25:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2128"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2127:opened",
+   "payload": {
+    "additions": 41,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/mod.rs",
+     "crates/proof-of-sql/src/sql/proof/sumcheck_random_scalars_test.rs"
+    ],
+    "title": "test: cover sumcheck random scalars"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:23:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2127"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2126:opened",
+   "payload": {
+    "additions": 14,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/slice_ops/add_const_test.rs"
+    ],
+    "title": "test: cover add_const edge cases"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:21:00+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2126"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2125:opened",
+   "payload": {
+    "additions": 54,
+    "author": "keon0711",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql-planner/src/expr.rs"
+    ],
+    "title": "test: cover planner binary operator errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T22:07:19+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2125"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2124:opened",
+   "payload": {
+    "additions": 60,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/offset_to_bytes.rs"
+    ],
+    "title": "test: cover dory offset byte conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:59:31+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2124"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2123:opened",
+   "payload": {
+    "additions": 11,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_commitment.rs"
+    ],
+    "title": "test: cover dory commitment serialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:56:31+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2123"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2122:opened",
+   "payload": {
+    "additions": 17,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_messages_test.rs"
+    ],
+    "title": "test: cover dory message serialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:52:39+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2122"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2121:opened",
+   "payload": {
+    "additions": 24,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/byte/byte_matrix_utils.rs"
+    ],
+    "title": "test: cover empty byte matrix"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:42:08+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2121"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2120:opened",
+   "payload": {
+    "additions": 17,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/bit/bit_distribution_test.rs"
+    ],
+    "title": "test: cover bit distribution errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:38:49+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2120"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2119:opened",
+   "payload": {
+    "additions": 78,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table_operation_error.rs"
+    ],
+    "title": "test: cover table operation errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:32:19+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2119"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2118:opened",
+   "payload": {
+    "additions": 88,
+    "author": "gshaowei6",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/scaling_cast_expr_eval_test.rs"
+    ],
+    "title": "test: cover scaling cast evaluator paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:25:52+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2118"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2118:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nAdds targeted unit tests to validate `ScalingCastExpr` evaluation behavior across prover and verifier phases.\n\n**Changes:**\n- Introduces a new test module covering first-round, final-round, and verifier evaluation for `ScalingCastExpr`.\n- Wires the new test module into `proof_exprs::mod` behind `#[cfg(test)]`.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 2 comments.\n\n| File | Description |\n| ---- | ----------- |\n| crates/proof-of-sql/src/sql/proof_exprs/scaling_cast_expr_eval_test.rs | Adds evaluation + verifier unit tests for scaling cast expressions. |\n| crates/proof-of-sql/src/sql/proof_exprs/mod.rs | Registers the new test module under `#[cfg(test)]`. |\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/spaceandtimefdn/sxt-proof-of-sql/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:26:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2118"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2118:review:1",
+   "payload": {
+    "author": "gshaowei6",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:29:43+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2118"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2118:review:2",
+   "payload": {
+    "author": "gshaowei6",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T21:29:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2118"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2117:opened",
+   "payload": {
+    "additions": 115,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/proof/error.rs"
+    ],
+    "title": "test: cover proof error displays"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T20:24:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2117"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2116:opened",
+   "payload": {
+    "additions": 142,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table_evaluation.rs",
+     "crates/proof-of-sql/src/base/database/table_ref.rs",
+     "crates/proof-of-sql/src/base/posql_time/unit.rs"
+    ],
+    "title": "test: cover table metadata helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:56:03+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2116"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2116:closed",
+   "payload": {
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:06:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2116"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2116:comment:0",
+   "payload": {
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "body": "Closing this because the touched coverage areas overlap existing active #560 coverage PRs/claims. I'll keep future #560 submissions scoped to non-overlapping slices."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:06:28+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2116"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2115:opened",
+   "payload": {
+    "additions": 148,
+    "author": "ajinkyaexams-design",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 156,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_compute_commitments_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_compute_commitments_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/mod.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/test_setup.rs"
+    ],
+    "title": "perf: cache dory commitment test setup"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:19:08+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2115"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2115:comment:0",
+   "payload": {
+    "author": "ajinkyaexams-design",
+    "author_is_bot": false,
+    "body": "/claim #557"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T17:19:24+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2115"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2114:opened",
+   "payload": {
+    "additions": 17,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/sumcheck/proof_test.rs"
+    ],
+    "title": "test: cover invalid sumcheck proof size"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:51:07+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2114"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2113:opened",
+   "payload": {
+    "additions": 69,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_type.rs"
+    ],
+    "title": "test: cover column type integer helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2113"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2112:opened",
+   "payload": {
+    "additions": 16,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/table_utility.rs"
+    ],
+    "title": "test: cover borrowed uint8 helper"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:51+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2112"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2111:opened",
+   "payload": {
+    "additions": 47,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/naive_commitment.rs"
+    ],
+    "title": "test: cover naive commitment variants"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:48+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2111"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2110:opened",
+   "payload": {
+    "additions": 23,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/column_arrow_conversions.rs"
+    ],
+    "title": "test: cover arrow column type conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:46+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2110"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2109:opened",
+   "payload": {
+    "additions": 34,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/error.rs"
+    ],
+    "title": "test: cover analyze error conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:42+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2109"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2108:opened",
+   "payload": {
+    "additions": 72,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/database/union_util.rs"
+    ],
+    "title": "test: cover union column variants"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:39+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2108"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2107:opened",
+   "payload": {
+    "additions": 24,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/math/decimal.rs"
+    ],
+    "title": "test: cover decimal conversion edges"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:35+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2107"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2106:opened",
+   "payload": {
+    "additions": 7,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/encode/varint_trait_test.rs"
+    ],
+    "title": "test: cover bool varint encoding"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:31+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2106"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2105:opened",
+   "payload": {
+    "additions": 91,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/polynomial/multilinear_extension_test.rs"
+    ],
+    "title": "test: cover multilinear column variants"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:47:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2105"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2104:opened",
+   "payload": {
+    "additions": 115,
+    "author": "chinook1001",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/slice_decimal_operation.rs"
+    ],
+    "title": "test: cover slice decimal edges"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T16:45:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2104"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2103:opened",
+   "payload": {
+    "additions": 47,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/record_batch_errors.rs"
+    ],
+    "title": "test: cover record batch errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:34:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2103"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2102:opened",
+   "payload": {
+    "additions": 45,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/math/big_decimal_ext.rs"
+    ],
+    "title": "test: cover BigDecimal extension conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:26:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2102"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2101:opened",
+   "payload": {
+    "additions": 34,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/math/log.rs"
+    ],
+    "title": "test: cover log helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:23:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2101"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2100:opened",
+   "payload": {
+    "additions": 137,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_repetition_operation.rs"
+    ],
+    "title": "test: cover column repetition variants"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:20:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2100"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2099:opened",
+   "payload": {
+    "additions": 133,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_type_operation.rs"
+    ],
+    "title": "test: cover column type comparisons"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:15:02+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2099"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2098:opened",
+   "payload": {
+    "additions": 24,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/math/permutation.rs"
+    ],
+    "title": "test: cover permutation errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:11:39+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2098"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2097:opened",
+   "payload": {
+    "additions": 52,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/owned_column_error.rs"
+    ],
+    "title": "test: cover owned column errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:09:43+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2097"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2096:opened",
+   "payload": {
+    "additions": 50,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/posql_time/error.rs"
+    ],
+    "title": "test: cover PoSQL timestamp errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:06:52+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2096"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2095:opened",
+   "payload": {
+    "additions": 25,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/posql_time/unit.rs"
+    ],
+    "title": "test: cover PoSQL time unit conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:04:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2095"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2094:opened",
+   "payload": {
+    "additions": 27,
+    "author": "ajinkyaexams-design",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/sumcheck/test_cases.rs"
+    ],
+    "title": "test: cover sumcheck case generation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:49:28+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2094"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2094:comment:0",
+   "payload": {
+    "author": "ajinkyaexams-design",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:50:12+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2094"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2093:opened",
+   "payload": {
+    "additions": 38,
+    "author": "ajinkyaexams-design",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/limbs.rs"
+    ],
+    "title": "test: cover limb standard serialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T08:27:31+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2093"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2092:opened",
+   "payload": {
+    "additions": 86,
+    "author": "Jorel97",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/database/columnar_value.rs"
+    ],
+    "title": "test: cover columnar literal conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T05:46:18+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2092"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2091:opened",
+   "payload": {
+    "additions": 36,
+    "author": "lunora502",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 19,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/arrow_array_to_column_conversion.rs",
+     "crates/proof-of-sql/src/base/commitment/committable_column.rs",
+     "crates/proof-of-sql/src/base/database/column.rs",
+     "crates/proof-of-sql/src/base/database/literal_value.rs",
+     "crates/proof-of-sql/src/base/database/owned_table_test_accessor.rs",
+     "crates/proof-of-sql/src/base/database/table_utility.rs",
+     "crates/proof-of-sql/src/base/scalar/scalar.rs"
+    ],
+    "title": "Make scalar string hashing explicit"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T03:47:03+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2091"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2090:opened",
+   "payload": {
+    "additions": 242,
+    "author": "jonathanpopham",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/verification_builder.rs"
+    ],
+    "title": "test: cover verification builder consumption paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T02:47:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2090"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2089:opened",
+   "payload": {
+    "additions": 15,
+    "author": "Luzijano",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/scalar/scalar_ext.rs"
+    ],
+    "title": "test: cover scalar wrapping conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:25:14+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2089"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2088:opened",
+   "payload": {
+    "additions": 196,
+    "author": "Barroso0",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 15,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/verifiable_query_result_test_utility.rs",
+     "crates/proof-of-sql/utils/commitment-utility/main.rs"
+    ],
+    "title": "test: cover utility helper paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T00:04:58+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2088"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2087:opened",
+   "payload": {
+    "additions": 1564,
+    "author": "RomuloGatto",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/owned_and_arrow_conversions.rs",
+     "crates/proof-of-sql/src/base/commitment/committable_column.rs",
+     "crates/proof-of-sql/src/base/database/column_arithmetic_operation.rs",
+     "crates/proof-of-sql/src/base/database/column_comparison_operation.rs",
+     "crates/proof-of-sql/src/base/database/filter_util.rs",
+     "crates/proof-of-sql/src/base/database/group_by_util.rs",
+     "crates/proof-of-sql/src/base/database/order_by_util.rs",
+     "crates/proof-of-sql/src/base/database/table_ref.rs",
+     "crates/proof-of-sql/src/proof_primitive/sumcheck/prover_round.rs"
+    ],
+    "title": "test: add 161 unit tests across 9 untested modules"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:06:25+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2087"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2087:comment:0",
+   "payload": {
+    "author": "RomuloGatto",
+    "author_is_bot": false,
+    "body": "Closes #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T21:28:16+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2087"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2086:opened",
+   "payload": {
+    "additions": 184,
+    "author": "JacKane21",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 52,
+    "files": [
+     "crates/proof-of-sql/src/base/database/slice_decimal_operation.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/literal_expr_test.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/placeholder_expr_test.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/demo_mock_plan.rs"
+    ],
+    "title": "test: cover no-blitzar literal and placeholder paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T19:04:45+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2086"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2086:closed",
+   "payload": {
+    "author": "JacKane21",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:03:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2086"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2085:opened",
+   "payload": {
+    "additions": 26,
+    "author": "TakoVHS",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/binary.rs"
+    ],
+    "title": "test: cover standard binary serialization edge cases"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T18:35:10+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2085"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2085:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nAdds regression tests to pin down the expected `bincode` \u201cstandard binary\u201d behavior for fixed-width integer encoding and slice deserialization byte consumption.\n\n**Changes:**\n- Add tests asserting fixed-width, big-endian integer serialization output.\n- Add tests verifying `decode_from_slice`\u2019s consumed-byte reporting with trailing data.\n- Add a test ensuring incomplete fixed-width integers are rejected with `UnexpectedEnd`.\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/spaceandtimefdn/sxt-proof-of-sql/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T18:35:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2085"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2084:opened",
+   "payload": {
+    "additions": 72,
+    "author": "Barroso0",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/owned_and_arrow_conversions_test.rs"
+    ],
+    "title": "test: cover owned arrow conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T14:29:16+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2084"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2084:comment:0",
+   "payload": {
+    "author": "Barroso0",
+    "author_is_bot": false,
+    "body": "Re-triggering the Algora claim because this PR is not appearing on the bounty board yet.\n\n/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T23:29:51+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2084"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2083:opened",
+   "payload": {
+    "additions": 241,
+    "author": "sravan27",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 203,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/query_commitments.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_commitment.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_commitment_evaluation_proof_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_compute_commitments_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_commitment.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_commitment_evaluation_proof_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_compute_commitments_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_helper.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/mod.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/rand_util.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/setup_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/vmv_state_test.rs"
+    ],
+    "title": "perf(test): cache deterministic Dory PublicParameters across the test suite"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T13:47:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2083"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2082:opened",
+   "payload": {
+    "additions": 512,
+    "author": "maiqiu-cat",
+    "author_is_bot": false,
+    "changed_files": 30,
+    "deletions": 27,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/arrow_array_to_column_conversion.rs",
+     "crates/proof-of-sql/src/base/arrow/column_arrow_conversions.rs",
+     "crates/proof-of-sql/src/base/arrow/owned_and_arrow_conversions.rs",
+     "crates/proof-of-sql/src/base/commitment/column_bounds.rs",
+     "crates/proof-of-sql/src/base/commitment/column_commitment_metadata.rs",
+     "crates/proof-of-sql/src/base/commitment/committable_column.rs",
+     "crates/proof-of-sql/src/base/commitment/naive_commitment.rs",
+     "crates/proof-of-sql/src/base/database/column.rs",
+     "crates/proof-of-sql/src/base/database/column_comparison_operation.rs",
+     "crates/proof-of-sql/src/base/database/column_index_operation.rs",
+     "crates/proof-of-sql/src/base/database/column_repetition_operation.rs",
+     "crates/proof-of-sql/src/base/database/column_type.rs",
+     "crates/proof-of-sql/src/base/database/column_type_operation.rs",
+     "crates/proof-of-sql/src/base/database/filter_util.rs",
+     "crates/proof-of-sql/src/base/database/group_by_util.rs",
+     "crates/proof-of-sql/src/base/database/order_by_util.rs",
+     "crates/proof-of-sql/src/base/database/owned_column.rs",
+     "crates/proof-of-sql/src/base/database/owned_table_test_accessor.rs",
+     "crates/proof-of-sql/src/base/database/union_util.rs",
+     "crates/proof-of-sql/src/base/polynomial/multilinear_extension.rs"
+    ],
+    "title": "Add FixedSizeBinary column support"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:32:31+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2082"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2081:opened",
+   "payload": {
+    "additions": 82,
+    "author": "carpedkm",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/hyperkzg/nova_engine.rs"
+    ],
+    "title": "test: cover HyperKZG Nova engine helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:09:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2081"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2081:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nAdds unit tests around the Nova/HyperKZG Keccak transcript behavior and the commitment key \u2192 public setup conversion to prevent silent behavior changes.\n\n**Changes:**\n- Added tests asserting transcript labels and domain separators do not affect output.\n- Added tests asserting absorb/squeeze mutates transcript state.\n- Added tests asserting commitment key conversion preserves CK point ordering/values.\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/spaceandtimefdn/sxt-proof-of-sql/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T07:10:01+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2081"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2080:opened",
+   "payload": {
+    "additions": 54,
+    "author": "vantruongphamtm-design",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_comparison_operation.rs"
+    ],
+    "title": "Add varchar comparison tests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:34:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2080"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2080:comment:0",
+   "payload": {
+    "author": "vantruongphamtm-design",
+    "author_is_bot": false,
+    "body": "Scope: test-only coverage for VarChar comparison paths in column_comparison_operation.rs: EqualOp string equality and GreaterThan/LessThan string rejection errors. Local validation: cargo fmt --all -- --check and git diff --check pass; focused cargo test was attempted in this environment earlier but Windows native linker/dlltool is unavailable, so CI is the compile/test validation."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:35:10+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2080"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2079:opened",
+   "payload": {
+    "additions": 44,
+    "author": "vantruongphamtm-design",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/limbs.rs"
+    ],
+    "title": "Add limb serialization tests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:20:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2079"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2079:comment:0",
+   "payload": {
+    "author": "vantruongphamtm-design",
+    "author_is_bot": false,
+    "body": "Scope: test-only coverage for crates/proof-of-sql/src/base/standard_serializations/limbs.rs, covering serialize_limbs big-endian wire order and deserialize_to_limbs restored limb order. Local validation: cargo fmt --all -- --check and git diff --check pass; focused cargo test was attempted but this Windows host lacks native linker/dlltool, so CI is the compile/test validation."
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T06:21:42+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2079"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2078:opened",
+   "payload": {
+    "additions": 248,
+    "author": "Barroso0",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_arithmetic_operation.rs"
+    ],
+    "title": "test: cover column arithmetic add upcasts"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:27:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2078"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2077:opened",
+   "payload": {
+    "additions": 34,
+    "author": "sirakinb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql-planner/src/uppercase_column_visitor.rs"
+    ],
+    "title": "test: cover uppercase identifier visitor edge cases"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T00:08:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2077"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2076:opened",
+   "payload": {
+    "additions": 266,
+    "author": "bilbop1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/verification_builder_test.rs"
+    ],
+    "title": "test: cover verification builder consumption paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T23:23:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2076"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2075:opened",
+   "payload": {
+    "additions": 13,
+    "author": "Lindqvist87",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 9,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/monotonic_test.rs"
+    ],
+    "title": "test: cover monotonic gadget without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T19:02:07+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2075"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2074:opened",
+   "payload": {
+    "additions": 306,
+    "author": "vondutchi",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/test_utility.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/test_utility.rs"
+    ],
+    "title": "test: cover SQL test utility helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T18:15:33+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2074"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2073:opened",
+   "payload": {
+    "additions": 11,
+    "author": "charlie12520",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 5,
+    "files": [
+     "crates/proof-of-sql-planner/examples/plastics/main.rs",
+     "crates/proof-of-sql-planner/examples/programming_books/main.rs",
+     "crates/proof-of-sql-planner/examples/stocks/main.rs",
+     "crates/proof-of-sql-planner/examples/sushi/main.rs",
+     "crates/proof-of-sql-planner/examples/tech_gadget_prices/main.rs"
+    ],
+    "title": "test: reduce small planner example setup sizes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T17:11:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2073"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2072:opened",
+   "payload": {
+    "additions": 54,
+    "author": "jasperan",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/sumcheck_subpolynomial.rs"
+    ],
+    "title": "test: cover sumcheck subpolynomial compose paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T12:24:59+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2072"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2071:opened",
+   "payload": {
+    "additions": 131,
+    "author": "Lindqvist87",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 38,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/query_commitments.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_commitment_test.rs"
+    ],
+    "title": "test: assert dory scalar overflow conversions"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T11:51:57+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2071"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2070:opened",
+   "payload": {
+    "additions": 263,
+    "author": "zhibo0502",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/evm_proof_plan/plans.rs"
+    ],
+    "title": "test: cover EVM dyn proof plan wrappers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T10:07:22+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2070"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2069:opened",
+   "payload": {
+    "additions": 101,
+    "author": "nozprod",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 53,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_commitment_evaluation_proof_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/dynamic_dory_commitment_evaluation_proof_test.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/mod.rs",
+     "crates/proof-of-sql/src/proof_primitive/dory/test_setup.rs"
+    ],
+    "title": "test: reuse cached dory setup in proof tests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T09:20:59+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2069"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2068:opened",
+   "payload": {
+    "additions": 52,
+    "author": "jtc268",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/inner_product/curve_25519_tests.rs",
+     "crates/proof-of-sql/src/sql/proof/sumcheck_mle_evaluations_test.rs"
+    ],
+    "title": "test: cover curve scalar and sumcheck MLE helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T09:14:37+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2068"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2067:opened",
+   "payload": {
+    "additions": 102,
+    "author": "adliebe",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/not_expr.rs"
+    ],
+    "title": "test: cover not expression direct evaluation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:25:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2067"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2067:closed",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:37:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2067"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2067:comment:0",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "body": "Closing this after a deeper #560 collision check: older open PR #1799 already covers the no-default/no-blitzar boolean expression slice, including NotExpr. This PR is test-only and valid in isolation, but it likely overlaps the previously claimed coverage accounting, so I do not want to add duplicate bounty noise."
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:37:55+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2067"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2066:opened",
+   "payload": {
+    "additions": 107,
+    "author": "jtc268",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/filter_base.rs"
+    ],
+    "title": "test: cover filter proof gadget base"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:01:31+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2066"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2065:opened",
+   "payload": {
+    "additions": 134,
+    "author": "adliebe",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/proof/error.rs"
+    ],
+    "title": "test: cover proof error display"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:45:48+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2065"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2065:closed",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:40:24+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2065"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2065:comment:0",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "body": "Closing after deeper #560 collision review: older open PRs already cover \base/proof/error display/source-error paths (#1869, and related earlier slices). This PR is valid as isolated tests, but it overlaps prior bounty coverage accounting, so leaving it open would add duplicate claim noise."
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:40:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2065"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2064:opened",
+   "payload": {
+    "additions": 134,
+    "author": "thefuturrjfhejh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/divide_and_modulo_expr.rs"
+    ],
+    "title": "test: cover divide/modulo expression edges"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:42:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2064"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2063:opened",
+   "payload": {
+    "additions": 161,
+    "author": "jtc268",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/membership_check_test.rs"
+    ],
+    "title": "test: cover membership check test plan"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:41:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2063"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2062:opened",
+   "payload": {
+    "additions": 34,
+    "author": "adliebe",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/error.rs"
+    ],
+    "title": "test: cover database parse error display"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:35:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2062"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2062:closed",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:40:26+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2062"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2062:comment:0",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "body": "Closing after deeper #560 collision review: older open PR #1337 already touches crates/proof-of-sql/src/base/database/error.rs for database error display coverage. This PR is test-only and harmless, but likely overlaps prior bounty accounting, so I am withdrawing it rather than adding duplicate claim noise."
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T07:40:25+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2062"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2061:opened",
+   "payload": {
+    "additions": 157,
+    "author": "jtc268",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/permutation_check_test.rs"
+    ],
+    "title": "test: cover permutation check test plan"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:33:58+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2061"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2060:opened",
+   "payload": {
+    "additions": 109,
+    "author": "jtc268",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/shift.rs"
+    ],
+    "title": "test: cover shift gadget helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:17:35+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2060"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2059:opened",
+   "payload": {
+    "additions": 38,
+    "author": "giaphutran12",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/math/big_decimal_ext.rs",
+     "crates/proof-of-sql/src/utils/parse.rs"
+    ],
+    "title": "test: cover big decimal bigint conversion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:11:01+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2059"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2058:opened",
+   "payload": {
+    "additions": 339,
+    "author": "jtc268",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/owned_column.rs"
+    ],
+    "title": "test: cover owned column variants"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T06:07:20+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2058"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2057:opened",
+   "payload": {
+    "additions": 22,
+    "author": "bilbop1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql-planner/src/context.rs"
+    ],
+    "title": "test: cover planner filter pushdown support"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T05:23:45+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2057"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2056:opened",
+   "payload": {
+    "additions": 20,
+    "author": "thefuturrjfhejh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/dory_vmv_helper.rs"
+    ],
+    "title": "test: cover dory vmv helper aggregation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:57:10+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2056"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2055:opened",
+   "payload": {
+    "additions": 19,
+    "author": "ChisaTocris",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/hyperkzg/public_setup.rs"
+    ],
+    "title": "test: cover hyperkzg public setup reader errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:48:26+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2055"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2054:opened",
+   "payload": {
+    "additions": 68,
+    "author": "thefuturrjfhejh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/scaling_cast_expr.rs"
+    ],
+    "title": "test: cover scaling cast expression helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T03:43:49+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2054"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2053:opened",
+   "payload": {
+    "additions": 772,
+    "author": "youngbum8973-coder",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "solidity/preprocessor/test_yul_preprocessor_helpers.py"
+    ],
+    "title": "test: add yul preprocessor helper coverage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-27T01:19:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2053"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2052:opened",
+   "payload": {
+    "additions": 7,
+    "author": "tszaks",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "crates/proof-of-sql-planner/examples/dog_breeds/main.rs",
+     "crates/proof-of-sql-planner/examples/hello_world/main.rs",
+     "crates/proof-of-sql-planner/examples/space/main.rs",
+     "crates/proof-of-sql-planner/examples/wood_types/main.rs"
+    ],
+    "title": "test: reduce planner example Dory setup sizes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T23:46:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2052"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2051:opened",
+   "payload": {
+    "additions": 215,
+    "author": "thefuturrjfhejh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/mock_verification_builder.rs"
+    ],
+    "title": "test: cover mock verification builder results"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T21:18:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2051"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2050:opened",
+   "payload": {
+    "additions": 76,
+    "author": "thefuturrjfhejh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/dyn_proof_plan.rs"
+    ],
+    "title": "test: cover dynamic proof plan constructors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T18:37:25+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2050"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2049:opened",
+   "payload": {
+    "additions": 18,
+    "author": "glasses666",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/byte/byte_distribution.rs"
+    ],
+    "title": "test: cover byte distribution high-byte variance"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T18:13:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2049"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2048:opened",
+   "payload": {
+    "additions": 29,
+    "author": "glasses666",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/join_util.rs"
+    ],
+    "title": "test: cover join utility index edge cases"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T17:46:21+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2048"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2047:opened",
+   "payload": {
+    "additions": 37,
+    "author": "glasses666",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/slice_ops/slice_cast_test.rs"
+    ],
+    "title": "test: protect empty slice cast behavior"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:48:42+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2047"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2046:opened",
+   "payload": {
+    "additions": 7,
+    "author": "CharlieLZ",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/table_commitment.rs"
+    ],
+    "title": "test: enable table commitment coverage without arrow"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T11:53:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2046"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2045:opened",
+   "payload": {
+    "additions": 33,
+    "author": "campersurfer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/sumcheck_term_optimizer.rs"
+    ],
+    "title": "test: cover constant sumcheck terms"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T11:26:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2045"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2044:opened",
+   "payload": {
+    "additions": 53,
+    "author": "CharlieLZ",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/base/encode/scalar_varint_test.rs"
+    ],
+    "title": "test: cover U256 varint boundaries"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T11:23:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2044"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2044:closed",
+   "payload": {
+    "author": "CharlieLZ",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T11:26:18+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2044"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2044:comment:0",
+   "payload": {
+    "author": "CharlieLZ",
+    "author_is_bot": false,
+    "body": "Closing this duplicate in favor of #2042, which covers the same U256 varint test slice with the fuller validation notes. Keeping one active PR to avoid review noise."
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T11:26:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2044"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2043:opened",
+   "payload": {
+    "additions": 32,
+    "author": "CharlieLZ",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/setup_test.rs"
+    ],
+    "title": "test: reduce repeated Dory public parameter generation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T11:22:09+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2043"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2042:opened",
+   "payload": {
+    "additions": 69,
+    "author": "CharlieLZ",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/base/encode/scalar_varint_test.rs"
+    ],
+    "title": "test: cover U256 scalar varint boundaries"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T10:51:01+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2042"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2041:opened",
+   "payload": {
+    "additions": 144,
+    "author": "meteop-x",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_type_operation.rs"
+    ],
+    "title": "test: cover column type operation guards"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T09:44:09+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2041"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2040:opened",
+   "payload": {
+    "additions": 61,
+    "author": "meteop-x",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_index_operation.rs"
+    ],
+    "title": "test: cover column index operation variants"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T09:18:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2040"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2039:opened",
+   "payload": {
+    "additions": 7,
+    "author": "meteop-x",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/inner_product/ristretto_point.rs"
+    ],
+    "title": "test: cover Ristretto no-blitzar fallback"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T18:03:31+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2039"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2038:opened",
+   "payload": {
+    "additions": 321,
+    "author": "artrmkr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_repetition_operation.rs",
+     "crates/proof-of-sql/src/base/database/join_util.rs"
+    ],
+    "title": "test: cover decimal and timestamp column repetition"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T15:19:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2038"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2037:opened",
+   "payload": {
+    "additions": 29,
+    "author": "alexgduarte",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/posql_time/unit.rs"
+    ],
+    "title": "test: cover time unit formatting"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T10:57:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2037"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2036:opened",
+   "payload": {
+    "additions": 197,
+    "author": "meteop-x",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/equals_expr.rs"
+    ],
+    "title": "test: cover equals expression evaluation paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T08:22:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2036"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2035:opened",
+   "payload": {
+    "additions": 58,
+    "author": "Kim-Thu",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/sql/evm_proof_plan/tests.rs"
+    ],
+    "title": "test: cover EVM proof plan forwarding"
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T06:48:51+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2035"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2034:opened",
+   "payload": {
+    "additions": 69,
+    "author": "liangtovi-debug",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/serialize.rs"
+    ],
+    "title": "test: cover checked/unchecked serde macro paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T20:17:47+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2034"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2033:opened",
+   "payload": {
+    "additions": 26,
+    "author": "liangtovi-debug",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/rayon_cfg.rs"
+    ],
+    "title": "test: cover if_rayon macro no-default branch behavior"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T16:44:55+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2033"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2032:opened",
+   "payload": {
+    "additions": 107,
+    "author": "meteop-x",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/owned_table_utility.rs"
+    ],
+    "title": "test: cover owned table utility helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T16:08:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2032"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2031:opened",
+   "payload": {
+    "additions": 105,
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/record_batch_conversion.rs"
+    ],
+    "title": "test: cover record batch conversion error paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T15:34:49+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2031"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2030:opened",
+   "payload": {
+    "additions": 58,
+    "author": "tom40784-star",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/limbs.rs"
+    ],
+    "title": "test: cover limb serialization helpers"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T04:54:25+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2030"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2030:comment:0",
+   "payload": {
+    "author": "tom40784-star",
+    "author_is_bot": false,
+    "body": "/claim #560\n\nThis PR body already includes /claim #560; posting this comment because no bounty-claim label/comment is visible yet. The PR body discloses AI-assisted work."
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T10:59:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2030"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2029:opened",
+   "payload": {
+    "additions": 56,
+    "author": "tom40784-star",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/encode/zigzag_test.rs"
+    ],
+    "title": "test: cover ZigZag decoding paths"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T04:39:40+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2029"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2029:comment:0",
+   "payload": {
+    "author": "tom40784-star",
+    "author_is_bot": false,
+    "body": "/claim #560\n\nThis PR body already includes /claim #560; posting this comment because no bounty-claim label/comment is visible yet. The PR body discloses AI-assisted work."
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T10:59:17+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2029"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2028:opened",
+   "payload": {
+    "additions": 46,
+    "author": "zidhannnn",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/database/arrow_schema_utility.rs"
+    ],
+    "title": "test: cover PoSQL-compatible Arrow schema conversion"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T04:05:24+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2028"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2028:comment:0",
+   "payload": {
+    "author": "zidhannnn",
+    "author_is_bot": false,
+    "body": "Thanks for reviewing. I kept this PR focused on a small coverage improvement for #560 and ran:\r\n\r\n```powershell\r\ncargo test -p proof-of-sql --no-default-features --features=\"arrow\" arrow_schema_utility"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T04:06:25+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2028"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2027:opened",
+   "payload": {
+    "additions": 34,
+    "author": "liangtovi-debug",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/ref_into.rs"
+    ],
+    "title": "test: cover RefInto blanket impl with focused unit tests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T03:18:27+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2027"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2026:opened",
+   "payload": {
+    "additions": 3,
+    "author": "liangtovi-debug",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "Cargo.toml"
+    ],
+    "title": "test: optimize test profile for faster CI runtimes"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:47:11+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2026"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2025:opened",
+   "payload": {
+    "additions": 39,
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/bit/bit_matrix_test.rs"
+    ],
+    "title": "test: cover bit matrix ordering"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:20:02+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2025"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2024:opened",
+   "payload": {
+    "additions": 14,
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/polynomial/evaluation_vector_test.rs"
+    ],
+    "title": "test: cover evaluation vector bounds"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:18:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2024"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2023:opened",
+   "payload": {
+    "additions": 29,
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/polynomial/lagrange_basis_evaluation_test.rs"
+    ],
+    "title": "test: cover lagrange truncation bounds"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:16:14+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2023"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2022:opened",
+   "payload": {
+    "additions": 72,
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/commitment_evaluation_proof.rs"
+    ],
+    "title": "test: cover commitment evaluation proof forwarding"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:11:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2022"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2021:opened",
+   "payload": {
+    "additions": 34,
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/bit/bit_distribution_test.rs"
+    ],
+    "title": "test: cover bit distribution errors"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:07:11+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2021"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2020:opened",
+   "payload": {
+    "additions": 31,
+    "author": "quangliz",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/base/math/decimal_tests.rs"
+    ],
+    "title": "test: cover decimal precision edge cases"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T00:42:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2020"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2019:opened",
+   "payload": {
+    "additions": 46,
+    "author": "quangliz",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof/final_round_builder_test.rs",
+     "crates/proof-of-sql/src/sql/proof/mod.rs"
+    ],
+    "title": "test: run final round builder tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T00:35:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2019"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2018:opened",
+   "payload": {
+    "additions": 51,
+    "author": "quangliz",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/dory/public_parameters.rs",
+     "crates/proof-of-sql/src/sql/proof_gadgets/permutation_check.rs"
+    ],
+    "title": "test: cover public parameter size accounting"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T23:39:46+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2018"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2017:opened",
+   "payload": {
+    "additions": 697,
+    "author": "iyop666",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_arithmetic_operation_test.rs",
+     "crates/proof-of-sql/src/base/database/column_comparison_operation_test.rs",
+     "crates/proof-of-sql/src/base/database/mod.rs",
+     "crates/proof-of-sql/src/base/database/table_ref_test.rs"
+    ],
+    "title": "test: add coverage for table_ref and column_comparison_operation"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T22:56:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2017"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2016:opened",
+   "payload": {
+    "additions": 96,
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/serialize.rs"
+    ],
+    "title": "test: cover ark serde helper macros"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T22:36:42+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2016"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2016:closed",
+   "payload": {
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:20:30+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2016"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2016:comment:0",
+   "payload": {
+    "author": "michaelapollopimentel-svg",
+    "author_is_bot": false,
+    "body": "Closing this because it overlaps the existing open coverage work on the same file, and I\u2019d rather keep the non-duplicate test PRs in flight."
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T02:20:29+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2016"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2015:opened",
+   "payload": {
+    "additions": 140,
+    "author": "JosefVacha",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "SECURITY.md",
+     "scripts/detect-algora-spam.sh"
+    ],
+    "title": "fix: resolves #1724 Add security policy and Algora spam detection"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T22:36:21+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2015"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2015:closed",
+   "payload": {
+    "author": "JosefVacha",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T08:20:08+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2015"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2014:opened",
+   "payload": {
+    "additions": 25,
+    "author": "ZainKazmiii",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/posql_time/timezone.rs"
+    ],
+    "title": "test: add timezone parsing edge-case coverage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T20:43:35+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2014"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2014:comment:0",
+   "payload": {
+    "author": "ZainKazmiii",
+    "author_is_bot": false,
+    "body": "Quick CI unblock note on current head `2ec0757`:\n\n- `CI-Lint-And-Test` run `26343092660` is `action_required` and created 0 jobs.\n- `CI-Code-Coverage` run `26343092644` is `action_required` and created 0 jobs.\n\nLinks:\n- https://github.com/spaceandtimefdn/sxt-proof-of-sql/actions/runs/26343092660\n- https://github.com/spaceandtimefdn/sxt-proof-of-sql/actions/runs/26343092644\n\nIf maintainers can approve/trigger these workflows for this fork PR, I can address any resulting test feedback right away."
+   },
+   "source": "github",
+   "timestamp": "2026-05-25T16:49:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2014"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2014:comment:1",
+   "payload": {
+    "author": "ZainKazmiii",
+    "author_is_bot": false,
+    "body": "Quick follow-up on this PR: the two required workflows for head `2ec0757` are still `action_required` and did not execute jobs:\n\n- CI-Lint-And-Test: https://github.com/spaceandtimefdn/sxt-proof-of-sql/actions/runs/26343092660\n- CI-Code-Coverage: https://github.com/spaceandtimefdn/sxt-proof-of-sql/actions/runs/26343092644\n\nIf a maintainer can re-run or approve them, I will address any test feedback immediately."
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T05:15:56+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2014"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2013:opened",
+   "payload": {
+    "additions": 128,
+    "author": "quangliz",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/database/column_field.rs",
+     "crates/proof-of-sql/src/base/database/column_ref.rs",
+     "crates/proof-of-sql/src/base/database/table_evaluation.rs",
+     "crates/proof-of-sql/src/base/database/table_ref.rs"
+    ],
+    "title": "test: add database value type coverage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T16:55:44+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2013"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2012:opened",
+   "payload": {
+    "additions": 296,
+    "author": "antrom99",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/dyn_proof_expr.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/table_expr.rs"
+    ],
+    "title": "test: add coverage for DynProofExpr constructors and TableExpr"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T15:52:22+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2012"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2012:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\n> [!NOTE]\n> Copilot was unable to run its full agentic suite in this review.\n\nAdds unit tests for core SQL proof expression types to validate construction, basic trait behavior (Clone/Eq/Debug), and serde JSON round-trips.\n\n**Changes:**\n- Added a `#[cfg(test)]` test module for `TableExpr` covering creation, clone/equality, debug formatting, and serde round-trip.\n- Added a `#[cfg(test)]` test module for `DynProofExpr` covering constructors, operator builders, casts, and serde round-trips.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 4 comments.\n\n| File | Description |\n| ---- | ----------- |\n| crates/proof-of-sql/src/sql/proof_exprs/table_expr.rs | Adds unit tests for `TableExpr` trait behavior and JSON round-trips. |\n| crates/proof-of-sql/src/sql/proof_exprs/dyn_proof_expr.rs | Adds unit tests for `DynProofExpr` constructors/operators/casts and JSON round-trips. |\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/spaceandtimefdn/sxt-proof-of-sql/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T15:53:19+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2012"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2012:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 9 comments.\n\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T16:10:10+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2012"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2012:review:2",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 3 comments.\n\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T16:15:37+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2012"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2012:review:3",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 3 comments.\n\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T16:18:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2012"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2012:review:4",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 3 comments.\n\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T16:23:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2012"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2012:comment:0",
+   "payload": {
+    "author": "antrom99",
+    "author_is_bot": false,
+    "body": "Hi @stuarttimwhite \u2014 just a gentle ping on this PR. Happy to address any feedback or make adjustments if needed. Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T20:39:21+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2012"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2011:opened",
+   "payload": {
+    "additions": 1,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_gadgets/mod.rs"
+    ],
+    "title": "test: run sign expr tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T14:51:40+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2011"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2011:comment:0",
+   "payload": {
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T14:51:50+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2011"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2010:opened",
+   "payload": {
+    "additions": 59,
+    "author": "JJ-Lin",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/hyperkzg/public_setup.rs"
+    ],
+    "title": "Fix HyperKZG public setup short-read deserialization"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T12:58:52+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2010"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2009:opened",
+   "payload": {
+    "additions": 17,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 18,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/multiply_expr_test.rs"
+    ],
+    "title": "test: run multiply expr tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T12:02:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2009"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2009:comment:0",
+   "payload": {
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T12:02:53+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2009"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2008:opened",
+   "payload": {
+    "additions": 18,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 18,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/add_subtract_expr_test.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs"
+    ],
+    "title": "test: run add subtract expr tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T11:09:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2008"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2008:comment:0",
+   "payload": {
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T11:09:51+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2008"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2007:opened",
+   "payload": {
+    "additions": 81,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 92,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/inequality_expr_test.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs"
+    ],
+    "title": "test: run inequality expr tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T10:43:44+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2007"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2007:comment:0",
+   "payload": {
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T10:44:16+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2007"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2006:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Yassinbrine",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/proof_expr_test.rs"
+    ],
+    "title": "test: run proof expr test without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T10:08:26+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2006"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2005:opened",
+   "payload": {
+    "additions": 75,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 76,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_exprs/equals_expr_test.rs",
+     "crates/proof-of-sql/src/sql/proof_exprs/mod.rs"
+    ],
+    "title": "test: run equals expr tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T08:21:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2005"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2005:comment:0",
+   "payload": {
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T01:40:05+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2005"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2004:opened",
+   "payload": {
+    "additions": 33,
+    "author": "JJ-Lin",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/standard_serializations/binary.rs"
+    ],
+    "title": "test: cover standard binary deserialization edges"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T08:08:21+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2004"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2003:opened",
+   "payload": {
+    "additions": 33,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 31,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/legacy_filter_exec_test.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/legacy_filter_exec_test_dishonest_prover.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs"
+    ],
+    "title": "test: run legacy filter exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T07:49:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2003"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2003:comment:0",
+   "payload": {
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-24T01:40:04+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2003"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2002:opened",
+   "payload": {
+    "additions": 22,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 29,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/sort_merge_join_exec_test.rs"
+    ],
+    "title": "test: run sort merge join exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T07:26:21+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2002"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2002:comment:0",
+   "payload": {
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "body": "/claim #560"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T07:28:38+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2002"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2001:opened",
+   "payload": {
+    "additions": 16,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 19,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/union_exec_test.rs"
+    ],
+    "title": "test: run union exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T07:06:49+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2001"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#2000:opened",
+   "payload": {
+    "additions": 29,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 28,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/projection_exec_test.rs"
+    ],
+    "title": "test: run projection exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T06:58:58+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/2000"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1999:opened",
+   "payload": {
+    "additions": 13,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 11,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/table_exec_test.rs"
+    ],
+    "title": "test: run table exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T06:45:50+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1999"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1998:opened",
+   "payload": {
+    "additions": 41,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 44,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/slice_exec_test.rs"
+    ],
+    "title": "test: run slice exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T06:39:07+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1998"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1997:opened",
+   "payload": {
+    "additions": 19,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 23,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/group_by_exec_test.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs"
+    ],
+    "title": "test: run group by exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T06:29:30+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1997"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1996:opened",
+   "payload": {
+    "additions": 23,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 27,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/aggregate_exec_test.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs"
+    ],
+    "title": "test: run aggregate exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T06:22:49+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1996"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1995:opened",
+   "payload": {
+    "additions": 20,
+    "author": "jhl1214",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "crates/proof-of-sql/src/sql/proof_plans/filter_exec_test.rs",
+     "crates/proof-of-sql/src/sql/proof_plans/mod.rs"
+    ],
+    "title": "test: run filter exec tests without blitzar"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T06:14:15+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1995"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1994:opened",
+   "payload": {
+    "additions": 513,
+    "author": "SkyForThinking",
+    "author_is_bot": false,
+    "changed_files": 32,
+    "deletions": 40,
+    "files": [
+     "crates/proof-of-sql/src/base/arrow/arrow_array_to_column_conversion.rs",
+     "crates/proof-of-sql/src/base/arrow/column_arrow_conversions.rs",
+     "crates/proof-of-sql/src/base/arrow/owned_and_arrow_conversions.rs",
+     "crates/proof-of-sql/src/base/commitment/column_bounds.rs",
+     "crates/proof-of-sql/src/base/commitment/column_commitment_metadata.rs",
+     "crates/proof-of-sql/src/base/commitment/committable_column.rs",
+     "crates/proof-of-sql/src/base/commitment/naive_commitment.rs",
+     "crates/proof-of-sql/src/base/database/column.rs",
+     "crates/proof-of-sql/src/base/database/column_index_operation.rs",
+     "crates/proof-of-sql/src/base/database/column_repetition_operation.rs",
+     "crates/proof-of-sql/src/base/database/column_type.rs",
+     "crates/proof-of-sql/src/base/database/column_type_operation.rs",
+     "crates/proof-of-sql/src/base/database/filter_util.rs",
+     "crates/proof-of-sql/src/base/database/group_by_util.rs",
+     "crates/proof-of-sql/src/base/database/order_by_util.rs",
+     "crates/proof-of-sql/src/base/database/owned_column.rs",
+     "crates/proof-of-sql/src/base/database/owned_table_test_accessor.rs",
+     "crates/proof-of-sql/src/base/database/union_util.rs",
+     "crates/proof-of-sql/src/base/polynomial/multilinear_extension.rs",
+     "crates/proof-of-sql/src/base/scalar/scalar_ext.rs"
+    ],
+    "title": "Add FixedSizeBinary support"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T01:53:36+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1994"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1994:comment:0",
+   "payload": {
+    "author": "SkyForThinking",
+    "author_is_bot": false,
+    "body": "One implementation detail I wanted to call out: I intentionally kept FixedSizeBinary separate from VarBinary in the scalar embedding paths.\n\nVarBinary uses the hash-based byte embedding, while FixedSizeBinary is treated more like fixed-width scalar-backed data elsewhere. Reusing the VarBinary path there would make the inner-product / commitment behavior inconsistent, so this PR uses the fixed-size byte embedding for FixedSizeBinary instead.\n\nI also added width checks when decoding FixedSizeBinary query results, so FixedSizeBinary(n) fails if the decoded value is not exactly n bytes.\n\nLocal checks run:\n\n- cargo fmt --check\n- cargo check -p proof-of-sql --lib --no-default-features\n- cargo test -p proof-of-sql --lib --no-default-features --features arrow,test fixed_size_binary -- --nocapture\n- cargo test -p proof-of-sql --lib --no-default-features --features arrow,test column_commitment_metadata -- --nocapture\n- cargo test -p proof-of-sql --lib --no-default-features --features arrow,test base::arrow -- --nocapture\n\nI also tried the broader no-default-features arrow/test lib suite, but it hit my 600s local timeout on macOS before finishing.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T02:23:54+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1994"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1993:opened",
+   "payload": {
+    "additions": 27,
+    "author": "liangtovi-debug",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/map.rs"
+    ],
+    "title": "test: cover indexset macro behavior"
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T01:17:34+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1993"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1992:opened",
+   "payload": {
+    "additions": 60,
+    "author": "adliebe",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/commitment/naive_commitment.rs"
+    ],
+    "title": "test: cover naive commitment column variants"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T23:14:55+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1992"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1992:comment:0",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "body": "Pushed one small follow-up commit to include the remaining scalar-column variant in the existing naive commitment coverage test.\n\nValidation completed after the update:\n\n```text\ncargo fmt --all -- --check\ngit diff --check\ncargo test -p proof-of-sql --lib --no-default-features --features test we_can_compute_commitments_from_remaining_committable_column_variants -- --nocapture\ncargo test -p proof-of-sql --lib --no-default-features --features test naive_commitment -- --nocapture\n```\n\nFocused variant test passed `1/1`; broader `naive_commitment` filter passed `24/24`. The three Orca checks on the PR are also green after the latest push."
+   },
+   "source": "github",
+   "timestamp": "2026-05-23T12:37:41+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1992"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1992:comment:1",
+   "payload": {
+    "author": "adliebe",
+    "author_is_bot": false,
+    "body": "Quick follow-up: this PR is still mergeable and all visible checks are green. It is a test-only change for #560 with no production behavior changes. Review status is still required; happy to adjust the coverage split or naming if maintainers want it shaped differently."
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T16:25:21+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1992"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1991:opened",
+   "payload": {
+    "additions": 37,
+    "author": "afkjdn-bombadeel",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/base/posql_time/timezone.rs"
+    ],
+    "title": "test: improve timezone parsing coverage"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T22:14:23+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1991"
+  },
+  {
+   "evidence_id": "pr:spaceandtimefdn/sxt-proof-of-sql#1990:opened",
+   "payload": {
+    "additions": 86,
+    "author": "matcldr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "crates/proof-of-sql/src/proof_primitive/sumcheck/prover_round.rs"
+    ],
+    "title": "test: cover sumcheck prover round behavior"
+   },
+   "source": "github",
+   "timestamp": "2026-05-22T21:55:18+00:00",
+   "url": "https://github.com/spaceandtimefdn/sxt-proof-of-sql/pull/1990"
+  }
+ ],
+ "repo": "spaceandtimefdn/sxt-proof-of-sql",
+ "window": "pre_t"
+}

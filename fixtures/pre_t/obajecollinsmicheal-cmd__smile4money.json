@@ -1,0 +1,3999 @@
+{
+ "captured_at": "2026-08-29T20:11:06.202954+00:00",
+ "content_sha256": "466dd8fd5279b7f06fea7c2161be2d1ccb7ed0cdc6b640ebebbe57ba7f8ae572",
+ "cutoff": "2026-06-01T00:00:00+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:obajecollinsmicheal-cmd/smile4money:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": null,
+    "homepage_url": null,
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "TypeScript",
+    "pushed_at": "2026-08-29T17:10:25Z",
+    "stargazer_count": 2
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T14:35:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money"
+  },
+  {
+   "evidence_id": "repo:obajecollinsmicheal-cmd/smile4money:readme",
+   "payload": {
+    "commit_oid": "3b59541d7a9ba0b409aac6d1486a3fd820282624",
+    "kind": "readme",
+    "text": "# smile4money \u2014 Competitive Chess Betting on Stellar\n\n[![CI](https://github.com/obajecollinsmicheal-cmd/smile4money/actions/workflows/ci.yml/badge.svg)](https://github.com/obajecollinsmicheal-cmd/smile4money/actions/workflows/ci.yml)\n\nA trustless chess wagering platform built on Stellar Soroban smart contracts. Players stake XLM or USDC before a match, and the winner is automatically paid out the moment the game ends \u2014 no middleman, no delays, no trust required.\n\n## \ud83c\udfaf What is smile4money?\n\nsmile4money combines competitive chess with Stellar's fast settlement to create a fully on-chain betting platform for casual and high-stakes matches.\n\nPlayers:\n\n- Stake XLM or USDC into a Soroban escrow contract before a match begins\n- Play their game on Lichess or Chess.com as normal\n- Receive automatic payouts the instant the match result is verified on-chain\n\nA custom Oracle bridges the Chess.com / Lichess API to the smart contract, verifying match results and triggering payouts without any manual intervention.\n\nThis makes smile4money:\n\n\u2705 Trustless (no platform can withhold or delay winnings)  \n\u2705 Transparent (all stakes and payouts are verifiable on-chain)  \n\u2705 Instant (Stellar's fast finality means payouts settle in seconds)  \n\u2705 Accessible (anyone with a Stellar wallet can participate)\n\n## \ud83d\ude80 Features\n\n- **Create a Match**: Set stake amount, currency (XLM or USDC), and link a Lichess/Chess.com game ID\n- **Escrow Stakes**: Both players deposit funds into the contract before the game starts\n- **Oracle Integration**: Real-time result verification via Lichess/Chess.com APIs\n- **Automatic Payouts**: Winner receives the full pot the moment the result is confirmed\n- **Draw Handling**: Stakes are returned to both players in the event of a draw\n- **Transparent**: All escrow balances and payout history are verifiable on-chain\n\n## \ud83d\uddfa\ufe0f Match State Machine\n\nEvery match moves through a strict set of states. Invalid transitions are rejected on-chain with `Error::InvalidState`.\n\n```\n                        create_match()\n                              \u2502\n                              \u25bc\n                         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                         \u2502 Pending \u2502  \u25c4\u2500\u2500\u2500 initial state, no funds held\n                         \u2514\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2518\n                              \u2502\n              \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n              \u2502                               \u2502\n    deposit(player1)                   cancel_match()\n    deposit(player2)                   (either player)\n    [both must deposit]                        \u2502\n              \u2502                               \u25bc\n              \u25bc                         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n         \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510                     \u2502 Cancelled \u2502  \u25c4\u2500\u2500\u2500 terminal\n         \u2502 Active \u2502                     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n         \u2514\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2518                     Refunds any deposits already made\n             \u2502\n      submit_result()\n      (oracle only)\n             \u2502\n             \u25bc\n       \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n       \u2502 Completed \u2502  \u25c4\u2500\u2500\u2500 terminal\n       \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n       Payout executed:\n         Winner \u2192 2\u00d7 stake_amount\n         Draw   \u2192 each player refunded stake_amount\n```\n\n### State Transition Rules\n\n| From | To | Trigger | Guard |\n|---|---|---|---|\n| \u2014 | `Pending` | `create_match()` | Contract not paused; valid players, stake, game_id |\n| `Pending` | `Active` | `deposit()` (second deposit) | Both `player1_deposited` and `player2_deposited` are true |\n| `Pending` | `Cancelled` | `cancel_match()` | Caller is player1 or player2 |\n| `Active` | `Completed` | `submit_result()` | Caller is the registered oracle; `game_id` matches |\n\n`Completed` and `Cancelled` are **terminal states** \u2014 once reached, no further transitions are allowed.\n\n## \ud83d\udee0\ufe0f Quick Start\n\n### Prerequisites\n\n- Rust (1.70+)\n- Soroban CLI\n- Stellar CLI\n\n### Build\n\n```bash\n./scripts/build.sh\n```\n\n### Test\n\n```bash\n./scripts/test.sh\n```\n\n### Setup Environment\n\nCopy the example environment file:\n\n```bash\ncp .env.example .env\n```\n\nConfigure your environment variables in `.env`:\n\n```env\n# Network configuration\nSTELLAR_NETWORK=testnet\nSTELLAR_RPC_URL=https://soroban-testnet.stellar.org\n\n# Contract addresses (after deployment)\nCONTRACT_ESCROW=<your-contract-id>\nCONTRACT_ORACLE=<your-contract-id>\n\n# Oracle configuration\nLICHESS_API_TOKEN=<your-lichess-api-token>\nCHESSDOTCOM_API_KEY=<your-chessdotcom-api-key>\n\n# Frontend configuration\nVITE_STELLAR_NETWORK=testnet\nVITE_STELLAR_RPC_URL=https://soroban-testnet.stellar.org\n```\n\nNetwork configurations are defined in `environments.toml`:\n\n- `testnet` \u2014 Stellar testnet\n- `mainnet` \u2014 Stellar mainnet\n- `futurenet` \u2014 Stellar futurenet\n- `standalone` \u2014 Local development\n\n### Deploy to Testnet\n\n```bash\n# Configure your testnet identity first\nstellar keys generate deployer --network testnet\n\n# Deploy\n./scripts/deploy_testnet.sh\n```\n\n## \ud83d\udcd6 Documentation\n\n- [Architecture Overview](docs/architecture.md)\n- [Oracle Design](docs/oracle.md)\n- [Threat Model & Security](docs/security.md)\n- [Roadmap](docs/roadmap.md)\n- [Contributing Guide](docs/contributing.md)\n\n## \ud83c\udf93 Smart Contract API\n\n### Escrow Contract\n\n**Initialization**\n\n```\ninitialize(oracle: Address, admin: Address, token: Address)\n```\n\n**Match Management**\n\n```\ncreate_match(player1, player2, stake_amount, token, game_id, platform) -> u64\nget_match(match_id) -> Match\ncancel_match(match_id, caller)\n```\n\n**Escrow**\n\n```\ndeposit(match_id, player)\nget_escrow_balance(match_id) -> i128\nis_funded(match_id) -> bool\n```\n\n**Oracle & Payouts**\n\n```\nsubmit_result(match_id, game_id, winner, caller)\n```\n\n**Admin**\n\n```\npause()\nunpause()\nupdate_oracle(new_oracle: Address)\n```\n\n### Oracle Contract\n\n```\ninitialize(admin: Address)\nsubmit_result(match_id, game_id, result)\nget_result(match_id) -> ResultEntry\nhas_result(match_id) -> bool\n```\n\n## \ud83e\uddea Testing\n\nRun tests:\n\n```bash\ncargo test\n```\n\n## \ud83c\udf0d Why This Matters\n\n**The Problem**: Current chess betting and tournament prize payouts are slow and rely entirely on the platform's honesty. Players have no guarantee their winnings will be paid out fairly or on time.\n\n**The Solution**: By holding stakes in a Soroban smart contract and automating payouts via a verified Oracle, smile4money removes the need to trust any third party.\n\n## \ud83d\uddfa\ufe0f Roadmap\n\n- **v1.0 (Current)**: XLM-only escrow, Lichess Oracle integration, basic match flow\n- **v1.1**: USDC and custom token support, Chess.com Oracle\n- **v2.0**: Multi-game tournaments, bracket payouts\n- **v3.0**: Frontend UI with wallet integration\n- **v4.0**: Mobile app, ELO-based matchmaking, leaderboards\n\n## \ud83d\udcc4 License\n\nThis project is licensed under the MIT License \u2014 see the [LICENSE](LICENSE) file for details.\n\n## \ud83d\ude4f Acknowledgments\n\n- [Stellar Development Foundation](https://stellar.org) for Soroban\n- [Lichess](https://lichess.org) for their open API\n- [Chess.com](https://chess.com) for their developer platform\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:13:05+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/blob/3b59541d7a9ba0b409aac6d1486a3fd820282624/README.md"
+  },
+  {
+   "evidence_id": "repo:obajecollinsmicheal-cmd/smile4money:contributing",
+   "payload": {
+    "commit_oid": "3b59541d7a9ba0b409aac6d1486a3fd820282624",
+    "kind": "contributing",
+    "text": "# Contributing to smile4money\n\nThank you for your interest in contributing! This document covers environment setup, running tests, and PR guidelines.\n\n## Prerequisites\n\n- **Rust** 1.70+ \u2014 [rustup.rs](https://rustup.rs)\n- **wasm32 target**: `rustup target add wasm32-unknown-unknown`\n- **Stellar CLI** \u2014 [install guide](https://developers.stellar.org/docs/tools/developer-tools/cli/install-cli)\n- **Git**\n\n## Local Setup\n\n```bash\ngit clone https://github.com/obajecollinsmicheal-cmd/smile4money.git\ncd smile4money\ncp .env.example .env\n# Edit .env with your testnet credentials\n```\n\n## Build\n\n```bash\n./scripts/build.sh\n# or\ncargo build --target wasm32-unknown-unknown --release\n```\n\n## Test\n\n```bash\n./scripts/test.sh\n# or\ncargo test\n```\n\nRun lints before opening a PR:\n\n```bash\ncargo clippy -- -D warnings\n```\n\n## Branch Naming\n\n| Type | Pattern | Example |\n|------|---------|---------|\n| Bug fix | `fix/issue-<N>-short-description` | `fix/issue-1-double-initialize` |\n| New test | `test/issue-<N>-short-description` | `test/issue-22-cancel-partial-refund` |\n| Documentation | `docs/issue-<N>-short-description` | `docs/issue-220-contributing-guide` |\n| Feature | `feat/issue-<N>-short-description` | `feat/issue-17-update-oracle` |\n| Refactor | `refactor/issue-<N>-short-description` | `refactor/issue-221-workspace-deps` |\n\nAlways branch off `master`:\n\n```bash\ngit checkout master && git pull\ngit checkout -b fix/issue-<N>-short-description\n```\n\n## Commit Message Format\n\nUse [Conventional Commits](https://www.conventionalcommits.org/):\n\n```\n<type>: <short summary (\u226472 chars)>\n```\n\nTypes: `fix`, `feat`, `test`, `docs`, `refactor`, `chore`.\n\nExamples:\n```\nfix: guard initialize against double-call\ntest: cancel_match refunds only player1 when only player1 deposited\ndocs: add CONTRIBUTING.md with dev setup and PR guidelines\nrefactor: move shared deps to workspace-level Cargo.toml\n```\n\n## Pull Request Checklist\n\nBefore submitting a PR, confirm:\n\n- [ ] `cargo test` passes\n- [ ] `cargo clippy -- -D warnings` passes\n- [ ] Branch is up to date with `master`\n- [ ] PR title is under 70 characters\n- [ ] PR body contains `Closes #<N>` for each linked issue\n- [ ] New behaviour is covered by tests\n- [ ] No secrets or `.env` files are committed\n\n## Reporting Issues\n\nOpen a GitHub issue with:\n- A clear title prefixed with the category (`Fix:`, `Test:`, `Docs:`, `Feat:`)\n- Steps to reproduce (for bugs)\n- Expected vs actual behaviour\n\nFor security vulnerabilities, see [SECURITY.md](SECURITY.md).\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:13:05+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/blob/3b59541d7a9ba0b409aac6d1486a3fd820282624/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#445:opened",
+   "payload": {
+    "additions": 67,
+    "author": "Markodiba",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "apps/frontend/package-lock.json",
+     "apps/frontend/package.json"
+    ],
+    "title": "fix: resolve PostCSS config ESM conflict and unblock claim-burn tests"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T22:14:48+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/445"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#444:opened",
+   "payload": {
+    "additions": 790,
+    "author": "deborahamoni0-prog",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 485,
+    "files": [
+     "apps/frontend/package-lock.json",
+     "apps/frontend/package.json",
+     "apps/frontend/postcss.config.cjs",
+     "apps/frontend/src/app/layout.tsx",
+     "apps/frontend/src/app/page.tsx",
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/tsconfig.json",
+     "apps/frontend/vite.config.ts"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:27:42+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/444"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#444:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@deborahamoni0-prog Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:27:52+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/444"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#443:opened",
+   "payload": {
+    "additions": 79,
+    "author": "deborahamoni0-prog",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     ".gitignore",
+     "apps/frontend/package-lock.json"
+    ],
+    "title": "fix(frontend): unblock claim/burn UI tests and PostCSS setup"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T18:59:16+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/443"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#443:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@deborahamoni0-prog Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T19:02:45+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/443"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#442:opened",
+   "payload": {
+    "additions": 1,
+    "author": "daddygokings-art",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "pr_description.md"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T17:00:14+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/442"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#441:opened",
+   "payload": {
+    "additions": 1,
+    "author": "marvs8",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/vite.config.ts"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:22:36+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/441"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#440:opened",
+   "payload": {
+    "additions": 123,
+    "author": "marvs8",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 113,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/vite.config.ts"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:20:10+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/440"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#439:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Dami24-hub",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-31T14:02:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/439"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#421:opened",
+   "payload": {
+    "additions": 0,
+    "author": "AkamyUI",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "fix: rename postcss.config.js to .cjs for ESM compatibility"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T18:57:45+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/421"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#420:opened",
+   "payload": {
+    "additions": 0,
+    "author": "essiend03-glitch",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T18:27:25+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/420"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#419:opened",
+   "payload": {
+    "additions": 47,
+    "author": "woodlonestar-lang",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/next-env.d.ts",
+     "apps/frontend/postcss.config.js",
+     "apps/frontend/src/app/globals.css",
+     "apps/frontend/src/app/layout.tsx",
+     "apps/frontend/src/app/page.tsx",
+     "apps/frontend/tailwind.config.ts"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T17:37:16+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/419"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#419:merged",
+   "payload": {
+    "author": "woodlonestar-lang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T17:40:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/419"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#419:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@woodlonestar-lang Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T17:37:24+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/419"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#418:opened",
+   "payload": {
+    "additions": 51,
+    "author": "doradenise-jpg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 70,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:36:55+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/418"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#418:merged",
+   "payload": {
+    "author": "doradenise-jpg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:39:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/418"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#418:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@doradenise-jpg Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T16:37:07+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/418"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#417:opened",
+   "payload": {
+    "additions": 99,
+    "author": "john2ydep2-gt",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 68,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/components/hello.tsx"
+    ],
+    "title": "Feature/claim burn"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:52:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/417"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#417:merged",
+   "payload": {
+    "author": "john2ydep2-gt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:55:15+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/417"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#417:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@john2ydep2-gt Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:52:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/417"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#416:opened",
+   "payload": {
+    "additions": 14,
+    "author": "Stellahub-64",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:43:07+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/416"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#415:opened",
+   "payload": {
+    "additions": 143,
+    "author": "Stellahub-64",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 72,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/styles/claim-burn.css"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:21:42+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/415"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#415:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Stellahub-64 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:36:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/415"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#414:opened",
+   "payload": {
+    "additions": 472,
+    "author": "OZILSOLAR",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 371,
+    "files": [
+     "CLAIM_BURN_IMPLEMENTATION_COMPLETE.md",
+     "apps/frontend/src/App.tsx",
+     "apps/frontend/src/components/claim-burn.css",
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "Feature/312 313 314 315 claim burn UI"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:01:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/414"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#414:merged",
+   "payload": {
+    "author": "OZILSOLAR",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:59:05+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/414"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#414:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@OZILSOLAR Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T15:01:49+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/414"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#413:opened",
+   "payload": {
+    "additions": 112,
+    "author": "Emmy6654",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 159,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "Implement a claim and burn UI with toggle functionality and proper wallet states."
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:47:04+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/413"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#413:merged",
+   "payload": {
+    "author": "Emmy6654",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:53:57+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/413"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#413:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Emmy6654 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:47:14+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/413"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#412:opened",
+   "payload": {
+    "additions": 485,
+    "author": "Mmesolove",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 510,
+    "files": [
+     "apps/frontend/src/styles/claim-burn.css",
+     "apps/frontend/tests/forms/validation.test.tsx",
+     "contracts/escrow/src/errors.rs",
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "fix: claim/burn CI failures and merge conflict"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:44:45+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/412"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#412:merged",
+   "payload": {
+    "author": "Mmesolove",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:53:05+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/412"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#410:opened",
+   "payload": {
+    "additions": 165,
+    "author": "williamsokperez-arch",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 57,
+    "files": [
+     "apps/frontend/src/components/claim-burn.css",
+     "apps/frontend/src/components/claim-burn.tsx"
+    ],
+    "title": "feat: all issues solves"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:23:12+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/410"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#410:merged",
+   "payload": {
+    "author": "williamsokperez-arch",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:30:26+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/410"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#410:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@williamsokperez-arch Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T04:23:20+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/410"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#409:opened",
+   "payload": {
+    "additions": 5916,
+    "author": "Dami24-hub",
+    "author_is_bot": false,
+    "changed_files": 26,
+    "deletions": 21,
+    "files": [
+     "CLAIM_BURN_IMPLEMENTATION.md",
+     "CLAIM_BURN_PR_DESCRIPTION.md",
+     "CLAIM_BURN_VERIFICATION.md",
+     "README.md",
+     "apps/frontend/.gitignore",
+     "apps/frontend/index.html",
+     "apps/frontend/package-lock.json",
+     "apps/frontend/package.json",
+     "apps/frontend/src/App.tsx",
+     "apps/frontend/src/components/claim-burn.css",
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/components/forms/RegistrationForm.tsx",
+     "apps/frontend/src/hooks/useStellarWallet.ts",
+     "apps/frontend/src/hooks/useWallet.ts",
+     "apps/frontend/src/main.tsx",
+     "apps/frontend/src/styles/claim-burn.css",
+     "apps/frontend/src/test-setup.ts",
+     "apps/frontend/src/types.ts",
+     "apps/frontend/tests/claim-burn.test.tsx",
+     "apps/frontend/tests/forms/validation.test.tsx"
+    ],
+    "title": "Feature/claim burn"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:17:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/409"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#409:merged",
+   "payload": {
+    "author": "Dami24-hub",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:28:55+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/409"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#409:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Dami24-hub Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T00:18:48+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/409"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#408:opened",
+   "payload": {
+    "additions": 18,
+    "author": "adefemiesther1-debug",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 39,
+    "files": [
+     "apps/frontend/src/App.tsx",
+     "apps/frontend/src/components/claim-burn.tsx"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:00:48+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/408"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#408:merged",
+   "payload": {
+    "author": "adefemiesther1-debug",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:28:15+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/408"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#408:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@adefemiesther1-debug Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T18:03:06+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/408"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#407:opened",
+   "payload": {
+    "additions": 156,
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 263,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "pr_description.md"
+    ],
+    "title": "feat: add claim/burn UI with toggle functionality and proper wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:56:09+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/407"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#407:merged",
+   "payload": {
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:26:33+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/407"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#407:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@ayomidearegbeshola29-dev Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:58:11+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/407"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#406:opened",
+   "payload": {
+    "additions": 2,
+    "author": "sonoflawal",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx"
+    ],
+    "title": "feat: implement claim and burn UI with toggle functionality and walle\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:38:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/406"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#406:merged",
+   "payload": {
+    "author": "sonoflawal",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:41:32+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/406"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#405:opened",
+   "payload": {
+    "additions": 55,
+    "author": "Malik6828",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "apps/frontend/src/App.tsx",
+     "apps/frontend/src/components/claim-burn.tsx"
+    ],
+    "title": "fix: align claim/burn wallet status typing"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T13:17:46+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/405"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#405:merged",
+   "payload": {
+    "author": "Malik6828",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:40:48+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/405"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#405:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Malik6828 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:31:19+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/405"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#404:opened",
+   "payload": {
+    "additions": 980,
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 508,
+    "files": [
+     "CLAIM_BURN_IMPLEMENTATION.md",
+     "CLAIM_BURN_PR_DESCRIPTION.md",
+     "CLAIM_BURN_VERIFICATION.md",
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/hooks/useWallet.ts",
+     "apps/frontend/src/styles/claim-burn.css",
+     "apps/frontend/tests/claim-burn.test.tsx",
+     "apps/frontend/tests/forms/validation.test.ts"
+    ],
+    "title": "Smile4money331"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:50:41+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/404"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#404:merged",
+   "payload": {
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:38:31+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/404"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#404:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@bitstarkbridge Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:50:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/404"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#403:opened",
+   "payload": {
+    "additions": 495,
+    "author": "Mmesolove",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 476,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/styles/claim-burn.css",
+     "apps/frontend/tests/claim-burn.test.tsx",
+     "apps/frontend/tests/forms/validation.test.ts"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:39:09+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/403"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#403:closed",
+   "payload": {
+    "author": "Mmesolove",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-05-30T13:40:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/403"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#403:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Mmesolove Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:39:57+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/403"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#403:comment:1",
+   "payload": {
+    "author": "Mmesolove",
+    "author_is_bot": false,
+    "body": "please review"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:40:24+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/403"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#402:opened",
+   "payload": {
+    "additions": 22,
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 21,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/hooks/useWallet.ts",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "feature:Issue #75"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:37:00+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/402"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#402:merged",
+   "payload": {
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:36:53+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/402"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#402:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@bitstarkbridge Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:37:19+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/402"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#401:opened",
+   "payload": {
+    "additions": 31,
+    "author": "levoski1",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "feat: complete claim/burn UI workflow and wallet states for issue #105"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:15:57+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/401"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#401:merged",
+   "payload": {
+    "author": "levoski1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:34:29+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/401"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#401:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@levoski1 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:24:02+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/401"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#400:opened",
+   "payload": {
+    "additions": 366,
+    "author": "Sundayabel222",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 76,
+    "files": [
+     "apps/frontend/src/App.tsx",
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/hooks/useStellarWallet.ts",
+     "apps/frontend/src/styles/claim-burn.css",
+     "apps/frontend/src/types.ts",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "fix: implement claim/burn confirmation flow, fix state bugs, add proper wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:06:26+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/400"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#400:merged",
+   "payload": {
+    "author": "Sundayabel222",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:32:23+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/400"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#400:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Sundayabel222 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T12:08:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/400"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#399:opened",
+   "payload": {
+    "additions": 38,
+    "author": "levoski1",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T11:21:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/399"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#399:merged",
+   "payload": {
+    "author": "levoski1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:31:27+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/399"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#399:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@levoski1 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:31:32+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/399"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#398:opened",
+   "payload": {
+    "additions": 94,
+    "author": "levoski1",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:46:06+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/398"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#398:merged",
+   "payload": {
+    "author": "levoski1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:30:21+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/398"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#398:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@levoski1 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:51:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/398"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#397:opened",
+   "payload": {
+    "additions": 589,
+    "author": "Sundriveauto",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 70,
+    "files": [
+     "apps/frontend/index.html",
+     "apps/frontend/src/App.tsx",
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/hooks/useWallet.ts",
+     "apps/frontend/src/main.tsx",
+     "apps/frontend/src/styles/claim-burn.css",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "Implement a claim and burn UI with toggle functionality and proper wallet states."
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:20:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/397"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#397:merged",
+   "payload": {
+    "author": "Sundriveauto",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:44:53+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/397"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#397:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Sundriveauto Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:20:43+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/397"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#396:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Happybello365",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:44:06+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/396"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#396:merged",
+   "payload": {
+    "author": "Happybello365",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:29:21+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/396"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#396:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Happybello365 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:44:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/396"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#395:opened",
+   "payload": {
+    "additions": 288,
+    "author": "lekescrew22",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 19,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/hooks/useStellarWallet.ts",
+     "apps/frontend/src/types.ts",
+     "apps/frontend/tests/claim-burn.test.tsx"
+    ],
+    "title": "feat: enhance claim/burn UI with full wallet states, toggle, and styling"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:32:32+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/395"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#395:merged",
+   "payload": {
+    "author": "lekescrew22",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T10:52:33+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/395"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#395:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@lekescrew22 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T09:32:42+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/395"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#394:opened",
+   "payload": {
+    "additions": 23,
+    "author": "marvelousufelix",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 18,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "fix: allow cancel_match while paused and update pause test semantics"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T07:53:38+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/394"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#394:merged",
+   "payload": {
+    "author": "marvelousufelix",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:28:13+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/394"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#391:opened",
+   "payload": {
+    "additions": 154,
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "apps/frontend/tests/claim-burn.test.tsx",
+     "pr_description.md"
+    ],
+    "title": "Feature/enhanced claim burn UI"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:54:04+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/391"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#391:merged",
+   "payload": {
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:27:24+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/391"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#391:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@ayomidearegbeshola29-dev Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:55:16+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/391"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#390:opened",
+   "payload": {
+    "additions": 19,
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "README.md",
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "fix: reject empty game_id in escrow and oracle contracts"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:26:57+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/390"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#390:merged",
+   "payload": {
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T15:23:51+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/390"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#389:opened",
+   "payload": {
+    "additions": 36,
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "fix: reject empty game_id in escrow and oracle contracts"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:18:53+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/389"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#389:merged",
+   "payload": {
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:16:50+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/389"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#388:opened",
+   "payload": {
+    "additions": 132,
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/src/components/claim-burn.css"
+    ],
+    "title": "Feature/registration form"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T16:08:54+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/388"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#388:merged",
+   "payload": {
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:16:16+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/388"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#388:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@chucksentertainment-hash Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:16:15+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/388"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#387:opened",
+   "payload": {
+    "additions": 0,
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "feat(ui): add claim/burn component with wallet states and toggle"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T15:56:11+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/387"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#387:merged",
+   "payload": {
+    "author": "chucksentertainment-hash",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:14:30+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/387"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#386:opened",
+   "payload": {
+    "additions": 0,
+    "author": "jessiE-bliz445",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T15:46:42+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/386"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#386:merged",
+   "payload": {
+    "author": "jessiE-bliz445",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:13:21+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/386"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#385:opened",
+   "payload": {
+    "additions": 96,
+    "author": "jessiE-bliz445",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/src/components/forms/RegistrationForm.tsx",
+     "apps/frontend/tests/forms/validation.test.tsx"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-28T15:35:07+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/385"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#385:merged",
+   "payload": {
+    "author": "jessiE-bliz445",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-29T14:12:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/385"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#384:opened",
+   "payload": {
+    "additions": 12,
+    "author": "smiletech092-code",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 10,
+    "files": [
+     "apps/frontend/src/components/claim-burn.tsx"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:08:59+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/384"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#384:merged",
+   "payload": {
+    "author": "smiletech092-code",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T22:10:54+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/384"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#383:opened",
+   "payload": {
+    "additions": 3458,
+    "author": "augustina-jpg",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/.gitignore",
+     "apps/frontend/package-lock.json",
+     "apps/frontend/package.json",
+     "apps/frontend/src/components/claim-burn.tsx",
+     "apps/frontend/src/test-setup.ts",
+     "apps/frontend/tests/claim-burn.test.tsx",
+     "apps/frontend/tsconfig.json",
+     "apps/frontend/vite.config.ts"
+    ],
+    "title": "feat: add claim/burn UI and wallet states"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:42:45+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/383"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#383:merged",
+   "payload": {
+    "author": "augustina-jpg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:49:45+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/383"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#383:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@augustina-jpg Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-26T15:47:25+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/383"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#257:opened",
+   "payload": {
+    "additions": 50,
+    "author": "bjabrack-29",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "contracts/escrow/src/tests.rs",
+     "scripts/build.sh"
+    ],
+    "title": "fix: improve build.sh error handling with pipefail and --release flag"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T11:41:27+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/257"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#257:merged",
+   "payload": {
+    "author": "bjabrack-29",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-30T13:35:53+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/257"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#257:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "Hey @bjabrack-29! \ud83d\udc4b It looks like this PR isn't linked to any issue.\n\nIf this PR is for one of the issues assigned to you as part of a Wave, please link it to ensure your contribution is tracked properly. You can do this by [adding a keyword to the PR description](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue) (e.g., `Closes #123`), or by clicking a button below:\n\n| Issue | Title | |\n|-------|-------|-|\n| #218 | Fix: build.sh script does not handle build failures gracefully | [**Link to this issue**](https://www.drips.network/wave/link-pr/257/bfe34934-fc1d-473f-875c-e831d6947956) |\n| #178 | Fix: get_escrow_balance uses boolean arithmetic that silently truncates | [**Link to this issue**](https://www.drips.network/wave/link-pr/257/4a893591-c4a5-490c-9710-bbacf596bec0) |\n| #183 | Fix: submit_result in escrow does not emit an event | [**Link to this issue**](https://www.drips.network/wave/link-pr/257/1e9e5811-0e35-449d-bda1-1ce989eaafca) |\n| #180 | Fix: cancel_match does not require player2 auth when player2 has deposited | [**Link to this issue**](https://www.drips.network/wave/link-pr/257/3c1f7308-1df8-4647-8c8a-869ac6b58826) |\n\n\u2139\ufe0f [Learn more about linking PRs to issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T11:41:40+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/257"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#256:opened",
+   "payload": {
+    "additions": 105,
+    "author": "bjabrack-29",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/escrow/src/tests_e2e.rs"
+    ],
+    "title": "Fix/cancellation authorization"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T10:37:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/256"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#256:merged",
+   "payload": {
+    "author": "bjabrack-29",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T11:20:52+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/256"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#255:opened",
+   "payload": {
+    "additions": 42,
+    "author": "bjabrack-29",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 6,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/escrow/src/tests_e2e.rs"
+    ],
+    "title": "feat: emit events on match completion"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T10:32:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/255"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#255:merged",
+   "payload": {
+    "author": "bjabrack-29",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T11:20:54+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/255"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#254:opened",
+   "payload": {
+    "additions": 3,
+    "author": "marvelousufelix",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "CHANGELOG.md"
+    ],
+    "title": "feat(escrow): add game_id validation to submit_result"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T10:09:58+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/254"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#254:merged",
+   "payload": {
+    "author": "marvelousufelix",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T11:21:40+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/254"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#253:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "feat: emit events on match cancellation"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T07:18:53+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/253"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#253:merged",
+   "payload": {
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T08:49:27+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/253"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#252:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "feat: emit events on match cancellation"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T07:02:31+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/252"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#252:merged",
+   "payload": {
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T08:49:28+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/252"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#252:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Benalex8797 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T07:02:39+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/252"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#251:opened",
+   "payload": {
+    "additions": 410,
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 194,
+    "files": [
+     "Cargo.lock",
+     "contracts/escrow/Cargo.toml",
+     "contracts/escrow/src/errors.rs",
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/escrow/src/tests_e2e.rs",
+     "contracts/oracle/Cargo.toml",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "integration"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T06:43:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/251"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#251:closed",
+   "payload": {
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T06:55:12+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/251"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#251:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Benalex8797 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T06:43:41+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/251"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#250:opened",
+   "payload": {
+    "additions": 6,
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "feat: emit events on player deposits"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T02:59:12+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/250"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#250:merged",
+   "payload": {
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:24:20+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/250"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#250:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@AbuJulaybeeb Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T02:59:21+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/250"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#249:opened",
+   "payload": {
+    "additions": 91,
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 25,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "fix: implement admin emergency controls and pause functionality"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T01:20:43+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/249"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#249:merged",
+   "payload": {
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:23:01+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/249"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#248:opened",
+   "payload": {
+    "additions": 91,
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 25,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "fix: implement admin emergency controls and pause functionality"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T01:08:51+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/248"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#248:merged",
+   "payload": {
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:22:59+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/248"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#248:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@AbuJulaybeeb Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T01:09:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/248"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#247:opened",
+   "payload": {
+    "additions": 676,
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests_e2e.rs"
+    ],
+    "title": "test: add e2e match lifecycle integration tests (closes #43)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T23:47:09+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/247"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#247:merged",
+   "payload": {
+    "author": "Benalex8797",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:22:34+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/247"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#247:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Benalex8797 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T23:47:17+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/247"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#246:opened",
+   "payload": {
+    "additions": 0,
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "fix: add TTL extension for persistent storage entries"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T22:10:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/246"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#246:merged",
+   "payload": {
+    "author": "AbuJulaybeeb",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:22:05+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/246"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#245:opened",
+   "payload": {
+    "additions": 274,
+    "author": "job-soft",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 6,
+    "files": [
+     "CONTRIBUTING.md",
+     "Cargo.toml",
+     "SECURITY.md",
+     "contracts/escrow/Cargo.toml",
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/Cargo.toml"
+    ],
+    "title": "docs/refactor/test: resolve issues #220 #221 #222 #223"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:55:34+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/245"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#245:merged",
+   "payload": {
+    "author": "job-soft",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T20:43:57+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/245"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#245:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@job-soft Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:55:43+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/245"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#244:opened",
+   "payload": {
+    "additions": 235,
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "contracts/escrow/src/types.rs"
+    ],
+    "title": "docs(escrow): add comprehensive documentation to types.rs"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:54:22+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/244"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#244:merged",
+   "payload": {
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:20:47+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/244"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#243:opened",
+   "payload": {
+    "additions": 306,
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 11,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/escrow/src/types.rs",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "Feat/money"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:50:12+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/243"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#243:merged",
+   "payload": {
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:21:33+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/243"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#243:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Emoji-dot Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:50:20+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/243"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#242:opened",
+   "payload": {
+    "additions": 297,
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "contracts/escrow/src/types.rs",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "Feat/smile4"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:36:29+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/242"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#242:merged",
+   "payload": {
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:21:15+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/242"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#242:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Emoji-dot Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:36:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/242"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#241:opened",
+   "payload": {
+    "additions": 235,
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "contracts/escrow/src/types.rs"
+    ],
+    "title": "docs(escrow): add comprehensive documentation to types.rs"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:20:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/241"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#241:merged",
+   "payload": {
+    "author": "Emoji-dot",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T05:20:46+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/241"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#241:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Emoji-dot Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T19:21:05+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/241"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#240:opened",
+   "payload": {
+    "additions": 49,
+    "author": "wendypetersondev",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "contracts/escrow/src/errors.rs",
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "Fix/deposit state validation"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T17:53:22+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/240"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#240:merged",
+   "payload": {
+    "author": "wendypetersondev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T17:57:01+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/240"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#240:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@wendypetersondev Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T17:53:33+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/240"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#239:opened",
+   "payload": {
+    "additions": 26,
+    "author": "wendypetersondev",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "fix(escrow): guard MatchCount increment against u64 overflow"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T17:42:36+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/239"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#239:merged",
+   "payload": {
+    "author": "wendypetersondev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T17:56:43+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/239"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#239:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@wendypetersondev Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T17:47:24+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/239"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#237:opened",
+   "payload": {
+    "additions": 3,
+    "author": "brite-side0",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "test: add tests for issues #195, #196, #197"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:05:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/237"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#237:merged",
+   "payload": {
+    "author": "brite-side0",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:46:51+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/237"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#237:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@brite-side0 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:05:33+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/237"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#236:opened",
+   "payload": {
+    "additions": 1194,
+    "author": "KayMuna",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 3,
+    "files": [
+     "README.md",
+     "contracts/escrow/README.md",
+     "contracts/escrow/src/errors.rs",
+     "contracts/escrow/src/lib.rs",
+     "contracts/oracle/README.md",
+     "contracts/oracle/src/errors.rs"
+    ],
+    "title": "Feat/214 215"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:02:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/236"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#236:merged",
+   "payload": {
+    "author": "KayMuna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:46:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/236"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#236:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@KayMuna Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:03:09+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/236"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#235:opened",
+   "payload": {
+    "additions": 1,
+    "author": "brite-side0",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "test: deposit by non-player address returns Unauthorized"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:59:46+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/235"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#235:merged",
+   "payload": {
+    "author": "brite-side0",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:46:19+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/235"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#234:opened",
+   "payload": {
+    "additions": 994,
+    "author": "KayMuna",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/README.md",
+     "contracts/oracle/README.md"
+    ],
+    "title": "README"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:37:12+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/234"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#234:merged",
+   "payload": {
+    "author": "KayMuna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:45:53+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/234"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#234:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@KayMuna Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:37:25+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/234"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#233:opened",
+   "payload": {
+    "additions": 28,
+    "author": "temma02",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "fix: enforce game_id uniqueness and prevent self-match creation"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:32:12+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/233"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#233:merged",
+   "payload": {
+    "author": "temma02",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:45:31+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/233"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#233:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@temma02 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:32:43+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/233"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#232:opened",
+   "payload": {
+    "additions": 19,
+    "author": "jasmine874",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/escrow/src/types.rs"
+    ],
+    "title": "fix: validate token address in initialize (#211)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:30:19+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/232"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#232:merged",
+   "payload": {
+    "author": "jasmine874",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:44:52+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/232"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#232:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@jasmine874 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:30:35+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/232"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#231:opened",
+   "payload": {
+    "additions": 0,
+    "author": "jasmine874",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "test: player1 win payout sends full pot to player1 (#208)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:26:49+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/231"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#231:merged",
+   "payload": {
+    "author": "jasmine874",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:43:39+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/231"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#231:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@jasmine874 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:26:57+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/231"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#230:opened",
+   "payload": {
+    "additions": 0,
+    "author": "jasmine874",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "test: cancel_match on Active returns InvalidState & draw payout exact amounts"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:24:52+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/230"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#230:merged",
+   "payload": {
+    "author": "jasmine874",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:42:39+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/230"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#230:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@jasmine874 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T15:25:04+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/230"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#229:opened",
+   "payload": {
+    "additions": 5,
+    "author": "deborahamoni0-prog",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "contracts/escrow/src/errors.rs",
+     "contracts/escrow/src/lib.rs"
+    ],
+    "title": "fix: verify token transfer in deposit before updating state"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T14:28:32+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/229"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#229:merged",
+   "payload": {
+    "author": "deborahamoni0-prog",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T16:26:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/229"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#229:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@deborahamoni0-prog Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T14:28:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/229"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#227:opened",
+   "payload": {
+    "additions": 50,
+    "author": "woodlonestar-lang",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/issue-oracle-result-not-found.md"
+    ],
+    "title": "docs: add issue doc for oracle get_result ResultNotFound test"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T04:31:26+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/227"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#227:merged",
+   "payload": {
+    "author": "woodlonestar-lang",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T04:32:22+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/227"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#226:opened",
+   "payload": {
+    "additions": 38,
+    "author": "augustina-jpg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "test: assert Unauthorized when random address calls submit_result"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T04:16:26+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/226"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#226:merged",
+   "payload": {
+    "author": "augustina-jpg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T04:33:00+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/226"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#226:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@augustina-jpg Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T04:16:34+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/226"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#173:opened",
+   "payload": {
+    "additions": 1072,
+    "author": "bajehjude-del",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 237,
+    "files": [
+     ".github/workflows/audit.yml",
+     ".github/workflows/ci.yml",
+     ".github/workflows/deploy.yml",
+     "CHANGELOG.md",
+     "ISSUES_CHECKLIST.md",
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/src/lib.rs",
+     "docs/infrastructure.md",
+     "rust-toolchain.toml"
+    ],
+    "title": "Kiro/ai integration"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T17:19:19+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/173"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#173:merged",
+   "payload": {
+    "author": "bajehjude-del",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:16:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/173"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#173:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@bajehjude-del Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T17:20:19+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/173"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#171:opened",
+   "payload": {
+    "additions": 118,
+    "author": "Shecodes174",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "docs/issue-1-initialize-guard.md",
+     "docs/issue-2-oracle-initialize-guard.md"
+    ],
+    "title": "Docs/issue 2 oracle initialize guard"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T16:59:30+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/171"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#171:merged",
+   "payload": {
+    "author": "Shecodes174",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:17:06+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/171"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#171:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Shecodes174 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T17:01:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/171"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#170:opened",
+   "payload": {
+    "additions": 59,
+    "author": "Shecodes174",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/issue-1-initialize-guard.md"
+    ],
+    "title": "docs: add spec for issue #1 initialize re-initialization guard"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T16:53:58+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/170"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#170:merged",
+   "payload": {
+    "author": "Shecodes174",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:17:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/170"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#170:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Shecodes174 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T17:02:09+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/170"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#169:opened",
+   "payload": {
+    "additions": 1069,
+    "author": "bajehjude-del",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 237,
+    "files": [
+     ".github/workflows/audit.yml",
+     ".github/workflows/ci.yml",
+     ".github/workflows/deploy.yml",
+     "ISSUES_CHECKLIST.md",
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/src/lib.rs",
+     "docs/infrastructure.md",
+     "rust-toolchain.toml"
+    ],
+    "title": "Feat/resolve all issues"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T16:24:05+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/169"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#169:merged",
+   "payload": {
+    "author": "bajehjude-del",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:16:10+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/169"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#169:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@bajehjude-del Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T16:24:18+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/169"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#168:opened",
+   "payload": {
+    "additions": 628,
+    "author": "bajehjude-del",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 114,
+    "files": [
+     ".github/workflows/audit.yml",
+     ".github/workflows/ci.yml",
+     ".github/workflows/deploy.yml",
+     "ISSUES_CHECKLIST.md",
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/src/lib.rs",
+     "docs/infrastructure.md",
+     "rust-toolchain.toml"
+    ],
+    "title": "infra: add security audit, deploy workflow, pin Rust toolchain"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T15:07:24+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/168"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#168:merged",
+   "payload": {
+    "author": "bajehjude-del",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:16:10+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/168"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#168:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@bajehjude-del Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T15:17:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/168"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#167:opened",
+   "payload": {
+    "additions": 503,
+    "author": "essiend03-glitch",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "TECHNICAL_DEEP_DIVE.md",
+     "scripts/deploy_mainnet.sh"
+    ],
+    "title": "Doc/Infra: fill TECHNICAL_DEEP_DIVE.md and add deploy_mainnet.sh (#11\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T14:52:24+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/167"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#167:merged",
+   "payload": {
+    "author": "essiend03-glitch",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:17:33+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/167"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#167:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@essiend03-glitch Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T14:52:40+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/167"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#166:opened",
+   "payload": {
+    "additions": 127,
+    "author": "marvs8",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "README.md",
+     "docs/contributing.md",
+     "issues.md"
+    ],
+    "title": "docs: add contributing guide (#104)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T14:07:55+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/166"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#166:merged",
+   "payload": {
+    "author": "marvs8",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:19:06+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/166"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#166:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@marvs8 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T14:08:14+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/166"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#165:opened",
+   "payload": {
+    "additions": 18,
+    "author": "marvs8",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/tests.rs"
+    ],
+    "title": "test: submit_result on cancelled match returns InvalidState (#100)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T14:00:36+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/165"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#165:merged",
+   "payload": {
+    "author": "marvs8",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:21:07+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/165"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#165:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@marvs8 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T14:00:59+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/165"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#164:opened",
+   "payload": {
+    "additions": 69,
+    "author": "joshkirojohn212-jpg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "code_review.md"
+    ],
+    "title": "feature:See issues.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:07:40+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/164"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#164:merged",
+   "payload": {
+    "author": "joshkirojohn212-jpg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:19:43+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/164"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#163:opened",
+   "payload": {
+    "additions": 39,
+    "author": "Ajuwonlo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "apps/backend/tests/integration/issue-67.test.ts",
+     "issues.md"
+    ],
+    "title": "Fixed Issue #67 "
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T04:11:31+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/163"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#163:merged",
+   "payload": {
+    "author": "Ajuwonlo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-28T03:20:11+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/163"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#162:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Markodiba",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "fix: Validation guards for issues #1, #2, #3, #19"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T15:42:23+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/162"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#162:merged",
+   "payload": {
+    "author": "Markodiba",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:34:04+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/162"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#161:opened",
+   "payload": {
+    "additions": 17,
+    "author": "augustina-jpg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "issues.md"
+    ],
+    "title": "Add test case for issue #72: submit_result on cancelled match returns\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T15:31:13+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/161"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#161:merged",
+   "payload": {
+    "author": "augustina-jpg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:33:31+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/161"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#160:opened",
+   "payload": {
+    "additions": 32,
+    "author": "Hexstar-labs",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "Feat/issues 63 64 65 66"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T06:01:52+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/160"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#160:merged",
+   "payload": {
+    "author": "Hexstar-labs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T07:02:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/160"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#160:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Hexstar-labs Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T06:02:01+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/160"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#159:opened",
+   "payload": {
+    "additions": 91,
+    "author": "Dev-Vik-Tor",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/src/errors.rs",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "Feat/issues 59 60 61 62"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:58:40+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/159"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#159:merged",
+   "payload": {
+    "author": "Dev-Vik-Tor",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T07:19:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/159"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#159:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Dev-Vik-Tor Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:58:48+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/159"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#158:opened",
+   "payload": {
+    "additions": 72,
+    "author": "Lex-Studios",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "issues.md"
+    ],
+    "title": "Feature/issues 55 56 57 58"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:43:53+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/158"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#158:merged",
+   "payload": {
+    "author": "Lex-Studios",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T07:21:16+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/158"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#158:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Lex-Studios Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:44:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/158"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#157:opened",
+   "payload": {
+    "additions": 17,
+    "author": "Xoulomon",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 12,
+    "files": [
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "Issues/51 52 53 54"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:43:31+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/157"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#157:merged",
+   "payload": {
+    "author": "Xoulomon",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T07:21:56+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/157"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#157:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Xoulomon Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:43:40+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/157"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#156:opened",
+   "payload": {
+    "additions": 0,
+    "author": "JoesWalker",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "test: add tests for issues #89 and #90"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:16:38+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/156"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#156:merged",
+   "payload": {
+    "author": "JoesWalker",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T07:23:30+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/156"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#156:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@JoesWalker Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T05:16:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/156"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#155:opened",
+   "payload": {
+    "additions": 439,
+    "author": "Olisachukwuma1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "apps/backend/tests/integration/issue-68.test.ts"
+    ],
+    "title": "test(backend): implement integration tests for issue #68"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T23:43:34+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/155"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#155:merged",
+   "payload": {
+    "author": "Olisachukwuma1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:33:04+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/155"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#155:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Olisachukwuma1 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T23:43:42+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/155"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#154:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Dami24-hub",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "test: implement input validation and security pre-checks for issue #70"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T23:21:23+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/154"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#154:merged",
+   "payload": {
+    "author": "Dami24-hub",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:32:38+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/154"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#154:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Dami24-hub Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T23:21:35+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/154"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#153:opened",
+   "payload": {
+    "additions": 0,
+    "author": "Dami24-hub",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "test: implement end-to-end transaction validation for issue #71"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T23:17:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/153"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#153:merged",
+   "payload": {
+    "author": "Dami24-hub",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:31:17+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/153"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#153:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Dami24-hub Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T23:17:11+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/153"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#152:opened",
+   "payload": {
+    "additions": 124,
+    "author": "levibliz",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "scripts/deploy_testnet.sh"
+    ],
+    "title": "infra: add deploy_testnet.sh script (closes #113)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:59:22+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/152"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#152:merged",
+   "payload": {
+    "author": "levibliz",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:29:20+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/152"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#152:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@levibliz Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:59:30+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/152"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#151:opened",
+   "payload": {
+    "additions": 46,
+    "author": "levibliz",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/api-reference.md"
+    ],
+    "title": "docs: fix api-reference.md to match contract implementation (closes #107)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:46:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/151"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#151:merged",
+   "payload": {
+    "author": "levibliz",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:28:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/151"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#151:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@levibliz Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:48:44+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/151"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#150:opened",
+   "payload": {
+    "additions": 0,
+    "author": "levibliz",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "ci: add GitHub Actions CI workflow (closes #116)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:32:24+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/150"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#150:merged",
+   "payload": {
+    "author": "levibliz",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:27:17+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/150"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#150:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@levibliz Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T21:32:33+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/150"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#149:opened",
+   "payload": {
+    "additions": 174,
+    "author": "joshkirojohn212-jpg",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "IMPLEMENTATION_STATUS.md",
+     "TECHNICAL_DEEP_DIVE.md"
+    ],
+    "title": "feature:See issues.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T19:09:51+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/149"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#149:merged",
+   "payload": {
+    "author": "joshkirojohn212-jpg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:26:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/149"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#148:opened",
+   "payload": {
+    "additions": 1945,
+    "author": "joshkirojohn212-jpg",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 54,
+    "files": [
+     ".github/workflows/ci.yml",
+     "FIXES_COMPLETED.md",
+     "IMPLEMENTATION_REPORT.md",
+     "ISSUES_CHECKLIST.md",
+     "SENIOR_DEV_SUMMARY.md",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "feature:See issues.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T18:54:54+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/148"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#148:merged",
+   "payload": {
+    "author": "joshkirojohn212-jpg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-26T20:25:23+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/148"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#148:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@joshkirojohn212-jpg Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T18:55:06+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/148"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#145:opened",
+   "payload": {
+    "additions": 51,
+    "author": "yahia008",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "issues.md"
+    ],
+    "title": "Test case 91 94"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T17:23:47+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/145"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#145:merged",
+   "payload": {
+    "author": "yahia008",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T18:51:50+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/145"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#144:opened",
+   "payload": {
+    "additions": 415,
+    "author": "Olisachukwuma1",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "apps/frontend/tests/forms/validation.test.ts"
+    ],
+    "title": "test: add frontend form validation tests for issue #69"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T17:11:46+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/144"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#144:merged",
+   "payload": {
+    "author": "Olisachukwuma1",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T18:52:39+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/144"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#144:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@Olisachukwuma1 Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T17:12:07+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/144"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#141:opened",
+   "payload": {
+    "additions": 16,
+    "author": "Markadrian6399",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 30,
+    "files": [
+     "Cargo.lock",
+     "contracts/oracle/src/lib.rs"
+    ],
+    "title": "test: Add comprehensive test coverage for issues #21-30"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T15:47:57+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/141"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#141:merged",
+   "payload": {
+    "author": "Markadrian6399",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T15:56:13+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/141"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#139:opened",
+   "payload": {
+    "additions": 0,
+    "author": "akindoyinabraham0-collab",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 23,
+    "files": [
+     "contracts/escrow/src/lib.rs"
+    ],
+    "title": "fix: resolve compile errors in escrow lib.rs"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T14:09:46+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/139"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#139:merged",
+   "payload": {
+    "author": "akindoyinabraham0-collab",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T14:11:20+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/139"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#139:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@akindoyinabraham0-collab Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T14:10:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/139"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#138:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Malik6828",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "CONTRIBUTING.md"
+    ],
+    "title": "docs: add CONTRIBUTING.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T13:56:30+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/138"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#138:merged",
+   "payload": {
+    "author": "Malik6828",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T13:57:14+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/138"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#137:opened",
+   "payload": {
+    "additions": 31,
+    "author": "smiletech092-code",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 31,
+    "files": [
+     "issues.md"
+    ],
+    "title": "feat: Add sequential issue numbers to issues.md for improved tracking"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:05:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/137"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#137:merged",
+   "payload": {
+    "author": "smiletech092-code",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:43:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/137"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#137:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@smiletech092-code Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:05:14+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/137"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#134:opened",
+   "payload": {
+    "additions": 2247,
+    "author": "smiletech092-code",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "docs/api-reference.md",
+     "docs/architecture.md",
+     "docs/oracle.md",
+     "docs/security.md"
+    ],
+    "title": "docs: Add comprehensive documentation for Smile4Money platform"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T16:47:06+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/134"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#134:merged",
+   "payload": {
+    "author": "smiletech092-code",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:43:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/134"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#134:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@smiletech092-code Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T16:49:23+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/134"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#132:opened",
+   "payload": {
+    "additions": 27,
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/ci.yml",
+     "README.md"
+    ],
+    "title": "ci: add clippy job and CI badge (#121)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T13:45:59+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/132"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#132:merged",
+   "payload": {
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:43:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/132"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#131:opened",
+   "payload": {
+    "additions": 27,
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/ci.yml",
+     "README.md"
+    ],
+    "title": "infra: add clippy job and CI badge (#120)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T13:25:37+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/131"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#131:merged",
+   "payload": {
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:43:03+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/131"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#131:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@ayomidearegbeshola29-dev Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T13:25:47+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/131"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#128:opened",
+   "payload": {
+    "additions": 340,
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "docs/architecture.md",
+     "docs/oracle.md",
+     "docs/roadmap.md",
+     "docs/security.md"
+    ],
+    "title": "docs: add architecture, oracle, security, and roadmap docs (#108, #109)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T22:41:41+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/128"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#128:merged",
+   "payload": {
+    "author": "ayomidearegbeshola29-dev",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:32:43+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/128"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#128:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@ayomidearegbeshola29-dev Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T22:41:50+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/128"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#127:opened",
+   "payload": {
+    "additions": 30,
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/ci.yml",
+     "README.md",
+     "contracts/escrow/src/lib.rs"
+    ],
+    "title": "feature:Performance optimization #124 - See issues.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T18:22:12+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/127"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#127:merged",
+   "payload": {
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:27:48+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/127"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#127:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@bitstarkbridge Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T18:22:21+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/127"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#126:opened",
+   "payload": {
+    "additions": 355,
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 15,
+    "files": [
+     ".github/workflows/ci.yml",
+     "contracts/escrow/src/errors.rs",
+     "contracts/escrow/src/lib.rs",
+     "contracts/escrow/src/tests.rs",
+     "contracts/escrow/src/types.rs"
+    ],
+    "title": "feature:Performance optimization #125 - See issues.md"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T18:04:58+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/126"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#126:merged",
+   "payload": {
+    "author": "bitstarkbridge",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-24T17:07:23+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/126"
+  },
+  {
+   "evidence_id": "pr:obajecollinsmicheal-cmd/smile4money#126:comment:0",
+   "payload": {
+    "author": "drips-wave",
+    "author_is_bot": true,
+    "body": "@bitstarkbridge Great news! \ud83c\udf89 Based on an automated assessment of this PR, the linked Wave issue(s) **no longer count against your application limits**.\n\nYou can now already apply to more issues while waiting for a review of this PR. Keep up the great work! \ud83d\ude80\n\n[Learn more about application limits](https://docs.drips.network/wave/contributors/solving-issues-and-earning-rewards#application-limits)"
+   },
+   "source": "github",
+   "timestamp": "2026-04-23T18:05:08+00:00",
+   "url": "https://github.com/obajecollinsmicheal-cmd/smile4money/pull/126"
+  }
+ ],
+ "repo": "obajecollinsmicheal-cmd/smile4money",
+ "window": "pre_t"
+}
