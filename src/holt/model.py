@@ -48,6 +48,11 @@ STAGE_MODELS: dict[str, str] = {
 
 TRAJECTORY_DIR = Path("fixtures/trajectories")
 
+# Long enough for a large reasoning response, short enough that a dead connection
+# surfaces as an error in the same session rather than as an unexplained silence.
+REQUEST_TIMEOUT_S = 300.0
+MAX_RETRIES = 4
+
 
 def model_for(label: str) -> str:
     return STAGE_MODELS.get(label, SMALL)
@@ -102,7 +107,10 @@ class OpenAIModel:
                 "OPENAI_API_KEY is not set. Use --replay to reproduce recorded "
                 "results with no key and no spend."
             )
-        self._client = OpenAI()
+        # A request with no timeout can hang for hours on a half-open socket, and
+        # a recording run that stalls silently is worse than one that fails: the
+        # log simply stops and nothing says why. Bounded and retried instead.
+        self._client = OpenAI(timeout=REQUEST_TIMEOUT_S, max_retries=MAX_RETRIES)
         self.trajectory_path.parent.mkdir(parents=True, exist_ok=True)
 
     def complete(self, *, label: str, system: str, prompt: str, schema: dict) -> dict:
