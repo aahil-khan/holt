@@ -77,6 +77,9 @@ class Assessment:
     limits: str = ""
     rules: list[str] = field(default_factory=list)
     contributor_days: int = 7
+    # Rendered markdown lines from `holt.agent.landing`. Arithmetic over the file
+    # lists we already crawl; the model never sees or writes this section.
+    landing: list[str] = field(default_factory=list)
 
     def render(self) -> str:
         lines = [f"# {self.repo}", ""]
@@ -100,6 +103,8 @@ class Assessment:
             lines.append("")
         if self.limits:
             lines += ["## What could not be determined", "", self.limits, ""]
+        if self.landing:
+            lines += self.landing + [""]
         if self.claims:
             lines += ["## Evidence", ""]
             for claim in self.claims:

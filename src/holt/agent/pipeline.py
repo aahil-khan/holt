@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from holt.agent import stages
+from holt.agent import landing, stages
 from holt.agent.findings import Finding, Findings
 from holt.agent.signals import Signals, build_threads, compute
 from holt.agent.verdict import classify as decide
@@ -100,6 +100,7 @@ def analyze(
         limits=narrated["what_could_not_be_determined"],
         rules=list(rules),
         contributor_days=contributor_days,
+        landing=landing.render(landing.compute(threads)),
         claims=claims,
         method="holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)",
         replayed=model.replayed,
