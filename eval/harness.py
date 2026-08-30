@@ -133,6 +133,8 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--replay", action="store_true", help="score recorded runs, no spend")
     ap.add_argument("--resume", action="store_true", help="skip repositories already recorded")
+    ap.add_argument("--pool", default=str(POOL), help="pool file to score against")
+    ap.add_argument("--labels", default=str(LABELS), help="ground-truth file for that pool")
     ap.add_argument(
         "--run-tag",
         default="",
@@ -140,8 +142,8 @@ def main() -> None:
     )
     args = ap.parse_args()
 
-    pool = json.loads(POOL.read_text())
-    gold, ungraded = truth(json.loads(LABELS.read_text()))
+    pool = json.loads(Path(args.pool).read_text())
+    gold, ungraded = truth(json.loads(Path(args.labels).read_text()))
     repos = [r for r in pool["repos"] if r in gold]
     if args.replay:
         # Score whatever has been recorded. A partial run is still a result, as

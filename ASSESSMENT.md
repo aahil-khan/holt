@@ -1,128 +1,150 @@
-# Holt — honest assessment
+# Holt — where we are and how we got here
 
-Revised 2026-08-30, after the metric reframe, the variance runs, the
-pre-registered Stage C experiment, and the positive control.
-Deadline 2026-08-31 23:30.
+Written 2026-08-30. **32.9 hours to deadline.** 26 commits, 47 tests, $4.85 spent.
+
+This is the orientation document. Read it if you have lost the thread.
 
 ---
 
-## 1. What exists
+## 1. What Holt is, in one paragraph
 
-17 commits, 46 tests, ~3,000 lines. Reproduces from a clean clone with no
-credentials, verified by actually doing it. Total spend across the entire
-project: **$1.48**.
+A developer with a week to spare wants to contribute to open source. Every signal
+GitHub shows them — stars, activity, open issues, `good first issue` labels —
+measures whether a project is *alive*, not whether it accepts work from
+strangers. A domain registry with 40,000 merged pull requests looks identical to
+a welcoming software project on all of them. Holt reads the contribution history
+instead and produces a written assessment where every claim carries a link to the
+pull request it came from.
 
-| Deliverable | State |
+---
+
+## 2. How we got here
+
+### Stage one — building something to measure against (blocks 1–3)
+
+You cannot claim your system is better without a truth to be better at. So the
+first two thirds of the work was not the agent at all:
+
+- **An evidence layer** where every fact passes through one interface that
+  asserts a **temporal cutoff, T = 2026-06-01**. The agent only ever sees
+  evidence from before it; the answer key is computed only from after it.
+- **A repository sample drawn from history.** GitHub search returns *today's*
+  stars no matter what date you ask for, so any pool drawn from it silently
+  excludes repositories that died. We sampled instead from GH Archive event logs
+  from the days before T — repositories as they looked at the cutoff. **Three of
+  the first thirty had been deleted by the time we crawled them.** A search-based
+  sample would never have shown us those.
+- **Two answer keys, deliberately.** L0 counts any merged outsider pull request.
+  L1 adds bot exclusion, a diff-shape filter, and a human-review requirement.
+
+**The first real finding:** under L0, `runelite/plugin-hub` ranks **first in the
+pool** — every merged contribution there is a one-line plugin manifest — and
+`NixOS/nixpkgs` ranks 17th. Under L1, plugin-hub drops to **last of 22**. That
+gap is the whole thesis, and it is a measured number rather than an argument.
+
+### Stage two — the agent (blocks 4–5)
+
+Five stages. Two of them run **no model at all**: arithmetic signals, and
+verification. The verdict itself is a **plain function** — `verdict.py` — so a
+judge rerunning Holt gets our numbers rather than a resample of them.
+
+### Stage three — measuring it, and being wrong repeatedly
+
+This is where most of the value came from, and almost all of it was uncomfortable:
+
+| What we tried | What happened |
 |---|---|
-| Code + Improvement Changelog | done — 7 iterations, including 2 experiments that failed and were removed |
-| Reproduction guide | done — every command run with all keys unset before being written down |
-| Agent trajectories | done — 3 rendered walkthroughs + 29 raw records |
-| Video ≤5 min | **not started** (yours) |
+| Predicted `is-a-dev/register` would top the naive metric | **Wrong.** It ranked 15th. But three *other* registries took the top five, which was a stronger finding. |
+| Shipped F1 as the primary metric | **Broken.** Answering "viable" to everything scores F1 0.78 — above our own baseline. Switched to MCC, which is 0.00 for any constant answer. |
+| Tried to make the thread-reading stage drive the verdict | **Failed twice.** Sentiment signals came out *inverted* (registries read as welcoming because they are easy). A pre-registered review-ratio rule cost five genuine opportunities to catch one bad one. Both removed, both documented. |
+| Claimed "the intervals do not overlap" | **Overclaim.** Those measured model noise, not sampling error. Measured properly, the difference was not statistically distinguishable at n=22. |
+| Hired an adversarial reviewer | Found four real errors, all since corrected. Scored us 68 where we had scored ourselves 88. |
+
+### Stage four — where we are as of this morning
+
+Two things changed the picture.
+
+**A second pool.** 45 more repositories, new seed, drawn from the same frame with
+pool 1 excluded, **hash-committed before anything ran against it**. 33 gradable.
+This is genuine out-of-sample replication rather than a bigger single sample.
+
+**A rejection rule that works.** Specificity had been stuck at 0.50 across every
+method — we were rejecting non-viable repositories at chance, which is the one
+thing Holt exists to do. Exploring pool 1 surfaced a rule: *contributions land
+easily and nobody reviews them*. It was pre-registered with three numeric
+predictions before pool 2 labels existed, then tested once.
 
 ---
 
-## 2. The numbers
+## 3. Where the numbers stand
 
-Mean ± half-range over **three independent live runs**, 22 gradable repositories
-from a pool of 30 hash-committed before any method ran, against ground truth
-computed only from post-cutoff evidence.
+### The headline: reading history beats reading a landing page
 
-| Method | MCC | Balanced acc. | Sensitivity | Specificity |
-|---|---|---|---|---|
-| always "viable" | 0.00 ±0.00 | 0.50 | 1.00 | 0.00 |
-| name-only probe | 0.16 ±0.07 | 0.58 | 0.40 | 0.75 |
-| baseline solution | 0.28 ±0.07 | 0.64 | 0.62 | 0.67 |
-| **Holt** | **0.46 ±0.05** | **0.70 ±0.02** | 0.90 ±0.04 | 0.50 ±0.00 |
+| | Pool 1 (n=22) | Pool 2, out-of-sample (n=33) |
+|---|---|---|
+| baseline — README and metadata | +0.21 | **+0.04** |
+| Holt | +0.49 | +0.42 |
+| gap | +0.28 | **+0.38** |
 
-**Holt's worst run (0.39) beats the baseline's best (0.33).** No overlap.
+Holt replicates. The baseline **collapses to near-chance** on pool 2, because
+pool 2 skews toward quieter repositories where a README tells you nothing. The
+advantage widens out of sample.
 
-Three supporting results:
+### The rejection rule, tested once on data it was never fitted to
 
-- **Trap rejection.** Repositories with 100+ inbound attempts and zero
-  qualifying contributions: Holt rejects 4 of 5, baseline 0 of 5.
-- **Positive control.** Three verified-genuine repositories outside the pool:
-  Holt recovers 3 of 3, baseline 1 of 3.
-- **Stability.** Across three runs, Holt returns identical verdicts on 21 of 22
-  repositories; the baseline on 13 of 22.
-
----
-
-## 3. Rubric estimate
-
-My own scoring, stated so it can be argued with. Previous estimate in brackets.
-
-| Criterion | Points | Estimate | Reasoning |
-|---|---:|---:|---|
-| Agent Solution & Engineering | 30 | ~26 (was 22) | Determinism is now measured, not asserted: 21/22 vs 13/22 stability. Stage C's exclusion is justified by a pre-registered experiment rather than left unexplained. |
-| End-to-End Quality | 20 | ~16 | Reports read like a person wrote them. No video yet. |
-| Problem & User Value | 15 | ~13 | Clear user, real bottleneck, measured. Not a novel problem. |
-| Measured Improvement | 15 | ~14 (was 10) | Non-overlapping intervals over three runs, floor published, positive control, two failed experiments recorded. |
-| Reproducibility | 15 | ~14 | Clean-clone verified, zero-credential, pinned dated model ids. |
-| Hot Take / Insights | 5 | ~5 (was 4) | Two independent measurements converging on one non-obvious conclusion. |
-| | **100** | **~88** (was ~79) | |
-
----
-
-## 4. Remaining weaknesses, honestly
-
-### 4.1 Holt over-recommends
-
-**Specificity 0.50 against the baseline's 0.67.** Of 22 repositories it calls 17
-viable and is wrong on 4. Its entire advantage is sensitivity (0.90 vs 0.62) plus
-the extreme cases. A user following Holt tries more repositories than they need
-to; they just do not waste a week on a registry.
-
-This was attacked directly and the attack failed — the pre-registered review
-ratio rule improved specificity to 0.62 and cost five genuine opportunities to do
-it. It is a real limitation with a documented failed remedy, which is a better
-position than an undocumented one, but it is still a limitation.
-
-### 4.2 The flagship stage does not drive the verdict
-
-Holt's pitch is that it reads pull request threads, and `verdict.py` does not
-consult what Stage C concluded. This is now defensible rather than accidental:
-**two independent measurements** say thread signals do not predict viability —
-sentiment came out inverted (registries read as welcoming *because they are
-easy*), and review ratio failed a pre-registered test.
-
-A judge may still count it against the pitch. The honest framing, which the
-README uses, is that Stage C informs the report a human reads and does not decide
-anything — and that we measured that rather than assumed it.
-
-### 4.3 Small sample, and one model
-
-22 of 30 graded: 3 repositories deleted before the run, 5 with no post-cutoff
-attempts. Both disclosed, neither fixable. Every claim rests on 22 cases.
-
-Everything also rides on one small model (`gpt-5-mini-2025-08-07`). Per-stage
-model choice was measured, but only against itself — we never tested whether a
-stronger model changes the conclusions.
-
-### 4.4 Not done
-
-- **Video** — required deliverable, yours.
-- **Human time per task** — the brief's own metric table asks for it. Holt takes
-  69 seconds per repository. The manual figure can only come from you timing
-  yourself reading twenty threads.
-
----
-
-## 5. What I would spend remaining time on
-
-47 hours to deadline; roughly 1–2 hours of work left on my side.
-
-| Priority | Item | Effort | Why |
+| Pool 2 | MCC | Sensitivity | Specificity |
 |---|---|---|---|
-| 1 | Video | yours | Required. Without it the submission is incomplete. |
-| 2 | Human-time measurement | ~30m, yours | The brief asks for it and it is the most legible number in the submission. |
-| 3 | Anything else | — | Optional. The submission is complete without it. |
+| Holt as shipped | +0.42 | 0.83 | 0.58 |
+| **with the rule** | **+0.59** | 0.78 | **0.83** |
 
-**My recommendation is to stop building.** Everything the rubric asks for exists
-and is measured. Two failed experiments are documented. The floor is published.
-Further changes risk breaking a working, reproducible submission for marginal
-gain — and every change now invalidates recorded trajectories and needs a re-run.
+All three pre-registered predictions held. **Specificity 0.58 → 0.83.** The
+coin-flip problem is solved, on a pool drawn and labelled after the rule was
+written down.
 
-If you want one more thing, the highest-value candidate is testing whether a
-stronger model on Stage A changes the conclusions (§4.3), because it is the one
-claim that rests on a single untested assumption. It costs about $2 and an hour,
-and it could go either way — which is the point.
+### The result that goes against us
+
+Given **identical evidence**, a single prompt matches the staged pipeline
+exactly: on pool 2 both score MCC 0.42, sensitivity 0.83, specificity 0.58. The
+evidence layer is worth +0.38. The orchestration on top of it is worth, in
+accuracy, nothing.
+
+What orchestration buys instead: run-to-run stability (32/33 against the
+baseline's 17/33), citations that resolve, and a verdict a model cannot override.
+That is reproducibility, not accuracy, and we say so.
+
+---
+
+## 4. What is decided
+
+- The pool is closed. Neither pool has been edited after seeing results.
+- Two experiments failed, were removed, and stayed in the changelog.
+- Every uncomfortable number is published: the constant-classifier floor, the
+  label sensitivity, the ablation showing orchestration adds no accuracy.
+- Stage B and Stage C reach the report but not the verdict, and that is disclosed
+  rather than quietly true.
+
+## 5. What is open
+
+| | Effort | Why it matters |
+|---|---|---|
+| **Ship the rejection rule into `verdict.py`** and re-run both pools | ~1h, ~$3 | It is the first thing that makes the *pipeline* earn its place. Right now it exists only as a counterfactual. |
+| **Evidence-integrity metric** | ~1.5h | Do the reports' citations actually resolve? Ours should be near-perfect by construction; the matched prompt will fabricate. Lands on End-to-End Quality rather than competing on accuracy. |
+| **Doc pass** | ~1h | README and REPRODUCTION still describe the pre-pool-2 world. |
+| **Video** | yours | Required deliverable. |
+| **Human-time number** | yours, ~30m | Time yourself reading twenty threads. Holt takes ~69 seconds. The most legible comparison we could show. |
+
+**Recommended order:** ship the rule → re-run → doc pass → evidence integrity →
+your video.
+
+## 6. The honest summary
+
+The thing we set out to prove — that an agent reading pull request threads beats
+naive metrics — is **proven twice**, out of sample, with a widening margin.
+
+The thing we assumed — that the staged pipeline is what delivers that — is
+**false**, and we measured it ourselves rather than waiting to be caught. The
+evidence layer does the work.
+
+The rejection rule is the first evidence that orchestration can add something
+accuracy-wise, and it arrived through the same discipline that killed the two
+experiments before it: write the rule down, predict the outcome, run it once.

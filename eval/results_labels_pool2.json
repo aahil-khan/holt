@@ -1,0 +1,894 @@
+{
+ "pool_sha256": "a7cd0a663121cb1c8f70647d3b428fe80262b5dfed425e9b2534231934c690e2",
+ "l0": {
+  "BackJoaco/Sportify": {
+   "insiders_pre_t": 4,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "BigWigsMods/BigWigs": {
+   "insiders_pre_t": 16,
+   "outsider_attempts": 33,
+   "outsider_merges": 28,
+   "distinct_outsiders_merged": 9,
+   "merge_rate": 0.8484848484848485,
+   "bucket": "scored"
+  },
+  "CruGlobal/mpdx-react": {
+   "insiders_pre_t": 7,
+   "outsider_attempts": 8,
+   "outsider_merges": 7,
+   "distinct_outsiders_merged": 4,
+   "merge_rate": 0.875,
+   "bucket": "scored"
+  },
+  "Indemnity83/logistics": {
+   "insiders_pre_t": 4,
+   "outsider_attempts": 2,
+   "outsider_merges": 2,
+   "distinct_outsiders_merged": 2,
+   "merge_rate": 1.0,
+   "bucket": "scored"
+  },
+  "JhaSourav07/commitpulse": {
+   "insiders_pre_t": 72,
+   "outsider_attempts": 811,
+   "outsider_merges": 277,
+   "distinct_outsiders_merged": 62,
+   "merge_rate": 0.34155363748458695,
+   "bucket": "scored"
+  },
+  "LucasIsac/UNLaR-Connect": {
+   "insiders_pre_t": 3,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "MyFanss/MyFans": {
+   "insiders_pre_t": 78,
+   "outsider_attempts": 64,
+   "outsider_merges": 52,
+   "distinct_outsiders_merged": 27,
+   "merge_rate": 0.8125,
+   "bucket": "scored"
+  },
+  "PostHog/posthog": {
+   "insiders_pre_t": 35,
+   "outsider_attempts": 759,
+   "outsider_merges": 141,
+   "distinct_outsiders_merged": 39,
+   "merge_rate": 0.1857707509881423,
+   "bucket": "scored"
+  },
+  "RhinoERP/rhino-app": {
+   "insiders_pre_t": 8,
+   "outsider_attempts": 57,
+   "outsider_merges": 50,
+   "distinct_outsiders_merged": 2,
+   "merge_rate": 0.8771929824561403,
+   "bucket": "scored"
+  },
+  "SandeepVashishtha/Eventra": {
+   "insiders_pre_t": 27,
+   "outsider_attempts": 861,
+   "outsider_merges": 733,
+   "distinct_outsiders_merged": 15,
+   "merge_rate": 0.851335656213705,
+   "bucket": "scored"
+  },
+  "Scottcjn/Rustchain": {
+   "insiders_pre_t": 25,
+   "outsider_attempts": 863,
+   "outsider_merges": 323,
+   "distinct_outsiders_merged": 61,
+   "merge_rate": 0.3742757821552723,
+   "bucket": "scored"
+  },
+  "Signban/Signban-client": {
+   "insiders_pre_t": 4,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "alejandrofc2709/EQUIPO-FRONTEND": {
+   "insiders_pre_t": 2,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "anleaes/2026-1-SDM-Segunda-Noite-ZS-08": {
+   "insiders_pre_t": 3,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "apache/doris": {
+   "insiders_pre_t": 21,
+   "outsider_attempts": 437,
+   "outsider_merges": 181,
+   "distinct_outsiders_merged": 36,
+   "merge_rate": 0.41418764302059496,
+   "bucket": "scored"
+  },
+  "benjamincassidymetro/media-tracker-android": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 45,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": 0.0,
+   "bucket": "scored"
+  },
+  "hacs/default": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 1000,
+   "outsider_merges": 98,
+   "distinct_outsiders_merged": 93,
+   "merge_rate": 0.098,
+   "bucket": "scored"
+  },
+  "home-assistant/core": {
+   "insiders_pre_t": 30,
+   "outsider_attempts": 269,
+   "outsider_merges": 171,
+   "distinct_outsiders_merged": 66,
+   "merge_rate": 0.6356877323420075,
+   "bucket": "scored"
+  },
+  "infiniflow/ragflow": {
+   "insiders_pre_t": 30,
+   "outsider_attempts": 620,
+   "outsider_merges": 373,
+   "distinct_outsiders_merged": 85,
+   "merge_rate": 0.6016129032258064,
+   "bucket": "scored"
+  },
+  "jasoncarreira/mimir": {
+   "insiders_pre_t": 2,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "knoxiboy/DoubtDesk": {
+   "insiders_pre_t": 63,
+   "outsider_attempts": 311,
+   "outsider_merges": 202,
+   "distinct_outsiders_merged": 57,
+   "merge_rate": 0.6495176848874598,
+   "bucket": "scored"
+  },
+  "leanprover-community/mathlib4": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 1000,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": 0.0,
+   "bucket": "scored"
+  },
+  "leonagoel/hybrid-recommender": {
+   "insiders_pre_t": 24,
+   "outsider_attempts": 241,
+   "outsider_merges": 160,
+   "distinct_outsiders_merged": 43,
+   "merge_rate": 0.6639004149377593,
+   "bucket": "scored"
+  },
+  "merge-demo/mergequeue-bazel": {
+   "insiders_pre_t": 5,
+   "outsider_attempts": 437,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": 0.0,
+   "bucket": "scored"
+  },
+  "mergeworthy/learn": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 4,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": 0.0,
+   "bucket": "scored"
+  },
+  "microsoft/winget-pkgs": {
+   "insiders_pre_t": 18,
+   "outsider_attempts": 194,
+   "outsider_merges": 92,
+   "distinct_outsiders_merged": 69,
+   "merge_rate": 0.4742268041237113,
+   "bucket": "scored"
+  },
+  "nesquena/hermes-webui": {
+   "insiders_pre_t": 16,
+   "outsider_attempts": 690,
+   "outsider_merges": 78,
+   "distinct_outsiders_merged": 33,
+   "merge_rate": 0.11304347826086956,
+   "bucket": "scored"
+  },
+  "nontapat150-droid/Bonus": {
+   "insiders_pre_t": 2,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "obajecollinsmicheal-cmd/smile4money": {
+   "insiders_pre_t": 51,
+   "outsider_attempts": 162,
+   "outsider_merges": 85,
+   "distinct_outsiders_merged": 63,
+   "merge_rate": 0.5246913580246914,
+   "bucket": "scored"
+  },
+  "odoo/odoo": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 1000,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": 0.0,
+   "bucket": "scored"
+  },
+  "openclaw/openclaw": {
+   "insiders_pre_t": 22,
+   "outsider_attempts": 332,
+   "outsider_merges": 107,
+   "distinct_outsiders_merged": 25,
+   "merge_rate": 0.32228915662650603,
+   "bucket": "scored"
+  },
+  "paperclipai/paperclip": {
+   "insiders_pre_t": 1,
+   "outsider_attempts": 793,
+   "outsider_merges": 274,
+   "distinct_outsiders_merged": 13,
+   "merge_rate": 0.3455233291298865,
+   "bucket": "scored"
+  },
+  "pingcap/tidb": {
+   "insiders_pre_t": 13,
+   "outsider_attempts": 552,
+   "outsider_merges": 218,
+   "distinct_outsiders_merged": 53,
+   "merge_rate": 0.39492753623188404,
+   "bucket": "scored"
+  },
+  "plengauer/Thoth": {
+   "insiders_pre_t": 2,
+   "outsider_attempts": 25,
+   "outsider_merges": 2,
+   "distinct_outsiders_merged": 2,
+   "merge_rate": 0.08,
+   "bucket": "scored"
+  },
+  "rishabh0510rishabh/EnvForage": {
+   "insiders_pre_t": 55,
+   "outsider_attempts": 68,
+   "outsider_merges": 51,
+   "distinct_outsiders_merged": 34,
+   "merge_rate": 0.75,
+   "bucket": "scored"
+  },
+  "ritesh-1918/HELPDESK.AI": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 0,
+   "outsider_merges": 0,
+   "distinct_outsiders_merged": 0,
+   "merge_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "ronisarkarexe/story-spark-ai": {
+   "insiders_pre_t": 71,
+   "outsider_attempts": 961,
+   "outsider_merges": 503,
+   "distinct_outsiders_merged": 58,
+   "merge_rate": 0.5234131113423517,
+   "bucket": "scored"
+  },
+  "sis-inf/pulso": {
+   "insiders_pre_t": 21,
+   "outsider_attempts": 141,
+   "outsider_merges": 91,
+   "distinct_outsiders_merged": 13,
+   "merge_rate": 0.6453900709219859,
+   "bucket": "scored"
+  },
+  "spaceandtimefdn/sxt-proof-of-sql": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 470,
+   "outsider_merges": 8,
+   "distinct_outsiders_merged": 4,
+   "merge_rate": 0.01702127659574468,
+   "bucket": "scored"
+  },
+  "swiftlang/llvm-project": {
+   "insiders_pre_t": 30,
+   "outsider_attempts": 209,
+   "outsider_merges": 130,
+   "distinct_outsiders_merged": 44,
+   "merge_rate": 0.6220095693779905,
+   "bucket": "scored"
+  },
+  "tempoxyz/tempo": {
+   "insiders_pre_t": 0,
+   "outsider_attempts": 1000,
+   "outsider_merges": 423,
+   "distinct_outsiders_merged": 34,
+   "merge_rate": 0.423,
+   "bucket": "scored"
+  },
+  "termux/termux-packages": {
+   "insiders_pre_t": 24,
+   "outsider_attempts": 231,
+   "outsider_merges": 133,
+   "distinct_outsiders_merged": 30,
+   "merge_rate": 0.5757575757575758,
+   "bucket": "scored"
+  }
+ },
+ "l1": {
+  "BackJoaco/Sportify": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "BigWigsMods/BigWigs": {
+   "funnel": {
+    "attempts": 33,
+    "human": 33,
+    "merged": 28,
+    "substantive": 20,
+    "reviewed": 8
+   },
+   "qualifying_merges": 8,
+   "distinct_qualifying_contributors": 7,
+   "qualifying_rate": 0.24242424242424243,
+   "bucket": "scored"
+  },
+  "CruGlobal/mpdx-react": {
+   "funnel": {
+    "attempts": 8,
+    "human": 7,
+    "merged": 7,
+    "substantive": 5,
+    "reviewed": 5
+   },
+   "qualifying_merges": 5,
+   "distinct_qualifying_contributors": 4,
+   "qualifying_rate": 0.7142857142857143,
+   "bucket": "scored"
+  },
+  "Indemnity83/logistics": {
+   "funnel": {
+    "attempts": 2,
+    "human": 2,
+    "merged": 2,
+    "substantive": 2,
+    "reviewed": 1
+   },
+   "qualifying_merges": 1,
+   "distinct_qualifying_contributors": 1,
+   "qualifying_rate": 0.5,
+   "bucket": "scored"
+  },
+  "JhaSourav07/commitpulse": {
+   "funnel": {
+    "attempts": 811,
+    "human": 811,
+    "merged": 277,
+    "substantive": 250,
+    "reviewed": 245
+   },
+   "qualifying_merges": 245,
+   "distinct_qualifying_contributors": 57,
+   "qualifying_rate": 0.30209617755856966,
+   "bucket": "scored"
+  },
+  "LucasIsac/UNLaR-Connect": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "MyFanss/MyFans": {
+   "funnel": {
+    "attempts": 64,
+    "human": 64,
+    "merged": 52,
+    "substantive": 49,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "PostHog/posthog": {
+   "funnel": {
+    "attempts": 759,
+    "human": 322,
+    "merged": 141,
+    "substantive": 128,
+    "reviewed": 68
+   },
+   "qualifying_merges": 68,
+   "distinct_qualifying_contributors": 30,
+   "qualifying_rate": 0.2111801242236025,
+   "bucket": "scored"
+  },
+  "RhinoERP/rhino-app": {
+   "funnel": {
+    "attempts": 57,
+    "human": 57,
+    "merged": 50,
+    "substantive": 49,
+    "reviewed": 12
+   },
+   "qualifying_merges": 12,
+   "distinct_qualifying_contributors": 1,
+   "qualifying_rate": 0.21052631578947367,
+   "bucket": "scored"
+  },
+  "SandeepVashishtha/Eventra": {
+   "funnel": {
+    "attempts": 861,
+    "human": 861,
+    "merged": 733,
+    "substantive": 554,
+    "reviewed": 5
+   },
+   "qualifying_merges": 5,
+   "distinct_qualifying_contributors": 2,
+   "qualifying_rate": 0.005807200929152149,
+   "bucket": "scored"
+  },
+  "Scottcjn/Rustchain": {
+   "funnel": {
+    "attempts": 863,
+    "human": 821,
+    "merged": 295,
+    "substantive": 253,
+    "reviewed": 241
+   },
+   "qualifying_merges": 241,
+   "distinct_qualifying_contributors": 46,
+   "qualifying_rate": 0.2935444579780755,
+   "bucket": "scored"
+  },
+  "Signban/Signban-client": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "alejandrofc2709/EQUIPO-FRONTEND": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "anleaes/2026-1-SDM-Segunda-Noite-ZS-08": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "apache/doris": {
+   "funnel": {
+    "attempts": 437,
+    "human": 430,
+    "merged": 181,
+    "substantive": 155,
+    "reviewed": 155
+   },
+   "qualifying_merges": 155,
+   "distinct_qualifying_contributors": 32,
+   "qualifying_rate": 0.36046511627906974,
+   "bucket": "scored"
+  },
+  "benjamincassidymetro/media-tracker-android": {
+   "funnel": {
+    "attempts": 45,
+    "human": 45,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "hacs/default": {
+   "funnel": {
+    "attempts": 1000,
+    "human": 997,
+    "merged": 96,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "home-assistant/core": {
+   "funnel": {
+    "attempts": 269,
+    "human": 268,
+    "merged": 171,
+    "substantive": 152,
+    "reviewed": 152
+   },
+   "qualifying_merges": 152,
+   "distinct_qualifying_contributors": 62,
+   "qualifying_rate": 0.5671641791044776,
+   "bucket": "scored"
+  },
+  "infiniflow/ragflow": {
+   "funnel": {
+    "attempts": 620,
+    "human": 618,
+    "merged": 371,
+    "substantive": 296,
+    "reviewed": 181
+   },
+   "qualifying_merges": 181,
+   "distinct_qualifying_contributors": 58,
+   "qualifying_rate": 0.2928802588996764,
+   "bucket": "scored"
+  },
+  "jasoncarreira/mimir": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "knoxiboy/DoubtDesk": {
+   "funnel": {
+    "attempts": 311,
+    "human": 311,
+    "merged": 202,
+    "substantive": 168,
+    "reviewed": 67
+   },
+   "qualifying_merges": 67,
+   "distinct_qualifying_contributors": 38,
+   "qualifying_rate": 0.21543408360128619,
+   "bucket": "scored"
+  },
+  "leanprover-community/mathlib4": {
+   "funnel": {
+    "attempts": 1000,
+    "human": 952,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "leonagoel/hybrid-recommender": {
+   "funnel": {
+    "attempts": 241,
+    "human": 241,
+    "merged": 160,
+    "substantive": 115,
+    "reviewed": 92
+   },
+   "qualifying_merges": 92,
+   "distinct_qualifying_contributors": 31,
+   "qualifying_rate": 0.3817427385892116,
+   "bucket": "scored"
+  },
+  "merge-demo/mergequeue-bazel": {
+   "funnel": {
+    "attempts": 437,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "mergeworthy/learn": {
+   "funnel": {
+    "attempts": 4,
+    "human": 4,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "microsoft/winget-pkgs": {
+   "funnel": {
+    "attempts": 194,
+    "human": 193,
+    "merged": 91,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "nesquena/hermes-webui": {
+   "funnel": {
+    "attempts": 690,
+    "human": 690,
+    "merged": 78,
+    "substantive": 74,
+    "reviewed": 73
+   },
+   "qualifying_merges": 73,
+   "distinct_qualifying_contributors": 29,
+   "qualifying_rate": 0.10579710144927536,
+   "bucket": "scored"
+  },
+  "nontapat150-droid/Bonus": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "obajecollinsmicheal-cmd/smile4money": {
+   "funnel": {
+    "attempts": 162,
+    "human": 102,
+    "merged": 85,
+    "substantive": 74,
+    "reviewed": 1
+   },
+   "qualifying_merges": 1,
+   "distinct_qualifying_contributors": 1,
+   "qualifying_rate": 0.00980392156862745,
+   "bucket": "scored"
+  },
+  "odoo/odoo": {
+   "funnel": {
+    "attempts": 1000,
+    "human": 1000,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "openclaw/openclaw": {
+   "funnel": {
+    "attempts": 332,
+    "human": 305,
+    "merged": 87,
+    "substantive": 82,
+    "reviewed": 27
+   },
+   "qualifying_merges": 27,
+   "distinct_qualifying_contributors": 16,
+   "qualifying_rate": 0.08852459016393442,
+   "bucket": "scored"
+  },
+  "paperclipai/paperclip": {
+   "funnel": {
+    "attempts": 793,
+    "human": 700,
+    "merged": 204,
+    "substantive": 187,
+    "reviewed": 5
+   },
+   "qualifying_merges": 5,
+   "distinct_qualifying_contributors": 5,
+   "qualifying_rate": 0.007142857142857143,
+   "bucket": "scored"
+  },
+  "pingcap/tidb": {
+   "funnel": {
+    "attempts": 552,
+    "human": 548,
+    "merged": 217,
+    "substantive": 198,
+    "reviewed": 198
+   },
+   "qualifying_merges": 198,
+   "distinct_qualifying_contributors": 51,
+   "qualifying_rate": 0.3613138686131387,
+   "bucket": "scored"
+  },
+  "plengauer/Thoth": {
+   "funnel": {
+    "attempts": 25,
+    "human": 10,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "rishabh0510rishabh/EnvForage": {
+   "funnel": {
+    "attempts": 68,
+    "human": 68,
+    "merged": 51,
+    "substantive": 43,
+    "reviewed": 41
+   },
+   "qualifying_merges": 41,
+   "distinct_qualifying_contributors": 27,
+   "qualifying_rate": 0.6029411764705882,
+   "bucket": "scored"
+  },
+  "ritesh-1918/HELPDESK.AI": {
+   "funnel": {
+    "attempts": 0,
+    "human": 0,
+    "merged": 0,
+    "substantive": 0,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": null,
+   "bucket": "insufficient_evidence"
+  },
+  "ronisarkarexe/story-spark-ai": {
+   "funnel": {
+    "attempts": 961,
+    "human": 961,
+    "merged": 503,
+    "substantive": 353,
+    "reviewed": 15
+   },
+   "qualifying_merges": 15,
+   "distinct_qualifying_contributors": 13,
+   "qualifying_rate": 0.015608740894901144,
+   "bucket": "scored"
+  },
+  "sis-inf/pulso": {
+   "funnel": {
+    "attempts": 141,
+    "human": 138,
+    "merged": 91,
+    "substantive": 6,
+    "reviewed": 0
+   },
+   "qualifying_merges": 0,
+   "distinct_qualifying_contributors": 0,
+   "qualifying_rate": 0.0,
+   "bucket": "scored"
+  },
+  "spaceandtimefdn/sxt-proof-of-sql": {
+   "funnel": {
+    "attempts": 470,
+    "human": 470,
+    "merged": 8,
+    "substantive": 7,
+    "reviewed": 7
+   },
+   "qualifying_merges": 7,
+   "distinct_qualifying_contributors": 4,
+   "qualifying_rate": 0.014893617021276596,
+   "bucket": "scored"
+  },
+  "swiftlang/llvm-project": {
+   "funnel": {
+    "attempts": 209,
+    "human": 209,
+    "merged": 130,
+    "substantive": 92,
+    "reviewed": 55
+   },
+   "qualifying_merges": 55,
+   "distinct_qualifying_contributors": 32,
+   "qualifying_rate": 0.2631578947368421,
+   "bucket": "scored"
+  },
+  "tempoxyz/tempo": {
+   "funnel": {
+    "attempts": 1000,
+    "human": 975,
+    "merged": 423,
+    "substantive": 262,
+    "reviewed": 244
+   },
+   "qualifying_merges": 244,
+   "distinct_qualifying_contributors": 30,
+   "qualifying_rate": 0.25025641025641027,
+   "bucket": "scored"
+  },
+  "termux/termux-packages": {
+   "funnel": {
+    "attempts": 231,
+    "human": 227,
+    "merged": 133,
+    "substantive": 101,
+    "reviewed": 89
+   },
+   "qualifying_merges": 89,
+   "distinct_qualifying_contributors": 25,
+   "qualifying_rate": 0.3920704845814978,
+   "bucket": "scored"
+  }
+ },
+ "unavailable": [
+  "UnsafeLabs/Bounty-Hunters",
+  "hvduong2k5/KPI-Management-Java-Backend",
+  "yigitkonur/skills-by-yigitkonur-secondary"
+ ]
+}

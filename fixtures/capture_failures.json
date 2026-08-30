@@ -3,7 +3,6 @@
  "UnsafeLabs/Bounty-Hunters:post_t": "HTTPStatusError: Server error '502 Bad Gateway' for url 'https://api.github.com/graphql'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502",
  "hvduong2k5/KPI-Management-Java-Backend:pre_t": "RuntimeError: GraphQL error: [{'type': 'NOT_FOUND', 'path': ['repository'], 'locations': [{'line': 4, 'column': 3}], 'message': \"Could not resolve to a Repository with the name 'hvduong2k5/KPI-Management-Java-Backend'.\"}]",
  "hvduong2k5/KPI-Management-Java-Backend:post_t": "RuntimeError: GraphQL error: [{'type': 'NOT_FOUND', 'path': ['repository'], 'locations': [{'line': 4, 'column': 3}], 'message': \"Could not resolve to a Repository with the name 'hvduong2k5/KPI-Management-Java-Backend'.\"}]",
- "swiftlang/llvm-project:post_t": "HTTPStatusError: Server error '502 Bad Gateway' for url 'https://api.github.com/graphql'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502",
  "yigitkonur/skills-by-yigitkonur-secondary:pre_t": "RuntimeError: GraphQL error: [{'type': 'NOT_FOUND', 'path': ['repository'], 'locations': [{'line': 4, 'column': 3}], 'message': \"Could not resolve to a Repository with the name 'yigitkonur/skills-by-yigitkonur-secondary'.\"}]",
  "yigitkonur/skills-by-yigitkonur-secondary:post_t": "RuntimeError: GraphQL error: [{'type': 'NOT_FOUND', 'path': ['repository'], 'locations': [{'line': 4, 'column': 3}], 'message': \"Could not resolve to a Repository with the name 'yigitkonur/skills-by-yigitkonur-secondary'.\"}]"
 }
