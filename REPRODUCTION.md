@@ -35,7 +35,7 @@ uv sync
 uv run pytest -rs
 ```
 
-**Expected:** `47 passed`, no skips. The `-rs` flag reports skipped tests
+**Expected:** `71 passed`, no skips. The `-rs` flag reports skipped tests
 explicitly — a skipped test is not a passing one.
 
 Two of these are load-bearing rather than incidental: `eval/test_independence.py`

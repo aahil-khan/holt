@@ -844,3 +844,79 @@ combined-pool rule was fixed before pool 2 was scored; and the pool-1 result was
 published as a tie rather than as the win the nixpkgs row (0.67 against 0.00)
 would have supported on its own. Every one of those was a chance to fool
 ourselves that we declined in advance rather than resisted in the moment.
+
+---
+
+## Iteration 14 — the coverage query, and shipping a feature that lost (2026-08-30)
+
+**A five-minute query decided Path Finder, and it was a property of the inputs
+rather than a slice on outcomes.** Before cutting on the tie or keeping on
+sentiment, we asked one thing: *how many of the 25 scorable repositories have any
+beginner-labelled issue at all?*
+
+```
+13/25  have none at all
+17/25  have fewer than 3 — the label cannot fill a top-3 there
+497/3,613 candidate issues carry a beginner label (13.8%)
+```
+
+**On 17 of 17 label-absent repositories, `good_first` scored identically to
+recency, to the decimal.** With nothing labelled, the comparator reorders nothing
+— it *is* recency wearing the label's name. So "we tied the `good first issue`
+label" was, on two thirds of the pool, "we tied recency". That is a flaw in how we
+reported our own comparator, and it was ours to find.
+
+**Path Finder ships, and ships losing.** Every rendered ranking now carries this,
+emitted by the renderer rather than by any caller, so no code path can print a
+ranking without it:
+
+> **This ranking is not measurably better than picking at random.** precision@3
+> was 0.173 for this ranking, 0.187 for GitHub's `good first issue` label and
+> 0.151 for a random pick — differences well inside noise. It is printed anyway
+> because 13 of those 25 repositories had no beginner-labelled issue at all.
+
+A test asserts both that the disclaimer accompanies any ranking and that its
+printed numbers track the recorded measurement, so the two cannot drift.
+
+**One function now serves both the CLI and the harness**, and the candidate set is
+defined once in `holt.issues`, owned by neither the agent nor the label modules.
+If the ranked set and the scored set could drift, every precision number would be
+meaningless. Replay proves the refactor is prompt-identical: both pools reproduce
+their previous scores exactly, to three decimals.
+
+**The isolation test we said existed did not exist.** `CLAUDE.md` and three module
+docstrings claimed a test enforced that `eval/labels/` cannot import
+`src/holt/agent/`. Nothing did. A documented-and-unenforced guarantee is worse
+than an undocumented one, because a reader trusts it. It is now checked
+structurally with `ast`, so even an unexecuted import fails.
+
+**The fresh-clone check found somebody else's credentials, not ours.** Sweeping a
+clean clone for key material turned up **13 credential-shaped strings across 7
+fixtures**, including two full-length GitHub personal access tokens pasted into
+public issue bodies. One appeared twice in the same issue — once normally, once
+**reversed**, to defeat scanners.
+
+Ours were clean; these were third parties'. Crawling public issues that contain
+leaked keys is unavoidable, but redistributing them inside a submitted artifact is
+a choice, and we declined it. Scrubbing now runs on the way to disk and *before*
+the content hash, so the committed hash describes the committed bytes. Two tiers:
+recognised formats everywhere, plus long opaque runs inside a record that already
+tripped tier one — which is what catches the reversed copy. Records keep their
+evidence id, so every citation still resolves, and carry a `redacted` flag.
+
+All 59 verdict trajectories and all 25 ranking trajectories still replay with zero
+stale keys: **none of the removed strings had reached a prompt.** A test now walks
+every committed fixture and fails on any credential-shaped string — the check that
+would have caught this before the first capture was committed.
+
+**Fresh clone, no credentials, verified end to end:** `uv sync`, **71 passed**,
+`holt analyze --replay` renders, `--days 90` re-answers with zero model calls, and
+`eval/pathfinder_harness.py --replay` reproduces the published ranking numbers.
+
+**The README's engineering section was resequenced, same facts.** It now leads
+with what the orchestration *buys* — the pre-registered rejection rule that took
+out-of-sample specificity from 0.58 to 0.83, and the day budget that re-answers
+the question at zero model calls — and states what it does not buy immediately
+after. Previously a reader met "orchestration adds no accuracy" before meeting
+either. The ablation reads better as the evidence that makes the first claim
+credible than as a retraction of it.
