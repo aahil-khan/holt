@@ -18,6 +18,19 @@ from holt.evidence.provider import EvidenceProvider
 from holt.model import ModelClient
 from holt.report import Assessment, Claim, Verdict
 
+MAX_CLAIM_CHARS = 240
+MAX_QUOTE_CHARS = 180
+
+
+def clip(text: str, limit: int) -> str:
+    """Cut on a word boundary. Cutting mid-word reads as a bug, because it is one."""
+    text = " ".join(text.split())
+    if len(text) <= limit:
+        return text
+    head = text[:limit]
+    cut = max(head.rfind(" "), head.rfind(". "))
+    return (head[:cut] if cut > limit // 2 else head).rstrip(" ,;:.") + "…"
+
 
 @dataclass(slots=True)
 class Trace:
@@ -59,8 +72,8 @@ def analyze(
         k: v for k, v in signals.as_dict().items()
         if k not in ("reviewed_share", "merge_rate")
     }
-    summary = stages.narrate(
-        repo, verdict.value, rules, findings, narrated_signals, model
+    narrated = stages.narrate(
+        repo, verdict.value, rules, findings, narrated_signals, model, contributor_days
     )
 
     # The evidence list is built from verified findings, not written by the
@@ -68,15 +81,25 @@ def analyze(
     claims: list[Claim] = []
     for item in findings:
         if item.field == "thread_outcome":
-            text = f"{item.value['signal']}: {item.value['outcome']} — “{item.value['quote'][:160]}”"
+            outcome = item.value["outcome"].replace("_", " ")
+            quote = (item.value.get("quote") or "").strip()
+            # An empty quote used to render as a pair of quotation marks with
+            # nothing between them, which reads as a bug because it is one.
+            text = (f"{outcome} — “{clip(quote, MAX_QUOTE_CHARS)}”" if quote
+                    else f"{outcome}, nothing said")
         else:
-            text = f"{item.field} = {item.value}" + (f" ({item.note})" if item.note else "")
-        claims.append(Claim(text=text[:400], evidence_id=item.evidence_ids[0]))
+            text = f"{item.field.replace('_', ' ')}: {item.value}" + (
+                f" — {clip(item.note, MAX_CLAIM_CHARS)}" if item.note else "")
+        claims.append(Claim(text=text, evidence_id=item.evidence_ids[0]))
 
     assessment = Assessment(
         repo=repo,
         verdict=verdict,
-        summary=summary,
+        summary=narrated["what_the_evidence_shows"],
+        bottom_line=narrated["bottom_line"],
+        limits=narrated["what_could_not_be_determined"],
+        rules=list(rules),
+        contributor_days=contributor_days,
         claims=claims,
         method="holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)",
         replayed=model.replayed,

@@ -360,30 +360,59 @@ def assess_opportunity(
     )
 
 
-NARRATE_SYSTEM = """You write the short assessment a careful contributor would leave
-after an afternoon reading a repository's pull requests.
+NARRATE_SYSTEM = """You write the assessment a careful contributor would leave
+after an afternoon reading a repository's pull requests, for someone deciding
+where to spend a limited number of days.
 
 You are given a verdict that has already been decided. You do not revisit it,
-soften it, or argue with it -- you explain what it rests on, in plain prose.
+soften it, or argue with it -- you explain what it rests on.
 
-Write like notes to a colleague: specific, unhurried, no headings, no bullet
-lists, no score. Where the evidence is thin, say it is thin. "I could not
-determine this" is a better sentence than a confident one that outruns what was
-read."""
+Three parts, each doing a different job:
 
+**bottom_line** -- two sentences at most, addressed to the reader as "you", and
+concrete about what they would be walking into. Not a restatement of the verdict
+word. "Your pull request will get a reply within a day, but half of newcomers
+here never got one" beats "this repository appears welcoming".
+
+**what_the_evidence_shows** -- plain prose, no headings and no bullet lists, the
+way you would write to a colleague. **Two or three short paragraphs, separated by
+a blank line, and under 200 words in total.** One unbroken block is something a
+reader has to mine rather than read. Lead with the fact that mattered most rather
+than with a summary of everything, and leave out anything that does not change
+the decision. Quote a maintainer where a quote does the work
+better than a paraphrase. Numbers are only useful next to what they mean: "0.8
+hours to first reply" is worth writing as fast, "63 threads ignored" is worth
+writing as most.
+
+**what_could_not_be_determined** -- one sentence, or empty if there is nothing
+honest to put there. Do not invent a limitation to look rigorous, and do not
+list something the evidence in front of you actually settles.
+
+Never say a contribution will be accepted. Never describe work as easy. Where the
+evidence is thin, say it is thin -- "I could not determine this" is a better
+sentence than a confident one that outruns what was read."""
+
+# Three fields rather than one blob. The old single `summary` produced a
+# 250-word paragraph that a reader had to mine for the decision, which is the
+# shape of an answer nobody proof-read.
 NARRATE_SCHEMA = {
     "type": "object",
-    "properties": {"summary": {"type": "string"}},
-    "required": ["summary"],
+    "properties": {
+        "bottom_line": {"type": "string"},
+        "what_the_evidence_shows": {"type": "string"},
+        "what_could_not_be_determined": {"type": "string"},
+    },
+    "required": ["bottom_line", "what_the_evidence_shows", "what_could_not_be_determined"],
     "additionalProperties": False,
 }
 
 
 def narrate(
     repo: str, verdict: str, trace: list[str], findings: Findings, signals_dict: dict,
-    model: ModelClient,
-) -> str:
-    lines = [f"Repository: {repo}", f"Verdict (already decided, do not change): {verdict}", ""]
+    model: ModelClient, contributor_days: int = 7,
+) -> dict:
+    lines = [f"Repository: {repo}", f"Verdict (already decided, do not change): {verdict}",
+             f"The reader has {contributor_days} day(s) to spend.", ""]
     lines += ["Why the rules landed there:"] + [f"  - {t}" for t in trace]
     lines += ["", "Measured before the cutoff:"]
     lines += [f"  {k}: {v}" for k, v in signals_dict.items()]
@@ -396,7 +425,7 @@ def narrate(
         system=NARRATE_SYSTEM,
         prompt="\n".join(lines),
         schema=NARRATE_SCHEMA,
-    )["summary"]
+    )
 
 
 PATHFINDER_SYSTEM = """You are helping an outside developer -- someone with no

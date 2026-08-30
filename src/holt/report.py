@@ -24,6 +24,15 @@ class Verdict(str, Enum):
     INSUFFICIENT_EVIDENCE = "insufficient_evidence"
 
 
+# The verdict word alone tells a reader almost nothing. These say what it means
+# for the decision they are actually making.
+VERDICT_HEADLINES = {
+    Verdict.VIABLE: "Worth your time",
+    Verdict.NOT_VIABLE: "Not worth your time",
+    Verdict.INSUFFICIENT_EVIDENCE: "Not enough evidence to say",
+}
+
+
 @dataclass(frozen=True, slots=True)
 class Claim:
     """A statement with the evidence id that backs it.
@@ -60,6 +69,14 @@ class Assessment:
     method: str = "holt"
     replayed: bool = False
     entry_points: list[EntryPoint] = field(default_factory=list)
+    # Added, never replacing: `summary` still holds the prose. A reader deciding
+    # where to spend a week needs the answer before the reasoning, and the rules
+    # are printed because "which rule fired" is a question a chat answer cannot
+    # be asked.
+    bottom_line: str = ""
+    limits: str = ""
+    rules: list[str] = field(default_factory=list)
+    contributor_days: int = 7
 
     def render(self) -> str:
         lines = [f"# {self.repo}", ""]
@@ -68,10 +85,23 @@ class Assessment:
                 "> Replaying recorded model output. No model was called for this run.",
                 "",
             ]
-        lines += [f"**Verdict:** {self.verdict.value}", f"**Method:** {self.method}", ""]
-        lines += [self.summary, ""]
+        budget = f"for a contributor with {self.contributor_days} day"
+        budget += "" if self.contributor_days == 1 else "s"
+        lines += [f"**{VERDICT_HEADLINES[self.verdict]}** — {budget}.", ""]
+        if self.bottom_line:
+            lines += [self.bottom_line, ""]
+        if self.summary:
+            lines += ["## What the evidence shows", "", self.summary, ""]
+        if self.rules:
+            # The deterministic part, shown rather than described. `verdict.py`
+            # decided this and the prose above could not have changed it.
+            lines += ["## What decided it", ""]
+            lines += [f"- {rule}" for rule in self.rules]
+            lines.append("")
+        if self.limits:
+            lines += ["## What could not be determined", "", self.limits, ""]
         if self.claims:
-            lines.append("## Evidence")
+            lines += ["## Evidence", ""]
             for claim in self.claims:
                 where = f" — `{claim.evidence_id}`" if claim.evidence_id else ""
                 lines.append(f"- {claim.text}{where}")
@@ -86,4 +116,5 @@ class Assessment:
                 lines.append(f"- **{point.first_step}** — `{point.evidence_id}`")
                 if point.why:
                     lines.append(f"  {point.why}")
+        lines += ["", f"*{self.method}*"]
         return "\n".join(lines).rstrip() + "\n"
