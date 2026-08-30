@@ -1283,3 +1283,73 @@ yesterday); the trap remained for every other caller. The default is now
 moment, the one caller that genuinely wants T (the benchmark fixture capture)
 passes it explicitly, and a test pins the default above T. An evaluation
 device was reachable from the product path; it no longer is.
+
+---
+
+---
+
+---
+
+## Iteration 22 — a terminal interface, built without the engine noticing (2026-08-30)
+
+**Tried.** A Textual TUI over the existing pipeline: a live view that streams the
+run, and an assessment view that makes the finished report navigable. The
+requirement that shaped every decision was that the headless path stays
+authoritative — the interface must be a way of *watching* a stage, never a second
+way of *running* one.
+
+**Why.** The orchestration's central behaviour is invisible in the CLI output.
+Stage D drops a claim whose evidence id does not resolve, and today that shows up
+only as a stderr comment behind `--show-verification`. The thing the project is
+actually about is the least visible thing it does.
+
+**The design question was where the event stream comes from.** The obvious move
+is a callback threaded through `pipeline.analyze`. That puts a UI concern in the
+reproduction path and hands the eval harness a parameter it has no use for.
+
+**What was built instead: the interface wraps the pipeline's two inputs.**
+`ObservingModel` and `ObservingProvider` are pure delegates around the
+`ModelClient` and `EvidenceProvider` that `analyze` already takes. Stage
+transitions come from the labels passed to `complete`. And Stage D's drop needs no
+hook at all, because the drop *is* `provider.resolve()` returning `None` — watching
+resolution is enough to see it happen.
+
+**Zero engine edits.** `holt/agent/`, `holt/report.py`, `holt/evidence/` and
+`eval/` are byte-identical. A test asserts the point directly: the assessment
+produced with the observers in place renders identically to the one produced
+without them.
+
+**The one honest coupling is pinned.** `observe.py` reads each stage's structured
+response so the live view can show a claim appear *before* Stage D judges it, which
+means it mirrors key names owned by `stages.py`. A test replays real recorded
+trajectories and fails if any expected key stops being produced — because a live
+view that silently renders nothing looks like a working interface with a quiet
+repository behind it, which is the worst failure mode available to this feature.
+
+**Evidence, from real replays rather than constructed fixtures.** A sweep of all
+60 recorded trajectories found exactly two repositories where Stage D actually
+drops something. `Sistema-de-certificacion-academica` is the one the interface is
+demonstrated on: the model asserted `onboarding = absent` and cited
+`no_contributing_file`, an id it invented. The lookup fails, the claim is dropped,
+and it does not reach the reader — 15 findings in, 14 out.
+
+**Design.** Colour does three jobs and no others: verdict state, evidence
+resolution, Stage D drops. No background is painted, so the app sits on the
+terminal's own ground and reads correctly on a light or dark profile without a
+theme switch. `not_viable` is clay rather than red — it is a finding about a
+repository, not a failure of the tool. `insufficient_evidence` is grey, because an
+absence of evidence has not earned a colour. There are no progress bars: a bar
+would need a denominator the pipeline does not know, and the count of threads read
+is a real number.
+
+**The reading order's negative result is given more room than the ranking it
+qualifies.** No warning colour, no collapsing behind a keystroke, and the four
+precision figures are a table rather than a sentence, because the point is that
+they sit on top of each other. Every number is read from `entry.MEASURED`, so the
+interface cannot drift from the measurement.
+
+**Textual is an optional extra and nothing else imports it.** `uv sync` with no
+extra: **79 passed, 1 skipped** — the skip is the screen tests, reporting
+themselves absent rather than failing. `uv sync --extra tui`: 5 screen tests pass
+on top. `holt tui` without the extra prints how to install it and exits 2. The
+observation layer's 8 tests run either way, because it does not import Textual.
