@@ -37,6 +37,52 @@ One says a newcomer can land work here. The other says don't bother.
 
 ---
 
+## "Why not just paste it into ChatGPT?"
+
+The fair answer is that **we measured that, and it is a scored arm in the
+evaluation.** `baseline` is one prompt over the README and the repository
+metadata, which is what a person actually pastes. `probe` is the repository name
+alone with no evidence at all, which is what asking a chat model from memory
+gets you.
+
+| What you did | MCC |
+|---|---|
+| Asked a model that already knows the repo, name only | 0.16 |
+| **Pasted the README and the numbers into one prompt** | **0.28** |
+| Ran Holt | **0.46** |
+
+**The premise is where the work hides.** "The same GitHub information" is not
+pasteable. Per repository, Holt assembles a median of **642 evidence records and
+253,000 characters** across **200 pull-request conversations** — a **44×** ratio
+against the ~11,900 characters of README, CONTRIBUTING and landing-page numbers a
+person can realistically copy. Seeing it by hand means opening about **202
+github.com pages**; across this evaluation, **11,636**. Reproduce with
+`PYTHONPATH=. uv run python eval/evidence_volume.py`.
+
+And the pasteable material is not a smaller sample of the same thing. It contains
+**no review states, no reply latencies, and no record of what happened to anyone
+who tried** — which is the entire question.
+
+Four properties follow from being a pipeline rather than a conversation, none of
+which a chat transcript has:
+
+- **Provable claims.** Every statement carries an evidence id; 696/696 resolve to
+  a real thread. A chat answer cannot be checked without redoing the work.
+- **A bounded, honest horizon.** Every fact passes a cutoff assertion, so the
+  answer cannot come from what the model remembers. We also bound what memory
+  alone buys: **MCC 0.16**.
+- **The same answer twice.** Holt returns identical verdicts on 21 of 22
+  repositories across three runs. The one-prompt baseline manages 13 of 22.
+- **It says no.** A written, versioned rejection rule rather than an agreeable
+  paragraph — and it is the one change that measurably improved accuracy
+  (specificity 0.58 → 0.83, out of sample).
+
+**What Holt is not is a better analyst.** We have measured four separate times
+that the model layer adds nothing over arithmetic, and we publish each one below.
+The value is in assembly, provability, determinism and refusal.
+
+---
+
 ## Result
 
 Measured over a pool of 30 repositories drawn and hash-committed **before any

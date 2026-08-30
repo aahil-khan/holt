@@ -1,0 +1,556 @@
+{
+ "per_repo": [
+  {
+   "repo": "AlvarOnce/rancho",
+   "records": 259,
+   "chars": 58348,
+   "threads": 81,
+   "pasteable_chars": 721,
+   "pages": 83
+  },
+  {
+   "repo": "AseemPrasad/Legalassist-AI",
+   "records": 435,
+   "chars": 96372,
+   "threads": 200,
+   "pasteable_chars": 12668,
+   "pages": 202
+  },
+  {
+   "repo": "DefiLlama/dimension-adapters",
+   "records": 1495,
+   "chars": 2080502,
+   "threads": 200,
+   "pasteable_chars": 782,
+   "pages": 202
+  },
+  {
+   "repo": "GregoIribarren94/Lendly-android-client",
+   "records": 46,
+   "chars": 22695,
+   "threads": 22,
+   "pasteable_chars": 4203,
+   "pages": 24
+  },
+  {
+   "repo": "Homebrew/homebrew-cask",
+   "records": 606,
+   "chars": 71310,
+   "threads": 200,
+   "pasteable_chars": 7134,
+   "pages": 202
+  },
+  {
+   "repo": "Lucent-Financial-Group/Zeta",
+   "records": 1079,
+   "chars": 468112,
+   "threads": 200,
+   "pasteable_chars": 19166,
+   "pages": 202
+  },
+  {
+   "repo": "NixOS/nixpkgs",
+   "records": 449,
+   "chars": 185903,
+   "threads": 200,
+   "pasteable_chars": 18061,
+   "pages": 202
+  },
+  {
+   "repo": "NousResearch/hermes-agent",
+   "records": 397,
+   "chars": 156314,
+   "threads": 200,
+   "pasteable_chars": 26505,
+   "pages": 202
+  },
+  {
+   "repo": "Pasta-Devs/Marinara-Engine",
+   "records": 996,
+   "chars": 1284315,
+   "threads": 200,
+   "pasteable_chars": 23966,
+   "pages": 202
+  },
+  {
+   "repo": "PerryTS/perry",
+   "records": 394,
+   "chars": 149933,
+   "threads": 200,
+   "pasteable_chars": 19298,
+   "pages": 202
+  },
+  {
+   "repo": "SecureBananaLabs/bug-bounty",
+   "records": 262,
+   "chars": 115299,
+   "threads": 200,
+   "pasteable_chars": 4123,
+   "pages": 202
+  },
+  {
+   "repo": "Silver-Zhang/linux-cmd-helper",
+   "records": 42,
+   "chars": 37167,
+   "threads": 16,
+   "pasteable_chars": 31978,
+   "pages": 18
+  },
+  {
+   "repo": "Sistema-de-certificacion-academica/Sistema-de-certificacion-academica",
+   "records": 103,
+   "chars": 27530,
+   "threads": 51,
+   "pasteable_chars": 217,
+   "pages": 53
+  },
+  {
+   "repo": "anurag3407/career-pilot",
+   "records": 1314,
+   "chars": 1886327,
+   "threads": 200,
+   "pasteable_chars": 4567,
+   "pages": 202
+  },
+  {
+   "repo": "esengine/DeepSeek-Reasonix",
+   "records": 749,
+   "chars": 371484,
+   "threads": 200,
+   "pasteable_chars": 17731,
+   "pages": 202
+  },
+  {
+   "repo": "google-test/signclav2-probe-repo",
+   "records": 571,
+   "chars": 108257,
+   "threads": 200,
+   "pasteable_chars": 347,
+   "pages": 202
+  },
+  {
+   "repo": "is-a-dev/register",
+   "records": 771,
+   "chars": 611443,
+   "threads": 200,
+   "pasteable_chars": 4269,
+   "pages": 202
+  },
+  {
+   "repo": "netwrix/docs",
+   "records": 830,
+   "chars": 679491,
+   "threads": 200,
+   "pasteable_chars": 18298,
+   "pages": 202
+  },
+  {
+   "repo": "open-jarvis/OpenJarvis",
+   "records": 498,
+   "chars": 161879,
+   "threads": 200,
+   "pasteable_chars": 17540,
+   "pages": 202
+  },
+  {
+   "repo": "opencollective/opencollective-frontend",
+   "records": 959,
+   "chars": 1194651,
+   "threads": 200,
+   "pasteable_chars": 7510,
+   "pages": 202
+  },
+  {
+   "repo": "runelite/plugin-hub",
+   "records": 830,
+   "chars": 223217,
+   "threads": 200,
+   "pasteable_chars": 11289,
+   "pages": 202
+  },
+  {
+   "repo": "space-wizards/space-station-14",
+   "records": 922,
+   "chars": 280294,
+   "threads": 200,
+   "pasteable_chars": 5438,
+   "pages": 202
+  },
+  {
+   "repo": "stablyai/orca",
+   "records": 404,
+   "chars": 89802,
+   "threads": 200,
+   "pasteable_chars": 13182,
+   "pages": 202
+  },
+  {
+   "repo": "tscircuit/kicad-to-circuit-json",
+   "records": 540,
+   "chars": 252760,
+   "threads": 117,
+   "pasteable_chars": 4504,
+   "pages": 119
+  },
+  {
+   "repo": "utksh1/SecuScan",
+   "records": 1044,
+   "chars": 407801,
+   "threads": 200,
+   "pasteable_chars": 22546,
+   "pages": 202
+  },
+  {
+   "repo": "vellum-ai/vellum-assistant",
+   "records": 1078,
+   "chars": 625015,
+   "threads": 200,
+   "pasteable_chars": 15321,
+   "pages": 202
+  },
+  {
+   "repo": "volcengine/OpenViking",
+   "records": 975,
+   "chars": 635506,
+   "threads": 200,
+   "pasteable_chars": 26527,
+   "pages": 202
+  },
+  {
+   "repo": "BackJoaco/Sportify",
+   "records": 90,
+   "chars": 22539,
+   "threads": 42,
+   "pasteable_chars": 342,
+   "pages": 44
+  },
+  {
+   "repo": "BigWigsMods/BigWigs",
+   "records": 445,
+   "chars": 56202,
+   "threads": 200,
+   "pasteable_chars": 317,
+   "pages": 202
+  },
+  {
+   "repo": "CruGlobal/mpdx-react",
+   "records": 1492,
+   "chars": 663307,
+   "threads": 200,
+   "pasteable_chars": 12657,
+   "pages": 202
+  },
+  {
+   "repo": "Indemnity83/logistics",
+   "records": 831,
+   "chars": 1437415,
+   "threads": 200,
+   "pasteable_chars": 10827,
+   "pages": 202
+  },
+  {
+   "repo": "JhaSourav07/commitpulse",
+   "records": 2301,
+   "chars": 1049690,
+   "threads": 200,
+   "pasteable_chars": 25833,
+   "pages": 202
+  },
+  {
+   "repo": "LucasIsac/UNLaR-Connect",
+   "records": 149,
+   "chars": 89938,
+   "threads": 55,
+   "pasteable_chars": 8005,
+   "pages": 57
+  },
+  {
+   "repo": "MyFanss/MyFans",
+   "records": 642,
+   "chars": 222353,
+   "threads": 200,
+   "pasteable_chars": 17028,
+   "pages": 202
+  },
+  {
+   "repo": "PostHog/posthog",
+   "records": 1273,
+   "chars": 1041820,
+   "threads": 200,
+   "pasteable_chars": 15086,
+   "pages": 202
+  },
+  {
+   "repo": "RhinoERP/rhino-app",
+   "records": 514,
+   "chars": 435434,
+   "threads": 168,
+   "pasteable_chars": 334,
+   "pages": 170
+  },
+  {
+   "repo": "SandeepVashishtha/Eventra",
+   "records": 549,
+   "chars": 222153,
+   "threads": 200,
+   "pasteable_chars": 11900,
+   "pages": 202
+  },
+  {
+   "repo": "Scottcjn/Rustchain",
+   "records": 1305,
+   "chars": 790707,
+   "threads": 200,
+   "pasteable_chars": 22641,
+   "pages": 202
+  },
+  {
+   "repo": "Signban/Signban-client",
+   "records": 36,
+   "chars": 6547,
+   "threads": 16,
+   "pasteable_chars": 1351,
+   "pages": 18
+  },
+  {
+   "repo": "alejandrofc2709/EQUIPO-FRONTEND",
+   "records": 12,
+   "chars": 3465,
+   "threads": 5,
+   "pasteable_chars": 348,
+   "pages": 7
+  },
+  {
+   "repo": "anleaes/2026-1-SDM-Segunda-Noite-ZS-08",
+   "records": 237,
+   "chars": 42598,
+   "threads": 118,
+   "pasteable_chars": 350,
+   "pages": 120
+  },
+  {
+   "repo": "apache/doris",
+   "records": 1623,
+   "chars": 1226248,
+   "threads": 200,
+   "pasteable_chars": 19023,
+   "pages": 202
+  },
+  {
+   "repo": "benjamincassidymetro/media-tracker-android",
+   "records": 33,
+   "chars": 12966,
+   "threads": 19,
+   "pasteable_chars": 2716,
+   "pages": 21
+  },
+  {
+   "repo": "hacs/default",
+   "records": 513,
+   "chars": 253457,
+   "threads": 200,
+   "pasteable_chars": 614,
+   "pages": 202
+  },
+  {
+   "repo": "home-assistant/core",
+   "records": 1231,
+   "chars": 594672,
+   "threads": 200,
+   "pasteable_chars": 1879,
+   "pages": 202
+  },
+  {
+   "repo": "infiniflow/ragflow",
+   "records": 1092,
+   "chars": 2052298,
+   "threads": 200,
+   "pasteable_chars": 13585,
+   "pages": 202
+  },
+  {
+   "repo": "jasoncarreira/mimir",
+   "records": 747,
+   "chars": 713794,
+   "threads": 200,
+   "pasteable_chars": 13739,
+   "pages": 202
+  },
+  {
+   "repo": "knoxiboy/DoubtDesk",
+   "records": 1475,
+   "chars": 854187,
+   "threads": 200,
+   "pasteable_chars": 20056,
+   "pages": 202
+  },
+  {
+   "repo": "leanprover-community/mathlib4",
+   "records": 1054,
+   "chars": 745620,
+   "threads": 200,
+   "pasteable_chars": 9513,
+   "pages": 202
+  },
+  {
+   "repo": "leonagoel/hybrid-recommender",
+   "records": 4805,
+   "chars": 2009510,
+   "threads": 200,
+   "pasteable_chars": 25506,
+   "pages": 202
+  },
+  {
+   "repo": "merge-demo/mergequeue-bazel",
+   "records": 593,
+   "chars": 91927,
+   "threads": 200,
+   "pasteable_chars": 3119,
+   "pages": 202
+  },
+  {
+   "repo": "mergeworthy/learn",
+   "records": 46,
+   "chars": 23056,
+   "threads": 28,
+   "pasteable_chars": 9430,
+   "pages": 30
+  },
+  {
+   "repo": "microsoft/winget-pkgs",
+   "records": 508,
+   "chars": 146412,
+   "threads": 150,
+   "pasteable_chars": 16428,
+   "pages": 152
+  },
+  {
+   "repo": "nesquena/hermes-webui",
+   "records": 722,
+   "chars": 625585,
+   "threads": 200,
+   "pasteable_chars": 20954,
+   "pages": 202
+  },
+  {
+   "repo": "nontapat150-droid/Bonus",
+   "records": 286,
+   "chars": 48876,
+   "threads": 142,
+   "pasteable_chars": 218,
+   "pages": 144
+  },
+  {
+   "repo": "obajecollinsmicheal-cmd/smile4money",
+   "records": 288,
+   "chars": 80849,
+   "threads": 110,
+   "pasteable_chars": 11059,
+   "pages": 112
+  },
+  {
+   "repo": "odoo/odoo",
+   "records": 575,
+   "chars": 148333,
+   "threads": 200,
+   "pasteable_chars": 3355,
+   "pages": 202
+  },
+  {
+   "repo": "openclaw/openclaw",
+   "records": 908,
+   "chars": 1203770,
+   "threads": 200,
+   "pasteable_chars": 25429,
+   "pages": 202
+  },
+  {
+   "repo": "paperclipai/paperclip",
+   "records": 574,
+   "chars": 1031909,
+   "threads": 200,
+   "pasteable_chars": 22096,
+   "pages": 202
+  },
+  {
+   "repo": "pingcap/tidb",
+   "records": 1845,
+   "chars": 2510460,
+   "threads": 200,
+   "pasteable_chars": 11847,
+   "pages": 202
+  },
+  {
+   "repo": "plengauer/Thoth",
+   "records": 872,
+   "chars": 287084,
+   "threads": 200,
+   "pasteable_chars": 23660,
+   "pages": 202
+  },
+  {
+   "repo": "rishabh0510rishabh/EnvForage",
+   "records": 1260,
+   "chars": 1614815,
+   "threads": 200,
+   "pasteable_chars": 22064,
+   "pages": 202
+  },
+  {
+   "repo": "ritesh-1918/HELPDESK.AI",
+   "records": 3,
+   "chars": 14512,
+   "threads": 0,
+   "pasteable_chars": 14512,
+   "pages": 2
+  },
+  {
+   "repo": "ronisarkarexe/story-spark-ai",
+   "records": 1119,
+   "chars": 535745,
+   "threads": 200,
+   "pasteable_chars": 18213,
+   "pages": 202
+  },
+  {
+   "repo": "sis-inf/pulso",
+   "records": 360,
+   "chars": 65484,
+   "threads": 158,
+   "pasteable_chars": 11527,
+   "pages": 160
+  },
+  {
+   "repo": "spaceandtimefdn/sxt-proof-of-sql",
+   "records": 256,
+   "chars": 85718,
+   "threads": 200,
+   "pasteable_chars": 12803,
+   "pages": 202
+  },
+  {
+   "repo": "swiftlang/llvm-project",
+   "records": 969,
+   "chars": 181734,
+   "threads": 200,
+   "pasteable_chars": 3856,
+   "pages": 202
+  },
+  {
+   "repo": "tempoxyz/tempo",
+   "records": 787,
+   "chars": 667066,
+   "threads": 200,
+   "pasteable_chars": 8366,
+   "pages": 202
+  },
+  {
+   "repo": "termux/termux-packages",
+   "records": 878,
+   "chars": 241856,
+   "threads": 200,
+   "pasteable_chars": 17103,
+   "pages": 202
+  }
+ ]
+}
