@@ -18,6 +18,8 @@ def signals(**over) -> Signals:
         bot_share=0.1,
         distinct_outsider_authors=4,
         distinct_merged_authors=4,
+        reviewed_share=0.5,
+        merge_rate=0.4,
     )
     base.update(over)
     return Signals(**base)
@@ -107,3 +109,42 @@ def test_many_ignored_attempts_still_reads_as_hostile():
         signals(outsider_threads=40, outsider_merged=0, outsider_ignored=36),
     )
     assert v is Verdict.NOT_VIABLE
+
+
+def test_a_rubber_stamp_is_rejected_even_when_everything_else_looks_healthy():
+    """Landing easily and drawing no review is the registry signature."""
+    v, trace = classify(
+        findings(repo_kind="real_software"),
+        signals(reviewed_share=0.09, merge_rate=0.69),
+    )
+    assert v is Verdict.NOT_VIABLE
+    assert any("waved through unread" in t for t in trace)
+
+
+def test_unreviewed_but_hard_to_land_is_not_a_rubber_stamp():
+    """nixpkgs merges without visible review because review happened elsewhere.
+
+    This is the case that killed the first rejection rule, so it has a test.
+    """
+    v, _ = classify(
+        findings(repo_kind="real_software"),
+        signals(reviewed_share=0.09, merge_rate=0.15),
+    )
+    assert v is Verdict.VIABLE
+
+
+def test_reviewed_and_easy_to_land_is_a_welcoming_project():
+    v, _ = classify(
+        findings(repo_kind="real_software"),
+        signals(reviewed_share=0.80, merge_rate=0.75),
+    )
+    assert v is Verdict.VIABLE
+
+
+def test_the_time_budget_changes_what_counts_as_too_slow():
+    """A five-day median reply is fine with three months and fatal with three days."""
+    s = signals(median_first_response_hours=120.0)
+    assert classify(findings(repo_kind="real_software"), s, contributor_days=90)[0] is Verdict.VIABLE
+    v, trace = classify(findings(repo_kind="real_software"), s, contributor_days=3)
+    assert v is Verdict.INSUFFICIENT_EVIDENCE
+    assert any("3-day budget" in t for t in trace)

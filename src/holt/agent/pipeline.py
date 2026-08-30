@@ -31,7 +31,10 @@ class Trace:
 
 
 def analyze(
-    repo: str, provider: EvidenceProvider, model: ModelClient
+    repo: str,
+    provider: EvidenceProvider,
+    model: ModelClient,
+    contributor_days: int = 7,
 ) -> tuple[Assessment, Trace]:
     records = provider.fetch(repo)
     threads = build_threads(records)
@@ -45,9 +48,19 @@ def analyze(
     before = len(findings)
     findings, dropped = verify(findings, provider)
 
-    verdict, rules = decide(findings, signals)
+    verdict, rules = decide(findings, signals, contributor_days)
+    # The narration prompt is deliberately held to the signal fields that existed
+    # when the trajectories were recorded. New signals reach the *verdict*
+    # immediately but only reach the prose on the next re-record, so adding one
+    # does not invalidate every committed trajectory and break replay for a judge.
+    # When a new signal changes the outcome it still reaches the narrator, via
+    # the rule trace.
+    narrated_signals = {
+        k: v for k, v in signals.as_dict().items()
+        if k not in ("reviewed_share", "merge_rate")
+    }
     summary = stages.narrate(
-        repo, verdict.value, rules, findings, signals.as_dict(), model
+        repo, verdict.value, rules, findings, narrated_signals, model
     )
 
     # The evidence list is built from verified findings, not written by the

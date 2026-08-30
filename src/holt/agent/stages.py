@@ -168,8 +168,13 @@ Cite the exact evidence id shown for each thread, in full, including the
   ignored                    nobody replied at all
 
 Signal is what the thread tells a prospective contributor: welcoming, neutral,
-or discouraging. Quote the words you judged from, verbatim and short. Cite only
-pull request ids you were given."""
+or discouraging.
+
+Quote the words you judged from, verbatim and short, copied exactly from the
+thread. If a thread shows NO_REPLIES there is nothing to quote: return an empty
+quote rather than describing the silence. Never quote the scaffolding around the
+thread -- only what a person actually wrote. Cite only pull request ids you were
+given."""
 
 OUTCOMES_SCHEMA = {
     "type": "object",
@@ -245,7 +250,10 @@ def _render_thread(t: Thread) -> str:
         f"    files: {t.files[:4]}",
     ]
     if not t.responses:
-        lines.append("    (no replies from anyone)")
+        # Deliberately not a quotable sentence. The previous wording read like
+        # thread content and the model quoted it back as evidence, which the
+        # evidence-integrity check caught: 80 of 528 quotes were this scaffold.
+        lines.append("    NO_REPLIES")
     for when, who, body in sorted(t.responses)[:6]:
         speaker = "AUTHOR" if who == t.author else who
         lines.append(f"    [{speaker}] {' '.join((body or '').split())[:600]}")

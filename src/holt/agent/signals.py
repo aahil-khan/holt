@@ -149,6 +149,12 @@ class Signals:
     bot_share: float
     distinct_outsider_authors: int
     distinct_merged_authors: int
+    # Share of merged threads where somebody other than the author, and not a
+    # bot, said anything at all. Mechanical, over every merge -- not the
+    # twelve-thread model-judged sample that the first rejection rule used and
+    # which is the likeliest reason that attempt failed.
+    reviewed_share: float | None
+    merge_rate: float | None
 
     def as_dict(self) -> dict:
         return {
@@ -160,11 +166,14 @@ class Signals:
             "bot_share": round(self.bot_share, 3),
             "distinct_outsider_authors": self.distinct_outsider_authors,
             "distinct_merged_authors": self.distinct_merged_authors,
+            "reviewed_share": self.reviewed_share,
+            "merge_rate": self.merge_rate,
         }
 
 
 def compute(threads: dict[str, Thread]) -> Signals:
     outsiders = newcomer_threads(threads)
+    merged_threads = [t for t in threads.values() if t.merged]
     latencies = [h for t in outsiders if (h := t.first_response_hours) is not None]
     bots = sum(1 for t in threads.values() if t.author_is_bot)
 
@@ -181,4 +190,10 @@ def compute(threads: dict[str, Thread]) -> Signals:
         # with 15 merges and 72 first-time attempters was reported as "15
         # merges from 72 people".
         distinct_merged_authors=len({t.author for t in outsiders if t.merged}),
+        reviewed_share=(
+            sum(1 for t in merged_threads if t.engaged) / len(merged_threads)
+            if merged_threads else None
+        ),
+        merge_rate=(len(outsiders) and sum(1 for t in outsiders if t.merged) / len(outsiders))
+        or (None if not outsiders else 0.0),
     )

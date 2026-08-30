@@ -685,3 +685,57 @@ being reframed away.
 **What it points at.** Specificity is 0.50–0.54 across *every* method including
 the constant answers. We reject non-viable repositories at close to chance, and
 rejection is the thing this project exists to do. That is the next entry.
+
+---
+
+## Iteration 11 — shipping a validated rule, and measuring whether our citations hold up (2026-08-30)
+
+**Shipped: the rubber-stamp rejection rule.** Validated out-of-sample on pool 2
+before shipping — specificity 0.58 → 0.83, all three pre-registered predictions
+holding. Rejects when `reviewed_share < 0.20` *and* `merge_rate > 0.60`:
+contributions land easily and nobody looks at them. Both halves are required,
+and the test suite pins the case that killed the previous attempt — `nixpkgs`
+merges without visible review but is *hard* to land in, so it is not a rubber
+stamp.
+
+**The contributor's time budget is now a parameter, not an assumption.** Every
+time-shaped threshold scales from `--days` (default 7). A maintainer whose median
+reply is five days is fine with three months and useless with three days, and
+that is the same repository with a different answer.
+
+This is also the clearest thing the orchestration buys that a single prompt
+cannot: **re-running with a different budget costs zero model calls**, because
+the findings are already computed and only `verdict.py` re-runs. A prompt has to
+pay for the whole assessment again.
+
+**New evaluation dimension: evidence integrity.** Accuracy is not the only thing
+a report can be wrong about. A claim can cite a pull request that does not exist,
+or quote words never said in it. Neither appears in a confusion matrix.
+
+| Method | Citations resolving | Quotes | Faithful to source |
+|---|---|---|---|
+| Holt | **696/696 (100%)** | 528 | 420/528 (80%) |
+| evidence-matched prompt | 638/638 (100%) | **0** | not measurable |
+
+**Two predictions of ours failed here, and both are informative.**
+
+We expected the matched prompt to fabricate citations. It does not — 100% of its
+638 references resolve, because it copies ids it was shown. The real difference
+is not honesty, it is **auditability**: it emits no quotes at all, so there is
+nothing to check. Holt makes claims that can be falsified; the prompt makes
+claims that cannot.
+
+We also expected Holt's fidelity to be near-perfect. It is 80%, and Stage D
+guarantees nothing here — it checks that an id *exists*, never that the evidence
+*says* what the claim says. That gap is ours and it is now measured.
+
+**The metric immediately found a defect in our own prompt.** Of 108 unfaithful
+quotes, **80 were our own scaffolding**: `_render_thread` printed
+"(no replies from anyone)" for a silent thread, which reads like thread content,
+and the model quoted it back as evidence. Excluding that artefact, fidelity is
+**94%**. The scaffold is now `NO_REPLIES`, unquotable by construction, and Stage C
+is explicitly told to return an empty quote rather than describe silence.
+
+**Not yet re-measured.** The prompt change invalidates recorded trajectories by
+design, and the corrected figure will come from the final frozen run rather than
+being estimated here.

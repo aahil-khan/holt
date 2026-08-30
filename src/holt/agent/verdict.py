@@ -24,8 +24,22 @@ NON_SOFTWARE_KINDS = {"registry", "awesome_list", "portfolio", "course_material"
 # Kinds where outside contribution is not accepted regardless of activity.
 CLOSED_KINDS = {"mirror"}
 
-# A week. Past this, a newcomer has moved on before anyone replied.
-SLOW_RESPONSE_HOURS = 168.0
+# How long the contributor has. Everything time-shaped scales from this, because
+# "is this repository worth my time" has no answer independent of how much time
+# you have: a maintainer who replies in five days is fine if you have three
+# months and useless if you have three days.
+DEFAULT_CONTRIBUTOR_DAYS = 7
+
+# Rubber-stamp rejection. Validated out-of-sample on pool 2 -- specificity 0.58
+# to 0.83 with all three pre-registered predictions holding. Thresholds were
+# chosen on pool 1 and that fitting is disclosed in eval/PREREGISTRATION-2.md.
+#
+# Both halves are required. Landing easily alone describes a welcoming project;
+# going unreviewed alone describes a project whose review happens elsewhere,
+# which is what killed the first rejection rule when nixpkgs was withheld. It is
+# the conjunction that describes work being waved through unread.
+RUBBER_STAMP_REVIEWED_MAX = 0.20
+RUBBER_STAMP_MERGE_RATE_MIN = 0.60
 
 # One merge from one person is an anecdote; two people is a pattern.
 MIN_MERGES = 2
@@ -42,9 +56,20 @@ IGNORED_SHARE = 0.7
 MIN_ATTEMPTS_FOR_HOSTILE = 8
 
 
-def classify(findings: Findings, signals: Signals) -> tuple[Verdict, list[str]]:
-    """Return a verdict and the rule trace that produced it."""
+def classify(
+    findings: Findings,
+    signals: Signals,
+    contributor_days: int = DEFAULT_CONTRIBUTOR_DAYS,
+) -> tuple[Verdict, list[str]]:
+    """Return a verdict and the rule trace that produced it.
+
+    `contributor_days` is the time the person actually has. Re-running this
+    function with a different budget costs nothing and calls no model, because
+    the findings are already computed -- which is a thing a single prompt cannot
+    do without paying for the whole assessment again.
+    """
     trace: list[str] = []
+    slow_response_hours = contributor_days * 24.0
     kind = findings.get("repo_kind")
 
     if findings.get("is_archived"):
@@ -77,7 +102,7 @@ def classify(findings: Findings, signals: Signals) -> tuple[Verdict, list[str]]:
 
     slow = (
         signals.median_first_response_hours is not None
-        and signals.median_first_response_hours > SLOW_RESPONSE_HOURS
+        and signals.median_first_response_hours > slow_response_hours
     )
     if (
         signals.outsider_merged >= MIN_MERGES
@@ -91,12 +116,25 @@ def classify(findings: Findings, signals: Signals) -> tuple[Verdict, list[str]]:
             f"{signals.distinct_outsider_authors}; median first response "
             f"{signals.median_first_response_hours}h"
         )
+        if (
+            signals.reviewed_share is not None
+            and signals.merge_rate is not None
+            and signals.reviewed_share < RUBBER_STAMP_REVIEWED_MAX
+            and signals.merge_rate > RUBBER_STAMP_MERGE_RATE_MIN
+        ):
+            trace.append(
+                f"but only {signals.reviewed_share:.0%} of merges drew any human "
+                f"reply while {signals.merge_rate:.0%} of attempts landed: work is "
+                "being waved through unread, so a contribution here buys no review"
+            )
+            return Verdict.NOT_VIABLE, trace
         return Verdict.VIABLE, trace
 
     if slow:
         trace.append(
             f"median first response {signals.median_first_response_hours}h "
-            f"exceeds {SLOW_RESPONSE_HOURS}h"
+            f"exceeds the {slow_response_hours:.0f}h a {contributor_days}-day "
+            "budget allows"
         )
     if signals.outsider_merged == 0 and ignored_share > IGNORED_SHARE:
         trace.append(

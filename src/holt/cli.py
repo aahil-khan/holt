@@ -35,7 +35,7 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     if args.baseline:
         assessment = baseline.assess(repo, provider, client)
     else:
-        assessment, trace = pipeline.analyze(repo, provider, client)
+        assessment, trace = pipeline.analyze(repo, provider, client, contributor_days=args.days)
         if args.show_verification:
             print(
                 f"<!-- findings before verification: {trace.before_verification}, "
@@ -71,6 +71,12 @@ def main(argv: list[str] | None = None) -> int:
         "--replay",
         action="store_true",
         help="replay recorded model output; no API key, no spend",
+    )
+    analyze.add_argument(
+        "--days",
+        type=int,
+        default=7,
+        help="how many days you actually have; everything time-shaped scales from it",
     )
     analyze.add_argument(
         "--show-verification",

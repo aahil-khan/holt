@@ -43,6 +43,18 @@ def test_a_second_contribution_is_not_a_first_one():
     assert compute(threads).outsider_merged == 1
 
 
+def test_reviewed_share_and_merge_rate_are_computed_over_every_merge():
+    threads = build_threads([
+        rec("pr:a/b#1:opened", 0, "sam"), rec("pr:a/b#1:merged", 2, "sam"),
+        rec("pr:a/b#1:comment:0", 1, "maintainer"),
+        rec("pr:a/b#2:opened", 4, "kim"), rec("pr:a/b#2:merged", 5, "kim"),
+        rec("pr:a/b#3:opened", 6, "lee"),
+    ])
+    s = compute(threads)
+    assert s.reviewed_share == 0.5      # one of two merges drew a reply
+    assert round(s.merge_rate, 2) == 0.67  # two of three attempts landed
+
+
 def test_bots_are_never_newcomers():
     threads = build_threads([
         EvidenceRecord("pr:a/b#1:opened", "github", "https://x", T0,
