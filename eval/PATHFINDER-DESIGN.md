@@ -1,9 +1,10 @@
-> **Outcome: cut.** Built, evaluated on both pools, and withdrawn on
-> 2026-08-30. Combined precision@3 over 25 repositories: Holt 0.173 against
+> **Outcome: measured, ship/cut decision open.** Built, evaluated on both
+> pools, and withdrawn from the pipeline on 2026-08-30 pending a final call. Combined precision@3 over 25 repositories: Holt 0.173 against
 > the `good first issue` label's 0.187 (paired difference -0.013, 95% CI
 > [-0.133, +0.120], sign test p = 0.51). That is cut condition 2 below,
 > written before implementation. The document is kept unedited above the
-> line so the design can be read against what it produced.
+> line so the design can be read against what it produced. See `ASSESSMENT.md`
+> for the three options still live.
 
 ---
 

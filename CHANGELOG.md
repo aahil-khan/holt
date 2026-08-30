@@ -819,9 +819,13 @@ already puts on the issue for free**.
 
 **Cut condition 2, written before a line of it existed, is met:** *"the
 `good first issue` comparator matches Holt's precision — the feature then has no
-argument for existing."* Path Finder does not ship. `find_paths` stays in the
-tree marked as cut, and the evaluation stays runnable, because the negative
-result is worth more than a quietly deleted branch.
+argument for existing."* `find_paths` is therefore withdrawn from the shipped
+pipeline pending a final ship/cut call; nothing is deleted and the evaluation
+stays runnable, because the negative result is worth more than a quietly deleted
+branch. The open question is whether to ship the ranking with the losing
+measurement printed in the tool's own output, which keeps the capability without
+making the claim. That decision is recorded in `ASSESSMENT.md` and is not yet
+made.
 
 **What it cost to find out: $0.14 and about four hours.** What it bought is the
 knowledge that our headline claim is about *repository-level* viability, and that

@@ -144,14 +144,64 @@ That is reproducibility, not accuracy, and we say so.
   our own prompt on its first run — 80 of 108 unfaithful quotes were Holt's own
   scaffolding being quoted back as evidence.
 
-**Path Finder: built, measured, cut.** Combined over 25 repositories it scores
-precision@3 0.173 against the `good first issue` label's 0.187 — indistinguishable
-from a label GitHub applies for free (paired difference −0.013, 95% CI
-[−0.133, +0.120], sign test p = 0.51). That is cut condition 2 from the design
-document, written before implementation. It cost $0.14 to learn, it does not
-ship, and the evaluation stays runnable so the negative result is checkable.
-Holt's claim is about repository-level viability; we have no evidence for
-issue-level guidance and now say so.
+**Path Finder: built, measured, decision open.** It is the one thing in the
+project whose fate is not settled, so it gets the full record here.
+
+*What it does.* Given a repository already judged viable, rank the issues open at
+the cutoff by how likely an outsider is to land a merged pull request resolving
+one. Ground truth was designed before implementation
+([`eval/PATHFINDER-DESIGN.md`](eval/PATHFINDER-DESIGN.md)): an issue is a
+*realised entry point* if it was later closed by a merged pull request from
+someone who had not already landed work in that repository.
+
+*What it scores.* Combined over both pools, 25 scorable repositories, precision@3:
+
+| Method | precision@3 |
+|---|---|
+| random (base rate) | 0.151 |
+| recency | 0.160 |
+| `good first issue` label | **0.187** |
+| Holt | **0.173** |
+
+Paired per repository, Holt − label is **−0.013, 95% CI [−0.133, +0.120]**, 3
+wins / 6 losses / 16 ties, sign test **p = 0.51**. The honest reading is not that
+Holt is worse — it is that after ranking 3,613 issues we **cannot distinguish our
+ranking from a label GitHub applies for free**. Total cost to find out: $0.14.
+
+*The case for cutting.* Cut condition 2 of the design document, written before a
+line of the feature existed, reads: *"the `good first issue` comparator matches
+Holt's precision — the feature then has no argument for existing."* That is met
+verbatim. The premise of the feature was that existing signals do not tell an
+outsider where to start; if the free label ranks as well as we do, the premise is
+false. And because the measurement lives in our own repository, shipping the
+ranking anyway is the single move most likely to make the rest of the honesty
+look like theatre.
+
+*The case against cutting.* The per-repository pattern is not flat. Holt scores
+1.00 where the label scores 0.00 on `JhaSourav07/commitpulse`, 0.67 against 0.00
+on `NixOS/nixpkgs`, 0.33 against 0.00 on `PostHog/posthog` — and loses on smaller
+repositories where a maintainer curates the label by hand. There may be a real
+effect where the label is useless at scale and Holt is not. **This is post-hoc
+slicing on n = 25 with 16 ties, and it is exactly the move pre-registration
+exists to prevent.** It is recorded as a hypothesis, not a finding.
+
+*The three live options.*
+
+| | What ships | Cost |
+|---|---|---|
+| **1. Ship the ranking, drop the claim** | Entry points appear in the assessment, and the tool's own output states "this ranking is not measurably better than GitHub's `good first issue` label — 0.173 vs 0.187 over 25 repositories" | ~20 min |
+| **2. Cut** | Nothing user-facing; `find_paths` stays in the tree marked as withdrawn, harness stays runnable | done already |
+| **3. Pre-register the subgroup** | Declare "Holt beats the label on repositories with more than N open issues" *before* scoring, then test it | ~40 min, likely underpowered |
+
+**Current state of the tree: option 2 is what is committed** — `find_paths` is
+annotated as cut and is not called by `pipeline.analyze`. Nothing is deleted, so
+options 1 and 3 remain about twenty minutes of work away. **The decision is
+yours and is not made.**
+
+*One side finding worth keeping regardless:* the post-cutoff issue-body edit rate
+is 86/2,678 on pool 2 (3.2%) against 9/935 on pool 1 (1.0%), 95/3,613 combined
+(2.6%). Pool 1 alone understated the leak threefold — a small argument for two
+pools that has nothing to do with Path Finder.
 
 **Open:**
 
