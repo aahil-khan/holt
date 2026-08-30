@@ -19,13 +19,16 @@ Replayed from committed fixtures and recorded model output. No model ran.
  "outsider_ignored": 200,
  "median_first_response_hours": null,
  "bot_share": 0.0,
- "distinct_outsider_authors": 38
+ "distinct_outsider_authors": 38,
+ "distinct_merged_authors": 0,
+ "reviewed_share": null,
+ "merge_rate": 0.0
 }
 ```
 
 ## 3. Stage A — what kind of repository is this?
 
-*Model:* `gpt-5-mini-2025-08-07` · *1308 in / 462 out tokens · $0.0013*
+*Model:* `gpt-5-mini-2025-08-07` · *1308 in / 511 out tokens · $0.0013*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -127,11 +130,11 @@ Backend architecture follows:
 {
  "repo_kind": "real_software",
  "confidence": "high",
- "rationale": "The README describes a full-stack monorepo with runnable apps (Next.js frontend, Express backend), packages (Prisma schema, shared UI), run scripts, and database schema \u2014 all indicating this is an actual software project rather than a registry or docs-only repo. The contributing file references code merges and bounty payments tied to merged PRs, further implying real code changes are the meaningful merges. (See README for app/package layout and run commands; CONTRIBUTING for PR/merge behavior.)",
+ "rationale": "The repository is a runnable full\u2011stack monorepo: README documents a Next.js frontend (apps/web), an Express backend (apps/api), and shared packages including a Prisma schema (packages/db) and UI components (packages/ui). It includes run/test commands and describes routes, models, and runtime concerns (auth, payments, middleware), which indicates changes would be to executable application code rather than registry entries or a curated list. CONTRIBUTING also refers to merged PRs and tests, consistent with active software development rather than a registry or mirror.",
  "evidence_ids": [
   "repo:SecureBananaLabs/bug-bounty:readme",
-  "repo:SecureBananaLabs/bug-bounty:contributing",
-  "repo:SecureBananaLabs/bug-bounty:meta"
+  "repo:SecureBananaLabs/bug-bounty:meta",
+  "repo:SecureBananaLabs/bug-bounty:contributing"
  ],
  "governance_flags": [
   "none"
@@ -141,7 +144,7 @@ Backend architecture follows:
 
 ## 4. Stage B — is there a real route in?
 
-*Model:* `gpt-5-mini-2025-08-07` · *1107 in / 479 out tokens · $0.0012*
+*Model:* `gpt-5-mini-2025-08-07` · *1107 in / 707 out tokens · $0.0017*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -209,17 +212,17 @@ Thank you for contributing to this bug bounty repository.
 ```json
 {
  "onboarding": "substantive",
- "rationale": "The repository provides concrete onboarding steps and a clear contributor workflow. The README includes setup and run commands (npm install; npm run dev -w apps/web and apps/api) and notes where configuration (.env, Prisma schema) lives. The CONTRIBUTING file gives a specific, actionable process for proposing and doing work: pick an open issue, comment you\u2019re working on it, create a branch, implement and test changes for that single issue, and open a PR that references the issue; it also spells out PR requirements, review/merge rules, and bounty eligibility tied to merging to main. These items together constitute a real route for an outsider to start contributing and seek payment (evidence: repo:SecureBananaLabs/bug-bounty:readme, repo:SecureBananaLabs/bug-bounty:contributing).",
+ "rationale": "The repository provides a clear, followable route for outsiders: the CONTRIBUTING file defines a step-by-step contribution workflow (pick an open issue, comment you\u2019re working on it, create a branch, implement changes for that single issue, open a PR that references the issue) and rules for PR scope, review, and bounty eligibility. The README supplies basic setup/run instructions (npm install, npm run test, dev commands for frontend/backend) and notes required environment variables and the Prisma schema location, so a contributor can run and validate changes locally. These materials point outsiders to open GitHub issues as the place to find or propose work and describe how maintainers handle reviews/merges. ",
  "evidence_ids": [
-  "repo:SecureBananaLabs/bug-bounty:readme",
-  "repo:SecureBananaLabs/bug-bounty:contributing"
+  "repo:SecureBananaLabs/bug-bounty:contributing",
+  "repo:SecureBananaLabs/bug-bounty:readme"
  ]
 }
 ```
 
 ## 5. Stage C — what happened to people who tried?
 
-*Model:* `gpt-5-mini-2025-08-07` · *2315 in / 3093 out tokens · $0.0068*
+*Model:* `gpt-5-mini-2025-08-07` · *2364 in / 2966 out tokens · $0.0065*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -253,8 +256,13 @@ Cite the exact evidence id shown for each thread, in full, including the
   ignored                    nobody replied at all
 
 Signal is what the thread tells a prospective contributor: welcoming, neutral,
-or discouraging. Quote the words you judged from, verbatim and short. Cite only
-pull request ids you were given.
+or discouraging.
+
+Quote the words you judged from, verbatim and short, copied exactly from the
+thread. If a thread shows NO_REPLIES there is nothing to quote: return an empty
+quote rather than describing the silence. Never quote the scaffolding around the
+thread -- only what a person actually wrote. Cite only pull request ids you were
+given.
 ```
 </details>
 
@@ -284,49 +292,64 @@ Pull request threads:
    "pr_id": "pr:SecureBananaLabs/bug-bounty#3185:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "Update: I added scope for my issue #3186 (POST /api/payments auth + notification server-owned id/read) in this same PR after additional hardening."
+   "quote": ""
   },
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#3062:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "Quick follow-up from my side: this PR is ready for review and I can apply any requested adjustments immediately."
+   "quote": ""
   },
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#3063:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "This PR is ready for review and I can patch any requested changes fast. Happy to adapt to maintainer feedback."
+   "quote": ""
   },
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#3128:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "/claim #30"
+   "quote": ""
   },
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#3050:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "Patch is intentionally small and scoped to validation + tests only."
+   "quote": ""
   },
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#3227:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "Added a demo GIF to the PR body to satisfy the parent bounty's video/demo requirement:"
+   "quote": ""
   },
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#2969:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "Bounty eligibility note: I created issue #2975 under the parent bounty #743 as my own issue for this work. This PR addresses #2975"
+   "quote": ""
   },
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#3053:opened",
    "outcome": "ignored",
    "signal": "discouraging",
-   "quote": "Reviewer-ready summary... Scope is narrow 
+   "quote": ""
+  },
+  {
+   "pr_id": "pr:SecureBananaLabs/bug-bounty#2949:opened",
+   "outcome": "closed_with_guidance",
+   "signal": "neutral",
+   "quote": "[AUTHOR] Closing this PR as there is already an existing PR (#2851) by the issue creator that addresses this."
+  },
+  {
+   "pr_id": "pr:SecureBananaLabs/bug-bounty#2979:opened",
+   "outcome": "closed_with_guidance",
+   "signal": "neutral",
+   "quote": "[AUTHOR] Closing this myself after a broader overlap refresh found existing open issues/PRs for the same unsupported OAuth provider surface (#814, #1566, #2919, PR #817, PR #1027, PR #1568, PR #1980, PR #2093, PR #2194, PR #2920). This should not stay in review or be counted as a claim."
+  },
+  {
+   "pr_i
 ```
 
 ## 6. Stage D — verification (tool calls, no model)
@@ -363,25 +386,41 @@ The verdict above was passed to Stage E as an input it cannot change.
 
 > Replaying recorded model output. No model was called for this run.
 
-**Verdict:** not_viable
-**Method:** holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)
+**Not worth your time** — for a contributor with 7 days.
 
-I read through the PR threads and the repository documentation and concluded the not_viable verdict rests on a simple, well-supported pattern: outsiders follow the project’s explicit onboarding and PR process (the README and CONTRIBUTING lay out runnable apps, how to set up, how to pick an issue and open a PR, and state that bounties/payments are tied to merged PRs), but maintainers do not engage with outsider contributions. Measured behavior before the cutoff: 200 outsider threads, 200 ignored, 0 merged, 38 distinct outside authors, median first-response time is absent, and no bot activity to explain triage. Many PRs are explicitly marked “ready for review” or otherwise request feedback (quotes above show that contributors offered quick follow-ups, small-scoped patches, willingness to adapt, and /claim or /attempt notes), yet the threads received no maintainer replies. A few PRs were closed but typically by the author pointing to duplicates or closing after discovering overlapping work, not by maintainers merging or providing review guidance. The combination of a real codebase with an actionable contributor workflow and repeatedly ignored outsider PRs is the basis for the finding that the repository is not viable for outsiders seeking bounties via merged PRs. I could not see any on-repo evidence of private/alternate maintainer communication or merges that happened off-thread after the cutoff, so that remains a possible but unverified caveat.
+If you spend a week here, expect to write code that receives no maintainer reply and is unlikely to be merged: in our sample 200 outsider PRs got zero responses and none were merged. The repo has usable CONTRIBUTING and a runnable codebase, but maintainer review activity is effectively absent so your time is unlikely to produce a merged change.
+
+## What the evidence shows
+
+The decisive signal is inaction: 200 outsider threads by 38 distinct external authors were recorded, outsider_merged = 0 and outsider_ignored = 200, and there is no measurable first-response time. Most open PRs show only author descriptions and no maintainer reviews, approvals, or merges; the thread outcome signal is consistently "ignored."
+
+This lack of response is not due to missing onboarding. The repository is a runnable full‑stack monorepo with a clear CONTRIBUTING file and test/run instructions, so outsiders can follow the workflow. Two PRs were self-closed by contributors with notes such as "[AUTHOR] Closing this PR as there is already an existing PR (#2851) by the issue creator that addresses this," which indicates contributors are resolving overlap themselves rather than receiving maintainer guidance.
+
+## What decided it
+
+- 200/200 outsider attempts drew no response and none merged
+
+## What could not be determined
+
+I could not determine whether maintainers triage or respond to contributions off‑GitHub (private channels) or plan to resume visible review activity after the sampled period.
 
 ## Evidence
-- repo_kind = real_software (The README describes a full-stack monorepo with runnable apps (Next.js frontend, Express backend), packages (Prisma schema, shared UI), run scripts, and database schema — all indicating this is an actual software project rather than a registry or docs-only repo. The contributing file references code merges and bounty payments tied to merged PRs, further implying real cod — `repo:SecureBananaLabs/bug-bounty:readme`
-- onboarding = substantive (The repository provides concrete onboarding steps and a clear contributor workflow. The README includes setup and run commands (npm install; npm run dev -w apps/web and apps/api) and notes where configuration (.env, Prisma schema) lives. The CONTRIBUTING file gives a specific, actionable process for proposing and doing work: pick an open issue, comment you’re working on i — `repo:SecureBananaLabs/bug-bounty:readme`
-- outsider_posture = absent (Most open PRs show contributor 'ready for review' notes or small-scoped patches but no maintainer replies in the threads provided. A couple of PRs were closed by authors pointing at existing work (duplicates), not by maintainers providing review guidance. Overall the repository appears to lack visible maintainer engagement on these contributions.) — `pr:SecureBananaLabs/bug-bounty#3185:opened`
-- discouraging: ignored — “Update: I added scope for my issue #3186 (POST /api/payments auth + notification server-owned id/read) in this same PR after additional hardening.” — `pr:SecureBananaLabs/bug-bounty#3185:opened`
-- discouraging: ignored — “Quick follow-up from my side: this PR is ready for review and I can apply any requested adjustments immediately.” — `pr:SecureBananaLabs/bug-bounty#3062:opened`
-- discouraging: ignored — “This PR is ready for review and I can patch any requested changes fast. Happy to adapt to maintainer feedback.” — `pr:SecureBananaLabs/bug-bounty#3063:opened`
-- discouraging: ignored — “/claim #30” — `pr:SecureBananaLabs/bug-bounty#3128:opened`
-- discouraging: ignored — “Patch is intentionally small and scoped to validation + tests only.” — `pr:SecureBananaLabs/bug-bounty#3050:opened`
-- discouraging: ignored — “Added a demo GIF to the PR body to satisfy the parent bounty's video/demo requirement:” — `pr:SecureBananaLabs/bug-bounty#3227:opened`
-- discouraging: ignored — “Bounty eligibility note: I created issue #2975 under the parent bounty #743 as my own issue for this work. This PR addresses #2975” — `pr:SecureBananaLabs/bug-bounty#2969:opened`
-- discouraging: ignored — “Reviewer-ready summary... Scope is narrow and aligns exactly with issue intent.” — `pr:SecureBananaLabs/bug-bounty#3053:opened`
-- neutral: closed_with_guidance — “Closing this PR as there is already an existing PR (#2851) by the issue creator that addresses this.” — `pr:SecureBananaLabs/bug-bounty#2949:opened`
-- neutral: closed_with_guidance — “Closing this myself after a broader overlap refresh found existing open issues/PRs for the same unsupported OAuth provider surface (...) This should not stay in” — `pr:SecureBananaLabs/bug-bounty#2979:opened`
-- discouraging: ignored — “Reviewer-ready summary... Happy to patch quickly if you want any naming/style adjustments.” — `pr:SecureBananaLabs/bug-bounty#3048:opened`
-- discouraging: ignored — “/attempt” — `pr:SecureBananaLabs/bug-bounty#3046:opened`
+
+- repo kind: real_software — The repository is a runnable full‑stack monorepo: README documents a Next.js frontend (apps/web), an Express backend (apps/api), and shared packages including a Prisma schema (packages/db) and UI components (packages/ui). It includes… — `repo:SecureBananaLabs/bug-bounty:readme`
+- onboarding: substantive — The repository provides a clear, followable route for outsiders: the CONTRIBUTING file defines a step-by-step contribution workflow (pick an open issue, comment you’re working on it, create a branch, implement changes for that single… — `repo:SecureBananaLabs/bug-bounty:contributing`
+- outsider posture: absent — Most open PRs show only author descriptions and appear to have no maintainer replies (no review comments, approvals, or merge activity). Two closed PRs were self-closed by contributors with pointers to existing issues/PRs (guidance), but… — `pr:SecureBananaLabs/bug-bounty#3185:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3185:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3062:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3063:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3128:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3050:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3227:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#2969:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3053:opened`
+- closed with guidance — “[AUTHOR] Closing this PR as there is already an existing PR (#2851) by the issue creator that addresses this.” — `pr:SecureBananaLabs/bug-bounty#2949:opened`
+- closed with guidance — “[AUTHOR] Closing this myself after a broader overlap refresh found existing open issues/PRs for the same unsupported OAuth provider surface (#814, #1566, #2919, PR #817, PR #1027…” — `pr:SecureBananaLabs/bug-bounty#2979:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3048:opened`
+- ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3046:opened`
+
+*holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)*
 
