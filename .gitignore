@@ -5,3 +5,6 @@ __pycache__/
 .env
 data/
 AUDIT-*.md
+
+# Worktrees are checkouts, not content. `git add -A` swept one in once.
+.claude/worktrees/

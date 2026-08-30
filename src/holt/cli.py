@@ -83,7 +83,7 @@ def cmd_analyze(args: argparse.Namespace) -> int:
             for d in trace.dropped:
                 print(f"<!-- DROPPED {d.field}={d.value!r} cited {list(d.evidence_ids)} -->",
                       file=sys.stderr)
-    if not args.baseline and not args.no_entry_points:
+    if not args.baseline and args.entry_points:
         add_entry_points(assessment, repo, provider, args)
     print(assessment.render())
     if not args.replay:
@@ -119,9 +119,11 @@ def main(argv: list[str] | None = None) -> int:
         help="how many days you actually have; everything time-shaped scales from it",
     )
     analyze.add_argument(
-        "--no-entry-points",
+        "--entry-points",
         action="store_true",
-        help="skip the ranked reading order (see its measured precision in the output)",
+        help="append the prototype issue ranking. Off by default: it does not beat "
+             "GitHub's `good first issue` label, and the reason is that it never sees "
+             "who is asking. See `eval/PATHFINDER-DESIGN.md`",
     )
     analyze.add_argument(
         "--show-verification",

@@ -1,6 +1,6 @@
 """Entry points: which open issue an outsider should attempt first.
 
-**This capability is shipped with its own negative result printed beside it.**
+**Not shipped. Kept as the prototype that showed what not to build.**
 
 It was designed, pre-registered and then measured against the comparators that
 could make it unnecessary (`eval/PATHFINDER-DESIGN.md`, written before any of it
@@ -9,12 +9,17 @@ line in a document the reader will never open, because a ranking whose evaluatio
 lives only in the README is an unsupported ranking with the caveat filed where
 nobody looks.
 
-The reason it ships anyway is in the numbers: **13 of 25 evaluated repositories
-had no beginner-labelled issue at all**, and 17 of 25 had fewer than three. On
-those, the `good first issue` comparator does not reorder anything -- it *is*
-recency under another name. A reading order that is no better than chance is
-still more than what a contributor has today on half the repositories Holt calls
-viable. It is labelled as exactly that and no more.
+**Why it failed is more useful than the fact that it did.** This ranker never
+sees the contributor. It produces one ranking for everybody, which means it is
+answering "which issues here are generally approachable" -- exactly what a
+`good first issue` label already encodes. It did not lose because the model is
+weak. It lost because it was solving the label's problem, and a tie with the
+label is the expected outcome of that.
+
+Available behind `holt analyze --entry-points`, off by default, and it still
+prints its own measurement when asked for. The successor question -- which issue
+is a sensible next step *for this person, given what they have already merged
+here* -- is a different question, and one no label answers.
 """
 
 from __future__ import annotations
