@@ -162,14 +162,72 @@ ClaimList:focus > ListItem.--highlight {{
     padding: 1 1 0 1;
     text-style: bold;
 }}
-#verdict-rules {{
-    color: {DIM};
-    padding: 0 1 1 1;
+#verdict-budget {{
     height: auto;
+    padding: 0 1 1 1;
 }}
-#summary {{
+#bottom-line {{
     height: auto;
     padding: 0 1 1 1;
+}}
+.prose {{
+    height: auto;
+    padding: 0 1 1 1;
+}}
+.rule-line {{
+    height: auto;
+    padding: 0 1 0 2;
+}}
+.landing-line {{
+    height: auto;
+    padding: 0 1 0 2;
+}}
+#report {{
+    height: 1fr;
+    scrollbar-size: 1 1;
+}}
+
+/* home --------------------------------------------------------------------- */
+
+#home-body {{
+    height: 1fr;
+    padding: 0 1;
+}}
+#repo-input {{
+    /* The one focusable box on the screen, so it is marked by its border
+       rather than by a label telling you to type in it. */
+    background: transparent;
+    border: none;
+    border-left: outer {RULE};
+    padding: 0 1;
+    height: 1;
+    margin: 0 0 0 0;
+}}
+#repo-input:focus {{
+    border-left: outer {CITE};
+}}
+#home-notice {{
+    height: auto;
+    padding: 1 1 0 2;
+}}
+#recent-scroll {{
+    height: 1fr;
+    scrollbar-size: 1 1;
+}}
+RecentList {{
+    height: auto;
+    background: transparent;
+    border: none;
+}}
+RecentList > ListItem {{
+    background: transparent;
+    padding: 0 1;
+}}
+RecentList > ListItem.--highlight {{
+    background: $boost;
+}}
+RecentList:focus > ListItem.--highlight {{
+    background: $boost;
 }}
 
 /* the measured result ------------------------------------------------------ */

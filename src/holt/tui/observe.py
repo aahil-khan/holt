@@ -131,7 +131,17 @@ def _summarise(label: str, result: dict) -> str:
         posture = result.get("posture", "")
         return f"{posture} · {len(threads)} threads read" if posture else ""
     if label == "narrate":
-        return f"{len(result.get('summary', ''))} characters"
+        # `narrate` returns three sections now, not one `summary`. The count
+        # that matters to a watcher is how much prose came back.
+        written = sum(
+            len(result.get(key, ""))
+            for key in (
+                "bottom_line",
+                "what_the_evidence_shows",
+                "what_could_not_be_determined",
+            )
+        )
+        return f"{written} characters"
     if label == "pathfinder":
         issues = result.get("ranked", result.get("issues", [])) or []
         return f"{len(issues)} issues ranked"
@@ -223,5 +233,9 @@ EXPECTED_KEYS: dict[str, tuple[str, ...]] = {
     "classify": ("repo_kind", "rationale", "evidence_ids"),
     "opportunity": ("onboarding", "rationale", "evidence_ids"),
     "outcomes": ("posture", "posture_rationale", "threads"),
-    "narrate": ("summary",),
+    "narrate": (
+        "bottom_line",
+        "what_the_evidence_shows",
+        "what_could_not_be_determined",
+    ),
 }

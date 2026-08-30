@@ -2,54 +2,92 @@
 
 There is no progress bar here. A bar would have to invent a denominator — the
 number of threads a stage will read is not known until it has read them — and a
-bar that moves without meaning is worse than no bar. The count of what has been
-read is the progress, and it is a real number.
+bar that fills at a rate unrelated to the work is a lie told smoothly. What a
+running stage shows instead is a spinner, which claims only that something is
+happening, and an elapsed clock, which is a real number.
 """
 
 from __future__ import annotations
+
+import time
 
 from rich.text import Text
 from textual.app import ComposeResult
 from textual.containers import Vertical
 from textual.widget import Widget
 
-from holt.tui import events, theme
-from holt.tui.widgets.evidence import cite
+from holt.tui import animation, events, theme
 from holt.tui.visual import Line
+from holt.tui.widgets.evidence import cite
 
 
 class StageRow(Line):
-    """One stage: a gutter mark, its name, and where it has got to."""
+    """One stage: a gutter mark, its name, and where it has got to.
+
+    Three states, and they are visually distinct without relying on colour:
+    pending is an em dash, running is a turning spinner and a clock, finished is
+    the stage's own one-line result.
+    """
 
     def __init__(self, stage: str, **kwargs) -> None:
         super().__init__(**kwargs)
         self.stage = stage
         self._model = ""
         self._state = "pending"
-        self._status = "—"
+        self._status = ""
+        self._started = 0.0
+        self._elapsed = 0.0
+        self._tick = 0
+        self._timer = None
 
     def on_mount(self) -> None:
         self._repaint()
 
     def started(self, model: str) -> None:
-        self._model, self._state, self._status = model, "running", "running"
+        self._model = model
+        self._state = "running"
+        self._started = time.monotonic()
+        self._tick = 0
+        if self._timer is None and animation.enabled():
+            self._timer = self.set_interval(animation.SPINNER_INTERVAL, self._spin)
         self._repaint()
 
     def finished(self, summary: str, seconds: float) -> None:
         self._state = "done"
         self._status = summary or "done"
+        if self._started:
+            self._elapsed = time.monotonic() - self._started
+        self._stop()
         self._repaint()
+
+    def _spin(self) -> None:
+        self._tick += 1
+        self._repaint()
+
+    def _stop(self) -> None:
+        if self._timer is not None:
+            self._timer.stop()
+            self._timer = None
+
+    def on_unmount(self) -> None:
+        self._stop()
 
     def _repaint(self) -> None:
         text = Text()
         text.append(f"{events.stage_mark(self.stage):<2} ", style=theme.FAINT)
         text.append(f"{events.stage_title(self.stage):<16}", style=theme.DIM)
+
         if self._state == "pending":
             text.append("—", style=theme.FAINT)
         elif self._state == "running":
-            text.append(self._status, style=theme.DIM)
+            spin = animation.frame(self._tick) if animation.enabled() else "·"
+            text.append(f"{spin} ", style=theme.CITE)
+            elapsed = time.monotonic() - self._started if self._started else 0.0
+            text.append(animation.elapsed(elapsed), style=theme.FAINT)
         else:
             text.append(self._status)
+            if self._elapsed >= 0.05:
+                text.append(f"   {animation.elapsed(self._elapsed)}", style=theme.FAINT)
         self.update(text)
 
 
@@ -79,7 +117,20 @@ class StageList(Vertical):
             return existing
         row = StageRow(stage)
         self.mount(row)
+        animation.reveal(row)
         return row
+
+    def settle(self) -> None:
+        """Stop every spinner. Called when the run ends, however it ended.
+
+        Without this, a failure part-way through leaves the stage it died on
+        turning forever, which reads as still working.
+        """
+        for row in self.query(StageRow):
+            if row._state == "running":
+                row._state = "pending"
+                row._stop()
+                row._repaint()
 
 
 class EmittedFinding(Line):
@@ -98,6 +149,7 @@ class EmittedFinding(Line):
 
     def on_mount(self) -> None:
         self.update(self._line())
+        animation.reveal(self)
 
     def _line(self) -> Text:
         event = self.event
@@ -120,13 +172,16 @@ class DroppedFinding(Widget):
 
     Given room rather than compressed to a line. This is the behaviour the whole
     pipeline is arranged around, and the reason a reader can trust the rest of
-    the report: a claim the model made, whose evidence did not resolve, and which
+    the report: a claim the model made, whose evidence did not hold up, and which
     was therefore dropped rather than softened into a hedge.
     """
 
     def __init__(self, event: events.FindingDropped, **kwargs) -> None:
         super().__init__(**kwargs)
         self.event = event
+
+    def on_mount(self) -> None:
+        animation.reveal(self)
 
     def compose(self) -> ComposeResult:
         event = self.event
@@ -144,7 +199,7 @@ class DroppedFinding(Widget):
         if not event.cited:
             row = Text("  ")
             row.append("cited  ", style=theme.DIM)
-            row.append("nothing", style=theme.DROP)
+            row.append("no evidence at all", style=theme.DROP)
             yield Line(row)
 
         yield Line(

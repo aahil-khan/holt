@@ -193,11 +193,19 @@ def cmd_tui(args: argparse.Namespace) -> int:
     if from_env_file:
         print(f"Read {', '.join(from_env_file)} from .env", file=sys.stderr)
 
+    # No repository: open on the list of what has already been assessed. This is
+    # the ordinary way in, which is why it is what bare `holt` does.
+    repo = getattr(args, "repo", None)
+    if not repo:
+        run(None)
+        return 0
+
     options = RunOptions(
-        repo=normalise(args.repo),
+        repo=normalise(repo),
         replay=args.replay,
         live=args.live,
-        entry_points=not args.no_entry_points,
+        entry_points=args.entry_points,
+        contributor_days=args.days,
     )
 
     # Checked before the screen is taken over, so a missing key reads as a
@@ -358,7 +366,10 @@ def main(argv: list[str] | None = None) -> int:
     # eval code resolve against the pinned defaults, always.
     model.enable_user_models_config()
     parser = argparse.ArgumentParser(prog="holt", description=__doc__)
-    sub = parser.add_subparsers(dest="command", required=True)
+    # Not required: bare `holt` opens the interface. Every existing invocation
+    # keeps working unchanged, and the eval harness calls `holt analyze`
+    # explicitly, so the reproduction path is unaffected either way.
+    sub = parser.add_subparsers(dest="command")
 
     analyze = sub.add_parser("analyze", help="assess one repository")
     analyze.add_argument("repo", help="owner/name or a github.com URL")
@@ -504,9 +515,15 @@ def main(argv: list[str] | None = None) -> int:
 
     tui = sub.add_parser(
         "tui",
-        help="watch the analysis in a terminal interface (needs the 'tui' extra)",
+        help="open the terminal interface; also what bare `holt` does "
+             "(needs the 'tui' extra)",
     )
-    tui.add_argument("repo", help="owner/name or a github.com URL")
+    tui.add_argument(
+        "repo",
+        nargs="?",
+        help="owner/name or a github.com URL. Omit to open on what you have "
+             "already assessed",
+    )
     tui.add_argument(
         "--replay",
         action="store_true",
@@ -518,13 +535,24 @@ def main(argv: list[str] | None = None) -> int:
         help="read GitHub directly instead of committed fixtures (needs GITHUB_TOKEN)",
     )
     tui.add_argument(
-        "--no-entry-points",
+        "--days",
+        type=int,
+        default=7,
+        help="how many days you actually have; everything time-shaped scales from it",
+    )
+    tui.add_argument(
+        "--entry-points",
         action="store_true",
-        help="skip the ranked reading order (see its measured precision in the output)",
+        help="include the prototype issue ranking. Off by default, matching "
+             "`holt analyze`: it does not beat GitHub's `good first issue` label",
     )
     tui.set_defaults(func=cmd_tui)
 
     args = parser.parse_args(argv)
+    if getattr(args, "func", None) is None:
+        # No subcommand. Open the interface on what has already been assessed,
+        # which is what someone typing `holt` almost always wants.
+        args = parser.parse_args(["tui"])
     return args.func(args)
 
 
