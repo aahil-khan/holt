@@ -142,6 +142,21 @@ class FindingDropped:
 
 
 @dataclass(frozen=True, slots=True)
+class UsageUpdated:
+    """Running total after a model call. Zero throughout a replay.
+
+    Added after the first version of this schema shipped, which is the case the
+    module was arranged for: a new class, no change to any existing one, and
+    screens that predate it keep working because they simply have no entry for
+    it in their dispatch table.
+    """
+
+    input_tokens: int
+    output_tokens: int
+    cost_usd: float
+
+
+@dataclass(frozen=True, slots=True)
 class Retry:
     stage: str
     attempt: int
@@ -174,6 +189,7 @@ Event = Union[
     FindingEmitted,
     EvidenceResolved,
     FindingDropped,
+    UsageUpdated,
     Retry,
     RunFailed,
     RunFinished,

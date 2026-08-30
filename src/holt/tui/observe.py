@@ -60,6 +60,15 @@ class ObservingModel:
         elapsed = time.monotonic() - started
 
         self._emit(events.ToolResponse(stage=label, payload=result))
+        usage = getattr(self._inner, "usage", None)
+        if usage is not None:
+            self._emit(
+                events.UsageUpdated(
+                    input_tokens=usage.input_tokens,
+                    output_tokens=usage.output_tokens,
+                    cost_usd=usage.cost_usd,
+                )
+            )
         for finding in _findings_from(label, result, self._repo):
             self._emit(finding)
         self._emit(

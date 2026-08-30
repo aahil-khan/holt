@@ -18,6 +18,7 @@ terminal, and the tests run on a checkout that never installed the extra.
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import pytest
@@ -155,3 +156,90 @@ def test_verdict_colour_tolerates_a_member_the_tui_has_never_seen():
     assert theme.verdict_colour("viable") == theme.VIABLE
     assert theme.verdict_colour("a_verdict_added_later") == theme.VERDICT_FALLBACK
     assert theme.verdict_label("not_viable") == "not viable"
+
+
+def test_a_live_run_records_outside_the_committed_fixtures():
+    """The interface must never append to the evidence the harness replays.
+
+    `OpenAIModel` appends every call to the path it is handed. Pointing it at
+    `fixtures/trajectories/` would have a TUI session rewrite the recordings the
+    eval harness reproduces its numbers from. This asserts the path chosen for a
+    live run lands under `runs/` and nowhere near the fixtures.
+    """
+    from holt import model
+
+    opts = RunOptions(repo=CLEAN, replay=False, live=True)
+    for kind in ("verdict", "pathfinder"):
+        path = opts.recording(CLEAN, kind)
+        assert path.parts[0] == "runs"
+        assert model.TRAJECTORY_DIR not in path.parents
+        assert "fixtures" not in path.parts
+    # Both halves of one run share a directory, so a session is one artefact.
+    assert (
+        opts.recording(CLEAN, "verdict").parent
+        == opts.recording(CLEAN, "pathfinder").parent
+    )
+
+
+def test_replay_still_reads_the_committed_trajectories():
+    """The other half of the same guarantee: replay is unchanged."""
+    from holt.tui.session import _client
+
+    opts = RunOptions(repo=CLEAN, replay=True)
+    assert _client(CLEAN, opts, "verdict").replayed is True
+
+
+def test_missing_credentials_names_what_a_run_needs(monkeypatch):
+    from holt.tui.session import missing_credentials
+
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+
+    assert missing_credentials(RunOptions(repo=CLEAN, replay=True)) == []
+
+    live = missing_credentials(RunOptions(repo=CLEAN, replay=False, live=True))
+    assert any("OPENAI_API_KEY" in m for m in live)
+    assert any("GITHUB_TOKEN" in m for m in live)
+
+    monkeypatch.setenv("OPENAI_API_KEY", "x")
+    assert missing_credentials(RunOptions(repo=CLEAN, replay=False, live=False)) == []
+
+
+def test_env_file_fills_gaps_without_overriding(tmp_path, monkeypatch):
+    """`.env` is a convenience, not an authority: an explicit export wins."""
+    from holt.tui import env
+
+    path = tmp_path / ".env"
+    path.write_text(
+        "# a comment\n"
+        "\n"
+        'export QUOTED="from-file"\n'
+        "ALREADY_SET=from-file\n"
+        "NOT_SET=from-file\n"
+    )
+    monkeypatch.setenv("ALREADY_SET", "from-shell")
+    monkeypatch.delenv("NOT_SET", raising=False)
+    monkeypatch.delenv("QUOTED", raising=False)
+
+    filled = env.load(path)
+
+    assert os.environ["ALREADY_SET"] == "from-shell"
+    assert os.environ["NOT_SET"] == "from-file"
+    assert os.environ["QUOTED"] == "from-file"
+    assert "ALREADY_SET" not in filled
+    assert set(filled) == {"NOT_SET", "QUOTED"}
+
+
+def test_replay_usage_describes_the_recording_not_a_purchase():
+    """A replay reports the tokens the *original* run used.
+
+    Those price out to a real number, which is why the live screen refuses to
+    render it as spend: nothing was bought. The event still carries the counts,
+    because they are true and something else may want them.
+    """
+    _, _, seen = _run(CLEAN)
+    usage = [e for e in seen if isinstance(e, events.UsageUpdated)]
+    assert usage, "no usage events were emitted"
+    assert usage[-1].input_tokens > 0
+    # Monotonic: it is a running total, not a per-call figure.
+    assert [u.input_tokens for u in usage] == sorted(u.input_tokens for u in usage)

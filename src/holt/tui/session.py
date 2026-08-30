@@ -14,9 +14,11 @@ is a demo of the wrong thing.
 
 from __future__ import annotations
 
+import os
 import queue
 import threading
 from dataclasses import dataclass, field
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -40,6 +42,22 @@ class RunOptions:
     replay: bool = True
     live: bool = False
     entry_points: bool = True
+    #: Where a live run records its trajectory.
+    #:
+    #: Deliberately **not** `fixtures/trajectories/`. `OpenAIModel` appends every
+    #: call to the path it is given, so pointing it at the committed fixtures
+    #: would have the interface rewrite the evidence the eval harness replays —
+    #: exactly the mutation this feature is not allowed to perform. Each run gets
+    #: its own directory here, outside the reproduction path and outside git.
+    run_root: Path = Path("runs")
+    #: Stamped once so every call in a run lands in the same file.
+    started: str = field(
+        default_factory=lambda: datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+    )
+
+    def recording(self, repo: str, kind: str) -> Path:
+        slug = repo.replace("/", "__")
+        return self.run_root / slug / self.started / f"{kind}.jsonl"
 
 
 @dataclass
@@ -118,9 +136,7 @@ class Session:
         try:
             provider = ObservingProvider(_provider(opts.live), self._emit)
             self.provider = provider
-            client = ObservingModel(
-                model_module.build(repo, replay=opts.replay), self._emit, repo
-            )
+            client = ObservingModel(_client(repo, opts, "verdict"), self._emit, repo)
             self._emit(events.RunStarted(repo=repo, replayed=opts.replay))
 
             assessment, trace = pipeline.analyze(repo, provider, client)
@@ -172,17 +188,8 @@ class Session:
             issues = _issue_provider(opts.live).fetch(repo)
         except FileNotFoundError:
             return
-        path = (
-            model_module.TRAJECTORY_DIR
-            / PATHFINDER_TRAJECTORIES
-            / (repo.replace("/", "__") + ".jsonl")
-        )
         try:
-            client = (
-                model_module.ReplayModel(path)
-                if opts.replay
-                else model_module.OpenAIModel(path)
-            )
+            client = _client(repo, opts, PATHFINDER_TRAJECTORIES)
             self._emit(
                 events.StageStarted(
                     stage="pathfinder", model=model_module.model_for("pathfinder")
@@ -202,6 +209,40 @@ class Session:
                 summary=f"{len(ranked)} issues ranked",
             )
         )
+
+
+def _client(repo: str, opts: RunOptions, kind: str):
+    """The model client for one part of a run.
+
+    Replay reads the committed trajectory, exactly as the CLI does. A live run
+    records to `runs/` instead, so the interface never appends to the fixtures
+    the eval harness replays.
+    """
+    if opts.replay:
+        directory = (
+            model_module.TRAJECTORY_DIR
+            if kind == "verdict"
+            else model_module.TRAJECTORY_DIR / kind
+        )
+        return model_module.ReplayModel(directory / (repo.replace("/", "__") + ".jsonl"))
+    return model_module.OpenAIModel(opts.recording(repo, kind))
+
+
+#: What a live run needs before it is worth starting, checked up front so the
+#: answer arrives as a sentence in the terminal rather than a traceback three
+#: seconds into a full-screen interface.
+def missing_credentials(opts: RunOptions) -> list[str]:
+    missing = []
+    if not opts.replay and not os.environ.get("OPENAI_API_KEY"):
+        missing.append(
+            "OPENAI_API_KEY — the stages call a model. Without it, use --replay."
+        )
+    if opts.live and not os.environ.get("GITHUB_TOKEN"):
+        missing.append(
+            "GITHUB_TOKEN — --live reads GitHub directly. Without it, drop --live "
+            "and the committed fixtures are used."
+        )
+    return missing
 
 
 def _provider(live: bool) -> EvidenceProvider:

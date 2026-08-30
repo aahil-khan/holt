@@ -8,3 +8,7 @@ AUDIT-*.md
 
 # Worktrees are checkouts, not content. `git add -A` swept one in once.
 .claude/worktrees/
+
+# Live TUI runs record here, deliberately outside fixtures/trajectories/ so a
+# session can never rewrite the recordings the eval harness replays.
+runs/

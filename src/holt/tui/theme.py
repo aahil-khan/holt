@@ -135,7 +135,11 @@ EvidenceDetail {{
 /* claims ------------------------------------------------------------------ */
 
 ClaimList {{
-    height: 1fr;
+    /* `auto`, not `1fr`. Inside the scrolling page, a fractional height
+       resolves against whatever space a long summary has left over, which on a
+       verbose repository collapses the whole list to a single row. The page
+       scrolls; the list should be as tall as it has claims. */
+    height: auto;
     background: transparent;
     border: none;
     scrollbar-size: 1 1;

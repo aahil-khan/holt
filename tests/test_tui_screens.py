@@ -74,6 +74,21 @@ def test_the_live_view_shows_the_drop_and_names_the_id():
     drive(body, DROPS)
 
 
+def test_a_replay_never_shows_a_dollar_figure():
+    """Nothing was bought, so nothing is priced.
+
+    `ReplayModel` reports the token counts the original run recorded. Rendering
+    their cost would tell a reader they had just spent money on a run that made
+    no calls.
+    """
+
+    async def body(app, pilot):
+        assert "$" not in screen_text(app)
+        assert "replay" in screen_text(app)
+
+    drive(body, DROPS)
+
+
 def test_the_assessment_shows_the_verdict_and_the_claims():
     async def body(app, pilot):
         await pilot.press("a")
