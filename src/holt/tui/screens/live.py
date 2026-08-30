@@ -47,16 +47,24 @@ class LiveScreen(Screen):
         yield Line("─" * 200, classes="rule")
         yield Footer()
 
+    _spend = ""
+
     def on_mount(self) -> None:
-        session = self.app.session
-        self.query_one("#chrome-right", Line).update(
-            Text(
-                f"{session.options.repo}   "
-                f"{'replay' if session.options.replay else 'live'}",
-                style=theme.FAINT,
-            )
-        )
+        self._paint_chrome()
         self.set_interval(POLL_SECONDS, self._pump)
+
+    def _paint_chrome(self) -> None:
+        options = self.app.session.options
+        # Says what the run actually is. `replay` reads a recording; `recorded`
+        # means real model calls are being made and written to `runs/`; `live`
+        # additionally means GitHub was read directly.
+        mode = "replay" if options.replay else ("live" if options.live else "recorded")
+        parts = [options.repo, mode]
+        if self._spend:
+            parts.append(self._spend)
+        self.query_one("#chrome-right", Line).update(
+            Text("   ".join(parts), style=theme.FAINT)
+        )
 
     # ─── event pump ─────────────────────────────────────────────────────────
 
@@ -121,6 +129,25 @@ class LiveScreen(Screen):
         text.append("  not found", style=theme.DROP)
         self._append(Line(text, classes="finding"))
 
+    def _on_usage(self, event: events.UsageUpdated) -> None:
+        # Spend belongs in the chrome, not the stream: it is a running total,
+        # not something that happened.
+        #
+        # Never shown during a replay. `ReplayModel` reports the token counts
+        # the *original* run recorded, which price out to a real number — and a
+        # dollar figure on a run that called nothing would say you had just
+        # spent money you did not spend. The event still carries the counts for
+        # anything that wants them; this screen declines to render them as cost.
+        if self.app.session.options.replay:
+            return
+        if not event.input_tokens and not event.output_tokens:
+            return
+        self._spend = (
+            f"{event.input_tokens:,} in / {event.output_tokens:,} out   "
+            f"${event.cost_usd:.4f}"
+        )
+        self._paint_chrome()
+
     def _on_retry(self, event: events.Retry) -> None:
         self._append(
             Line(
@@ -163,6 +190,7 @@ HANDLERS: dict[type, Callable] = {
     events.FindingEmitted: LiveScreen._on_finding,
     events.FindingDropped: LiveScreen._on_dropped,
     events.EvidenceResolved: LiveScreen._on_resolved,
+    events.UsageUpdated: LiveScreen._on_usage,
     events.Retry: LiveScreen._on_retry,
     events.RunFailed: LiveScreen._on_failed,
     events.RunFinished: LiveScreen._on_finished,

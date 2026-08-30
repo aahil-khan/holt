@@ -176,8 +176,9 @@ def cmd_tui(args: argparse.Namespace) -> int:
     watching a stage, never the only way of running one.
     """
     try:
+        from holt.tui import env
         from holt.tui.app import run
-        from holt.tui.session import RunOptions
+        from holt.tui.session import RunOptions, missing_credentials
     except ImportError as exc:
         print(
             f"The terminal interface needs the optional 'tui' extra ({exc}).\n"
@@ -187,14 +188,35 @@ def cmd_tui(args: argparse.Namespace) -> int:
         )
         return 2
 
-    run(
-        RunOptions(
-            repo=normalise(args.repo),
-            replay=args.replay,
-            live=args.live,
-            entry_points=not args.no_entry_points,
-        )
+    # Names only. A value read from `.env` is never printed.
+    from_env_file = env.load()
+    if from_env_file:
+        print(f"Read {', '.join(from_env_file)} from .env", file=sys.stderr)
+
+    options = RunOptions(
+        repo=normalise(args.repo),
+        replay=args.replay,
+        live=args.live,
+        entry_points=not args.no_entry_points,
     )
+
+    # Checked before the screen is taken over, so a missing key reads as a
+    # sentence in the terminal rather than a traceback behind a full-screen app.
+    missing = missing_credentials(options)
+    if missing:
+        print("This run needs:", file=sys.stderr)
+        for item in missing:
+            print(f"  {item}", file=sys.stderr)
+        return 2
+
+    if not options.replay:
+        print(
+            f"Recording this run to {options.recording(options.repo, 'verdict').parent}"
+            " — the committed fixtures are not written to.",
+            file=sys.stderr,
+        )
+
+    run(options)
     return 0
 
 
