@@ -6,6 +6,11 @@ a chain of branches. Adding an event to the schema means adding an entry here;
 an event with no entry still renders, as a dim line, because a screen that
 raises on an unfamiliar event is a screen that breaks every time a stage learns
 something new.
+
+When the run finishes it does two things and gets out of the way: it stores the
+assessment so the next launch opens on it, and it moves to the report. A
+finished run has nothing left to watch, and making someone press a key to leave
+a screen that is done is a small insult repeated every time.
 """
 
 from __future__ import annotations
@@ -18,36 +23,36 @@ from textual.containers import Horizontal, VerticalScroll
 from textual.screen import Screen
 from textual.widgets import Footer
 
-from holt.tui import events, theme
+from holt.tui import animation, events, theme
 from holt.tui.visual import Line
-from holt.tui.widgets.stages import (
-    DroppedFinding,
-    EmittedFinding,
-    StageList,
-    unknown,
-)
+from holt.tui.widgets.stages import DroppedFinding, EmittedFinding, StageList, unknown
 
+POLL_SECONDS = 0.05
 
-POLL_SECONDS = 0.1
+#: How long the finished screen stays up before the report replaces it. Long
+#: enough to see the last stage land, short enough not to feel like waiting.
+HANDOFF_SECONDS = 0.45
 
 
 class LiveScreen(Screen):
     BINDINGS = [
-        ("a", "assessment", "assessment"),
+        ("escape", "home", "home"),
+        ("a", "assessment", "report"),
         ("q", "quit", "quit"),
     ]
 
+    _spend = ""
+    _handed_off = False
+
     def compose(self) -> ComposeResult:
         with Horizontal(id="chrome"):
-            yield Line("holt · analyze", id="chrome-left")
+            yield Line("holt · assessing", id="chrome-left")
             yield Line("", id="chrome-right")
-        yield Line("─" * 200, classes="rule")
+        yield Line("─" * 240, classes="rule")
         yield StageList(id="stages")
         yield VerticalScroll(id="stream")
-        yield Line("─" * 200, classes="rule")
+        yield Line("─" * 240, classes="rule")
         yield Footer()
-
-    _spend = ""
 
     def on_mount(self) -> None:
         self._paint_chrome()
@@ -55,11 +60,7 @@ class LiveScreen(Screen):
 
     def _paint_chrome(self) -> None:
         options = self.app.session.options
-        # Says what the run actually is. `replay` reads a recording; `recorded`
-        # means real model calls are being made and written to `runs/`; `live`
-        # additionally means GitHub was read directly.
-        mode = "replay" if options.replay else ("live" if options.live else "recorded")
-        parts = [options.repo, mode]
+        parts = [options.repo, options.mode]
         if self._spend:
             parts.append(self._spend)
         self.query_one("#chrome-right", Line).update(
@@ -84,30 +85,31 @@ class LiveScreen(Screen):
         stream.mount(widget)
         stream.scroll_end(animate=False)
 
+    def _line(self, text: Text) -> None:
+        line = Line(text, classes="finding")
+        self._append(line)
+        animation.reveal(line)
+
     # ─── per-event rendering ────────────────────────────────────────────────
 
     def _on_run_started(self, event: events.RunStarted) -> None:
         return
 
     def _on_evidence_loaded(self, event: events.EvidenceLoaded) -> None:
-        self._append(
-            Line(
-                Text(
-                    f"{event.count} evidence records · window {event.window} "
-                    "≤ 2026-06-01",
-                    style=theme.FAINT,
-                ),
-                classes="finding",
+        self._line(
+            Text(
+                f"{event.count} evidence records · window {event.window} ≤ 2026-06-01",
+                style=theme.FAINT,
             )
         )
 
     def _on_stage_started(self, event: events.StageStarted) -> None:
-        row = self.query_one("#stages", StageList).ensure(event.stage)
-        row.started(event.model)
+        self.query_one("#stages", StageList).ensure(event.stage).started(event.model)
 
     def _on_stage_finished(self, event: events.StageFinished) -> None:
-        row = self.query_one("#stages", StageList).ensure(event.stage)
-        row.finished(event.summary, event.seconds)
+        self.query_one("#stages", StageList).ensure(event.stage).finished(
+            event.summary, event.seconds
+        )
 
     def _on_finding(self, event: events.FindingEmitted) -> None:
         self._append(EmittedFinding(event, repo=self.app.session.options.repo))
@@ -117,27 +119,25 @@ class LiveScreen(Screen):
 
     def _on_resolved(self, event: events.EvidenceResolved) -> None:
         # A lookup that succeeds is not news; only a failure is shown, and the
-        # `FindingDropped` that follows says which claim it cost.
+        # drop that follows says which claim it cost. Labelled as a lookup
+        # because that is the whole point: no model decided this. Stage D asked
+        # the provider for the record and there was not one.
         if event.resolved:
             return
-        # Labelled as a lookup, because that is the whole point: no model
-        # decided this. Stage D asked the provider for the record and there
-        # was not one. The drop that follows says what it cost.
         text = Text()
         text.append("lookup  ", style=theme.DIM)
         text.append(event.evidence_id, style=f"{theme.DROP} strike")
         text.append("  not found", style=theme.DROP)
-        self._append(Line(text, classes="finding"))
+        self._line(text)
 
     def _on_usage(self, event: events.UsageUpdated) -> None:
         # Spend belongs in the chrome, not the stream: it is a running total,
         # not something that happened.
         #
         # Never shown during a replay. `ReplayModel` reports the token counts
-        # the *original* run recorded, which price out to a real number — and a
+        # the *original* run recorded, which price out to a real number, and a
         # dollar figure on a run that called nothing would say you had just
-        # spent money you did not spend. The event still carries the counts for
-        # anything that wants them; this screen declines to render them as cost.
+        # spent money you did not spend.
         if self.app.session.options.replay:
             return
         if not event.input_tokens and not event.output_tokens:
@@ -149,32 +149,40 @@ class LiveScreen(Screen):
         self._paint_chrome()
 
     def _on_retry(self, event: events.Retry) -> None:
-        self._append(
-            Line(
-                Text(
-                    f"retrying {event.stage} (attempt {event.attempt}) {event.reason}",
-                    style=theme.DIM,
-                ),
-                classes="finding",
+        self._line(
+            Text(
+                f"retrying {event.stage} (attempt {event.attempt}) {event.reason}",
+                style=theme.DIM,
             )
         )
 
     def _on_failed(self, event: events.RunFailed) -> None:
-        self._append(Line(Text(event.error, style=theme.DROP), classes="finding"))
+        # Every spinner stops. A stage left turning after a failure reads as
+        # still working, which is the one thing it is definitely not doing.
+        self.query_one("#stages", StageList).settle()
+        self._line(Text(event.error, style=theme.DROP))
+        self._line(Text("escape to go back", style=theme.FAINT))
 
     def _on_finished(self, event: events.RunFinished) -> None:
-        self._append(
-            Line(
-                Text("done — press a for the assessment", style=theme.DIM),
-                classes="finding",
-            )
-        )
+        self.query_one("#stages", StageList).settle()
+        self.app.remember(self.app.session)
+        if self._handed_off:
+            return
+        self._handed_off = True
+        self.set_timer(HANDOFF_SECONDS, self._to_report)
+
+    def _to_report(self) -> None:
+        # Only if nobody has navigated away in the meantime.
+        if self.app.screen is self:
+            self.app.show_assessment()
 
     # ─── actions ────────────────────────────────────────────────────────────
 
     def action_assessment(self) -> None:
-        if self.app.session.assessment is not None:
-            self.app.push_screen("assessment")
+        self.app.show_assessment()
+
+    def action_home(self) -> None:
+        self.app.go_home()
 
     def action_quit(self) -> None:
         self.app.exit()

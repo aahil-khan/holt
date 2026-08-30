@@ -5,21 +5,19 @@ Adding a screen is a new file in this directory and one line in `REGISTRY`.
 there is no switch statement to grow and no place where adding a view means
 editing a view that already works.
 
-Screens that take constructor arguments — the inspector needs an evidence id —
-are pushed as instances rather than by name, so they are deliberately not
-registered here.
+Screens that need constructor arguments — the inspector takes an evidence id —
+are pushed as instances instead, so they are deliberately not registered here.
+Only screens that can be opened by name belong in this dict.
 """
 
 from __future__ import annotations
 
 from textual.screen import Screen
 
-from holt.tui.screens.assessment import AssessmentScreen
-from holt.tui.screens.live import LiveScreen
+from holt.tui.screens.home import HomeScreen
 
 REGISTRY: dict[str, type[Screen]] = {
-    "live": LiveScreen,
-    "assessment": AssessmentScreen,
+    "home": HomeScreen,
 }
 
-__all__ = ["REGISTRY", "AssessmentScreen", "LiveScreen"]
+__all__ = ["REGISTRY", "HomeScreen"]

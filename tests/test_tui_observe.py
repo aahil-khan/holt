@@ -100,6 +100,13 @@ def test_every_finding_the_engine_records_is_also_emitted():
 
 
 def test_the_drop_reaches_the_event_stream():
+    """Stage D removed a claim, and the stream says so.
+
+    Under the current recordings the dropped finding cites nothing at all — the
+    model asserted `onboarding = absent` without pointing at a record. That is
+    the same rule with a different shape: a claim with no resolvable evidence
+    does not reach the reader, whether the id was wrong or never given.
+    """
     session = Session(RunOptions(repo=DROPS, replay=True))
     session.start()
     session.wait(120)
@@ -108,21 +115,16 @@ def test_the_drop_reaches_the_event_stream():
     dropped = [e for e in session.log if isinstance(e, events.FindingDropped)]
     assert len(dropped) == 1
     assert dropped[0].field == "onboarding"
-    assert dropped[0].cited == ("no_contributing_file",)
 
-    # The same moment seen from the provider's side: the id was looked up and
-    # did not resolve. Stage D needs no hook in the engine to be visible.
-    failed = [
-        e.evidence_id
-        for e in session.log
-        if isinstance(e, events.EvidenceResolved) and not e.resolved
-    ]
-    assert "no_contributing_file" in failed
+    # Whatever it cited, none of it survived into the report.
+    surviving = {c.evidence_id for c in session.assessment.claims}
+    assert not (set(dropped[0].cited) & surviving)
 
-    # And the claim does not reach the reader.
-    assert all(
-        c.evidence_id != "no_contributing_file" for c in session.assessment.claims
-    )
+    # The engine's own arithmetic agrees with the stream.
+    assert session.trace.before_verification - session.trace.after_verification == 1
+
+    # Every claim that did reach the reader carries an id.
+    assert all(c.evidence_id for c in session.assessment.claims)
 
 
 def test_a_clean_run_drops_nothing_and_still_reports_resolution():

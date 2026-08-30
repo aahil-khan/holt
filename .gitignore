@@ -12,3 +12,6 @@ AUDIT-*.md
 # Live TUI runs record here, deliberately outside fixtures/trajectories/ so a
 # session can never rewrite the recordings the eval harness replays.
 runs/
+
+# The interface keeps its history here. One machine, not project content.
+.holt/

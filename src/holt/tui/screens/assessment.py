@@ -1,13 +1,24 @@
 """The finished report, navigable.
 
-The verdict is the largest thing on the screen and the only element that gets
-both weight and colour. Below it sit the rules the verdict was computed from —
-they come from the pipeline's own `Trace`, not from the prose, because the
-narration explains the verdict and is not allowed to restate it.
+The order is the engine's own: the answer, then the one-paragraph reason, then
+what the evidence showed, then which rule decided it, then what could not be
+determined, then where work actually landed, then the claims. That order is not
+a layout preference — `Assessment.render()` uses it, and a reader who has seen
+the markdown should find the same argument in the same sequence here.
 
-`entry_points` is treated as optional throughout. It is the one field of
-`Assessment` still in flux, so its absence renders nothing at all rather than an
-empty heading.
+Two things this screen refuses to do:
+
+* **Bury what could not be determined.** It is a section with a heading, in the
+  same type as everything else, in the position the engine puts it. A tool that
+  hides its own limits into a footnote is doing something different from one
+  that states them.
+* **Let a stored assessment pass as a fresh one.** If this came out of the
+  store, the age is in the chrome and re-running is one key.
+
+Every field beyond `repo`, `verdict`, `summary` and `claims` is read through
+`getattr` with a default. Those four are the contract; the rest the engine has
+added over time, and a screen that hard-required them would break the next time
+one moved.
 """
 
 from __future__ import annotations
@@ -18,65 +29,92 @@ from textual.containers import Horizontal, VerticalScroll
 from textual.screen import Screen
 from textual.widgets import Footer
 
-from holt.tui import theme
+from holt.report import VERDICT_HEADLINES
+from holt.tui import animation, store, theme
+from holt.tui.visual import Line
 from holt.tui.widgets.claims import ClaimList
 from holt.tui.widgets.disclosure import EntryPointRow, MeasuredResult
-from holt.tui.visual import Line
 
 
 class AssessmentScreen(Screen):
     BINDINGS = [
+        ("escape", "home", "home"),
         ("enter", "inspect", "open evidence"),
-        ("l", "live", "trace"),
+        ("ctrl+r", "rerun", "re-run"),
+        ("t", "trace", "trace"),
         ("q", "quit", "quit"),
     ]
 
     def compose(self) -> ComposeResult:
-        assessment = self.app.session.assessment
-        trace = self.app.session.trace
+        session = self.app.session
+        assessment = session.assessment
+        verdict = assessment.verdict
 
         with Horizontal(id="chrome"):
             yield Line("holt", id="chrome-left")
-            yield Line(
-                Text(
-                    f"{assessment.repo}   "
-                    f"{'replay' if assessment.replayed else 'live'}",
-                    style=theme.FAINT,
-                ),
-                id="chrome-right",
-            )
-        yield Line("─" * 200, classes="rule")
+            yield Line(self._provenance(), id="chrome-right")
+        yield Line("─" * 240, classes="rule")
 
-        with VerticalScroll():
-            verdict = assessment.verdict.value
+        with VerticalScroll(id="report"):
+            # The answer, in the engine's own words, at the size of a headline.
             yield Line(
-                Text(theme.verdict_label(verdict), style=theme.verdict_colour(verdict)),
+                Text(_headline(verdict), style=theme.verdict_colour(verdict.value)),
                 id="verdict",
             )
-            if trace is not None and getattr(trace, "rules", None):
-                yield Line(
-                    "\n".join(trace.rules),
-                    id="verdict-rules",
-                )
-            yield Line(assessment.summary, id="summary")
+            days = getattr(assessment, "contributor_days", 7)
+            yield Line(
+                Text(
+                    f"for a contributor with {days} day{'' if days == 1 else 's'}",
+                    style=theme.FAINT,
+                ),
+                id="verdict-budget",
+            )
 
-            yield Line("─" * 200, classes="rule")
+            bottom_line = getattr(assessment, "bottom_line", "")
+            if bottom_line:
+                yield Line(bottom_line, id="bottom-line")
+
+            if assessment.summary:
+                yield from _section("WHAT THE EVIDENCE SHOWS", assessment.summary)
+
+            rules = getattr(assessment, "rules", None)
+            if rules:
+                # The deterministic half, shown rather than described. This is
+                # what `verdict.py` decided; the prose above could not have
+                # changed it, and printing both is how you can tell.
+                yield Line(
+                    Text("WHAT DECIDED IT", style=theme.DIM), classes="section-label"
+                )
+                for rule in rules:
+                    yield Line(Text(f"· {rule}"), classes="rule-line")
+
+            limits = getattr(assessment, "limits", "")
+            if limits:
+                yield from _section("WHAT COULD NOT BE DETERMINED", limits)
+
+            landing = getattr(assessment, "landing", None)
+            if landing:
+                yield Line(
+                    Text("WHERE WORK LANDED", style=theme.DIM), classes="section-label"
+                )
+                for line in landing:
+                    if line.strip():
+                        yield Line(_plain(line), classes="landing-line")
+
             count = len(assessment.claims)
             yield Line(
                 Text(
-                    f"EVIDENCE   {count} "
-                    f"{'claim' if count == 1 else 'claims'}, every one carrying an id "
-                    "that resolved",
+                    f"EVIDENCE   {count} {'claim' if count == 1 else 'claims'}, "
+                    "every one carrying an id that resolved",
                     style=theme.DIM,
                 ),
                 classes="section-label",
             )
             yield ClaimList(assessment.claims, repo=assessment.repo, id="claims")
 
-            # Only rendered when the engine supplied it. Nothing about this
-            # screen assumes the field exists.
+            # Only rendered when the engine supplied it. The ranking is opt-in
+            # now, and nothing about this screen assumes the field exists.
             if getattr(assessment, "entry_points", None):
-                yield Line("─" * 200, classes="rule")
                 yield Line(
                     Text("WHERE TO START", style=theme.DIM), classes="section-label"
                 )
@@ -84,12 +122,34 @@ class AssessmentScreen(Screen):
                 for i, point in enumerate(assessment.entry_points, 1):
                     yield EntryPointRow(i, point)
 
-            yield Line("─" * 200, classes="rule")
             yield Line(
                 Text(f"method  {assessment.method}", style=theme.FAINT),
                 classes="section-label",
             )
+        yield Line("─" * 240, classes="rule")
         yield Footer()
+
+    def on_mount(self) -> None:
+        for index, child in enumerate(self.query_one("#report", VerticalScroll).children):
+            animation.reveal(child, delay=animation.stagger(index))
+
+    def _provenance(self) -> Text:
+        """Where this result came from, and how old it is. Never omitted."""
+        session = self.app.session
+        text = Text()
+        text.append(f"{session.assessment.repo}   ", style=theme.FAINT)
+        stored = session.restored_from
+        if stored is not None:
+            text.append(
+                f"{store.describe_age(stored.age_seconds)} · {stored.mode}",
+                style=theme.DIM,
+            )
+            text.append("   ctrl+r to re-run", style=theme.FAINT)
+        else:
+            text.append(session.options.mode, style=theme.FAINT)
+            if session.cost_usd:
+                text.append(f"   ${session.cost_usd:.4f}", style=theme.FAINT)
+        return text
 
     # ─── actions ────────────────────────────────────────────────────────────
 
@@ -99,8 +159,51 @@ class AssessmentScreen(Screen):
             return
         self.app.inspect(claim.evidence_id)
 
-    def action_live(self) -> None:
-        self.app.pop_screen()
+    def action_rerun(self) -> None:
+        from holt.tui.session import RunOptions
+
+        session = self.app.session
+        self.app.start_run(
+            RunOptions(
+                repo=session.assessment.repo,
+                replay=session.options.replay,
+                live=session.options.live,
+                contributor_days=session.options.contributor_days,
+            )
+        )
+
+    def action_trace(self) -> None:
+        """Back to the run that produced this, when there was one."""
+        if self.app.session.restored_from is None and len(self.app.screen_stack) > 2:
+            self.app.pop_screen()
+
+    def action_home(self) -> None:
+        self.app.go_home()
 
     def action_quit(self) -> None:
         self.app.exit()
+
+
+def _headline(verdict) -> str:
+    try:
+        return VERDICT_HEADLINES[verdict]
+    except (KeyError, TypeError):
+        return str(getattr(verdict, "value", verdict)).replace("_", " ")
+
+
+def _section(label: str, body: str):
+    yield Line(Text(label, style=theme.DIM), classes="section-label")
+    yield Line(body, classes="prose")
+
+
+def _plain(line: str) -> Text:
+    """Markdown from `holt.agent.landing`, shown as text.
+
+    The engine emits markdown because its primary output is a file. Rendering
+    the asterisks here would be showing the reader the engine's plumbing, so
+    the emphasis markers come off and headings become labels.
+    """
+    stripped = line.lstrip("#").strip()
+    if line.startswith("#"):
+        return Text(stripped.replace("**", ""), style=theme.DIM)
+    return Text(line.replace("**", "").replace("`", ""))
