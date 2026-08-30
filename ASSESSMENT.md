@@ -1,6 +1,6 @@
 # Holt — where we are and how we got here
 
-Written 2026-08-30, revised after the Fable audit. 44 commits, 83 tests, ~$7.75 spent.
+Written 2026-08-30, revised after the Fable audit and the shortlist work. 47 commits, 93 tests, ~$9 spent.
 
 This is the orientation document. Read it if you have lost the thread.
 
@@ -128,6 +128,8 @@ That is reproducibility, not accuracy, and we say so.
 | Layer | Status |
 |---|---|
 | Evidence assembly, temporal holdout, replay | **Built, and the strongest thing here** |
+| "Where outsider work landed" (per-PR file lists) | **Built** — claims nothing, so nothing can beat it |
+| `holt compare` over a shortlist | **Built** — sorts nothing, for the same reason |
 | Viability analysis | **Built and validated twice, out of sample** |
 | The rubber-stamp rejection rule | **Built, pre-registered, validated out of sample** |
 | Path Finder (generic issue ranking) | Measured, **cut** — tied GitHub's own label |
@@ -163,6 +165,35 @@ ratio is the project. Each cut is reproducible from a clean clone:
   profile — **strictly more context than the arithmetic had** — it returned an
   identical ranking **88 times out of 88**.
 
+### The two additions, and why they are shaped this way
+
+After five features cut for losing to a cheap comparator, both things built today
+were chosen for **making no claim a comparator could beat**.
+
+- **Where outsider work landed.** We crawl every pull request's file list, used it
+  to decide whether a diff was substantive, and threw it away. Counted over
+  outsider threads it says: 13 of nixpkgs' 15 outsider merges landed in
+  `pkgs/by-name`, and outsiders attempted `maintainers`, `pkgs/applications`,
+  `pkgs/build-support` and `doc/release-notes` without a single merge. In a
+  200,000-file tree that is where a stranger's week has a chance. Pure arithmetic,
+  no model call, no trajectory invalidated.
+- **`holt compare`.** A shortlist is the real situation. It sorts nothing; the
+  `why` column is the rule that fired, so the comparison rests on the
+  deterministic part.
+
+**A regression the second one exposed, which matters more than either.** Adding
+the contributor's day budget to the narration prompt — part of the report rewrite
+that fixed our weakest graded area — made that prompt **vary with `--days`**, so
+`--days 3 --replay` became a replay miss. That silently falsified the claim that
+re-answering at a different budget costs zero model calls. Nothing failed loudly.
+It was live for about eight hours and would have shipped, had a second feature not
+happened to touch the same path. The budget never needed to reach the model; a
+test now asserts it cannot.
+
+The lesson we are taking from it: **our safeguards catch contamination and
+citation drift, but nothing was watching whether a published claim was still
+true.** That is the gap, and it is worth stating rather than quietly patching.
+
 ### What the audit changed
 
 An independent audit reproduced the discovery headline from our fixtures and then
@@ -184,7 +215,7 @@ labels were not touched.
 | Criterion | Weight | Where we stand |
 |---|---|---|
 | **Agent Solution & Engineering** *(first tie-break)* | 30 | **Strong, with an honest asterisk.** The design choices are purposeful and each carries a measurement: a deterministic verdict (21/22 stable runs against the baseline's 13/22), a chokepoint that makes contamination structurally impossible, a rejection rule with written thresholds, reparameterisation at zero model cost. The asterisk is ours and we publish it: the *orchestration* buys none of the accuracy. The README now leads with what the split earns and states what it does not immediately after. |
-| **End-to-End Quality** | 20 | **Was our weakest; materially improved today.** The report was a 250-word wall opening "I'm marking this repository viable" — the model claiming a decision `verdict.py` makes. Now: a headline saying what the verdict means *for you* at *your* time budget, a two-sentence bottom line, short prose, **the deciding rule printed**, an explicit "what could not be determined", and evidence with resolvable ids. Still unproven by anyone outside this project. |
+| **End-to-End Quality** | 20 | **Was our weakest; materially improved today.** The report was a 250-word wall opening "I'm marking this repository viable" — the model claiming a decision `verdict.py` makes. Now: a headline saying what the verdict means *for you* at *your* time budget, a two-sentence bottom line, short prose, **the deciding rule printed**, an explicit "what could not be determined", evidence with resolvable ids, and a section counting where outsider work actually landed. `holt compare` puts a shortlist side by side. Still unproven by anyone outside this project. |
 | **Measured Improvement** | 15 | **Exceptional, and the likely differentiator.** Two hash-committed pools, out-of-sample replication with a widening margin, a metric we replaced on catching it reward a constant classifier, bootstrap intervals that span zero reported as spanning zero, and five documented kills. |
 | **Problem & User Value** | 15 | **Strong.** A concrete user, a real bottleneck, and a sampling decision (GH Archive over Search — three of thirty pool repos were deleted before the crawl) that a search-based sample would have hidden. |
 | **Reproducibility** *(second tie-break)* | 15 | **Strong and now verified end to end**, not merely designed: fresh clone, credentials stripped from the environment, `uv sync` → 83 passed → CLI renders → `--days 90` re-answers at zero model calls → the ranking harness reproduces published numbers. A credential scrub runs before the content hash, and a test fails on any credential-shaped string in any fixture. |
@@ -202,9 +233,8 @@ achieves. One frozen run fixes it.
 | | Effort | Why |
 |---|---|---|
 | **Final frozen benchmark, both pools** | ~1h, ~$3.50 | The one blocking item. Committed results predate the rejection rule, so the README's specificity of 0.50 understates the 0.83 that actually ships |
-| "Where outsiders land" — per-PR file lists, crawled and never surfaced | ~2h | The most actionable sentence a contributor could read, and pure evidence presentation: it ranks nothing and claims nothing |
-| `holt compare a b c` | ~2h | A real user has a shortlist, not one repo. Composition of finished parts; makes the video far better |
 | Doc pass on the headline numbers | ~30m | Mechanical once the benchmark lands; the structural pass is done |
+| Regenerate the rendered walkthroughs | ~5m | They predate both the report rewrite and the landing section |
 | **Video** | yours | Required deliverable |
 | **Human-time number** | yours, ~30m | The brief asks for it; only you can produce it |
 
