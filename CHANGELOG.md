@@ -997,3 +997,72 @@ returned an identical ranking 88 times out of 88.
 
 **Cost: $0.49 and about four hours.** `holt next` does not ship. Everything stays
 runnable, including the arm that lost to random.
+
+---
+
+## Iteration 16 — the fifth kill: personalised discovery was one summer-of-code cohort (2026-08-30)
+
+**Tried.** Move one step earlier than "analyse this repo": *given who you are,
+which repositories should you even consider?* The argument was composition rather
+than competition — stars say **alive**, language says **my world**, and neither
+says **will they take a patch from a stranger**, which is the one thing this
+project has evidence it can measure.
+
+**The evidence for it looked strong.** Of 74 (contributor → new repository)
+transitions in the pool, **66 landed in an L1-viable repository — 89%** against a
+51% base rate. On that number the feature was worth about three hours.
+
+**It survives none of four controls.** Reproduce all of them with
+`PYTHONPATH=. uv run python eval/mover_controls.py`, which re-derives the headline
+first, because a refutation that cannot reproduce what it refutes is not one.
+
+**(a) It is one programme, not a preference.** **66 of the 74 transitions have
+both endpoints inside a single nine-repository cluster**, and that cluster is
+GirlScript Summer of Code '26 — projects with a points leaderboard.
+`grep -oic gssoc fixtures/post_t/leonagoel__hybrid-recommender.json` returns
+**1,605**; commitpulse returns 867. Contributors move between these repositories
+because they are enrolled in the same programme. Programme membership causes both
+the move and the merge. Nothing was chosen.
+
+**(b) Outside the cluster the signal inverts.** Eight transitions remain and only
+two land viable. One of those two is `(ghost)` — GitHub's deleted-account
+placeholder, which aliases every deleted contributor into a single login, so it is
+not a person. Another is `frenck`, a home-assistant maintainer moving inside his
+own ecosystem: an insider, not a stranger. **The independent evidence is one
+transition.**
+
+**(c) The base rate was the wrong null.** A mover can only appear where an
+outsider's pull request merges — and L1-viability is *defined* by outsider merges.
+Weighting by where merges actually happen, **11,578 of 16,892 post-cutoff merge
+slots sit in viable repositories: 69%, not 51%.** The lift collapses from +38
+points to +21, and control (a) accounts for the remainder.
+
+**(d) The cheap comparator wins outright.** Leave-one-out cohort co-occurrence —
+*"where else did people from your repository go"* — predicts the **exact
+destination** top-1 22% and top-3 45% of the time. A viability filter only narrows
+69 repositories to 35. The free heuristic answers a strictly harder question,
+*which one*, and answers it well.
+
+**Cost of this kill: about ninety minutes and no model calls.** The comparator-first
+discipline that saved us on `good first issue` and path-overlap saved us again,
+and this time before a line of the feature existed.
+
+**A finding underneath the kill, which now sits in Known Limitations.** Those nine
+GSSoC repositories **pass L1**. Leaderboard-driven pull requests are substantive
+by our diff-shape filter and mentors comment on them, so they label as viable.
+"A stranger's patch lands here" is true of them. Whether a week spent there is the
+opportunity this tool exists to find is a question our ground truth does not ask.
+We did not discover it by inspecting our labels — we discovered it because it
+broke a different experiment. **The labels are hash-committed and were not touched
+after the fact**, and a judge can grep for it in our own fixtures, so it is stated
+in the README rather than left to be found.
+
+**Also corrected here:** the README claimed picking by stars "is a coin flip".
+Our own check says otherwise — the ten most-starred repositories in this pool are
+**80% viable against 51%**. Stars are a decent liveness signal and we now say so.
+What they cannot do is separate a registry, a mirror or a links list from a
+software project, which is where the only significant result in this project lives
+(4 of 5 traps rejected, baseline 0 of 5, exact p = 0.048).
+
+**Five experiments have now been cut by their own pre-registered rules, and one
+shipped.** That ratio is the project.

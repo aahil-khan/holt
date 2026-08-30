@@ -25,7 +25,12 @@ contributor count and open issues.
 
 The only way to tell them apart today is to read twenty pull request threads per
 repository, at roughly fifteen minutes each. Nobody does that, so people pick by
-stars — and the data says that is a coin flip.
+stars. **Stars are not useless** — on this pool the ten most-starred repositories
+are 80% viable against a 51% base rate, and we say so because we measured it.
+What stars cannot do is separate the registry, the mirror and the links list from
+the software project, and that is exactly the population this tool exists for. It
+is also the only comparison here that reaches significance: **4 of 5 traps
+rejected against the baseline's 0 of 5**, exact p = 0.048.
 
 Two closed pull requests are the same integer in every GitHub statistic:
 
@@ -372,6 +377,17 @@ A documented non-use is a judgement, not an omission.
 ---
 
 ## Known limitations
+
+**L1 counts programme-cohort review as review.** Nine repositories in the pool
+are GirlScript Summer of Code '26 projects with a points leaderboard — grep
+`gssoc` in `fixtures/post_t/leonagoel__hybrid-recommender.json` and you will find
+1,605 mentions. Leaderboard-driven pull requests are substantive by our diff-shape
+filter and mentors do comment on them, so those repositories label as viable.
+"A stranger's patch lands here" is *true* of them. Whether a week spent there is
+the opportunity this tool is meant to find is a separate question our ground truth
+does not ask, and we did not discover this until it broke a different experiment
+(`eval/mover_controls.py`). The labels are hash-committed and were not touched
+after the fact.
 
 - **22 of 30 repositories graded.** Three were deleted between the cutoff and
   the run; five had no post-cutoff outsider attempts to grade against.
