@@ -1066,3 +1066,60 @@ software project, which is where the only significant result in this project liv
 
 **Five experiments have now been cut by their own pre-registered rules, and one
 shipped.** That ratio is the project.
+
+---
+
+## Iteration 17 — two capabilities that claim nothing, and a regression they exposed (2026-08-30)
+
+After five features cut for losing to a cheap comparator, both additions here were
+chosen for making **no claim that a comparator could beat**.
+
+**Where outsider work landed.** Every pull request Holt reads carries its file
+list. It decided whether a diff was substantive and was then discarded. Now it is
+counted, over outsider threads only:
+
+```
+pkgs/by-name      13 merged of 62 attempted (21%)
+pkgs/top-level     3 merged of 11 attempted (27%)
+never landed:  maintainers/maintainer-list.nix (11), pkgs/applications (6),
+               pkgs/build-support (6), doc/release-notes (2)
+```
+
+That is the sentence a newcomer most needs about a 200,000-file tree and cannot
+get anywhere: GitHub does not show it, `CONTRIBUTING` does not say it. **Pure
+arithmetic, no model call, no trajectory invalidated.**
+
+Care taken where it would otherwise mislead: an attempt counts once per pull
+request, not once per file; outsider status is decided per thread in time order,
+so one prolific newcomer's fortieth merge cannot make a repository look open; a
+directory is named as "never landed" only when at least two people tried; and the
+text says plainly that this describes the sample rather than stating a rule.
+
+**Two segments group a source tree and destroy a registry.** On
+`runelite/plugin-hub`, where every plugin owns a directory, the first version
+emitted ninety rows of one merge each — rows that read as insight and carried
+none. Above a ratio of areas to pull requests the split falls back to one segment,
+collapsing it to the single true row: **70 merged of 99 attempted, all in
+`plugins`**. The caption states which grouping was used.
+
+**`holt compare a b c`.** A shortlist is the real situation. It sorts nothing —
+rows come out in the order asked for — because sorting is a claim. The `why`
+column is the **rule that fired**, so the comparison is on the deterministic part
+rather than on prose.
+
+**A regression that only this feature could have caught.** Adding the
+contributor's day budget to the narration prompt in iteration 16 made that prompt
+**vary with `--days`**, so `--days 3 --replay` became a replay *miss*. That
+silently falsified the claim that re-answering the question at a different time
+budget costs zero model calls — one of the few things orchestration buys that a
+single prompt cannot. Nothing failed loudly; the claim was simply no longer true.
+`compare --days 3` exercised the path and exposed it.
+
+The budget never needed to reach the model: the renderer prints it and
+`verdict.py` already reflects it, both without a model call. Removed, and a test
+now asserts `contributor_days` appears in neither `narrate` nor its system prompt.
+
+**The uncomfortable part:** this regression was introduced *by the change that
+fixed our weakest graded area*, and it was live for about eight hours. It would
+have survived into the submission had a second feature not happened to touch it.
+Every recorded trajectory was re-recorded a third time as a result.

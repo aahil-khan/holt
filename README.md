@@ -243,6 +243,46 @@ narrower than "structural" suggests.
 Only Stage A's `repo_kind` and the arithmetic signals are consulted by
 `verdict.py`.
 
+## What the report tells you that GitHub does not
+
+**Where outsider work actually landed.** Every pull request Holt reads carries its
+file list. That list decided whether a diff counted as substantive and was then
+thrown away; now it is counted. For `NixOS/nixpkgs`:
+
+> - **`pkgs/by-name`** — 13 merged of 62 attempted (21%)
+> - **`pkgs/top-level`** — 3 merged of 11 attempted (27%)
+>
+> Outsiders attempted these and none were merged: `maintainers/maintainer-list.nix`
+> (11), `pkgs/applications` (6), `pkgs/build-support` (6), `doc/release-notes` (2).
+
+In a tree of that size, that is where a stranger's week has a chance and where it
+does not. GitHub does not show it, `CONTRIBUTING` does not say it, and no amount
+of star-counting implies it. **It ranks nothing and predicts nothing** — after five
+capabilities cut for losing to a cheap comparator, a section that makes no claim
+is a deliberate choice. An attempt counts once per pull request rather than once
+per file; only outsiders count, decided per thread in time order; and a directory
+is named as "never landed" only when at least two people tried.
+
+**A shortlist, not one repository.** Nobody is deciding about a single project.
+
+```
+$ holt compare runelite/plugin-hub NixOS/nixpkgs is-a-dev/register stablyai/orca --replay
+
+| repository          | verdict    | outsiders in | first reply | why
+| runelite/plugin-hub | not_viable | 70/101       | 4.2h        | repo_kind=registry: merged work here is…
+| NixOS/nixpkgs       | viable     | 15/100       | 0.8h        | 15 first-time merges by 15 distinct people…
+| is-a-dev/register   | not_viable | 35/191       | 12.3h       | repo_kind=registry: merged work here is…
+| stablyai/orca       | viable     | 4/7          | 0.3h        | 4 first-time merges by 4 distinct people…
+```
+
+The `why` column is **the rule that fired**, not a summary of the prose, so the
+comparison is on the deterministic part. Rows come out in the order you asked for;
+it sorts nothing, because sorting is a claim.
+
+`runelite/plugin-hub` is the row that makes the case: 70 of 101 outsiders merged,
+replies in 4.2 hours — the best-looking project on the list — and it is rejected,
+with the reason in the same row.
+
 ## What the orchestration does not buy
 
 Everything above is what the split earns. This is what it does not, and it is

@@ -96,6 +96,53 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     return 0
 
 
+# A shortlist is the real situation. Nobody has one repository they are deciding
+# about; they have five tabs open. This orders nothing -- the rows come out in the
+# order they were asked for -- because ordering is a claim, and five capabilities
+# have been cut here for making one that a cheap signal already made.
+COMPARE_HEADERS = ("repository", "verdict", "outsiders in", "first reply", "why")
+
+
+def cmd_compare(args: argparse.Namespace) -> int:
+    provider = make_provider(args.live)
+    rows = []
+    for raw in args.repos:
+        repo = normalise(raw)
+        client = model.build(repo, replay=args.replay)
+        assessment, trace = pipeline.analyze(
+            repo, provider, client, contributor_days=args.days
+        )
+        signals = trace.signals
+        landed = f"{signals.outsider_merged}/{signals.outsider_threads}"
+        reply = (f"{signals.median_first_response_hours:.1f}h"
+                 if signals.median_first_response_hours is not None else "never")
+        # The rule that fired, not a summary of the prose. If nothing fired the
+        # verdict came from the default path and saying so is more honest than
+        # inventing a reason.
+        why = assessment.rules[0] if assessment.rules else "no rule fired"
+        why = why if len(why) <= 58 else why[:57].rstrip(" ,;:") + "…"
+        rows.append((repo, assessment.verdict.value, landed, reply, why))
+
+    widths = [max(len(str(r[i])) for r in (*rows, COMPARE_HEADERS)) for i in range(5)]
+    widths[4] = min(widths[4], 60)
+
+    def line(cells) -> str:
+        return "| " + " | ".join(
+            str(c)[:widths[i]].ljust(widths[i]) for i, c in enumerate(cells)
+        ) + " |"
+
+    print(f"# Comparison — for a contributor with {args.days} "
+          f"day{'' if args.days == 1 else 's'}\n")
+    print(line(COMPARE_HEADERS))
+    print("|" + "|".join("-" * (w + 2) for w in widths) + "|")  # matches "| cell " padding
+    for row in rows:
+        print(line(row))
+    print("\n`outsiders in` counts pull requests merged from people with no prior "
+          "merge, over the number who tried.")
+    print("Run `holt analyze <repo>` for the evidence behind any row.")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="holt", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -136,6 +183,18 @@ def main(argv: list[str] | None = None) -> int:
         help="read GitHub directly instead of committed fixtures (needs GITHUB_TOKEN)",
     )
     analyze.set_defaults(func=cmd_analyze)
+
+    compare = sub.add_parser(
+        "compare", help="assess several repositories and show them side by side"
+    )
+    compare.add_argument("repos", nargs="+", help="owner/name or github.com URLs")
+    compare.add_argument("--replay", action="store_true",
+                         help="replay recorded model output; no API key, no spend")
+    compare.add_argument("--days", type=int, default=7,
+                         help="how many days you actually have")
+    compare.add_argument("--live", action="store_true",
+                         help="read GitHub directly instead of committed fixtures")
+    compare.set_defaults(func=cmd_compare)
 
     args = parser.parse_args(argv)
     return args.func(args)

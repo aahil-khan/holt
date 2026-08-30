@@ -73,7 +73,7 @@ def analyze(
         if k not in ("reviewed_share", "merge_rate")
     }
     narrated = stages.narrate(
-        repo, verdict.value, rules, findings, narrated_signals, model, contributor_days
+        repo, verdict.value, rules, findings, narrated_signals, model
     )
 
     # The evidence list is built from verified findings, not written by the

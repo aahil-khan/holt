@@ -362,7 +362,8 @@ def assess_opportunity(
 
 NARRATE_SYSTEM = """You write the assessment a careful contributor would leave
 after an afternoon reading a repository's pull requests, for someone deciding
-where to spend a limited number of days.
+where to spend a limited number of days. You are not told how many days they
+have; say what the repository is like, not how long it would take them.
 
 You are given a verdict that has already been decided. You do not revisit it,
 soften it, or argue with it -- you explain what it rests on.
@@ -409,10 +410,15 @@ NARRATE_SCHEMA = {
 
 def narrate(
     repo: str, verdict: str, trace: list[str], findings: Findings, signals_dict: dict,
-    model: ModelClient, contributor_days: int = 7,
+    model: ModelClient,
 ) -> dict:
-    lines = [f"Repository: {repo}", f"Verdict (already decided, do not change): {verdict}",
-             f"The reader has {contributor_days} day(s) to spend.", ""]
+    # The contributor's day budget is deliberately absent from this prompt. It
+    # reaches the reader through the renderer's headline and through the rule
+    # trace below, both of which are computed without a model. Putting it here
+    # made the prompt vary with `--days`, which turned every non-default budget
+    # into a replay miss and quietly broke the one claim that re-answering the
+    # question costs nothing.
+    lines = [f"Repository: {repo}", f"Verdict (already decided, do not change): {verdict}", ""]
     lines += ["Why the rules landed there:"] + [f"  - {t}" for t in trace]
     lines += ["", "Measured before the cutoff:"]
     lines += [f"  {k}: {v}" for k, v in signals_dict.items()]

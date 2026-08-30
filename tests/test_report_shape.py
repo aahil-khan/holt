@@ -69,3 +69,19 @@ def test_a_long_note_is_clipped_before_it_reaches_the_reader():
 def test_a_claim_keeps_its_evidence_id_next_to_it():
     out = build(claims=[Claim("merged after review", "pr:a/b#1:opened")])
     assert "- merged after review — `pr:a/b#1:opened`" in out
+
+
+def test_the_day_budget_never_reaches_the_narration_prompt():
+    """`--days` must cost zero model calls, so it cannot change a prompt.
+
+    When the budget was in the prompt, every value other than the default was a
+    replay miss, and the claim that re-answering the question is free was false
+    without anything failing loudly enough to notice.
+    """
+    import inspect
+
+    from holt.agent import stages
+
+    source = inspect.getsource(stages.narrate)
+    assert "contributor_days" not in source
+    assert "contributor_days" not in stages.NARRATE_SYSTEM
