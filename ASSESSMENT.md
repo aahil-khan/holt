@@ -1,6 +1,6 @@
 # Holt — where we are and how we got here
 
-Written 2026-08-30, revised through the Path Finder decision. 36 commits, 71 tests, ~$5.10 spent.
+Written 2026-08-30, revised after the Fable audit. 44 commits, 83 tests, ~$7.75 spent.
 
 This is the orientation document. Read it if you have lost the thread.
 
@@ -123,101 +123,87 @@ That is reproducibility, not accuracy, and we say so.
 - Stage B and Stage C reach the report but not the verdict, and that is disclosed
   rather than quietly true.
 
-## 5. What has happened since, and what is open
+## 5. Where each capability stands
 
-**Shipped since this document was first written:**
-
-- **The rubber-stamp rejection rule.** Rejects when contributions land easily and
-  nobody reviews them. Validated out-of-sample on pool 2 *before* shipping —
-  specificity 0.58 → 0.83, all three pre-registered predictions holding. This is
-  the first thing that makes the pipeline itself, rather than the evidence layer,
-  earn its place.
-- **`--days`.** The contributor's time budget is a parameter, not a hardcoded
-  week. Re-running with a different budget costs **zero model calls**, because
-  only `verdict.py` re-runs. That is the cleanest thing the orchestration buys
-  that a single prompt cannot, and unlike the accuracy claim it is not in dispute.
-- **Evidence integrity as an evaluation dimension.** Holt's citations resolve
-  696/696. Two of our predictions failed here: the matched prompt does *not*
-  fabricate (638/638 resolve), and our own quote fidelity is 80% rather than
-  near-perfect. The real difference is that the prompt emits no quotes at all, so
-  its claims cannot be checked while Holt's can. The metric also found a defect in
-  our own prompt on its first run — 80 of 108 unfaithful quotes were Holt's own
-  scaffolding being quoted back as evidence.
-
-**Path Finder: measured, and shipped losing.** The decision that had been left
-open is made, and one query made it.
-
-Before choosing, we asked something that was a property of the *inputs* rather
-than a slice on outcomes: **how many of the 25 scorable repositories carry any
-beginner-labelled issue at all?**
-
-```
-13/25  none at all
-17/25  fewer than three — the label cannot fill a top-3 there
-497/3,613 candidate issues carry a beginner label (13.8%)
-```
-
-**On 17 of 17 label-absent repositories, the `good_first` comparator scored
-identically to recency, to the decimal.** With nothing labelled it reorders
-nothing; it *is* recency under another name. So "we tied the `good first issue`
-label" was, across two thirds of the pool, "we tied recency" — a flaw in how we
-reported our own comparator.
-
-That reframes the result without rescuing it. The combined numbers stand:
-
-| Method | precision@3, 25 repos |
+| Layer | Status |
 |---|---|
-| random (base rate) | 0.151 |
-| recency | 0.160 |
-| `good first issue` label | **0.187** |
-| Holt | **0.173** |
+| Evidence assembly, temporal holdout, replay | **Built, and the strongest thing here** |
+| Viability analysis | **Built and validated twice, out of sample** |
+| The rubber-stamp rejection rule | **Built, pre-registered, validated out of sample** |
+| Path Finder (generic issue ranking) | Measured, **cut** — tied GitHub's own label |
+| Personalised progression | Measured, **cut** — model changed 0 of 88 rankings |
+| Personalised discovery | Measured, **cut** — the lift was one programme cohort |
+| Star-based discovery | **Not built** — a 5-minute check said stars already do it |
 
-Paired, Holt − label is −0.013, 95% CI [−0.133, +0.120], sign test p = 0.51.
+**Five experiments cut by their own pre-registered rules, one shipped.** That
+ratio is the project. Each cut is reproducible from a clean clone:
+`eval/sensitivity.py`, `eval/pathfinder_harness.py`,
+`eval/progression_harness.py`, `eval/mover_controls.py`.
 
-**So it ships, and it ships losing, with the losing number printed in its own
-output.** Every rendered ranking carries this — emitted by the renderer, not by
-any caller, so no code path can print a ranking without it:
+### The three things that measurably work
 
-> **This ranking is not measurably better than picking at random.** precision@3
-> was 0.173 for this ranking, 0.187 for GitHub's `good first issue` label and
-> 0.151 for a random pick — differences well inside noise. It is printed anyway
-> because 13 of those 25 repositories had no beginner-labelled issue at all.
+- **The rejection rule.** Contributions land easily and nobody reviews them →
+  reject. Pre-registered with numeric predictions, validated on a pool never used
+  to develop it: **specificity 0.58 → 0.83**, all three predictions holding. The
+  only change that measurably improved accuracy.
+- **The evidence layer.** 44× more material than a person can paste, every claim
+  carrying an id that resolves (696/696), a cutoff asserted at the chokepoint
+  rather than promised in prose.
+- **`--days`.** Re-answering at a different time budget costs **zero model
+  calls**, because only `verdict.py` re-runs.
 
-A ranking no better than chance still beats what a contributor has today on the
-half of viable repositories where no beginner label exists at all — and saying so
-in the product, rather than in a document, is the point. Two tests hold it there:
-one that the disclaimer accompanies any ranking, one that its printed numbers
-track the recorded measurement. See it with
-`uv run python -m holt.cli analyze NixOS/nixpkgs --replay`.
+### The four things we have proven do *not* work, about ourselves
 
-**Two things found while doing this that matter more than the feature.**
+- Orchestration adds no accuracy over one prompt with identical evidence
+  (0.42 = 0.42 on pool 2).
+- Stage D verification dropped **0 of 1,402** findings.
+- The arithmetic thresholds never bind on this pool.
+- The model layer contributes nothing to ranking. Sharpest form: given
+  contributor history, file lists, review threads and a structured competence
+  profile — **strictly more context than the arithmetic had** — it returned an
+  identical ranking **88 times out of 88**.
 
-*The isolation test we claimed existed did not exist.* `CLAUDE.md` and three
-docstrings said a test enforced that `eval/labels/` cannot import
-`src/holt/agent/`. Nothing did. A documented, unenforced guarantee is worse than
-an undocumented one, because a reader trusts it. It is now checked with `ast`, so
-even an unexecuted import fails.
+### What the audit changed
 
-*The fresh-clone check found somebody else's credentials, not ours.* Sweeping a
-clean clone turned up **13 credential-shaped strings across 7 fixtures**,
-including two full-length GitHub tokens pasted into public issue bodies — one of
-them printed twice, once normally and once **reversed** to defeat scanners.
-Scrubbing now runs before the content hash, records keep their evidence ids so
-citations still resolve, and a test walks every committed fixture and fails on
-any credential-shaped string. All 84 trajectories still replay with zero stale
-keys: none of the removed strings had reached a prompt.
+An independent audit reproduced the discovery headline from our fixtures and then
+broke it four ways. It also caught a number we had stated wrongly (a 47% base rate
+whose denominator counted repositories with no fixtures; the correct figure is
+51%) and a README claim that stars are "a coin flip" when our own check says they
+are 80% precise at top-10. Both corrected.
 
-**Fresh clone, no credentials, verified end to end:** `uv sync` → **71 passed** →
-`holt analyze --replay` renders → `--days 90` re-answers at zero model calls →
-`eval/pathfinder_harness.py --replay` reproduces the published ranking numbers.
-That is the qualification-gate item and the second tie-break, now actually run
-rather than designed for.
+It surfaced something more uncomfortable underneath: **nine pool repositories are
+GirlScript Summer of Code '26 projects with a points leaderboard, and they pass
+L1.** A stranger's patch does land there; whether a week spent there is the
+opportunity this tool exists to find is a question our ground truth does not ask.
+We did not find this by auditing our labels — it surfaced because it broke a
+different experiment. It is in Known Limitations with the grep command, and the
+labels were not touched.
+
+## 5b. Against the rubric
+
+| Criterion | Weight | Where we stand |
+|---|---|---|
+| **Agent Solution & Engineering** *(first tie-break)* | 30 | **Strong, with an honest asterisk.** The design choices are purposeful and each carries a measurement: a deterministic verdict (21/22 stable runs against the baseline's 13/22), a chokepoint that makes contamination structurally impossible, a rejection rule with written thresholds, reparameterisation at zero model cost. The asterisk is ours and we publish it: the *orchestration* buys none of the accuracy. The README now leads with what the split earns and states what it does not immediately after. |
+| **End-to-End Quality** | 20 | **Was our weakest; materially improved today.** The report was a 250-word wall opening "I'm marking this repository viable" — the model claiming a decision `verdict.py` makes. Now: a headline saying what the verdict means *for you* at *your* time budget, a two-sentence bottom line, short prose, **the deciding rule printed**, an explicit "what could not be determined", and evidence with resolvable ids. Still unproven by anyone outside this project. |
+| **Measured Improvement** | 15 | **Exceptional, and the likely differentiator.** Two hash-committed pools, out-of-sample replication with a widening margin, a metric we replaced on catching it reward a constant classifier, bootstrap intervals that span zero reported as spanning zero, and five documented kills. |
+| **Problem & User Value** | 15 | **Strong.** A concrete user, a real bottleneck, and a sampling decision (GH Archive over Search — three of thirty pool repos were deleted before the crawl) that a search-based sample would have hidden. |
+| **Reproducibility** *(second tie-break)* | 15 | **Strong and now verified end to end**, not merely designed: fresh clone, credentials stripped from the environment, `uv sync` → 83 passed → CLI renders → `--days 90` re-answers at zero model calls → the ranking harness reproduces published numbers. A credential scrub runs before the content hash, and a test fails on any credential-shaped string in any fixture. |
+| **Hot Take** | 5 | **Have one, and it is true in the repo:** *Holt is not a smarter analyst. We measured four times that our model layer adds no accuracy over arithmetic. It is an evidence assembly nobody will do by hand, wrapped in properties a conversation cannot have.* |
+
+**The one gap that is ours to close:** the committed benchmark numbers predate
+both the rejection rule and the report rewrite, so the README currently
+*understates* what ships — specificity 0.50 against the 0.83 the shipped rule
+achieves. One frozen run fixes it.
+
+**The one gap that is not ours:** nobody outside this project has read a report.
 
 **Open:**
 
 | | Effort | Why |
 |---|---|---|
 | **Final frozen benchmark, both pools** | ~1h, ~$3.50 | The one blocking item. Committed results predate the rejection rule, so the README's specificity of 0.50 understates the 0.83 that actually ships |
+| "Where outsiders land" — per-PR file lists, crawled and never surfaced | ~2h | The most actionable sentence a contributor could read, and pure evidence presentation: it ranks nothing and claims nothing |
+| `holt compare a b c` | ~2h | A real user has a shortlist, not one repo. Composition of finished parts; makes the video far better |
 | Doc pass on the headline numbers | ~30m | Mechanical once the benchmark lands; the structural pass is done |
 | **Video** | yours | Required deliverable |
 | **Human-time number** | yours, ~30m | The brief asks for it; only you can produce it |
