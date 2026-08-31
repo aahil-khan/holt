@@ -1123,3 +1123,48 @@ now asserts `contributor_days` appears in neither `narrate` nor its system promp
 fixed our weakest graded area*, and it was live for about eight hours. It would
 have survived into the submission had a second feature not happened to touch it.
 Every recorded trajectory was re-recorded a third time as a result.
+
+## Iteration 18 — `holt discover`: the user states a profile, screening is free (2026-08-31)
+
+Discovery returns, shaped by two earlier kills instead of repeating them.
+
+**The input is a stated profile, not an inferred one.** Iteration 15/16 tried to
+infer a profile from the person's GitHub history and was cut on data: the median
+contributor in our pool has **1 merged pull request and 5 touched files**, and
+98% of cross-repository area overlap was generic-path collisions (`src`, `docs`,
+`tests`). Inferring "you work on Python developer tooling" from one pull request
+would be invention, so `holt profile` asks — once, four questions, stored in
+`~/.config/holt/profile.toml`. The earlier objection that *"a form cannot be
+evaluated"* was a benchmark argument wrongly applied to a product decision: the
+benchmark decides what we may claim, not what we may build.
+
+**Every question maps to something that changes the output, or it is not asked.**
+Languages and topics become search qualifiers — sourcing only, no claim. Days
+feeds `verdict.py`, where the slow-response threshold is `days × 24`.
+Contribution type is matched against the directories where outsider work
+actually merged (the landing analysis). Experience level is deliberately absent:
+nothing downstream could map it to a threshold, so asking it would be decoration.
+
+**The structural fact that makes screening free:** `verdict.py` needs exactly
+one model-derived input, `repo_kind`. Every other rule — rubber-stamp, hostile,
+slow-response, the outsider-merge floor — is arithmetic over crawled signals.
+So `holt discover` sources candidates from GitHub repository search, screens
+them at one page of pull-request threads with **zero model calls**, and spends
+model money only on the survivors, re-crawled at full depth. A prior live probe
+measured screening at ~6 s per repository, $0.00 — and it rejected correctly
+(`tqdm/tqdm`: median first reply 837 h against a 7-day budget).
+
+**Claim discipline.** We claim the filter — that is the 4/5-vs-0/5 trap
+rejection, exact p = 0.048, and the out-of-sample rubber-stamp rule. We do not
+claim the sourcing (candidates come from GitHub search, and the output prints
+the query) or the ordering (rows come out in screening order; nothing is
+ranked). The output states that screening numbers are noisier than full-depth
+ones, and which depth produced each.
+
+**Evidence so far.** Fourteen new tests: every rejection bucket is walked from
+synthetic threads (rubber-stamp, hostile, slow-against-budget, too-thin,
+archived), the same repository flips from rejected to survivor when the budget
+moves from 7 to 90 days, screening's signature admits no model client, and a
+recorded session replays end-to-end from fixtures with no credentials. 108
+passing overall. A recorded demo session for the no-credential replay path is
+next; its numbers go here when it exists.

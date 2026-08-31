@@ -166,6 +166,49 @@ def cmd_compare(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_profile(args: argparse.Namespace) -> int:
+    from holt import profile as profile_mod
+
+    stored = profile_mod.load()
+    if any(getattr(args, f, None) for f in ("lang", "topic", "contribution", "days_flag")):
+        args.days = args.days_flag
+        updated = profile_mod.from_args(args, stored)
+    else:
+        updated = profile_mod.ask(stored)
+    path = profile_mod.save(updated)
+    print(f"Saved to {path}")
+    return 0
+
+
+def cmd_discover(args: argparse.Namespace) -> int:
+    from holt import discover, profile as profile_mod
+
+    args.days = args.days_flag
+    if args.live or args.record:
+        stated = profile_mod.from_args(args, profile_mod.load())
+        if not (stated.languages or stated.topics):
+            print("Nothing to search for. Run `holt profile` once, or pass "
+                  "--lang/--topic.", file=sys.stderr)
+            return 2
+        out = discover.run_live(
+            stated, limit=args.limit, max_analyze=args.max_analyze,
+            record=args.record, progress=lambda s: print(s, file=sys.stderr),
+        )
+    else:
+        # The free path: replay a recorded session. The default session ships
+        # in the repository so the demo needs no token and no key.
+        try:
+            out = discover.run_replay(args.session, days=args.days_flag,
+                                      max_analyze=args.max_analyze)
+        except FileNotFoundError:
+            print(f"No recorded discovery session named {args.session!r}. "
+                  "Run with --live for a fresh search (needs GITHUB_TOKEN and "
+                  "OPENAI_API_KEY).", file=sys.stderr)
+            return 2
+    print(out)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="holt", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -228,6 +271,45 @@ def main(argv: list[str] | None = None) -> int:
              "for --live and to the benchmark cutoff for fixtures",
     )
     compare.set_defaults(func=cmd_compare)
+
+    profile_p = sub.add_parser(
+        "profile",
+        help="say once what you want to work on; `holt discover` reads it",
+    )
+    profile_p.add_argument("--lang", help="comma-separated languages")
+    profile_p.add_argument("--topic", help="comma-separated GitHub topics")
+    profile_p.add_argument("--contribution",
+                           help="comma-separated: docs, tests, ci, code")
+    profile_p.add_argument("--days", dest="days_flag", type=int,
+                           help="how many days you actually have")
+    profile_p.set_defaults(func=cmd_profile)
+
+    discover_p = sub.add_parser(
+        "discover",
+        help="search GitHub for candidates, screen them for free, analyse the "
+             "survivors",
+    )
+    discover_p.add_argument("--lang", help="comma-separated languages")
+    discover_p.add_argument("--topic", help="comma-separated GitHub topics")
+    discover_p.add_argument("--contribution",
+                            help="comma-separated: docs, tests, ci, code")
+    discover_p.add_argument("--days", dest="days_flag", type=int,
+                            help="how many days you actually have")
+    discover_p.add_argument("--limit", type=int, default=25,
+                            help="how many candidates to source")
+    discover_p.add_argument("--max-analyze", type=int, default=8,
+                            help="full analyses to run at most; survivors past "
+                                 "the cap are listed, not silently dropped")
+    discover_p.add_argument("--live", action="store_true",
+                            help="search GitHub now (needs GITHUB_TOKEN and "
+                                 "OPENAI_API_KEY)")
+    discover_p.add_argument("--record",
+                            help="record this live session under a name so it "
+                                 "replays with no credentials (implies --live)")
+    discover_p.add_argument("--session", default="demo",
+                            help="which recorded session to replay "
+                                 "(default: demo)")
+    discover_p.set_defaults(func=cmd_discover)
 
     args = parser.parse_args(argv)
     return args.func(args)

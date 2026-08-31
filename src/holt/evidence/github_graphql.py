@@ -113,6 +113,26 @@ query($q:String!, $cursor:String) {
 
 MAX_ISSUE_BODY = 4000
 
+# Repository search, for `holt discover`. Sourcing only: these results are where
+# candidates come from, and the output says so. Nothing downstream treats search
+# rank as a signal — the screening pass re-derives everything it uses from the
+# contribution history.
+REPO_SEARCH = """
+query($q:String!, $cursor:String) {
+  rateLimit { remaining resetAt }
+  search(query:$q, type:REPOSITORY, first:25, after:$cursor) {
+    repositoryCount
+    pageInfo { hasNextPage endCursor }
+    nodes {
+      ... on Repository {
+        nameWithOwner description stargazerCount pushedAt isArchived isFork
+        primaryLanguage { name }
+      }
+    }
+  }
+}
+"""
+
 
 def _ts(value: str | None) -> datetime | None:
     return datetime.fromisoformat(value.replace("Z", "+00:00")) if value else None
@@ -193,6 +213,16 @@ class GitHubGraphQL:
         cursor: str | None = None
         for _ in range(max_pages):
             search = self.query(ISSUE_SEARCH, q=q, cursor=cursor)["search"]
+            yield from (n for n in search["nodes"] if n)
+            page = search["pageInfo"]
+            if not page["hasNextPage"]:
+                return
+            cursor = page["endCursor"]
+
+    def search_repositories(self, q: str, max_pages: int = 2) -> Iterator[dict[str, Any]]:
+        cursor: str | None = None
+        for _ in range(max_pages):
+            search = self.query(REPO_SEARCH, q=q, cursor=cursor)["search"]
             yield from (n for n in search["nodes"] if n)
             page = search["pageInfo"]
             if not page["hasNextPage"]:

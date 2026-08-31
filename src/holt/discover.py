@@ -1,0 +1,414 @@
+"""User-directed discovery: source candidates, screen them for free, analyse survivors.
+
+The claim discipline is the whole point of this module:
+
+* **We claim the filter.** Screening applies the same rules as `verdict.py` —
+  rubber-stamp (validated out of sample, specificity 0.58 -> 0.83), hostile,
+  slow-response against the user's stated day budget, and the outsider-merge
+  floor. Trap rejection measured 4/5 against the baseline's 0/5 (exact p = 0.048).
+* **We do not claim the sourcing or the ordering.** Candidates come from GitHub
+  repository search and the output says so. Rows come out in screening order.
+* Screening runs at reduced crawl depth (the newest page of pull-request
+  threads) so its numbers are noisier than the benchmark's; survivors are
+  re-crawled at full depth before anything is asserted about them.
+
+The structural fact that makes screening free: `verdict.py` needs exactly one
+model-derived input, `repo_kind`. Every other rule is arithmetic over crawled
+signals. So screening runs **no model at all**; the one thing it cannot do is
+tell a registry from a software project, and the full analysis of the survivors
+is where that gets caught.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
+from pathlib import Path
+from typing import Any, Callable, Iterable
+
+from holt import model
+from holt.agent import landing as landing_mod
+from holt.agent.findings import Findings
+from holt.agent.pipeline import analyze
+from holt.agent.signals import Signals, build_threads, compute
+from holt.agent.verdict import classify
+from holt.evidence.fixtures import FixtureProvider, write_fixture
+from holt.evidence.provider import EvidenceProvider
+from holt.profile import CONTRIBUTION_AREAS, Profile
+from holt.report import Verdict
+from holt.types import EvidenceRecord, Window
+
+DISCOVER_ROOT = Path("fixtures/discover")
+DISCOVER_TRAJECTORIES = "discover"
+
+# Screening reads one page of pull-request threads; the full analysis reads up
+# to eight. Both numbers are printed, not implied.
+SCREEN_PAGES = 1
+FULL_PAGES = 8
+
+# Sourcing recency: a repository nobody pushed to in this window has no fresh
+# threads to screen. A sourcing choice, disclosed in the printed query.
+RECENT_PUSH_DAYS = 60
+
+CAT_ARCHIVED = "archived"
+CAT_NO_LANDING = "nobody outside has landed work in"
+CAT_SLOW = "replies too slow for the day budget"
+CAT_RUBBER_STAMP = "work merged without review (the rubber-stamp rule)"
+CAT_HOSTILE = "outsider attempts went unanswered"
+
+
+@dataclass(slots=True)
+class Candidate:
+    slug: str
+    description: str | None = None
+    stars: int = 0
+    language: str | None = None
+    pushed_at: str | None = None
+
+    def as_dict(self) -> dict[str, Any]:
+        return {"slug": self.slug, "description": self.description, "stars": self.stars,
+                "language": self.language, "pushed_at": self.pushed_at}
+
+
+@dataclass(slots=True)
+class Screened:
+    candidate: Candidate
+    verdict: Verdict
+    trace: list[str]
+    signals: Signals
+    category: str | None  # None means the candidate survived
+
+
+def build_queries(profile: Profile, as_of: datetime) -> list[str]:
+    """One search query per language: GitHub ANDs repeated `language:` qualifiers,
+    so two languages in one query would match nothing."""
+    pushed = (as_of - timedelta(days=RECENT_PUSH_DAYS)).date().isoformat()
+    base = [f"topic:{t}" for t in profile.topics]
+    base += [f"pushed:>{pushed}", "archived:false", "fork:false", "stars:>=10"]
+    if not profile.languages:
+        return [" ".join(base)]
+    return [" ".join([f"language:{lang}", *base]) for lang in profile.languages]
+
+
+def source(transport, profile: Profile, as_of: datetime, limit: int) -> tuple[list[Candidate], list[str]]:
+    """Candidates from GitHub repository search. Sourcing only — no claim."""
+    queries = build_queries(profile, as_of)
+    per_query = max(1, limit // len(queries))
+    seen: set[str] = set()
+    out: list[Candidate] = []
+    for q in queries:
+        taken = 0
+        for node in transport.search_repositories(q, max_pages=(per_query // 25) + 1):
+            slug = node["nameWithOwner"]
+            if slug in seen or node.get("isArchived") or node.get("isFork"):
+                continue
+            seen.add(slug)
+            out.append(Candidate(
+                slug=slug,
+                description=node.get("description"),
+                stars=node.get("stargazerCount") or 0,
+                language=((node.get("primaryLanguage") or {}).get("name")),
+                pushed_at=node.get("pushedAt"),
+            ))
+            taken += 1
+            if taken >= per_query:
+                break
+    return out, queries
+
+
+def screen_records(candidate: Candidate, records: list[EvidenceRecord],
+                   days: int) -> Screened:
+    """The free pass. Arithmetic over crawled signals; no model is called, so
+    `repo_kind` is unknown here and the kind rules cannot fire."""
+    signals = compute(build_threads(records))
+    findings = Findings()
+    for r in records:
+        if r.evidence_id.endswith(":meta"):
+            findings.add("is_archived", bool(r.payload.get("is_archived")),
+                         (r.evidence_id,))
+            break
+    verdict, trace = classify(findings, signals, contributor_days=days)
+    return Screened(candidate, verdict, trace, signals, _categorise(verdict, trace))
+
+
+def _categorise(verdict: Verdict, trace: list[str]) -> str | None:
+    """Bucket a rejection for the summary. Keyed to the wording `verdict.py`
+    emits; a test walks every bucket so a rewording fails loudly here."""
+    if verdict is Verdict.VIABLE:
+        return None
+    joined = " ".join(trace)
+    if "archived" in joined:
+        return CAT_ARCHIVED
+    if "waved through unread" in joined:
+        return CAT_RUBBER_STAMP
+    if "exceeds the" in joined:
+        return CAT_SLOW
+    if "drew no response" in joined:
+        return CAT_HOSTILE
+    return CAT_NO_LANDING
+
+
+class PrefetchedProvider(EvidenceProvider):
+    """Serves records already fetched, so live discovery crawls each survivor
+    once instead of once for the fixture and once for the analysis."""
+
+    def __init__(self, window: Window, cutoff: datetime,
+                 records: list[EvidenceRecord]) -> None:
+        super().__init__(window, cutoff)
+        self._records = records
+        self._by_id = {r.evidence_id: r for r in records}
+
+    def _fetch_raw(self, request: str, /, **params: object) -> Iterable[EvidenceRecord]:
+        return self._records
+
+    def _resolve_raw(self, evidence_id: str) -> EvidenceRecord | None:
+        return self._by_id.get(evidence_id)
+
+
+def manifest_path(name: str) -> Path:
+    return DISCOVER_ROOT / f"{name}.json"
+
+
+def screen_root(name: str) -> Path:
+    return DISCOVER_ROOT / name / "screen"
+
+
+def full_root(name: str) -> Path:
+    return DISCOVER_ROOT / name / "full"
+
+
+def trajectory_for(slug: str) -> Path:
+    return model.TRAJECTORY_DIR / DISCOVER_TRAJECTORIES / (slug.replace("/", "__") + ".jsonl")
+
+
+def contribution_notes(landing: landing_mod.Landing,
+                       contributions: list[str]) -> list[str]:
+    """Where the kind of work the user wants to do has actually merged.
+
+    Matched against directories where outsider work landed, for the
+    contribution types that map to directories. A count of this sample, not a
+    promise.
+    """
+    notes: list[str] = []
+    for want in contributions:
+        hints = CONTRIBUTION_AREAS.get(want)
+        if not hints:  # "code" and unmappable answers annotate nothing
+            continue
+        hits = [a for a in landing.landed
+                if any(seg in hints for seg in a.path.lower().split("/"))]
+        if hits:
+            listed = ", ".join(f"`{a.path}` ({a.landed} merged)" for a in hits)
+            notes.append(f"{want}: outsider work has merged in {listed}")
+        else:
+            notes.append(f"{want}: no outsider merge in a matching directory "
+                         "in this sample")
+    return notes
+
+
+@dataclass(slots=True)
+class SurvivorRow:
+    slug: str
+    verdict: str
+    landed: str
+    reply: str
+    why: str
+    notes: list[str]
+
+
+def analyse_survivor(slug: str, provider: EvidenceProvider, client,
+                     days: int, as_of: datetime) -> SurvivorRow:
+    records = provider.fetch(slug)
+    assessment, trace = analyze(slug, provider, client,
+                                contributor_days=days, as_of=as_of)
+    signals = trace.signals
+    landing = landing_mod.compute(build_threads(records))
+    why = assessment.rules[0] if assessment.rules else "no rule fired"
+    return SurvivorRow(
+        slug=slug,
+        verdict=assessment.verdict.value,
+        landed=f"{signals.outsider_merged}/{signals.outsider_threads}",
+        reply=(f"{signals.median_first_response_hours:.1f}h"
+               if signals.median_first_response_hours is not None else "never"),
+        why=why if len(why) <= 58 else why[:57].rstrip(" ,;:") + "…",
+        notes=[],  # filled by the caller, which knows the profile
+    )
+
+
+def render(profile: Profile, queries: list[str], screened: list[Screened],
+           rows: list[SurvivorRow], *, replayed: bool, as_of: datetime,
+           skipped: list[str], unanalysed: int) -> str:
+    lines = [f"# Discover — {profile.describe()}", ""]
+    if replayed:
+        lines += ["> Replaying a recorded discovery session captured "
+                  f"{as_of.date().isoformat()}. No network, no model calls; "
+                  "the query below is the recorded one, not a fresh search.", ""]
+    lines += [f"Candidates come from GitHub repository search — "
+              f"{'; '.join(f'`{q}`' for q in queries)} — in search order. "
+              "Holt claims the screening below, not the sourcing and not the "
+              "ordering.", ""]
+
+    rejected = [s for s in screened if s.category]
+    survivors = [s for s in screened if not s.category]
+    lines.append(
+        f"Screened {len(screened)} candidates against the newest page of each "
+        "repository's pull-request threads — arithmetic only, no model calls, "
+        "so these numbers are noisier than a full analysis. "
+        f"Rejected {len(rejected)}:"
+    )
+    lines.append("")
+    by_cat: dict[str, int] = {}
+    for s in rejected:
+        by_cat[s.category] = by_cat.get(s.category, 0) + 1
+    for cat, n in sorted(by_cat.items(), key=lambda kv: -kv[1]):
+        label = cat.replace("the day budget", f"a {profile.days}-day budget")
+        lines.append(f"- {n} {label}")
+    if skipped:
+        lines.append(f"- {len(skipped)} could not be screened "
+                     f"({', '.join(skipped)})")
+    lines.append("")
+
+    if not survivors:
+        lines += ["No candidate survived screening. Widen the search or the "
+                  "day budget and try again.", ""]
+        return "\n".join(lines).rstrip() + "\n"
+
+    lines.append(f"Analysed {len(rows)} of {len(survivors)} survivors at full "
+                 "crawl depth. Rows are in screening order, not ranked.")
+    if unanalysed:
+        lines.append(f"{unanalysed} survivor(s) not analysed "
+                     "(over the --max-analyze cap); nothing is claimed about them.")
+    lines.append("")
+
+    headers = ("repository", "verdict", "outsiders in", "first reply", "why")
+    table = [(r.slug, r.verdict, r.landed, r.reply, r.why) for r in rows]
+    widths = [max(len(str(row[i])) for row in (*table, headers)) for i in range(5)]
+
+    def line(cells) -> str:
+        return "| " + " | ".join(str(c).ljust(widths[i]) for i, c in enumerate(cells)) + " |"
+
+    lines.append(line(headers))
+    lines.append("|" + "|".join("-" * (w + 2) for w in widths) + "|")
+    for r, row in zip(rows, table):
+        lines.append(line(row))
+        for note in r.notes:
+            lines.append(f"|   ↳ {note}")
+    lines += ["", "`outsiders in` counts pull requests merged from people with "
+              "no prior merge here, over the number who tried.",
+              "Run `holt analyze <repo>` for the evidence behind any row."]
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def run_replay(name: str, days: int | None = None,
+               max_analyze: int = 8) -> str:
+    """Re-run a recorded discovery session with no credentials and no spend.
+
+    The day budget may be changed: screening and the verdict re-run for free,
+    which is the same zero-model-call reparameterisation `--days` gives
+    `holt analyze`.
+    """
+    manifest = json.loads(manifest_path(name).read_text())
+    as_of = datetime.fromisoformat(manifest["as_of"])
+    profile = Profile(**manifest["profile"])
+    if days:
+        profile.days = days
+
+    candidates = [Candidate(**c) for c in manifest["candidates"]]
+    screened, skipped = [], []
+    screen_provider = FixtureProvider(Window.PRE_T, root=screen_root(name), cutoff=as_of)
+    for cand in candidates:
+        try:
+            records = screen_provider.fetch(cand.slug)
+        except FileNotFoundError:
+            skipped.append(cand.slug)
+            continue
+        screened.append(screen_records(cand, records, profile.days))
+
+    survivors = [s for s in screened if not s.category]
+    rows: list[SurvivorRow] = []
+    for s in survivors[:max_analyze]:
+        provider = FixtureProvider(Window.PRE_T, root=full_root(name), cutoff=as_of)
+        try:
+            client = model.ReplayModel(trajectory_for(s.candidate.slug))
+        except FileNotFoundError:
+            skipped.append(s.candidate.slug)
+            continue
+        row = analyse_survivor(s.candidate.slug, provider, client, profile.days, as_of)
+        records = provider.fetch(s.candidate.slug)
+        row.notes = contribution_notes(
+            landing_mod.compute(build_threads(records)), profile.contributions)
+        rows.append(row)
+
+    return render(profile, manifest["queries"], screened, rows, replayed=True,
+                  as_of=as_of, skipped=skipped,
+                  unanalysed=max(0, len(survivors) - max_analyze))
+
+
+def run_live(profile: Profile, limit: int = 25, max_analyze: int = 8,
+             record: str | None = None,
+             progress: Callable[[str], None] = lambda s: None) -> str:
+    """Live discovery. With `record`, every fetch and every model call is
+    written down so the session replays byte-for-byte with no credentials."""
+    from holt.evidence.github_graphql import GitHubGraphQL, LiveGitHubProvider
+
+    as_of = datetime.now(UTC)
+    transport = GitHubGraphQL()
+    candidates, queries = source(transport, profile, as_of, limit)
+    progress(f"sourced {len(candidates)} candidates from GitHub repository search")
+
+    screened, skipped = [], []
+    for i, cand in enumerate(candidates, 1):
+        provider = LiveGitHubProvider(Window.PRE_T, cutoff=as_of,
+                                      transport=transport, max_pages=SCREEN_PAGES)
+        try:
+            records = provider.fetch(cand.slug)
+        except Exception as err:  # a dead candidate must not abort the sweep
+            skipped.append(cand.slug)
+            progress(f"[{i}/{len(candidates)}] {cand.slug}: skipped ({err})")
+            continue
+        if record:
+            write_fixture(cand.slug, Window.PRE_T, records,
+                          root=screen_root(record), cutoff=as_of)
+        result = screen_records(cand, records, profile.days)
+        screened.append(result)
+        progress(f"[{i}/{len(candidates)}] {cand.slug}: "
+                 f"{result.category or 'survived screening'}")
+
+    survivors = [s for s in screened if not s.category]
+    rows: list[SurvivorRow] = []
+    for s in survivors[:max_analyze]:
+        slug = s.candidate.slug
+        provider = LiveGitHubProvider(Window.PRE_T, cutoff=as_of,
+                                      transport=transport, max_pages=FULL_PAGES)
+        try:
+            records = provider.fetch(slug)
+        except Exception as err:
+            skipped.append(slug)
+            progress(f"analyse {slug}: skipped ({err})")
+            continue
+        if record:
+            write_fixture(slug, Window.PRE_T, records,
+                          root=full_root(record), cutoff=as_of)
+        cached = PrefetchedProvider(Window.PRE_T, as_of, records)
+        client = model.OpenAIModel(trajectory_for(slug))
+        row = analyse_survivor(slug, cached, client, profile.days, as_of)
+        row.notes = contribution_notes(
+            landing_mod.compute(build_threads(records)), profile.contributions)
+        rows.append(row)
+        progress(f"analysed {slug}: {row.verdict} (${client.usage.cost_usd:.4f})")
+
+    if record:
+        manifest_path(record).parent.mkdir(parents=True, exist_ok=True)
+        manifest_path(record).write_text(json.dumps({
+            "name": record,
+            "queries": queries,
+            "as_of": as_of.isoformat(),
+            "captured_at": as_of.isoformat(),
+            "profile": {"languages": profile.languages, "topics": profile.topics,
+                        "contributions": profile.contributions, "days": profile.days},
+            "candidates": [c.as_dict() for c in candidates],
+            "analysed": [r.slug for r in rows],
+        }, indent=1, sort_keys=True) + "\n")
+
+    return render(profile, queries, screened, rows, replayed=False, as_of=as_of,
+                  skipped=skipped, unanalysed=max(0, len(survivors) - max_analyze))
