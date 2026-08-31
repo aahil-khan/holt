@@ -1983,3 +1983,97 @@ for the token instead of blaming the recording, and the source order follows the
 report's mode with live dropped when there is no token. Verified by hand against
 `home-assistant/core` + `@frenck`: 14 merged PRs, 31 files, 76 of 202 open
 issues overlap.
+
+
+---
+
+## Iteration 32 — three places the interface chose fixtures for you (2026-08-31)
+
+**The report.** *"A lot of holt TUI is based on fixtures and not running live
+stuff; all fixture stuff should be gated behind conscious choices to use them."*
+Iterations 30 and 31 each moved one screen off its recording. This is the sweep
+for what they left: places where committed fixtures were read not because anyone
+asked, but because a default, a directory listing, or a fall-through decided it.
+
+Three were real. Reading a recording is not the problem — it is free, it is
+reproducible, and it is how the demo works. The problem is a recording served
+where a reader had reason to think they were getting GitHub.
+
+**1. The finder assessed a live result from a recording.** `DiscoverScreen._assess`
+opened with `replay = session_module.has_recording(row.slug)`. Search GitHub
+live, watch the sweep screen candidates, press enter on one — and if a
+trajectory happened to be sitting in `fixtures/trajectories/`, you were handed a
+recorded answer from before the holdout instead of an assessment of what you had
+just found. Nothing on screen said so; the run screen showed "replay" in chrome
+the reader had no reason to look at, having just been shown a live search.
+
+This is the worst of the three because iteration 30 created it. Opening the
+finder on a live search made the path *end* in a recording, and the two commits
+that each looked correct in isolation composed into a lie. The mode now follows
+the search that produced the row: live sweeps are assessed live, recorded
+sessions are replayed, and a recorded row with no trajectory says so rather than
+flipping silently to live and then asking for credentials it never needed
+before.
+
+**2. `RunOptions.replay` defaulted to `True`.** Every call site happened to pass
+it, so nothing was broken today — but the default meant that the way to get
+committed fixtures rendered as an assessment was to not think about the
+question. The field is now required. This is a one-character change with no
+behavioural effect and it is in this entry deliberately: it is the difference
+between a codebase where the safe path is the easy one and one where it is the
+attentive one.
+
+**3. "What next" answered a live report from fixtures, silently.** Iteration 31
+made the ranking try the report's own source first and the other one second.
+Second was the bug in the other direction: when GitHub had nothing, the screen
+fell through to a pre-holdout recording, ranked from it, and mentioned the
+source in a sentence *underneath an order already on screen*. The order looked
+live. That is precisely the overclaim the evidence rules exist to prevent — the
+provenance line iteration 31 added made it disclosed, not chosen.
+
+The fallback toward fixtures now takes `ctrl+e`, and until it is pressed a live
+miss reads as a live miss. The fallback the other way — a replayed report
+reaching GitHub — is untouched, because you already chose the recording and that
+direction moves toward the real repository rather than away from it. The key is
+`ctrl+e` rather than a bare letter for a boring reason: the login box holds
+focus the whole time a reader would want it, and a printable key never reaches
+the screen from inside an `Input`. It is hidden from the footer via
+`check_action` unless something is actually being withheld.
+
+A consequence worth naming: a live report with no `GITHUB_TOKEN` now has no
+source at all, and `_sources()` returns `[]`. It reports the missing token
+instead of quietly answering from the fixtures. That is a screen doing less, and
+it is correct.
+
+**One place was left alone.** Home still opens in replay when there is no
+`OPENAI_API_KEY`, because an interface that refuses to start without credentials
+is worse than one that starts free and says so. What changed is that it says
+*why*: the chrome reads `replay  no OPENAI_API_KEY` until you press `ctrl+t`,
+after which it stops explaining a decision you have now made yourself. The
+reason went beside the mode rather than into the notice line under the input —
+the first draft put it there and pushed the footer off a 100-column screen,
+which cost the reader the keybindings the notice exists to advertise. A test
+caught it.
+
+**"What next" now reuses a read for ten minutes.** Asked for in the same
+breath, and it belongs here rather than in its own entry because it is the same
+question: trying three logins against one repository was three round trips to
+GitHub for the same two fetches. Reads are cached on `(repo, kind, live)` for
+`store.DEFAULT_MAX_AGE_SECONDS` — imported from the store rather than restated,
+so the interface has one answer to "how old is too old" instead of two that can
+drift. Every reuse carries its age in the summary line ("reused from a read 3
+min ago"), dated by the *oldest* of the two fetches, because the freshest part
+of a mixed answer is not what it should be dated by. A cache whose age nobody
+can see is a cache that lies, and this project has a rule about that. Expired
+entries are deleted on lookup rather than left to accumulate for the life of the
+process.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **326 passed**, no skips (was
+318). Eight new tests — a live find with a committed recording on disk is still
+assessed live; a recorded row with no trajectory is refused rather than started
+live; `RunOptions(repo=...)` alone raises `TypeError`; a live report's
+`_sources()` omits the fixtures until `use_committed` is set; the miss names
+`ctrl+e` and shows no ranking until it is pressed, then ranks from committed
+evidence; a second question reuses the read and says "just now"; an entry older
+than the window is not reused and is dropped; and home's chrome names the
+missing key until `ctrl+t` answers it.

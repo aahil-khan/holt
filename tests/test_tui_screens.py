@@ -596,6 +596,126 @@ def test_discover_draws_live_rows_as_they_land(tmp_path, monkeypatch):
     drive(body, tmp_path, size=(100, 60))
 
 
+def test_a_live_find_is_assessed_live_even_where_a_recording_exists(
+    tmp_path, monkeypatch
+):
+    """The mode follows the search, not the disk.
+
+    `home-assistant/core` ships with a committed trajectory. Searching GitHub
+    live, finding it, and pressing enter used to hand back that recording —
+    June's answer about a repository you had just watched a live sweep turn
+    up, with nothing on screen saying so. Which evidence a run reads is a
+    choice, and the contents of `fixtures/` do not get to make it.
+    """
+    from holt.tui import discovery, session as session_module
+    from holt.tui.screens.home import SUGGESTION
+
+    monkeypatch.setenv("GITHUB_TOKEN", "t")
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+    assert session_module.has_recording(SUGGESTION), (
+        "the test is pointless unless a recording is there to be picked up"
+    )
+
+    class FakeSearch:
+        def __init__(self, **kwargs):
+            self.rows = [
+                discovery.Row(
+                    slug=SUGGESTION,
+                    description="does things",
+                    language="Python",
+                    stars=10,
+                    verdict="worth a look",
+                    category=None,
+                    reason="because",
+                )
+            ]
+            self.skipped, self.queries, self.as_of = [], [], None
+            self.total, self.error = 1, None
+            self.finished, self.cancelled, self.running = True, False, False
+
+        def start(self):
+            pass
+
+        def cancel(self):
+            pass
+
+        @property
+        def survivors(self):
+            return self.rows
+
+        @property
+        def screened(self):
+            return len(self.rows)
+
+        def describe(self):
+            return "screened 1 of 1 at no model cost"
+
+    monkeypatch.setattr(discovery, "Search", FakeSearch)
+    started = []
+
+    async def body(app, pilot):
+        monkeypatch.setattr(app, "start_run", started.append)
+        await pilot.press("ctrl+f")
+        await pilot.pause(0.6)
+        app.screen.query_one("#choices").index = 0
+        await pilot.press("enter")
+        await pilot.pause(0.5)
+        app.screen._assess(app.screen.search.rows[0])
+
+    drive(body, tmp_path, size=(100, 60))
+
+    assert len(started) == 1, started
+    assert started[0].mode == "live", "a live find must not be answered by a recording"
+
+
+def test_a_recorded_row_with_no_recording_says_so_rather_than_going_live(
+    tmp_path, monkeypatch
+):
+    """The other half of the same rule. A row from the recorded session whose
+    assessment was never recorded used to flip silently to live and then ask
+    for credentials, which names the wrong problem."""
+    from holt.tui import discovery
+    from holt.tui.screens.discover import DiscoverScreen
+
+    started = []
+
+    async def body(app, pilot):
+        monkeypatch.setattr(app, "start_run", started.append)
+        await app.push_screen(DiscoverScreen(discovery.DEFAULT_SESSION))
+        await pilot.pause(0.5)
+        screen = app.screen
+        row = discovery.Row(
+            slug="nobody/never-recorded",
+            description="",
+            language="",
+            stars=0,
+            verdict="worth a look",
+            category=None,
+            reason="",
+        )
+        screen._assess(row)
+        await pilot.pause(0.3)
+        text = screen_text(app)
+        assert "cannot be replayed" in text, text[-600:]
+
+    drive(body, tmp_path, size=(100, 60))
+    assert started == [], "nothing may start behind that message"
+
+
+def test_which_evidence_a_run_reads_has_no_default(tmp_path):
+    """`replay` defaulted to `True`. Build a `RunOptions` without thinking about
+    the question and you got committed fixtures, rendered as an assessment."""
+    import pytest as _pytest
+
+    from holt.tui.session import RunOptions
+
+    with _pytest.raises(TypeError):
+        RunOptions(repo=CLEAN)  # type: ignore[call-arg]
+
+    assert RunOptions(repo=CLEAN, replay=True).mode == "replay"
+    assert RunOptions(repo=CLEAN, replay=False, live=True).mode == "live"
+
+
 def test_discover_says_so_when_the_session_is_missing(tmp_path):
     from holt.tui.screens.discover import DiscoverScreen
 
@@ -700,19 +820,145 @@ def test_what_next_names_the_token_rather_than_blaming_the_recording(
 
 
 def test_what_next_reads_what_the_report_read_first(monkeypatch):
-    """The report in front of you was built one way. The ranking starts there,
-    and only falls back to the other source — it does not dead-end on it."""
+    """The report in front of you was built one way. The ranking starts there."""
     from holt.tui.screens.next_steps import NextScreen
 
     monkeypatch.setenv("GITHUB_TOKEN", "t")
-    assert NextScreen("x/y", live=True)._sources() == [True, False]
+    # A replayed report may reach past its recording to GitHub: you chose the
+    # recording, and that direction goes toward the live repository.
     assert NextScreen("x/y", live=False)._sources() == [False, True]
 
     # Without a token live is dropped from the list rather than attempted and
     # reported as a failure, which would name the wrong problem.
     monkeypatch.delenv("GITHUB_TOKEN", raising=False)
-    assert NextScreen("x/y", live=True)._sources() == [False]
+    # A live report with no token has nowhere to read from at all. It reports
+    # the missing token rather than quietly answering from the fixtures, which
+    # is what the empty list buys.
+    assert NextScreen("x/y", live=True)._sources() == []
     assert NextScreen("x/y", live=False)._sources() == [False]
+
+
+def test_home_says_why_it_opened_on_recordings(tmp_path, monkeypatch):
+    """Opening onto committed recordings is a decision. When the environment
+    made it for you, the chrome says so rather than showing the bare word
+    `replay` and leaving you to work out that it was not your choice."""
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+
+    async def body(app, pilot):
+        flat = " ".join(screen_text(app).split())
+        assert "replay no OPENAI_API_KEY" in flat, flat[:300]
+
+        # Once you have chosen, it stops explaining itself.
+        await pilot.press("ctrl+t")
+        await pilot.pause(0.3)
+        assert "no OPENAI_API_KEY" not in screen_text(app)
+
+    drive(body, tmp_path, size=(120, 44))
+
+
+def test_a_live_report_is_never_ranked_from_fixtures_unasked(monkeypatch):
+    """The fallback that mattered went the other way.
+
+    A live report whose GitHub read came back empty used to fall through to the
+    committed evidence and mention it afterwards, in a sentence under a ranking
+    already on screen. That is a pre-holdout recording presented as a live
+    answer. It now takes `ctrl+e`.
+    """
+    from holt.tui.screens.next_steps import NextScreen
+
+    monkeypatch.setenv("GITHUB_TOKEN", "t")
+    screen = NextScreen("x/y", live=True)
+    assert screen._sources() == [True], "fixtures must not be reached for"
+
+    screen.use_committed = True
+    assert screen._sources() == [True, False], "and must be reachable when asked"
+
+
+def test_what_next_offers_the_committed_evidence_rather_than_taking_it(tmp_path,
+                                                                      monkeypatch):
+    """The miss names the key, and the key is hidden until it would do something."""
+    monkeypatch.setenv("GITHUB_TOKEN", "t")
+    from holt.tui.screens import next_steps
+
+    next_steps.cache_clear()
+
+    async def body(app, pilot):
+        app.session = fake_run.finished()
+        # Live, and GitHub is unreachable in tests, so the read fails.
+        screen = next_steps.NextScreen(CLEAN, live=True)
+        await app.push_screen(screen)
+        await pilot.pause(0.3)
+        assert screen.check_action("use_committed", ()) is None, (
+            "a key that would be a no-op must not be advertised"
+        )
+
+        await type_repo(pilot, "frenck")
+        await pilot.press("enter")
+        await pilot.pause(2.0)
+
+        flat = " ".join(screen_text(app).split())
+        assert "ctrl+e" in flat, flat[:400]
+        assert "before the holdout" in flat
+        # Offered, not used: no ranking is on screen.
+        assert "hit@10" not in flat
+        assert screen.check_action("use_committed", ()) is True
+
+        # Now ask for it, and the fixtures answer.
+        await screen.action_use_committed()
+        await pilot.pause(2.0)
+        flat = " ".join(screen_text(app).split())
+        assert "merged" in flat, flat[:400]
+        assert "read from committed evidence" in flat
+
+    drive(body, tmp_path, size=(120, 60))
+    next_steps.cache_clear()
+
+
+def test_what_next_reuses_a_read_and_says_how_old_it_is(tmp_path):
+    """Three logins against one repository was three round trips for the same
+    two fetches. A cache nobody can see the age of is a cache that lies, so the
+    age is in the sentence."""
+    from holt.tui.screens import next_steps
+
+    next_steps.cache_clear()
+
+    async def body(app, pilot):
+        app.session = fake_run.finished()
+        await app.push_screen(next_steps.NextScreen(CLEAN))
+        await pilot.pause(0.3)
+        await type_repo(pilot, "frenck")
+        await pilot.press("enter")
+        await pilot.pause(2.0)
+        assert "reused from a read" not in screen_text(app), "first read is not a reuse"
+        assert next_steps._CACHE, "and it must have been kept"
+
+        # Ask again. Nothing is fetched, and the answer dates itself.
+        await pilot.press("enter")
+        await pilot.pause(2.0)
+        flat = " ".join(screen_text(app).split())
+        assert "reused from a read just now" in flat, flat[:400]
+
+    drive(body, tmp_path, size=(120, 60))
+    next_steps.cache_clear()
+
+
+def test_a_read_older_than_the_window_is_not_reused(monkeypatch):
+    """Ten minutes, the same window a stored assessment stays reusable for."""
+    import time
+
+    from holt.tui import store
+    from holt.tui.screens import next_steps
+
+    next_steps.cache_clear()
+    assert next_steps.CACHE_SECONDS == store.DEFAULT_MAX_AGE_SECONDS
+
+    key = ("x/y", "evidence", False)
+    next_steps._CACHE[key] = (time.time() - 60, ["fresh"])
+    assert next_steps._cached(*key)[1] == ["fresh"]
+
+    next_steps._CACHE[key] = (time.time() - next_steps.CACHE_SECONDS - 1, ["stale"])
+    assert next_steps._cached(*key) is None
+    assert key not in next_steps._CACHE, "an expired entry is dropped, not left to rot"
 
 
 def test_what_next_says_plainly_when_the_login_has_landed_nothing(tmp_path):

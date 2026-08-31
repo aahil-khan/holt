@@ -96,8 +96,12 @@ class HomeScreen(Screen):
         super().__init__(**kwargs)
         # Live where it is possible, because that is what assessing a new
         # repository means. Falls back to replay so the interface is still
-        # useful, and still honest about it, with no credentials at all.
+        # useful with no credentials at all — but the fallback says *why*, next
+        # to the mode in the chrome. Opening onto committed recordings is a
+        # decision, and one the environment made on your behalf is one you
+        # should be able to see it made, not infer from a word.
         self.mode = "live" if os.environ.get("OPENAI_API_KEY") else "replay"
+        self._fell_back = self.mode == "replay"
         self._entries: list = []
         self._notice = ""
         #: True once ↑↓ has moved the highlight, false again as soon as anything
@@ -236,6 +240,12 @@ class HomeScreen(Screen):
         if count:
             right.append(f"{count} assessed   ", style=theme.FAINT)
         right.append(self.mode, style=theme.DIM)
+        # Only while it is still the environment's choice rather than yours.
+        # Beside the mode, not in the notice line: the notice is where the keys
+        # are advertised, and a startup message that displaces them costs the
+        # reader the one thing the screen has to tell them immediately.
+        if self._fell_back:
+            right.append("  no OPENAI_API_KEY", style=theme.FAINT)
         self.query_one("#chrome-left", Line).update(Text(left, style=theme.DIM))
         self.query_one("#chrome-right", Line).update(right)
 
@@ -457,6 +467,9 @@ class HomeScreen(Screen):
         self.app.push_screen("models")
 
     def action_toggle_mode(self) -> None:
+        # Chosen now, so the chrome stops explaining a fallback that has been
+        # answered — in either direction.
+        self._fell_back = False
         self.mode = "replay" if self.mode == "live" else "live"
         self._paint_chrome()
         self.notice(
