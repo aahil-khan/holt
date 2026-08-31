@@ -15,3 +15,8 @@ runs/
 
 # The interface keeps its history here. One machine, not project content.
 .holt/
+
+# Kept in the working directory, deliberately never in the repository: the
+# self-assessment names credentials that appeared in working sessions.
+never-commit-something-named-likethisfolder/
+ASSESSMENT.md

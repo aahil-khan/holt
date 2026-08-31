@@ -30,7 +30,7 @@ from holt.cli import main
 
 README = Path("README.md")
 REPRODUCTION = Path("REPRODUCTION.md")
-ASSESSMENT = Path("ASSESSMENT.md")
+USAGE = Path("USAGE.md")
 
 POOL1 = [Path(f"eval/results_eval_run{i}.json") for i in (1, 2, 3)]
 POOL2 = [Path(f"eval/results_eval_p2r{i}.json") for i in (1, 2, 3)]
@@ -94,15 +94,18 @@ def test_readme_headline_mcc_matches_the_committed_runs(paths, method):
     )
 
 
-def test_assessment_does_not_contradict_the_readme_on_stability():
-    holt_same, total = stability(POOL1, "holt")
-    base_same, _ = stability(POOL1, "baseline")
-    text = ASSESSMENT.read_text()
-    stale = re.findall(r"(\d+)/(\d+) stable runs against the baseline's (\d+)/(\d+)", text)
-    for h, n, b, _n2 in stale:
-        assert (int(h), int(n), int(b)) == (holt_same, total, base_same), (
-            f"ASSESSMENT.md says {h}/{n} against {b}/{n}; the runs say "
-            f"{holt_same}/{total} against {base_same}/{total}"
+def test_usage_states_the_measured_balanced_accuracy():
+    """The usage guide tells a user how often to expect a wrong call.
+
+    It is the one number on that page a reader will act on, and it was written
+    by hand from the README's tables. Recompute it here so it cannot drift the
+    way the stability claim did.
+    """
+    text = USAGE.read_text()
+    for paths in (POOL1, POOL2):
+        value = mean_metric(paths, "holt", "balanced_accuracy")
+        assert f"{value:.2f}" in text, (
+            f"USAGE.md should state balanced accuracy {value:.2f}"
         )
 
 
@@ -110,25 +113,38 @@ def test_assessment_does_not_contradict_the_readme_on_stability():
 
 
 def documented_holt_commands() -> list[list[str]]:
-    """Every `holt ...` invocation the reproduction guide prints, minus the paid ones."""
+    """Every `holt ...` invocation the docs print, minus the paid ones.
+
+    Both guides are covered. `USAGE.md` is the page a user actually follows, so
+    a command that only appears there is exactly the kind that breaks unnoticed
+    -- which is how `--baseline --replay` came to be broken on every repository
+    while the benchmark stayed green.
+    """
     found = []
-    for line in REPRODUCTION.read_text().splitlines():
-        line = line.strip()
-        m = re.match(r"^(?:PYTHONPATH=\. )?uv run holt (.+)$", line)
-        if not m:
-            continue
-        # The guide annotates some commands with the verdict they produce
-        # (`... --replay   # not_viable`); that is prose, not an argument.
-        argv = m.group(1).split("#")[0].split()
-        if "--live" in argv:  # needs GITHUB_TOKEN and money; documented as optional
-            continue
-        found.append(argv)
+    for doc in (REPRODUCTION, USAGE):
+        for line in doc.read_text().splitlines():
+            line = line.strip()
+            m = re.match(r"^(?:PYTHONPATH=\. )?uv run holt (.+)$", line)
+            if not m:
+                continue
+            # The guides annotate some commands with the verdict they produce
+            # (`... --replay   # not_viable`); that is prose, not an argument.
+            argv = m.group(1).split("#")[0].split()
+            if "--live" in argv:  # needs GITHUB_TOKEN and money; documented as optional
+                continue
+            if argv[:1] == ["tui"]:  # opens an interactive screen; covered by its own suite
+                continue
+            if argv not in found:
+                found.append(argv)
     return found
 
 
-def test_the_guide_actually_prints_commands():
+def test_the_guides_actually_print_commands():
     """Guards the parser above: a silent zero would make the next test vacuous."""
     assert len(documented_holt_commands()) >= 5
+    assert any(a[:1] == ["profile"] for a in documented_holt_commands()), (
+        "USAGE.md should still show how to state a profile"
+    )
 
 
 @pytest.mark.parametrize("argv", documented_holt_commands(), ids=lambda a: " ".join(a))
