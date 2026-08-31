@@ -112,15 +112,24 @@ class AssessmentScreen(Screen):
                         yield Line(_plain(line), classes="landing-line")
 
             count = len(assessment.claims)
-            yield Line(
-                Text(
+            binned = getattr(assessment, "dropped_claims", 0)
+            if count:
+                header = Text(
                     f"EVIDENCE   {count} {'claim' if count == 1 else 'claims'}, "
                     "every one carrying an id that resolved and words the "
                     "thread actually said",
                     style=theme.DIM,
-                ),
-                classes="section-label",
-            )
+                )
+            else:
+                # "0 claims, every one carrying an id that resolved" is a
+                # sentence about nothing. What a reader needs here is that the
+                # prose above them is standing on its own.
+                header = Text(
+                    f"EVIDENCE   none survived verification"
+                    + (f" — all {binned} dropped" if binned else ""),
+                    style=theme.DROP if binned else theme.DIM,
+                )
+            yield Line(header, classes="section-label")
             yield ClaimList(assessment.claims, repo=assessment.repo, id="claims")
 
             # Only rendered when the engine supplied it. The ranking is opt-in

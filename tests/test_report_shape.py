@@ -71,6 +71,29 @@ def test_a_claim_keeps_its_evidence_id_next_to_it():
     assert "- merged after review — `pr:a/b#1:opened`" in out
 
 
+def test_a_report_whose_every_claim_was_dropped_says_so_before_the_prose():
+    """The `psf/requests` failure: 0 claims, and prose quoting statistics.
+
+    Stage D had done its job -- every citation was unresolvable and every claim
+    was removed -- and the page said nothing about it. A reader cannot tell that
+    from a repository there was simply little to say about.
+    """
+    out = build(dropped_claims=14, bottom_line="You would be fine here.")
+    assert "No claim in this report survived verification" in out
+    assert "All 14 were dropped" in out
+    # Above the prose, not below it.
+    assert out.index("survived verification") < out.index("You would be fine here.")
+    # The deterministic half is not disowned along with the prose.
+    assert "computed without a model and still stand" in out
+
+
+def test_the_warning_is_only_for_a_report_that_lost_everything():
+    assert "survived verification" not in build()
+    assert "survived verification" not in build(
+        claims=[Claim("merged after review", "pr:a/b#1:opened")], dropped_claims=3
+    )
+
+
 def test_the_report_names_the_model_that_wrote_it():
     """A screenshot has to be able to answer "which model said this?".
 

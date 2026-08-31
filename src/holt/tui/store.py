@@ -123,6 +123,7 @@ def to_dict(entry: Entry) -> dict[str, Any]:
             "landing": list(getattr(a, "landing", []) or []),
             "contributor_days": getattr(a, "contributor_days", 7),
             "models": list(getattr(a, "models", []) or []),
+            "dropped_claims": getattr(a, "dropped_claims", 0),
             "method": a.method,
             "replayed": a.replayed,
             "claims": [
@@ -178,6 +179,7 @@ def from_dict(raw: dict[str, Any], path: Path | None = None) -> Entry | None:
             ("landing", list(body.get("landing", []) or [])),
             ("contributor_days", body.get("contributor_days", 7)),
             ("models", list(body.get("models", []) or [])),
+            ("dropped_claims", body.get("dropped_claims", 0)),
         ):
             if hasattr(assessment, name):
                 setattr(assessment, name, value)

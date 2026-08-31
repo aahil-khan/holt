@@ -84,6 +84,12 @@ class Assessment:
     # The date evidence was cut at. Stated in the output because a reader cannot
     # otherwise tell a quiet repository from one whose recent months were excluded.
     as_of: datetime | None = None
+    # How many claims were removed before the reader saw them, by either check
+    # in Stage D. Carried so the report can tell two situations apart that look
+    # identical on the page: a run that found nothing to say, and a run whose
+    # every statement was thrown out. `psf/requests` was the second one, and it
+    # read like the first.
+    dropped_claims: int = 0
     # The models that actually answered, in first-use order. Printed because the
     # model-written sections degrade with the model behind them while the counts
     # and the verdict do not, and a report that does not name its model leaves a
@@ -103,6 +109,18 @@ class Assessment:
         lines += [f"**{VERDICT_HEADLINES[self.verdict]}** — {budget}.", ""]
         if self.as_of:
             lines += [f"*Evidence up to {self.as_of.date().isoformat()}.*", ""]
+        if not self.claims and self.dropped_claims:
+            # Above the prose, not below it. A reader who is told at the bottom
+            # of the page that nothing on it was backed has already read it.
+            lines += [
+                f"> **No claim in this report survived verification.** All "
+                f"{self.dropped_claims} were dropped: the evidence cited did not "
+                "resolve, or the thread did not say what the claim said. The "
+                "verdict and the counts below are computed without a model and "
+                "still stand; nothing written in prose here is backed by a "
+                "record you can check.",
+                "",
+            ]
         if self.bottom_line:
             lines += [self.bottom_line, ""]
         if self.summary:

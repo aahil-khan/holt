@@ -1495,3 +1495,31 @@ report's fidelity is 100% by construction, and the number worth reading is the
 test asserts it — and the frozen benchmark replays unchanged: pool 1 run1
 **MCC 0.61**, pool 2 p2r1 **MCC 0.63**, matching the committed tables. Six new
 tests (**225 passed**, `pytest -rs`, no skips).
+
+## Iteration 25 — a report that lost every claim now says so (2026-08-31)
+
+**Observed.** The `psf/requests` run under `llama3.2` printed three paragraphs of
+prose quoting percentages, and **zero** evidence claims. Stage D had worked
+perfectly: every citation the model produced was unresolvable, so every claim
+was removed rather than softened. The page then said nothing about it. A reader
+sees an empty evidence list and reads it as *there was little to say*, which is
+the opposite of what happened — everything was said and none of it held up.
+
+**Changed.** When findings existed and none survived, the report opens with it,
+above the prose rather than under it: *"No claim in this report survived
+verification. All 14 were dropped … the verdict and the counts below are
+computed without a model and still stand; nothing written in prose here is
+backed by a record you can check."* The interface stops printing "0 claims,
+every one carrying an id that resolved" — a sentence about nothing — and says
+`none survived verification — all 14 dropped` in the drop colour.
+
+**The distinction the wording protects.** The deterministic half is not disowned
+along with the prose. `psf/requests` was correctly `viable` on 13 merges by 13
+people at a 4.9h median first reply, and that verdict was never the model's to
+get wrong. Telling a reader to discard the whole page would be as misleading as
+telling them nothing.
+
+**No committed output changed.** Zero of the 69 recorded runs reach this state —
+checked, not assumed — so this is a guard for weak models and for repositories
+outside the pool, which is exactly where it was found. Two new tests
+(**227 passed**).
