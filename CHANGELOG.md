@@ -1403,3 +1403,102 @@ extra: **79 passed, 1 skipped** — the skip is the screen tests, reporting
 themselves absent rather than failing. `uv sync --extra tui`: 5 screen tests pass
 on top. `holt tui` without the extra prints how to install it and exits 2. The
 observation layer's 8 tests run either way, because it does not import Textual.
+
+---
+
+## Iteration 23 — a run belongs to the app, not to the screen watching it (2026-08-31)
+
+**Tried.** Three defects in the interface, reported by a reader using it: the
+live view claimed a `pre_t ≤ 2026-06-01` holdout on runs that were reading up to
+today; leaving a run stopped it; and ctrl+p opened a menu about Textual.
+
+**The window label was a literal, and the fix it needed had already shipped.**
+`f0beaa4` made `LiveGitHubProvider` default its cutoff to `datetime.now(UTC)` —
+T is an evaluation device, and a live reader wants everything up to today. That
+commit touched `github_graphql.py`, `capture_fixtures.py`, its test and this
+file. It did not touch the TUI, where `screens/live.py` printed the date as a
+string constant and `events.EvidenceLoaded` carried only a count and a window
+name. The engine was right and the screen could not have known.
+
+`EvidenceLoaded` now carries the `cutoff` the provider actually applied, read
+off the provider in `ObservingProvider.fetch`. The screen renders that date and
+never a constant: `holdout window, ≤ 2026-06-01` when the cutoff really is T,
+`read through 2026-08-31` when it is not, and no window claim at all when the
+provider reports no cutoff. **A field added with a default, not changed** — the
+schema's rule is that events are added to, and a caller written before this
+field existed still constructs a valid one.
+
+**Leaving a run did not stop it — it discarded the run's result, which looked
+the same.** The worker thread was already a daemon and carried on. But
+`LiveScreen._pump` was the only caller of `session.drain()` in the whole app,
+and `LiveScreen._on_finished` was the only caller of `app.remember()`. Popping
+the screen killed the interval that consumed the run's events: the thread kept
+spending, `RunFinished` sat unread in a queue, and the assessment it produced
+was never absorbed and never stored. `app.session` was also a single slot, so
+starting a second run orphaned the first silently.
+
+**The fix is one move: the pump belongs to the app.** `HoltApp` keeps
+`runs: dict[str, Session]` and one interval that drains every registered
+session, stores what finished, and unregisters it — ticking whether or not any
+screen exists. The live screen renders from `session.log` behind a cursor
+instead of draining the queue itself, which buys the rejoin behaviour for free:
+a run opened again replays from index 0, so you see what happened while you were
+away rather than only what happens next.
+
+**Stopping is cooperative, and the engine still knows nothing about it.** A
+Python thread cannot be killed, so `Session.cancel()` sets an event and the run
+is interrupted at its next chokepoint. Those chokepoints already exist —
+`ObservingModel.complete` and `ObservingProvider.fetch/resolve` are the only
+ways a stage reaches a model or a record — so no file under `holt/agent/`
+changed again. The check is placed *before* the delegated call rather than
+inside `complete`'s existing try, because raising in there emits `RunFailed` on
+the way out and would report a stop the reader asked for as a defect.
+
+**The cost of that choice is latency, and the interface says so.** A stop lands
+when the call in flight returns: instant on a replay, up to a model timeout on a
+live run. The row reads `stopping…` until the worker exits rather than claiming
+the run has already ended. `RunCancelled` is its own event, not a `RunFailed`
+with a nicer message — a stopped run stores nothing, and nothing about it should
+read like something going wrong.
+
+**The command palette was the framework's, not holt's.** ctrl+p listed `Keys`,
+`Maximize`, `Screenshot` and `Theme` — and `Theme` would have overridden the
+verdict colours `theme.py` deliberately fixes. It now leads with holt's own
+commands, including two kinds that *cannot* be keybindings because they are
+state: `stop home-assistant/core` exists only while that run does, and
+`open vercel/next.js` only once there is something stored. Textual's commands
+are kept and yielded last.
+
+**And the cursor was invisible.** Textual falls back to its *blurred* block-cursor
+colours for an `OptionList` that does not hold focus, and the palette's input
+holds focus the entire time it is open — so up and down moved a selection
+nobody could see. Reported as two bugs, one cause. The focused cursor tokens are
+used instead: they are the theme's own, so this stays right on a light terminal
+as well as a dark one. The test reads the cursor off the composited output
+rather than off the widget's index, because an index that moves while nothing on
+screen changes is exactly the defect.
+
+**They are yielded from holt's provider rather than registered beside it.**
+`App.COMMANDS` is a set and providers are searched concurrently with hits
+collected as they arrive, so two providers produced a different order on each
+launch — measured directly: holt's commands on top in one run, Textual's in the
+next. One provider yielding in a written order is what makes the order a
+decision rather than a hash.
+
+**Evidence.**
+
+```
+$ uv run pytest -rs -q
+238 passed in 51.45s
+```
+
+216 before this iteration, so twenty-two tests added and nothing skipped. The
+one that pins the reported defect: a run whose live screen is popped, finishing
+while home is up, and asserting the assessment reaches the store and the session
+leaves `app.runs`. Reverting only `src/holt/` and re-running the two new
+window-label tests fails them (`EvidenceLoaded.__init__() got an unexpected
+keyword argument 'cutoff'`), which is what says they would have caught it.
+
+**Decision.** Kept. The interface now has one rule about runs — a run ends
+because it finished, it failed, or someone stopped it — and escape is not one of
+those reasons.
