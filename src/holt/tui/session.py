@@ -100,6 +100,10 @@ class Session:
     #: sees exactly what Stage D saw — a new provider has fetched nothing and
     #: would report every id as unresolvable.
     provider: Any = None
+    #: Built on demand for a stored assessment, which has no run behind it.
+    #: See `ReopenedEvidence`.
+    _reopened: Any = None
+    _reopen_tried: bool = False
     #: The stage the run is in, for anything showing progress without showing
     #: the stream. Set from the events, so it cannot disagree with them.
     stage: str = ""
@@ -130,6 +134,11 @@ class Session:
         session.started_at = stored.created_at
         session.finished_at = stored.created_at + stored.duration_seconds
         session.cost_usd = stored.cost_usd
+        # The run's own stream, as it was stored. Every screen that renders a
+        # trace renders it from the log, so a stored run and a live one are the
+        # same thing to look at — a restored session simply has its log already
+        # full instead of filling as the events arrive.
+        session.log = list(getattr(stored, "events", []) or [])
         return session
 
     # ─── lifecycle ──────────────────────────────────────────────────────────
@@ -205,14 +214,62 @@ class Session:
             return 0.0
         return (self.finished_at or time.time()) - self.started_at
 
+    def evidence(self) -> Any:
+        """Where evidence lookups from the interface go, or None.
+
+        A run hands over the provider it used, so the inspector shows exactly
+        what Stage D saw. A stored assessment has no run behind it and rebuilds
+        one on first use — see `ReopenedEvidence`, which is why reopening this
+        morning's report and pressing enter on a claim reads the record rather
+        than apologising for not having one.
+        """
+        if self.provider is not None:
+            return self.provider
+        if self.restored_from is None:
+            return None
+        if not self._reopen_tried:
+            self._reopen_tried = True
+            self._reopened = reopen_evidence(self.restored_from)
+        return self._reopened
+
     def resolve(self, evidence_id: str):
         """The record behind an id, or None. Read-only, and never raises."""
-        if self.provider is None:
+        source = self.evidence()
+        if source is None:
             return None
         try:
-            return self.provider.resolve(evidence_id)
+            return source.resolve(evidence_id)
         except Exception:  # noqa: BLE001 - the inspector reports it, not this
             return None
+
+    @property
+    def evidence_note(self) -> str:
+        """Why nothing could be looked up, or "" when a lookup is possible.
+
+        An id that was asked about and did not resolve is a statement about the
+        evidence, and the inspector says so in its own words. This is the other
+        case: nobody asked, and the reason is worth a sentence rather than a
+        shrug — every one of them ends in something the reader can do.
+        """
+        source = self.evidence()
+        if source is None:
+            if self.restored_from is not None:
+                return (
+                    "This assessment read GitHub live, and a run's records are "
+                    "not stored alongside it. Re-run it — ctrl+r on the report "
+                    "— to read the record behind this id."
+                )
+            return (
+                "No evidence was loaded for this session, so there is nothing "
+                "to look this id up in."
+            )
+        return getattr(source, "unavailable", "")
+
+    @property
+    def evidence_provenance(self) -> str:
+        """Where a record shown to the reader came from, when that is not the
+        run itself. Empty for a session that still has its own provider."""
+        return getattr(self.evidence(), "provenance", "")
 
     def wait(self, timeout: float | None = None) -> None:
         """Block until the worker exits. Used by tests."""
@@ -236,6 +293,7 @@ class Session:
             contributor_days=self.options.contributor_days,
             duration_seconds=self.duration,
             cost_usd=self.cost_usd,
+            events=list(self.log),
         )
 
     # ─── the run ────────────────────────────────────────────────────────────
@@ -347,6 +405,94 @@ class Session:
                 stage="pathfinder", seconds=0.0, summary=f"{len(ranked)} issues ranked"
             )
         )
+
+
+class ReopenedEvidence:
+    """Evidence for an assessment that came back out of the store.
+
+    A stored assessment keeps its claims and the ids under them; it does not
+    keep the records behind them, which for a large repository would be
+    megabytes of history per report. It does not have to. The *source* the run
+    read is still there, and for a replay or a recorded run that source is a
+    committed fixture — reading it again reads the same bytes Stage D read, so
+    the record the inspector shows is the record the claim was drawn from.
+
+    Two things this is careful about:
+
+    * **Nothing is read until a claim is opened.** Reopening a report stays
+      instant; the fixture load happens on the first `resolve`.
+    * **A live run is not re-crawled.** Its records came off GitHub and were
+      never written down, and re-reading would mean a remote crawl on the
+      interface's own thread against a window that has moved since. The caller
+      gets no source at all and says so, which is true, instead of a record
+      that looks like the run's and is not.
+    """
+
+    def __init__(self, repo: str, providers: list[Any]) -> None:
+        self.repo = repo
+        #: In lookup order. The first is where the report's claims came from;
+        #: any others (issue evidence, behind the reading order) are extra, and
+        #: their absence is ordinary rather than something to report.
+        self._providers = providers
+        self._loaded = False
+        #: Set when the primary source could not be read at all. Shown by the
+        #: inspector in place of "does not resolve", which would blame the
+        #: evidence for a file that is simply not there any more.
+        self.unavailable = ""
+        #: Where a record shown from here actually came from. The inspector
+        #: prints it under the record, because "the run held this" and "this
+        #: was read back off disk just now" are different statements and only
+        #: one of them is true here.
+        self.provenance = ""
+
+    def _load(self) -> None:
+        if self._loaded:
+            return
+        self._loaded = True
+        for index, provider in enumerate(self._providers):
+            try:
+                provider.fetch(self.repo)
+            except Exception as exc:  # noqa: BLE001 - reported, never raised
+                if index == 0:
+                    self.unavailable = (
+                        f"The evidence this assessment was built from cannot be "
+                        f"read back: {readable(exc)}"
+                    )
+
+    def resolve(self, evidence_id: str):
+        self._load()
+        for provider in self._providers:
+            try:
+                record = provider.resolve(evidence_id)
+            except Exception:  # noqa: BLE001 - one dead source is not the end
+                continue
+            if record is not None:
+                return record
+        return None
+
+
+def reopen_evidence(stored: Any) -> ReopenedEvidence | None:
+    """The sources a stored assessment can be checked against, or None.
+
+    Keyed off the mode the assessment was produced in, because that is what
+    decides where its ids came from. A live assessment returns None: see
+    `ReopenedEvidence`.
+    """
+    if getattr(stored, "mode", "") == "live":
+        return None
+    repo = normalise(stored.repo)
+    primary = FixtureProvider(Window.PRE_T)
+    source = ReopenedEvidence(
+        repo,
+        # Issue evidence second: it is where the reading order's ids live, and
+        # a repository without an issue fixture is ordinary rather than broken.
+        [primary, FixtureProvider(Window.PRE_T, root=Path(ISSUE_ROOT))],
+    )
+    source.provenance = (
+        f"read back from {primary.path_for(repo)}, the fixture this assessment "
+        "was built from"
+    )
+    return source
 
 
 def readable(exc: BaseException) -> str:

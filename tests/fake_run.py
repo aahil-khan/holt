@@ -164,12 +164,23 @@ def finished(repo: str = REPO, **kw) -> Session:
 
 
 def stored_entry(
-    repo: str = REPO, mode: str = "replay", age: float = 0.0, **kw
+    repo: str = REPO,
+    mode: str = "replay",
+    age: float = 0.0,
+    trace: bool = False,
+    **kw,
 ) -> store.Entry:
+    """An assessment as the store holds one.
+
+    `trace=True` gives it the run's events, which is what a real one saved
+    since holt started keeping them has. The default is without, because that
+    is also a real case: everything stored before then.
+    """
     return store.Entry(
         repo=repo,
         mode=mode,
         created_at=time.time() - age,
         assessment=assessment(repo, **kw),
         contributor_days=7,
+        events=script(repo) if trace else [],
     )

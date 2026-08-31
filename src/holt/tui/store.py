@@ -25,15 +25,18 @@ Design rules that matter here:
 
 from __future__ import annotations
 
+import dataclasses
 import json
 import os
 import tempfile
 import time
 from dataclasses import dataclass, field
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from holt.report import Assessment, Claim, EntryPoint, Verdict
+from holt.tui import events as events_module
 
 #: Bumped when the on-disk shape changes in a way older readers cannot handle.
 #: Entries with a different version are ignored rather than guessed at.
@@ -60,6 +63,10 @@ class Entry:
     contributor_days: int = 7
     duration_seconds: float = 0.0
     cost_usd: float = 0.0
+    #: The run's own event stream, so the trace survives the process that
+    #: produced it. Empty for an assessment stored before this was kept, which
+    #: the trace view says rather than showing an empty screen.
+    events: list[Any] = field(default_factory=list)
     path: Path | None = None
 
     @property
@@ -100,6 +107,96 @@ def describe_age(seconds: float) -> str:
     return f"{n} days ago" if n != 1 else "1 day ago"
 
 
+# ─── the run's trace ────────────────────────────────────────────────────────
+
+
+#: The events kept on disk, by class name. Deliberately not all of them:
+#: `ToolResponse` carries a whole model payload that nothing renders, and
+#: `RunFinished` carries the `Assessment` this entry already holds. An event
+#: not named here is dropped on the way out and ignored on the way back, which
+#: is what lets this build read a file written by one that knows more events
+#: than it does — and the reverse.
+TRACE_EVENTS: dict[str, type] = {
+    cls.__name__: cls
+    for cls in (
+        events_module.RunStarted,
+        events_module.EvidenceLoaded,
+        events_module.StageStarted,
+        events_module.StageFinished,
+        events_module.FindingEmitted,
+        events_module.EvidenceResolved,
+        events_module.FindingDropped,
+        events_module.UsageUpdated,
+        events_module.Retry,
+        events_module.RunFailed,
+        events_module.RunCancelled,
+    )
+}
+
+#: Tuples on the event, lists in JSON.
+_TUPLE_FIELDS = frozenset({"evidence_ids", "cited", "completed_stages"})
+#: Datetimes on the event, ISO strings in JSON.
+_TIME_FIELDS = frozenset({"cutoff"})
+
+
+def _jsonable(value: Any) -> Any:
+    """Anything, as something `json.dump` will accept.
+
+    A finding's `value` is whatever a model put in a field. One unserialisable
+    object in it must not take the whole write down — history is a convenience,
+    and a stringified value still says what the run reported.
+    """
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    if isinstance(value, (list, tuple)):
+        return [_jsonable(v) for v in value]
+    if isinstance(value, dict):
+        return {str(k): _jsonable(v) for k, v in value.items()}
+    return str(value)
+
+
+def event_to_dict(event: Any) -> dict[str, Any] | None:
+    """One event, or `None` if it is not one we keep."""
+    cls = TRACE_EVENTS.get(type(event).__name__)
+    if cls is None:
+        return None
+    out: dict[str, Any] = {"event": type(event).__name__}
+    for spec in dataclasses.fields(cls):
+        value = getattr(event, spec.name, None)
+        if spec.name in _TIME_FIELDS:
+            value = value.isoformat() if isinstance(value, datetime) else None
+        out[spec.name] = _jsonable(value)
+    return out
+
+
+def event_from_dict(raw: dict[str, Any]) -> Any | None:
+    """Rebuild an event, or `None` if this build cannot make sense of it."""
+    if not isinstance(raw, dict):
+        return None
+    cls = TRACE_EVENTS.get(raw.get("event", ""))
+    if cls is None:
+        return None
+    kwargs: dict[str, Any] = {}
+    for spec in dataclasses.fields(cls):
+        if spec.name not in raw:
+            # Written by a build from before the field existed. The event class
+            # defaults it, which is exactly why the schema only ever adds.
+            continue
+        value = raw[spec.name]
+        if spec.name in _TIME_FIELDS:
+            try:
+                value = datetime.fromisoformat(value) if value else None
+            except (TypeError, ValueError):
+                value = None
+        elif spec.name in _TUPLE_FIELDS:
+            value = tuple(value or ())
+        kwargs[spec.name] = value
+    try:
+        return cls(**kwargs)
+    except (TypeError, ValueError):
+        return None
+
+
 # ─── serialisation ──────────────────────────────────────────────────────────
 
 
@@ -113,6 +210,10 @@ def to_dict(entry: Entry) -> dict[str, Any]:
         "contributor_days": entry.contributor_days,
         "duration_seconds": entry.duration_seconds,
         "cost_usd": entry.cost_usd,
+        # The run, as it happened. Kept so that reopening a report can still
+        # show the trace behind it: the stream is the only record of what was
+        # dropped and why, and it used to die with the process.
+        "events": [d for d in map(event_to_dict, entry.events) if d is not None],
         "assessment": {
             "repo": a.repo,
             "verdict": a.verdict.value,
@@ -201,6 +302,11 @@ def from_dict(raw: dict[str, Any], path: Path | None = None) -> Entry | None:
             contributor_days=int(raw.get("contributor_days", 7)),
             duration_seconds=float(raw.get("duration_seconds", 0.0)),
             cost_usd=float(raw.get("cost_usd", 0.0)),
+            events=[
+                event
+                for event in map(event_from_dict, raw.get("events", []) or [])
+                if event is not None
+            ],
             path=path,
         )
     except (KeyError, TypeError, ValueError):

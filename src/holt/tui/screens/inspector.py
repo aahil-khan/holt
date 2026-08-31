@@ -4,14 +4,20 @@ Opened from a claim. This is the screen that makes the report checkable: a
 reader who does not believe a sentence presses enter on it and reads the record
 it was drawn from, with its source, its timestamp and its url.
 
-Resolution goes through the provider the run used, so what is shown here is what
-Stage D saw. There are three outcomes and they are three different sentences,
-because collapsing them would be a lie in at least one case:
+Resolution goes through the evidence the session has. For a run that is the
+provider the run used, so what is shown is what Stage D saw. For an assessment
+reopened out of the store it is the source that run read, opened again — the
+committed fixture, which is the same bytes — and the screen says so under the
+record rather than passing a fresh read off as the run's own.
 
-* the record resolved, and is shown
-* the id does not resolve, which is why the claim citing it was dropped
-* this assessment came out of the store, so no provider is loaded — the id is
-  not unresolvable, it simply has not been looked up in this process
+There are three outcomes and they are three different sentences, because
+collapsing them would be a lie in at least one case:
+
+* the record resolved, and is shown, labelled with where it was read from
+* the id does not resolve against the evidence, which is why a claim citing it
+  would have been dropped
+* nothing could be looked up at all — a live run's records are not stored, or
+  the fixture is no longer on disk — and the screen says which, and what to do
 """
 
 from __future__ import annotations
@@ -34,15 +40,24 @@ class InspectorScreen(Screen):
     ]
 
     def __init__(
-        self, evidence_id: str, record, resolvable: bool = True, **kwargs
+        self,
+        evidence_id: str,
+        record,
+        resolvable: bool = True,
+        note: str = "",
+        provenance: str = "",
+        **kwargs,
     ) -> None:
         super().__init__(**kwargs)
         self.evidence_id = evidence_id
         self.record = record
-        #: False when the session has no provider — a stored assessment. Keeps
-        #: the screen from reporting "does not resolve" about an id nobody
-        #: asked the provider about.
+        #: False when nothing could be looked up. Keeps the screen from
+        #: reporting "does not resolve" about an id nobody asked about.
         self.resolvable = resolvable
+        #: Why nothing was looked up, in the session's own words.
+        self.note = note
+        #: Where a shown record was read from, when that is worth saying.
+        self.provenance = provenance
 
     def compose(self) -> ComposeResult:
         with Horizontal(id="chrome"):
@@ -54,16 +69,14 @@ class InspectorScreen(Screen):
                 yield Line(cite(self.evidence_id))
                 yield Line("")
                 yield Line(
-                    Text(
-                        "This assessment was reopened from storage, so no evidence "
-                        "provider is loaded. Re-run it to read the record behind "
-                        "this id.",
-                        style=theme.FAINT,
-                    ),
+                    Text(self.note or _NOTHING_LOADED, style=theme.FAINT),
                     classes="empty",
                 )
             else:
                 yield EvidenceDetail(self.record)
+                if self.record is not None and self.provenance:
+                    yield Line("")
+                    yield Line(Text(self.provenance, style=theme.FAINT))
         yield Line("─" * 240, classes="rule")
         yield Footer()
 
@@ -82,3 +95,11 @@ class InspectorScreen(Screen):
 
     def action_quit(self) -> None:
         self.app.exit()
+
+
+#: Only reached if a caller gives no reason of its own. The session always has
+#: one; this keeps the screen from rendering a blank where a sentence belongs.
+_NOTHING_LOADED = (
+    "No evidence is loaded for this assessment, so this id has not been looked "
+    "up. Re-run it to read the record behind it."
+)

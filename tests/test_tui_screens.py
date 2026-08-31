@@ -391,29 +391,152 @@ def test_the_measured_result_is_shown_in_full_and_not_behind_a_key(tmp_path):
     drive(body, tmp_path, size=(100, 140))
 
 
-def test_a_stored_assessment_says_the_record_is_not_loaded(tmp_path):
-    """Three states, three sentences.
+#: A record that really is in the committed fixture for `CLEAN`. The inspector
+#: tests below are about reading evidence back, so the id has to be one the
+#: evidence actually has.
+REAL_ID = "repo:home-assistant/core:meta"
 
-    "does not resolve" is a statement about the evidence. A reopened assessment
-    has no provider, so the honest thing is that nothing was looked up.
+
+async def _reopen(app, pilot, entry):
+    """Open a stored assessment the way home opens one."""
+    app.open_stored(entry)
+    await pilot.pause(0.4)
+
+
+def test_a_reopened_assessment_still_reads_the_record_behind_a_claim(tmp_path):
+    """The whole point of an evidence id is that you can go and look.
+
+    A reopened report used to answer every id with "no provider is loaded" —
+    the one screen that makes the report checkable, switched off by having
+    closed the tool. The fixture a replay read is still on disk, so it is read
+    again, and the screen says that is where the record came from.
     """
     from holt.tui import store
 
     keep = store.Store(root=tmp_path)
     keep.save(fake_run.stored_entry(repo=CLEAN, age=60))
+    stored = store.Store(root=tmp_path).all()[0]
 
     async def body(app, pilot):
-        app.screen.mode = "replay"
-        await type_repo(pilot, CLEAN)
-        await pilot.press("enter")
-        await pilot.pause(0.5)
-        app.inspect("repo:x:meta")
+        await _reopen(app, pilot, stored)
+        app.inspect(REAL_ID)
+        await pilot.pause(0.4)
+        text = screen_text(app)
+        assert "resolved" in text
+        assert "not loaded" not in text
+        # The record itself, not a promise of one.
+        assert "github" in text
+        assert "fixtures/pre_t/home-assistant__core.json" in text
+
+    drive(body, tmp_path, size=(110, 60))
+
+
+def test_a_reopened_assessment_says_which_ids_the_evidence_does_not_have(tmp_path):
+    """The other side of it. Now that something is loaded, "does not resolve"
+    is a statement about the evidence again, and true."""
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo=CLEAN, age=60))
+    stored = store.Store(root=tmp_path).all()[0]
+
+    async def body(app, pilot):
+        await _reopen(app, pilot, stored)
+        app.inspect("repo:no-such/thing:meta")
+        await pilot.pause(0.4)
+        assert "does not resolve" in screen_text(app)
+
+    drive(body, tmp_path)
+
+
+def test_a_stored_live_assessment_says_its_records_were_not_kept(tmp_path):
+    """Three states, three sentences.
+
+    A live run read GitHub, and its records are not stored with the report.
+    Re-crawling from a keypress would be a different read against a window that
+    has moved, so the screen says what it has and what to do instead.
+    """
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo=CLEAN, mode="live", age=60))
+    stored = store.Store(root=tmp_path).all()[0]
+
+    async def body(app, pilot):
+        await _reopen(app, pilot, stored)
+        app.inspect(REAL_ID)
         await pilot.pause(0.4)
         text = screen_text(app)
         assert "not loaded" in text
+        assert "read GitHub live" in text
         assert "does not resolve" not in text
 
+    drive(body, tmp_path, size=(110, 44))
+
+
+# ─── the trace behind a report ──────────────────────────────────────────────
+
+
+def test_trace_goes_back_to_the_run_you_came_from(tmp_path):
+    async def body(app, pilot):
+        await show_run(app, pilot)
+        await pilot.pause(0.9)
+        assert app.screen.__class__.__name__ == "AssessmentScreen"
+        await pilot.press("t")
+        await pilot.pause(0.3)
+        assert app.screen.__class__.__name__ == "LiveScreen"
+
     drive(body, tmp_path)
+
+
+def test_a_reopened_assessment_opens_the_trace_that_was_stored_with_it(tmp_path):
+    """`t` on a reopened report used to do nothing at all: the trace lived on
+    the run screen, and the run screen died with the process. The events are
+    stored with the assessment now, and rendered by the same code."""
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo=CLEAN, age=60, trace=True))
+    stored = store.Store(root=tmp_path).all()[0]
+
+    async def body(app, pilot):
+        await _reopen(app, pilot, stored)
+        await pilot.press("t")
+        await pilot.pause(0.5)
+        assert app.screen.__class__.__name__ == "TraceScreen"
+        text = screen_text(app)
+        assert "trace" in text
+        # What the run read, what it decided, and what it cost in claims.
+        assert "1231 evidence records" in text
+        assert "real_software" in text
+        assert "15 findings → 15 kept" in text
+        # Nothing here is running, so nothing offers to stop it.
+        assert "stop" not in text
+
+        await pilot.press("escape")
+        await pilot.pause(0.3)
+        assert app.screen.__class__.__name__ == "AssessmentScreen"
+
+    drive(body, tmp_path, size=(110, 60))
+
+
+def test_an_assessment_stored_without_a_trace_says_so(tmp_path):
+    """Everything saved before traces were kept. A keypress that does nothing
+    is indistinguishable from one that is broken."""
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo=CLEAN, age=60))
+    stored = store.Store(root=tmp_path).all()[0]
+
+    async def body(app, pilot):
+        await _reopen(app, pilot, stored)
+        await pilot.press("t")
+        await pilot.pause(0.3)
+        assert app.screen.__class__.__name__ == "AssessmentScreen"
+        assert "No trace was stored with this assessment" in screen_text(app)
+
+    drive(body, tmp_path, size=(110, 60))
 
 
 def test_finishing_a_run_stores_it_and_home_lists_it(tmp_path):

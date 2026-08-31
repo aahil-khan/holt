@@ -71,6 +71,9 @@ class LiveScreen(Screen):
         ("q", "quit", "quit"),
     ]
 
+    #: What the chrome calls this. A class attribute so `TraceScreen` differs
+    #: by the one word that is actually different between them.
+    chrome_title = "assessing"
     _spend = ""
     _handed_off = False
     #: How far through the session's log this screen has rendered. Rendering
@@ -81,7 +84,7 @@ class LiveScreen(Screen):
     def compose(self) -> ComposeResult:
         with Horizontal(id="chrome"):
             yield Cat("working", id="cat", classes="chrome-cat")
-            yield Line("assessing", id="chrome-left")
+            yield Line(self.chrome_title, id="chrome-left")
             yield Line("", id="chrome-right")
         yield Line("─" * 240, classes="rule")
         yield StageList(id="stages")
@@ -249,6 +252,65 @@ class LiveScreen(Screen):
     def action_quit(self) -> None:
         # Through the app, so a run still in flight is named before it dies.
         self.app.action_quit()
+
+
+class TraceScreen(LiveScreen):
+    """The same stream, for a run that is already over.
+
+    An assessment reopened out of the store carries the run's own events, so
+    the trace behind it is not lost with the process that produced it — it is
+    rendered here, by exactly the code that rendered it live. Only three things
+    differ, and all three are about the run being finished: the chrome says so,
+    escape goes back to the report rather than leaving a run going, and there
+    is nothing to stop.
+    """
+
+    BINDINGS = [
+        ("escape", "back", "back"),
+        ("a", "assessment", "report"),
+        ("q", "quit", "quit"),
+    ]
+
+    chrome_title = "trace"
+    _settled = False
+
+    def check_action(self, action: str, parameters) -> bool | None:
+        """Hide what a finished run cannot do.
+
+        Textual collects `BINDINGS` up the class hierarchy, so this screen
+        inherits the live view's `stop` and its escape-to-leave-running. Both
+        are about a run in flight. Returning False takes them off the footer
+        rather than leaving keys advertised that would do nothing.
+        """
+        if action in ("stop", "home"):
+            return False
+        return True
+
+    def _pump(self) -> None:
+        super()._pump()
+        if self._settled:
+            return
+        self._settled = True
+        # A stored stream ends where the run ended and carries no `RunFinished`
+        # to settle the spinners on — this is a run that is over, and a stage
+        # left turning would say it was still working. The cat lands on the
+        # verdict for the same reason: the last thing it saw in the stream was
+        # a claim being dropped, which was true a minute into the run and is
+        # not the state of the report you pressed `t` on.
+        self.query_one("#stages", StageList).settle()
+        verdict = getattr(self.app.session.assessment, "verdict", None)
+        self._mood(mascot.mood_for_verdict(getattr(verdict, "value", "")))
+
+    def action_back(self) -> None:
+        self.app.pop_screen()
+
+    def action_assessment(self) -> None:
+        # The report is the screen underneath this one, so `a` goes back to it
+        # rather than pushing a second copy of it on top.
+        self.app.pop_screen()
+
+    def action_quit(self) -> None:
+        self.app.exit()
 
 
 #: Event type → renderer. The registry is the extension point: a new event class

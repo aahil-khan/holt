@@ -468,3 +468,63 @@ for the token instead of blaming the recording, and the source order follows the
 report's mode with live dropped when there is no token. Verified by hand against
 `home-assistant/core` + `@frenck`: 14 merged PRs, 31 files, 76 of 202 open
 issues overlap.
+
+---
+
+## Iteration 32 — a reopened assessment was a report you could not check (2026-08-31)
+
+**The report.** Assess something, quit, start holt again, open the result from
+the recent list, press enter on a claim. The evidence screen said *"This
+assessment was reopened from storage, so no evidence provider is loaded. Re-run
+it to read the record behind this id."* Every id, every time. And `t` — the
+trace behind the report — did nothing at all: no screen, no message, nothing.
+
+**Both are the same defect.** A stored assessment kept its claims and threw away
+everything the run had: the provider it read through, and the event stream that
+is the only record of what was dropped and why. Iteration 22 built this interface
+around the idea that Stage D's drop is the thing worth showing. Closing the tool
+switched that off, and switched off the only screen that makes a claim checkable
+along with it. The sentence was honest about the mechanism and useless as a
+product: the answer to "can I check this claim" was "run it again".
+
+**The evidence did not need storing — the source it was read from is still
+there.** A replay reads `fixtures/pre_t/<slug>.json`, and that file has not
+moved. `ReopenedEvidence` reopens it lazily, on the first claim someone actually
+presses enter on, so reopening a report stays instant. The inspector now prints
+where the record came from — `read back from fixtures/pre_t/home-assistant__core.json,
+the fixture this assessment was built from` — because "the run held this" and
+"this was read off disk just now" are different statements and only one of them
+is true.
+
+**A live run is not re-crawled, and says so.** Its records came off GitHub and
+were never written down. Re-reading would be a fresh crawl against a window that
+has moved since, on the interface's own thread, and showing the result as
+though it were the run's own copy would be the kind of quiet lie this project
+is built to avoid. That case keeps a sentence — a different one, naming what it
+is and what to do.
+
+**Three states, still three sentences.** `resolved` with its provenance, `does
+not resolve` — which is now a statement about the evidence again, because
+something really was looked up — and `not loaded`, which now means only what it
+says.
+
+**The trace is stored with the assessment.** The event stream is serialised into
+the entry: every stage, every finding, every drop, minus `ToolResponse` (a model
+payload nothing renders) and `RunFinished` (it carries the assessment the entry
+already holds). `TraceScreen` renders it with exactly the code that renders a
+live run, so there is one renderer and not two. An event this build does not
+recognise is skipped on the way back, the same rule as the rest of the store. An
+assessment saved before any of this says *"No trace was stored with this
+assessment"* rather than answering a keypress with silence.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **362 passed**, no skips (was
+354). Eight new tests around the two defects, three of them in the store with no
+terminal involved: the trace round-trips and drops the two event types it should,
+an unknown event in a file is skipped rather than taking the entry down, and a
+finding value that will not serialise does not cost you the assessment. On the
+screens: a reopened report reads a real record back and names the fixture, an id
+the fixture does not have says so, a stored live assessment says its records
+were not kept, `t` opens the stored trace and escape returns to the report, and
+an assessment stored without one says that. Verified by hand against a real
+`home-assistant/core` replay: 69 events in, 64 stored, `repo:home-assistant/core:meta`
+resolving after a round trip through the store.

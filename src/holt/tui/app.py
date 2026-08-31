@@ -150,15 +150,27 @@ class HoltApp(App):
     def inspect(self, evidence_id: str) -> None:
         """Resolve an id and show the record behind it.
 
-        The lookup goes through the provider the run used, so the interface
-        cannot show a reader something Stage D did not have access to. A stored
-        assessment has no provider, so the screen says the record is no longer
-        loaded rather than claiming the id does not resolve — a very different
-        statement, and only one of them would be true.
+        The lookup goes through the session's own evidence — the provider the
+        run used, or, for an assessment reopened out of the store, the fixture
+        that run read, opened again. Either way the interface cannot show a
+        reader something Stage D did not have access to.
+
+        When there is nothing to look an id up in at all, the screen says that
+        and why, rather than claiming the id does not resolve — a very
+        different statement, and only one of them would be true.
         """
-        record = self.session.resolve(evidence_id) if self.session else None
-        live = self.session is not None and self.session.provider is not None
-        self.push_screen(InspectorScreen(evidence_id, record, resolvable=live))
+        session = self.session
+        record = session.resolve(evidence_id) if session else None
+        note = session.evidence_note if session else ""
+        self.push_screen(
+            InspectorScreen(
+                evidence_id,
+                record,
+                resolvable=not note,
+                note=note,
+                provenance=session.evidence_provenance if session else "",
+            )
+        )
 
     def go_home(self) -> None:
         """Back to the list, however deep the current screen is.

@@ -270,9 +270,31 @@ class AssessmentScreen(Screen):
         )
 
     def action_trace(self) -> None:
-        """Back to the run that produced this, when there was one."""
-        if self.app.session.restored_from is None and len(self.app.screen_stack) > 2:
+        """The run behind this report: what it read, emitted and dropped.
+
+        Three cases, and the middle one is the reason this is not a one-liner.
+        The run may still be underneath this screen, in which case the trace is
+        the screen you came from and going back to it is the whole action. An
+        assessment reopened out of the store has no screen underneath — but it
+        does carry the run's own event stream, which is stored with it, so the
+        trace is rebuilt from that rather than being silently unavailable. An
+        assessment stored before traces were kept has neither, and says so
+        instead of answering a keypress with nothing at all.
+        """
+        from holt.tui.screens.live import LiveScreen, TraceScreen
+
+        stack = self.app.screen_stack
+        below = stack[-2] if len(stack) > 2 else None
+        if isinstance(below, LiveScreen):
             self.app.pop_screen()
+            return
+        if self.app.session.log:
+            self.app.push_screen(TraceScreen())
+            return
+        self._notice(
+            "No trace was stored with this assessment — it was produced before "
+            "holt kept them. Re-run it (ctrl+r) to watch one."
+        )
 
     def action_home(self) -> None:
         self.app.go_home()
