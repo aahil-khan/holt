@@ -18,6 +18,7 @@ from textual.widgets import ListItem, ListView
 from holt.tui import theme
 from holt.tui.widgets.evidence import cite
 from holt.tui.visual import Line
+from holt.tui.widgets.scrolling import KeepsHighlightVisible
 
 
 class ClaimItem(ListItem):
@@ -41,7 +42,7 @@ class ClaimItem(ListItem):
             yield Line(Text("  no evidence id", style=theme.DROP))
 
 
-class ClaimList(ListView):
+class ClaimList(KeepsHighlightVisible, ListView):
     def __init__(self, claims: list, repo: str | None = None, **kwargs) -> None:
         super().__init__(*[ClaimItem(c, repo) for c in claims], **kwargs)
         self.claims = claims

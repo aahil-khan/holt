@@ -636,6 +636,48 @@ def test_discover_lists_survivors_and_what_it_cut(tmp_path):
     drive(body, tmp_path, size=(100, 60))
 
 
+def test_walking_the_finder_with_the_keyboard_scrolls_the_pane(tmp_path):
+    """The highlight must stay visible, or the cut rows are mouse-only.
+
+    Driven at 30 rows rather than the 60 the tests above use, because that is
+    the bug: at 60 the whole recorded session fits and nothing has to scroll.
+    Every list in the interface is a `ListView` at `height: auto` inside an
+    ancestor that scrolls, which is exactly the arrangement where Textual's own
+    cursor-scrolling does nothing — the list has no scrollbar of its own to
+    move. The highlight walked off the bottom and kept going: twenty presses of
+    ↓ left the index at 20 and the scroll offset at 0, so the nine rejected
+    candidates below the sixteen survivors could not be reached by keyboard at
+    all.
+    """
+    from holt.tui import discovery
+    from holt.tui.widgets.candidates import CandidateList
+
+    if not discovery.manifest_path_exists():
+        pytest.skip("the recorded discovery session is not present")
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+f")
+        await pilot.pause(0.6)
+        await _choose_recording(app, pilot)
+
+        listing = app.screen.query_one("#candidates", CandidateList)
+        box = app.screen.query_one("#candidate-scroll")
+        assert box.max_scroll_y > 0, "nothing overflows, so this proves nothing"
+
+        for _ in range(len(listing.children) - 1):
+            await pilot.press("down")
+            await pilot.pause(0.02)
+        await pilot.pause(0.4)
+
+        assert listing.index == len(listing.children) - 1
+        assert box.scroll_y > 0, "the highlight moved and the pane did not"
+        # The row under the cursor is the one a reader is being shown.
+        last = listing.rows[-1]
+        assert last.slug in screen_text(app)
+
+    drive(body, tmp_path, size=(100, 30))
+
+
 def test_discover_says_a_live_search_needs_a_token(tmp_path, monkeypatch):
     """Screening runs no model, so the only thing missing can be the token —
     and it is said on the screen that asked, not as a traceback."""

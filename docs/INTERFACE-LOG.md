@@ -596,3 +596,41 @@ passed** (was 48). Five new tests, none touching the network: the probe sends
 `max_tokens`; a 401 is not retried; both spellings refused still surfaces; and
 the real GPT-5 message is recognised as being about the parameter where a 429 is
 not.
+## Iteration 35 — the highlight walked off the screen and kept going (2026-08-31)
+
+**The report.** Found while rehearsing the solution video against the finder.
+Press ↓ through the recorded search and the nine rejected candidates never
+appear. Twenty presses left the list index at 20 and the pane's scroll offset at
+**0.0**, with 45 rows of scrollable height below. The cut rows were reachable
+only with a mouse wheel.
+
+**Why it was invisible.** Every list in the interface is a `ListView` at
+`height: auto` inside an ancestor that scrolls. That is deliberate and it is
+written down — a list should be as tall as it has rows, and the page around it
+should scroll — but it disables the one thing Textual does for a `ListView` for
+free. A `ListView` keeps its cursor visible by scrolling *itself*, and one sized
+to its own content has no scrollbar to move. So the highlight moved and nothing
+followed it.
+
+**It was three bugs, not one.** `CandidateList`, `RecentList` and `ClaimList`
+all have that layout, so all three had it. The finder is where it bites hardest:
+the sixteen survivors fill the pane and the nine rejections sit underneath, and
+this screen's own docstring says rejections are the interesting result and stay
+listed. They stayed listed and stopped being readable.
+
+**The fix scrolls the ancestor.** A `KeepsHighlightVisible` mixin in
+`widgets/scrolling.py` handles `ListView.Highlighted` and calls
+`scroll_visible(animate=False)` on the row — `scroll_visible` walks up to
+whatever actually scrolls. Motion off, because the highlight is driven by a key
+repeat and animating each step leaves the view several rows behind the cursor.
+Mixed in rather than repeated three times, since the cause is one layout
+decision shared by all three lists.
+
+**Why no test caught it.** The finder's existing tests drive at 60 rows tall,
+where the whole recorded session fits and nothing has to scroll. The new test
+drives at 30 — it asserts the pane's `max_scroll_y` is non-zero first, so it
+cannot pass vacuously if the fixture shrinks, then walks to the last row and
+asserts both that the offset moved and that the row under the cursor is on
+screen. Reverting the mixin fails it on `assert 0.0 > 0`.
+
+**Evidence.** `pytest -q -rs`: **383 passed**, no skips (was 382).

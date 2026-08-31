@@ -17,6 +17,7 @@ from textual.widgets import ListItem, ListView
 from holt.tui import theme
 from holt.tui.discovery import cut_reason
 from holt.tui.visual import Line
+from holt.tui.widgets.scrolling import KeepsHighlightVisible
 
 
 class CandidateRow(ListItem):
@@ -53,7 +54,7 @@ def _slug(slug: str, width: int = 37) -> str:
     return slug[: width - 1] + "…"
 
 
-class CandidateList(ListView):
+class CandidateList(KeepsHighlightVisible, ListView):
     def __init__(self, rows: list | None = None, **kwargs) -> None:
         rows = list(rows or [])
         super().__init__(*[CandidateRow(r) for r in rows], **kwargs)

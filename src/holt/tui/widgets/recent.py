@@ -26,6 +26,7 @@ from textual.widgets import ListItem, ListView
 from holt.report import VERDICT_HEADLINES, Verdict
 from holt.tui import store, theme
 from holt.tui.visual import Line
+from holt.tui.widgets.scrolling import KeepsHighlightVisible
 
 #: Every row starts with this many columns, so a running row and a stored one
 #: put their repository names in the same place.
@@ -147,7 +148,7 @@ def elapsed(seconds: float) -> str:
     return f"{minutes}:{whole:02d}"
 
 
-class RecentList(ListView):
+class RecentList(KeepsHighlightVisible, ListView):
     def __init__(self, entries: list, **kwargs) -> None:
         super().__init__(*[RecentRow(e) for e in entries], **kwargs)
         self.entries = entries
