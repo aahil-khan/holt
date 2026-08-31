@@ -262,7 +262,12 @@ class AssessmentScreen(Screen):
         """Where someone who has already landed work here might look next."""
         from holt.tui.screens.next_steps import NextScreen
 
-        self.app.push_screen(NextScreen(self.app.session.assessment.repo))
+        # The mode travels with it, so the ranking reads the evidence the
+        # report in front of you was actually built from.
+        session = self.app.session
+        self.app.push_screen(
+            NextScreen(session.assessment.repo, live=session.options.live)
+        )
 
     def action_trace(self) -> None:
         """Back to the run that produced this, when there was one."""

@@ -656,6 +656,65 @@ def test_profile_refuses_a_day_budget_that_is_not_a_number(tmp_path, monkeypatch
     drive(body, tmp_path)
 
 
+def test_what_next_never_shows_an_order_without_its_measurement(tmp_path):
+    """`holt next` has always printed the number that says how well the ranking
+    works. This screen is the second path that shows an order and it was
+    printing the order alone."""
+    from holt.tui.screens.next_steps import NextScreen
+
+    async def body(app, pilot):
+        app.session = fake_run.finished()
+        await app.push_screen(NextScreen(CLEAN))
+        await pilot.pause(0.3)
+        await type_repo(pilot, "frenck")
+        await pilot.press("enter")
+        await pilot.pause(2.0)
+        flat = " ".join(screen_text(app).split())
+        assert "merged" in flat, flat[:400]
+        # The measured claim, in the words the harness measured it in.
+        assert "hit@10 0.234" in flat
+        assert "spans zero" in flat
+
+    drive(body, tmp_path, size=(120, 60))
+
+
+def test_what_next_names_the_token_rather_than_blaming_the_recording(
+    tmp_path, monkeypatch
+):
+    """Assessing a repository live and pressing `n` used to report 'no committed
+    evidence' — true, irrelevant, and naming the wrong problem."""
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    from holt.tui.screens.next_steps import NextScreen
+
+    async def body(app, pilot):
+        app.session = fake_run.finished()
+        await app.push_screen(NextScreen("canonical/ubuntu-cloud-docs", live=True))
+        await pilot.pause(0.3)
+        await type_repo(pilot, "somebody")
+        await pilot.press("enter")
+        await pilot.pause(0.8)
+        flat = " ".join(screen_text(app).split())
+        assert "GITHUB_TOKEN" in flat, flat[:400]
+
+    drive(body, tmp_path, size=(120, 44))
+
+
+def test_what_next_reads_what_the_report_read_first(monkeypatch):
+    """The report in front of you was built one way. The ranking starts there,
+    and only falls back to the other source — it does not dead-end on it."""
+    from holt.tui.screens.next_steps import NextScreen
+
+    monkeypatch.setenv("GITHUB_TOKEN", "t")
+    assert NextScreen("x/y", live=True)._sources() == [True, False]
+    assert NextScreen("x/y", live=False)._sources() == [False, True]
+
+    # Without a token live is dropped from the list rather than attempted and
+    # reported as a failure, which would name the wrong problem.
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    assert NextScreen("x/y", live=True)._sources() == [False]
+    assert NextScreen("x/y", live=False)._sources() == [False]
+
+
 def test_what_next_says_plainly_when_the_login_has_landed_nothing(tmp_path):
     """An empty list would read as a ranking that found nothing, rather than a
     question that cannot be asked yet."""

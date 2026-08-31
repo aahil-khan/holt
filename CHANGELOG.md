@@ -1929,3 +1929,57 @@ worker against a stubbed `source_live` with no token, network or recording
 first row, the token check), and three driving the screen (it opens on the
 choice with no recorded slug on screen, it streams rows while the sweep runs,
 and a missing token is reported without leaving the choice).
+
+---
+
+## Iteration 31 — "what next" only ever read the recording (2026-08-31)
+
+**The report.** Assess a repository, press `n`, and the screen answered *"No
+committed evidence for canonical/ubuntu-cloud-docs, so there is nothing to rank
+from."* The sentence was true and it named the wrong problem. `_rank` called
+`session._provider(live=False)` with the flag hardcoded, so the ranking read the
+committed fixtures and nothing else — whatever mode the run in front of you had
+been in. A repository GitHub would have answered for immediately was reported as
+unrankable because we never asked GitHub.
+
+**It matters more now than it did.** Iteration 30 made the finder open on a live
+GitHub search. Every repository it hands you is one with no fixture on disk, so
+the natural path through the product — find a repository, assess it, ask what to
+work on — hit the dead end every time. A screen that only works on the 69
+repositories committed to this repository is a demo, not a feature.
+
+**The mode now travels with the report.** `NextScreen` takes the run's `live`
+flag and tries that source first, because the ranking should read the evidence
+the report in front of you was built from. The other source is tried second: a
+committed fixture and a live fetch answer the same question about the same
+repository, and stopping at the first miss was the whole bug. Live is dropped
+from the list when there is no token rather than attempted and reported as a
+failure, which would again name the wrong problem — the message asks for
+`GITHUB_TOKEN` instead of blaming a recording nobody made.
+
+**The fetch moved off the event loop.** A live read is a network round trip and
+the interface must not freeze for the length of one, so both fetches go through
+`asyncio.to_thread` with the notice saying which source is being read.
+
+**The ranking now carries its own measurement, which it should never have shown
+an order without.** `render_next` in the engine carries a docstring saying the
+measurement is emitted "in the only path that prints the ranking, so no caller
+can show the order without the number that says how well it works". That
+invariant was already broken: this screen is a second path that prints the
+ranking, and it printed the order with a one-line summary and no number. It now
+shows `NEXT_MEASUREMENT` verbatim whenever an order is on screen — hit@10 0.234
+against 0.172 for chance, 95% interval [-0.003, +0.132], an interval that spans
+zero. The interface holds evidence to a `file:line` standard; a ranking is a
+claim and it gets the same treatment.
+
+**Provenance on the summary line.** It now says whether it read live from GitHub
+or from committed evidence, because with two sources in play "76 of 202 open
+issues overlap" is not a complete statement without saying what it read.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **318 passed**, no skips (was
+315). Three new tests — the measured claim appears with any order it shows
+(`hit@10 0.234`, `spans zero`), a live-assessed repository with no fixture asks
+for the token instead of blaming the recording, and the source order follows the
+report's mode with live dropped when there is no token. Verified by hand against
+`home-assistant/core` + `@frenck`: 14 merged PRs, 31 files, 76 of 202 open
+issues overlap.
