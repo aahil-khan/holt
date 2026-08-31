@@ -23,6 +23,8 @@ one moved.
 
 from __future__ import annotations
 
+import textwrap
+
 from rich.text import Text
 from textual.app import ComposeResult
 from textual.containers import Horizontal, VerticalScroll
@@ -86,7 +88,7 @@ class AssessmentScreen(Screen):
                     Text("WHAT DECIDED IT", style=theme.DIM), classes="section-label"
                 )
                 for rule in rules:
-                    yield Line(Text(f"· {rule}"), classes="rule-line")
+                    yield Line(Text(_bullet(rule)), classes="rule-line")
 
             limits = getattr(assessment, "limits", "")
             if limits:
@@ -98,7 +100,10 @@ class AssessmentScreen(Screen):
                     Text("WHERE WORK LANDED", style=theme.DIM), classes="section-label"
                 )
                 for line in landing:
-                    if line.strip():
+                    # The engine emits a markdown heading because its primary
+                    # output is a file. Here the section already has a label,
+                    # and printing both says the same thing twice.
+                    if line.strip() and not line.lstrip().startswith("#"):
                         yield Line(_plain(line), classes="landing-line")
 
             count = len(assessment.claims)
@@ -196,14 +201,23 @@ def _section(label: str, body: str):
     yield Line(body, classes="prose")
 
 
+def _bullet(text: str, width: int = 88) -> str:
+    """A bullet whose continuation lines sit under the text, not the mark.
+
+    A wrapped rule that starts again in the mark column reads as two rules.
+    """
+    return textwrap.fill(
+        " ".join(text.split()),
+        width=width,
+        initial_indent="· ",
+        subsequent_indent="  ",
+    )
+
+
 def _plain(line: str) -> Text:
     """Markdown from `holt.agent.landing`, shown as text.
 
     The engine emits markdown because its primary output is a file. Rendering
-    the asterisks here would be showing the reader the engine's plumbing, so
-    the emphasis markers come off and headings become labels.
+    the asterisks here would be showing the reader the engine's plumbing.
     """
-    stripped = line.lstrip("#").strip()
-    if line.startswith("#"):
-        return Text(stripped.replace("**", ""), style=theme.DIM)
     return Text(line.replace("**", "").replace("`", ""))

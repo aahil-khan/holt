@@ -93,6 +93,17 @@ Footer > .footer--description {{
 
 /* stages ------------------------------------------------------------------ */
 
+StageList {{
+    /* `auto`, not the container default of `1fr`. As a fraction it expanded to
+       fill the screen and left a block of dead space between the last stage and
+       the stream of findings. */
+    height: auto;
+    padding: 0 0 1 0;
+}}
+#stream {{
+    height: 1fr;
+    scrollbar-size: 1 1;
+}}
 StageRow {{
     height: 1;
     padding: 0 1;

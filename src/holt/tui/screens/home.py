@@ -38,6 +38,12 @@ from holt.tui.widgets.recent import RecentList, RecentRow
 #: suggestion works with no key and no spend.
 SUGGESTION = "astral-sh/uv"
 
+#: The standing hint under the input. Present by default rather than only in the
+#: footer, because the question this screen has to answer immediately is "what
+#: do I press", and a keybinding you have to go looking for is one you do not
+#: know about.
+HINT = "⏎ assess    ↑↓ pick one you already have    ctrl+t mode    ctrl+r re-run"
+
 
 class HomeScreen(Screen):
     BINDINGS = [
@@ -72,7 +78,7 @@ class HomeScreen(Screen):
                 placeholder="owner/name, or a github.com URL",
                 id="repo-input",
             )
-            yield Line("", id="home-notice")
+            yield Line(Text(HINT, style=theme.FAINT), id="home-notice")
             yield Line(Text("RECENT", style=theme.DIM), classes="section-label")
             yield Line("", id="home-empty", classes="empty")
             with VerticalScroll(id="recent-scroll"):
@@ -138,18 +144,22 @@ class HomeScreen(Screen):
         self.query_one("#chrome-right", Line).update(right)
 
     def notice(self, message: str, tone: str = "") -> None:
-        """One line under the input. Replaces whatever was there."""
+        """One line under the input.
+
+        Clearing it restores the hint rather than leaving a gap: the space is
+        there either way, and an empty line teaches nobody anything.
+        """
         self._notice = message
         widget = self.query_one("#home-notice", Line)
-        widget.update(Text(message, style=tone or theme.FAINT))
-        if message:
-            animation.reveal(widget)
+        widget.update(Text(message or HINT, style=tone or theme.FAINT))
+        animation.reveal(widget)
 
     # ─── input ──────────────────────────────────────────────────────────────
 
     async def on_input_changed(self, event: Input.Changed) -> None:
         await self.refresh_entries(event.value)
         if self._notice:
+            # Typing clears a complaint about what was typed before it.
             self.notice("")
 
     def on_input_submitted(self, event: Input.Submitted) -> None:
