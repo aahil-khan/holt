@@ -210,8 +210,9 @@ capability and abandoning a claim.
   to develop it: **specificity 0.58 → 0.83**, all three predictions holding. The
   only change that measurably improved accuracy.
 - **The evidence layer.** 44× more material than a person can paste, every claim
-  carrying an id that resolves (696/696), a cutoff asserted at the chokepoint
-  rather than promised in prose.
+  carrying an id that resolves *and* a quotation the thread actually contains
+  (985 claims over the committed runs; the 9 that quoted otherwise were
+  dropped), a cutoff asserted at the chokepoint rather than promised in prose.
 - **`--days`.** Re-answering at a different time budget costs **zero model
   calls**, because only `verdict.py` re-runs.
 

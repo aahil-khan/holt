@@ -72,8 +72,11 @@ who tried** — which is the entire question.
 Four properties follow from being a pipeline rather than a conversation, none of
 which a chat transcript has:
 
-- **Provable claims.** Every statement carries an evidence id; 696/696 resolve to
-  a real thread. A chat answer cannot be checked without redoing the work.
+- **Provable claims.** Every statement carries an evidence id that resolves to a
+  real thread, and every quotation is words that thread actually said — 9 claims
+  across the committed runs quoted something it did not, and were dropped rather
+  than softened (`eval/evidence_integrity.py`). A chat answer cannot be checked
+  without redoing the work.
 - **A bounded, honest horizon.** Every fact passes a cutoff assertion, so the
   answer cannot come from what the model remembers. We also bound what memory
   alone buys: **MCC 0.16**.

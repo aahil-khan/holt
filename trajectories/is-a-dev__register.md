@@ -22,7 +22,10 @@ Replayed from committed fixtures and recorded model output. No model ran.
  "distinct_outsider_authors": 145,
  "distinct_merged_authors": 35,
  "reviewed_share": 1.0,
- "merge_rate": 0.18324607329842932
+ "merge_rate": 0.18324607329842932,
+ "merged_files_median": 1.0,
+ "merged_dirs_median": 1.0,
+ "merged_with_files": 40
 }
 ```
 
