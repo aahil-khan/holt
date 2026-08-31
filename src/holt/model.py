@@ -390,6 +390,45 @@ class ReplayModel:
         return entry["response"]
 
 
+@dataclass
+class PatchModel:
+    """Replay where the recording still matches; record live where it does not.
+
+    The cheap way to heal recordings after a change that reaches only some
+    prompts — a reworded rule trace, say, which enters the narration prompt for
+    some repositories and not others. Unchanged calls replay free; changed
+    calls re-record at the pinned models and are appended, so the file becomes
+    fully replayable again without paying for a complete re-record. Entries
+    orphaned by the change stay in the file and are inert: replay looks up by
+    key and never serves them.
+    """
+
+    trajectory_path: Path
+    replayed: bool = False
+    usage: Usage = field(default_factory=Usage)
+    patched: int = 0
+    _recorded: dict[str, dict] = field(default_factory=dict)
+    _live: Any = None
+
+    def __post_init__(self) -> None:
+        if self.trajectory_path.exists():
+            for line in self.trajectory_path.read_text().splitlines():
+                if line.strip():
+                    entry = json.loads(line)
+                    self._recorded[entry["key"]] = entry
+        if self._live is None:
+            self._live = OpenAIModel(self.trajectory_path)
+        # One usage object: only the live calls cost anything.
+        self.usage = self._live.usage
+
+    def complete(self, *, label: str, system: str, prompt: str, schema: dict) -> dict:
+        entry = self._recorded.get(call_key(label, system, prompt))
+        if entry is not None:
+            return entry["response"]
+        self.patched += 1
+        return self._live.complete(label=label, system=system, prompt=prompt, schema=schema)
+
+
 def live_client(path: Path) -> ModelClient:
     """The provider dispatch. One place, so nothing else needs to know."""
     if active_config().provider == "anthropic":

@@ -6,12 +6,18 @@ fails loudly instead of serving stale answers. This is the one command that
 brings every recording back in line — the pool repositories from their committed
 fixtures, and each discover session's analysed survivors from theirs.
 
-Run:  PYTHONPATH=. uv run python scripts/rerecord_trajectories.py
+Run:  PYTHONPATH=. uv run python scripts/rerecord_trajectories.py [--patch]
       (needs OPENAI_API_KEY; roughly $1 for the pools at gpt-5-mini prices)
+
+`--patch` heals instead of re-recording: calls whose prompts are unchanged
+replay from the existing file for free, and only the calls a code change
+actually touched are re-billed. Use it after a change that reaches some
+prompts but not all of them.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import time
 from datetime import datetime
@@ -20,21 +26,30 @@ from pathlib import Path
 from holt.agent.pipeline import analyze
 from holt.discover import full_root, trajectory_for
 from holt.evidence.fixtures import FixtureProvider
-from holt.model import OpenAIModel, TRAJECTORY_DIR
+from holt.model import OpenAIModel, PatchModel, TRAJECTORY_DIR
 from holt.types import Window
 
 
-def rerecord(slug: str, provider: FixtureProvider, path: Path) -> float:
-    path.unlink(missing_ok=True)
-    client = OpenAIModel(path)
+def rerecord(slug: str, provider: FixtureProvider, path: Path, patch: bool) -> float:
     started = time.monotonic()
+    if patch:
+        client = PatchModel(path)
+    else:
+        path.unlink(missing_ok=True)
+        client = OpenAIModel(path)
     assessment, _ = analyze(slug, provider, client)
+    note = f"  patched {client.patched}" if patch else ""
     print(f"  {time.monotonic() - started:5.0f}s  ${client.usage.cost_usd:.4f}  "
-          f"{assessment.verdict.value:<22} {slug}", flush=True)
+          f"{assessment.verdict.value:<22} {slug}{note}", flush=True)
     return client.usage.cost_usd
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--patch", action="store_true",
+                    help="replay unchanged calls; re-record only what a change touched")
+    args = ap.parse_args()
+
     spent = 0.0
     failed: list[str] = []
 
@@ -51,7 +66,7 @@ def main() -> None:
             continue
         print(f"[{i}/{len(slugs)}]", flush=True)
         try:
-            spent += rerecord(slug, provider, path)
+            spent += rerecord(slug, provider, path, args.patch)
         except Exception as err:
             failed.append(slug)
             print(f"  FAILED {slug}: {err}", flush=True)
@@ -64,7 +79,7 @@ def main() -> None:
         for slug in manifest["analysed"]:
             provider = FixtureProvider(Window.PRE_T, root=full_root(name), cutoff=as_of)
             try:
-                spent += rerecord(slug, provider, trajectory_for(slug))
+                spent += rerecord(slug, provider, trajectory_for(slug), args.patch)
             except Exception as err:
                 failed.append(slug)
                 print(f"  FAILED {slug}: {err}", flush=True)

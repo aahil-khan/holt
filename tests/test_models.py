@@ -127,6 +127,34 @@ def test_local_server_needs_no_api_key(tmp_path, monkeypatch):
     assert client._client.base_url.host == "localhost"
 
 
+def test_patch_model_replays_hits_and_records_only_misses(tmp_path):
+    path = tmp_path / "t.jsonl"
+    path.write_text(json.dumps({
+        "key": call_key("classify", "s", "old prompt"),
+        "label": "classify", "model": SMALL, "system": "s", "prompt": "old prompt",
+        "response": {"kept": True}, "usage": {"input_tokens": 1, "output_tokens": 1},
+    }) + "\n")
+
+    calls = []
+
+    class FakeLive:
+        usage = model_mod.Usage()
+        patched = 0
+
+        def complete(self, **kw):
+            calls.append(kw["prompt"])
+            return {"fresh": True}
+
+    client = model_mod.PatchModel(path, _live=FakeLive())
+    assert client.complete(label="classify", system="s", prompt="old prompt",
+                           schema={}) == {"kept": True}
+    assert calls == []  # the hit cost nothing and touched no network
+    assert client.complete(label="classify", system="s", prompt="new prompt",
+                           schema={}) == {"fresh": True}
+    assert calls == ["new prompt"]
+    assert client.patched == 1
+
+
 def test_cli_models_warns_when_config_diverges_from_the_recorded_defaults(
     tmp_path, monkeypatch, capsys
 ):

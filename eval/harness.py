@@ -26,7 +26,7 @@ from holt import baseline as baseline_solution
 from holt import baseline_matched
 from holt.agent.pipeline import analyze
 from holt.evidence.fixtures import FixtureProvider
-from holt.model import OpenAIModel, ReplayModel, TRAJECTORY_DIR
+from holt.model import OpenAIModel, PatchModel, ReplayModel, TRAJECTORY_DIR
 from holt.report import Verdict
 from holt.types import Window
 
@@ -132,6 +132,9 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--replay", action="store_true", help="score recorded runs, no spend")
+    ap.add_argument("--patch", action="store_true",
+                    help="replay unchanged calls, re-record only what a code "
+                         "change touched; leaves the recorded results file alone")
     ap.add_argument("--resume", action="store_true", help="skip repositories already recorded")
     ap.add_argument("--pool", default=str(POOL), help="pool file to score against")
     ap.add_argument("--labels", default=str(LABELS), help="ground-truth file for that pool")
@@ -168,7 +171,11 @@ def main() -> None:
 
     def client(slug: str):
         path = root / (slug.replace("/", "__") + ".jsonl")
-        return ReplayModel(path) if args.replay else OpenAIModel(path)
+        if args.replay:
+            return ReplayModel(path)
+        if args.patch:
+            return PatchModel(path)
+        return OpenAIModel(path)
 
     skipped: list[str] = []
     for i, slug in enumerate(repos, 1):
@@ -238,6 +245,13 @@ def main() -> None:
           f"   ungraded (no post-cutoff attempts): {len(ungraded)}")
     if skipped:
         print(f"skipped (incomplete recording): {skipped}")
+
+    if args.patch:
+        # A patch pass heals recordings; the verdicts are identical by
+        # construction, and the recorded run's spend figure must not be
+        # overwritten with the patch's much smaller one.
+        print("patch pass: recordings healed; results file left as recorded")
+        return
 
     out_path = OUT.with_name(f"results_eval_{args.run_tag}.json") if args.run_tag else OUT
     out_path.write_text(json.dumps({

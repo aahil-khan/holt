@@ -445,8 +445,13 @@ A documented non-use is a judgement, not an omission.
 
 - **No memory or vector store.** Each assessment is independent; there is nothing
   to carry between them that the evidence provider does not already hold.
-- **No multi-provider abstraction.** One model is pinned per stage. Portability
-  would move variance into the number being reported.
+- **No provider variance in the numbers.** Every benchmark figure was measured
+  under one pinned, dated model per stage, and the eval path resolves those ids
+  unconditionally — a test proves it ignores any user configuration on disk.
+  The *product* does let you choose (`holt models`: other OpenAI models, Claude,
+  Ollama, Gemini, any OpenAI-compatible endpoint), and its own output warns that
+  committed recordings replay only under the defaults. The line we hold is that
+  portability must never move variance into a number being reported.
 - **No personal fit or skill matching.** No ground truth exists for "will this
   developer enjoy this", so it cannot enter the holdout, so it cannot contribute
   to a measured claim.

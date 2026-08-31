@@ -1260,6 +1260,17 @@ the demo session's survivors in one command). Batched deliberately with the
 frozen benchmark that follows, so the benchmark measures the prompts that
 ship.
 
+**The word also lived in two deterministic rule traces** — "no outsider
+attempts before the cutoff" and "only N outsider merges before the cutoff",
+printed verbatim under *What decided it* (a TUI screenshot surfaced the first
+one). Reworded to "in the period read". Because the traces enter the narration
+prompt, that staled the recordings of exactly the repositories where those
+rules fire — 7 of 69 — and healing them cost **$0.019** instead of another
+$1.05 re-record, via a new patch mode (`PatchModel`; `--patch` on the
+re-record script and the benchmark harness): replay every call whose prompt
+is unchanged, re-record only what the change touched, never overwrite a
+recorded run's results file.
+
 **And the cutoff leaked into behaviour, not just prose.** The TUI (built on a
 separate branch, against the promised `Assessment` contract) constructed
 `LiveGitHubProvider(Window.PRE_T)` bare — and the library default for a *live*

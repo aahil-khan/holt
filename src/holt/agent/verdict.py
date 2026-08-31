@@ -85,7 +85,9 @@ def classify(
         return Verdict.NOT_VIABLE, trace
 
     if signals.outsider_threads == 0:
-        trace.append("no outsider attempts before the cutoff: nothing to judge from")
+        # "In the period read", not "before the cutoff": the cutoff is an
+        # evaluation device, and this line is printed verbatim to users.
+        trace.append("no outsider attempts in the period read: nothing to judge from")
         return Verdict.INSUFFICIENT_EVIDENCE, trace
 
     ignored_share = signals.outsider_ignored / signals.outsider_threads
@@ -142,5 +144,5 @@ def classify(
             f"but fewer than {MIN_ATTEMPTS_FOR_HOSTILE} attempts is too thin to call hostile"
         )
     elif signals.outsider_merged < MIN_MERGES:
-        trace.append(f"only {signals.outsider_merged} outsider merges before the cutoff")
+        trace.append(f"only {signals.outsider_merged} outsider merges in the period read")
     return Verdict.INSUFFICIENT_EVIDENCE, trace
