@@ -190,6 +190,11 @@ def cmd_tui(args: argparse.Namespace) -> int:
 
     # Names only. A value read from `.env` is never printed.
     from_env_file = env.load()
+
+    # The interface honours the user's chosen model, the same deliberate opt-in
+    # `main` makes for the command line. The library still never reads it, so
+    # the eval harness and the committed recordings stay on the pinned ids.
+    model.enable_user_models_config()
     if from_env_file:
         print(f"Read {', '.join(from_env_file)} from .env", file=sys.stderr)
 

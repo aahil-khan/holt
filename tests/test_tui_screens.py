@@ -621,3 +621,73 @@ def test_a_long_verdict_does_not_run_into_the_age(tmp_path):
         assert "say8 hours" not in text
 
     drive(body, tmp_path, size=(110, 44))
+
+
+# ─── models ─────────────────────────────────────────────────────────────────
+
+
+def test_the_model_screen_lists_providers_with_their_key_status(tmp_path, monkeypatch):
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+l")
+        await pilot.pause(0.5)
+        assert app.screen.__class__.__name__ == "ModelsScreen"
+        text = screen_text(app)
+        for name in ("openai", "anthropic", "ollama", "gemini", "openai-compatible"):
+            assert name in text
+        # Whether a provider can be used at all, before you pick it.
+        assert "ANTHROPIC_API_KEY is not set" in text
+        assert "set a base url first" in text
+
+    drive(body, tmp_path, size=(110, 40))
+
+
+def test_choosing_a_model_warns_that_replay_will_fail(tmp_path, monkeypatch):
+    """The reproducibility guarantee is never a surprise sprung later."""
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    from holt import model as model_module
+    from holt.tui import models as models_layer
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+l")
+        await pilot.pause(0.5)
+        screen = app.screen
+        screen.chosen = next(p for p in screen.providers if p.name == "anthropic")
+        screen._use("claude-opus-5")
+        await pilot.pause(0.3)
+
+        text = screen_text(app)
+        assert "fails loudly" in text
+        assert model_module.model_for("classify") == "claude-opus-5"
+
+        screen.action_reset()
+        await pilot.pause(0.3)
+        assert "fails loudly" not in screen_text(app)
+        assert model_module.model_for("classify") == model_module.SMALL
+
+    drive(body, tmp_path, size=(110, 40))
+    models_layer.reset()
+
+
+def test_the_model_screen_never_reaches_the_network_in_tests(tmp_path, monkeypatch):
+    """The guard is on for the whole session; this proves the screen honours it
+    rather than calling the SDK directly."""
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    from holt.tui import models as models_layer
+
+    assert not models_layer.network_allowed()
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+l")
+        await pilot.pause(0.4)
+        screen = app.screen
+        screen.chosen = next(p for p in screen.providers if p.name == "ollama")
+        await screen._show_models(models_layer.list_models(screen.chosen))
+        await pilot.pause(0.3)
+        assert models_layer.NO_NETWORK_ENV in screen_text(app)
+
+    drive(body, tmp_path, size=(110, 40))
