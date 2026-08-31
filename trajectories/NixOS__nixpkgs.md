@@ -28,7 +28,7 @@ Replayed from committed fixtures and recorded model output. No model ran.
 
 ## 3. Stage A — what kind of repository is this?
 
-*Model:* `gpt-5-mini-2025-08-07` · *3530 in / 721 out tokens · $0.0023*
+*Model:* `gpt-5-mini-2025-08-07` · *3530 in / 615 out tokens · $0.0021*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -99,14 +99,14 @@ It also implements [NixOS](https://nixos.org/nixos/), a purely-functional Linux 
 {
  "repo_kind": "real_software",
  "confidence": "high",
- "rationale": "The repository is the Nix Packages collection and implements NixOS (meta description and README) \u2014 i.e. it contains Nix expressions, build scripts, and NixOS modules rather than just a list of links or registry entries. Many merged PRs modify .nix package definitions and NixOS modules (examples include changes to pkgs/*/*.nix and nixos/modules/*), indicating these are code artifacts that affect builds and runtime behavior rather than mere catalogue entries.",
+ "rationale": "The repository is the Nix Packages collection and implements NixOS (an OS) \u2014 it contains Nix expressions, build scripts, and NixOS modules (not just a list of links or manifests). The README and meta describe it as a collection of software packages and an operating system (repo:NixOS/nixpkgs:readme, repo:NixOS/nixpkgs:meta). The CONTRIBUTING doc describes how to contribute code and modules (repo:NixOS/nixpkgs:contributing). Recent merged PRs modify package.nix files, NixOS modules, build hooks and patches (e.g. pr:NixOS/nixpkgs#526362, pr:NixOS/nixpkgs#526364, pr:NixOS/nixpkgs#526390 and many others), showing merges change code that builds/runs software rather than only catalogue entries.",
  "evidence_ids": [
   "repo:NixOS/nixpkgs:meta",
   "repo:NixOS/nixpkgs:readme",
   "repo:NixOS/nixpkgs:contributing",
   "pr:NixOS/nixpkgs#526362",
-  "pr:NixOS/nixpkgs#526372",
-  "pr:NixOS/nixpkgs#526321"
+  "pr:NixOS/nixpkgs#526364",
+  "pr:NixOS/nixpkgs#526390"
  ],
  "governance_flags": [
   "none"
@@ -116,7 +116,7 @@ It also implements [NixOS](https://nixos.org/nixos/), a purely-functional Linux 
 
 ## 4. Stage B — is there a real route in?
 
-*Model:* `gpt-5-mini-2025-08-07` · *2868 in / 615 out tokens · $0.0019*
+*Model:* `gpt-5-mini-2025-08-07` · *2868 in / 693 out tokens · $0.0021*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -171,7 +171,7 @@ More specific information about individual parts of Nixpkgs can be found here:
 ```json
 {
  "onboarding": "substantive",
- "rationale": "The repository provides concrete, followable onboarding material. CONTRIBUTING contains a detailed \"How to create pull requests\" section with step\u2011by\u2011step instructions, example git commands, testing/commit guidance, CI expectations, and links to relevant templates and tools. README complements this with pointers to manuals and community channels (Discourse, Matrix, wiki) for getting help. Together these give an outsider a clear route to propose work and find assistance (see repo:NixOS/nixpkgs:contributing and repo:NixOS/nixpkgs:readme).",
+ "rationale": "The repository provides concrete, followable onboarding material. CONTRIBUTING.md gives a step\u2011by\u2011step process for proposing changes (fork \u2192 clone \u2192 create branch \u2192 make changes \u2192 commit \u2192 push \u2192 open a PR), includes example git commands, guidance on branch choice, testing, commit conventions, and how to respond to reviews and CI (ofborg). The README complements this with links to the Nixpkgs manual, more detailed docs (doc/, lib/, maintainers/, pkgs/), and named community/help channels (Discourse, Matrix, wiki). Together these provide a clear route for an outsider to get started and request help.",
  "evidence_ids": [
   "repo:NixOS/nixpkgs:contributing",
   "repo:NixOS/nixpkgs:readme"
@@ -181,7 +181,7 @@ More specific information about individual parts of Nixpkgs can be found here:
 
 ## 5. Stage C — what happened to people who tried?
 
-*Model:* `gpt-5-mini-2025-08-07` · *4949 in / 6049 out tokens · $0.0133*
+*Model:* `gpt-5-mini-2025-08-07` · *4949 in / 6072 out tokens · $0.0134*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -270,23 +270,40 @@ Pull request threads:
    "pr_id": "pr:NixOS/nixpkgs#526489:opened",
    "outcome": "changes_requested",
    "signal": "neutral",
-   "quote": "I have finished review of changes in https://github.com/Keruspe/GPaste/compare/v45.3...v45.5, those look mostly okay. I opened slight fix for https://github.com/Keruspe/GPaste/pull/482 since LLM seems to have generated unnecessarily complex code. Unfortunately, https://github.com/Keruspe/GPaste/compare/v45.5...v45.6 has bunch more AI changes that will require greater scrutiny. Like WTF is this: https://github.com/Keruspe/GPaste/commit/cfb493d95d2b1164619e75b0d0ce8c85509183bd"
+   "quote": "I have finished review of changes in https://github.com/Keruspe/GPaste/compare/v45.3...v45.5, those look mostly okay."
   },
   {
    "pr_id": "pr:NixOS/nixpkgs#526457:opened",
    "outcome": "changes_requested",
    "signal": "welcoming",
-   "quote": "Currently there are colliding files which cause a hash mismatch between non darwin and darwin. Both `docs/themes/rpgle.svg` and `docs/themes/RPGLE.svg` cause issues because of apples non-case-sensitive file-system. Please remove the `RPGLE.svg` in post fetch to fix this, since `rpgle.svg` seems to be the main one used."
+   "quote": "The hash also needs to be changed :) It should be fine just squashing both commits together into the single update commit."
   },
   {
    "pr_id": "pr:NixOS/nixpkgs#526430:opened",
-   "outcome": "merged_without_engagement",
-   "signal": "neutral",
+   "outcome": "changes_requested",
+   "signal": "welcoming",
    "quote": "Approved automatically following the successful run of `nixpkgs-review`."
   },
   {
    "pr_id": "pr:NixOS/nixpkgs#526475:opened",
-   "outcome": "mer
+   "outcome": "merged_after_review",
+   "signal": "welcoming",
+   "quote": "[Upstream changes](https://gitlab.gnome.org/GNOME/gegl/-/compare/GEGL_0_4_68...GEGL_0_4_70) look okay."
+  },
+  {
+   "pr_id": "pr:NixOS/nixpkgs#526428:opened",
+   "outcome": "changes_requested",
+   "signal": "welcoming",
+   "quote": "Sure, I use it. Happy to take care of maintenance. I'm not a committee^Hr though."
+  },
+  {
+   "pr_id": "pr:NixOS/nixpkgs#526410:opened",
+   "outcome": "merged_after_review",
+   "signal": "welcoming",
+   "quote": "awesome thanks!"
+  },
+  {
+   "pr_id": "pr:NixOS/nixpkgs#52632
 ```
 
 ## 6. Stage D — verification (tool calls, no model)
@@ -325,13 +342,13 @@ The verdict above was passed to Stage E as an input it cannot change.
 
 **Worth your time** — for a contributor with 7 days.
 
-You will get rapid, actionable feedback and a realistic shot at a first-time merge — median first reply is 0.8 hours and 15 distinct outsiders had PRs merged — but many outsider threads are ignored (63 of 100), so expect to be persistent and to address requested changes. Be prepared for a mix of automated approvals and hands-on reviews; some merges happen after detailed review, others are merged automatically following CI.
+You will usually get a very fast first reply (median 0.8 hours) and the project actively reviews and merges outsider contributions when they follow the process. However, a large fraction of outsider submissions received no visible human response (63 of 100), so expect to need persistence, careful adherence to CONTRIBUTING.md, and occasional nudges to get traction.
 
 ## What the evidence shows
 
-The clearest signal is fast, substantive engagement: CONTRIBUTING and the README provide step‑by‑step onboarding, and maintainers commonly give concrete, fixable feedback (for example: “You need to add the `lualine` dependency like this …”). Median time to first response is 0.8 hours, so your initial question or PR is likely to be noticed quickly.
+The clearest signal is mixed responsiveness: of 100 outsider threads sampled, 15 distinct external authors had PRs merged while 63 threads showed no visible human reply. Median time to first response was 0.8 hours and bots account for about 8.5% of activity, so most initial feedback comes from humans rather than automation.
 
-Outcome patterns are mixed. Out of 100 outsider threads there were 15 first‑time merges by 15 distinct authors, showing newcomers can succeed, but 63 outsider threads were ignored. Several merges were purely CI/automated approvals (“Approved automatically following the successful run of `nixpkgs-review`.”) while others underwent reviewer requests and follow‑ups, so success often requires addressing review comments and occasionally follow‑through on maintainership/packaging details.
+Onboarding materials are substantive and practical (CONTRIBUTING.md, README, Nixpkgs manual) and reviewers give concrete, actionable feedback when they engage — examples include "You need to add the `lualine` dependency like this..." and "Approved automatically following the successful run of `nixpkgs-review`." Maintainers sometimes offer to take over maintenance and many merges follow human review or CI, though a minority of merges occur with minimal visible engagement. Overall the project is responsive and instructive but uneven in follow-through.
 
 ## What decided it
 
@@ -339,25 +356,36 @@ Outcome patterns are mixed. Out of 100 outsider threads there were 15 first‑ti
 
 ## What could not be determined
 
-I could not determine the typical time-to-merge for outsider PRs (beyond first response) or how different classes of changes compare in acceptance speed.
+I could not determine from the sampled threads whether the ignored PRs were due to low quality, duplication, or maintainers' bandwidth.
+
+## Where outsider work landed
+
+Counted over the 100 pull requests opened here by people with no prior merge, of which 15 were merged. Paths are cut to their first two segments, so a short path may name a file rather than a directory.
+
+- **`pkgs/by-name`** — 13 merged of 62 attempted (21%)
+- **`pkgs/top-level`** — 3 merged of 11 attempted (27%)
+- **`pkgs/os-specific`** — 1 merged of 2 attempted (50%)
+- **`pkgs/servers`** — 1 merged of 2 attempted (50%)
+
+Outsiders attempted these and none were merged: `maintainers/maintainer-list.nix` (11), `pkgs/applications` (6), `pkgs/build-support` (6), `doc/release-notes` (2). That is what this sample shows, not a rule — a directory can appear here because newcomers are turned away from it, or because only a couple of people ever tried.
 
 ## Evidence
 
-- repo kind: real_software — The repository is the Nix Packages collection and implements NixOS (meta description and README) — i.e. it contains Nix expressions, build scripts, and NixOS modules rather than just a list of links or registry entries. Many merged PRs… — `repo:NixOS/nixpkgs:meta`
-- onboarding: substantive — The repository provides concrete, followable onboarding material. CONTRIBUTING contains a detailed "How to create pull requests" section with step‑by‑step instructions, example git commands, testing/commit guidance, CI expectations, and… — `repo:NixOS/nixpkgs:contributing`
-- outsider posture: welcoming — Most threads show active engagement: maintainers or reviewers give specific, actionable feedback (dependencies to add, filesystem-fix guidance), offer to transfer maintainership, or approve and merge updates. Several PRs were merged (some… — `pr:NixOS/nixpkgs#526518:opened`
+- repo kind: real_software — The repository is the Nix Packages collection and implements NixOS (an OS) — it contains Nix expressions, build scripts, and NixOS modules (not just a list of links or manifests). The README and meta describe it as a collection of software… — `repo:NixOS/nixpkgs:meta`
+- onboarding: substantive — The repository provides concrete, followable onboarding material. CONTRIBUTING.md gives a step‑by‑step process for proposing changes (fork → clone → create branch → make changes → commit → push → open a PR), includes example git commands… — `repo:NixOS/nixpkgs:contributing`
+- outsider posture: welcoming — Most threads show active, constructive reviewer engagement (requests for small fixes, approvals after nixpkgs-review, or direct merge requests). Several PRs were merged with human review or automated approval, and maintainers provided… — `pr:NixOS/nixpkgs#526518:opened`
 - ignored, nothing said — `pr:NixOS/nixpkgs#526518:opened`
 - changes requested — “You need to add the `lualine` dependency like this https://github.com/NixOS/nixpkgs/blob/183cfa71568e398c8b419f9a763442344b352eda/pkgs/applications/editors/vim/plugins/overrides.ni…” — `pr:NixOS/nixpkgs#526361:opened`
-- changes requested — “I have finished review of changes in https://github.com/Keruspe/GPaste/compare/v45.3...v45.5, those look mostly okay. I opened slight fix for…” — `pr:NixOS/nixpkgs#526489:opened`
-- changes requested — “Currently there are colliding files which cause a hash mismatch between non darwin and darwin. Both `docs/themes/rpgle.svg` and `docs/themes/RPGLE.svg` cause issues because of…” — `pr:NixOS/nixpkgs#526457:opened`
-- merged without engagement — “Approved automatically following the successful run of `nixpkgs-review`.” — `pr:NixOS/nixpkgs#526430:opened`
+- changes requested — “I have finished review of changes in https://github.com/Keruspe/GPaste/compare/v45.3...v45.5, those look mostly okay.” — `pr:NixOS/nixpkgs#526489:opened`
+- changes requested — “The hash also needs to be changed :) It should be fine just squashing both commits together into the single update commit.” — `pr:NixOS/nixpkgs#526457:opened`
+- changes requested — “Approved automatically following the successful run of `nixpkgs-review`.” — `pr:NixOS/nixpkgs#526430:opened`
 - merged after review — “[Upstream changes](https://gitlab.gnome.org/GNOME/gegl/-/compare/GEGL_0_4_68...GEGL_0_4_70) look okay.” — `pr:NixOS/nixpkgs#526475:opened`
-- changes requested — “@wahjava (or someone else), would you like to replace me as a maintainer? I am no longer using weechat.” — `pr:NixOS/nixpkgs#526428:opened`
-- merged without engagement — “awesome thanks!” — `pr:NixOS/nixpkgs#526410:opened`
-- merged without engagement — “@NixOS/nixpkgs-merge-bot merge” — `pr:NixOS/nixpkgs#526325:opened`
+- changes requested — “Sure, I use it. Happy to take care of maintenance. I'm not a committee^Hr though.” — `pr:NixOS/nixpkgs#526428:opened`
+- merged after review — “awesome thanks!” — `pr:NixOS/nixpkgs#526410:opened`
+- changes requested — “@NixOS/nixpkgs-merge-bot merge” — `pr:NixOS/nixpkgs#526325:opened`
 - merged without engagement — “Looking at the build logs, I noticed `ENABLE_LTE_RATES` doesn't exit.” — `pr:NixOS/nixpkgs#526451:opened`
 - merged without engagement — “nix-update did an oopsy and thought it upgraded from 0.7.1” — `pr:NixOS/nixpkgs#526499:opened`
-- merged without engagement — “Approved automatically following the successful run of `nixpkgs-review`.” — `pr:NixOS/nixpkgs#526419:opened`
+- merged after review — “Approved automatically following the successful run of `nixpkgs-review`. @NixOS/nixpkgs-merge-bot merge” — `pr:NixOS/nixpkgs#526419:opened`
 
 *holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)*
 
