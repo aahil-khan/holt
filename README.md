@@ -1,5 +1,7 @@
 # Holt
 
+![Holt](assets/holt.png)
+
 **Is this repository worth an outside contributor's week?**
 
 Holt reads a GitHub repository the way a careful developer would after an
