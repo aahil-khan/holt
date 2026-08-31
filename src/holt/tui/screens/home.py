@@ -49,7 +49,7 @@ SUGGESTION = "home-assistant/core"
 #: than one that takes five more columns.
 HINT = (
     "enter assess    ↑↓ one you already have    ctrl+f find one    "
-    "ctrl+t mode    ctrl+r re-run"
+    "ctrl+t mode    ctrl+l models"
 )
 
 
@@ -61,6 +61,7 @@ class HomeScreen(Screen):
     BINDINGS = [
         ("ctrl+f", "discover", "find a repository"),
         ("ctrl+o", "profile", "profile"),
+        ("ctrl+l", "models", "models"),
         ("ctrl+r", "rerun", "re-run"),
         ("ctrl+t", "toggle_mode", "mode"),
         ("escape", "clear", "clear"),
@@ -242,6 +243,10 @@ class HomeScreen(Screen):
 
     def action_profile(self) -> None:
         self.app.push_screen("profile")
+
+    def action_models(self) -> None:
+        """Which model answers, and whether it can be reached."""
+        self.app.push_screen("models")
 
     def action_toggle_mode(self) -> None:
         self.mode = "replay" if self.mode == "live" else "live"

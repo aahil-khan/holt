@@ -284,6 +284,37 @@ EntryPointRow {{
 
 /* discover, profile, what-next ---------------------------------------------- */
 
+#models-body {{
+    height: 1fr;
+    padding: 0 1;
+}}
+#provider-scroll, #model-scroll {{
+    height: auto;
+    max-height: 12;
+    scrollbar-size: 1 1;
+}}
+#providers, #models {{
+    height: auto;
+    background: transparent;
+    border: none;
+}}
+#providers > ListItem, #models > ListItem {{
+    background: transparent;
+    padding: 0 1;
+}}
+#providers > ListItem.--highlight, #models > ListItem.--highlight {{
+    background: $boost;
+}}
+#models-notice {{
+    height: auto;
+    padding: 1 1 0 2;
+}}
+#models-warning {{
+    height: auto;
+    padding: 1 1 0 2;
+    border-left: outer {RAIL};
+}}
+
 #discover-body, #profile-body, #next-body {{
     height: 1fr;
     padding: 0 1;
