@@ -92,10 +92,12 @@ def main() -> None:
         print(f"  bootstrap MCC    difference {mean:+.2f}  95% CI [{lo:+.2f}, {hi:+.2f}]"
               f"   P(difference <= 0) = {worse:.2f}")
 
-    print("\nRead this honestly: at 22 repositories the aggregate difference is not")
-    print("statistically distinguishable. The trap-rejection result (4/5 against 0/5,")
-    print("Fisher exact p = 0.048) and the positive control (3/3 against 1/3) are the")
-    print("claims this sample can carry.")
+    print("\nRead this honestly: at 22 repositories the aggregate difference is large")
+    print("but not formally distinguishable. Holt rejects 4/5 trap repositories in")
+    print("every recorded run; the baseline has scored 0-3/5 across recording")
+    print("sessions, so the original Fisher p = 0.048 did not survive re-measurement")
+    print("and is retired. The stable claims are 4/5 traps every time and the")
+    print("positive control (3/3 against 1/3).")
 
 
 if __name__ == "__main__":

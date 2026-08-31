@@ -1,8 +1,8 @@
 # Holt — where we are and how we got here
 
-Written 2026-08-30; last revised mid-morning 2026-08-31, after the discovery and
-progression features shipped and with the frozen benchmark in flight. 54 commits,
-115 tests, ~$10 spent (~$14.50 once the running benchmark batch lands).
+Written 2026-08-30; last revised midday 2026-08-31, after the discovery,
+progression and model-choice features shipped and the frozen benchmark landed.
+60+ commits, 128 tests, ~$14.60 spent in total.
 
 This is the orientation document. Read it if you have lost the thread.
 
@@ -118,49 +118,53 @@ and the fifth full re-record is running via the new one-command
 `scripts/rerecord_trajectories.py`, which also covers the discover demo's
 survivors.
 
-**The frozen benchmark is running now**, batched deliberately after the wording
-fix so it measures the prompts that ship: three tagged runs per pool, both
-pools, ~$3 — the committed numbers it replaces predate both the rubber-stamp
-rule and the report rewrite, which is why the README still understates
-specificity as 0.50 against the 0.83 the shipped rule achieves out of sample.
+**The frozen benchmark ran the same day**, batched deliberately after the
+wording fixes so it measures the prompts that ship: three tagged runs per pool,
+both pools, $3.50, every run replay-verified from the committed recordings.
+Section 3 below holds the results.
 
 ---
 
-## 3. Where the numbers stand
+## 3. Where the numbers stand — frozen 2026-08-31, on the shipped prompts
+
+Three live runs per pool, every one replay-verified from the committed
+recordings. Total benchmark spend $3.50.
 
 ### The headline: reading history beats reading a landing page
 
-| | Pool 1 (n=22) | Pool 2, out-of-sample (n=33) |
+| MCC, mean over 3 runs | Pool 1 (n=22) | Pool 2, out-of-sample (n=33) |
 |---|---|---|
-| baseline — README and metadata | +0.21 | **+0.04** |
-| Holt | +0.49 | +0.42 |
-| gap | +0.28 | **+0.38** |
+| name-only probe | +0.16 | +0.10 |
+| baseline — README and metadata | +0.09 ±0.09 | +0.21 ±0.02 |
+| same-evidence ablation | — | +0.32 ±0.07 |
+| **Holt** | **+0.61 ±0.00** | **+0.63 ±0.00** |
 
-Holt replicates. The baseline **collapses to near-chance** on pool 2, because
-pool 2 skews toward quieter repositories where a README tells you nothing. The
-advantage widens out of sample.
+**Holt's verdicts were identical on all 55 repositories across all three runs**
+(the baseline changed its mind on 16). Specificity — the number that had been
+stuck at coin-flip — is **0.75 in sample and 0.83 out of sample**, the
+rubber-stamp rule's pre-registered prediction now frozen into the committed
+benchmark, at the predicted cost of a few points of sensitivity (0.86/0.81).
 
-### The rejection rule, tested once on data it was never fitted to
+### The result that moved, and the honest account of it
 
-| Pool 2 | MCC | Sensitivity | Specificity |
-|---|---|---|---|
-| Holt as shipped | +0.42 | 0.83 | 0.58 |
-| **with the rule** | **+0.59** | 0.78 | **0.83** |
-
-All three pre-registered predictions held. **Specificity 0.58 → 0.83.** The
-coin-flip problem is solved, on a pool drawn and labelled after the rule was
-written down.
-
-### The result that goes against us
-
-Given **identical evidence**, a single prompt matches the staged pipeline
-exactly: on pool 2 both score MCC 0.42, sensitivity 0.83, specificity 0.58. The
-evidence layer is worth +0.38. The orchestration on top of it is worth, in
-accuracy, nothing.
-
-What orchestration buys instead: run-to-run stability (32/33 against the
-baseline's 17/33), citations that resolve, and a verdict a model cannot override.
-That is reproducibility, not accuracy, and we say so.
+- **The "orchestration adds no accuracy" finding is superseded.** When measured
+  (pre-rule), the same-evidence single prompt tied the pipeline 0.42 = 0.42. On
+  the frozen runs the pipeline leads it 0.63 to 0.32 — and the difference is
+  the deterministic verdict layer, not smarter model stages: the fresh ablation
+  shows the model stages and kind rules worth **+0.01 MCC** over arithmetic.
+  A prompt can be handed identical evidence; it cannot be handed a rule it is
+  unable to override.
+- **The trap-rejection significance claim is retired.** Holt rejects 4/5 traps
+  in every recorded run, but the baseline — 0/5 when the p = 0.048 was computed
+  — scored 2–3/5 on the frozen re-runs. The stable claim is Holt's 4/5 every
+  time against a baseline that wanders; the significance did not survive
+  re-measurement and we say so instead of citing the old number.
+- **The label-sensitivity vulnerability shrank.** Dropping the `substantive`
+  filter used to flip the advantage to the baseline; on the frozen runs Holt
+  leads under every ground-truth variant (worst case +0.39 vs +0.28).
+- Repository-level stats (pool 1): bootstrap MCC difference +0.42 to +0.59,
+  P(difference ≤ 0) = 0.04–0.08, CIs still touching zero; McNemar p = 0.15–0.23.
+  Large but not formally distinguishable at n=22, and printed as such.
 
 ---
 
@@ -169,7 +173,8 @@ That is reproducibility, not accuracy, and we say so.
 - The pool is closed. Neither pool has been edited after seeing results.
 - Two experiments failed, were removed, and stayed in the changelog.
 - Every uncomfortable number is published: the constant-classifier floor, the
-  label sensitivity, the ablation showing orchestration adds no accuracy.
+  label sensitivity, the ablation showing where the accuracy does and does not
+  live, and a significance claim retired when it failed to re-measure.
 - Stage B and Stage C reach the report but not the verdict, and that is disclosed
   rather than quietly true.
 
@@ -210,16 +215,22 @@ capability and abandoning a claim.
 - **`--days`.** Re-answering at a different time budget costs **zero model
   calls**, because only `verdict.py` re-runs.
 
-### The four things we have proven do *not* work, about ourselves
+### The things we have proven do *not* work, about ourselves
 
-- Orchestration adds no accuracy over one prompt with identical evidence
-  (0.42 = 0.42 on pool 2).
+- The model stages add almost no accuracy: on the frozen ablation they and the
+  kind rules together are worth **+0.01 MCC** over arithmetic. (The earlier,
+  stronger form — a same-evidence prompt *tying* the whole pipeline, 0.42 =
+  0.42 — held before the deterministic rejection rule shipped; the pipeline now
+  leads 0.63 to 0.32, and the lead is the rule, not the model.)
 - Stage D verification dropped **0 of 1,402** findings.
 - The arithmetic thresholds never bind on this pool.
 - The model layer contributes nothing to ranking. Sharpest form: given
   contributor history, file lists, review threads and a structured competence
   profile — **strictly more context than the arithmetic had** — it returned an
   identical ranking **88 times out of 88**.
+- The trap-rejection significance (4/5 vs 0/5, p = 0.048) **did not survive
+  re-measurement**: the baseline scored 2–3/5 on the frozen runs. Holt's own
+  4/5 held in every run ever recorded.
 
 ### The two additions, and why they are shaped this way
 
@@ -277,12 +288,10 @@ labels were not touched.
 | **Reproducibility** *(second tie-break)* | 15 | **Strong and now verified end to end**, not merely designed: fresh clone, credentials stripped from the environment, `uv sync` → 115 passed → CLI renders → `--days 90` re-answers at zero model calls → the ranking harness reproduces published numbers → `holt discover` replays a recorded live session with no token and no key. A credential scrub runs before the content hash, a test fails on any credential-shaped string in any fixture, and re-recording every trajectory after a prompt change is one committed command. |
 | **Hot Take** | 5 | **Have one, and it is true in the repo:** *Holt is not a smarter analyst. We measured four times that our model layer adds no accuracy over arithmetic. It is an evidence assembly nobody will do by hand, wrapped in properties a conversation cannot have.* |
 
-**The one gap that is ours to close is closing as this is written:** the
-committed benchmark numbers predate both the rejection rule and the report
-rewrite, so the README currently *understates* what ships — specificity 0.50
-against the 0.83 the shipped rule achieves. The frozen re-run (three tagged
-runs per pool, both pools, on the final prompts) is in flight; the doc pass
-that swaps the headline numbers follows it.
+**The gap that was ours to close is closed:** the frozen benchmark ran on the
+shipped prompts, both pools, three runs each, every run replay-verified; the
+README's headline tables now carry the frozen numbers (0.61/0.75 in sample,
+0.63/0.83 out of sample) instead of the stale understatement.
 
 **The one gap that is not ours:** nobody outside this project has read a report.
 
@@ -290,11 +299,9 @@ that swaps the headline numbers follows it.
 
 | | Effort | Why |
 |---|---|---|
-| **Frozen benchmark, both pools** | running now, ~$3 | Committed results predate the rejection rule; this run measures the shipped prompts |
-| Doc pass on the headline numbers | ~30m after it lands | Mechanical; the structural pass is done |
-| Verify + commit the fifth re-record | ~10m after it lands | 59 pool + 5 demo trajectories, new narration wording |
 | **Video** | yours | Required deliverable. `holt discover` → `compare` → `analyze` → `next` is the arc of one contributor's week |
 | **Human-time number** | yours, ~30m | The brief asks for it; only you can produce it |
+| Rotate both tokens | yours, after submission | The PAT and the OpenAI key appeared in working sessions |
 
 ## 6. The honest summary
 
@@ -305,9 +312,14 @@ The thing we assumed — that the staged pipeline is what delivers that — is
 **false**, and we measured it ourselves rather than waiting to be caught. The
 evidence layer does the work.
 
-The rejection rule is the first evidence that orchestration can add something
-accuracy-wise, and it arrived through the same discipline that killed the two
-experiments before it: write the rule down, predict the outcome, run it once.
+The rejection rule is the proof that orchestration can add accuracy — just not
+where we assumed. The frozen benchmark shows the pipeline beating a
+same-evidence prompt by 0.3 MCC out of sample, and the entire lead is the
+deterministic layer the rule lives in; the model stages contribute +0.01. It
+arrived through the same discipline that killed the experiments before it:
+write the rule down, predict the outcome, run it once. The same freeze also
+took something away — the trap-rejection significance claim did not
+re-measure, and it is retired in the same tables that celebrate the rule.
 
 Path Finder is the fourth experiment run that way and the first that ships
 despite failing. That is not a softening of the rule — the rule was "cut if the
@@ -322,6 +334,6 @@ interval, and the interval spans zero.
 The last day turned the measurement discipline back into product surface: the
 kills of the profile-inference and progression experiments dictated the shape
 of `holt discover` (ask, don't infer; claim the filter, not the order) and
-`holt next` (ship the winning rule, print its numbers). What is left is the
-benchmark batch finishing, one number-swap in the docs, and the two
-deliverables only the author can produce.
+`holt next` (ship the winning rule, print its numbers), and the frozen
+benchmark closed the loop on the numbers. What is left is the video and the
+human-time study — the two deliverables only the author can produce.

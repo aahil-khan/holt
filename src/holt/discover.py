@@ -3,9 +3,10 @@
 The claim discipline is the whole point of this module:
 
 * **We claim the filter.** Screening applies the same rules as `verdict.py` —
-  rubber-stamp (validated out of sample, specificity 0.58 -> 0.83), hostile,
-  slow-response against the user's stated day budget, and the outsider-merge
-  floor. Trap rejection measured 4/5 against the baseline's 0/5 (exact p = 0.048).
+  rubber-stamp (validated out of sample: specificity 0.83 on a pool drawn after
+  the rule was written), hostile, slow-response against the user's stated day
+  budget, and the outsider-merge floor. On the trap repositories the rules
+  reject 4 of 5 in every recorded run.
 * **We do not claim the sourcing or the ordering.** Candidates come from GitHub
   repository search and the output says so. Rows come out in screening order.
 * Screening runs at reduced crawl depth (the newest page of pull-request

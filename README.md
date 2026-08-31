@@ -28,9 +28,10 @@ repository, at roughly fifteen minutes each. Nobody does that, so people pick by
 stars. **Stars are not useless** — on this pool the ten most-starred repositories
 are 80% viable against a 51% base rate, and we say so because we measured it.
 What stars cannot do is separate the registry, the mirror and the links list from
-the software project, and that is exactly the population this tool exists for. It
-is also the only comparison here that reaches significance: **4 of 5 traps
-rejected against the baseline's 0 of 5**, exact p = 0.048.
+the software project, and that is exactly the population this tool exists for.
+On the trap repositories — 100+ inbound attempts, zero qualifying
+contributions — Holt rejects **4 of 5 in every run we have ever recorded**; the
+baseline has scored anywhere from 0 to 3 of 5 depending on the day it was asked.
 
 Two closed pull requests are the same integer in every GitHub statistic:
 
@@ -50,11 +51,11 @@ metadata, which is what a person actually pastes. `probe` is the repository name
 alone with no evidence at all, which is what asking a chat model from memory
 gets you.
 
-| What you did | MCC |
-|---|---|
-| Asked a model that already knows the repo, name only | 0.16 |
-| **Pasted the README and the numbers into one prompt** | **0.28** |
-| Ran Holt | **0.46** |
+| What you did | MCC (pool 1) | MCC (pool 2, out of sample) |
+|---|---|---|
+| Asked a model that already knows the repo, name only | 0.16 | 0.10 |
+| **Pasted the README and the numbers into one prompt** | **0.09** | **0.21** |
+| Ran Holt | **0.61** | **0.63** |
 
 **The premise is where the work hides.** "The same GitHub information" is not
 pasteable. Per repository, Holt assembles a median of **642 evidence records and
@@ -76,8 +77,9 @@ which a chat transcript has:
 - **A bounded, honest horizon.** Every fact passes a cutoff assertion, so the
   answer cannot come from what the model remembers. We also bound what memory
   alone buys: **MCC 0.16**.
-- **The same answer twice.** Holt returns identical verdicts on 21 of 22
-  repositories across three runs. The one-prompt baseline manages 13 of 22.
+- **The same answer twice.** On the frozen runs Holt returned identical
+  verdicts on **55 of 55** repositories across three runs per pool. The
+  one-prompt baseline changed its answer on 16 of them.
 - **It says no.** A written, versioned rejection rule rather than an agreeable
   paragraph — and it is the one change that measurably improved accuracy
   (specificity 0.58 → 0.83, out of sample).
@@ -90,35 +92,53 @@ The value is in assembly, provability, determinism and refusal.
 
 ## Result
 
-Measured over a pool of 30 repositories drawn and hash-committed **before any
-method ran**, against ground truth computed only from evidence *after* a
-temporal cutoff neither method could see. 22 are gradable.
+Measured over two pools drawn and hash-committed **before any method ran**,
+against ground truth computed only from evidence *after* a temporal holdout
+neither method could see. Three independent live runs per pool, frozen
+2026-08-31 on the shipped prompts and rules; every number below reproduces
+from the committed recordings with no key and no spend.
+
+**Pool 1** (30 repositories, 22 gradable):
 
 | Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
 |---|---|---|---|---|---|
 | always answer "viable" | 0.00 ±0.00 | 0.50 | **0.78** | 1.00 | 0.00 |
-| name-only probe (memorisation control) | 0.16 ±0.07 | 0.58 | 0.52 | 0.40 | 0.75 |
-| baseline solution (one prompt over README + metadata) | 0.28 ±0.07 | 0.64 | 0.68 | 0.62 | 0.67 |
-| **Holt** | **0.46 ±0.05** | **0.70 ±0.02** | 0.83 ±0.02 | 0.90 ±0.04 | 0.50 ±0.00 |
+| name-only probe (memorisation control) | 0.16 ±0.03 | 0.58 | 0.52 | 0.40 | 0.75 |
+| baseline solution (one prompt over README + metadata) | 0.09 ±0.09 | 0.55 | 0.63 | 0.60 | 0.50 ±0.12 |
+| **Holt** | **0.61 ±0.00** | **0.80 ±0.00** | 0.86 ±0.00 | 0.86 ±0.00 | 0.75 ±0.00 |
 
-Mean and half-range over **three independent live runs**.
+**Pool 2** (45 repositories, 33 gradable — drawn, labelled and held out *after*
+every rule was written; genuine out-of-sample replication):
 
-**That interval measures the wrong thing, and we are saying so.** ±0.05 is how
-much the language model wobbles between runs. It is not how much a
-22-repository sample can tell you. Measured over repositories instead —
-bootstrap resampling, 20,000 draws — the difference between Holt and the
-baseline is **+0.05 to +0.30 depending on the run, with a 95% interval that
-spans zero in all three** (`P(difference ≤ 0)` = 0.18, 0.27, 0.44). Exact
-McNemar on per-repository correctness gives p = 0.39, 0.55, 1.00.
+| Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
+|---|---|---|---|---|---|
+| name-only probe | 0.10 ±0.02 | 0.55 | 0.47 | 0.35 | 0.75 |
+| baseline solution | 0.21 ±0.02 | 0.61 | 0.60 | 0.49 | 0.72 ±0.04 |
+| evidence-matched ablation (same evidence, one prompt) | 0.32 ±0.07 | 0.65 | 0.78 | 0.83 | 0.47 ±0.04 |
+| **Holt** | **0.63 ±0.00** | **0.82 ±0.00** | 0.85 ±0.00 | 0.81 ±0.00 | **0.83 ±0.00** |
 
-**At this sample size the aggregate difference is not statistically
-distinguishable.** Run `PYTHONPATH=. uv run python eval/stats.py` to see it.
+Mean and half-range over the three runs. **Holt's half-range is ±0.00 because
+its verdicts were identical on all 55 repositories in all three runs** — the
+verdict is a plain function over verified evidence, so re-running it moves
+nothing. The baseline changed its answer on 16 of 55.
 
-Two results the sample *can* carry, both robust across all three runs:
+**Those intervals measure the wrong thing, and we are saying so.** ±0.00 is how
+much the model wobbles between runs; it is not how much a 22-repository sample
+can tell you. Measured over repositories instead — bootstrap resampling, 20,000
+draws, pool 1 — the Holt−baseline difference is **+0.42 to +0.59 with
+`P(difference ≤ 0)` = 0.04–0.08, and a 95% interval that still touches zero**.
+Exact McNemar gives p = 0.15–0.23. At this sample size the aggregate gap is
+large but not formally distinguishable, and we print that rather than round it
+up. Run `PYTHONPATH=. uv run python eval/stats.py` to see it.
 
-- **Trap rejection.** Repositories with 100+ inbound outsider attempts and zero
-  qualifying contributions: Holt rejects 4 of 5, the baseline 0 of 5 (Fisher
-  exact p = 0.048).
+- **Trap rejection — including the part that got worse for us.** Repositories
+  with 100+ inbound outsider attempts and zero qualifying contributions: Holt
+  rejects **4 of 5 in every run** (it has never caught `hermes-agent`). When
+  this was first measured, the baseline rejected 0 of 5 (Fisher exact
+  p = 0.048); on the frozen re-runs the baseline rejected **2–3 of 5**, so that
+  significance claim did not survive re-measurement and we are retiring it
+  rather than citing the old number. What remains is the stable version: Holt
+  4/5 every time, a baseline that wanders between 0 and 3 depending on the day.
 - **Positive control.** Three verified-genuine repositories outside the pool:
   Holt recovers 3 of 3, the baseline 1 of 3.
 
@@ -129,15 +149,20 @@ solution. We found that by attacking our own metric before shipping it, and the
 row stays in so a reader can see the floor rather than take our word for it.
 
 Matthews correlation is the honest headline, because it is **0.00 for any
-constant strategy**. Holt reaches 0.49 against the baseline's 0.33 — a 48%
-relative improvement no trivial answer can fake.
+constant strategy**. Holt reaches 0.61 against the baseline's 0.09 in sample
+and **0.63 against 0.21 out of sample** — and the out-of-sample gap is the
+wider one, because pool 2 skews toward quieter repositories where a README
+tells you nothing.
 
-**Where the advantage is, and where it is not.** Averaged over three runs Holt
-recovers 12.7 of 14 genuine opportunities against the baseline's 8.7
-(sensitivity 0.90 vs 0.62). Its **specificity is worse** — 0.50 against 0.67 —
-so it over-recommends on ordinary repositories. A user following Holt tries more
-repositories than they need to; what they do not do is spend a week on a
-registry.
+**Where the advantage is now.** Earlier versions of this table showed Holt
+over-recommending: specificity 0.50, a coin flip on ordinary repositories. The
+pre-registered rubber-stamp rule — *contributions land easily and nobody
+reviews them* — was written against pool 1, predicted numerically, then tested
+once on pool 2: specificity moved to **0.75 in sample and 0.83 out of sample**
+at a cost of a few points of sensitivity (0.86/0.81 against 0.90 before),
+exactly the trade the pre-registration predicted. The ablation row shows what
+it is worth: given the identical evidence in one prompt, specificity is 0.47.
+The rule is the difference between flagging a registry and recommending it.
 
 **Positive control.** A detector that answers "not viable" to everything would
 reject every trap in the table above and look excellent doing it. So three
@@ -327,27 +352,34 @@ none did.
 Everything above is what the split earns. This is what it does not, and it is
 published because a claim about the first is worth nothing without the second.
 
-**The pipeline's measurable contribution to accuracy is small**, and an ablation
-that removes the orchestration entirely — one prompt over the *same* signals and
-the *same* evidence digest — reaches the same MCC as the full pipeline on pool 2
-(0.42 = 0.42). The stages buy determinism, reparameterisation, auditable
-citations and a rejection rule with a written threshold. They do not buy raw
-accuracy on this evidence, and we are not going to claim they do.
+**The model stages' measurable contribution to accuracy is tiny, and we can now
+say precisely where the accuracy lives.** When this was first measured — before
+the rejection rule shipped — one prompt over the *same* signals and the *same*
+evidence digest matched the full pipeline exactly (0.42 = 0.42 on pool 2). On
+the frozen runs the pipeline leads that same-evidence ablation by a wide margin
+(0.63 against 0.32 ±0.07 out of sample), and the difference is **not the model
+stages getting smarter — it is the deterministic verdict layer**, where the
+pre-registered rubber-stamp rule now lives. A prompt can be handed the same
+evidence; it cannot be handed a rule it is structurally unable to override, and
+the ablation's specificity (0.47, against the pipeline's 0.83) is what that
+costs it.
 
-**Ablating the pipeline, in MCC**, holding recorded model output fixed and
+**Ablating the pipeline, in MCC**, holding the frozen model output fixed and
 varying only `verdict.py`:
 
 | Configuration | MCC |
 |---|---|
-| full pipeline | +0.46 |
-| Stage A repository-kind rules disabled | +0.42 |
-| arithmetic thresholds set to zero | +0.46 |
-| both disabled | +0.42 |
+| full pipeline | +0.61 |
+| Stage A repository-kind rules disabled | +0.60 |
+| arithmetic thresholds set to zero | +0.61 |
+| both disabled | +0.60 |
 
-Three model stages and a verification pass are worth **+0.04 MCC** over a rule
-that answers "insufficient evidence if nobody tried, otherwise viable". What they
-*are* worth is the trap rejection — 4 of 5 against the baseline's 0 of 5 — which
-is the one comparison in this project that reaches significance.
+The model stages and kind rules are now worth **+0.01 MCC** over the arithmetic
+alone — even the registry catch has migrated into the rubber-stamp rule, which
+rejects a registry for the same reason a model would: work waved through
+unread. The stages still buy what a rule cannot: the evidence a claim cites,
+the prose a person reads, and `repo_kind` for the reports where naming the
+category matters.
 
 **And Path Finder, which we shipped losing.** Ranking issues by how likely an
 outsider is to land a merged fix scores precision@3 of 0.173 against GitHub's
@@ -362,16 +394,20 @@ prints that result in its own output next to the ranking**, not here. Run
 Two sensitivities a reader would otherwise have to find themselves. Both are
 reproducible with `PYTHONPATH=. uv run python eval/sensitivity.py`.
 
-**The ground truth is our own definition, and the headline turns on one half of
-it.** L1 keeps an outsider merge only if the diff is *substantive* and a human
-*reviewed* it. Mean MCC over three runs under each variant:
+**The ground truth is our own definition.** L1 keeps an outsider merge only if
+the diff is *substantive* and a human *reviewed* it — both filters chosen by
+us, so the honest question is what happens when either is dropped. On the
+earlier recorded runs this was a real vulnerability: dropping `substantive`
+flipped the advantage to the baseline. On the frozen runs it no longer does —
+Holt leads under **every** variant, though the margin narrows to +0.11 at its
+thinnest. Mean MCC over the three frozen runs:
 
 | Ground truth | Positives | Holt | Baseline |
 |---|---|---|---|
-| L1 as shipped | 14/22 | **+0.46** | +0.28 |
-| drop the `reviewed` filter | 16/22 | **+0.61** | +0.16 |
-| **drop the `substantive` filter** | 16/22 | +0.13 | **+0.43** |
-| drop both (≈ the naive L0) | 18/22 | +0.28 | +0.33 |
+| L1 as shipped | 14/22 | **+0.61** | +0.09 |
+| drop the `reviewed` filter | 16/22 | **+0.60** | +0.01 |
+| drop the `substantive` filter | 16/22 | **+0.39** | +0.28 |
+| drop both (≈ the naive L0) | 18/22 | **+0.38** | +0.22 |
 
 **Remove the diff-shape filter and the baseline wins.** Holt's advantage exists
 only against a ground truth that counts *what a merged contribution changed*.

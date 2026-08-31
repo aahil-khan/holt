@@ -1211,6 +1211,56 @@ threads already crawled, candidates from the issue fixtures already captured;
 with a pointer to `holt analyze` — ranking for a stranger is the contributor-
 blind Path Finder, which loses to GitHub's own label and stays behind its flag.
 
+## Iteration 22 — the frozen benchmark: what it gave, and what it took away (2026-08-31)
+
+Three live runs per pool, both pools, on the shipped prompts and rules — run
+after the narration and wording fixes precisely so it measures what ships.
+$3.50. Every run's recordings are committed and replay-verified: a judge
+reproduces every number below with no key and no spend
+(`eval/harness.py --replay --run-tag run1` … `p2r3`).
+
+**What it gave.**
+
+| MCC, mean ± half-range | Pool 1 (n=22) | Pool 2, out-of-sample (n=33) |
+|---|---|---|
+| name-only probe | +0.16 ±0.03 | +0.10 ±0.02 |
+| baseline | +0.09 ±0.09 | +0.21 ±0.02 |
+| same-evidence ablation | — | +0.32 ±0.07 |
+| **Holt** | **+0.61 ±0.00** | **+0.63 ±0.00** |
+
+- **Specificity 0.75 in sample, 0.83 out of sample** — the rubber-stamp rule's
+  pre-registered number, now frozen into the committed benchmark, against the
+  0.50 coin flip the previous committed runs showed.
+- **Verdicts identical on all 55 repositories, all three runs, both pools.**
+  The baseline changed its answer on 16 of 55. Determinism was a design claim;
+  it is now a measured 55/55.
+- **The ablation stopped tying.** Same evidence in one prompt: 0.32 ±0.07
+  against the pipeline's 0.63 ±0.00 — and the fresh verdict-layer ablation
+  shows the model stages + kind rules worth **+0.01 MCC** over arithmetic, so
+  the entire lead is the deterministic rule layer. The honest sentence
+  changed from "orchestration adds no accuracy" to "the model stages add
+  none; the written rules add all of it."
+- **The label-sensitivity vulnerability shrank.** Dropping `substantive` used
+  to hand the baseline the lead (+0.13 vs +0.43); on the frozen runs Holt
+  leads under every ground-truth variant (worst case +0.39 vs +0.28).
+- Repository-level stats improved but stay honest: bootstrap difference +0.42
+  to +0.59, P(difference ≤ 0) = 0.04–0.08, intervals still touching zero.
+
+**What it took away.** The trap-rejection significance claim — 4/5 against
+0/5, Fisher exact p = 0.048, previously "the only comparison that reaches
+significance" — **did not survive re-measurement**. Holt still rejects 4 of 5
+traps in every run ever recorded (it has never caught `hermes-agent`), but the
+frozen baseline rejected 2–3 of 5 where the recorded one rejected 0. That is
+model drift between recording sessions, the exact hazard the frozen-replay
+design exists to surface. The claim is retired everywhere it appeared —
+README, assessment, `stats.py`'s own footer, the discover docstring — and
+replaced with the version that is stable: Holt 4/5 every time, a baseline that
+wanders 0–3 depending on the day.
+
+Also fixed while freezing: bare `eval/harness.py --replay` (no run tag) now
+exits with a pointer to the tagged runs instead of dividing by zero, and
+`REPRODUCTION.md`'s expected outputs are the frozen tables.
+
 ## Iteration 21 — the model becomes a choice, and the benchmark stays pinned (2026-08-31)
 
 `holt models` lets a user swap the model behind every stage: other OpenAI

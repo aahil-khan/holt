@@ -35,7 +35,7 @@ uv sync
 uv run pytest -rs
 ```
 
-**Expected:** `71 passed`, no skips. The `-rs` flag reports skipped tests
+**Expected:** `128 passed`, no skips. The `-rs` flag reports skipped tests
 explicitly — a skipped test is not a passing one.
 
 Two of these are load-bearing rather than incidental: `eval/test_independence.py`
@@ -46,16 +46,20 @@ cutoff.
 
 ## 3. Reproduce the headline result — no key, no spend
 
+The frozen benchmark is three recorded live runs per pool, replayable by tag:
+
 ```sh
-PYTHONPATH=. uv run python eval/harness.py --replay
+PYTHONPATH=. uv run python eval/harness.py --replay --run-tag run1   # pool 1
+PYTHONPATH=. uv run python eval/harness.py --replay --run-tag p2r1 \
+    --pool eval/pool2.json --labels eval/results_labels_pool2.json   # pool 2
 ```
 
-**Runtime:** about 30 seconds. **Cost:** $0.00.
+**Runtime:** about 30 seconds each. **Cost:** $0.00.
 
 This scores every method from committed evidence fixtures and committed model
 trajectories. No network call is made and no model runs.
 
-**Expected output** (the results table):
+**Expected output for `run1`** (the results table):
 
 ```
 method             MCC  balAcc     F1   sens   spec   P@10
@@ -63,14 +67,16 @@ always_viable     0.00    0.50   0.78   1.00   0.00   0.60
 never_viable      0.00    0.50   0.00   0.00   1.00   0.60
 name_only         0.11    0.55   0.48   0.36   0.75   0.60
 popularity           -       -      -      -      -   0.70
-baseline          0.33    0.67   0.74   0.71   0.62   0.70
-holt              0.49    0.71   0.84   0.93   0.50   0.70
+baseline          0.02    0.51   0.64   0.64   0.38   0.50
+baseline_matched   0.49    0.71   0.84   0.93   0.50   0.70
+holt              0.61    0.80   0.86   0.86   0.75   0.80
 
-spend: $0.353   graded 22/30 pool repos   positives: 14   ungraded (no post-cutoff attempts): 5
+spend: $0.477   graded 22/30 pool repos   positives: 14   ungraded (no post-cutoff attempts): 5
 ```
 
-Those are **one run**. The headline figures in the README are means over three
-runs; reproduce them with:
+For `p2r1`, the holt row reads `0.63  0.82  0.85  0.81  0.83  0.90` — and it is
+identical on `p2r2` and `p2r3`, because the verdict is deterministic. The
+README's headline figures are means over the three runs per pool:
 
 ```sh
 PYTHONPATH=. uv run python eval/aggregate.py    # mean +/- half-range over runs 1-3

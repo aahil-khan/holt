@@ -215,6 +215,13 @@ def main() -> None:
 
     results = [score(n, c, gold) for n, c in calls.items()]
 
+    if not graded:
+        raise SystemExit(
+            "No repository could be scored: the trajectory root has no complete "
+            "recordings for this pool. The frozen benchmark runs live under "
+            "--run-tag run1/run2/run3 (pool 1) and p2r1/p2r2/p2r3 (pool 2)."
+        )
+
     # Popularity has a real ordering, so its precision@10 is a true ranked score.
     ranked = sorted(popularity, key=lambda s: -popularity[s])[:10]
     results.append({

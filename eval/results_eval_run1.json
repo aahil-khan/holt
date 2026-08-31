@@ -74,32 +74,32 @@
   {
    "method": "name_only",
    "judged": 22,
-   "recommended": 9,
-   "precision": 0.7777777777777778,
-   "recall": 0.5,
-   "f1": 0.6086956521739131,
-   "mcc": 0.24459979523511427,
-   "balanced_accuracy": 0.625,
-   "sensitivity": 0.5,
+   "recommended": 7,
+   "precision": 0.7142857142857143,
+   "recall": 0.35714285714285715,
+   "f1": 0.4761904761904762,
+   "mcc": 0.11065666703449763,
+   "balanced_accuracy": 0.5535714285714286,
+   "sensitivity": 0.35714285714285715,
    "specificity": 0.75,
    "confusion": {
-    "tp": 7,
+    "tp": 5,
     "fp": 2,
     "tn": 6,
-    "fn": 7
+    "fn": 9
    },
-   "precision_at_10": 0.7,
+   "precision_at_10": 0.6,
    "top10": [
     "DefiLlama/dimension-adapters",
     "Homebrew/homebrew-cask",
     "NixOS/nixpkgs",
-    "open-jarvis/OpenJarvis",
     "opencollective/opencollective-frontend",
     "runelite/plugin-hub",
     "space-wizards/space-station-14",
     "tscircuit/kicad-to-circuit-json",
-    "volcengine/OpenViking",
-    "AseemPrasad/Legalassist-AI"
+    "AseemPrasad/Legalassist-AI",
+    "NousResearch/hermes-agent",
+    "Pasta-Devs/Marinara-Engine"
    ]
   },
   {
@@ -125,36 +125,36 @@
   {
    "method": "baseline",
    "judged": 22,
-   "recommended": 11,
-   "precision": 0.7272727272727273,
-   "recall": 0.5714285714285714,
-   "f1": 0.64,
-   "mcc": 0.18898223650461363,
-   "balanced_accuracy": 0.5982142857142857,
-   "sensitivity": 0.5714285714285714,
-   "specificity": 0.625,
+   "recommended": 14,
+   "precision": 0.6428571428571429,
+   "recall": 0.6428571428571429,
+   "f1": 0.6428571428571429,
+   "mcc": 0.017857142857142856,
+   "balanced_accuracy": 0.5089285714285714,
+   "sensitivity": 0.6428571428571429,
+   "specificity": 0.375,
    "confusion": {
-    "tp": 8,
-    "fp": 3,
-    "tn": 5,
-    "fn": 6
+    "tp": 9,
+    "fp": 5,
+    "tn": 3,
+    "fn": 5
    },
-   "precision_at_10": 0.7,
+   "precision_at_10": 0.5,
    "top10": [
+    "AseemPrasad/Legalassist-AI",
     "Homebrew/homebrew-cask",
     "NixOS/nixpkgs",
-    "esengine/DeepSeek-Reasonix",
+    "Pasta-Devs/Marinara-Engine",
+    "SecureBananaLabs/bug-bounty",
     "is-a-dev/register",
     "netwrix/docs",
     "open-jarvis/OpenJarvis",
     "opencollective/opencollective-frontend",
-    "runelite/plugin-hub",
-    "space-wizards/space-station-14",
-    "utksh1/SecuScan"
+    "runelite/plugin-hub"
    ]
   },
   {
-   "method": "holt",
+   "method": "baseline_matched",
    "judged": 22,
    "recommended": 17,
    "precision": 0.7647058823529411,
@@ -183,20 +183,51 @@
     "netwrix/docs",
     "open-jarvis/OpenJarvis"
    ]
+  },
+  {
+   "method": "holt",
+   "judged": 22,
+   "recommended": 14,
+   "precision": 0.8571428571428571,
+   "recall": 0.8571428571428571,
+   "f1": 0.8571428571428571,
+   "mcc": 0.6071428571428571,
+   "balanced_accuracy": 0.8035714285714286,
+   "sensitivity": 0.8571428571428571,
+   "specificity": 0.75,
+   "confusion": {
+    "tp": 12,
+    "fp": 2,
+    "tn": 6,
+    "fn": 2
+   },
+   "precision_at_10": 0.8,
+   "top10": [
+    "DefiLlama/dimension-adapters",
+    "NixOS/nixpkgs",
+    "NousResearch/hermes-agent",
+    "anurag3407/career-pilot",
+    "esengine/DeepSeek-Reasonix",
+    "netwrix/docs",
+    "open-jarvis/OpenJarvis",
+    "opencollective/opencollective-frontend",
+    "space-wizards/space-station-14",
+    "stablyai/orca"
+   ]
   }
  ],
  "verdicts": {
   "baseline": {
-   "AseemPrasad/Legalassist-AI": "insufficient_evidence",
+   "AseemPrasad/Legalassist-AI": "viable",
    "DefiLlama/dimension-adapters": "insufficient_evidence",
    "Homebrew/homebrew-cask": "viable",
    "NixOS/nixpkgs": "viable",
    "NousResearch/hermes-agent": "insufficient_evidence",
-   "Pasta-Devs/Marinara-Engine": "insufficient_evidence",
+   "Pasta-Devs/Marinara-Engine": "viable",
    "PerryTS/perry": "insufficient_evidence",
-   "SecureBananaLabs/bug-bounty": "insufficient_evidence",
+   "SecureBananaLabs/bug-bounty": "viable",
    "anurag3407/career-pilot": "insufficient_evidence",
-   "esengine/DeepSeek-Reasonix": "viable",
+   "esengine/DeepSeek-Reasonix": "insufficient_evidence",
    "google-test/signclav2-probe-repo": "insufficient_evidence",
    "is-a-dev/register": "viable",
    "netwrix/docs": "viable",
@@ -205,12 +236,12 @@
    "runelite/plugin-hub": "viable",
    "space-wizards/space-station-14": "viable",
    "stablyai/orca": "insufficient_evidence",
-   "tscircuit/kicad-to-circuit-json": "insufficient_evidence",
+   "tscircuit/kicad-to-circuit-json": "viable",
    "utksh1/SecuScan": "viable",
-   "vellum-ai/vellum-assistant": "insufficient_evidence",
-   "volcengine/OpenViking": "viable"
+   "vellum-ai/vellum-assistant": "viable",
+   "volcengine/OpenViking": "insufficient_evidence"
   },
-  "holt": {
+  "baseline_matched": {
    "AseemPrasad/Legalassist-AI": "viable",
    "DefiLlama/dimension-adapters": "viable",
    "Homebrew/homebrew-cask": "not_viable",
@@ -218,6 +249,30 @@
    "NousResearch/hermes-agent": "viable",
    "Pasta-Devs/Marinara-Engine": "viable",
    "PerryTS/perry": "viable",
+   "SecureBananaLabs/bug-bounty": "not_viable",
+   "anurag3407/career-pilot": "viable",
+   "esengine/DeepSeek-Reasonix": "viable",
+   "google-test/signclav2-probe-repo": "not_viable",
+   "is-a-dev/register": "not_viable",
+   "netwrix/docs": "viable",
+   "open-jarvis/OpenJarvis": "viable",
+   "opencollective/opencollective-frontend": "viable",
+   "runelite/plugin-hub": "not_viable",
+   "space-wizards/space-station-14": "viable",
+   "stablyai/orca": "viable",
+   "tscircuit/kicad-to-circuit-json": "viable",
+   "utksh1/SecuScan": "viable",
+   "vellum-ai/vellum-assistant": "viable",
+   "volcengine/OpenViking": "viable"
+  },
+  "holt": {
+   "AseemPrasad/Legalassist-AI": "not_viable",
+   "DefiLlama/dimension-adapters": "viable",
+   "Homebrew/homebrew-cask": "not_viable",
+   "NixOS/nixpkgs": "viable",
+   "NousResearch/hermes-agent": "viable",
+   "Pasta-Devs/Marinara-Engine": "not_viable",
+   "PerryTS/perry": "not_viable",
    "SecureBananaLabs/bug-bounty": "not_viable",
    "anurag3407/career-pilot": "viable",
    "esengine/DeepSeek-Reasonix": "viable",
@@ -245,10 +300,10 @@
    "SecureBananaLabs/bug-bounty": "insufficient_evidence",
    "anurag3407/career-pilot": "insufficient_evidence",
    "esengine/DeepSeek-Reasonix": "insufficient_evidence",
-   "google-test/signclav2-probe-repo": "not_viable",
+   "google-test/signclav2-probe-repo": "insufficient_evidence",
    "is-a-dev/register": "insufficient_evidence",
    "netwrix/docs": "insufficient_evidence",
-   "open-jarvis/OpenJarvis": "viable",
+   "open-jarvis/OpenJarvis": "insufficient_evidence",
    "opencollective/opencollective-frontend": "viable",
    "runelite/plugin-hub": "viable",
    "space-wizards/space-station-14": "viable",
@@ -256,7 +311,7 @@
    "tscircuit/kicad-to-circuit-json": "viable",
    "utksh1/SecuScan": "insufficient_evidence",
    "vellum-ai/vellum-assistant": "insufficient_evidence",
-   "volcengine/OpenViking": "viable"
+   "volcengine/OpenViking": "insufficient_evidence"
   },
   "always_viable": {
    "AseemPrasad/Legalassist-AI": "viable",
@@ -307,6 +362,6 @@
    "volcengine/OpenViking": "not_viable"
   }
  },
- "spend_usd": 0.3629,
+ "spend_usd": 0.4775,
  "run_tag": "run1"
 }
