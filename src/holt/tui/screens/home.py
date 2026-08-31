@@ -34,9 +34,10 @@ from holt.tui import animation, session as session_module, store, theme
 from holt.tui.visual import Line
 from holt.tui.widgets.recent import RecentList, RecentRow
 
-#: Shown in the empty state. A repository with a committed recording, so the
-#: suggestion works with no key and no spend.
-SUGGESTION = "astral-sh/uv"
+#: Shown in the empty state. Must be a repository with a committed recording,
+#: because the empty state promises the suggestion costs nothing —
+#: `tests/test_tui_screens.py` holds it to that.
+SUGGESTION = "home-assistant/core"
 
 #: The standing hint under the input. Present by default rather than only in the
 #: footer, because the question this screen has to answer immediately is "what

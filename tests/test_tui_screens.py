@@ -95,11 +95,24 @@ def test_home_opens_on_an_empty_state_that_says_what_to_do(tmp_path):
         text = screen_text(app)
         assert "Assess a repository" in text
         assert "Nothing assessed yet" in text
-        # The suggestion has a committed recording, so following it costs
-        # nothing. An empty state must not send someone down a paid path.
-        assert "astral-sh/uv" in text
 
     drive(body, tmp_path)
+
+
+def test_the_suggested_repository_really_is_free():
+    """The empty state promises the suggestion costs nothing. It has to be true.
+
+    It said `astral-sh/uv` for a while, which has no committed trajectory — so
+    the one path offered to someone with nothing on screen was a paid one, or a
+    dead end without a key.
+    """
+    from holt.tui.screens.home import SUGGESTION
+    from holt.tui.session import has_recording
+
+    assert has_recording(SUGGESTION), (
+        f"{SUGGESTION} has no committed trajectory, so the empty state is "
+        "offering a repository that cannot be replayed for free"
+    )
 
 
 def test_recent_rows_carry_the_verdict_the_age_and_the_mode(tmp_path):
