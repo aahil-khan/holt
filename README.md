@@ -31,7 +31,8 @@ fetched and no model runs.
 | [docs/COMMANDS.md](docs/COMMANDS.md) | what each command does, and what the report says that GitHub does not |
 | [docs/DESIGN.md](docs/DESIGN.md) | why this is a pipeline and not a prompt — and, measured, what that does *not* buy |
 | [docs/EVALUATION.md](docs/EVALUATION.md) | the holdout, the pool, the labels, the sensitivities, the limitations |
-| [CHANGELOG.md](CHANGELOG.md) | every iteration, including the experiments that were removed and the results that went against us |
+| [CHANGELOG.md](CHANGELOG.md) | every iteration, including the experiments that were removed and the results that went against us — the whole story in one table at the top |
+| [docs/CHANGELOG-FULL.md](docs/CHANGELOG-FULL.md) | the same log unabridged, with every evidence table as it was written on the day |
 | [ASSESSMENT.md](ASSESSMENT.md) | an honest self-assessment of what is weak |
 | [docs/INTERFACE-LOG.md](docs/INTERFACE-LOG.md) | the terminal interface's design history |
 

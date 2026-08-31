@@ -7,9 +7,8 @@ by — and none of the work below moved a benchmark number. It changed what
 a person sees. Entries are verbatim and in the order they happened.
 
 They keep the iteration numbers they were written under, so the references
-inside them still resolve. `CHANGELOG.md` renumbered its own entries when these
-moved out, so the two sequences are independent: "Iteration 27" below is this
-file's, not that one's.
+inside them still resolve. The two sequences are independent: "Iteration 27"
+below is this file's, not that one's.
 
 ---
 
