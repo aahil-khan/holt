@@ -13,6 +13,8 @@ that breaks replay — are all reachable without a terminal.
 
 from __future__ import annotations
 
+import sys
+
 import pytest
 
 from holt import model as model_module
@@ -306,6 +308,98 @@ def test_an_unrecognised_failure_is_reported_as_itself():
     detail = models.explain(ValueError("something nobody predicted"), provider("openai"))
     assert "ValueError" in detail
     assert "something nobody predicted" in detail
+
+
+# ─── the token cap on the connection probe ──────────────────────────────────
+#
+# Still no network: the stub below is a chat completions endpoint that records
+# what it was sent and answers however each test says it answers.
+
+
+class _StubCompletions:
+    def __init__(self, answer):
+        self.answer = answer
+        self.caps: list[str] = []
+
+    def create(self, **kwargs):
+        self.caps.append(next(k for k in kwargs if k.startswith("max_")))
+        return self.answer(kwargs)
+
+
+def _ping(monkeypatch, answer):
+    """Run the probe against a stub, and report the cap names it sent."""
+    import types
+
+    stub = _StubCompletions(answer)
+    fake = types.SimpleNamespace(
+        OpenAI=lambda **_: types.SimpleNamespace(
+            chat=types.SimpleNamespace(completions=stub)
+        )
+    )
+    monkeypatch.setitem(sys.modules, "openai", fake)
+    raised = None
+    try:
+        models._ping_openai(provider("openai"), "key", "gpt-5-2025-08-07")
+    except Exception as exc:  # noqa: BLE001 - the assertion is about this
+        raised = exc
+    return stub.caps, raised
+
+
+# The message OpenAI actually returns for the GPT-5 family.
+_RENAMED = (
+    "Error code: 400 - {'error': {'message': \"Unsupported parameter: "
+    "'max_tokens' is not supported with this model. Use "
+    "'max_completion_tokens' instead.\"}}"
+)
+
+
+def test_the_probe_caps_output_with_the_parameter_current_models_accept(monkeypatch):
+    """The GPT-5 family refuses `max_tokens`, so it is not what goes out first."""
+    caps, raised = _ping(monkeypatch, lambda kwargs: "answered")
+    assert caps == ["max_completion_tokens"]
+    assert raised is None
+
+
+def test_a_server_that_predates_the_rename_still_gets_probed(monkeypatch):
+    """Ollama, vLLM and LM Studio are first-class here and know only the old name."""
+
+    def older_server(kwargs):
+        if "max_completion_tokens" in kwargs:
+            raise RuntimeError("Extra inputs are not permitted: max_completion_tokens")
+        return "answered"
+
+    caps, raised = _ping(monkeypatch, older_server)
+    assert caps == ["max_completion_tokens", "max_tokens"]
+    assert raised is None
+
+
+def test_a_failure_that_is_not_about_the_parameter_is_not_retried(monkeypatch):
+    """A second call would spend another request to reach the same answer."""
+
+    def unauthorized(kwargs):
+        raise RuntimeError("Error code: 401 - invalid_api_key")
+
+    caps, raised = _ping(monkeypatch, unauthorized)
+    assert caps == ["max_completion_tokens"]
+    assert "401" in str(raised)
+
+
+def test_when_both_spellings_are_refused_the_failure_still_surfaces(monkeypatch):
+    """The probe reports rather than swallowing: an endpoint like this is unusable."""
+
+    def refuses_both(kwargs):
+        cap = next(k for k in kwargs if k.startswith("max_"))
+        raise RuntimeError(f"Unsupported parameter: {cap}")
+
+    caps, raised = _ping(monkeypatch, refuses_both)
+    assert caps == ["max_completion_tokens", "max_tokens"]
+    assert raised is not None
+
+
+def test_the_rename_is_recognised_as_being_about_the_parameter(monkeypatch):
+    """And a rate limit is not, however similar the status code looks."""
+    assert models._rejected_parameter(RuntimeError(_RENAMED), "max_tokens")
+    assert not models._rejected_parameter(RuntimeError("Error code: 429"), "max_tokens")
 
 
 # ─── applying a choice ──────────────────────────────────────────────────────

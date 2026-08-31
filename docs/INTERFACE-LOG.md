@@ -561,3 +561,38 @@ new tests — one drives the screen against a deliberately slow provider and
 asserts enter returns before the read does, then that escape still leaves (it
 fails on the old handler), and one that the box asks for a GitHub username in
 those words.
+
+---
+
+## Iteration 34 — the connection test could not pass for the pinned model (2026-08-31)
+
+**The bug.** "Test connection" on the models screen is the one thing that
+answers *does the model I just chose actually answer?*. Against the pinned
+default it could not: it capped the ping with `max_tokens=1`, and the GPT-5
+family rejects that parameter outright — `Unsupported parameter: 'max_tokens' is
+not supported with this model. Use 'max_completion_tokens' instead.` The screen
+reported the 400 faithfully, so the failure was legible, but it was the tool's
+own request that was malformed. Every probe of `gpt-5` and `gpt-5-mini` failed.
+
+**Not a straight rename.** Ollama, vLLM and LM Studio are first-class providers
+here, and the ones that predate the rename know only `max_tokens`. Neither
+spelling reaches everything this screen can be pointed at. So the probe sends
+the current name, and falls back to the older one *only* when the server names
+that parameter as the thing it refused — a 401, a 404 or a rate limit is the
+answer to the question the probe asked and is reported as itself rather than
+spending a second call to arrive at it again.
+
+The cap also went from 1 to 16. Reasoning models spend the cap on thinking
+before emitting a visible token; 16 output tokens is a fraction of a cent on the
+priciest model on the list.
+
+`model.py` was left alone. The Anthropic client's `max_tokens` is correct, and
+`OpenAIModel.complete` sets no cap at all, so no recording was ever affected —
+this was the interface's probe only.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs tests/test_tui_models.py`: **53
+passed** (was 48). Five new tests, none touching the network: the probe sends
+`max_completion_tokens` first; a server that refuses it is retried with
+`max_tokens`; a 401 is not retried; both spellings refused still surfaces; and
+the real GPT-5 message is recognised as being about the parameter where a 429 is
+not.
