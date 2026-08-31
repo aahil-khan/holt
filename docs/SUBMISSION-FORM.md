@@ -107,21 +107,37 @@ Upload this file:
 holt-submission.zip   (built by the command below; kept outside the repo)
 ```
 
-**22 MB**, 853 files — under the cap with room to spare.
+**22 MB**, 854 files — under the cap with room to spare. It extracts into a
+single `holt/` directory, so a judge who unzips it in Downloads gets one folder
+rather than 854 loose files, and `cd holt` in `REPRODUCTION.md` works as written.
 
-Verified, not assumed. Unzipped into a clean directory, then:
+Verified from the archive alone, not assumed. Extracted into a clean directory,
+then run inside the extracted `holt/`:
 
 | Check | Result |
 |---|---|
-| `uv sync` from the zip alone | succeeded |
+| `uv sync` | succeeded |
 | `uv run pytest -rs` | **298 passed, 1 skipped** — exactly what `REPRODUCTION.md` §2 says to expect after a plain `uv sync` (the skip is the optional `tui` extra, and the doc names it) |
+| `PYTHONPATH=. uv run python eval/harness.py --replay --run-tag run1` | **holt MCC 0.61**, balAcc 0.80, F1 0.86, sens 0.86, spec 0.75 — the published pool-1 row, in about a second |
+| `fixtures/post_t/` entries | 0 — the deliberate omission |
+| `fixtures/pre_t/` entries | 74 — what the headline result actually reads |
 | credential-shaped strings in the archive | none — only redacted placeholders (`sk-1af878XXX…`) and the deliberate test fixture |
 
-To rebuild it if anything changes:
+sha256 `bffe8234d297255c9df5bcc6644a0d39d32222fc4898283008ca2b843f8f3a96`.
+
+To rebuild it if anything changes — note the staging step, which is what puts
+everything under a top-level `holt/`:
 
 ```sh
-git ls-files | grep -v '^fixtures/post_t/' | zip -9 -X holt-submission.zip -@
+git ls-files | grep -v '^fixtures/post_t/' > /tmp/holt-files.txt
+rm -rf /tmp/holt-stage && mkdir -p /tmp/holt-stage/holt
+rsync -a --files-from=/tmp/holt-files.txt ./ /tmp/holt-stage/holt/
+(cd /tmp/holt-stage && zip -9 -X -qr holt-submission.zip holt)
 ```
+
+**Rebuild it if you commit anything else.** The first build of this archive
+predated two doc commits and silently carried a stale checklist; the file count
+is the tell.
 
 ---
 
