@@ -444,23 +444,70 @@ def test_connection(provider: Provider, model_id: str) -> Probe:
                 messages=[{"role": "user", "content": "ping"}],
             )
         else:
-            from openai import OpenAI
-
-            OpenAI(
-                api_key=key or "not-needed",
-                base_url=provider.base_url or None,
-                timeout=TIMEOUT_S,
-                max_retries=0,
-            ).chat.completions.create(
-                model=model_id,
-                max_tokens=1,
-                messages=[{"role": "user", "content": "ping"}],
-            )
+            _ping_openai(provider, key, model_id)
     except Exception as exc:  # noqa: BLE001 - the point is to report it
         return Probe(False, explain(exc, provider), time.monotonic() - started)
 
     elapsed = time.monotonic() - started
     return Probe(True, f"{model_id} answered in {elapsed:.1f}s", elapsed)
+
+
+def _ping_openai(provider: Provider, key: str, model_id: str) -> None:
+    """One chat completion, under whichever token-cap parameter is accepted.
+
+    The GPT-5 family rejects `max_tokens` outright and wants
+    `max_completion_tokens`; OpenAI-compatible servers that predate the rename
+    know only `max_tokens`. Neither name reaches every provider this screen can
+    be pointed at, so the current one goes first and the older one only after
+    the server names that parameter as the thing it refused. Any other failure
+    is the answer to the question this probe asked, and is raised as itself.
+    """
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=key or "not-needed",
+        base_url=provider.base_url or None,
+        timeout=TIMEOUT_S,
+        max_retries=0,
+    )
+    # A cap of 16 rather than 1: reasoning models spend the cap on thinking
+    # before emitting a visible token, and some refuse a cap smaller than that.
+    # Sixteen output tokens is a fraction of a cent on the priciest model here.
+    names = ("max_completion_tokens", "max_tokens")
+    for index, name in enumerate(names):
+        try:
+            client.chat.completions.create(
+                model=model_id,
+                messages=[{"role": "user", "content": "ping"}],
+                **{name: 16},
+            )
+            return
+        except Exception as exc:  # noqa: BLE001 - retried below, or re-raised
+            if index == len(names) - 1 or not _rejected_parameter(exc, name):
+                raise
+
+
+def _rejected_parameter(exc: BaseException, name: str) -> bool:
+    """Did the server refuse the request *because of* this parameter?
+
+    Only then is the other spelling worth a second call. A 401, a 404 or a rate
+    limit says nothing about parameter names, and retrying one of those would
+    spend a second call to arrive at the same failure under a different name.
+    """
+    lowered = str(exc).lower()
+    if name not in lowered:
+        return False
+    return any(
+        phrase in lowered
+        for phrase in (
+            "unsupported",
+            "not supported",
+            "unrecognized",
+            "unknown",
+            "extra inputs",
+            "unexpected keyword",
+        )
+    )
 
 
 def explain(exc: BaseException, provider: Provider) -> str:

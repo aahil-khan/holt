@@ -1,4 +1,4 @@
-# The failure this repository already had once: `375 passed` sat in
+# The failure this repository already had once: a passing-count sat in
 # REPRODUCTION.md while one of those tests was failing. `test_docs_claims.py`
 # checks the number the guide promises against the number the suite *collects*,
 # because a test that runs the whole suite inside itself does not terminate --
@@ -22,8 +22,8 @@ jobs:
           enable-cache: true
 
       # The extra is installed deliberately: it is the setup REPRODUCTION.md
-      # promises `375 passed, no skips` for. The plain-sync path is the job
-      # below, which is the one a reader runs first.
+      # promises `no skips` for. The plain-sync path is the job below, which
+      # is the one a reader runs first.
       - name: Install
         run: uv sync --extra tui
 

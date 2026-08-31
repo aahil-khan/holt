@@ -1095,55 +1095,106 @@ running the two together cost six seconds and settled it.
 
 ---
 
-## Iteration 35 — the report was not as deterministic as the verdict (2026-08-31)
+## Iteration 35 — a trajectory per agent, and the report row that moved on its own (2026-08-31)
 
-**An external review ran the same command eight times and got three reports.**
-`holt analyze NixOS/nixpkgs --replay`, unchanged evidence, unchanged
-trajectories, on one machine. Two rows swapped:
+**The task was documentation and it found a bug.** Seven prompted arms are
+recorded in `fixtures/trajectories/`, and three of them — `baseline`,
+`baseline_matched`, `name_only` — are scored in the headline table while having
+no reading copy. A judge checking "one trajectory per agent" against the three
+rendered walkthroughs would conclude the other arms were undocumented. So
+`scripts/render_trajectories.py` grew: the three comparison arms on
+`is-a-dev/register` (the case where the baseline says viable and Holt says not),
+Path Finder on `NixOS/nixpkgs`, and the contributor profiler on
+`home-assistant/core`. That is one readable trajectory per prompted agent, with
+the sole exception of `describe()`, which has no recorded calls because the model
+call it wraps moved 0 of 88 rankings and was cut.
+
+**Then regenerating the existing files changed one of them.** No prompt moved,
+no fixture moved, no model ran — and `trajectories/NixOS__nixpkgs.md` came back
+with a different fourth row in *Where outsider work landed*: `nixos/modules`
+(1 merged of 7) where `pkgs/servers` (1 merged of 2) had been.
+
+**Cause.** `landing.compute` ranked areas with `Counter.most_common`, which
+breaks ties by insertion order. Insertion order was the iteration order of
+`{area_of(f) for f in thread.files}` — a set of strings, so it varies with the
+process hash seed. Four rows are printed and six areas tied on merge count, so
+which four a reader saw was a coin toss.
+
+**Evidence.** Six areas tied on merges, four rows printed, the pre-fix ordering
+under four hash seeds:
 
 ```
-- **`nixos/modules`** — 1 merged of 7 attempted (14%)     <- runs 1, 5, 6, 7
-- **`pkgs/servers`**  — 1 merged of 2 attempted (50%)     <- run 3
+PYTHONHASHSEED=0      ['z1/s', 'z5/s', 'z2/s', 'z3/s']
+PYTHONHASHSEED=1      ['z2/s', 'z5/s', 'z1/s', 'z4/s']
+PYTHONHASHSEED=12345  ['z3/s', 'z4/s', 'z6/s', 'z2/s']
+PYTHONHASHSEED=777    ['z1/s', 'z4/s', 'z5/s', 'z3/s']
 ```
 
-**It is the hash seed, and the path is short.** `_tally` walked
-`{area_of(f) for f in thread.files}` — a set of strings, whose iteration order
-varies per process — and that order is the order areas are first counted into a
-`Counter`. `Counter.most_common` breaks ties by insertion order. So which of two
-equally-attempted directories appeared in the report was decided by
-`PYTHONHASHSEED`. Pinning it to 0 made the output stable four times out of four,
-which is what identified the cause.
+Four seeds, four different answers. After the fix, one answer at every seed, and
+six consecutive renders of all six trajectory files are byte-identical.
 
-**The blast radius is smaller than it first looks, and worth stating exactly.**
-The verdict never moved: `eval/harness.py --replay` is byte-identical across
-runs, and so is the verdict line of every analysis. Every headline number, the
-±0.00 half-range and the 55-of-55 stability claim are untouched, because the
-verdict is a plain function over counts and counts do not have an order. What
-moved was one prose section of one report — cosmetic, and still wrong to ship.
+**Decision.** The order is now total: most merges first, then the better odds,
+then the larger sample, then alphabetically — so `pkgs/servers` at 1 of 2 always
+beats `nixos/modules` at 1 of 7, and a reader can act on the row. Two tests, one
+asserting that pair directly and one rendering the tied case in three
+subprocesses at different hash seeds, because set order is stable within a run
+and a single-process assertion cannot see this class of bug at all.
 
-**Fixed by making the tie a decision rather than an accident.** The set is
-walked in sorted order, and both rankings sort on `(-count, path)` instead of
-relying on insertion order. Ten unpinned runs, one hash. Two tests cover it: one
-for the landed list, one for the dead-end list, each built so that nothing but
-the path can order the entries.
+**What this says about the determinism claim.** "Re-running moves nothing" was
+measured on the verdict, and it is true of the verdict — 55 of 55 across three
+runs per pool. Nothing measured it on the *report*, and the report is what a
+user reads. The verdict was a plain function; one section of the prose around it
+was not, and the benchmark could never have noticed because MCC does not look at
+prose. Same shape as iteration 23–26: the guards pointed at the agent and the
+output went unwatched.
 
-**The lesson is the one this project keeps relearning.** Determinism was
-asserted where it was measured — the verdict, the harness, the frozen runs — and
-nowhere else. "The same answer twice" was true of the answer and not of the page
-around it, and no test distinguished them. The guard that would have caught this
-is not a cleverer test but a dumber one: run the shipped command twice and
-compare.
+**Also in this pass, no measurement involved.** `REPRODUCTION.md` now names
+which sections need the full clone rather than the 22 MB submission zip — the
+zip omits `fixtures/post_t/` for the form's 50 MB limit, and §6 is the one
+section that reads it. A stated omission is a decision; a silent one is a broken
+repro step.
 
-**Two other findings from the same review, fixed here.** A missing fixture or
-trajectory printed a twenty-frame traceback around a message that was already
-actionable (`Capture it in live mode first; fixture mode never reaches the
-network`); `main` now prints the message and exits 1. And there was no CI at
-all — which is how `375 passed` sat in `REPRODUCTION.md` while one of those
-tests was failing. `test_docs_claims.py` checks the promised count against what
-the suite *collects*, because a test that runs the whole suite inside itself
-does not terminate, so nothing was checking that it still passed. A workflow now
-runs the suite both with and without the optional TUI extra, and runs the two
-commands the README puts in front of the reader.
+---
+## Iteration 36 — nothing ran the suite but a person (2026-08-31)
+
+**An external review of the repository against a submission rubric found three
+things.** The first was the landing-zone ordering above, arrived at from the
+other end — eight runs of `holt analyze NixOS/nixpkgs --replay` on one machine
+produced three different reports — and fixed in iteration 35. The other two are
+here.
+
+**A message worth reading was wrapped in twenty frames that were not.** Asking
+for a repository with no committed evidence printed a traceback whose last line
+was already the useful sentence: `No trajectory at
+fixtures/trajectories/definitely__doesnotexist.jsonl. Replay needs a recorded
+run.` The error text had been written for a reader; the delivery had not. `main`
+now catches `FileNotFoundError` and `RuntimeError`, prints the message, and
+exits 1. The traceback said "this tool broke". The line says "capture it, or use
+`--replay`", which is what is actually true.
+
+**There was no CI, and that is how `375 passed` went stale.** The count in
+`REPRODUCTION.md` was checked by `test_docs_claims.py` against what the suite
+*collects*, not what passes — a test that runs the whole suite inside itself does
+not terminate, so the collected count is the most it can honestly assert. The
+gap is exactly one test failing while the number stays right, which is what
+happened in iteration 34: the page said `375 passed`, the suite said `374 passed,
+1 failed`, and both agreed there were 375 tests. Nothing but a person running
+`pytest` was closing that gap.
+
+**So the fix is a workflow rather than a cleverer test.** Every push runs the
+suite twice: once with `--extra tui`, the setup the guide promises no skips for,
+and once with a plain `uv sync`, which is what a reader does first — so a Textual
+import that escapes into a non-TUI path fails on our machine rather than theirs.
+It also runs the two commands the README puts in front of the reader, because
+those broke once already (iteration 30) and the benchmark never noticed.
+
+**The pattern, for the fourth time.** A claim about the repository was guarded by
+a test that could not see the thing being claimed. The holdout is asserted on
+every record, Stage D drops a citation that does not resolve, replay refuses a
+moved prompt — and the sentence "the tests pass" had no guard at all until now.
+
+---
+
 
 ## The main failure mode
 

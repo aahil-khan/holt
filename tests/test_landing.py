@@ -116,47 +116,59 @@ def test_a_split_that_does_group_is_kept():
     assert paths == {"pkgs/by-name", "nixos/modules"}
 
 
-def test_tied_areas_are_ordered_the_same_way_in_every_process():
-    """Ties used to be broken by the interpreter's hash seed.
+def test_rows_that_tie_on_merges_are_ordered_by_the_better_odds():
+    """The order has to be a function of the evidence, not of the hash seed.
 
-    `_tally` walked a set of areas, so the order two equally-attempted
-    directories were first counted in varied per process, and
-    `Counter.most_common` breaks ties by exactly that order. The same command
-    on the same evidence printed three different reports across eight runs.
-    Ranking on the path as well as the count makes the tie a decision.
+    `Counter.most_common` breaks ties by insertion order, and insertion order
+    was set-iteration order, so two replays of the same recording printed
+    different fourth rows in `NixOS/nixpkgs`. One merge of two attempts and one
+    merge of seven are not interchangeable, and the reader should always see the
+    same one.
     """
-    # Four areas, every one landed once of two attempts: nothing but the path
-    # can order them.
-    threads = []
-    n = 0
-    for area in ("d/four", "a/one", "c/three", "b/two"):
-        for merged in (True, False):
-            n += 1
-            threads.append(
-                thread(n, f"new{n}", [f"{area}/f.py"], merged=merged, day=n)
-            )
-    ranked = [a.path for a in landing_for(threads).landed]
-    assert ranked == ["a/one", "b/two", "c/three", "d/four"]
-
-
-def test_a_tied_dead_end_is_ordered_by_path_too():
-    """The `never` list is ranked by the same rule as the landed one."""
-    threads = []
-    n = 0
-    for area in ("z/last", "m/mid", "a/first"):
-        for _ in range(MIN_ATTEMPTS):
-            n += 1
-            threads.append(
-                thread(n, f"new{n}", [f"{area}/f.py"], merged=False, day=n)
-            )
-    # One landed area so the report has something to show alongside the rest,
-    # plus padding: enough threads that the area-to-thread ratio does not trip
-    # the regrouping fallback, which is a different behaviour tested above.
-    n += 1
-    threads.append(thread(n, f"new{n}", ["got/in/f.py"], merged=True, day=n))
-    for _ in range(6):
-        n += 1
-        threads.append(thread(n, f"pad{n}", ["got/in/f.py"], merged=False, day=n))
-    assert [a.path for a in landing_for(threads).never] == [
-        "a/first", "m/mid", "z/last",
+    threads = [
+        thread(1, "a", ["pkgs/servers/x.nix"], merged=True),
+        thread(2, "b", ["pkgs/servers/y.nix"], merged=False, day=1),
+        thread(3, "c", ["nixos/modules/x.nix"], merged=True, day=2),
+        *[thread(10 + i, f"n{i}", ["nixos/modules/y.nix"], merged=False, day=3 + i)
+          for i in range(6)],
     ]
+    rows = [(a.path, a.landed, a.attempted) for a in landing_for(threads).landed]
+    assert rows == [("pkgs/servers", 1, 2), ("nixos/modules", 1, 7)]
+
+
+def test_the_landing_section_is_identical_under_a_different_hash_seed():
+    """The property, tested the only way it can be: in other processes.
+
+    Set iteration order is stable within a run and varies between runs, so a
+    single-process assertion cannot see this class of bug at all. Six areas tie
+    on merge count and only four rows are printed, which is exactly the shape
+    that made `NixOS/nixpkgs` print a different fourth row on a re-render. Under
+    the old ordering these three seeds produce three different sets of rows.
+    """
+    import subprocess
+    import sys
+
+    script = (
+        "from datetime import timedelta;"
+        "from holt.agent.landing import compute, render;"
+        "from holt.agent.signals import Thread;"
+        "from holt.types import T_CUTOFF;"
+        "b = T_CUTOFF - timedelta(days=10);"
+        "tied = [f'z{i}/s' for i in range(1, 7)];"
+        "ts = [Thread(key=f'pr:a/b#{i}', number=i, author=f'm{i}',"
+        " author_is_bot=False, opened_at=b + timedelta(days=i),"
+        " files=[f'{a}/f.py' for a in tied], merged=True) for i in range(3)];"
+        "ts += [Thread(key=f'pr:a/b#{9 + i}', number=9 + i, author=f'u{i}',"
+        " author_is_bot=False, opened_at=b + timedelta(days=9 + i),"
+        " files=['z1/s/f.py', 'z2/s/f.py'], merged=False) for i in range(2)];"
+        "print(chr(10).join(render(compute({t.key: t for t in ts}))))"
+    )
+    outputs = set()
+    for seed in ("0", "1", "12345"):
+        result = subprocess.run(
+            [sys.executable, "-c", script],
+            capture_output=True, text=True, env={"PYTHONHASHSEED": seed, "PATH": ""},
+        )
+        assert result.returncode == 0, result.stderr[-2000:]
+        outputs.add(result.stdout)
+    assert len(outputs) == 1, "the landing section changed with the hash seed"

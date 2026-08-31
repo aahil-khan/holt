@@ -134,8 +134,8 @@ PYTHONPATH=. uv run holt next NixOS/nixpkgs --as mweinelt
 
 Open issues that name files or directories you have already touched come first,
 newest first, then everything else by recency. No model call, no cost. The
-ranking prints how well it was measured to work — including a confidence
-interval that crosses zero — above every list, so you can weigh it honestly.
+ranking prints its own measured performance, confidence interval included, above
+every list, so you can weigh it honestly.
 
 ## In a terminal interface
 
