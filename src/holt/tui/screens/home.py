@@ -32,6 +32,7 @@ from textual.widgets import Footer, Input
 from holt.cli import normalise
 from holt.tui import animation, session as session_module, store, theme
 from holt.tui.visual import Line
+from holt.tui.widgets.masthead import Masthead
 from holt.tui.widgets.recent import RecentList, RecentRow
 
 #: Shown in the empty state. Must be a repository with a committed recording,
@@ -43,8 +44,11 @@ SUGGESTION = "home-assistant/core"
 #: footer, because the question this screen has to answer immediately is "what
 #: do I press", and a keybinding you have to go looking for is one you do not
 #: know about.
+#: `enter` spelled out rather than ⏎: the glyph renders as a box or as the
+#: wrong arrow in several terminal fonts, and a hint nobody can read is worse
+#: than one that takes five more columns.
 HINT = (
-    "⏎ assess    ↑↓ one you already have    ctrl+f find one    "
+    "enter assess    ↑↓ one you already have    ctrl+f find one    "
     "ctrl+t mode    ctrl+r re-run"
 )
 
@@ -80,6 +84,7 @@ class HomeScreen(Screen):
         yield Line("─" * 240, classes="rule")
 
         with Vertical(id="home-body"):
+            yield Masthead()
             yield Line(
                 Text("Assess a repository", style=theme.DIM), classes="section-label"
             )

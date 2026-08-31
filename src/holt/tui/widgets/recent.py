@@ -21,6 +21,12 @@ from holt.tui import store, theme
 from holt.tui.visual import Line
 
 
+#: Wide enough for the longest verdict the engine actually has, computed rather
+#: than guessed. It was hardcoded to 22, and "Not enough evidence to say" is 26,
+#: so that row rendered as "Not enough evidence to say8 hours ago".
+HEADLINE_WIDTH = max(len(h) for h in VERDICT_HEADLINES.values()) + 2
+
+
 def headline(verdict: Verdict) -> str:
     """The engine's own words for a verdict, not a second vocabulary.
 
@@ -47,7 +53,10 @@ class RecentRow(ListItem):
 
         row = Text()
         row.append(f"{_repo(entry.repo):<32}", style="")
-        row.append(f"{headline(verdict):<22}", style=theme.verdict_colour(value))
+        row.append(
+            f"{headline(verdict):<{HEADLINE_WIDTH}}",
+            style=theme.verdict_colour(value),
+        )
         row.append(f"{store.describe_age(entry.age_seconds):<14}", style=theme.FAINT)
         row.append(entry.mode, style=theme.FAINT)
         yield Line(row)

@@ -29,7 +29,7 @@ from holt.tui import animation, discovery, session as session_module, theme
 from holt.tui.visual import Line
 from holt.tui.widgets.candidates import CandidateList
 
-HINT = "⏎ assess this one    ctrl+o change what you are looking for    esc back"
+HINT = "enter assess this one    ctrl+o change what you are looking for    esc back"
 
 
 class DiscoverScreen(Screen):
