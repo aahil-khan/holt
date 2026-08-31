@@ -166,6 +166,37 @@ def cmd_compare(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_next(args: argparse.Namespace) -> int:
+    """Where this contributor might look next. One deterministic rule, no model."""
+    from holt.agent import progression
+    from holt.agent.signals import build_threads
+    from holt.issues import open_at_cutoff
+
+    repo = normalise(args.repo)
+    as_of = as_of_from(args)
+    records = make_provider(args.live, as_of).fetch(repo)
+    contributor = progression.history_for(args.as_login, build_threads(records))
+    if not contributor.merged_count:
+        print(f"`{args.as_login}` has no merged pull request in {repo} in this "
+              "evidence, so path overlap has nothing to work from. "
+              "`holt analyze` answers the question that comes before this one.",
+              file=sys.stderr)
+        return 1
+    try:
+        issues = make_issue_provider(args.live, as_of).fetch(repo)
+    except FileNotFoundError:
+        print(f"No issue evidence for {repo}; nothing to rank.", file=sys.stderr)
+        return 1
+    candidates = open_at_cutoff(issues)
+    if not candidates:
+        print(f"No issue in the evidence was open at {as_of.date().isoformat()}; "
+              "nothing to rank.", file=sys.stderr)
+        return 1
+    ranked = progression.path_overlap_rank(contributor.files, candidates)
+    print(progression.render_next(repo, contributor, ranked, candidates, top=args.top))
+    return 0
+
+
 def cmd_profile(args: argparse.Namespace) -> int:
     from holt import profile as profile_mod
 
@@ -271,6 +302,26 @@ def main(argv: list[str] | None = None) -> int:
              "for --live and to the benchmark cutoff for fixtures",
     )
     compare.set_defaults(func=cmd_compare)
+
+    next_p = sub.add_parser(
+        "next",
+        help="rank a repository's open issues for someone who has merged work "
+             "there. Deterministic, no model call; the measured numbers print "
+             "with the ranking",
+    )
+    next_p.add_argument("repo", help="owner/name or a github.com URL")
+    next_p.add_argument("--as", dest="as_login", required=True,
+                        help="the contributor's GitHub login")
+    next_p.add_argument("--top", type=int, default=10,
+                        help="how many issues to show")
+    next_p.add_argument("--live", action="store_true",
+                        help="read GitHub directly instead of committed fixtures")
+    next_p.add_argument(
+        "--as-of",
+        help="only use evidence up to this date (YYYY-MM-DD). Defaults to today "
+             "for --live and to the benchmark cutoff for fixtures",
+    )
+    next_p.set_defaults(func=cmd_next)
 
     profile_p = sub.add_parser(
         "profile",

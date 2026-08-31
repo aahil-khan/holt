@@ -175,6 +175,103 @@ def explain(vector: dict[str, float], weights: dict[str, float] | None = None) -
     return "  ".join(f"{k}={v:.2g}×{w[k]}" for k, v in live) + f"  = {score(vector, w):.2f}"
 
 
+# What `holt next` may claim about this ranking, verbatim in the output. The
+# elaborate weighted scorer above was cut for failing to beat this rule
+# (hit@10 0.211 against 0.234 across 128 pairs); the rule ships because it is
+# the best of five methods tried, and the interval is printed because it spans
+# zero. Measured by eval/progression_harness.py; per-pair rows in
+# eval/progression_results.json.
+NEXT_MEASUREMENT = (
+    "Ranked by one deterministic rule: open issues naming a file or directory "
+    "you have already worked on here, newest first, then the rest by recency. "
+    "Measured across 128 (repository, contributor) pairs it is the best of "
+    "five methods we tried — hit@10 0.234 vs 0.211 for a weighted scorer, "
+    "0.188 for recency alone, 0.172 for chance. That is +0.06 over chance, "
+    "95% interval [-0.003, +0.132] — an interval that spans zero — and we "
+    "found nothing that beats it."
+)
+
+
+def overlap_tokens(files: set[str], issue: EvidenceRecord) -> set[str]:
+    """The path-ish tokens in an issue that name something this person touched.
+
+    Kept identical to the `overlaps` predicate the harness measured
+    (eval/progression_harness.py); shipping a different rule under the measured
+    rule's numbers would be the exact overclaim this project exists to avoid.
+    """
+    named = paths_in(issue)
+    dirs = _dirs(files)
+    return {
+        p for p in named
+        if p in files
+        or any(p.endswith(f) or f.endswith(p) for f in files)
+        or any(d and d in p for d in dirs)
+    }
+
+
+def path_overlap_rank(
+    files: set[str], issues: dict[str, EvidenceRecord]
+) -> list[tuple[str, set[str]]]:
+    """Best first: overlapping issues in recency order, then the rest.
+
+    Returns each key with the tokens that matched, so the renderer can show
+    *why* a row is where it is instead of asserting that it belongs there.
+    """
+    recency = sorted(issues.items(), key=lambda kv: kv[1].timestamp, reverse=True)
+    matched = [(k, toks) for k, r in recency if (toks := overlap_tokens(files, r))]
+    rest = [(k, set()) for k, r in recency if not overlap_tokens(files, r)]
+    return matched + rest
+
+
+def history_for(login: str, threads) -> Contributor:
+    """What this person has demonstrably done here, from pre-cutoff threads."""
+    import statistics as _stats
+
+    merged = [t for t in threads.values() if t.merged and t.author == login]
+    files = {f for t in merged for f in t.files}
+    sizes = [t.additions + t.deletions for t in merged]
+    engaged = {who for t in threads.values() if t.author == login
+               for _, who, _ in t.responses if who != login}
+    return Contributor(
+        login=login,
+        files=files,
+        median_pr_size=int(_stats.median(sizes)) if sizes else 0,
+        engaged_with=engaged,
+        merged_count=len(merged),
+    )
+
+
+def render_next(
+    repo: str,
+    contributor: Contributor,
+    ranked: list[tuple[str, set[str]]],
+    issues: dict[str, EvidenceRecord],
+    top: int = 10,
+) -> str:
+    """The measurement is emitted here, in the only path that prints the
+    ranking, so no caller can show the order without the number that says how
+    well it works."""
+    lines = [f"# What to look at next in {repo} — for `{contributor.login}`", ""]
+    lines += [
+        f"You have {contributor.merged_count} merged pull request"
+        f"{'s' if contributor.merged_count != 1 else ''} here, touching "
+        f"{len(contributor.files)} file{'s' if len(contributor.files) != 1 else ''}.",
+        "",
+        NEXT_MEASUREMENT,
+        "",
+    ]
+    for key, tokens in ranked[:top]:
+        issue = issues[key]
+        title = issue.payload.get("title") or "(untitled)"
+        lines.append(f"- **{title}** — `{issue.evidence_id}`")
+        if tokens:
+            shown = ", ".join(f"`{t}`" for t in sorted(tokens)[:4])
+            lines.append(f"  names {shown} — work you have already touched")
+        else:
+            lines.append("  no overlap with your history; ranked by recency only")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 PROFILE_SYSTEM = """You are reading one contributor's merged pull requests in a
 single repository, together with what reviewers said to them.
 

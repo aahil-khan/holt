@@ -1168,3 +1168,31 @@ moves from 7 to 90 days, screening's signature admits no model client, and a
 recorded session replays end-to-end from fixtures with no credentials. 108
 passing overall. A recorded demo session for the no-credential replay path is
 next; its numbers go here when it exists.
+
+## Iteration 19 — `holt next`: the simple rule that won, shipped as measured (2026-08-31)
+
+Iteration 15 cut the weighted progression scorer for failing to beat
+`path_overlap` — *open issues naming a file or directory you have already
+worked on here* — and the winning rule was mistakenly discarded along with the
+loser. It ships now, as `holt next <repo> --as <login>`.
+
+**The rule is byte-identical in semantics to the one the harness measured**
+(`eval/progression_harness.py`): recency order, issues whose path-ish tokens
+match the contributor's touched files or directories first. Shipping a
+"cleaned-up" variant under the measured numbers would be an unpinned claim, so
+`overlap_tokens` reproduces the harness predicate and a test walks the same
+file/dir/suffix cases.
+
+**The claim, exactly:** best of five methods tried — hit@10 0.234 against
+0.211 (weighted scorer), 0.188 (recency), 0.172 (chance); +0.06 over chance,
+95% interval [−0.003, +0.132], an interval that spans zero. The renderer emits
+that measurement with every ranking — the same pattern Path Finder uses — so no
+code path can print the order without the number that says how well it works.
+Each row states *why* it is where it is: the tokens that overlapped, or "no
+overlap with your history; ranked by recency only".
+
+**No model call anywhere in the path.** History comes from the pull-request
+threads already crawled, candidates from the issue fixtures already captured;
+`--live` works the same way. A contributor with no merged work here is refused
+with a pointer to `holt analyze` — ranking for a stranger is the contributor-
+blind Path Finder, which loses to GitHub's own label and stays behind its flag.
