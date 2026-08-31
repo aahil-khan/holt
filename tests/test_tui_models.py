@@ -121,6 +121,146 @@ def test_pricing_is_read_from_the_engine_not_restated():
         assert entry.priced == (entry.id in model_module.PRICES)
 
 
+# ─── only models you can actually talk to ───────────────────────────────────
+
+
+@pytest.mark.parametrize(
+    "model_id",
+    [
+        "nomic-embed-text:latest",
+        "mxbai-embed-large",
+        "text-embedding-3-small",
+        "bge-reranker-v2-m3",
+        "whisper-1",
+        "dall-e-3",
+        "tts-1-hd",
+        "omni-moderation-latest",
+    ],
+)
+def test_a_model_that_cannot_hold_a_conversation_is_not_offered(model_id):
+    """Every stage calls chat completions. These are not choices."""
+    assert not models.looks_like_chat(model_id)
+
+
+@pytest.mark.parametrize(
+    "model_id",
+    [
+        "qwen3:8b",
+        "llama3.2:latest",
+        "gpt-5-mini-2025-08-07",
+        "claude-opus-5",
+        "deepseek-r1:14b",
+        "gemma3:12b",
+    ],
+)
+def test_a_chat_model_is_left_alone(model_id):
+    """The filter's failure mode that matters is hiding a model that works."""
+    assert models.looks_like_chat(model_id)
+
+
+def test_ollama_is_asked_what_each_model_can_do_rather_than_guessed_at(monkeypatch):
+    """Names are the fallback. Ollama publishes capabilities, so it is asked.
+
+    `pixtral` here is the point: nothing in its name says what it is, and the
+    only reason it is kept is that Ollama said `completion`.
+    """
+    monkeypatch.setattr(
+        models,
+        "_ollama_capabilities",
+        lambda provider, ids: {
+            "pixtral:latest": ("completion", "vision"),
+            "snowflake-arctic:latest": ("embedding",),
+            "nomic-embed-text:latest": ("embedding",),
+        },
+    )
+    kept = models._chat_only(
+        provider("ollama"),
+        ["pixtral:latest", "snowflake-arctic:latest", "nomic-embed-text:latest"],
+    )
+    assert kept == ["pixtral:latest"]
+
+
+def test_a_model_ollama_will_not_describe_falls_back_to_its_name(monkeypatch):
+    """Silence is not evidence that a model is unusable."""
+    monkeypatch.setattr(
+        models,
+        "_ollama_capabilities",
+        lambda provider, ids: {"qwen3:8b": None, "nomic-embed-text": None},
+    )
+    assert models._chat_only(provider("ollama"), ["qwen3:8b", "nomic-embed-text"]) == [
+        "qwen3:8b"
+    ]
+
+
+def test_an_old_ollama_that_reports_no_capabilities_hides_nothing(monkeypatch):
+    """Empty capabilities means "would not say", not "can do nothing".
+
+    Reading it the other way would hide every model on an Ollama predating the
+    field, which is a total failure that no other test in this file would see.
+    """
+    import httpx
+
+    class Response:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {"model_info": {}}  # no `capabilities` key at all
+
+    class Client:
+        def __init__(self, **kwargs):
+            pass
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+        def post(self, url, json):
+            return Response()
+
+    monkeypatch.setattr(httpx, "Client", Client)
+    found = models._ollama_capabilities(provider("ollama"), ["qwen3:8b"])
+    assert found == {"qwen3:8b": None}
+    assert models._chat_only(provider("ollama"), ["qwen3:8b"]) == ["qwen3:8b"]
+
+
+def test_the_native_api_is_addressed_without_the_openai_suffix():
+    assert models._ollama_native("http://localhost:11434/v1") == "http://localhost:11434"
+    assert models._ollama_native("http://box:11434/") == "http://box:11434"
+    assert models._ollama_native("") == "http://localhost:11434"
+
+
+def test_what_was_filtered_out_is_counted_not_silently_dropped(monkeypatch):
+    """A list shorter than `ollama list` has to say why it is shorter."""
+    monkeypatch.delenv(models.NO_NETWORK_ENV)
+    monkeypatch.setattr(
+        models,
+        "_list_openai_wire",
+        lambda p, key: ["qwen3:8b", "nomic-embed-text:latest", "mxbai-embed-large"],
+    )
+    monkeypatch.setattr(models, "_ollama_capabilities", lambda p, ids: {})
+
+    listing = models.list_models(provider("ollama"))
+    assert [m.id for m in listing.models] == ["qwen3:8b"]
+    assert listing.hidden == 2
+
+
+def test_a_provider_with_nothing_but_embedding_models_says_so(monkeypatch):
+    """An empty list under a working connection otherwise reads as a bug."""
+    monkeypatch.delenv(models.NO_NETWORK_ENV)
+    monkeypatch.setattr(
+        models, "_list_openai_wire", lambda p, key: ["nomic-embed-text:latest"]
+    )
+    monkeypatch.setattr(models, "_ollama_capabilities", lambda p, ids: {})
+
+    listing = models.list_models(provider("ollama"))
+    assert not listing.models
+    assert "none of them can hold a conversation" in listing.error
+    assert "ollama pull" in listing.error
+
+
 # ─── errors a person can act on ─────────────────────────────────────────────
 
 

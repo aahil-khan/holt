@@ -227,6 +227,21 @@ class ModelsScreen(Screen):
                         classes="empty",
                     )
                 )
+            if listing.hidden:
+                # The list is shorter than `ollama list` and has to say why,
+                # otherwise the missing model reads as the interface losing it.
+                body.mount(
+                    Line(
+                        Text(
+                            f"{listing.hidden} more here "
+                            f"{'is' if listing.hidden == 1 else 'are'} not a chat "
+                            "model — embeddings and the like. Every stage calls "
+                            "chat completions, so they are not choices.",
+                            style=theme.FAINT,
+                        ),
+                        classes="empty",
+                    )
+                )
             scroll = VerticalScroll(id="model-scroll")
             body.mount(scroll)
             current = model_module.model_for("classify")

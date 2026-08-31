@@ -16,6 +16,20 @@ reason it reads correctly on a light and a dark profile without a theme switch.
 repository, not a failure of the tool, and colouring it like an error would
 misreport it. `insufficient_evidence` is grey on purpose too: an absence of
 evidence has not earned a colour.
+
+The one consequence of having no background colour: **a list cannot show where
+the keyboard is by lighting a row.** Textual's own idiom for that is a `$boost`
+background, and boost is a translucent overlay — over `transparent` it
+composites to nothing, so every list in the app rendered with no visible
+selection and had to be driven with a mouse. Selection is therefore a rail in
+the margin, in `CITE`, the same colour and the same shape as the rail that marks
+a focused input. The column is reserved on every row so moving the selection
+does not shift the text sideways.
+
+Both `.-highlight` and `.--highlight` are listed on every one of those rules.
+Textual renamed the class between versions this project supports, and a
+stylesheet that names only one of them silently stops highlighting anything —
+which is not a failure any test of *text* can see.
 """
 
 from __future__ import annotations
@@ -158,12 +172,10 @@ ClaimList {{
 ClaimList > ListItem {{
     background: transparent;
     padding: 0 1;
+    border-left: outer transparent;
 }}
-ClaimList > ListItem.--highlight {{
-    background: $boost;
-}}
-ClaimList:focus > ListItem.--highlight {{
-    background: $boost;
+ClaimList > ListItem.-highlight, ClaimList > ListItem.--highlight {{
+    border-left: outer {CITE};
 }}
 
 /* verdict ----------------------------------------------------------------- */
@@ -253,12 +265,10 @@ RecentList {{
 RecentList > ListItem {{
     background: transparent;
     padding: 0 1;
+    border-left: outer transparent;
 }}
-RecentList > ListItem.--highlight {{
-    background: $boost;
-}}
-RecentList:focus > ListItem.--highlight {{
-    background: $boost;
+RecentList > ListItem.-highlight, RecentList > ListItem.--highlight {{
+    border-left: outer {CITE};
 }}
 
 /* the measured result ------------------------------------------------------ */
@@ -301,9 +311,11 @@ EntryPointRow {{
 #providers > ListItem, #models > ListItem {{
     background: transparent;
     padding: 0 1;
+    border-left: outer transparent;
 }}
+#providers > ListItem.-highlight, #models > ListItem.-highlight,
 #providers > ListItem.--highlight, #models > ListItem.--highlight {{
-    background: $boost;
+    border-left: outer {CITE};
 }}
 #models-notice {{
     height: auto;
@@ -331,12 +343,10 @@ CandidateList {{
 CandidateList > ListItem {{
     background: transparent;
     padding: 0 1 1 1;
+    border-left: outer transparent;
 }}
-CandidateList > ListItem.--highlight {{
-    background: $boost;
-}}
-CandidateList:focus > ListItem.--highlight {{
-    background: $boost;
+CandidateList > ListItem.-highlight, CandidateList > ListItem.--highlight {{
+    border-left: outer {CITE};
 }}
 #discover-hint {{
     height: auto;

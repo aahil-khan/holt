@@ -17,6 +17,13 @@ Two facts this module exists to keep in front of the user:
   a surprise anybody should get later.
 * **An unpriced model records cost as zero.** Not "free" — unknown. The
   interface says so wherever a price would otherwise appear.
+
+Only models that can hold a conversation are offered. Every stage of the engine
+calls `chat.completions`, so an embedding or reranking model listed here is not
+a choice, it is a trap — Ollama in particular serves `nomic-embed-text` from the
+same `/v1/models` as everything else, and picking it fails at the first stage
+with a message about the model not supporting generate. What is filtered out is
+counted and reported rather than silently dropped.
 """
 
 from __future__ import annotations
@@ -55,6 +62,35 @@ FALLBACK_MODELS: dict[str, tuple[str, ...]] = {
     "anthropic": ("claude-opus-5", "claude-sonnet-5", "claude-haiku-4-5-20251001"),
     "openai": (model_module.SMALL, model_module.LARGE),
 }
+
+
+# ─── which models are actually models you can talk to ───────────────────────
+
+#: Ollama's own word, in `/api/show`, for a model that can be generated from.
+#: An embedding model reports `["embedding"]` and nothing else.
+OLLAMA_CHAT_CAPABILITY = "completion"
+
+#: Substrings that mark an id as something other than a chat model, used only
+#: where the provider will not say. Deliberately short: these are the families
+#: that actually turn up in a `/v1/models` listing next to chat models, and a
+#: longer list of guesses would start hiding models that do work. The cost of a
+#: miss here is one clear error from the provider; the cost of over-matching is
+#: a model you own and cannot select.
+NON_CHAT_MARKERS: tuple[str, ...] = (
+    "embed",  # nomic-embed-text, mxbai-embed-large, text-embedding-3-small
+    "rerank",  # bge-reranker, and the Ollama ports of it
+    "whisper",  # speech to text
+    "dall-e",  # images
+    "tts-",  # openai's tts-1, tts-1-hd
+    "-tts",
+    "moderation",  # omni-moderation-latest, text-moderation-*
+)
+
+
+def looks_like_chat(model_id: str) -> bool:
+    """A name-based guess, for providers that do not publish capabilities."""
+    lowered = model_id.lower()
+    return not any(marker in lowered for marker in NON_CHAT_MARKERS)
 
 
 @dataclass(slots=True)
@@ -125,6 +161,9 @@ class Listing:
     error: str = ""
     #: Set when the list is `FALLBACK_MODELS` rather than the provider's answer.
     guessed: bool = False
+    #: How many the provider offered that cannot hold a conversation. Reported,
+    #: because a list shorter than `ollama list` needs to say why.
+    hidden: int = 0
 
     @property
     def ok(self) -> bool:
@@ -151,13 +190,104 @@ def list_models(provider: Provider) -> Listing:
             ids = _list_anthropic(key)
         else:
             ids = _list_openai_wire(provider, key)
+        chat = _chat_only(provider, ids)
     except Exception as exc:  # noqa: BLE001 - reported to the user as prose
         return _fallback(provider, explain(exc, provider))
 
     if not ids:
         return _fallback(provider, "The provider returned no models.")
 
-    return Listing(models=[_model(i) for i in ids])
+    hidden = len(ids) - len(chat)
+    if not chat:
+        # Everything it has is an embedding model or similar. Said plainly:
+        # an empty list under a working connection otherwise reads as a bug.
+        return Listing(
+            error=(
+                f"{provider.name} has {len(ids)} model"
+                f"{'' if len(ids) == 1 else 's'} and none of them can hold a "
+                "conversation. Holt calls chat completions at every stage; "
+                "`ollama pull qwen3` gets something it can use."
+                if provider.name == "ollama"
+                else f"{provider.name} offered {len(ids)} model"
+                f"{'' if len(ids) == 1 else 's'} and none of them can hold a "
+                "conversation. Holt calls chat completions at every stage."
+            ),
+            hidden=len(ids),
+        )
+
+    return Listing(models=[_model(i) for i in chat], hidden=hidden)
+
+
+def _chat_only(provider: Provider, ids: list[str]) -> list[str]:
+    """Just the ids that can be chatted with.
+
+    Asked of the provider where the provider will answer, and guessed from the
+    name only where it will not. Ollama publishes capabilities per model and is
+    also the provider that most needs the filter, since a local install
+    routinely holds an embedding model pulled for something else entirely.
+    """
+    if provider.name == "ollama":
+        capabilities = _ollama_capabilities(provider, ids)
+        return [
+            model_id
+            for model_id in ids
+            # `None` means Ollama would not say for this one — fall back to the
+            # name rather than dropping a model on no evidence.
+            if (
+                looks_like_chat(model_id)
+                if capabilities.get(model_id) is None
+                else OLLAMA_CHAT_CAPABILITY in capabilities[model_id]
+            )
+        ]
+    return [model_id for model_id in ids if looks_like_chat(model_id)]
+
+
+def _ollama_native(base_url: str) -> str:
+    """`http://host:11434/v1` → `http://host:11434`.
+
+    Capabilities are not part of the OpenAI-compatible surface, so this one
+    question is asked of Ollama's own API at the same host.
+    """
+    root = (base_url or "http://localhost:11434/v1").rstrip("/")
+    return root[: -len("/v1")] if root.endswith("/v1") else root
+
+
+def _ollama_capabilities(
+    provider: Provider, ids: list[str]
+) -> dict[str, tuple[str, ...] | None]:
+    """What each model can do, according to Ollama. Never raises.
+
+    `/api/show` reads the manifest on disk — it does not load the model into
+    memory, which is the only reason this is acceptable to do for every model
+    the moment somebody opens the list. The one call in this file that *does*
+    load a model is `test_connection`, and that happens because a key was
+    pressed for it.
+
+    A model Ollama will not answer for maps to `None`, which is a different
+    thing from "has no capabilities" and is treated differently by the caller.
+    """
+    import httpx
+
+    root = _ollama_native(provider.base_url)
+    found: dict[str, tuple[str, ...] | None] = {}
+    try:
+        with httpx.Client(timeout=TIMEOUT_S) as client:
+            for model_id in ids:
+                try:
+                    response = client.post(
+                        f"{root}/api/show", json={"model": model_id}
+                    )
+                    response.raise_for_status()
+                    raw = response.json().get("capabilities") or []
+                    # An Ollama old enough not to report capabilities returns
+                    # nothing here. That is "would not say", not "can do
+                    # nothing", and hiding every model over it would be wrong.
+                    found[model_id] = tuple(str(c) for c in raw) or None
+                except Exception:  # noqa: BLE001 - one model, not the listing
+                    found[model_id] = None
+    except Exception:  # noqa: BLE001 - no native API here; names it is
+        return {}
+    return found
 
 
 def _model(model_id: str) -> Model:

@@ -1403,3 +1403,76 @@ extra: **79 passed, 1 skipped** — the skip is the screen tests, reporting
 themselves absent rather than failing. `uv sync --extra tui`: 5 screen tests pass
 on top. `holt tui` without the extra prints how to install it and exits 2. The
 observation layer's 8 tests run either way, because it does not import Textual.
+
+---
+
+## Iteration 23 — the interface was mouse-only, and a stylesheet typo was why (2026-08-31)
+
+**Tried.** Four fixes to the terminal interface, all from using it: copy the
+report out as markdown, reach every list from the keyboard, stop a pasted URL
+hiding an assessment we already have, and stop offering models that cannot hold
+a conversation.
+
+**The keyboard fault was one character.** Every list in the app is a Textual
+`ListView`, which marks the row the keyboard is on with a CSS class. The
+stylesheet styled `.--highlight`. Textual sets `-highlight`. So **no list in the
+interface has ever shown a selection** — not recent, not the claims, not the
+providers, not the discovered candidates — and the only way to pick anything was
+to click it.
+
+**And fixing the selector was not enough.** The rule it enabled was
+`background: $boost`, and boost is a translucent overlay. `theme.py` paints no
+background anywhere on purpose, so it composites over `transparent` to exactly
+nothing. The interface's own best property — that it sits on the terminal's
+ground and reads on a light or a dark profile — is what made Textual's idiom for
+selection unavailable to it.
+
+**So selection is a rail, not a fill**: `border-left: outer` in `CITE`, the same
+colour and shape already used to mark a focused input, with the column reserved
+on every row so moving the selection does not shift the text sideways. It is now
+the same vocabulary in all four lists.
+
+**A test that reads text could not have caught any of this**, which is why
+`rail_colour()` in `test_tui_screens.py` reads the compositor's *styles* and
+asserts the rail is on the highlighted row and absent from its neighbour. Both
+class names are listed on every rule, because Textual renamed it between
+versions this project supports and naming one silently stops highlighting again.
+
+**Three more places the keyboard dead-ended.** Home never set an index, so there
+was nothing to move from — ↑↓ now move the selection while the input keeps
+focus, so typing never stops working, and the notice says what enter means now
+that it has changed meaning. Discover focused the scroll box rather than the
+list inside it, so enter did nothing. And on the report, tab reaches the claims
+but `ListView` then takes enter for itself and posts a message the screen did
+not handle — a list you could move around in and never open.
+
+**The pasted-URL bug was the interface contradicting itself.** Typing filters
+recent by raw substring; enter runs the text through `normalise`. So
+`https://github.com/astral-sh/uv` filtered the list to nothing and printed
+"Nothing assessed matches that" about a repository sitting in the store — while
+enter on the same text opened the stored answer. Both cannot be right. The
+needle is normalised now, and when what you typed names something already
+assessed it says so in words, with its age and whether enter will reuse it or
+pay for it again.
+
+**Copying is honest about not knowing.** `c` puts `Assessment.render()` — the
+artefact, not a transcription of the screen — on the clipboard via a local tool
+*and* OSC 52. A local tool confirms; OSC 52 cannot, so the message says "asked
+your terminal to copy it" rather than "copied" when that is all that ran. Tools
+whose display variable is unset are skipped rather than timed out.
+
+**Embedding models are not choices.** Ollama serves `nomic-embed-text` from the
+same `/v1/models` as everything else, and every stage of the engine calls chat
+completions — so picking one fails at Stage A. Ollama is now asked what each
+model can do (`/api/show`, which reads the manifest and does *not* load the
+model into RAM — the one call that does that is still `test_connection`, behind
+a keypress). A model it will not describe, or an Ollama too old to report
+capabilities, falls back to the name rather than being dropped on no evidence.
+What is filtered out is counted and reported: a list shorter than `ollama list`
+has to say why it is shorter.
+
+**Evidence.** `uv sync --extra tui`, `HOLT_NO_NETWORK=1 pytest -q -rs`:
+**245 passed** in 55s, no skips (240 in `tests/`, 5 in `eval/`). That is 29 new
+tests: 20 on the model filter — including one that stubs `/api/show` returning
+no `capabilities` field at all, the case that would otherwise hide every model
+on an older Ollama — and 9 on the keyboard, the pasted URL and the clipboard.

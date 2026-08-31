@@ -32,7 +32,7 @@ from textual.screen import Screen
 from textual.widgets import Footer
 
 from holt.report import VERDICT_HEADLINES
-from holt.tui import animation, mascot, store, theme
+from holt.tui import animation, clipboard, mascot, store, theme
 from holt.tui.visual import Line
 from holt.tui.widgets.claims import ClaimList
 from holt.tui.widgets.disclosure import EntryPointRow, MeasuredResult
@@ -43,6 +43,7 @@ class AssessmentScreen(Screen):
     BINDINGS = [
         ("escape", "home", "home"),
         ("enter", "inspect", "open evidence"),
+        ("c", "copy", "copy as markdown"),
         ("ctrl+r", "rerun", "re-run"),
         ("n", "next", "what next"),
         ("t", "trace", "trace"),
@@ -120,6 +121,17 @@ class AssessmentScreen(Screen):
                 ),
                 classes="section-label",
             )
+            # How to reach the list without a mouse, next to the list. ↑↓ here
+            # scroll the report, which is what they should do while you are
+            # reading it; tab is what moves into the claims, and saying so is
+            # the difference between a list you can open and one you cannot.
+            yield Line(
+                Text(
+                    "tab to step into them    ↑↓ pick one    enter opens its record",
+                    style=theme.FAINT,
+                ),
+                classes="field-note",
+            )
             yield ClaimList(assessment.claims, repo=assessment.repo, id="claims")
 
             # Only rendered when the engine supplied it. The ranking is opt-in
@@ -137,9 +149,15 @@ class AssessmentScreen(Screen):
                 classes="section-label",
             )
         yield Line("─" * 240, classes="rule")
+        # Hidden until a key has something to report. It sits below the rule
+        # rather than in the chrome because what it has to say — which
+        # clipboard mechanism ran, and whether that mechanism can be trusted —
+        # is a sentence, and the chrome is a column shared with the provenance.
+        yield Line("", id="report-notice", classes="field-note")
         yield Footer()
 
     def on_mount(self) -> None:
+        self.query_one("#report-notice", Line).display = False
         for index, child in enumerate(self.query_one("#report", VerticalScroll).children):
             animation.reveal(child, delay=animation.stagger(index))
 
@@ -161,13 +179,47 @@ class AssessmentScreen(Screen):
                 text.append(f"   ${session.cost_usd:.4f}", style=theme.FAINT)
         return text
 
+    def _notice(self, message: str, tone: str = "") -> None:
+        """One line under the report, for what a key just did."""
+        widget = self.query_one("#report-notice", Line)
+        widget.update(Text(message, style=tone or theme.FAINT))
+        widget.display = bool(message)
+        animation.reveal(widget)
+
     # ─── actions ────────────────────────────────────────────────────────────
+
+    def on_list_view_selected(self, event) -> None:
+        """Enter, when the claims themselves have focus.
+
+        The screen's own `enter` binding only fires while focus is elsewhere.
+        Once you tab into the list, `ListView` takes the key and posts this
+        instead — without a handler that is a list you can move around in and
+        never open.
+        """
+        claim = getattr(event.item, "claim", None)
+        if claim is not None and claim.evidence_id:
+            self.app.inspect(claim.evidence_id)
 
     def action_inspect(self) -> None:
         claim = self.query_one("#claims", ClaimList).selected
         if claim is None or not claim.evidence_id:
             return
         self.app.inspect(claim.evidence_id)
+
+    def action_copy(self) -> None:
+        """The report as markdown, on the clipboard.
+
+        `Assessment.render()` — the same text `holt assess` writes to a file, so
+        what you paste into an issue is the artefact and not a transcription of
+        the screen. What actually reached the clipboard is reported, because
+        copying out of a terminal can silently fail.
+        """
+        markdown = self.app.session.assessment.render()
+        # Counted before the f-string: a backslash inside one is a syntax error
+        # on 3.11, which this project still supports.
+        lines = len(markdown.splitlines())
+        detail = clipboard.copy(self.app, markdown)
+        self._notice(f"{detail}  {lines} lines.")
 
     def action_rerun(self) -> None:
         from holt.tui.session import RunOptions
