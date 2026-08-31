@@ -80,7 +80,10 @@ def _tally(outsiders: list[Thread], depth: int) -> tuple[Counter, Counter]:
     for thread in outsiders:
         # Count each area once per pull request. A change touching forty files in
         # one directory is one attempt at that directory, not forty.
-        for area in {area_of(f, depth) for f in (thread.files or [])}:
+        # Sorted, because set iteration order for strings varies with the
+        # interpreter's hash seed and that order reaches the page: it decides
+        # which of two equally-attempted directories a Counter saw first.
+        for area in sorted({area_of(f, depth) for f in (thread.files or [])}):
             attempted[area] += 1
             if thread.merged:
                 landed[area] += 1
@@ -95,13 +98,19 @@ def compute(threads: dict[str, Thread]) -> Landing:
         depth = 1
         landed, attempted = _tally(outsiders, depth)
 
+    # `Counter.most_common` breaks ties by insertion order, which is not a
+    # decision anybody made. Rank on the count, then on the path, so two
+    # directories with the same tally always come back in the same order.
+    def _ranked(counter: Counter) -> list[tuple[str, int]]:
+        return sorted(counter.items(), key=lambda item: (-item[1], item[0]))
+
     got_in = [
         Area(a, landed[a], attempted[a])
-        for a, _ in landed.most_common(TOP_N)
+        for a, _ in _ranked(landed)[:TOP_N]
     ]
     never = [
         Area(a, 0, n)
-        for a, n in attempted.most_common()
+        for a, n in _ranked(attempted)
         if landed.get(a, 0) == 0 and n >= MIN_ATTEMPTS
     ][:TOP_N]
 

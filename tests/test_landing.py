@@ -114,3 +114,49 @@ def test_a_split_that_does_group_is_kept():
                 for i in range(10)]
     paths = {a.path for a in landing_for(threads).landed}
     assert paths == {"pkgs/by-name", "nixos/modules"}
+
+
+def test_tied_areas_are_ordered_the_same_way_in_every_process():
+    """Ties used to be broken by the interpreter's hash seed.
+
+    `_tally` walked a set of areas, so the order two equally-attempted
+    directories were first counted in varied per process, and
+    `Counter.most_common` breaks ties by exactly that order. The same command
+    on the same evidence printed three different reports across eight runs.
+    Ranking on the path as well as the count makes the tie a decision.
+    """
+    # Four areas, every one landed once of two attempts: nothing but the path
+    # can order them.
+    threads = []
+    n = 0
+    for area in ("d/four", "a/one", "c/three", "b/two"):
+        for merged in (True, False):
+            n += 1
+            threads.append(
+                thread(n, f"new{n}", [f"{area}/f.py"], merged=merged, day=n)
+            )
+    ranked = [a.path for a in landing_for(threads).landed]
+    assert ranked == ["a/one", "b/two", "c/three", "d/four"]
+
+
+def test_a_tied_dead_end_is_ordered_by_path_too():
+    """The `never` list is ranked by the same rule as the landed one."""
+    threads = []
+    n = 0
+    for area in ("z/last", "m/mid", "a/first"):
+        for _ in range(MIN_ATTEMPTS):
+            n += 1
+            threads.append(
+                thread(n, f"new{n}", [f"{area}/f.py"], merged=False, day=n)
+            )
+    # One landed area so the report has something to show alongside the rest,
+    # plus padding: enough threads that the area-to-thread ratio does not trip
+    # the regrouping fallback, which is a different behaviour tested above.
+    n += 1
+    threads.append(thread(n, f"new{n}", ["got/in/f.py"], merged=True, day=n))
+    for _ in range(6):
+        n += 1
+        threads.append(thread(n, f"pad{n}", ["got/in/f.py"], merged=False, day=n))
+    assert [a.path for a in landing_for(threads).never] == [
+        "a/first", "m/mid", "z/last",
+    ]

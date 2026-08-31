@@ -1095,6 +1095,56 @@ running the two together cost six seconds and settled it.
 
 ---
 
+## Iteration 35 — the report was not as deterministic as the verdict (2026-08-31)
+
+**An external review ran the same command eight times and got three reports.**
+`holt analyze NixOS/nixpkgs --replay`, unchanged evidence, unchanged
+trajectories, on one machine. Two rows swapped:
+
+```
+- **`nixos/modules`** — 1 merged of 7 attempted (14%)     <- runs 1, 5, 6, 7
+- **`pkgs/servers`**  — 1 merged of 2 attempted (50%)     <- run 3
+```
+
+**It is the hash seed, and the path is short.** `_tally` walked
+`{area_of(f) for f in thread.files}` — a set of strings, whose iteration order
+varies per process — and that order is the order areas are first counted into a
+`Counter`. `Counter.most_common` breaks ties by insertion order. So which of two
+equally-attempted directories appeared in the report was decided by
+`PYTHONHASHSEED`. Pinning it to 0 made the output stable four times out of four,
+which is what identified the cause.
+
+**The blast radius is smaller than it first looks, and worth stating exactly.**
+The verdict never moved: `eval/harness.py --replay` is byte-identical across
+runs, and so is the verdict line of every analysis. Every headline number, the
+±0.00 half-range and the 55-of-55 stability claim are untouched, because the
+verdict is a plain function over counts and counts do not have an order. What
+moved was one prose section of one report — cosmetic, and still wrong to ship.
+
+**Fixed by making the tie a decision rather than an accident.** The set is
+walked in sorted order, and both rankings sort on `(-count, path)` instead of
+relying on insertion order. Ten unpinned runs, one hash. Two tests cover it: one
+for the landed list, one for the dead-end list, each built so that nothing but
+the path can order the entries.
+
+**The lesson is the one this project keeps relearning.** Determinism was
+asserted where it was measured — the verdict, the harness, the frozen runs — and
+nowhere else. "The same answer twice" was true of the answer and not of the page
+around it, and no test distinguished them. The guard that would have caught this
+is not a cleverer test but a dumber one: run the shipped command twice and
+compare.
+
+**Two other findings from the same review, fixed here.** A missing fixture or
+trajectory printed a twenty-frame traceback around a message that was already
+actionable (`Capture it in live mode first; fixture mode never reaches the
+network`); `main` now prints the message and exits 1. And there was no CI at
+all — which is how `375 passed` sat in `REPRODUCTION.md` while one of those
+tests was failing. `test_docs_claims.py` checks the promised count against what
+the suite *collects*, because a test that runs the whole suite inside itself
+does not terminate, so nothing was checking that it still passed. A workflow now
+runs the suite both with and without the optional TUI extra, and runs the two
+commands the README puts in front of the reader.
+
 ## The main failure mode
 
 **A sentence is not an assertion, and unverified sentences are where this system

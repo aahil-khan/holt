@@ -604,7 +604,14 @@ def main(argv: list[str] | None = None) -> int:
     if replaying:
         model.enable_user_models_config(model.ModelsConfig())
 
-    return args.func(args)
+    # A missing fixture or trajectory is a thing the reader can act on -- capture
+    # it, or use `--replay` -- and the message already says so. A traceback buries
+    # that under twenty frames of our internals, so print the message and stop.
+    try:
+        return args.func(args)
+    except (FileNotFoundError, RuntimeError) as exc:
+        print(f"holt: {exc}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
