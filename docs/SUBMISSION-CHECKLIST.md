@@ -62,9 +62,18 @@ Build the zip with:
 git ls-files | grep -v '^fixtures/post_t/' | zip -9 -X holt-submission.zip -@
 ```
 
-Verify it lands under 50 MB before you upload, and unzip it into a scratch
-directory and run `uv sync && uv run pytest -rs` there once. The whole project's
-argument is that a claim you did not test is a claim you do not have.
+**Built and verified on 2026-08-31.** The archive is **22 MB, 853 files**. It
+was unzipped into a clean directory and exercised there, from the zip alone:
+
+| Check | Result |
+|---|---|
+| `uv sync` | succeeded |
+| `uv run pytest -rs` | **298 passed, 1 skipped** — exactly what REPRODUCTION.md §2 predicts after a plain `uv sync`; the skip is the optional `tui` extra and the doc names it |
+| `PYTHONPATH=. uv run python eval/harness.py --replay --run-tag run1` | **1.4 s**, `holt` MCC **0.61**, balAcc 0.80, spec 0.75 — the published pool-1 row |
+| credential-shaped strings | none; only redacted placeholders and the deliberate test fixture |
+
+The whole project's argument is that a claim you did not test is a claim you do
+not have, so the zip was tested rather than weighed.
 
 ---
 
@@ -256,15 +265,22 @@ if any of them has moved by submission time, fix it here too.
 ## 7. Do these in this order
 
 1. **Rotate both tokens.** Independent of everything else, and easy to forget
-   once the deadline pressure starts.
-2. **Human-time study** (~50 min) — [`../eval/HUMAN-TIME-RUNBOOK.md`](../eval/HUMAN-TIME-RUNBOOK.md).
-3. **Three-row metric table** into `README.md` (~10 min, needs step 2).
-4. **Build and test the 22 MB zip** (~15 min) — §1.
-5. **Record the video** — [`VIDEO-SCRIPT.md`](VIDEO-SCRIPT.md). *(In progress.)*
-6. **Re-run `uv run pytest -rs`** after all doc edits. `test_docs_claims.py`
-   recomputes README numbers, so new tables can break the build. That is the
-   guard working.
-7. Paste §6 into the form, upload the zip, submit.
+   once the deadline pressure starts. Nothing else on this list substitutes for
+   it, and no code change can do it for you.
+2. **Finish the video** — [`VIDEO-SCRIPT.md`](VIDEO-SCRIPT.md). *(In progress.)*
+3. Paste the form fields, upload the zip, submit —
+   [`SUBMISSION-FORM.md`](SUBMISSION-FORM.md) has all four fields in the order
+   the form asks for them, so §6 does not have to be re-read under time
+   pressure.
+
+**Done:** the 22 MB zip is built and verified from the zip alone (§1).
+
+**Consciously not done, and stated rather than estimated:** the human-time study
+(~50 min with a stopwatch, [`../eval/HUMAN-TIME-RUNBOOK.md`](../eval/HUMAN-TIME-RUNBOOK.md))
+and therefore the three-row metric table that needs its number. The protocol is
+committed and unrun. A project whose argument is *an untested claim is not a
+claim* does not get to estimate this row, so the submission says it is unmeasured
+and points at the fixed protocol.
 
 Done since this list was written: the baseline and other-arm trajectories (§3),
 the clone-vs-zip note in `REPRODUCTION.md` (§1), and a framing pass over
