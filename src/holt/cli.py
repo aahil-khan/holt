@@ -359,11 +359,20 @@ def cmd_models(args: argparse.Namespace) -> int:
         print(f"base_url     {config.resolved_base_url()}")
     print(f"api key env  {config.resolved_key_env()}")
     print()
-    print(f"{'stage':<18}{'model':<28}{'pricing':<10}")
+    print(f"{'stage':<18}{'model':<28}{'pricing':<24}")
     for stage in model.STAGE_MODELS:
         resolved = model.model_for(stage)
-        priced = "known" if resolved in model.PRICES else "unknown ($0 recorded)"
-        print(f"{stage:<18}{resolved:<28}{priced:<10}")
+        # The rate itself, not the word "known". Someone reading this is about
+        # to spend money and the number is the thing they came for.
+        rates, exact = model.resolve_price(resolved)
+        if rates is None:
+            priced = "unknown ($0 recorded)"
+        else:
+            priced = f"${rates[0]:g} / ${rates[1]:g} per M"
+            if not exact:
+                # Priced through a floating alias, which can be repointed.
+                priced += " (alias)"
+        print(f"{stage:<18}{resolved:<28}{priced:<24}")
     if not config.is_default():
         print(
             "\nNot the defaults. Committed trajectories and benchmark results "

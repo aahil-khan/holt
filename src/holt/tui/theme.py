@@ -308,6 +308,10 @@ EntryPointRow {{
     background: transparent;
     border: none;
 }}
+#model-count {{
+    height: auto;
+    padding: 0 1 0 2;
+}}
 #providers > ListItem, #models > ListItem {{
     background: transparent;
     padding: 0 1;

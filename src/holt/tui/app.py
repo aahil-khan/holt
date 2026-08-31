@@ -51,6 +51,12 @@ class HoltApp(App):
 
     BINDINGS = [
         ("ctrl+c", "quit", "quit"),
+        # `q` quits every screen that has no text box on it. Home does have
+        # one, and the input takes the key as a character, so a bare `q` never
+        # arrives there — which left the front screen as the only one in the
+        # app with no visible way out. `ctrl+q` works everywhere, including
+        # while you are typing, and being app-level it is on every footer.
+        ("ctrl+q", "quit", "quit"),
     ]
 
     def __init__(

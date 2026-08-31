@@ -61,7 +61,7 @@ SUGGESTION = "home-assistant/core"
 #: than one that takes five more columns.
 HINT = (
     "enter assess    ↑↓ one you already have    ctrl+f find one    "
-    "ctrl+t mode    ctrl+l models"
+    "ctrl+t mode    ctrl+l models    ctrl+q quit"
 )
 
 #: How often the in-flight rows redraw. Slower than the event pump on purpose:

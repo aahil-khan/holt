@@ -107,18 +107,42 @@ def test_a_fallback_list_is_labelled_as_not_coming_from_the_provider():
 
 
 def test_an_unpriced_model_says_unknown_rather_than_free():
-    priced = models.Model(id=model_module.SMALL, priced=True)
-    unpriced = models.Model(id="some-local-model", priced=False)
+    unpriced = models._model("some-local-model")
 
-    assert priced.pricing == "priced"
     assert "cost recorded as 0" in unpriced.pricing
     assert "free" not in unpriced.pricing.lower()
+
+
+def test_a_priced_model_shows_the_rate_rather_than_the_word_priced():
+    """"priced" told a reader a price existed somewhere and made them go and
+    find it. The number is what they came for."""
+    entry = models._model(model_module.SMALL)
+    rate_in, rate_out = model_module.PRICES[model_module.SMALL]
+
+    assert f"${rate_in:.2f}" in entry.pricing
+    assert f"${rate_out:.2f}" in entry.pricing
+    assert "per M tokens" in entry.pricing
+    assert entry.pricing.startswith("$"), "an exact rate carries no ≈"
+
+
+def test_a_floating_alias_is_priced_as_its_snapshot_and_marked_approximate():
+    """`gpt-5` showed "unpriced" beside `gpt-5-2025-08-07` showing "priced",
+    which reads as two models rather than one name for the other."""
+    alias = models._model("gpt-5")
+
+    assert alias.priced
+    assert alias.rates == model_module.PRICES[model_module.LARGE]
+    assert not alias.exact
+    # Marked, because an alias can be repointed underneath us.
+    assert alias.pricing.startswith("≈")
 
 
 def test_pricing_is_read_from_the_engine_not_restated():
     listing = models.list_models(provider("openai"))
     for entry in listing.models:
-        assert entry.priced == (entry.id in model_module.PRICES)
+        rates, _exact = model_module.resolve_price(entry.id)
+        assert entry.priced == (rates is not None)
+        assert entry.rates == rates
 
 
 # ─── only models you can actually talk to ───────────────────────────────────
@@ -324,3 +348,63 @@ def test_reset_restores_the_pinned_defaults():
     assert not model_module.models_config_path().exists()
     assert model_module.model_for("classify") == model_module.SMALL
     assert models.replay_warning(back) == ""
+
+
+# ─── the order they are offered in ──────────────────────────────────────────
+
+
+def test_the_pinned_models_come_first_and_legacy_ids_sink():
+    """Alphabetical put `babbage-002` above `gpt-5`, which is the wrong list."""
+    ids = [
+        "babbage-002",
+        "chatgpt-4o-latest",
+        "gpt-3.5-turbo-instruct",
+        "gpt-4o",
+        "gpt-5",
+        "gpt-5-2025-08-07",
+        model_module.SMALL,
+    ]
+    ordered = [m.id for m in models.in_offer_order([models._model(i) for i in ids])]
+
+    # The two holt is pinned to, then the ones it can state a cost for.
+    assert ordered[:2] == sorted([model_module.SMALL, model_module.LARGE])
+    assert ordered.index("gpt-5") < ordered.index("gpt-4o")
+    # Legacy and preview ids are last, but still selectable.
+    assert ordered[-3:] == [
+        "babbage-002",
+        "chatgpt-4o-latest",
+        "gpt-3.5-turbo-instruct",
+    ]
+    assert set(ordered) == set(ids), "sinking is not hiding"
+
+
+def test_ordering_is_stable_so_a_second_look_finds_a_model_where_it_was():
+    ids = ["gpt-4o", "gpt-4o-mini", "gpt-5-codex"]
+    once = [m.id for m in models.in_offer_order([models._model(i) for i in ids])]
+    twice = [m.id for m in models.in_offer_order([models._model(i) for i in reversed(ids)])]
+    assert once == twice
+
+
+@pytest.mark.parametrize(
+    "model_id",
+    [
+        "gpt-4o-transcribe",
+        "gpt-4o-mini-transcribe",
+        "gpt-4o-transcribe-diarize",
+        "gpt-4o-realtime-preview",
+        "gpt-image-1",
+        "sora-2",
+    ],
+)
+def test_speech_image_and_realtime_ids_are_not_chat_models(model_id):
+    """All of these were listed as choices under an OpenAI key. None of them
+    answer `chat.completions` the way every stage of the engine calls it."""
+    assert not models.looks_like_chat(model_id)
+
+
+def test_the_filter_is_substring_and_not_fuzzy():
+    entry = models._model("gpt-5-mini-2025-08-07")
+    assert models.matches(entry, "mini")
+    assert models.matches(entry, "GPT-5")
+    assert models.matches(entry, "  mini  ")
+    assert not models.matches(entry, "o1")

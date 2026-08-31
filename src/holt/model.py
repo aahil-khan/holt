@@ -37,6 +37,39 @@ PRICES = {
     "claude-fable-5": (10.00, 50.00),
 }
 
+# Floating aliases, and the dated snapshot each one currently points at.
+#
+# Kept separate from `PRICES` because the two facts have different lifetimes. A
+# snapshot's price is fixed for as long as that snapshot exists; where an alias
+# points is only true until the provider repoints it. Merging them would state
+# the second with the confidence of the first.
+#
+# This exists for *reporting a rate*, never for pinning a run — `STAGE_MODELS`
+# names dated ids precisely so a reproduction cannot drift. Before it, selecting
+# `gpt-5` in the interface showed "unpriced — cost recorded as 0" next to
+# `gpt-5-2025-08-07` showing "priced", which reads as two different models
+# rather than one name for the other.
+MODEL_ALIASES: dict[str, str] = {
+    "gpt-5": LARGE,
+    "gpt-5-mini": SMALL,
+}
+
+
+def resolve_price(model_id: str) -> tuple[tuple[float, float] | None, bool]:
+    """`((input, output) per million, exact)`, or `(None, False)` if unknown.
+
+    `exact` is False when the rate came from the snapshot an alias points at.
+    Callers say "approximately" in that case rather than asserting a price for
+    an id that can be repointed underneath them — the rate is right today and
+    nobody can promise it is right tomorrow.
+    """
+    if model_id in PRICES:
+        return PRICES[model_id], True
+    target = MODEL_ALIASES.get(model_id)
+    if target is not None and target in PRICES:
+        return PRICES[target], False
+    return None, False
+
 # The per-stage assignment under test. Everything starts on the small model; a
 # stage is promoted only if the pilot shows it needs to be.
 STAGE_MODELS: dict[str, str] = {
@@ -197,7 +230,11 @@ class Usage:
     models: list[str] = field(default_factory=list)
 
     def add(self, model: str, inp: int, out: int) -> None:
-        rate_in, rate_out = PRICES.get(model, (0.0, 0.0))
+        # Through the alias table: a run on `gpt-5` spends real money, and
+        # recording zero for it because the id carries no date would understate
+        # the bill rather than decline to guess at it.
+        rates, _exact = resolve_price(model)
+        rate_in, rate_out = rates or (0.0, 0.0)
         self.input_tokens += inp
         self.output_tokens += out
         self.cost_usd += inp / 1e6 * rate_in + out / 1e6 * rate_out

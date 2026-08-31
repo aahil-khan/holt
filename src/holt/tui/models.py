@@ -80,7 +80,12 @@ NON_CHAT_MARKERS: tuple[str, ...] = (
     "embed",  # nomic-embed-text, mxbai-embed-large, text-embedding-3-small
     "rerank",  # bge-reranker, and the Ollama ports of it
     "whisper",  # speech to text
+    "transcribe",  # gpt-4o-transcribe, gpt-4o-mini-transcribe — also speech
+    "diarize",  # gpt-4o-transcribe-diarize
     "dall-e",  # images
+    "gpt-image",  # images, under a name that otherwise reads as a chat model
+    "sora",  # video
+    "realtime",  # a websocket session, not a chat completion
     "tts-",  # openai's tts-1, tts-1-hd
     "-tts",
     "moderation",  # omni-moderation-latest, text-moderation-*
@@ -91,6 +96,63 @@ def looks_like_chat(model_id: str) -> bool:
     """A name-based guess, for providers that do not publish capabilities."""
     lowered = model_id.lower()
     return not any(marker in lowered for marker in NON_CHAT_MARKERS)
+
+
+# ─── the order they are offered in ──────────────────────────────────────────
+
+#: Sunk to the bottom rather than hidden. These are real chat models and
+#: selecting one is allowed; they are simply not what anybody scrolling this
+#: list is looking for, and alphabetical order put `babbage-002` above `gpt-5`.
+#: Hiding them would be a different and worse decision — the provider offers
+#: them, so the list says so.
+DEPRIORITISED: tuple[str, ...] = (
+    "babbage",
+    "davinci",
+    "-instruct",
+    "-preview",
+    "-audio",
+    "chatgpt-",
+)
+
+
+def rank(model: Model) -> tuple:
+    """Sort key. Lower sorts first.
+
+    "Popular" is not a fact this tool has any way of knowing, so it is not
+    guessed at. What it *does* know is which models it can state a cost for and
+    which one it is pinned to, and those are exactly the ones worth reaching
+    first — a model holt cannot price is one whose runs record as $0, which is
+    a worse starting point than any popularity ordering would fix.
+
+    Four tiers, then alphabetical inside each so the order is stable and a
+    second look finds a model where the first one left it.
+    """
+    pinned = model.id in (model_module.SMALL, model_module.LARGE)
+    lowered = model.id.lower()
+    legacy = any(marker in lowered for marker in DEPRIORITISED)
+    if pinned:
+        tier = 0
+    elif legacy:
+        tier = 3
+    elif model.priced:
+        tier = 1
+    else:
+        tier = 2
+    return (tier, model.id)
+
+
+def in_offer_order(models: list[Model]) -> list[Model]:
+    return sorted(models, key=rank)
+
+
+def matches(model: Model, needle: str) -> bool:
+    """Substring, case-insensitive. A provider with 80 ids needs a filter.
+
+    Deliberately not fuzzy: you are looking for a model whose name you already
+    partly know, and a fuzzy match that surfaces `gpt-4o` for "o1" would make
+    the list less trustworthy rather than more helpful.
+    """
+    return needle.strip().lower() in model.id.lower()
 
 
 @dataclass(slots=True)
@@ -149,10 +211,26 @@ class Model:
     #: True when the provider told us about it, False when it came from
     #: `FALLBACK_MODELS`. The screen labels the difference.
     from_provider: bool = True
+    #: USD per million tokens, (input, output). `None` when this build has no
+    #: rate for the id — which is not the same as the model being free.
+    rates: tuple[float, float] | None = None
+    #: False when the rate came from the snapshot a floating alias points at.
+    exact: bool = True
 
     @property
     def pricing(self) -> str:
-        return "priced" if self.priced else "unpriced — cost recorded as 0"
+        """The actual rate, because "priced" answers nobody's question.
+
+        A reader choosing a model is deciding what a run will cost. "priced"
+        told them a price exists somewhere and made them go and find it.
+        """
+        if self.rates is None:
+            return "unpriced — cost recorded as 0"
+        rate_in, rate_out = self.rates
+        figure = f"${rate_in:.2f} in / ${rate_out:.2f} out  per M tokens"
+        # `≈` because an alias can be repointed under us. Better a rate marked
+        # approximate than a confident number that quietly goes stale.
+        return figure if self.exact else f"≈ {figure}"
 
 
 @dataclass(slots=True)
@@ -215,7 +293,7 @@ def list_models(provider: Provider) -> Listing:
             hidden=len(ids),
         )
 
-    return Listing(models=[_model(i) for i in chat], hidden=hidden)
+    return Listing(models=in_offer_order([_model(i) for i in chat]), hidden=hidden)
 
 
 def _chat_only(provider: Provider, ids: list[str]) -> list[str]:
@@ -290,16 +368,23 @@ def _ollama_capabilities(
     return found
 
 
-def _model(model_id: str) -> Model:
-    return Model(id=model_id, priced=model_id in model_module.PRICES)
+def _model(model_id: str, from_provider: bool = True) -> Model:
+    """One row, with whatever `holt.model` knows about what it costs."""
+    rates, exact = model_module.resolve_price(model_id)
+    return Model(
+        id=model_id,
+        priced=rates is not None,
+        from_provider=from_provider,
+        rates=rates,
+        exact=exact,
+    )
 
 
 def _fallback(provider: Provider, error: str) -> Listing:
     """What we know without asking, clearly labelled as exactly that."""
     known = FALLBACK_MODELS.get(provider.name, ())
     return Listing(
-        models=[Model(id=i, priced=i in model_module.PRICES, from_provider=False)
-                for i in known],
+        models=[_model(i, from_provider=False) for i in known],
         error=error,
         guessed=bool(known),
     )

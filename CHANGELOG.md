@@ -1787,3 +1787,71 @@ Three decisions came out of that:
 **288 passed**, no skips. One test is new here rather than from either branch —
 `test_arrowing_onto_a_run_in_flight_says_so_and_rejoins_it` covers exactly the
 seam the rebase created, which neither side's tests reached on their own.
+
+---
+
+## Iteration 29 — the model list was a dump, not a choice (2026-08-31)
+
+**Observed, from a screenshot of the real screen.** Under an OpenAI key the
+model list opened on `gpt-4o-mini-transcribe`, ran alphabetically through four
+speech-to-text models, and showed `gpt-5` as **unpriced — cost recorded as 0**
+one row above `gpt-5-2025-08-07` showing **priced**. Every visible row but one
+claimed holt could not cost it.
+
+**The pricing was a real bug, and a narrow one.** `PRICES` is keyed on dated
+snapshots — deliberately, because `STAGE_MODELS` pins dated ids so a recorded
+run cannot drift underneath a reproduction claim. But *display* was reading the
+same table, so the floating alias `gpt-5` matched nothing and reported zero.
+Two ids for one model, disagreeing on screen about what it costs.
+
+**Fixed with a second table, not by loosening the first.** `MODEL_ALIASES` maps
+each floating alias to the snapshot it currently points at, and `resolve_price`
+reads through it. They are kept apart because the two facts have different
+lifetimes: a snapshot's price is fixed for as long as the snapshot exists, and
+where an alias points is true only until the provider repoints it. A rate
+reached through an alias renders with `≈` and the cost accounting uses it —
+recording $0 for a run on `gpt-5` understates a real bill, which is worse than
+declining to guess.
+
+**The rate is now the row, because "priced" answers nobody's question.** A
+reader choosing a model is deciding what a run will cost; "priced" told them a
+number existed somewhere else. Rows read `$1.25 in / $10.00 out per M tokens`.
+`holt models` on the command line prints the same figure.
+
+**Speech, image and realtime ids were leaking through the chat filter.**
+Iteration 27 caught embeddings; `transcribe`, `diarize`, `realtime`, `sora` and
+`gpt-image` were not on the list and every one of them was being offered as a
+model to run the pipeline on. Ten of the twenty-five ids on a stock OpenAI key
+are not chat models.
+
+**"Popular first" is not a fact this tool can know, so it is not claimed.**
+Ordering is four tiers: the two models holt is pinned to, then the ones it can
+state a cost for, then everything else, then legacy and preview ids — with
+alphabetical order inside each tier so the list is stable between looks. The
+last tier is *sunk, not hidden*: `babbage-002` is a real chat model and the
+provider offers it, so the list says so, at the bottom. The count line explains
+the order rather than leaving a reader to infer it.
+
+**And the list is filterable.** Substring, case-insensitive, deliberately not
+fuzzy — you are looking for a name you already partly know, and a fuzzy match
+surfacing `gpt-4o` for "o1" would make the list less trustworthy. The filter box
+keeps focus while ↑↓ move the cursor, the same arrangement home uses, so
+narrowing and choosing are one gesture.
+
+**A separate report from the same session: the front screen had no visible way
+out.** `q` quits every screen with no text box on it, and home has one, so the
+key is consumed as a character and never arrives. `ctrl+q` is now an app-level
+binding — it therefore appears on every footer, and it survives a focused input.
+
+**Test pollution found while adding the tests, and worth recording.** The first
+version of the models-screen helper set `OPENAI_API_KEY` in `os.environ`
+directly. Home reads that variable to choose between live and replay, so a
+models test silently flipped the mode of every test that ran after it and broke
+an unrelated assertion about the evidence window. Everything the helper touches
+now goes through `monkeypatch`.
+
+**Evidence.** `uv sync --extra tui`, `HOLT_NO_NETWORK=1 pytest -q -rs`:
+**305 passed**, no skips. 17 new tests, driven against a scripted listing of the
+25 ids a stock OpenAI key actually returns — the alias pricing, the four
+ordering tiers, the six id families that are not chat models, the filter, and
+`ctrl+q` on home.

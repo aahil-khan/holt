@@ -1392,3 +1392,160 @@ def test_the_palette_cursor_is_visible_and_moves(tmp_path):
         assert back and back[0][0] == first[0][0], "up did not come back"
 
     drive(body, tmp_path)
+
+
+# ─── choosing a model you can actually find ─────────────────────────────────
+
+
+OPENAI_IDS = [
+    "babbage-002",
+    "gpt-4o",
+    "gpt-4o-mini",
+    "gpt-4o-transcribe",
+    "gpt-5",
+    "gpt-5-2025-08-07",
+    "gpt-5-mini",
+    "gpt-5-mini-2025-08-07",
+    "text-embedding-3-small",
+]
+
+
+async def open_openai_models(app, pilot, monkeypatch, ids=None):
+    """The models screen, on a scripted OpenAI listing. No network.
+
+    Everything it changes goes through `monkeypatch`. Setting `OPENAI_API_KEY`
+    directly leaked into every later test in the session — home reads it to
+    decide between live and replay, so a models test silently flipped the mode
+    of tests that ran after it.
+    """
+    from holt.tui import models as models_layer
+
+    monkeypatch.setattr(
+        models_layer, "_list_openai_wire", lambda provider, key: sorted(ids or OPENAI_IDS)
+    )
+    monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
+    monkeypatch.setenv(models_layer.NO_NETWORK_ENV, "0")
+
+    await pilot.press("ctrl+l")
+    await pilot.pause(0.4)
+    screen = app.screen
+    screen.chosen = next(p for p in screen.providers if p.name == "openai")
+    await screen._show_models(models_layer.list_models(screen.chosen))
+    await pilot.pause(0.3)
+    return screen
+
+
+def listed_ids(screen):
+    from textual.widgets import ListView
+
+    return [row.entry.id for row in screen.query_one("#models", ListView).children]
+
+
+def test_the_model_list_leads_with_what_holt_can_price(tmp_path, monkeypatch):
+    """Alphabetical opened on `babbage-002`, and buried `gpt-5` under speech
+    models. The ones with a known rate come first; nothing is hidden for it."""
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    async def body(app, pilot):
+        screen = await open_openai_models(app, pilot, monkeypatch)
+        shown = listed_ids(screen)
+
+        assert shown[0].startswith("gpt-5")
+        assert shown.index("gpt-5") < shown.index("gpt-4o")
+        assert shown[-1] == "babbage-002", "legacy sinks rather than vanishing"
+        # The non-chat ids never make the list, and the screen says how many.
+        assert "gpt-4o-transcribe" not in shown
+        assert "text-embedding-3-small" not in shown
+        assert "are not chat models" in screen_text(app)
+
+    drive(body, tmp_path, size=(110, 40))
+
+
+def test_a_rate_is_shown_rather_than_the_word_priced(tmp_path, monkeypatch):
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    async def body(app, pilot):
+        await open_openai_models(app, pilot, monkeypatch)
+        text = screen_text(app)
+        assert "per M tokens" in text
+        assert "$1.25 in / $10.00 out" in text
+        # gpt-5 is an alias for the pinned snapshot, and says so with ≈.
+        assert "≈ $1.25 in / $10.00 out" in text
+
+    drive(body, tmp_path, size=(110, 40))
+
+
+def test_typing_narrows_the_model_list_without_losing_the_box(tmp_path, monkeypatch):
+    """A provider can offer eighty ids. Scrolling all of them is not a choice."""
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    async def body(app, pilot):
+        screen = await open_openai_models(app, pilot, monkeypatch)
+        assert app.focused.id == "model-filter"
+
+        for char in "mini":
+            await pilot.press(char)
+        await pilot.pause(0.4)
+
+        shown = listed_ids(screen)
+        assert shown and all("mini" in i for i in shown)
+        assert "3 of " in screen_text(app)
+        # Typing must not cost you the box, and ↑↓ must not either.
+        assert app.focused.id == "model-filter"
+
+        await pilot.press("down")
+        await pilot.pause(0.2)
+        assert screen.query_one("#models").index == 1
+        assert app.focused.id == "model-filter"
+
+    drive(body, tmp_path, size=(110, 40))
+
+
+def test_a_filter_that_matches_nothing_says_so(tmp_path, monkeypatch):
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    async def body(app, pilot):
+        screen = await open_openai_models(app, pilot, monkeypatch)
+        for char in "zzz":
+            await pilot.press(char)
+        await pilot.pause(0.4)
+        assert listed_ids(screen) == []
+        assert "Nothing here matches" in screen_text(app)
+
+    drive(body, tmp_path, size=(110, 40))
+
+
+def test_enter_in_the_filter_box_chooses_the_highlighted_model(tmp_path, monkeypatch):
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    async def body(app, pilot):
+        screen = await open_openai_models(app, pilot, monkeypatch)
+        for char in "mini":
+            await pilot.press(char)
+        await pilot.pause(0.4)
+        chosen = listed_ids(screen)[0]
+
+        await pilot.press("enter")
+        await pilot.pause(0.3)
+        assert f"{chosen} now answers every stage" in screen_text(app)
+
+    drive(body, tmp_path, size=(110, 40))
+
+
+# ─── getting out ────────────────────────────────────────────────────────────
+
+
+def test_the_front_screen_has_a_way_out_that_survives_the_input(tmp_path):
+    """`q` quits every screen with no text box on it. Home has one, so the key
+    never arrives — which left the front screen with no visible way out."""
+
+    async def body(app, pilot):
+        assert app.screen.__class__.__name__ == "HomeScreen"
+        # It is advertised, not just present.
+        assert "ctrl+q quit" in screen_text(app)
+
+        await pilot.press("ctrl+q")
+        await pilot.pause(0.3)
+        assert app._exit or not app.is_running
+
+    drive(body, tmp_path)

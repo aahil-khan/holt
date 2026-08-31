@@ -21,6 +21,7 @@ from __future__ import annotations
 from rich.text import Text
 from textual.app import ComposeResult
 from textual.containers import Horizontal, Vertical, VerticalScroll
+from textual.binding import Binding
 from textual.screen import Screen
 from textual.widgets import Footer, Input, ListItem, ListView
 
@@ -68,6 +69,11 @@ class ModelRow(ListItem):
 
 class ModelsScreen(Screen):
     BINDINGS = [
+        # Handled here, not by the list: the filter box holds focus so that
+        # typing and choosing are one gesture. Hidden from the footer, which
+        # already carries the hint line under the list.
+        Binding("down", "browse_down", "choose", show=False),
+        Binding("up", "browse_up", "choose", show=False),
         ("ctrl+t", "test", "test connection"),
         ("ctrl+d", "reset", "back to defaults"),
         ("escape", "back", "back"),
@@ -83,6 +89,10 @@ class ModelsScreen(Screen):
         )
         self.listing: models_layer.Listing | None = None
         self.step = "provider"
+        #: What is typed in the filter box. Held on the screen rather than read
+        #: back off the widget, because the list is rebuilt from it and the
+        #: widget does not exist on the provider step.
+        self._filter = ""
 
     # ─── layout ─────────────────────────────────────────────────────────────
 
@@ -120,6 +130,7 @@ class ModelsScreen(Screen):
 
     async def _show_providers(self) -> None:
         self.step = "provider"
+        self._filter = ""
         body = await self._body()
         body.mount(Line(Text("PROVIDER", style=theme.DIM), classes="section-label"))
         scroll = VerticalScroll(id="provider-scroll")
@@ -195,6 +206,9 @@ class ModelsScreen(Screen):
     async def _show_models(self, listing) -> None:
         self.listing = listing
         self.step = "model"
+        # A filter belongs to the provider you are looking at, not to the
+        # screen: carrying "gpt" over to Ollama would show an empty list.
+        self._filter = ""
 
         body = await self._body()
         body.mount(
@@ -233,28 +247,106 @@ class ModelsScreen(Screen):
                 body.mount(
                     Line(
                         Text(
-                            f"{listing.hidden} more here "
-                            f"{'is' if listing.hidden == 1 else 'are'} not a chat "
-                            "model — embeddings and the like. Every stage calls "
-                            "chat completions, so they are not choices.",
+                            f"{listing.hidden} more "
+                            + (
+                                "is not a chat model"
+                                if listing.hidden == 1
+                                else "are not chat models"
+                            )
+                            + " — embeddings, speech, images. Every stage "
+                            "calls chat completions, so they are not choices.",
                             style=theme.FAINT,
                         ),
                         classes="empty",
                     )
                 )
+            # A provider can offer eighty ids. Typing narrows them, and the
+            # box holds focus so narrowing and choosing are the same gesture —
+            # ↑↓ are handled by this screen, exactly as on home.
+            body.mount(
+                Input(placeholder="filter by name", id="model-filter")
+            )
+            body.mount(Line("", id="model-count", classes="field-note"))
             scroll = VerticalScroll(id="model-scroll")
             body.mount(scroll)
-            current = model_module.model_for("classify")
-            listed = ListView(
-                *[ModelRow(m, m.id == current) for m in listing.models], id="models"
-            )
-            scroll.mount(listed)
-            listed.focus()
+            scroll.mount(ListView(id="models"))
+            await self._paint_models()
+            self.query_one("#model-filter", Input).focus()
 
         self._footer_lines(
-            body, "enter use everywhere    ctrl+t test    esc providers"
+            body,
+            "type to filter    ↑↓ choose    enter use everywhere    "
+            "ctrl+t test    esc providers",
         )
         animation.reveal(body)
+
+    async def _paint_models(self) -> None:
+        """Refill the list from the current filter, keeping the offer order."""
+        listing = self.listing
+        if listing is None:
+            return
+        needle = self._filter
+        shown = [m for m in listing.models if models_layer.matches(m, needle)]
+
+        listed = self.query_one("#models", ListView)
+        await listed.clear()
+        current = model_module.model_for("classify")
+        for entry in shown:
+            await listed.append(ModelRow(entry, entry.id == current))
+        # Always something under the cursor, so ↑↓ has a position to move from.
+        listed.index = 0 if shown else None
+
+        count = self.query_one("#model-count", Line)
+        total = len(listing.models)
+        if not shown:
+            count.update(
+                Text(f"Nothing here matches “{needle}”.", style=theme.DROP)
+            )
+        elif len(shown) < total:
+            count.update(
+                Text(f"{len(shown)} of {total}", style=theme.FAINT)
+            )
+        else:
+            # The pinned models are first, and saying why beats a reader
+            # wondering what the order is.
+            count.update(
+                Text(
+                    f"{total} — the ones holt can cost first, then the rest",
+                    style=theme.FAINT,
+                )
+            )
+
+    async def on_input_changed(self, event: Input.Changed) -> None:
+        self._filter = event.value
+        await self._paint_models()
+
+    def on_input_submitted(self, event: Input.Submitted) -> None:
+        """Enter in the filter box uses whatever the cursor is on."""
+        listed = self.query_one("#models", ListView)
+        row = listed.highlighted_child
+        if row is not None:
+            self._use(row.entry.id)
+
+    def action_browse_down(self) -> None:
+        self._browse(1)
+
+    def action_browse_up(self) -> None:
+        self._browse(-1)
+
+    def _browse(self, delta: int) -> None:
+        """Move the cursor without taking focus off whichever box has it."""
+        try:
+            listed = self.query_one("#models", ListView)
+        except Exception:  # noqa: BLE001 - on the provider step there is no list
+            return
+        total = len(listed.children)
+        if not total:
+            return
+        current = listed.index
+        if current is None:
+            listed.index = 0 if delta > 0 else total - 1
+        else:
+            listed.index = max(0, min(total - 1, current + delta))
 
     # ─── step two: choosing ─────────────────────────────────────────────────
 
