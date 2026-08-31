@@ -9,12 +9,13 @@ from __future__ import annotations
 
 import json
 import time
+from datetime import timedelta
 
 import pytest
 
 from holt.report import Assessment, Claim, EntryPoint, Verdict
 from holt.tui import store
-from holt.types import T_CUTOFF
+from holt.types import T_CUTOFF, EvidenceRecord
 
 
 def make(repo: str = "owner/name", verdict: Verdict = Verdict.VIABLE) -> Assessment:
@@ -280,3 +281,59 @@ def test_a_finding_that_will_not_serialise_does_not_lose_the_assessment(tmp_path
     restored = store.Store(root=tmp_path).all()
     assert restored[0].assessment.repo == "owner/name"
     assert "object object" in restored[0].events[0].value
+
+
+# ─── the records behind the claims ──────────────────────────────────────────
+
+
+def record(evidence_id: str = "repo:x:meta") -> EvidenceRecord:
+    return EvidenceRecord(
+        evidence_id=evidence_id,
+        source="github",
+        url="https://github.com/owner/name",
+        timestamp=T_CUTOFF - timedelta(days=3),
+        payload={"stars": 4211, "title": "the thread this claim came from"},
+    )
+
+
+def test_the_records_behind_the_claims_survive_the_process(tmp_path):
+    """A claim is only checkable while the record under it can be read.
+
+    A live run's records are held in the process that crawled them and on no
+    disk anywhere, so they are stored with the assessment. Reopening it a day
+    later must answer the same id with the same record.
+    """
+    keep = store.Store(root=tmp_path)
+    keep.save(entry(mode="live", evidence=[record(), record("issue:x#1")]))
+
+    got = store.Store(root=tmp_path).all()[0]
+    assert [r.evidence_id for r in got.evidence] == ["repo:x:meta", "issue:x#1"]
+    assert got.evidence[0].payload["stars"] == 4211
+    assert got.evidence[0].timestamp == T_CUTOFF - timedelta(days=3)
+    assert got.evidence[0].source == "github"
+
+
+def test_a_damaged_record_is_skipped_not_fatal(tmp_path):
+    """Same rule as everywhere else here: the report is still worth opening,
+    and the inspector already has a sentence for an id it cannot look up."""
+    keep = store.Store(root=tmp_path)
+    saved = keep.save(entry(mode="live", evidence=[record()]))
+    raw = json.loads(saved.path.read_text())
+    raw["evidence"].append({"evidence_id": "issue:x#2"})  # no timestamp
+    raw["evidence"].append("not a record at all")
+    saved.path.write_text(json.dumps(raw))
+
+    got = store.Store(root=tmp_path).all()[0]
+    assert [r.evidence_id for r in got.evidence] == ["repo:x:meta"]
+
+
+def test_an_assessment_stored_before_records_were_kept_still_loads(tmp_path):
+    keep = store.Store(root=tmp_path)
+    saved = keep.save(entry(mode="live", evidence=[record()]))
+    raw = json.loads(saved.path.read_text())
+    del raw["evidence"]
+    saved.path.write_text(json.dumps(raw))
+
+    got = store.Store(root=tmp_path).all()[0]
+    assert got.evidence == []
+    assert got.assessment.verdict is Verdict.VIABLE

@@ -27,10 +27,11 @@ from __future__ import annotations
 
 import queue
 import time
+from datetime import timedelta
 from typing import Any
 
 from holt.report import Assessment, Claim, EntryPoint, Verdict
-from holt.types import T_CUTOFF
+from holt.types import T_CUTOFF, EvidenceRecord
 from holt.tui import events, store
 from holt.tui.session import RunOptions, Session
 
@@ -163,24 +164,52 @@ def finished(repo: str = REPO, **kw) -> Session:
     return built
 
 
+def records(report: Assessment) -> list[EvidenceRecord]:
+    """The records behind a report's ids, as the store keeps them.
+
+    Dated inside the holdout window, because a provider asserts that boundary
+    and evidence that could not have been read is not evidence.
+    """
+    ids = [c.evidence_id for c in report.claims if c.evidence_id]
+    ids += [
+        point.evidence_id
+        for point in (getattr(report, "entry_points", None) or [])
+        if point.evidence_id
+    ]
+    return [
+        EvidenceRecord(
+            evidence_id=evidence_id,
+            source="github",
+            url=f"https://github.com/{report.repo}",
+            timestamp=T_CUTOFF - timedelta(days=1 + index),
+            payload={"title": f"the thread behind {evidence_id}", "state": "MERGED"},
+        )
+        for index, evidence_id in enumerate(dict.fromkeys(ids))
+    ]
+
+
 def stored_entry(
     repo: str = REPO,
     mode: str = "replay",
     age: float = 0.0,
     trace: bool = False,
+    evidence: bool = False,
     **kw,
 ) -> store.Entry:
     """An assessment as the store holds one.
 
-    `trace=True` gives it the run's events, which is what a real one saved
-    since holt started keeping them has. The default is without, because that
-    is also a real case: everything stored before then.
+    `trace=True` gives it the run's events and `evidence=True` the records
+    behind its claims, which is what a real one saved since holt started
+    keeping them has. Both default to off, because that is also a real case:
+    everything stored before then.
     """
+    report = assessment(repo, **kw)
     return store.Entry(
         repo=repo,
         mode=mode,
         created_at=time.time() - age,
-        assessment=assessment(repo, **kw),
+        assessment=report,
         contributor_days=7,
         events=script(repo) if trace else [],
+        evidence=records(report) if evidence else [],
     )

@@ -47,7 +47,7 @@ uv sync
 uv run pytest -rs
 ```
 
-**Expected after a plain `uv sync`:** `294 passed`, `1 skipped`. The skip is the
+**Expected after a plain `uv sync`:** `298 passed`, `1 skipped`. The skip is the
 terminal-interface suite, and it is honest rather than incidental: `tui` is an
 optional extra precisely so that every reproduction command works on a machine
 that has never installed Textual. To run the interface tests too:
@@ -57,7 +57,7 @@ uv sync --extra tui
 uv run pytest -rs
 ```
 
-**Expected:** `383 passed`, no skips. **Runtime:** about two minutes either way.
+**Expected:** `388 passed`, no skips. **Runtime:** about two minutes either way.
 
 The `-rs` flag reports skipped tests explicitly — a skipped test is not a
 passing one, which is why the count above says which one it is.

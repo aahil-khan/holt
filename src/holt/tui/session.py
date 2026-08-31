@@ -27,7 +27,7 @@ from typing import Any
 
 from holt import model as model_module
 from holt.agent import entry, pipeline
-from holt.evidence.fixtures import FixtureProvider
+from holt.evidence.fixtures import FixtureProvider, redact_records
 from holt.evidence.provider import EvidenceProvider
 from holt.report import EntryPoint
 from holt.tui import events, store
@@ -105,8 +105,12 @@ class Session:
     #: sees exactly what Stage D saw — a new provider has fetched nothing and
     #: would report every id as unresolvable.
     provider: Any = None
+    #: The provider a reading order read, when one ran. Kept for the same
+    #: reason as `provider`: the ids under the reading order come from here and
+    #: nowhere else, so storing the records behind them needs this too.
+    issue_provider: Any = None
     #: Built on demand for a stored assessment, which has no run behind it.
-    #: See `ReopenedEvidence`.
+    #: See `StoredEvidence` and `ReopenedEvidence`.
     _reopened: Any = None
     _reopen_tried: bool = False
     #: The stage the run is in, for anything showing progress without showing
@@ -223,10 +227,10 @@ class Session:
         """Where evidence lookups from the interface go, or None.
 
         A run hands over the provider it used, so the inspector shows exactly
-        what Stage D saw. A stored assessment has no run behind it and rebuilds
-        one on first use — see `ReopenedEvidence`, which is why reopening this
-        morning's report and pressing enter on a claim reads the record rather
-        than apologising for not having one.
+        what Stage D saw. A stored assessment has no run behind it and reads its
+        evidence back on first use — see `StoredEvidence`, which is why
+        reopening this morning's report and pressing enter on a claim reads the
+        record rather than apologising for not having one.
         """
         if self.provider is not None:
             return self.provider
@@ -260,9 +264,10 @@ class Session:
         if source is None:
             if self.restored_from is not None:
                 return (
-                    "This assessment read GitHub live, and a run's records are "
-                    "not stored alongside it. Re-run it — ctrl+r on the report "
-                    "— to read the record behind this id."
+                    "This assessment read GitHub live and was stored before "
+                    "holt kept the records behind its claims, which exist "
+                    "nowhere else. Re-run it — ctrl+r on the report — to read "
+                    "the record behind this id."
                 )
             return (
                 "No evidence was loaded for this session, so there is nothing "
@@ -299,7 +304,64 @@ class Session:
             duration_seconds=self.duration,
             cost_usd=self.cost_usd,
             events=list(self.log),
+            evidence=self.evidence_for_storage(),
         )
+
+    def evidence_for_storage(self) -> list[Any]:
+        """The records behind this assessment's ids, to be stored with it.
+
+        Only the ids the report itself carries — every claim, and every row of
+        the reading order. A run reads thousands of records and storing all of
+        them would put megabytes next to every report, while the interface can
+        only ever look up an id that is printed on the page. What it stores is
+        therefore bounded by the report, not by the repository.
+
+        Read back out of the providers the run is still holding, which keep
+        every record they fetched. That costs no network even in live mode, and
+        it means the record stored is the record the run had rather than a
+        fresh read of a window that has since moved.
+
+        Credentials are stripped on the way out, the same way `write_fixture`
+        strips them: this is evidence landing on disk, and it does not matter
+        that the directory is a local one.
+        """
+        assessment = self.assessment
+        if assessment is None:
+            return []
+        wanted = [c.evidence_id for c in assessment.claims if c.evidence_id]
+        wanted += [
+            point.evidence_id
+            for point in (getattr(assessment, "entry_points", None) or [])
+            if point.evidence_id
+        ]
+        found: dict[str, Any] = {}
+        for evidence_id in wanted:
+            if evidence_id in found:
+                continue
+            record = self._record_behind(evidence_id)
+            if record is not None:
+                found[evidence_id] = record
+        records, _ = redact_records(found.values())
+        return records
+
+    def _record_behind(self, evidence_id: str) -> Any:
+        """One record out of the run's own providers, or None. Never raises.
+
+        Deliberately not through the observing wrapper: see
+        `ObservingProvider.inner`. An id that cannot be looked up is stored as
+        nothing at all, which the inspector already has a sentence for — better
+        than taking the whole write down over one record.
+        """
+        for source in (self.provider, self.issue_provider):
+            if source is None:
+                continue
+            try:
+                record = getattr(source, "inner", source).resolve(evidence_id)
+            except Exception:  # noqa: BLE001 - a report is worth storing regardless
+                continue
+            if record is not None:
+                return record
+        return None
 
     # ─── the run ────────────────────────────────────────────────────────────
 
@@ -381,10 +443,14 @@ class Session:
         a tool that invents an entry point when it has no issues is worse than
         one that omits the section.
         """
+        issue_provider = _issue_provider(opts.live)
         try:
-            issues = _issue_provider(opts.live).fetch(repo)
+            issues = issue_provider.fetch(repo)
         except FileNotFoundError:
             return
+        # Held on the session, not just locally: the reading order's ids resolve
+        # against this and nothing else, and they are stored with the report.
+        self.issue_provider = issue_provider
         try:
             client = _client(repo, opts, PATHFINDER_TRAJECTORIES)
             self._emit(
@@ -412,25 +478,67 @@ class Session:
         )
 
 
-class ReopenedEvidence:
-    """Evidence for an assessment that came back out of the store.
+class StoredEvidence:
+    """The records stored with an assessment, as something to look ids up in.
 
-    A stored assessment keeps its claims and the ids under them; it does not
-    keep the records behind them, which for a large repository would be
-    megabytes of history per report. It does not have to. The *source* the run
-    read is still there, and for a replay or a recorded run that source is a
-    committed fixture — reading it again reads the same bytes Stage D read, so
-    the record the inspector shows is the record the claim was drawn from.
+    A report is only checkable while the records under it can be read, and for
+    a live run those records exist nowhere but the process that fetched them.
+    So the ids the report prints are stored with it — see
+    `Session.evidence_for_storage` — and this is what reads them back. Opening
+    this morning's live report and pressing enter on a claim shows the record
+    Stage D saw, which is the whole point of citing one.
+
+    A fixture-backed run additionally keeps its original source, used only for
+    an id the stored set does not have. `provenance` follows whichever answered,
+    because "the run held this" and "this was read off disk just now" are
+    different statements and the reader is owed the true one.
+    """
+
+    #: What the inspector prints under a record that came from the stored set.
+    STORED = "stored with this assessment, as the run read it"
+
+    def __init__(self, records: list[Any], fallback: Any = None) -> None:
+        self._records = {
+            r.evidence_id: r for r in records if getattr(r, "evidence_id", "")
+        }
+        #: Consulted only for an id the stored records do not cover.
+        self._fallback = fallback
+        #: Nothing to report: there are records, so lookups are possible.
+        self.unavailable = ""
+        self.provenance = self.STORED
+
+    def resolve(self, evidence_id: str):
+        record = self._records.get(evidence_id)
+        if record is not None:
+            self.provenance = self.STORED
+            return record
+        if self._fallback is None:
+            return None
+        record = self._fallback.resolve(evidence_id)
+        # Set after the lookup, and read by the inspector after it too, so the
+        # line under the record names the source that actually produced it.
+        self.provenance = getattr(self._fallback, "provenance", "")
+        return record
+
+
+class ReopenedEvidence:
+    """The source a stored assessment was built from, opened again.
+
+    Second in line behind `StoredEvidence`, and reached only for an id the
+    records stored with the report do not cover. For a replay or a recorded run
+    that source is a committed fixture — reading it again reads the same bytes
+    Stage D read, so the record the inspector shows is still the record the
+    claim was drawn from.
 
     Two things this is careful about:
 
     * **Nothing is read until a claim is opened.** Reopening a report stays
       instant; the fixture load happens on the first `resolve`.
-    * **A live run is not re-crawled.** Its records came off GitHub and were
-      never written down, and re-reading would mean a remote crawl on the
-      interface's own thread against a window that has moved since. The caller
-      gets no source at all and says so, which is true, instead of a record
-      that looks like the run's and is not.
+    * **A live run is not re-crawled.** Its records came off GitHub, and a
+      remote crawl on the interface's own thread against a window that has
+      moved since would not be the run's evidence however it were labelled.
+      A live report is checked against the records stored with it, and an old
+      one that has none gets no source at all and says so.
     """
 
     def __init__(self, repo: str, providers: list[Any]) -> None:
@@ -476,11 +584,30 @@ class ReopenedEvidence:
         return None
 
 
-def reopen_evidence(stored: Any) -> ReopenedEvidence | None:
+def reopen_evidence(stored: Any) -> Any:
     """The sources a stored assessment can be checked against, or None.
 
+    The records the report cites are stored with it, so they come first and are
+    all a live assessment ever has — its crawl is on no disk anywhere else. A
+    fixture-backed one keeps its original source behind them, for an id the
+    stored set happens not to cover.
+
+    None is returned only for an assessment written before records were kept
+    *and* produced live. That is the one case with nothing to read, and the
+    session says which rather than blaming the evidence.
+    """
+    records = list(getattr(stored, "evidence", None) or [])
+    fallback = _original_source(stored)
+    if records:
+        return StoredEvidence(records, fallback)
+    return fallback
+
+
+def _original_source(stored: Any) -> ReopenedEvidence | None:
+    """The source the run itself read, opened again, or None if it cannot be.
+
     Keyed off the mode the assessment was produced in, because that is what
-    decides where its ids came from. A live assessment returns None: see
+    decides where its ids came from. A live run is not re-crawled: see
     `ReopenedEvidence`.
     """
     if getattr(stored, "mode", "") == "live":

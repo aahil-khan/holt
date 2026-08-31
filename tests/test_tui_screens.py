@@ -472,12 +472,43 @@ def test_a_reopened_assessment_says_which_ids_the_evidence_does_not_have(tmp_pat
     drive(body, tmp_path)
 
 
-def test_a_stored_live_assessment_says_its_records_were_not_kept(tmp_path):
+def test_a_reopened_live_assessment_reads_the_records_stored_with_it(tmp_path):
+    """A live run's records exist nowhere but the process that fetched them.
+
+    So they are stored with the report — the ids it prints, not the thousand
+    records it read. Reopening a live assessment and pressing enter on a claim
+    used to say the records were not kept, which made the one report that
+    cannot be checked against a fixture the one report nobody could check.
+    """
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo=CLEAN, mode="live", age=60, evidence=True))
+    stored = store.Store(root=tmp_path).all()[0]
+    cited = stored.assessment.claims[0].evidence_id
+
+    async def body(app, pilot):
+        await _reopen(app, pilot, stored)
+        app.inspect(cited)
+        await pilot.pause(0.4)
+        text = screen_text(app)
+        assert "resolved" in text
+        assert "not loaded" not in text
+        # The record, and where it was read from — not a fresh crawl passed off
+        # as the run's own.
+        assert "the thread behind" in text
+        assert "stored with this assessment" in text
+
+    drive(body, tmp_path, size=(110, 60))
+
+
+def test_a_live_assessment_stored_before_records_were_kept_says_so(tmp_path):
     """Three states, three sentences.
 
-    A live run read GitHub, and its records are not stored with the report.
-    Re-crawling from a keypress would be a different read against a window that
-    has moved, so the screen says what it has and what to do instead.
+    An assessment stored before holt kept records has none, and a live one's
+    cannot be recovered: re-crawling from a keypress would be a different read
+    against a window that has moved. So the screen says what it has and what
+    to do instead, rather than blaming the id.
     """
     from holt.tui import store
 
@@ -491,7 +522,7 @@ def test_a_stored_live_assessment_says_its_records_were_not_kept(tmp_path):
         await pilot.pause(0.4)
         text = screen_text(app)
         assert "not loaded" in text
-        assert "read GitHub live" in text
+        assert "stored before" in text
         assert "does not resolve" not in text
 
     drive(body, tmp_path, size=(110, 44))

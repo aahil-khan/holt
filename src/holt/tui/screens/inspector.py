@@ -6,9 +6,9 @@ it was drawn from, with its source, its timestamp and its url.
 
 Resolution goes through the evidence the session has. For a run that is the
 provider the run used, so what is shown is what Stage D saw. For an assessment
-reopened out of the store it is the source that run read, opened again — the
-committed fixture, which is the same bytes — and the screen says so under the
-record rather than passing a fresh read off as the run's own.
+reopened out of the store it is the records stored with it, which are the ones
+the run read, and the screen says under the record where it came from rather
+than leaving a reader to assume.
 
 There are three outcomes and they are three different sentences, because
 collapsing them would be a lie in at least one case:
@@ -16,8 +16,9 @@ collapsing them would be a lie in at least one case:
 * the record resolved, and is shown, labelled with where it was read from
 * the id does not resolve against the evidence, which is why a claim citing it
   would have been dropped
-* nothing could be looked up at all — a live run's records are not stored, or
-  the fixture is no longer on disk — and the screen says which, and what to do
+* nothing could be looked up at all — an assessment stored before records were
+  kept, or a fixture no longer on disk — and the screen says which, and what
+  to do
 """
 
 from __future__ import annotations

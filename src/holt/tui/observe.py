@@ -128,6 +128,18 @@ class ObservingProvider:
     def __getattr__(self, name: str) -> Any:
         return getattr(self._inner, name)
 
+    @property
+    def inner(self) -> Any:
+        """The provider being watched, for a read that must not be narrated.
+
+        One caller: `Session.evidence_for_storage`, which looks the report's own
+        ids up again after the run has finished so the records can be stored
+        with it. Those reads are not part of the run, and going through
+        `resolve` below would append them to the trace — a stage D that appears
+        to have resolved the same ids twice.
+        """
+        return self._inner
+
     def fetch(self, request: str, /, **params: object) -> list:
         if self._cancelled():
             raise RunCancelled(f"fetch {request}")

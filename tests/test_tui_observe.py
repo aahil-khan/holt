@@ -139,6 +139,39 @@ def test_a_clean_run_drops_nothing_and_still_reports_resolution():
     assert session.assessment.verdict.value == "viable"
 
 
+def test_a_stored_run_keeps_the_records_behind_its_claims():
+    """What makes a reopened report checkable, and what keeps it small.
+
+    Every id the report prints gets its record stored with it — read back out
+    of the provider the run is still holding, so a live run costs no second
+    crawl and the record stored is the one Stage D saw. Nothing else is kept:
+    the run read over a thousand records, and the interface can only ever look
+    up an id that is on the page.
+    """
+    session = Session(RunOptions(repo=CLEAN, replay=True))
+    session.start()
+    session.wait(120)
+    assert session.error is None, session.error
+
+    entry = session.to_entry()
+    cited = {c.evidence_id for c in session.assessment.claims}
+    assert cited, "a report with no ids would make this test vacuous"
+    assert {r.evidence_id for r in entry.evidence} == cited
+
+    read = [e for e in session.log if isinstance(e, events.EvidenceLoaded)][0].count
+    assert len(entry.evidence) < read
+
+    # Looking those ids up again is not part of the run, and must not appear in
+    # its trace as a stage D that resolved everything twice.
+    resolutions = len([e for e in session.log if isinstance(e, events.EvidenceResolved)])
+    session.to_entry()
+    session.drain()
+    assert (
+        len([e for e in session.log if isinstance(e, events.EvidenceResolved)])
+        == resolutions
+    )
+
+
 def test_describe_survives_an_event_it_has_never_seen():
     """Unknown events degrade to a line. Nothing in the UI may raise on one."""
 

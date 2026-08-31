@@ -35,6 +35,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from holt.evidence.fixtures import record_from_dict, record_to_dict
 from holt.report import Assessment, Claim, EntryPoint, Verdict
 from holt.tui import events as events_module
 
@@ -67,6 +68,11 @@ class Entry:
     #: produced it. Empty for an assessment stored before this was kept, which
     #: the trace view says rather than showing an empty screen.
     events: list[Any] = field(default_factory=list)
+    #: The records behind the ids this assessment cites, as the run saw them.
+    #: Not the whole crawl — see `Session.evidence_for_storage`. This is what
+    #: makes a reopened report checkable rather than something to take on
+    #: trust, including a live one, whose records exist nowhere else.
+    evidence: list[Any] = field(default_factory=list)
     path: Path | None = None
 
     @property
@@ -197,6 +203,35 @@ def event_from_dict(raw: dict[str, Any]) -> Any | None:
         return None
 
 
+# ─── the records behind the claims ──────────────────────────────────────────
+
+
+def record_or_none(raw: Any) -> Any | None:
+    """One evidence record read back, or `None` if the file cannot supply one.
+
+    Defensive for the same reason every other read here is: a report whose
+    stored records are damaged is still a report worth opening, and the
+    inspector already has a sentence for an id it cannot look up.
+    """
+    if not isinstance(raw, dict):
+        return None
+    try:
+        return record_from_dict(raw)
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def records_to_json(records: list[Any]) -> list[dict[str, Any]]:
+    """Records on their way to disk, skipping any that will not serialise."""
+    out = []
+    for record in records or []:
+        try:
+            out.append(_jsonable(record_to_dict(record)))
+        except (AttributeError, TypeError, ValueError):
+            continue
+    return out
+
+
 # ─── serialisation ──────────────────────────────────────────────────────────
 
 
@@ -214,6 +249,10 @@ def to_dict(entry: Entry) -> dict[str, Any]:
         # show the trace behind it: the stream is the only record of what was
         # dropped and why, and it used to die with the process.
         "events": [d for d in map(event_to_dict, entry.events) if d is not None],
+        # The records the claims point at, so the ids under a reopened report
+        # still resolve. A live run's records are on no disk anywhere else:
+        # without this, its own report is the one report that cannot be checked.
+        "evidence": records_to_json(entry.evidence),
         "assessment": {
             "repo": a.repo,
             "verdict": a.verdict.value,
@@ -306,6 +345,11 @@ def from_dict(raw: dict[str, Any], path: Path | None = None) -> Entry | None:
                 event
                 for event in map(event_from_dict, raw.get("events", []) or [])
                 if event is not None
+            ],
+            evidence=[
+                record
+                for record in map(record_or_none, raw.get("evidence", []) or [])
+                if record is not None
             ],
             path=path,
         )

@@ -634,3 +634,67 @@ asserts both that the offset moved and that the row under the cursor is on
 screen. Reverting the mixin fails it on `assert 0.0 > 0`.
 
 **Evidence.** `pytest -q -rs`: **383 passed**, no skips (was 382).
+
+---
+
+## Iteration 36 — the live report was the one report nobody could check (2026-08-31)
+
+**The report.** Assess a repository live, reopen it from the recent list, press
+enter on a claim. `not loaded`, and a sentence: *"This assessment read GitHub
+live, and a run's records are not stored alongside it. Re-run it — ctrl+r on the
+report — to read the record behind this id."*
+
+**Iteration 32 called that honest and left it.** It was honest. It was also the
+wrong call, and re-reading it makes the reason obvious: the argument was *the
+records do not need storing, because the source they were read from is still
+there* — true of a replay, whose source is a committed fixture, and false of the
+only mode that reads the real product. A live run's records exist in the process
+that fetched them and on no disk anywhere. So the mode a real user would run was
+the one mode whose claims could not be checked, and the answer offered was
+"spend another minute and some money to look at one thread".
+
+**The records are stored with the assessment now.** Not the crawl — the ids the
+report prints. `Session.evidence_for_storage` walks the assessment's claims and
+its reading-order rows and stores exactly the records behind them, which bounds
+the file by the report rather than by the repository: a real `home-assistant/core`
+run reads **1231** records and stores **14**, and the whole entry is **26 KB**.
+
+**They cost nothing to collect.** Both providers keep every record they fetched
+in memory — `LiveGitHubProvider._seen`, `FixtureProvider._loaded` — so the ids
+are looked up again out of the run's own provider once it has finished. No second
+crawl, no network, and the record stored is the record Stage D saw rather than a
+fresh read of a window that has since moved. The lookup deliberately goes around
+the observing wrapper (`ObservingProvider.inner`): these reads are not part of
+the run, and narrating them would put a stage D in the trace that appears to
+have resolved every id twice. A test asserts the resolution count does not move.
+
+**Credentials are stripped on the way out**, through the same `redact_records`
+that guards a committed fixture. This is evidence landing on disk and it does
+not matter that the directory is a local one.
+
+**The reading order needed a second source.** Its ids come from the issue
+provider, which `_rank` built locally and dropped. The session holds it now, for
+the same reason it holds the run's provider.
+
+**Provenance follows whichever source answered.** `StoredEvidence` prints
+`stored with this assessment, as the run read it`. A fixture-backed report keeps
+`ReopenedEvidence` behind it for an id the stored set happens not to cover, and
+the line changes to name the fixture when that is what produced the record —
+"the run held this" and "this was read off disk just now" are still different
+statements.
+
+**One sentence survives, and it is now about age rather than about live runs.**
+An assessment stored before this change has no records, and a live one's cannot
+be recovered: *"This assessment read GitHub live and was stored before holt kept
+the records behind its claims, which exist nowhere else."* Reopening an old
+report is a real case, so it keeps a real answer.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **388 passed**, no skips (was
+383). Five new tests. In the store, with no terminal: the records round-trip
+whole — id, payload, source and a timezone-aware timestamp — a damaged record is
+skipped rather than taking the entry down, and an entry written before the field
+existed still loads. In the observation layer, against a real replay: the entry
+holds a record for every id the report cites, fewer records than the run read,
+and storing it emits no new resolutions. On the screens: a reopened *live*
+assessment resolves a claim and says the record was stored with it, and an
+assessment stored before records were kept says that instead.
