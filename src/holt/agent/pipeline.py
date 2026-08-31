@@ -18,7 +18,7 @@ from holt.agent.verdict import contested_kind
 from holt.agent.verify import check_quotes, verify
 from holt.evidence.provider import EvidenceProvider
 from holt.model import ModelClient
-from holt.report import Assessment, Claim, Verdict
+from holt.report import VERDICT_HEADLINES, Assessment, Claim, Verdict
 
 MAX_CLAIM_CHARS = 240
 MAX_QUOTE_CHARS = 180
@@ -50,10 +50,12 @@ class Trace:
 def analyze(
     repo: str,
     provider: EvidenceProvider,
-    model: ModelClient,
+    model: ModelClient | None,
     contributor_days: int = 7,
     as_of: datetime | None = None,
 ) -> tuple[Assessment, Trace]:
+    if model is None:
+        return analyze_without_model(repo, provider, contributor_days, as_of)
     records = provider.fetch(repo)
     threads = build_threads(records)
     signals = compute(threads)
@@ -145,3 +147,98 @@ def analyze(
         invented=invented,
         rules=rules,
     )
+
+
+# --- degraded mode -----------------------------------------------------------
+#
+# The project measured its own model stages at +0.01 MCC over the arithmetic
+# (Iteration 22). A finding that large about your own architecture should change
+# the architecture, not just the write-up: if the rules decide the verdict, the
+# verdict must be obtainable without a model, and the reader must be told what
+# they lost. That is this function.
+#
+# It is not a second implementation of the verdict. It calls the same `decide`
+# on the same `Signals`, so the two modes cannot disagree about a repository
+# they both have findings for -- a test asserts exactly that over the pool.
+# What it does not do is write: Stages A, B, C and E never run, so there are no
+# thread quotes, no narration, and no `repo_kind`. That absence is the point of
+# `eval/evidence_integrity.py`'s yield column, and it is stated on the report
+# rather than left for the reader to notice.
+
+NO_MODEL_METHOD = (
+    "holt --no-model (deterministic verdict from arithmetic; "
+    "stages A, B, C and E did not run)"
+)
+
+
+def analyze_without_model(
+    repo: str,
+    provider: EvidenceProvider,
+    contributor_days: int = 7,
+    as_of: datetime | None = None,
+) -> tuple[Assessment, Trace]:
+    """The verdict, with no model call anywhere and the cost of that printed."""
+    records = provider.fetch(repo)
+    threads = build_threads(records)
+    signals = compute(threads)
+
+    findings = Findings()
+    # `is_archived` is a structured GitHub field. Stage A was asking a model to
+    # read a boolean the provider already had, which is the clearest single
+    # illustration of why the model stages measured +0.01: some of what they
+    # were doing did not need a model at all. Here it is taken from the record
+    # and cited to it.
+    meta = next((r for r in records if r.evidence_id.endswith(":meta")), None)
+    if meta is not None and meta.payload.get("is_archived"):
+        findings.add("is_archived", True, (meta.evidence_id,),
+                     "GitHub reports this repository as archived")
+
+    verdict, rules = decide(findings, signals, contributor_days)
+
+    s = signals.as_dict()
+    if signals.outsider_threads:
+        summary = (
+            f"{s['outsider_merged']} of {s['outsider_threads']} outsider pull "
+            f"requests merged, by {s['distinct_merged_authors']} distinct people "
+            f"out of {s['distinct_outsider_authors']} who tried"
+        )
+        if s["median_first_response_hours"] is not None:
+            summary += f"; median first response {s['median_first_response_hours']}h"
+        summary += (
+            f"; {s['outsider_ignored']} drew no response at all. "
+            "Counted from the pull request record, not judged."
+        )
+    else:
+        summary = (
+            "No outsider pull requests in the period read, so the arithmetic has "
+            "nothing to count."
+        )
+
+    return Assessment(
+        repo=repo,
+        verdict=verdict,
+        summary=summary,
+        bottom_line=f"{VERDICT_HEADLINES[verdict]}. " + (rules[0] if rules else ""),
+        limits=(
+            "No model ran. This report is the verdict and the rule that produced "
+            "it; the parts a model writes — what specific threads said, who was "
+            "welcoming, what kind of project this is, and the prose explaining "
+            "any of it — are absent, not merely brief. Measured: this mode scores "
+            "MCC +0.60 against the full pipeline's +0.61 in sample, but +0.55 "
+            "against +0.63 out of sample, and writes 0 citable statements against "
+            "its 11.8 (eval/evidence_integrity.py). Run without --no-model for a "
+            "report you can check against the record."
+        ),
+        rules=list(rules),
+        contributor_days=contributor_days,
+        as_of=as_of,
+        landing=landing.render(landing.compute(threads)),
+        claims=[
+            Claim(text=f"{i.field.replace('_', ' ')}: {i.value}", evidence_id=i.evidence_ids[0])
+            for i in findings
+        ],
+        method=NO_MODEL_METHOD,
+        replayed=False,
+        models=[],
+        dropped_claims=0,
+    ), Trace(signals=signals, rules=rules)

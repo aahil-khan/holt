@@ -94,13 +94,16 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     repo = normalise(args.repo)
     as_of = as_of_from(args)
     provider = make_provider(args.live, as_of)
-    client = model.build(repo, replay=args.replay)
+    # Not built at all under --no-model: the mode's whole claim is that it needs
+    # no key and spends nothing, and constructing a live client would demand one.
+    client = None if args.no_model else model.build(repo, replay=args.replay)
 
     if args.baseline:
         assessment = baseline.assess(repo, provider, client)
     else:
         assessment, trace = pipeline.analyze(
-            repo, provider, client, contributor_days=args.days, as_of=as_of
+            repo, provider, None if args.no_model else client,
+            contributor_days=args.days, as_of=as_of,
         )
         if args.show_verification:
             print(
@@ -118,7 +121,7 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     if not args.baseline and args.entry_points:
         add_entry_points(assessment, repo, provider, args)
     print(assessment.render())
-    if not args.replay:
+    if not args.replay and client is not None:
         u = client.usage
         print(
             f"<!-- {u.input_tokens} in / {u.output_tokens} out tokens, "
@@ -422,6 +425,13 @@ def main(argv: list[str] | None = None) -> int:
         help="append the prototype issue ranking. Off by default: it does not beat "
              "GitHub's `good first issue` label, and the reason is that it never sees "
              "who is asking. See `eval/PATHFINDER-DESIGN.md`",
+    )
+    analyze.add_argument(
+        "--no-model",
+        action="store_true",
+        help="decide with the rules alone: no API key, no spend, no model call. "
+             "MCC +0.60 against the pipeline's +0.61 in sample and +0.55 against "
+             "+0.63 out of sample; the report loses every citable statement",
     )
     analyze.add_argument(
         "--show-verification",

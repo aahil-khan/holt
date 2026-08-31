@@ -1606,6 +1606,64 @@ recordings already committed.
 
 ---
 
+## Iteration 28 — the ablation ships as a mode, and out of sample it costs more than we said (2026-08-31)
+
+**Tried.** `holt analyze <repo> --no-model`: the verdict from the rules alone.
+No API key, no spend, no model call anywhere. Stages A, B, C and E do not run;
+`verdict.py` decides on the same `Signals` from the same evidence.
+
+**Why.** Iteration 22 measured the model stages at **+0.01 MCC** over the
+arithmetic. A finding that large about your own architecture should change the
+architecture rather than only the write-up: if the rules are what decide, the
+verdict must be obtainable without a model, and the failure mode where the key
+is missing or the provider is down should be a documented mode instead of a
+crash. The ablation was already the interesting arm; this makes it a product.
+
+**`is_archived` never needed a model.** Stage A was asking a model to read a
+boolean the provider already had in `:meta`. In this mode it is taken from the
+record and cited to it. That single field is the clearest illustration of why
+the stages measured +0.01: part of what they were doing was not model work.
+
+**Evidence — and it corrects the claim we were about to ship.** The first
+version of the report text said this mode scores "within 0.01 MCC of the full
+pipeline", generalising the in-sample ablation. Measured against the same
+ground truth with the harness's own `truth` and `score`:
+
+| | pool 1 (n=22) | pool 2, out of sample (n=33) |
+|---|---|---|
+| Holt, full pipeline | **+0.61** | **+0.63** |
+| `--no-model` | +0.60 | +0.55 |
+| gap | −0.01 | **−0.08** |
+
+Specificity 0.63 against 0.75 in sample, 0.75 against 0.83 out of sample.
+
+**In sample the model stages are worth one point of MCC; out of sample they are
+worth eight.** The +0.01 figure was measured on pool 1 and does not survive the
+move to pool 2 — which is the direction pre-registration exists to catch, and
+this time it caught a claim of *ours* that flattered the rule layer rather than
+the model. Both numbers are printed in the mode's own "what could not be
+determined" section, so no reader gets the in-sample figure alone.
+
+**What the mode loses, which is the larger part.** Zero citable statements
+against the full pipeline's 11.8 per report (Iteration 30). No thread quotes, no
+`repo_kind`, no prose. The report says so in those words rather than presenting
+a thin page as a complete one.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **253 passed, 1 skipped** (the
+skip is the TUI extra, absent by design). 15 new tests: that no client is
+constructed, that the verdict is `classify` rather than a second implementation
+of it, that every surviving claim still resolves against the provider, and that
+the disclosure text contains the measured numbers — so the text cannot drift
+from the benchmark without a test failing.
+
+**Decision.** Ships. It is the honest form of the +0.01 finding: the mode exists
+*because* the rules carry the verdict, and it states what the model was worth on
+both pools instead of the friendlier one.
+
+**Cost: $0.** No model was called, which is the point.
+
+---
+
 ## The main failure mode
 
 **Nothing was watching whether a published claim was still true.**

@@ -88,8 +88,11 @@ which a chat transcript has:
   (specificity 0.58 → 0.83, out of sample).
 
 **What Holt is not is a better analyst.** We have measured four separate times
-that the model layer adds nothing over arithmetic, and we publish each one below.
-The value is in assembly, provability, determinism and refusal.
+that the model layer adds little or nothing over arithmetic *on the verdict*,
+and we publish each one below — with the correction that on pool 2 removing it
+entirely costs 8 points of MCC, not the 1 the in-sample ablation suggested. The
+value is in assembly, provability, determinism and refusal: on the report rather
+than the verdict, the arithmetic writes nothing at all.
 
 ---
 
@@ -412,6 +415,25 @@ on the report the ordering reverses and the rule layer scores zero, because
 arithmetic does not cite. This measurement should have existed before the +0.01
 result was published rather than after it.
 
+**The ablation ships as a mode, and out of sample it costs more than +0.01
+suggested.** `holt analyze <repo> --no-model` returns the verdict from the rules
+alone: no key, no spend, no model call. It is the +0.01 finding taken to its
+conclusion — if the rules decide, the verdict should be obtainable without a
+model. Measured against the same ground truth:
+
+| | pool 1 (n=22) | pool 2, out of sample (n=33) |
+|---|---|---|
+| full pipeline | +0.61 | +0.63 |
+| `--no-model` | +0.60 | +0.55 |
+| gap | −0.01 | **−0.08** |
+
+**In sample the model stages are worth one point of MCC; out of sample they are
+worth eight.** The +0.01 above is a pool 1 number and does not survive the move
+to pool 2. Both figures are printed in the mode's own report, so nobody gets the
+flattering one alone — and on the report axis the mode writes 0 citable
+statements against 11.8. The failure mode where a key is missing is now a
+documented mode rather than a crash.
+
 **And Path Finder, which we shipped losing.** Ranking issues by how likely an
 outsider is to land a merged fix scores precision@3 of 0.173 against GitHub's
 `good first issue` label at 0.187 over 25 repositories — indistinguishable, and
@@ -548,7 +570,7 @@ honest is that it is *severable*: `textual` is an optional extra
 (`pyproject.toml`), `holt tui` is the only entry point that imports it and does
 so lazily, and every reproduction command in `REPRODUCTION.md` runs after a
 plain `uv sync` on a machine that has never installed it. The test suite skips
-the TUI tests when the extra is absent and still runs 238 tests.
+the TUI tests when the extra is absent and still runs 253 tests.
 
 The number that decides whether the assessment is any good is the one below it:
 `agent/` + `evidence/` + `eval/` is 5,214 lines carrying every claim in the
