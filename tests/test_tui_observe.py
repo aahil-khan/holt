@@ -36,9 +36,10 @@ from holt.types import Window
 DROPS = "Sistema-de-certificacion-academica/Sistema-de-certificacion-academica"
 CLEAN = "home-assistant/core"
 
+from tests.replay_health import reason as _replay_reason
+
 pytestmark = pytest.mark.skipif(
-    not Path("fixtures/trajectories").is_dir(),
-    reason="recorded trajectories are not present in this checkout",
+    _replay_reason() is not None, reason=_replay_reason() or ""
 )
 
 
