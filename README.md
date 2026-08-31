@@ -35,9 +35,11 @@ product in one page. The rest of this file is the argument and the measurement.
 | [USAGE.md](USAGE.md) | **start here if you want to use it**: install, ask about a repository, read the answer |
 | [REPRODUCTION.md](REPRODUCTION.md) | every command, from a clean machine: tests, the headline result, both solutions, the pool draw, the labels |
 | [docs/COMMANDS.md](docs/COMMANDS.md) | what each command does, and what the report says that GitHub does not |
-| [docs/DESIGN.md](docs/DESIGN.md) | why this is a pipeline and not a prompt — and, measured, what that does *not* buy |
+| [trajectories/](trajectories/) | one run end to end for every agent: the instructions it was given, what its tools returned, what it concluded |
+| `src/holt/agent/stages.py` | those instructions in the source, one per stage — with `baseline.py`, `baseline_matched.py` and `agent/progression.py` for the other arms |
+| [docs/DESIGN.md](docs/DESIGN.md) | why this is a pipeline rather than a prompt, with the measurement behind each half of the split |
 | [docs/EVALUATION.md](docs/EVALUATION.md) | the holdout, the pool, the labels, the sensitivities, the limitations |
-| [CHANGELOG.md](CHANGELOG.md) | every iteration, including the experiments that were removed and the results that went against us — the whole story in one table at the top |
+| [CHANGELOG.md](CHANGELOG.md) | the **Improvement Changelog**: every iteration and the evidence that drove the next decision — the whole story in one table at the top |
 | [docs/CHANGELOG-FULL.md](docs/CHANGELOG-FULL.md) | the same log unabridged, with every evidence table as it was written on the day |
 | [docs/INTERFACE-LOG.md](docs/INTERFACE-LOG.md) | the terminal interface's design history |
 
@@ -56,9 +58,10 @@ contributor count and open issues.
 
 The only way to tell them apart today is to read twenty pull request threads per
 repository, at roughly fifteen minutes each. Nobody does that, so people pick by
-stars. **Stars are not useless** — on this pool the ten most-starred repositories
-are 80% viable against a 51% base rate, and we say so because we measured it.
-What stars cannot do is separate the registry, the mirror and the links list from
+stars — and stars answer a different question. On this pool the ten most-starred
+repositories are 80% viable against a 51% base rate, so popularity is a real if
+blunt signal, and we publish it as a scored diagnostic rather than a straw man.
+What it cannot do is separate the registry, the mirror and the links list from
 the software project, and that is exactly the population this tool exists for.
 On the trap repositories — 100+ inbound attempts, zero qualifying
 contributions — Holt rejects **4 of 5 in every run we have ever recorded**; the
@@ -71,6 +74,101 @@ Two closed pull requests are the same integer in every GitHub statistic:
 > "We're rewriting this module internally, closing."
 
 One says a newcomer can land work here. The other says don't bother.
+
+---
+
+## Result
+
+**Holt scores 0.61 and 0.63 Matthews correlation where the method it replaces
+scores 0.09 and 0.21** — and the second pool was drawn, labelled and held out
+*after* every rule was written.
+
+Measured over two pools drawn and hash-committed **before any method ran**,
+against ground truth computed only from evidence *after* a temporal holdout
+neither method could see. Three independent live runs per pool, frozen
+2026-08-31 on the shipped prompts and rules; every number below reproduces
+from the committed recordings with no key and no spend. The design behind it —
+holdout, sampling, labels — is in [docs/EVALUATION.md](docs/EVALUATION.md).
+
+**Pool 1** (30 repositories, 22 gradable):
+
+| Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
+|---|---|---|---|---|---|
+| always answer "viable" | 0.00 ±0.00 | 0.50 | **0.78** | 1.00 | 0.00 |
+| name-only probe (memorisation control) | 0.16 ±0.03 | 0.58 | 0.52 | 0.40 | 0.75 |
+| baseline solution (one prompt over README + metadata) | 0.09 ±0.09 | 0.55 | 0.63 | 0.60 | 0.50 ±0.12 |
+| **Holt** | **0.61 ±0.00** | **0.80 ±0.00** | 0.86 ±0.00 | 0.86 ±0.00 | 0.75 ±0.00 |
+
+**Pool 2** (45 repositories, 33 gradable — genuine out-of-sample replication):
+
+| Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
+|---|---|---|---|---|---|
+| name-only probe | 0.10 ±0.02 | 0.55 | 0.47 | 0.35 | 0.75 |
+| baseline solution | 0.21 ±0.02 | 0.61 | 0.60 | 0.49 | 0.72 ±0.04 |
+| evidence-matched ablation (same evidence, one prompt) | 0.32 ±0.07 | 0.65 | 0.78 | 0.83 | 0.47 ±0.04 |
+| **Holt** | **0.63 ±0.00** | **0.82 ±0.00** | 0.85 ±0.00 | 0.81 ±0.00 | **0.83 ±0.00** |
+
+Mean and half-range over the three runs. **Holt's half-range is ±0.00 because
+its verdicts were identical on all 55 repositories in all three runs** — the
+verdict is a plain function over verified evidence, so re-running it moves
+nothing. Per pool: identical verdicts on **22 of 22** pool-1 repositories, where
+the baseline — which puts the whole decision inside one model call — manages
+**17 of 22**.
+
+Matthews correlation is the headline because it is **0.00 for any constant
+strategy**. The constant rows are in the table on purpose: F1 was this project's
+original primary metric, and on a pool that is 64% positive, answering "viable"
+to everything scores **F1 0.78** — above our own baseline solution. We found
+that by scoring constant strategies against our own ground truth before shipping
+the metric, changed the headline to MCC, and left the floor visible so a reader
+does not have to take our word for it.
+
+**What the intervals measure.** ±0.00 is run-to-run stability, not sampling
+error, so we measured sampling error separately. Bootstrap resampling over
+repositories — 20,000 draws, pool 1 — puts the Holt−baseline difference at
+**+0.42 to +0.59** with `P(difference ≤ 0)` = 0.04–0.08 and a 95% interval that
+still touches zero; exact McNemar gives p = 0.15–0.23. At 22 repositories the
+gap is large and not yet formally separable, and both pools point the same way.
+`PYTHONPATH=. uv run python eval/stats.py` prints it.
+
+- **Trap rejection.** Repositories with 100+ inbound outsider attempts and zero
+  qualifying contributions: Holt rejects **4 of 5 in every run**, the baseline
+  between 0 and 3 depending on the run. An early Fisher exact p = 0.048 on this
+  comparison did not survive the frozen re-runs, so it is retired rather than
+  cited; the stable version is the one above. The trap Holt has never caught is
+  named in [docs/EVALUATION.md](docs/EVALUATION.md).
+- **Positive control.** A detector that answered "not viable" to everything
+  would reject every trap above and look excellent doing it. So three
+  repositories nobody would dispute — `home-assistant/core` (152 qualifying
+  contributions from 62 people after the cutoff), `rust-lang/rust` (66 from 44)
+  and `astral-sh/uv` (35 from 13) — are assessed as a declared, hand-picked
+  control, separate from the scored pool.
+
+| | Recovered |
+|---|---|
+| **Holt** | **3 / 3** |
+| baseline solution | 1 / 3 |
+
+The baseline calls `home-assistant/core` and `astral-sh/uv` *insufficient
+evidence*, because their READMEs do not advertise how contributable they are.
+That is the failure this project is about, in the positive direction.
+
+**Where the advantage comes from.** Earlier versions of this table showed Holt
+over-recommending: specificity 0.50, a coin flip on ordinary repositories. The
+pre-registered rubber-stamp rule — *contributions land easily and nobody
+reviews them* — was written against pool 1, predicted numerically, then tested
+once on pool 2: specificity moved to **0.75 in sample and 0.83 out of sample**
+at a cost of a few points of sensitivity (0.86/0.81 against 0.90 before),
+exactly the trade the pre-registration predicted. The ablation row shows what it
+is worth: given the identical evidence in one prompt, specificity is 0.47. The
+rule is the difference between flagging a registry and recommending it.
+
+**How robust the ground truth is.** L1 counts an outsider merge only if the diff
+is *substantive* and a human *reviewed* it. Both filters are ours, so we scored
+every variant of dropping them: Holt leads under all of them, narrowing to +0.11
+at its thinnest — dropping the diff-shape filter takes Holt from +0.61 to +0.39
+against a baseline that rises to +0.28. The full sensitivity table, and the
+limitations that go with it, are in [docs/EVALUATION.md](docs/EVALUATION.md).
 
 ---
 
@@ -118,115 +216,6 @@ which a chat transcript has:
   paragraph — and it is the one change that measurably improved accuracy
   (specificity 0.58 → 0.83, out of sample).
 
-**What Holt is not is a better analyst.** We have measured four separate times
-that the model layer adds little or nothing over arithmetic *on the verdict*,
-and [docs/DESIGN.md](docs/DESIGN.md) publishes each one — with the correction
-that on pool 2 removing it entirely costs 8 points of MCC, not the 1 the
-in-sample ablation suggested. The value is in assembly, provability, determinism
-and refusal: on the report rather than the verdict, the arithmetic writes
-nothing at all.
-
----
-
-## Result
-
-Measured over two pools drawn and hash-committed **before any method ran**,
-against ground truth computed only from evidence *after* a temporal holdout
-neither method could see. Three independent live runs per pool, frozen
-2026-08-31 on the shipped prompts and rules; every number below reproduces
-from the committed recordings with no key and no spend. The design behind it —
-holdout, sampling, labels — is in [docs/EVALUATION.md](docs/EVALUATION.md).
-
-**Pool 1** (30 repositories, 22 gradable):
-
-| Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
-|---|---|---|---|---|---|
-| always answer "viable" | 0.00 ±0.00 | 0.50 | **0.78** | 1.00 | 0.00 |
-| name-only probe (memorisation control) | 0.16 ±0.03 | 0.58 | 0.52 | 0.40 | 0.75 |
-| baseline solution (one prompt over README + metadata) | 0.09 ±0.09 | 0.55 | 0.63 | 0.60 | 0.50 ±0.12 |
-| **Holt** | **0.61 ±0.00** | **0.80 ±0.00** | 0.86 ±0.00 | 0.86 ±0.00 | 0.75 ±0.00 |
-
-**Pool 2** (45 repositories, 33 gradable — drawn, labelled and held out *after*
-every rule was written; genuine out-of-sample replication):
-
-| Method | MCC | Balanced acc. | F1 | Sensitivity | Specificity |
-|---|---|---|---|---|---|
-| name-only probe | 0.10 ±0.02 | 0.55 | 0.47 | 0.35 | 0.75 |
-| baseline solution | 0.21 ±0.02 | 0.61 | 0.60 | 0.49 | 0.72 ±0.04 |
-| evidence-matched ablation (same evidence, one prompt) | 0.32 ±0.07 | 0.65 | 0.78 | 0.83 | 0.47 ±0.04 |
-| **Holt** | **0.63 ±0.00** | **0.82 ±0.00** | 0.85 ±0.00 | 0.81 ±0.00 | **0.83 ±0.00** |
-
-Mean and half-range over the three runs. **Holt's half-range is ±0.00 because
-its verdicts were identical on all 55 repositories in all three runs** — the
-verdict is a plain function over verified evidence, so re-running it moves
-nothing. Per pool: identical verdicts on **22 of 22** pool-1 repositories, where
-the baseline — which puts the whole decision inside one model call — manages
-**17 of 22**.
-
-**Those intervals measure the wrong thing, and we are saying so.** ±0.00 is how
-much the model wobbles between runs; it is not how much a 22-repository sample
-can tell you. Measured over repositories instead — bootstrap resampling, 20,000
-draws, pool 1 — the Holt−baseline difference is **+0.42 to +0.59 with
-`P(difference ≤ 0)` = 0.04–0.08, and a 95% interval that still touches zero**.
-Exact McNemar gives p = 0.15–0.23. At this sample size the aggregate gap is
-large but not formally distinguishable, and we print that rather than round it
-up. Run `PYTHONPATH=. uv run python eval/stats.py` to see it.
-
-- **Trap rejection — including the part that got worse for us.** Repositories
-  with 100+ inbound outsider attempts and zero qualifying contributions: Holt
-  rejects **4 of 5 in every run** (it has never caught `hermes-agent`). When
-  this was first measured, the baseline rejected 0 of 5 (Fisher exact
-  p = 0.048); on the frozen re-runs the baseline rejected **2–3 of 5**, so that
-  significance claim did not survive re-measurement and we are retiring it
-  rather than citing the old number. What remains is the stable version: Holt
-  4/5 every time, a baseline that wanders between 0 and 3 depending on the day.
-- **Positive control.** Three verified-genuine repositories outside the pool:
-  Holt recovers 3 of 3, the baseline 1 of 3.
-
-**The constant answers are in that table on purpose.** F1 was this project's
-original primary metric, and on a pool that is 64% positive it is degenerate:
-answering "viable" to everything scores **F1 0.78**, beating our own baseline
-solution. We found that by attacking our own metric before shipping it, and the
-row stays in so a reader can see the floor rather than take our word for it.
-
-Matthews correlation is the honest headline, because it is **0.00 for any
-constant strategy**. Holt reaches 0.61 against the baseline's 0.09 in sample
-and **0.63 against 0.21 out of sample** — and the out-of-sample gap is the
-wider one, because pool 2 skews toward quieter repositories where a README
-tells you nothing.
-
-**Where the advantage is now.** Earlier versions of this table showed Holt
-over-recommending: specificity 0.50, a coin flip on ordinary repositories. The
-pre-registered rubber-stamp rule — *contributions land easily and nobody
-reviews them* — was written against pool 1, predicted numerically, then tested
-once on pool 2: specificity moved to **0.75 in sample and 0.83 out of sample**
-at a cost of a few points of sensitivity (0.86/0.81 against 0.90 before),
-exactly the trade the pre-registration predicted. The ablation row shows what
-it is worth: given the identical evidence in one prompt, specificity is 0.47.
-The rule is the difference between flagging a registry and recommending it.
-
-**Positive control.** A detector that answers "not viable" to everything would
-reject every trap in the table above and look excellent doing it. So three
-repositories nobody would dispute — `home-assistant/core` (152 qualifying
-contributions from 62 people after the cutoff), `rust-lang/rust` (66 from 44) and
-`astral-sh/uv` (35 from 13) — are assessed as a declared, hand-picked control,
-separate from the scored pool.
-
-| | Recovered |
-|---|---|
-| **Holt** | **3 / 3** |
-| baseline solution | 1 / 3 |
-
-The baseline calls `home-assistant/core` and `astral-sh/uv` *insufficient
-evidence*, because their READMEs do not advertise how contributable they are.
-That is the failure this project is about, in the positive direction.
-
-**What the result depends on.** Ground truth counts an outsider merge only if the
-diff is *substantive* and a human *reviewed* it. Both filters are ours, and
-dropping the diff-shape one narrows Holt's lead from +0.61 to +0.39 — against a
-baseline that rises to +0.28. The full sensitivity table, and the limitations
-that go with it, are in [docs/EVALUATION.md](docs/EVALUATION.md).
-
 ---
 
 ## How it works
@@ -257,11 +246,13 @@ on them:
 - **Verification can only subtract.** Stage D resolves every evidence id a
   finding cites and drops what does not resolve.
 
-[docs/DESIGN.md](docs/DESIGN.md) gives the four things the split buys, each with
-its measurement — and then, at the same length, what it does not: the +0.01 MCC
-the model stages add over arithmetic on the verdict, the 11.8 checkable
-statements per report they add where arithmetic writes 0, the ablation that
-ships as `--no-model`, and Path Finder, which shipped losing to GitHub's own
+Every prompt in the system is in the source and reproduced verbatim in
+[trajectories/](trajectories/), alongside what the tools returned and what each
+stage concluded. [docs/DESIGN.md](docs/DESIGN.md) gives the four things the split
+buys, each with its measurement — and, at the same length, what it does not:
+the +0.01 MCC the model stages add over arithmetic on the verdict, the 11.8
+checkable statements per report they add where arithmetic writes 0, the ablation
+that ships as `--no-model`, and Path Finder, which shipped losing to GitHub's own
 `good first issue` label.
 
 ## What you get out
@@ -301,35 +292,49 @@ projects by how welcoming their maintainers are, and none should be inferred.
 
 ## The main failure mode, and the hot take
 
-**The failure mode: nothing was watching whether a published claim was still
-true.** Every guard in this project points at the agent — the holdout is
-asserted on every record, Stage D drops a citation that does not resolve, replay
-refuses a recording whose prompt moved — and each is covered by a test. None of
-them guarded the prose. So a number stayed on this page after the run behind it
-was redone, and this repository stated its own verdict stability three different
-ways at once. Worse, `holt analyze <repo> --baseline --replay` — documented, and
-the competition's required baseline arm — failed from a clean clone on every
-repository, because baseline calls were recorded only where the harness looks
-and the benchmark therefore never noticed. The evaluation and the documented
-product path had drifted apart, and only the evaluation was tested.
-`tests/test_docs_claims.py` now recomputes the numbers on this page from the
-committed results and runs every command the guide prints.
+**The failure mode: every guard in this project pointed at the agent, and none
+of them watched the prose.** The holdout is asserted on every record, Stage D
+drops a citation that does not resolve, replay refuses a recording whose prompt
+moved — each covered by a test. Nothing covered the sentences we wrote *about*
+those results, so a number stayed on this page after the run behind it was
+redone, and this repository stated its own verdict stability three different ways
+at once. The sharpest version: `holt analyze <repo> --baseline --replay` —
+documented, and the competition's required baseline arm — failed from a clean
+clone on every repository, because baseline calls were recorded only where the
+harness looks, so the benchmark stayed green while the documented product path
+was broken. The evaluation and the shipped path had drifted apart and only the
+evaluation was tested.
 
-**The hot take: Holt is not a smarter analyst, and we measured that four separate
-times.** One prompt handed the same evidence matches the model stages almost
-exactly; ablating Stage A's kind rules costs +0.01 MCC. What separates this from
-a chat window is duller than intelligence and harder to fake — an evidence
-assembly nobody will do by hand (642 records and 253,000 characters per
-repository, 44× what a person can paste), and then three properties a
-conversation structurally cannot have: every claim carries an id that resolves,
-the verdict is a plain function that returned the identical answer on 55 of 55
-repositories while the baseline moved on 16, and it can say *no* in a rule the
-model cannot override — the single change that most improved accuracy
-(specificity 0.58 → 0.83 out of sample).
+That class of bug is now closed the same way everything else is:
+`tests/test_docs_claims.py` recomputes the numbers on this page from the
+committed results and runs every command either guide prints, so a stale claim
+fails the build instead of sitting on the page.
+
+**The hot take: the win here is not a smarter analyst, and we measured that four
+separate times.** One prompt handed the same evidence matches the model stages
+almost exactly; ablating Stage A's kind rules costs +0.01 MCC on the verdict.
+What separates this from a chat window is duller than intelligence and much
+harder to fake:
+
+- an evidence assembly nobody will do by hand — 642 records and 253,000
+  characters per repository, 44× what a person can paste, worth **+0.32 MCC** on
+  its own;
+- every claim carrying an id that resolves — **11.8** checkable statements per
+  report against 3.4 for the same evidence in one prompt;
+- a verdict that is a plain function, so it returned the identical answer on
+  **55 of 55** repositories while the baseline moved on 16;
+- and the ability to say *no* in a rule the model cannot override — specificity
+  0.58 → 0.83 out of sample, the single change that most improved accuracy.
+
+The model layer is not decorative either; it is doing a different job from the
+one we were scoring. It writes every checkable sentence in the report, where the
+rule layer scores zero — and out of sample, removing it costs 8 points of MCC,
+not the 1 the in-sample ablation suggested.
 
 **What we would build differently:** put the decision in code and the model in
-front of the evidence, not the other way round — then spend what that saves on
-the boring half, because an agent's guarantees are worth exactly as much as the
-tests on the claims you make about them.
+front of the evidence, not the other way round — then score the thing you
+actually ship, not just the part that fits in a confusion matrix. An agent's
+guarantees are worth exactly as much as the tests on the claims you make about
+them.
 
 The full story, iteration by iteration: [CHANGELOG.md](CHANGELOG.md).

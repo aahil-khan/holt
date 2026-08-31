@@ -6,6 +6,16 @@ Holt on a repository, [USAGE.md](USAGE.md) is the shorter page.**
 
 **The headline result needs no API key, no GitHub token, and no money.**
 
+**Working from the uploaded zip rather than a clone?** The zip omits
+`fixtures/post_t/` — 32 MB of label-side evidence — to fit the submission form's
+50 MB limit. Everything in sections 1 to 5 below works without it, including the
+headline result, because the harness scores against the committed
+`eval/results_labels*.json` and reads no post-cutoff fixture. Section 6
+(re-running the labels) and the ground-truth sensitivity table
+(`eval/sensitivity.py`, plus `eval/run_l0.py`, `eval/pathfinder_harness.py` and
+`eval/progression_harness.py`) recompute ground truth from those files and need
+the full clone: `git clone https://github.com/aahil-khan/holt`.
+
 ---
 
 ## What you need
@@ -37,7 +47,7 @@ uv sync
 uv run pytest -rs
 ```
 
-**Expected after a plain `uv sync`:** `287 passed`, `1 skipped`. The skip is the
+**Expected after a plain `uv sync`:** `289 passed`, `1 skipped`. The skip is the
 terminal-interface suite, and it is honest rather than incidental: `tui` is an
 optional extra precisely so that every reproduction command works on a machine
 that has never installed Textual. To run the interface tests too:
@@ -47,7 +57,7 @@ uv sync --extra tui
 uv run pytest -rs
 ```
 
-**Expected:** `375 passed`, no skips. **Runtime:** about two minutes either way.
+**Expected:** `377 passed`, no skips. **Runtime:** about two minutes either way.
 
 The `-rs` flag reports skipped tests explicitly — a skipped test is not a
 passing one, which is why the count above says which one it is.
@@ -178,6 +188,9 @@ the same 30 repositories that are in `eval/pool.json`, whose sha256 is recorded
 inside the file. `is-a-dev/register` appears because the seed put it there.
 
 ## 6. Re-run the labels
+
+**Needs the full clone**, not the zip: this is the one section that reads
+`fixtures/post_t/`.
 
 ```sh
 PYTHONPATH=. uv run python eval/run_labels.py

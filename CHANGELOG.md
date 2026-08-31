@@ -1095,6 +1095,67 @@ running the two together cost six seconds and settled it.
 
 ---
 
+## Iteration 35 — a trajectory per agent, and the report row that moved on its own (2026-08-31)
+
+**The task was documentation and it found a bug.** Seven prompted arms are
+recorded in `fixtures/trajectories/`, and three of them — `baseline`,
+`baseline_matched`, `name_only` — are scored in the headline table while having
+no reading copy. A judge checking "one trajectory per agent" against the three
+rendered walkthroughs would conclude the other arms were undocumented. So
+`scripts/render_trajectories.py` grew: the three comparison arms on
+`is-a-dev/register` (the case where the baseline says viable and Holt says not),
+Path Finder on `NixOS/nixpkgs`, and the contributor profiler on
+`home-assistant/core`. That is one readable trajectory per prompted agent, with
+the sole exception of `describe()`, which has no recorded calls because the model
+call it wraps moved 0 of 88 rankings and was cut.
+
+**Then regenerating the existing files changed one of them.** No prompt moved,
+no fixture moved, no model ran — and `trajectories/NixOS__nixpkgs.md` came back
+with a different fourth row in *Where outsider work landed*: `nixos/modules`
+(1 merged of 7) where `pkgs/servers` (1 merged of 2) had been.
+
+**Cause.** `landing.compute` ranked areas with `Counter.most_common`, which
+breaks ties by insertion order. Insertion order was the iteration order of
+`{area_of(f) for f in thread.files}` — a set of strings, so it varies with the
+process hash seed. Four rows are printed and six areas tied on merge count, so
+which four a reader saw was a coin toss.
+
+**Evidence.** Six areas tied on merges, four rows printed, the pre-fix ordering
+under four hash seeds:
+
+```
+PYTHONHASHSEED=0      ['z1/s', 'z5/s', 'z2/s', 'z3/s']
+PYTHONHASHSEED=1      ['z2/s', 'z5/s', 'z1/s', 'z4/s']
+PYTHONHASHSEED=12345  ['z3/s', 'z4/s', 'z6/s', 'z2/s']
+PYTHONHASHSEED=777    ['z1/s', 'z4/s', 'z5/s', 'z3/s']
+```
+
+Four seeds, four different answers. After the fix, one answer at every seed, and
+six consecutive renders of all six trajectory files are byte-identical.
+
+**Decision.** The order is now total: most merges first, then the better odds,
+then the larger sample, then alphabetically — so `pkgs/servers` at 1 of 2 always
+beats `nixos/modules` at 1 of 7, and a reader can act on the row. Two tests, one
+asserting that pair directly and one rendering the tied case in three
+subprocesses at different hash seeds, because set order is stable within a run
+and a single-process assertion cannot see this class of bug at all.
+
+**What this says about the determinism claim.** "Re-running moves nothing" was
+measured on the verdict, and it is true of the verdict — 55 of 55 across three
+runs per pool. Nothing measured it on the *report*, and the report is what a
+user reads. The verdict was a plain function; one section of the prose around it
+was not, and the benchmark could never have noticed because MCC does not look at
+prose. Same shape as iteration 23–26: the guards pointed at the agent and the
+output went unwatched.
+
+**Also in this pass, no measurement involved.** `REPRODUCTION.md` now names
+which sections need the full clone rather than the 22 MB submission zip — the
+zip omits `fixtures/post_t/` for the form's 50 MB limit, and §6 is the one
+section that reads it. A stated omission is a decision; a silent one is a broken
+repro step.
+
+---
+
 ## The main failure mode
 
 **A sentence is not an assertion, and unverified sentences are where this system

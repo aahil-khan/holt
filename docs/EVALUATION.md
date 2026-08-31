@@ -64,14 +64,16 @@ thinnest. Mean MCC over the three frozen runs:
 | drop the `substantive` filter | 16/22 | **+0.39** | +0.28 |
 | drop both (≈ the naive L0) | 18/22 | **+0.38** | +0.22 |
 
-**Remove the diff-shape filter and the baseline wins.** Holt's advantage exists
-only against a ground truth that counts *what a merged contribution changed*.
+**The lead survives every variant, and the diff-shape filter is where most of
+it lives.** Drop that filter and Holt still leads, +0.39 against +0.28, but the
+margin is a third of what it was: most of Holt's advantage is against a ground
+truth that counts *what a merged contribution changed*.
 
 We think that is the right definition, and it is the first claim this project
 makes rather than one introduced afterwards: a merged pull request that appends a
 line to a JSON manifest is not a software contribution. A reader who rejects that
-premise should reject the project, not just the number. But the dependency is
-real, it is not hidden, and it is one filter deep.
+premise should reject the project, not just the number. The dependency is real,
+it is not hidden, and it is one filter deep.
 
 The honest tension: Stage A's prompt tells the model to judge a repository by
 what its merged diffs touch, which is the same concept the `substantive` filter
@@ -96,10 +98,10 @@ after the fact.
 
 - **22 of 30 repositories graded** in pool 1. Three were deleted between the
   cutoff and the run; five had no post-cutoff outsider attempts to grade against.
-- **Three runs per pool, and the intervals measure the wrong thing.** The ±0.00
-  half-ranges are run-to-run wobble, not what a 22-repository sample can tell
-  you. Measured over repositories instead, the Holt−baseline gap is large but
-  not formally distinguishable — see the Result section of the README.
+- **Three runs per pool, so the ±0.00 half-ranges measure run-to-run stability
+  rather than sampling error.** Sampling error is measured separately, over
+  repositories: the Holt−baseline gap is large but not yet formally
+  distinguishable at n=22 — see the Result section of the README.
 - **The memorisation probe reaches 0.71 precision knowing only repository
   names.** Some of every method's score here is recognition rather than reading.
   Its recall is 0.36, which bounds how much.
