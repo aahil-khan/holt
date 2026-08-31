@@ -398,4 +398,68 @@ ConfirmScreen {{
 #confirm-question {{ color: {DIM}; }}
 #confirm-detail {{ color: {FAINT}; padding: 1 0 0 0; }}
 #confirm-keys {{ color: {FAINT}; padding: 1 0 0 0; }}
+
+/* The command palette.
+ *
+ * Textual's own styling is a full-width panel between two heavy `hkey` bars,
+ * with a magnifying-glass emoji floating above its input. Everything else in
+ * holt is a narrow column between hairlines, so the palette is brought into
+ * line: same width discipline, same rules, no box.
+ *
+ * A box is not available anyway. The results list is `overlay: screen`, so it
+ * escapes any border drawn on the container and the frame would close above
+ * the commands it is meant to contain. Hairlines above and below each part
+ * read as one surface without needing to enclose anything. */
+CommandPalette > Vertical {{
+    margin-top: 4;
+    width: 76;
+    height: auto;
+    /* Textual hides the container and shows only its children, so the panel
+       has no background of its own and home reads through the gaps. */
+    visibility: visible;
+    background: $surface;
+}}
+CommandPalette #--input {{
+    height: auto;
+    border: none;
+    border-top: solid {RULE};
+    border-bottom: solid {RULE};
+    background: $surface;
+}}
+CommandPalette #--input.--list-visible {{
+    border-bottom: solid {RULE};
+}}
+/* The emoji. It sits on its own line, out of line with the text it labels,
+   and the placeholder already says what the box is for. */
+CommandPalette SearchIcon {{
+    display: none;
+}}
+CommandPalette #--results {{
+    background: $surface;
+}}
+CommandPalette CommandList {{
+    background: $surface;
+    border: none;
+    border-bottom: solid {RULE};
+    padding: 0 1;
+    max-height: 22;
+}}
+/* The selection has to be visible while the *input* holds focus, which is the
+   whole time the palette is open. Textual falls back to its blurred cursor
+   tokens there, and blurred on this surface is no cursor at all — up and down
+   moved something invisible. The focused tokens are used instead: they are the
+   theme's own, so this stays right on a light terminal as well as a dark one. */
+CommandPalette CommandList > .option-list--option-highlighted {{
+    color: $block-cursor-foreground;
+    background: $block-cursor-background;
+    text-style: $block-cursor-text-style;
+}}
+CommandPalette > .command-palette--help-text {{
+    color: {FAINT};
+    text-style: none;
+}}
+CommandPalette > .command-palette--highlight {{
+    color: {RAIL};
+    text-style: bold;
+}}
 """

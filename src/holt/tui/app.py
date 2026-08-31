@@ -25,6 +25,7 @@ from textual.app import App
 
 from holt.cli import normalise
 from holt.tui import mascot, store, theme
+from holt.tui.commands import HoltCommands
 from holt.tui.screens import REGISTRY
 from holt.tui.screens.assessment import AssessmentScreen
 from holt.tui.screens.confirm import ConfirmScreen
@@ -42,6 +43,11 @@ class HoltApp(App):
     CSS = theme.CSS
     SCREENS = REGISTRY
     TITLE = "holt"
+
+    #: One provider, not a union with `App.COMMANDS`. It yields holt's commands
+    #: and then the framework's, so the order is written down rather than
+    #: decided by set iteration and a race between concurrent providers.
+    COMMANDS = {HoltCommands}
 
     BINDINGS = [
         ("ctrl+c", "quit", "quit"),

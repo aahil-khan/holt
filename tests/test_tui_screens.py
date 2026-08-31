@@ -971,3 +971,164 @@ def test_a_stopped_run_reads_as_stopped_and_not_as_a_failure(tmp_path):
         assert app.store.all() == [], "a partial run must not be stored"
 
     drive(body, tmp_path)
+
+
+# ─── the command palette ────────────────────────────────────────────────────
+
+
+async def palette_commands(app) -> list[tuple[str, str]]:
+    """Every command the palette would offer right now, in order."""
+    from holt.tui.commands import HoltCommands
+
+    provider = HoltCommands(app.screen)
+    return [(name, help_text) for name, help_text, _ in provider._commands()]
+
+
+def test_the_palette_leads_with_holt_and_keeps_the_framework(tmp_path):
+    """holt's own commands first, then Textual's, in a written order.
+
+    `App.COMMANDS` is a set and providers are searched concurrently, so two
+    providers interleave differently between launches. One provider yielding in
+    order is what makes this assertable at all.
+    """
+
+    async def body(app, pilot):
+        names = [name for name, _ in await palette_commands(app)]
+
+        assert "assess a repository" in names
+        assert "find a repository" in names
+        assert "models" in names
+        assert "profile" in names
+
+        # The framework's are kept, and come after.
+        assert "Theme" in names, "the built-in commands were dropped"
+        assert names.index("assess a repository") < names.index("Theme")
+
+    drive(body, tmp_path)
+
+
+def test_the_palette_offers_what_is_true_right_now(tmp_path):
+    """Runs in flight and stored assessments are commands while they exist."""
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo="vercel/next.js", age=120))
+
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await app.screen.refresh_entries()
+        await pilot.pause(0.2)
+
+        names = [name for name, _ in await palette_commands(app)]
+        assert f"watch {CLEAN}" in names
+        assert f"stop {CLEAN}" in names
+        assert "open vercel/next.js" in names
+        # Live things first: they are the only ones that stop being true.
+        assert names.index(f"stop {CLEAN}") < names.index("open vercel/next.js")
+
+        # And once the run is over, it stops being offered as one you can stop.
+        session._queue.put(
+            _run_finished(fake_run.assessment(CLEAN)),
+        )
+        await pilot.pause(0.4)
+        after = [name for name, _ in await palette_commands(app)]
+        assert f"stop {CLEAN}" not in after
+        assert f"open {CLEAN}" in after
+
+    drive(body, tmp_path)
+
+
+def _run_finished(assessment):
+    from holt.tui import events as _events
+
+    return _events.RunFinished(assessment=assessment, trace=None)
+
+
+def test_the_palette_opens_and_is_styled_as_one_surface(tmp_path):
+    """Opened, it shows holt's commands and none of Textual's default chrome."""
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+p")
+        await pilot.pause(0.6)
+
+        assert app.screen.__class__.__name__ == "CommandPalette"
+        text = screen_text(app)
+        assert "assess a repository" in text
+        # The emoji sat on its own line, out of line with the input it labelled.
+        assert "🔎" not in text
+        # The heavy full-width bars Textual frames the input with.
+        assert "▔" not in text and "▁" not in text
+
+    drive(body, tmp_path)
+
+
+def highlighted_rows(app) -> list[tuple[int, str]]:
+    """Rows in the command list carrying the cursor, by rendered background.
+
+    Read off the composited output rather than off the widget's index, because
+    the defect being pinned is precisely that an index moved while nothing on
+    screen changed. Only rows below the search box are considered: the input
+    has a background of its own and is not a candidate.
+    """
+
+    def background(segment):
+        style = segment.style
+        rich = getattr(style, "rich_style", style)
+        return str(getattr(rich, "bgcolor", None))
+
+    strips = list(app.screen._compositor.render_strips())
+    rendered = ["".join(seg.text for seg in strip) for strip in strips]
+    box = next(
+        (i for i, text in enumerate(rendered) if "Search for commands" in text), None
+    )
+    if box is None:
+        return []
+
+    listed = range(box + 2, len(strips))
+    weight: dict[str, int] = {}
+    for index in listed:
+        for segment in strips[index]:
+            if segment.text.strip():
+                key = background(segment)
+                weight[key] = weight.get(key, 0) + len(segment.text)
+    if not weight:
+        return []
+    surface = max(weight, key=weight.get)
+
+    rows: list[tuple[int, str]] = []
+    for index in listed:
+        for segment in strips[index]:
+            if segment.text.strip() and background(segment) != surface:
+                rows.append((index, rendered[index].strip()))
+                break
+    return rows
+
+
+def test_the_palette_cursor_is_visible_and_moves(tmp_path):
+    """Up and down have to move something a person can see.
+
+    Textual falls back to its *blurred* cursor colours here, because the input
+    keeps focus the whole time the palette is open, and blurred on this surface
+    is indistinguishable from no cursor at all.
+    """
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+p")
+        await pilot.pause(0.6)
+
+        first = highlighted_rows(app)
+        assert first, "no option is visibly highlighted when the palette opens"
+        assert "assess a repository" in first[0][1]
+
+        await pilot.press("down")
+        await pilot.pause(0.3)
+        second = highlighted_rows(app)
+        assert second, "the cursor disappeared instead of moving"
+        assert second[0][0] > first[0][0], "the cursor did not move down"
+
+        await pilot.press("up")
+        await pilot.pause(0.3)
+        back = highlighted_rows(app)
+        assert back and back[0][0] == first[0][0], "up did not come back"
+
+    drive(body, tmp_path)
