@@ -1538,8 +1538,73 @@ repository being *called* a catalogue when its merges are plainly not one; it
 cannot save a repository whose merges look like a catalogue's. And `portfolio`
 and `course_material` are deliberately never contested this way — their reason
 is whose project it is, which no file list can refute.
+
 ---
 
+## Iteration 27 — measuring the model layer on the axis where the arithmetic scores zero (2026-08-31)
+
+**Tried.** Point `eval/evidence_integrity.py` at the frozen benchmark runs
+instead of the unversioned recording root, and add a third measure — **yield**,
+the number of *checkable* statements a report makes per repository, where
+checkable means the cited id resolves and, if words are attributed to somebody,
+they said them.
+
+**Why.** Every headline number in this project is MCC on a three-valued verdict.
+`verdict.py` decides that with arithmetic, which is why Iteration 22 measured
+the model stages at **+0.01** over the rule layer, and why an assessor reading
+only the verdict metrics concludes the model layer is decorative. That
+conclusion follows from what was measured, not from what the thing does. The
+deliverable is an evidence-backed written assessment, and no arithmetic has ever
+produced one. The verdict axis was the only axis being scored.
+
+**A defect found in a graded deliverable while doing it.** The file read
+`fixtures/trajectories/` — the unversioned root, which holds **no
+`baseline_matched` calls at all**. The ablation row printed `-` under citations,
+which reads as *the ablation cites nothing* and in fact meant *the ablation was
+never recorded here*. The comparison the table appeared to make had never been
+run. Both pools and both methods now come from the six frozen runs where both
+were recorded, reported mean ± half-range across runs for the same reason the
+MCC table is: a single-run integrity number hides model drift.
+
+**Evidence** (`PYTHONPATH=. uv run python eval/evidence_integrity.py`, replay,
+$0):
+
+| | reports | resolve | faithful | checkable/report |
+|---|---|---|---|---|
+| **pool 1** (run1–3) | | | | |
+| holt | 22 | 100% | 99% ±0 | **12 ±0** |
+| same-evidence ablation | 22 | 100% | no quotes | 4 ±0 |
+| **pool 2, out of sample** (p2r1–3) | | | | |
+| holt | 33 | 100% | 99% ±0 | **12 ±0** |
+| same-evidence ablation | 33 | 100% | no quotes | 3 ±0 |
+
+Both pools, all six runs: **1,950 statements, 1,941 checkable (100%)** against
+the ablation's **832 statements, 559 checkable (67%)** — **11.8 checkable
+statements per report against 3.4**, on identical evidence.
+
+**The correction the count forced, which a rate would have hidden.** The
+ablation is *not* careless about the ids it uses: every pull-request reference
+it makes resolves, 100%. Its failure is not making one — **273 of its 832
+statements, 33%, cite nothing a reader could open**. A resolution rate cannot
+show that, because a method that cites once and correctly scores 100% on it.
+Yield is a count, so writing nothing scores zero. That is the whole reason it
+was added, and the first thing it caught was our own reading of the ablation.
+
+**What this does and does not claim.** It does **not** rehabilitate +0.01. The
+model stages still contribute +0.01 MCC to the verdict, the rule layer still
+supplies the entire accuracy lead, and every sentence saying so stands. What is
+now measured is that the verdict was never the whole deliverable: on the report
+itself the ordering is reversed, and the rule layer scores **zero**, because
+arithmetic does not cite. Two axes, two different winners, both published.
+
+**Decision.** Kept. This is the measurement that should have existed before the
++0.01 result was published, not after — the finding was reported honestly on the
+only axis that had a metric, and the missing axis was the one the model owns.
+
+**Cost: $0 and about ninety minutes.** No spend: every number replays from
+recordings already committed.
+
+---
 
 ## The main failure mode
 

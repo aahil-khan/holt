@@ -97,7 +97,14 @@ README's headline figures are means over the three runs per pool:
 PYTHONPATH=. uv run python eval/aggregate.py             # pool 1, runs 1-3
 PYTHONPATH=. uv run python eval/aggregate.py --pool 2    # pool 2, out of sample
 PYTHONPATH=. uv run python eval/stats.py        # uncertainty over repositories
+PYTHONPATH=. uv run python eval/evidence_integrity.py   # citations and yield
 ```
+
+`evidence_integrity.py` scores the *report* rather than the verdict: whether
+cited ids resolve, whether quoted words are in the record, and how many
+checkable statements a report makes. It reads the same six frozen runs. This is
+the axis on which the verdict layer scores zero, and it is reported because MCC
+cannot see it.
 
 The `spend` figure is what the recorded run cost when it was made; replaying it
 costs nothing.

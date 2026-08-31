@@ -384,6 +384,34 @@ unread. The stages still buy what a rule cannot: the evidence a claim cites,
 the prose a person reads, and `repo_kind` for the reports where naming the
 category matters.
 
+**That last sentence used to have no number behind it. It does now.** MCC scores
+the verdict, and the verdict is a three-valued label that `verdict.py` decides
+with arithmetic — so the model stages were being measured only on the one task
+they do not do. The deliverable is a written assessment, and no arithmetic has
+produced one. Measuring *the report* instead
+(`PYTHONPATH=. uv run python eval/evidence_integrity.py`, replay, $0, six frozen
+runs):
+
+| | resolve | faithful | checkable statements per report |
+|---|---|---|---|
+| **Holt** | 100% | 99% | **11.8** |
+| same-evidence ablation, one prompt | 100% | no quotes | 3.4 |
+| the verdict layer alone | — | — | **0** |
+
+A statement is *checkable* when its cited id resolves and, where words are
+attributed to somebody, they said them. Over 1,950 statements Holt's are
+checkable 100% of the time; the ablation writes 832 and **273 of them — 33% —
+cite nothing a reader could open**. Note the shape of that failure: the ablation
+is not careless with the ids it uses, since every reference it makes resolves.
+It simply does not make one. A resolution *rate* cannot show that — a method
+citing once, correctly, scores 100% — which is why the headline is a count.
+
+So the two axes have two different winners, and both are published: on the
+verdict the rule layer supplies the entire lead and the model stages add +0.01;
+on the report the ordering reverses and the rule layer scores zero, because
+arithmetic does not cite. This measurement should have existed before the +0.01
+result was published rather than after it.
+
 **And Path Finder, which we shipped losing.** Ranking issues by how likely an
 outsider is to land a merged fix scores precision@3 of 0.173 against GitHub's
 `good first issue` label at 0.187 over 25 repositories — indistinguishable, and
@@ -498,6 +526,35 @@ A documented non-use is a judgement, not an omission.
   Measuring them showed they are inverted — see the changelog.
 
 ---
+
+## Where the code is, and why that split
+
+Counted rather than left for a reader to count, because the largest number here
+is the one that looks worst:
+
+| | lines | share of `src/holt` |
+|---|---|---|
+| `tui/` — the terminal interface | 6,181 | 56% |
+| core — `cli`, `model`, `report`, `discover`, baselines | 2,069 | 19% |
+| `agent/` — the five stages, signals, verify, verdict | 1,954 | 18% |
+| `evidence/` — the provider and its GraphQL client | 851 | 8% |
+| **`src/holt` total** | **11,055** | |
+| `tests/` | 4,696 | |
+| `eval/` — harnesses, labels, baselines, statistics | 2,409 | |
+
+**The interface is the biggest single component and it is not the product.**
+That is a real imbalance and it is stated rather than hidden. What keeps it
+honest is that it is *severable*: `textual` is an optional extra
+(`pyproject.toml`), `holt tui` is the only entry point that imports it and does
+so lazily, and every reproduction command in `REPRODUCTION.md` runs after a
+plain `uv sync` on a machine that has never installed it. The test suite skips
+the TUI tests when the extra is absent and still runs 238 tests.
+
+The number that decides whether the assessment is any good is the one below it:
+`agent/` + `evidence/` + `eval/` is 5,214 lines carrying every claim in the
+Result section, against 4,696 lines of tests. If you are reading this to judge
+the engineering, that is the ratio to judge, and the 6,181 lines of Textual are
+a frontend you can uninstall without changing a single number in this document.
 
 ## Known limitations
 
