@@ -1,4 +1,4 @@
-"""holt — is this repository worth an outside contributor's week?"""
+"""holt — is this repository worth your time?"""
 
 from __future__ import annotations
 

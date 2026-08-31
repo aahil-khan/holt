@@ -110,7 +110,7 @@ def pick_accent() -> str:
 
 #: From `holt.cli`'s own docstring. The tool's description of itself, not a
 #: second one written for the interface.
-TAGLINE = "is this repository worth an outside contributor's week?"
+TAGLINE = "is this repository worth your time?"
 
 #: The three things worth knowing before you type anything. Facts about how it
 #: behaves, not a feature list.
