@@ -16,13 +16,13 @@ from __future__ import annotations
 
 import os
 from collections.abc import Iterable, Iterator
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
 
 import httpx
 
 from holt.evidence.provider import EvidenceProvider
-from holt.types import T_CUTOFF, EvidenceRecord, Window
+from holt.types import EvidenceRecord, Window
 
 API = "https://api.github.com/graphql"
 
@@ -449,16 +449,24 @@ def project_issues(repo_slug: str, nodes: Iterable[dict[str, Any]]) -> Iterator[
 
 
 class LiveGitHubProvider(EvidenceProvider):
-    """Crawls GitHub, then hands every record to the base-class window check."""
+    """Crawls GitHub, then hands every record to the base-class window check.
+
+    The default cutoff is **now**, not the benchmark's T. T = 2026-06-01 is an
+    evaluation device; a live reader wants everything up to today, and a caller
+    that inherited T by default reported an active repository created in July as
+    having no history at all. The evaluation and the fixture capture pass their
+    cutoff explicitly, which is the correct place for that decision to be
+    visible.
+    """
 
     def __init__(
         self,
         window: Window,
-        cutoff: datetime = T_CUTOFF,
+        cutoff: datetime | None = None,
         transport: GitHubGraphQL | None = None,
         max_pages: int = 8,
     ) -> None:
-        super().__init__(window, cutoff)
+        super().__init__(window, cutoff or datetime.now(UTC))
         self.transport = transport or GitHubGraphQL()
         self.max_pages = max_pages
         self._seen: dict[str, EvidenceRecord] = {}
@@ -505,11 +513,12 @@ class LiveGitHubIssueProvider(EvidenceProvider):
     def __init__(
         self,
         window: Window,
-        cutoff: datetime = T_CUTOFF,
+        cutoff: datetime | None = None,
         transport: GitHubGraphQL | None = None,
         max_pages: int = 6,
     ) -> None:
-        super().__init__(window, cutoff)
+        # Same default as LiveGitHubProvider, for the same reason: live means now.
+        super().__init__(window, cutoff or datetime.now(UTC))
         self.transport = transport or GitHubGraphQL()
         self.max_pages = max_pages
         self._seen: dict[str, EvidenceRecord] = {}

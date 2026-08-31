@@ -88,3 +88,23 @@ def test_naive_timestamps_are_rejected_at_construction():
     """A naive datetime cannot be compared against the boundary, so it never enters."""
     with pytest.raises(ValueError, match="timezone-aware"):
         EvidenceRecord("pr:1", "github", "https://x", datetime(2026, 1, 1), {})
+
+
+def test_live_provider_defaults_to_now_not_the_benchmark_cutoff():
+    """T = 2026-06-01 is an evaluation device, not a product setting.
+
+    A live provider constructed without an explicit cutoff must read up to now:
+    the old default of T silently reported any repository created after June as
+    having no history at all, live token in hand. The evaluation capture passes
+    T explicitly, which is where that decision belongs.
+    """
+    from datetime import UTC
+
+    from holt.evidence.github_graphql import LiveGitHubIssueProvider, LiveGitHubProvider
+    from holt.types import T_CUTOFF
+
+    dummy_transport = object()
+    for cls in (LiveGitHubProvider, LiveGitHubIssueProvider):
+        provider = cls(Window.PRE_T, transport=dummy_transport)
+        assert provider.cutoff > T_CUTOFF
+        assert (datetime.now(UTC) - provider.cutoff).total_seconds() < 60

@@ -17,7 +17,7 @@ from pathlib import Path
 
 from holt.evidence.fixtures import FIXTURE_ROOT, write_fixture
 from holt.evidence.github_graphql import GitHubGraphQL, LiveGitHubProvider
-from holt.types import Window
+from holt.types import T_CUTOFF, Window
 
 POOL = Path(os.environ.get("HOLT_POOL", "eval/pool.json"))
 # Asymmetric on purpose. Pre-T is what the agent reads, and it will never read
@@ -40,7 +40,12 @@ def main() -> None:
                 print(f"[{i}/{len(repos)}] {slug} {window.value}: already captured", flush=True)
                 continue
             try:
-                provider = LiveGitHubProvider(window, transport=transport, max_pages=PAGES[window])
+                # The one caller that genuinely wants the benchmark cutoff, and
+                # says so. The live default is "now" — an evaluation capture
+                # inheriting that silently would poison the holdout.
+                provider = LiveGitHubProvider(
+                    window, cutoff=T_CUTOFF, transport=transport, max_pages=PAGES[window]
+                )
                 records = provider.fetch(slug)
                 write_fixture(slug, window, records)
                 print(

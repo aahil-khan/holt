@@ -1210,3 +1210,36 @@ threads already crawled, candidates from the issue fixtures already captured;
 `--live` works the same way. A contributor with no merged work here is refused
 with a pointer to `holt analyze` — ranking for a stranger is the contributor-
 blind Path Finder, which loses to GitHub's own label and stays behind its flag.
+
+## Iteration 20 — the reader is not running an experiment (2026-08-31)
+
+The narration prompt fed the model a section headed `Measured before the
+cutoff:`, so reports told users things happened "before the cutoff" — internal
+evaluation jargon leaking into prose meant for someone deciding where to spend
+a week. A live user has no cutoff; they have a window of history that was read.
+
+Changed to `Measured in the sampled window:`, and NARRATE_SYSTEM now forbids
+the word "cutoff" outright, offering "in the period read" / "in this sample"
+instead. The date bound itself already reaches the reader through the
+renderer's `*Evidence up to …*` line, which is computed, not narrated.
+
+A prompt edit invalidates every recorded trajectory by design — the replay key
+covers the prompt text — and the failure was exactly one test, the discover
+demo replay, failing with a replay miss rather than serving stale prose. Fifth
+full re-record, this time via `scripts/rerecord_trajectories.py` (pools plus
+the demo session's survivors in one command). Batched deliberately with the
+frozen benchmark that follows, so the benchmark measures the prompts that
+ship.
+
+**And the cutoff leaked into behaviour, not just prose.** The TUI (built on a
+separate branch, against the promised `Assessment` contract) constructed
+`LiveGitHubProvider(Window.PRE_T)` bare — and the library default for a *live*
+provider was the benchmark's T. Result, observed in the wild: a live run with a
+paid token reported `inni918/warashi` — created 2026-06-17, 105 stars, real
+pull requests — as having no history at all, because its crawl asked GitHub for
+`created:<2026-06-01`. The CLI had already fixed this for itself (`as_of_from`,
+yesterday); the trap remained for every other caller. The default is now
+**live means now**: both live providers default their cutoff to the current
+moment, the one caller that genuinely wants T (the benchmark fixture capture)
+passes it explicitly, and a test pins the default above T. An evaluation
+device was reachable from the product path; it no longer is.
