@@ -32,10 +32,11 @@ from textual.screen import Screen
 from textual.widgets import Footer
 
 from holt.report import VERDICT_HEADLINES
-from holt.tui import animation, store, theme
+from holt.tui import animation, mascot, store, theme
 from holt.tui.visual import Line
 from holt.tui.widgets.claims import ClaimList
 from holt.tui.widgets.disclosure import EntryPointRow, MeasuredResult
+from holt.tui.widgets.masthead import Cat
 
 
 class AssessmentScreen(Screen):
@@ -54,7 +55,10 @@ class AssessmentScreen(Screen):
         verdict = assessment.verdict
 
         with Horizontal(id="chrome"):
-            yield Line("holt", id="chrome-left")
+            yield Cat(
+                mascot.mood_for_verdict(verdict.value), id="cat", classes="chrome-cat"
+            )
+            yield Line("", id="chrome-left")
             yield Line(self._provenance(), id="chrome-right")
         yield Line("─" * 240, classes="rule")
 

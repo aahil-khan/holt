@@ -27,10 +27,6 @@ FAINT = "#585858"  # counts, timings, read only if you look for them
 RULE = "#444444"  # hairlines
 RAIL = "#767676"  # the measured-result rail: quiet, but meant to be seen
 
-#: The mascot, and nothing else. Deliberately outside the meaning-colours
-#: below: a decorative element wearing one of them would dilute all three.
-MASCOT = "#b07d62"
-
 VIABLE = "#5faf87"
 NOT_VIABLE = "#d7875f"
 INSUFFICIENT = "#8a8a8a"
@@ -214,9 +210,13 @@ Masthead {{
     height: auto;
     padding: 1 1 0 1;
 }}
-#mascot {{
-    width: 14;
-    color: {MASCOT};
+#cat {{
+    width: 13;
+    height: 1;
+}}
+.chrome-cat {{
+    width: 12;
+    height: 1;
 }}
 #masthead-text {{
     width: 1fr;

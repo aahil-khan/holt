@@ -539,8 +539,7 @@ def test_home_leads_with_the_masthead(tmp_path):
     async def body(app, pilot):
         text = screen_text(app)
         assert mascot.TAGLINE in text
-        # The mascot itself, by a row of its art.
-        assert mascot.OTTER[1] in text
+        assert mascot.still("idle") in text
         # And the facts that make the space worth taking.
         assert "read-only" in text
         assert "dropped, not softened" in text
@@ -548,13 +547,55 @@ def test_home_leads_with_the_masthead(tmp_path):
     drive(body, tmp_path, size=(110, 44))
 
 
-def test_the_mascot_is_rectangular():
-    """Every row the same width, or it renders lopsided at some terminal size."""
+def test_the_cat_has_a_mood_for_every_state_the_engine_has():
+    """The face reports state or it has no business being on screen."""
+    from holt.report import VERDICT_HEADLINES
     from holt.tui import mascot
 
-    widths = {len(row) for row in mascot.OTTER}
-    assert len(widths) == 1, f"mascot rows have widths {sorted(widths)}"
-    assert mascot.WIDTH == widths.pop()
+    for verdict in VERDICT_HEADLINES:
+        mood = mascot.mood_for_verdict(verdict.value)
+        assert mood in mascot.MOODS, f"no cat for {verdict.value}"
+        assert mascot.frames(mood)
+
+    # A verdict this build has never seen falls back rather than raising.
+    assert mascot.mood_for_verdict("something_new") == "idle"
+    assert mascot.frames("something_new") == mascot.IDLE
+
+
+def test_every_mood_animates_and_fits_its_column():
+    """Each cycle has to actually change, and none may overflow the slot the
+    chrome gives it."""
+    from rich.cells import cell_len
+
+    from holt.tui import mascot
+
+    for mood, cycle in mascot.MOODS.items():
+        assert len(set(cycle)) > 1, f"{mood} never changes, so it is not animated"
+        widest = max(cell_len(frame) for frame in cycle)
+        assert widest <= 12, f"{mood} is {widest} cells wide, the column is 12"
+
+
+def test_the_accent_changes_between_launches_but_never_means_anything():
+    """The one arbitrary colour in the app. It must stay clear of the five that
+    carry meaning, or a session's decoration would read as a verdict."""
+    from holt.tui import mascot, theme
+
+    meaning = {
+        theme.VIABLE,
+        theme.NOT_VIABLE,
+        theme.INSUFFICIENT,
+        theme.DROP,
+        theme.CITE,
+    }
+    assert not (set(mascot.ACCENTS) & meaning)
+    assert len(set(mascot.ACCENTS)) > 1
+
+
+def test_a_pinned_accent_wins_so_screenshots_and_tests_are_stable(monkeypatch):
+    from holt.tui import mascot
+
+    monkeypatch.setenv("HOLT_TUI_ACCENT", "#123456")
+    assert mascot.pick_accent() == "#123456"
 
 
 def test_a_long_verdict_does_not_run_into_the_age(tmp_path):
