@@ -239,9 +239,9 @@ and may return a different verdict for reasons unrelated to the change.
 
 **3. The model never owns the decision — and this is the one that measurably pays.**
 `src/holt/agent/verdict.py` is the only path from findings to a verdict and runs
-no model. Across three runs Holt returns identical verdicts on **21 of 22**
+no model. Across three runs Holt returns identical verdicts on **22 of 22**
 repositories; the baseline, which puts the whole decision inside one model call,
-on **13 of 22**.
+on **17 of 22**.
 
 **4. Arithmetic where arithmetic works.** Counting landings and measuring reply
 latency are not model problems. *But the arithmetic thresholds never bind on this
@@ -544,3 +544,40 @@ discriminating signal concentrates in hard-tail items while fixed metrics
 degrade under strategic optimisation. L0 is such a metric and L1 is the hard-tail
 reconstruction; the aggregate scores tie while the hard cases separate cleanly,
 which is the shape that argument predicts.
+
+---
+
+## The main failure mode, and the hot take
+
+**The failure mode: nothing was watching whether a published claim was still
+true.** Every guard in this project points at the agent — the holdout is
+asserted on every record, Stage D drops a citation that does not resolve, replay
+refuses a recording whose prompt moved — and each is covered by a test. None of
+them guarded the prose. So a number stayed on this page after the run behind it
+was redone, and this repository stated its own verdict stability three different
+ways at once. Worse, `holt analyze <repo> --baseline --replay` — documented, and
+the competition's required baseline arm — failed from a clean clone on every
+repository, because baseline calls were recorded only where the harness looks
+and the benchmark therefore never noticed. The evaluation and the documented
+product path had drifted apart, and only the evaluation was tested.
+`tests/test_docs_claims.py` now recomputes the numbers on this page from the
+committed results and runs every command the guide prints.
+
+**The hot take: Holt is not a smarter analyst, and we measured that four separate
+times.** One prompt handed the same evidence matches the model stages almost
+exactly; ablating Stage A's kind rules costs +0.01 MCC. What separates this from
+a chat window is duller than intelligence and harder to fake — an evidence
+assembly nobody will do by hand (642 records and 253,000 characters per
+repository, 44× what a person can paste), and then three properties a
+conversation structurally cannot have: every claim carries an id that resolves,
+the verdict is a plain function that returned the identical answer on 55 of 55
+repositories while the baseline moved on 16, and it can say *no* in a rule the
+model cannot override — the single change that most improved accuracy
+(specificity 0.58 → 0.83 out of sample).
+
+**What we would build differently:** put the decision in code and the model in
+front of the evidence, not the other way round — then spend what that saves on
+the boring half, because an agent's guarantees are worth exactly as much as the
+tests on the claims you make about them.
+
+The full story, iteration by iteration: [CHANGELOG.md](CHANGELOG.md).

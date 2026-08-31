@@ -420,15 +420,46 @@ class ReplayModel:
                 entry = json.loads(line)
                 self._recorded[entry["key"]] = entry
 
+    def _miss(self, label: str, system: str, prompt: str, key: str) -> str:
+        """Say which of the three things that identify a call actually differs.
+
+        A miss used to blame "the prompt or the stage's model", naming both and
+        diagnosing neither. The recording carries the text it was made with, so
+        the answer is available: if some entry holds this exact prompt, the
+        model id is what moved, and the usual reason is a model chosen with
+        `holt models` after the recording was committed.
+        """
+        same_text = [
+            e for e in self._recorded.values()
+            if e["label"] == label and e["system"] == system and e["prompt"] == prompt
+        ]
+        if same_text:
+            recorded = ", ".join(sorted({e["model"] for e in same_text}))
+            return (
+                f"No recorded response for {label} (key {key}). The prompt is "
+                f"unchanged; the model is not. This run resolves {label} to "
+                f"{model_for(label)!r}, and the recording was made with "
+                f"{recorded!r}. Committed recordings replay only under the pinned "
+                f"defaults — clear the choice with `holt models --reset`, or "
+                f"re-record with a key."
+            )
+        if any(e["label"] == label for e in self._recorded.values()):
+            return (
+                f"No recorded response for {label} (key {key}). A {label} call is "
+                "recorded here but was made with different prompt text, so "
+                "replaying it would answer a question that is no longer being "
+                "asked. Re-record with a key, or check out the committed state."
+            )
+        return (
+            f"No recorded response for {label} (key {key}), and no {label} call "
+            f"is recorded in {self.trajectory_path} at all. Re-record with a key."
+        )
+
     def complete(self, *, label: str, system: str, prompt: str, schema: dict) -> dict:
         key = call_key(label, system, prompt)
         entry = self._recorded.get(key)
         if entry is None:
-            raise KeyError(
-                f"No recorded response for {label} (key {key}). The prompt or the "
-                "stage's model has changed since the recording, so replaying it "
-                "would answer a question that is no longer being asked."
-            )
+            raise KeyError(self._miss(label, system, prompt, key))
         u = entry.get("usage", {})
         self.usage.add(entry["model"], u.get("input_tokens", 0), u.get("output_tokens", 0))
         return entry["response"]

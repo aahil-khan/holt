@@ -173,6 +173,9 @@ def cmd_compare(args: argparse.Namespace) -> int:
     print("\n`outsiders in` counts pull requests merged from people with no prior "
           "merge, over the number who tried.")
     print("Run `holt analyze <repo>` for the evidence behind any row.")
+    # Declared `-> int` and every sibling returns one; falling off the end made
+    # `compare` the one command whose exit status was an accident.
+    return 0
 
 
 def cmd_tui(args: argparse.Namespace) -> int:
@@ -577,6 +580,20 @@ def main(argv: list[str] | None = None) -> int:
         # No subcommand. Open the interface on what has already been assessed,
         # which is what someone typing `holt` almost always wants.
         args = parser.parse_args(["tui"])
+
+    # Replay reproduces a recording, so it resolves against the ids that made
+    # the recording -- the pinned defaults -- and not against whatever the
+    # reader has since chosen with `holt models`. Without this, selecting a
+    # model turned every documented `--replay` command into a replay miss,
+    # because the chosen id is part of a call's identity. The user's choice
+    # governs calls that actually reach a provider, which is where it means
+    # something.
+    replaying = getattr(args, "replay", False) or (
+        args.func is cmd_discover and not getattr(args, "live", False)
+    )
+    if replaying:
+        model.enable_user_models_config(model.ModelsConfig())
+
     return args.func(args)
 
 

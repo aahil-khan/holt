@@ -35,14 +35,29 @@ uv sync
 uv run pytest -rs
 ```
 
-**Expected:** `128 passed`, no skips. The `-rs` flag reports skipped tests
-explicitly — a skipped test is not a passing one.
+**Expected after a plain `uv sync`:** `266 passed`, `1 skipped`. The skip is the
+terminal-interface suite, and it is honest rather than incidental: `tui` is an
+optional extra precisely so that every reproduction command works on a machine
+that has never installed Textual. To run the interface tests too:
 
-Two of these are load-bearing rather than incidental: `eval/test_independence.py`
-reads the import graph and fails if any label module imports the agent, and
+```sh
+uv sync --extra tui
+uv run pytest -rs
+```
+
+**Expected:** `339 passed`, no skips. **Runtime:** about two minutes either way.
+
+The `-rs` flag reports skipped tests explicitly — a skipped test is not a
+passing one, which is why the count above says which one it is.
+
+Three of these are load-bearing rather than incidental: `eval/test_independence.py`
+reads the import graph and fails if any label module imports the agent,
 `tests/test_evidence_bounds.py` constructs a deliberately misbehaving provider
 subclass to confirm it still cannot return evidence from the wrong side of the
-cutoff.
+cutoff, and `tests/test_docs_claims.py` recomputes the numbers printed in this
+guide, `README.md` and `ASSESSMENT.md` from the committed results and runs every
+command this guide prints — so a claim that goes stale fails the build rather
+than sitting on the page.
 
 ## 3. Reproduce the headline result — no key, no spend
 
@@ -79,7 +94,8 @@ identical on `p2r2` and `p2r3`, because the verdict is deterministic. The
 README's headline figures are means over the three runs per pool:
 
 ```sh
-PYTHONPATH=. uv run python eval/aggregate.py    # mean +/- half-range over runs 1-3
+PYTHONPATH=. uv run python eval/aggregate.py             # pool 1, runs 1-3
+PYTHONPATH=. uv run python eval/aggregate.py --pool 2    # pool 2, out of sample
 PYTHONPATH=. uv run python eval/stats.py        # uncertainty over repositories
 ```
 
@@ -210,7 +226,7 @@ pool draw can be checked without this.
 
 | Task | Key needed | Runtime | Cost |
 |---|---|---|---|
-| Tests | no | 1 s | $0.00 |
+| Tests | no | ~2 min | $0.00 |
 | **Headline result (`--replay`)** | **no** | **30 s** | **$0.00** |
 | Both solutions on one repo | no | 5 s | $0.00 |
 | Re-run labels | no | 20 s | $0.00 |
