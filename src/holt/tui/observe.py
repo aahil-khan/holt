@@ -29,6 +29,26 @@ from holt.tui import events
 
 Emit = Callable[[events.Event], None]
 
+#: Asked before every model call and every evidence read. Returns True once the
+#: reader has stopped the run.
+Cancelled = Callable[[], bool]
+
+
+class RunCancelled(Exception):
+    """Raised out of a wrapper when the reader has stopped the run.
+
+    A Python thread cannot be killed, so stopping is cooperative: the run is
+    interrupted at the next point it asks for something. These wrappers already
+    sit at every one of those points — a stage cannot call a model or read
+    evidence without passing through them — so the engine needs no cancellation
+    parameter and `holt.agent` stays unaware that an interface exists.
+
+    The cost of that choice is latency, not correctness: a stop lands when the
+    call in flight returns, which is instant on a replay and up to a model
+    timeout on a live run. The interface says `stopping` until then rather than
+    claiming the run has already ended.
+    """
+
 
 class ObservingModel:
     """A `ModelClient` that narrates its own calls.
@@ -37,16 +57,29 @@ class ObservingModel:
     or anything else satisfying the protocol, without knowing which it has.
     """
 
-    def __init__(self, inner: Any, emit: Emit, repo: str = "") -> None:
+    def __init__(
+        self,
+        inner: Any,
+        emit: Emit,
+        repo: str = "",
+        cancelled: Cancelled | None = None,
+    ) -> None:
         self._inner = inner
         self._emit = emit
         self._repo = repo
+        self._cancelled = cancelled or (lambda: False)
 
     def __getattr__(self, name: str) -> Any:
         # `replayed`, `usage`, and anything the client grows later.
         return getattr(self._inner, name)
 
     def complete(self, *, label: str, system: str, prompt: str, schema: dict) -> dict:
+        # Checked *before* the call and before `StageStarted`, so a stopped run
+        # neither pays for a stage nor shows one beginning. Raising inside the
+        # try below would additionally emit `RunFailed`, reporting a deliberate
+        # stop as a defect.
+        if self._cancelled():
+            raise RunCancelled(label)
         model_name = _model_name(self._inner, label)
         self._emit(events.StageStarted(stage=label, model=model_name))
         started = time.monotonic()
@@ -87,14 +120,17 @@ class ObservingProvider:
     moment, with nothing added to the engine to expose it.
     """
 
-    def __init__(self, inner: Any, emit: Emit) -> None:
+    def __init__(self, inner: Any, emit: Emit, cancelled: Cancelled | None = None) -> None:
         self._inner = inner
         self._emit = emit
+        self._cancelled = cancelled or (lambda: False)
 
     def __getattr__(self, name: str) -> Any:
         return getattr(self._inner, name)
 
     def fetch(self, request: str, /, **params: object) -> list:
+        if self._cancelled():
+            raise RunCancelled(f"fetch {request}")
         records = self._inner.fetch(request, **params)
         window = getattr(getattr(self._inner, "window", None), "value", "")
         self._emit(
@@ -107,6 +143,8 @@ class ObservingProvider:
         return records
 
     def resolve(self, evidence_id: str):
+        if self._cancelled():
+            raise RunCancelled(f"resolve {evidence_id}")
         record = self._inner.resolve(evidence_id)
         self._emit(
             events.EvidenceResolved(evidence_id=evidence_id, resolved=record is not None)

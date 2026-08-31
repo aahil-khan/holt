@@ -179,6 +179,22 @@ class RunFailed:
 
 
 @dataclass(frozen=True, slots=True)
+class RunCancelled:
+    """The run was stopped on purpose, and is not a failure.
+
+    Kept distinct from `RunFailed` because the two need opposite treatment: a
+    failure is something to report and investigate, a stop is something the
+    reader asked for. Merging them would have the interface apologise for
+    obeying an instruction.
+    """
+
+    #: Stages that had already finished when the stop landed. A live run that
+    #: is stopped at stage D has spent real money, and saying so is the
+    #: difference between a stop and a loss.
+    completed_stages: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
 class RunFinished:
     """Carries the finished `Assessment` and the pipeline's own `Trace`.
 
@@ -202,6 +218,7 @@ Event = Union[
     UsageUpdated,
     Retry,
     RunFailed,
+    RunCancelled,
     RunFinished,
 ]
 

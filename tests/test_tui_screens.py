@@ -66,7 +66,12 @@ async def show_run(app, pilot, complete: bool = True, **script_kw):
     script = fake_run.script(**script_kw)
     if not complete:
         script = [e for e in script if not isinstance(e, _events.RunFinished)]
-    app.session = fake_run.session(queued=script)
+    session = fake_run.session(repo=script_kw.get("repo", fake_run.REPO), queued=script)
+    # Registered exactly as `HoltApp.start_run` registers a real one. The app,
+    # not the screen, is what drains a run, so a session the app does not know
+    # about would sit there with a full queue and an empty screen.
+    app.session = session
+    app.runs[session.options.repo] = session
     await app.push_screen(LiveScreen())
     await pilot.pause(0.3)
     return app.screen
@@ -727,3 +732,242 @@ def test_the_evidence_line_says_nothing_it_cannot_back():
     assert evidence_line(events.EvidenceLoaded(count=95, window="pre_t")) == (
         "95 evidence records"
     )
+
+
+# ─── runs that outlive the screen watching them ─────────────────────────────
+
+
+def attach(app, repo: str, script: list):
+    """Register a scripted run the way `HoltApp.start_run` registers a real one."""
+    session = fake_run.session(repo=repo, queued=script)
+    app.session = session
+    app.runs[repo] = session
+    return session
+
+
+async def watch(app, pilot):
+    """Put the live screen up on whatever `app.session` currently is."""
+    from holt.tui.screens.live import LiveScreen
+
+    await app.push_screen(LiveScreen())
+    await pilot.pause(0.2)
+
+
+def unfinished(repo: str, **kw) -> list:
+    from holt.tui import events as _events
+
+    return [
+        e
+        for e in fake_run.script(repo=repo, **kw)
+        if not isinstance(e, _events.RunFinished)
+    ]
+
+
+def test_a_run_that_finishes_while_nobody_watches_is_still_kept(tmp_path):
+    """The reported bug, in one test.
+
+    Start a run, go home before it lands, and the assessment it produces has to
+    survive. Draining used to belong to the live screen, so popping that screen
+    left the worker computing an answer that nothing would ever collect: the
+    run looked stopped because its result was thrown away.
+    """
+    from holt.tui import events as _events
+
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await watch(app, pilot)
+
+        app.go_home()
+        await pilot.pause(0.2)
+        assert app.screen.__class__.__name__ == "HomeScreen"
+        assert not session.finished, "the run should still be in flight"
+
+        # The run finishes with nobody on the live screen.
+        session._queue.put(
+            _events.RunFinished(assessment=fake_run.assessment(CLEAN), trace=None)
+        )
+        await pilot.pause(0.4)
+
+        assert session.assessment is not None, "the result was never absorbed"
+        assert [e.repo for e in app.store.all()] == [CLEAN]
+        assert CLEAN not in app.runs, "a finished run stays registered as in flight"
+
+    drive(body, tmp_path)
+
+
+def test_two_repositories_can_be_assessed_at_once(tmp_path):
+    from holt.tui import events as _events
+
+    other = "pallets/flask"
+
+    async def body(app, pilot):
+        first = attach(app, CLEAN, unfinished(CLEAN))
+        second = attach(app, other, unfinished(other))
+        await pilot.pause(0.2)
+
+        assert {s.options.repo for s in app.in_flight} == {CLEAN, other}
+
+        for session, repo in ((first, CLEAN), (second, other)):
+            session._queue.put(
+                _events.RunFinished(assessment=fake_run.assessment(repo), trace=None)
+            )
+        await pilot.pause(0.4)
+
+        assert {e.repo for e in app.store.all()} == {CLEAN, other}
+        assert app.in_flight == []
+
+    drive(body, tmp_path)
+
+
+def test_rejoining_a_run_shows_what_happened_while_you_were_away(tmp_path):
+    """The screen rebuilds from the log, so nothing that arrived is missed."""
+
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await pilot.pause(0.3)  # drains at home, with no live screen mounted
+        assert len(session.log) > 5, "the app did not drain a run nobody was watching"
+
+        app.watch_run(session)
+        await pilot.pause(0.3)
+
+        text = screen_text(app)
+        assert "evidence records" in text
+        assert "real_software" in text, "the stream did not replay from its start"
+
+    drive(body, tmp_path)
+
+
+def test_leaving_the_live_screen_does_not_stop_the_run(tmp_path):
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await watch(app, pilot)
+
+        await pilot.press("escape")
+        await pilot.pause(0.2)
+
+        assert app.screen.__class__.__name__ == "HomeScreen"
+        assert session in app.in_flight
+        assert not session.cancelled
+
+    drive(body, tmp_path)
+
+
+def test_home_lists_a_run_in_flight_and_enter_rejoins_it(tmp_path):
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        # Let the app absorb the stream first: the row names the stage the run
+        # is in, and before anything is drained it can only say "starting".
+        await pilot.pause(0.3)
+        await app.screen.refresh_entries()
+        await pilot.pause(0.2)
+
+        text = screen_text(app)
+        assert CLEAN in text
+        assert "running · " in text
+
+        from holt.tui.widgets.recent import RecentList
+
+        listing = app.screen.query_one("#recent", RecentList)
+        listing.focus()
+        listing.index = 0
+        await pilot.pause(0.1)
+        await pilot.press("enter")
+        await pilot.pause(0.3)
+
+        assert app.screen.__class__.__name__ == "LiveScreen"
+        assert app.session is session
+
+    drive(body, tmp_path)
+
+
+def test_asking_for_a_repository_already_running_rejoins_rather_than_pays_twice(
+    tmp_path,
+):
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await pilot.pause(0.1)
+
+        app.screen.run_repo(CLEAN)
+        await pilot.pause(0.3)
+
+        assert app.screen.__class__.__name__ == "LiveScreen"
+        assert app.session is session
+        assert len(app.runs) == 1
+
+    drive(body, tmp_path)
+
+
+def test_stopping_asks_first_and_only_then_stops(tmp_path):
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await watch(app, pilot)
+
+        await pilot.press("ctrl+x")
+        await pilot.pause(0.2)
+        assert app.screen.__class__.__name__ == "ConfirmScreen"
+        assert "stop home-assistant/core?" in screen_text(app)
+
+        await pilot.press("n")
+        await pilot.pause(0.2)
+        assert app.screen.__class__.__name__ == "LiveScreen"
+        assert not session._cancel.is_set(), "declining stopped the run anyway"
+
+        await pilot.press("ctrl+x")
+        await pilot.pause(0.2)
+        await pilot.press("y")
+        await pilot.pause(0.2)
+        assert session._cancel.is_set()
+
+    drive(body, tmp_path)
+
+
+def test_quitting_with_a_run_in_flight_says_what_it_would_stop(tmp_path):
+    async def body(app, pilot):
+        attach(app, CLEAN, unfinished(CLEAN))
+        await pilot.pause(0.2)
+
+        app.action_quit()
+        await pilot.pause(0.2)
+
+        text = screen_text(app)
+        assert app.screen.__class__.__name__ == "ConfirmScreen"
+        assert "still in flight" in text
+        assert CLEAN in text
+
+        await pilot.press("n")
+        await pilot.pause(0.2)
+        assert app.screen.__class__.__name__ == "HomeScreen"
+
+    drive(body, tmp_path)
+
+
+def test_quitting_with_nothing_running_does_not_ask(tmp_path):
+    async def body(app, pilot):
+        assert app.in_flight == []
+        app.action_quit()
+        await pilot.pause(0.2)
+        assert app.screen.__class__.__name__ != "ConfirmScreen"
+
+    drive(body, tmp_path)
+
+
+def test_a_stopped_run_reads_as_stopped_and_not_as_a_failure(tmp_path):
+    from holt.tui import events as _events
+
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await watch(app, pilot)
+
+        session._queue.put(
+            _events.RunCancelled(completed_stages=("classify", "opportunity"))
+        )
+        await pilot.pause(0.3)
+
+        text = screen_text(app)
+        assert "stopped" in text
+        assert "classify" in text
+        assert session.cancelled
+        assert session.error is None, "a stop must not be recorded as a failure"
+        assert app.store.all() == [], "a partial run must not be stored"
+
+    drive(body, tmp_path)

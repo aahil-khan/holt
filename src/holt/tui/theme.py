@@ -377,4 +377,25 @@ Input:focus {{
     color: {FAINT};
     padding: 1 1;
 }}
+
+/* A run in flight, in the list on home. */
+.running-row {{ color: {DIM}; }}
+
+/* The one modal: stopping a run, and quitting with runs still going. */
+ConfirmScreen {{
+    align: center middle;
+}}
+#confirm-box {{
+    width: 64;
+    height: auto;
+    padding: 1 3;
+    border: round {RULE};
+    background: $surface;
+}}
+/* Explicit, because a `Static` inside an auto-width box measures as zero and
+   the whole question renders as an empty frame. */
+#confirm-question, #confirm-detail, #confirm-keys {{ width: 100%; }}
+#confirm-question {{ color: {DIM}; }}
+#confirm-detail {{ color: {FAINT}; padding: 1 0 0 0; }}
+#confirm-keys {{ color: {FAINT}; padding: 1 0 0 0; }}
 """
