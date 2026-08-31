@@ -1098,6 +1098,48 @@ def test_home_lists_a_run_in_flight_and_enter_rejoins_it(tmp_path):
     drive(body, tmp_path)
 
 
+def test_arrowing_onto_a_run_in_flight_says_so_and_rejoins_it(tmp_path):
+    """Where the two halves of this list meet.
+
+    Runs in flight sit above the stored ones, and ↑↓ move through the whole list
+    from the input. A running row is not a stored answer: enter rejoins it
+    rather than opening it, ctrl+r must not start a second one, and describing
+    it as "assessed N minutes ago" would be wrong twice over — it is not
+    finished, and nothing is being reused.
+    """
+
+    async def body(app, pilot):
+        session = attach(app, CLEAN, unfinished(CLEAN))
+        await pilot.pause(0.3)
+        await app.screen.refresh_entries()
+        await pilot.pause(0.2)
+
+        # The input keeps focus; the arrow key is handled by the screen.
+        assert app.focused.id == "repo-input"
+        await pilot.press("down")
+        await pilot.pause(0.2)
+
+        text = screen_text(app)
+        assert f"enter rejoins the run on {CLEAN}" in text
+        assert "ctrl+x stops it" in text
+        # Never the stored-answer wording, which would claim it had finished.
+        assert "enter opens" not in text
+
+        # ctrl+r on it would be paying twice for one question.
+        await pilot.press("ctrl+r")
+        await pilot.pause(0.2)
+        assert "still running" in screen_text(app)
+        assert app.screen.__class__.__name__ == "HomeScreen"
+        assert len(app.runs) == 1
+
+        await pilot.press("enter")
+        await pilot.pause(0.3)
+        assert app.screen.__class__.__name__ == "LiveScreen"
+        assert app.session is session
+
+    drive(body, tmp_path)
+
+
 def test_asking_for_a_repository_already_running_rejoins_rather_than_pays_twice(
     tmp_path,
 ):

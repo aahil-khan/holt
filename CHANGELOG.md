@@ -1763,3 +1763,27 @@ keyword argument 'cutoff'`), which is what says they would have caught it.
 **Decision.** Kept. The interface now has one rule about runs — a run ends
 because it finished, it failed, or someone stopped it — and escape is not one of
 those reasons.
+
+**Landed after the keyboard work, so the two had to be reconciled.** This branch
+was cut from `89c8014` and sat unmerged while Iteration 27 rebuilt the same
+screen; rebasing it produced real conflicts in `home.py`, not textual ones.
+Three decisions came out of that:
+
+* **The selection index counts rows, not stored entries.** Iteration 27 set
+  `listing.index` from `len(self._entries)`. Running rows sit above the stored
+  ones in the same list, so counting only the stored ones left the last rows
+  unreachable by keyboard — a highlight that stops short of the bottom of the
+  list it is in.
+* **Enter has three meanings now, and they are resolved in one place.** In the
+  box it assesses what you typed; on a stored row it opens that answer; on a
+  running row it rejoins the run. `_open_highlighted()` is the single function
+  that decides which, so the ↑↓ path and the empty-box path cannot drift apart.
+* **A running row is never described as a stored one.** "assessed 2 min ago"
+  about a run in flight would be wrong twice: it has not finished, and nothing
+  is being reused. It says `enter rejoins the run on …  ctrl+x stops it`, and
+  ctrl+r on it refuses rather than starting a second run of one question.
+
+**Evidence.** `uv sync --extra tui`, `HOLT_NO_NETWORK=1 pytest -q -rs`:
+**288 passed**, no skips. One test is new here rather than from either branch —
+`test_arrowing_onto_a_run_in_flight_says_so_and_rejoins_it` covers exactly the
+seam the rebase created, which neither side's tests reached on their own.
