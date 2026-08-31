@@ -15,7 +15,7 @@ from __future__ import annotations
 
 from textual.app import App
 
-from holt.tui import store, theme
+from holt.tui import mascot, store, theme
 from holt.tui.screens import REGISTRY
 from holt.tui.screens.assessment import AssessmentScreen
 from holt.tui.screens.inspector import InspectorScreen
@@ -38,6 +38,11 @@ class HoltApp(App):
         assessments: store.Store | None = None,
     ) -> None:
         super().__init__()
+        #: Chosen once, at launch, and worn only by the cat and the masthead.
+        #: The colours that mean something -- verdict, evidence, drops -- are
+        #: fixed in `theme`, so a different accent each session changes how the
+        #: interface looks and never what it says.
+        self.accent = mascot.pick_accent()
         self.store = assessments or store.Store()
         #: Set when the interface was launched with a repository to assess.
         #: Without one it opens on home, which is the ordinary case.

@@ -23,8 +23,9 @@ from textual.containers import Horizontal, VerticalScroll
 from textual.screen import Screen
 from textual.widgets import Footer
 
-from holt.tui import animation, events, theme
+from holt.tui import animation, events, mascot, theme
 from holt.tui.visual import Line
+from holt.tui.widgets.masthead import Cat
 from holt.tui.widgets.stages import DroppedFinding, EmittedFinding, StageList, unknown
 
 POLL_SECONDS = 0.05
@@ -46,7 +47,8 @@ class LiveScreen(Screen):
 
     def compose(self) -> ComposeResult:
         with Horizontal(id="chrome"):
-            yield Line("holt · assessing", id="chrome-left")
+            yield Cat("working", id="cat", classes="chrome-cat")
+            yield Line("assessing", id="chrome-left")
             yield Line("", id="chrome-right")
         yield Line("─" * 240, classes="rule")
         yield StageList(id="stages")
@@ -115,6 +117,9 @@ class LiveScreen(Screen):
         self._append(EmittedFinding(event, repo=self.app.session.options.repo))
 
     def _on_dropped(self, event: events.FindingDropped) -> None:
+        # The cat notices. This is the moment the pipeline exists to make, and
+        # the mascot reports state or it would not be here at all.
+        self._mood("claim_dropped")
         self._append(DroppedFinding(event))
 
     def _on_resolved(self, event: events.EvidenceResolved) -> None:
@@ -156,6 +161,12 @@ class LiveScreen(Screen):
             )
         )
 
+    def _mood(self, mood: str) -> None:
+        try:
+            self.query_one("#cat", Cat).set_mood(mood)
+        except Exception:  # noqa: BLE001 - the cat is never load-bearing
+            pass
+
     def _on_failed(self, event: events.RunFailed) -> None:
         # Every spinner stops. A stage left turning after a failure reads as
         # still working, which is the one thing it is definitely not doing.
@@ -164,6 +175,8 @@ class LiveScreen(Screen):
         self._line(Text("escape to go back", style=theme.FAINT))
 
     def _on_finished(self, event: events.RunFinished) -> None:
+        verdict = getattr(event.assessment, "verdict", None)
+        self._mood(mascot.mood_for_verdict(getattr(verdict, "value", "")))
         self.query_one("#stages", StageList).settle()
         self.app.remember(self.app.session)
         if self._handed_off:
