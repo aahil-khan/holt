@@ -387,13 +387,27 @@ class DiscoverScreen(Screen):
             self._present_recording()
 
     def _assess(self, row) -> None:
-        """Assess this candidate through the ordinary path.
+        """Assess this candidate the way the search that found it read GitHub.
 
-        Replay when a recording exists — free, and the demo works with no
-        credentials. Otherwise live, which the run screen will refuse cleanly if
-        the key is missing.
+        **The mode follows the search, not the disk.** It used to be
+        `replay = has_recording(row.slug)`: search GitHub live, press enter on
+        a result, and if a trajectory happened to be sitting in `fixtures/` you
+        were handed a recorded answer from June instead of an assessment of
+        what you had just found. Nothing on screen said so. Which evidence a
+        run reads is a choice, and it is not one the contents of a directory
+        get to make on the reader's behalf.
+
+        So: rows from a live sweep are assessed live, rows from a recorded
+        session are replayed, and a recorded row with no trajectory says that
+        rather than quietly going live and asking for credentials.
         """
-        replay = session_module.has_recording(row.slug)
+        replay = self.session_name is not None
+        if replay and not session_module.has_recording(row.slug):
+            self._hint(
+                f"No recording of an assessment of {row.slug}, so it cannot be "
+                "replayed. Assess it live from the home screen."
+            )
+            return
         options = session_module.RunOptions(
             repo=row.slug, replay=replay, live=not replay
         )
@@ -405,11 +419,12 @@ class DiscoverScreen(Screen):
             return
         missing = session_module.missing_credentials(options)
         if missing:
-            self.query_one("#discover-hint", Line).update(
-                Text(missing[0], style=theme.DROP)
-            )
+            self._hint(missing[0])
             return
         self.app.start_run(options)
+
+    def _hint(self, message: str) -> None:
+        self.query_one("#discover-hint", Line).update(Text(message, style=theme.DROP))
 
     def action_profile(self) -> None:
         """The profile is what this search was built from, so it is edited here."""

@@ -716,6 +716,296 @@ complete one.
 
 ---
 
+## Iteration 29 — the model list was a dump, not a choice (2026-08-31)
+
+**Observed, from a screenshot of the real screen.** Under an OpenAI key the
+model list opened on `gpt-4o-mini-transcribe`, ran alphabetically through four
+speech-to-text models, and showed `gpt-5` as **unpriced — cost recorded as 0**
+one row above `gpt-5-2025-08-07` showing **priced**. Every visible row but one
+claimed holt could not cost it.
+
+**The pricing was a real bug, and a narrow one.** `PRICES` is keyed on dated
+snapshots — deliberately, because `STAGE_MODELS` pins dated ids so a recorded
+run cannot drift underneath a reproduction claim. But *display* was reading the
+same table, so the floating alias `gpt-5` matched nothing and reported zero.
+Two ids for one model, disagreeing on screen about what it costs.
+
+**Fixed with a second table, not by loosening the first.** `MODEL_ALIASES` maps
+each floating alias to the snapshot it currently points at, and `resolve_price`
+reads through it. They are kept apart because the two facts have different
+lifetimes: a snapshot's price is fixed for as long as the snapshot exists, and
+where an alias points is true only until the provider repoints it. A rate
+reached through an alias renders with `≈` and the cost accounting uses it —
+recording $0 for a run on `gpt-5` understates a real bill, which is worse than
+declining to guess.
+
+**The rate is now the row, because "priced" answers nobody's question.** A
+reader choosing a model is deciding what a run will cost; "priced" told them a
+number existed somewhere else. Rows read `$1.25 in / $10.00 out per M tokens`.
+`holt models` on the command line prints the same figure.
+
+**Speech, image and realtime ids were leaking through the chat filter.**
+Iteration 27 caught embeddings; `transcribe`, `diarize`, `realtime`, `sora` and
+`gpt-image` were not on the list and every one of them was being offered as a
+model to run the pipeline on. Ten of the twenty-five ids on a stock OpenAI key
+are not chat models.
+
+**"Popular first" is not a fact this tool can know, so it is not claimed.**
+Ordering is four tiers: the two models holt is pinned to, then the ones it can
+state a cost for, then everything else, then legacy and preview ids — with
+alphabetical order inside each tier so the list is stable between looks. The
+last tier is *sunk, not hidden*: `babbage-002` is a real chat model and the
+provider offers it, so the list says so, at the bottom. The count line explains
+the order rather than leaving a reader to infer it.
+
+**And the list is filterable.** Substring, case-insensitive, deliberately not
+fuzzy — you are looking for a name you already partly know, and a fuzzy match
+surfacing `gpt-4o` for "o1" would make the list less trustworthy. The filter box
+keeps focus while ↑↓ move the cursor, the same arrangement home uses, so
+narrowing and choosing are one gesture.
+
+**A separate report from the same session: the front screen had no visible way
+out.** `q` quits every screen with no text box on it, and home has one, so the
+key is consumed as a character and never arrives. `ctrl+q` is now an app-level
+binding — it therefore appears on every footer, and it survives a focused input.
+
+**Test pollution found while adding the tests, and worth recording.** The first
+version of the models-screen helper set `OPENAI_API_KEY` in `os.environ`
+directly. Home reads that variable to choose between live and replay, so a
+models test silently flipped the mode of every test that ran after it and broke
+an unrelated assertion about the evidence window. Everything the helper touches
+now goes through `monkeypatch`.
+
+**Evidence.** `uv sync --extra tui`, `HOLT_NO_NETWORK=1 pytest -q -rs`:
+**305 passed**, no skips. 17 new tests, driven against a scripted listing of the
+25 ids a stock OpenAI key actually returns — the alias pricing, the four
+ordering tiers, the six id families that are not chat models, the filter, and
+`ctrl+q` on home.
+
+---
+
+## Iteration 30 — `ctrl+f` was showing somebody else's search results (2026-08-31)
+
+**The report.** Pressing `ctrl+f` opened a page of twenty-five repositories.
+They were real, they were screened correctly, and they had nothing to do with
+the person looking at them: they came from the `demo` session committed to this
+repository — one profile, run once, on a date in the past. Nothing on the screen
+was false. The screen was still lying, because a list of repositories presented
+where a result goes reads as *your* result, and no caption undoes that.
+
+**Why it was built that way, and why that stopped being a good reason.** The
+recording exists so the interface demos with no token and no key, and so the
+screening rule can be exercised in tests without network. Both are still worth
+having. What was wrong was making the demo the default: it turned a feature that
+finds you repositories into a feature that shows you a canned list, and the
+better it looked the worse the problem was.
+
+**`ctrl+f` now opens on a choice.** Search GitHub, change what you are looking
+for, or replay the recorded example search — that last one described as what it
+is and offered only when the manifest is actually on disk. The recording is one
+keystroke away and still free. It is no longer what the feature claims to be.
+
+**Live search needs a token and nothing else, and the screen says exactly
+that.** `screen_records` runs no model, so a sweep costs GitHub API quota and
+about a minute of waiting. The check is on `GITHUB_TOKEN` alone; demanding an
+OpenAI key to *find* candidates would have made a free feature look paid. A
+missing token is reported on the start screen with the choice still under the
+cursor, not as a dead end.
+
+**Rows are drawn as they land.** Sourcing twenty-five repositories and reading a
+page of pull-request threads from each is a minute of network, and a minute of
+blank screen is indistinguishable from a hang. The engine grew `source_live`,
+which does the one search call and returns a `LiveSearch` whose `screen()`
+yields one `ScreenedStep` per candidate; `run_live` now walks that same
+generator, so the command line and the interface cannot drift on what survives.
+The interface wraps it in a worker thread that appends, with a cursor on the
+reading side — the arrangement the run stream already uses, no lock and no
+message schema.
+
+**Rows are not re-sorted as they arrive.** The recorded view puts survivors
+first because it has all of them before it draws anything. A live sweep does
+not, and rearranging the list under the cursor as each verdict landed would
+assert a ranking screening never computed. They stay in the order the search
+returned them, cut ones included, reasons attached.
+
+**"Could not read" is kept separate from "rejected".** A candidate GitHub
+refuses is listed as unread, never counted as a cut. A sweep that quietly merged
+the two would report a rejection it never made.
+
+**Stopping keeps what it already screened.** Those rows were free and they are
+still true; discarding them would punish impatience. Cancellation is checked
+between candidates, so `ctrl+x` returns within one candidate rather than at the
+end of the sweep.
+
+**Found while testing: the footer advertised a key that did nothing.** `ctrl+x
+stop searching` was listed on the start screen, where there is no search to
+stop, which made the choice look like a sweep already running. The binding is
+now conditional on a live search being alive.
+
+**Also corrected: the discovery tests were gated on the recording.** The whole
+module was skipped when `demo` was absent. That was defensible when the
+recording was the only path; it is not now that live search is the default. The
+skip applies to the seven tests that actually read the manifest, and the
+live-search tests run everywhere.
+
+**Evidence.** `pytest -q -rs` and `HOLT_NO_NETWORK=1 pytest -q -rs`:
+**315 passed**, no skips (was 305). 10 new tests — seven driving the search
+worker against a stubbed `source_live` with no token, network or recording
+(ordering, unread candidates, cancellation, thread failure, progress before the
+first row, the token check), and three driving the screen (it opens on the
+choice with no recorded slug on screen, it streams rows while the sweep runs,
+and a missing token is reported without leaving the choice).
+
+---
+
+## Iteration 31 — "what next" only ever read the recording (2026-08-31)
+
+**The report.** Assess a repository, press `n`, and the screen answered *"No
+committed evidence for canonical/ubuntu-cloud-docs, so there is nothing to rank
+from."* The sentence was true and it named the wrong problem. `_rank` called
+`session._provider(live=False)` with the flag hardcoded, so the ranking read the
+committed fixtures and nothing else — whatever mode the run in front of you had
+been in. A repository GitHub would have answered for immediately was reported as
+unrankable because we never asked GitHub.
+
+**It matters more now than it did.** Iteration 30 made the finder open on a live
+GitHub search. Every repository it hands you is one with no fixture on disk, so
+the natural path through the product — find a repository, assess it, ask what to
+work on — hit the dead end every time. A screen that only works on the 69
+repositories committed to this repository is a demo, not a feature.
+
+**The mode now travels with the report.** `NextScreen` takes the run's `live`
+flag and tries that source first, because the ranking should read the evidence
+the report in front of you was built from. The other source is tried second: a
+committed fixture and a live fetch answer the same question about the same
+repository, and stopping at the first miss was the whole bug. Live is dropped
+from the list when there is no token rather than attempted and reported as a
+failure, which would again name the wrong problem — the message asks for
+`GITHUB_TOKEN` instead of blaming a recording nobody made.
+
+**The fetch moved off the event loop.** A live read is a network round trip and
+the interface must not freeze for the length of one, so both fetches go through
+`asyncio.to_thread` with the notice saying which source is being read.
+
+**The ranking now carries its own measurement, which it should never have shown
+an order without.** `render_next` in the engine carries a docstring saying the
+measurement is emitted "in the only path that prints the ranking, so no caller
+can show the order without the number that says how well it works". That
+invariant was already broken: this screen is a second path that prints the
+ranking, and it printed the order with a one-line summary and no number. It now
+shows `NEXT_MEASUREMENT` verbatim whenever an order is on screen — hit@10 0.234
+against 0.172 for chance, 95% interval [-0.003, +0.132], an interval that spans
+zero. The interface holds evidence to a `file:line` standard; a ranking is a
+claim and it gets the same treatment.
+
+**Provenance on the summary line.** It now says whether it read live from GitHub
+or from committed evidence, because with two sources in play "76 of 202 open
+issues overlap" is not a complete statement without saying what it read.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **318 passed**, no skips (was
+315). Three new tests — the measured claim appears with any order it shows
+(`hit@10 0.234`, `spans zero`), a live-assessed repository with no fixture asks
+for the token instead of blaming the recording, and the source order follows the
+report's mode with live dropped when there is no token. Verified by hand against
+`home-assistant/core` + `@frenck`: 14 merged PRs, 31 files, 76 of 202 open
+issues overlap.
+
+
+---
+
+## Iteration 32 — three places the interface chose fixtures for you (2026-08-31)
+
+**The report.** *"A lot of holt TUI is based on fixtures and not running live
+stuff; all fixture stuff should be gated behind conscious choices to use them."*
+Iterations 30 and 31 each moved one screen off its recording. This is the sweep
+for what they left: places where committed fixtures were read not because anyone
+asked, but because a default, a directory listing, or a fall-through decided it.
+
+Three were real. Reading a recording is not the problem — it is free, it is
+reproducible, and it is how the demo works. The problem is a recording served
+where a reader had reason to think they were getting GitHub.
+
+**1. The finder assessed a live result from a recording.** `DiscoverScreen._assess`
+opened with `replay = session_module.has_recording(row.slug)`. Search GitHub
+live, watch the sweep screen candidates, press enter on one — and if a
+trajectory happened to be sitting in `fixtures/trajectories/`, you were handed a
+recorded answer from before the holdout instead of an assessment of what you had
+just found. Nothing on screen said so; the run screen showed "replay" in chrome
+the reader had no reason to look at, having just been shown a live search.
+
+This is the worst of the three because iteration 30 created it. Opening the
+finder on a live search made the path *end* in a recording, and the two commits
+that each looked correct in isolation composed into a lie. The mode now follows
+the search that produced the row: live sweeps are assessed live, recorded
+sessions are replayed, and a recorded row with no trajectory says so rather than
+flipping silently to live and then asking for credentials it never needed
+before.
+
+**2. `RunOptions.replay` defaulted to `True`.** Every call site happened to pass
+it, so nothing was broken today — but the default meant that the way to get
+committed fixtures rendered as an assessment was to not think about the
+question. The field is now required. This is a one-character change with no
+behavioural effect and it is in this entry deliberately: it is the difference
+between a codebase where the safe path is the easy one and one where it is the
+attentive one.
+
+**3. "What next" answered a live report from fixtures, silently.** Iteration 31
+made the ranking try the report's own source first and the other one second.
+Second was the bug in the other direction: when GitHub had nothing, the screen
+fell through to a pre-holdout recording, ranked from it, and mentioned the
+source in a sentence *underneath an order already on screen*. The order looked
+live. That is precisely the overclaim the evidence rules exist to prevent — the
+provenance line iteration 31 added made it disclosed, not chosen.
+
+The fallback toward fixtures now takes `ctrl+e`, and until it is pressed a live
+miss reads as a live miss. The fallback the other way — a replayed report
+reaching GitHub — is untouched, because you already chose the recording and that
+direction moves toward the real repository rather than away from it. The key is
+`ctrl+e` rather than a bare letter for a boring reason: the login box holds
+focus the whole time a reader would want it, and a printable key never reaches
+the screen from inside an `Input`. It is hidden from the footer via
+`check_action` unless something is actually being withheld.
+
+A consequence worth naming: a live report with no `GITHUB_TOKEN` now has no
+source at all, and `_sources()` returns `[]`. It reports the missing token
+instead of quietly answering from the fixtures. That is a screen doing less, and
+it is correct.
+
+**One place was left alone.** Home still opens in replay when there is no
+`OPENAI_API_KEY`, because an interface that refuses to start without credentials
+is worse than one that starts free and says so. What changed is that it says
+*why*: the chrome reads `replay  no OPENAI_API_KEY` until you press `ctrl+t`,
+after which it stops explaining a decision you have now made yourself. The
+reason went beside the mode rather than into the notice line under the input —
+the first draft put it there and pushed the footer off a 100-column screen,
+which cost the reader the keybindings the notice exists to advertise. A test
+caught it.
+
+**"What next" now reuses a read for ten minutes.** Asked for in the same
+breath, and it belongs here rather than in its own entry because it is the same
+question: trying three logins against one repository was three round trips to
+GitHub for the same two fetches. Reads are cached on `(repo, kind, live)` for
+`store.DEFAULT_MAX_AGE_SECONDS` — imported from the store rather than restated,
+so the interface has one answer to "how old is too old" instead of two that can
+drift. Every reuse carries its age in the summary line ("reused from a read 3
+min ago"), dated by the *oldest* of the two fetches, because the freshest part
+of a mixed answer is not what it should be dated by. A cache whose age nobody
+can see is a cache that lies, and this project has a rule about that. Expired
+entries are deleted on lookup rather than left to accumulate for the life of the
+process.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **326 passed**, no skips (was
+318). Eight new tests — a live find with a committed recording on disk is still
+assessed live; a recorded row with no trajectory is refused rather than started
+live; `RunOptions(repo=...)` alone raises `TypeError`; a live report's
+`_sources()` omits the fixtures until `use_committed` is set; the miss names
+`ctrl+e` and shows no ranking until it is pressed, then ranks from committed
+evidence; a second question reuses the read and says "just now"; an entry older
+than the window is not reused and is dropped; and home's chrome names the
+missing key until `ctrl+t` answers it.
+
+---
+
 ## The main failure mode
 
 **A sentence is not an assertion, and unverified sentences are where this system

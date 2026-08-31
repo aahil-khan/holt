@@ -13,8 +13,8 @@ actually run, not read off a document.
 
 | # | Deliverable | Status |
 |---|---|---|
-| 01 | Complete solution code + **Improvement Changelog** | **Done.** `CHANGELOG.md` is titled *Improvement Changelog* and opens with *The story in one table* — 14 rows, baseline through final, each giving what was tried, the evidence and the decision, in exactly the shape the brief's example asks for. Iterations 1–28 follow in full, including five removed experiments. Failure mode and hot take are at the end, as the brief asks. |
-| 02 | Reproduction guide | **Done.** `REPRODUCTION.md` — clean machine, exact commands, versions, runtimes, costs. Verified: full suite is **364 passed** in 113 s. |
+| 01 | Complete solution code + **Improvement Changelog** | **Done.** `CHANGELOG.md` is titled *Improvement Changelog* and opens with *The story in one table* — 14 rows, baseline through final, each giving what was tried, the evidence and the decision, in exactly the shape the brief's example asks for. Iterations 1–32 follow in full, including five removed experiments. Failure mode and hot take are at the end, as the brief asks. |
+| 02 | Reproduction guide | **Done.** `REPRODUCTION.md` — clean machine, exact commands, versions, runtimes, costs. Verified: full suite is **372 passed** in 118 s. |
 | 03 | Solution video, ≤ 5 min | **Not started.** Script and shot list: [`VIDEO-SCRIPT.md`](VIDEO-SCRIPT.md). |
 | 04 | Agent trajectories for **every agent you used** | **Substantially done, one gap.** See §3 below. |
 

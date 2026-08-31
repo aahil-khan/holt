@@ -42,7 +42,12 @@ from holt.cli import ISSUE_ROOT, PATHFINDER_TRAJECTORIES, normalise
 @dataclass
 class RunOptions:
     repo: str
-    replay: bool = True
+    #: Which evidence this run reads, stated at every call site rather than
+    #: defaulted. The default used to be `True`: build a `RunOptions` without
+    #: thinking about the question and you got committed fixtures, rendered as
+    #: an assessment with no sign that is what they were. Reading a recording
+    #: is a choice. It is never what you get for not making one.
+    replay: bool
     live: bool = False
     #: Off by default, matching `holt analyze`. The ranking does not beat
     #: GitHub's `good first issue` label, and the engine demoted it to opt-in;
