@@ -28,7 +28,7 @@ Replayed from committed fixtures and recorded model output. No model ran.
 
 ## 3. Stage A — what kind of repository is this?
 
-*Model:* `gpt-5-mini-2025-08-07` · *1308 in / 413 out tokens · $0.0012*
+*Model:* `gpt-5-mini-2025-08-07` · *1308 in / 463 out tokens · $0.0013*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -130,11 +130,11 @@ Backend architecture follows:
 {
  "repo_kind": "real_software",
  "confidence": "high",
- "rationale": "The README describes a full-stack monorepo with runnable apps (apps/web \u2014 Next.js, apps/api \u2014 Express), shared packages (packages/db, packages/ui), and a Prisma schema for database models, indicating this repository contains executable application code rather than a list or mirror (repo:SecureBananaLabs/bug-bounty:readme). The CONTRIBUTING file describes PR and bounty rules for code changes and merges, consistent with an actively developed software project (repo:SecureBananaLabs/bug-bounty:contributing). Repository metadata shows JavaScript as the primary language and that it is not a fork or mirror (repo:SecureBananaLabs/bug-bounty:meta).",
+ "rationale": "The README describes a full-stack TypeScript-first monorepo with distinct frontend (Next.js) and backend (Express) applications, shared packages (Prisma schema, UI components), and detailed features and routes (auth, CRUD, payments, messaging). This indicates active application code rather than a registry/listing or documentation-only repo. The contributing doc references merging and bounty rules but does not change that the repo contains runnable software components (apps/web, apps/api, packages/db, packages/ui).",
  "evidence_ids": [
   "repo:SecureBananaLabs/bug-bounty:readme",
-  "repo:SecureBananaLabs/bug-bounty:contributing",
-  "repo:SecureBananaLabs/bug-bounty:meta"
+  "repo:SecureBananaLabs/bug-bounty:meta",
+  "repo:SecureBananaLabs/bug-bounty:contributing"
  ],
  "governance_flags": [
   "none"
@@ -144,7 +144,7 @@ Backend architecture follows:
 
 ## 4. Stage B — is there a real route in?
 
-*Model:* `gpt-5-mini-2025-08-07` · *1107 in / 544 out tokens · $0.0014*
+*Model:* `gpt-5-mini-2025-08-07` · *1107 in / 525 out tokens · $0.0013*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -212,7 +212,7 @@ Thank you for contributing to this bug bounty repository.
 ```json
 {
  "onboarding": "substantive",
- "rationale": "The repository provides a real, followable route for outsiders. The README contains concrete setup/run commands (npm install, npm run test, npm run dev -w apps/web, npm run dev -w apps/api) and notes about env vars (repo:SecureBananaLabs/bug-bounty:readme). The CONTRIBUTING file gives an explicit process for proposing and getting paid for work: pick an open GitHub issue, comment if you are working on it, create a branch, open a PR that references a single issue, and details PR requirements and payment conditions (repo:SecureBananaLabs/bug-bounty:contributing). The docs do not name individual maintainers or give direct contact info, but they point contributors to issues/PRs and describe the review/merge workflow, which provides a clear onboarding path.",
+ "rationale": "The repository provides a clear, actionable route for outsiders: the README includes Getting Started commands (npm install, npm run test) and explicit dev commands to run the frontend and backend as well as where the Prisma schema and .env values belong (repo:SecureBananaLabs/bug-bounty:readme). The CONTRIBUTING file defines the process for proposing and doing work (pick an open issue, comment you\u2019re working on it, create a branch, implement/tests, open a PR referencing the issue), PR scope and requirements, and bounty/payment eligibility rules (payment only after merge to main) \u2014 all of which allow an external contributor to follow a documented workflow (repo:SecureBananaLabs/bug-bounty:contributing).",
  "evidence_ids": [
   "repo:SecureBananaLabs/bug-bounty:readme",
   "repo:SecureBananaLabs/bug-bounty:contributing"
@@ -222,7 +222,7 @@ Thank you for contributing to this bug bounty repository.
 
 ## 5. Stage C — what happened to people who tried?
 
-*Model:* `gpt-5-mini-2025-08-07` · *2364 in / 2559 out tokens · $0.0057*
+*Model:* `gpt-5-mini-2025-08-07` · *2364 in / 2885 out tokens · $0.0064*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -345,11 +345,11 @@ Pull request threads:
   {
    "pr_id": "pr:SecureBananaLabs/bug-bounty#2979:opened",
    "outcome": "closed_with_guidance",
-   "signal": "neutral",
-   "quote": "Closing this myself after a broader overlap refresh found existing open issues/PRs for the same unsupported OAuth provider surface (#814, #1566, #2919, PR #817, PR #1027, PR #1568, PR #1980, PR #2093, PR #2920). This should not stay in review or be counted as a claim."
+   "signal": "discouraging",
+   "quote": "Closing this myself after a broader overlap refresh found existing open issues/PRs for the same unsupported OAuth provider surface (#814, #1566, #2919, PR #817, PR #1027, PR #1568, PR #1980, PR #2093, PR #2194, PR #2920). This should not stay in review or be counted as a claim."
   },
   {
-   "pr_id": "pr:SecureBananaLabs/bug
+   "pr_id": "pr:Secur
 ```
 
 ## 6. Stage D — verification (tool calls, no model)
@@ -388,13 +388,13 @@ The verdict above was passed to Stage E as an input it cannot change.
 
 **Not worth your time** — for a contributor with 7 days.
 
-You should expect virtually no maintainer review: of 200 outsider PRs looked at, none received a maintainer reply and none were merged. The repo is runnable and has an explicit CONTRIBUTING/payments process, but publicly visible maintainer engagement with outside contributions is effectively absent.
+You would be joining a project with clear setup and contribution docs but effectively no maintainer engagement: in the 200 outsider attempts sampled none were merged and all 200 received no maintainer response. Because the CONTRIBUTING file pays bounties only after merge and there were zero merges in this sample, outside contributors are unlikely to see their work advanced or rewarded.
 
 ## What the evidence shows
 
-The dominant signal is lack of review: 200 outsider threads produced 0 merges and 200 ignored outcomes; median first-response time is unset and bot activity is 0.0, so human maintainer replies are effectively non‑existent. There are 38 distinct outside authors but no successful outsider merges.
+The dominant signal is lack of maintainer engagement: in the sampled window 200 outsider threads were opened by 38 distinct external authors, zero outsider PRs were merged, and all 200 outsider threads were treated as ignored in the record; there were no recorded first-response times in the sample. That pattern—consistent author activity but no replies—was the decisive factor for the verdict.
 
-Onboarding is substantive—README contains concrete install/run/test commands for the Next.js and Express apps and a Prisma schema, and CONTRIBUTING lays out a clear PR and bounty workflow. Despite that, most PRs show only author messages and no review; a few PRs were closed by their authors for overlap, and maintainers sometimes close duplicates with notes like “Closing this PR as there is already an existing PR (#2851)…” or a longer overlap explanation. The visible pattern is consistently “ignored” or self‑closed, which is discouraging for outside contributors.
+The repository itself is substantive and actionable: README and CONTRIBUTING give step-by-step dev commands (install, test, run frontend/backend), a monorepo layout with frontend/backend/shared packages, and a rule that bounties are paid only after merge. A few maintainer closures explicitly cite overlaps or duplicates (for example: "Closing this PR as there is already an existing PR (#2851)"), which explains some closed items but does not change the overall lack of engagement with outsider contributions.
 
 ## What decided it
 
@@ -402,7 +402,7 @@ Onboarding is substantive—README contains concrete install/run/test commands f
 
 ## What could not be determined
 
-I could not determine whether maintainers handle contributions off‑GitHub or respond to high‑value private/bounty offers, because no private contact evidence appears in the repo.
+I could not determine the maintainers' reasons for low engagement (funding, bandwidth, alternate triage channels, or an internal policy).
 
 ## Where outsider work landed
 
@@ -413,9 +413,9 @@ Outsiders attempted these and none were merged: `apps/api` (160), `(root)` (20),
 
 ## Evidence
 
-- repo kind: real_software — The README describes a full-stack monorepo with runnable apps (apps/web — Next.js, apps/api — Express), shared packages (packages/db, packages/ui), and a Prisma schema for database models, indicating this repository contains executable… — `repo:SecureBananaLabs/bug-bounty:readme`
-- onboarding: substantive — The repository provides a real, followable route for outsiders. The README contains concrete setup/run commands (npm install, npm run test, npm run dev -w apps/web, npm run dev -w apps/api) and notes about env vars… — `repo:SecureBananaLabs/bug-bounty:readme`
-- outsider posture: absent — Most pull requests show no maintainer responses or review guidance (open PRs with only author messages). Two PRs were closed by their authors due to overlap with existing work. This pattern indicates minimal maintainer engagement and… — `pr:SecureBananaLabs/bug-bounty#3185:opened`
+- repo kind: real_software — The README describes a full-stack TypeScript-first monorepo with distinct frontend (Next.js) and backend (Express) applications, shared packages (Prisma schema, UI components), and detailed features and routes (auth, CRUD, payments… — `repo:SecureBananaLabs/bug-bounty:readme`
+- onboarding: substantive — The repository provides a clear, actionable route for outsiders: the README includes Getting Started commands (npm install, npm run test) and explicit dev commands to run the frontend and backend as well as where the Prisma schema and .env… — `repo:SecureBananaLabs/bug-bounty:readme`
+- outsider posture: discouraging — Most recent PRs show only author activity with no maintainer responses (treated as ignored), and the few closed PRs were closed as duplicates/overlaps rather than advanced by maintainers. That pattern signals low engagement and is… — `pr:SecureBananaLabs/bug-bounty#3185:opened`
 - ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3185:opened`
 - ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3062:opened`
 - ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3063:opened`

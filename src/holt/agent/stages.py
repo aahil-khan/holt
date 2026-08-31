@@ -391,7 +391,11 @@ list something the evidence in front of you actually settles.
 
 Never say a contribution will be accepted. Never describe work as easy. Where the
 evidence is thin, say it is thin -- "I could not determine this" is a better
-sentence than a confident one that outruns what was read."""
+sentence than a confident one that outruns what was read.
+
+Never use the word "cutoff" -- it is internal jargon and means nothing to the
+reader. The measurements you are given describe the window of history that was
+read; say "in the period read", "in this sample", or name no window at all."""
 
 # Three fields rather than one blob. The old single `summary` produced a
 # 250-word paragraph that a reader had to mine for the decision, which is the
@@ -420,7 +424,7 @@ def narrate(
     # question costs nothing.
     lines = [f"Repository: {repo}", f"Verdict (already decided, do not change): {verdict}", ""]
     lines += ["Why the rules landed there:"] + [f"  - {t}" for t in trace]
-    lines += ["", "Measured before the cutoff:"]
+    lines += ["", "Measured in the sampled window:"]
     lines += [f"  {k}: {v}" for k, v in signals_dict.items()]
     lines += ["", "Verified findings:"]
     for item in findings:

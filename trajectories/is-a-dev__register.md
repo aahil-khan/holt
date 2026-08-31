@@ -28,7 +28,7 @@ Replayed from committed fixtures and recorded model output. No model ran.
 
 ## 3. Stage A — what kind of repository is this?
 
-*Model:* `gpt-5-mini-2025-08-07` · *1934 in / 621 out tokens · $0.0017*
+*Model:* `gpt-5-mini-2025-08-07` · *1934 in / 589 out tokens · $0.0017*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -103,15 +103,17 @@ Not all announcem
 {
  "repo_kind": "registry",
  "confidence": "high",
- "rationale": "The repository hosts a catalogue of .is-a.dev subdomain entries: the README describes a process where contributors open PRs to add domains and merged PRs publish DNS records (repo:is-a-dev/register:readme). The list of merged pull requests shows many changes that add or modify JSON files under the domains/ directory (e.g. pr:is-a-dev/register#39588, pr:is-a-dev/register#39601, pr:is-a-dev/register#39602, pr:is-a-dev/register#39666), which are registry entries rather than changes to running software. Contributing guidelines also describe PR handling for domain entries (repo:is-a-dev/register:contributing).",
+ "rationale": "The repository is a service for issuing \".is-a.dev\" subdomains and merged pull requests primarily add or modify JSON domain manifest files under the domains/ directory (i.e. registry entries), not code features. The README describes forking and opening a PR to register a subdomain, and the listed merged PRs show additions like domains/*.json and _vercel/_github-pages-challenge entries rather than application code changes.",
  "evidence_ids": [
+  "repo:is-a-dev/register:meta",
   "repo:is-a-dev/register:readme",
   "repo:is-a-dev/register:contributing",
   "pr:is-a-dev/register#39588",
-  "pr:is-a-dev/register#39601",
-  "pr:is-a-dev/register#39602",
+  "pr:is-a-dev/register#39604",
+  "pr:is-a-dev/register#39611",
   "pr:is-a-dev/register#39666",
-  "repo:is-a-dev/register:meta"
+  "pr:is-a-dev/register#39735",
+  "pr:is-a-dev/register#39743"
  ],
  "governance_flags": [
   "none"
@@ -121,7 +123,7 @@ Not all announcem
 
 ## 4. Stage B — is there a real route in?
 
-*Model:* `gpt-5-mini-2025-08-07` · *1150 in / 479 out tokens · $0.0012*
+*Model:* `gpt-5-mini-2025-08-07` · *1150 in / 407 out tokens · $0.0011*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -182,7 +184,7 @@ README (evidence id: repo:is-a-dev/register:readme)
 ```json
 {
  "onboarding": "substantive",
- "rationale": "The repository provides a clear, followable route for outsiders to get involved: the README documents the registration flow (fork the repo \u2192 follow the documentation at https://docs.is-a.dev \u2192 open a PR and respond to requested changes \u2192 merged PR publishes DNS), links to a visual guide and the docs, and points people to the Discord server for announcements. The CONTRIBUTING file specifies how to use issues (which labels to use for abuse/support/suggestion/question) and gives basic PR guidance. These materials together give a newcomer actionable steps and places to ask for help.",
+ "rationale": "The repository provides a clear, actionable path for newcomers: the README gives step-by-step registration instructions (fork the repo, follow the documentation at docs.is-a.dev, open a PR and respond to review; DNS is published after merge), plus a community entry point (Discord) for announcements. The CONTRIBUTING file documents how to interact via issues (labels for report-abuse, support, suggestion, question) and basic PR expectations. These items together constitute a documented setup and a described process for proposing work and getting help.",
  "evidence_ids": [
   "repo:is-a-dev/register:readme",
   "repo:is-a-dev/register:contributing"
@@ -192,7 +194,7 @@ README (evidence id: repo:is-a-dev/register:readme)
 
 ## 5. Stage C — what happened to people who tried?
 
-*Model:* `gpt-5-mini-2025-08-07` · *2767 in / 3560 out tokens · $0.0078*
+*Model:* `gpt-5-mini-2025-08-07` · *2767 in / 3928 out tokens · $0.0085*
 
 <details><summary>Instructions given to the model</summary>
 
@@ -263,7 +265,7 @@ Pull request threads:
    "pr_id": "pr:is-a-dev/register#39741:opened",
    "outcome": "closed_dismissive",
    "signal": "discouraging",
-   "quote": "That... wasn't meant to be feedback, was meant to be glazing your stupidity. T\u00f4i c\u0169ng kh\u00f4ng th\u1ea5y \u0111o\u1ea1n m\u00e3 n\u00e0y li\u00ean quan \u0111\u1ebfn qu\u00e1 tr\u00ecnh ph\u00e1t tri\u1ec3n \u1edf \u0111i\u1ec3m n\u00e0o."
+   "quote": "That... wasn't meant to be feedback, was meant to be glazing your stupidity."
   },
   {
    "pr_id": "pr:is-a-dev/register#39749:opened",
@@ -275,18 +277,18 @@ Pull request threads:
    "pr_id": "pr:is-a-dev/register#39588:opened",
    "outcome": "merged_after_review",
    "signal": "welcoming",
-   "quote": "provide proper preview link or screenshot"
+   "quote": "Preview URL returns 404. Please provide a valid preview."
   },
   {
    "pr_id": "pr:is-a-dev/register#39612:opened",
    "outcome": "changes_requested",
    "signal": "welcoming",
-   "quote": "fill in checklist in pr description and provide site preview screenshot/url"
+   "quote": "Preview URL requires authentication. Please provide a valid preview."
   },
   {
    "pr_id": "pr:is-a-dev/register#39684:opened",
    "outcome": "closed_with_guidance",
-   "signal": "neutral",
+   "signal": "discouraging",
    "quote": "sites must be software development related"
   },
   {
@@ -299,12 +301,16 @@ Pull request threads:
    "pr_id": "pr:is-a-dev/register#39700:opened",
    "outcome": "closed_dismissive",
    "signal": "discouraging",
-   "quote": "what you want to do actually? d
+   "quote": "what you want to do actually? do you want to show your github profile or have site and showing that using CNAME????"
+  },
+  {
+   "pr_id": "pr:is-a-dev/register#39694:opened",
+   "outcome": "cl
 ```
 
 ## 6. Stage D — verification (tool calls, no model)
 
-Every evidence id cited by every finding was looked up against the provider: **33 lookups, 33 resolved, 0 did not.**
+Every evidence id cited by every finding was looked up against the provider: **35 lookups, 35 resolved, 0 did not.**
 
 Verification works at two levels. An id that does not resolve is stripped from the finding that cited it. A finding left with *no* resolving id at all is dropped entirely — not softened, not hedged, removed.
 
@@ -338,17 +344,21 @@ The verdict above was passed to Stage E as an input it cannot change.
 
 **Not worth your time** — for a contributor with 7 days.
 
-You would be working on a public registry of .is-a.dev domain entries (PRs add or edit JSON files that publish DNS), not adding or improving running software. The project documents a clear onboarding flow and reviewers give concrete verification steps, but many outsider PRs are ignored and occasional responses are dismissive, so expect mixed interaction.
+You would be signing up to operate a registry: typical contributions are pull requests that add or modify domain manifest JSON files to register .is-a.dev subdomains, not changes to application code. The project has clear docs and an active review process for registry entries, but many outsider PRs in the sample were ignored or sometimes closed dismissively, so newcomer experience is mixed.
 
 ## What the evidence shows
 
-The repo is a catalogue: the README and CONTRIBUTING lay out a fork → open PR → verification → merge flow and most merged PRs modify JSON under domains/ rather than changing code (examples include PRs that add/modify entries). The docs and links to a visual guide and Discord make the steps explicit and publish DNS on merge.
+The repository is a service for issuing .is-a.dev subdomains and merged PRs primarily add domains/*.json and verification files rather than application code; the README explicitly instructs users to fork, follow docs, and open a PR to register a subdomain, so merged work is registry entries, not software contributions. In short, this repo functions as a registry, not a codebase for feature work.
 
-Onboarding materials are substantive and reviewers often give actionable feedback (checklists, preview screenshots, TXT verification instructions) and merge after fixes. Measured activity shows 191 outsider threads with 35 merged and 122 ignored, and a median first response of 12.3 hours; alongside helpful threads there are a few dismissive closures (e.g. "That... wasn't meant to be feedback, was meant to be glazing your stupidity.").
+Engagement is uneven: in the sampled window there were 191 outsider threads, 35 merged and 122 ignored, with a median first response of 12.3 hours and 145 distinct outside authors. Onboarding is substantive—CONTRIBUTING, docs, and a Discord are present—and many maintainers give clear, actionable feedback (for example, step-by-step vercel verification guidance). However there are also dismissive closures and rude comments, exemplified by: "That... wasn't meant to be feedback, was meant to be glazing your stupidity."
 
 ## What decided it
 
 - repo_kind=registry: merged work here is not a software contribution
+
+## What could not be determined
+
+I could not determine whether maintainers would accept non-registry code contributions or architectural changes, since nearly all merged PRs in the sample were domain/manifest edits.
 
 ## Where outsider work landed
 
@@ -360,13 +370,13 @@ Outsiders attempted these and none were merged: `(root)` (3). That is what this 
 
 ## Evidence
 
-- repo kind: registry — The repository hosts a catalogue of .is-a.dev subdomain entries: the README describes a process where contributors open PRs to add domains and merged PRs publish DNS records (repo:is-a-dev/register:readme). The list of merged pull requests… — `repo:is-a-dev/register:readme`
-- onboarding: substantive — The repository provides a clear, followable route for outsiders to get involved: the README documents the registration flow (fork the repo → follow the documentation at https://docs.is-a.dev → open a PR and respond to requested changes →… — `repo:is-a-dev/register:readme`
-- outsider posture: mixed — Maintainers frequently provide clear, actionable feedback (checklists, preview screenshots, verification steps) and merge PRs after fixes, which is welcoming. However a few threads contain dismissive or hostile responses and some PRs are… — `pr:is-a-dev/register#39741:opened`
-- closed dismissive — “That... wasn't meant to be feedback, was meant to be glazing your stupidity. Tôi cũng không thấy đoạn mã này liên quan đến quá trình phát triển ở điểm nào.” — `pr:is-a-dev/register#39741:opened`
+- repo kind: registry — The repository is a service for issuing ".is-a.dev" subdomains and merged pull requests primarily add or modify JSON domain manifest files under the domains/ directory (i.e. registry entries), not code features. The README describes… — `repo:is-a-dev/register:meta`
+- onboarding: substantive — The repository provides a clear, actionable path for newcomers: the README gives step-by-step registration instructions (fork the repo, follow the documentation at docs.is-a.dev, open a PR and respond to review; DNS is published after… — `repo:is-a-dev/register:readme`
+- outsider posture: mixed — Many maintainers give clear, actionable feedback and merge after the contributor complies, which is welcoming. However several PRs were closed with little path forward or contained rude comments, which is discouraging for newcomers… — `pr:is-a-dev/register#39741:opened`
+- closed dismissive — “That... wasn't meant to be feedback, was meant to be glazing your stupidity.” — `pr:is-a-dev/register#39741:opened`
 - changes requested — “On hold since you are removing a NS record domain, wait for the user's reply.” — `pr:is-a-dev/register#39749:opened`
-- merged after review — “provide proper preview link or screenshot” — `pr:is-a-dev/register#39588:opened`
-- changes requested — “fill in checklist in pr description and provide site preview screenshot/url” — `pr:is-a-dev/register#39612:opened`
+- merged after review — “Preview URL returns 404. Please provide a valid preview.” — `pr:is-a-dev/register#39588:opened`
+- changes requested — “Preview URL requires authentication. Please provide a valid preview.” — `pr:is-a-dev/register#39612:opened`
 - closed with guidance — “sites must be software development related” — `pr:is-a-dev/register#39684:opened`
 - merged after review — “you need to verify your domain on vercel - get the TXT record to verify your main domain on vercel dashboard (TXT under `@` domain, not `www`) - the TXT goes in…” — `pr:is-a-dev/register#39610:opened`
 - closed dismissive — “what you want to do actually? do you want to show your github profile or have site and showing that using CNAME????” — `pr:is-a-dev/register#39700:opened`

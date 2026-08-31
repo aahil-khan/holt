@@ -1211,6 +1211,35 @@ threads already crawled, candidates from the issue fixtures already captured;
 with a pointer to `holt analyze` — ranking for a stranger is the contributor-
 blind Path Finder, which loses to GitHub's own label and stays behind its flag.
 
+## Iteration 21 — the model becomes a choice, and the benchmark stays pinned (2026-08-31)
+
+`holt models` lets a user swap the model behind every stage: other OpenAI
+models, Claude via the Anthropic SDK, and any OpenAI-compatible endpoint —
+Ollama and Gemini ship as presets, `openai-compatible` covers vLLM and the
+rest. Per-stage overrides (`--stage narrate=claude-opus-5`) ride on the same
+`STAGE_MODELS` seam that already existed; `model.py` remains the only file
+that touches an LLM, and the `complete()` contract — a dict matching the
+stage's declared JSON schema — holds across providers (Anthropic via
+structured outputs; a safety refusal raises loudly instead of recording an
+empty finding).
+
+**The design decision that matters: the library never reads the user's model
+configuration on its own.** Every committed trajectory, every benchmark
+number and every replay was produced under the pinned dated ids, and an eval
+script silently inheriting somebody's Ollama config would be exactly the
+reproducibility failure this project is built to prevent. Only the CLI opts
+in (`enable_user_models_config()`, one deliberate call a front end can also
+make). A test proves the library resolves the pinned defaults even when a
+config file exists on disk, and another that replay keys are byte-stable
+under the defaults. When the configuration diverges, `holt models` says in
+its own output that committed recordings will fail loudly under it rather
+than serve another model's answers — the same principle as labelling
+replayed output.
+
+Costs for unpriced models are recorded as $0 and labelled "unknown" rather
+than invented. Eleven new tests; no recorded artifact invalidated, because
+no prompt changed.
+
 ## Iteration 20 — the reader is not running an experiment (2026-08-31)
 
 The narration prompt fed the model a section headed `Measured before the
