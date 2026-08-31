@@ -280,6 +280,12 @@ class Session:
             EntryPoint(r["evidence_id"], r["first_step"], r.get("why", ""))
             for r in ranked
         ]
+        # Same reason as `holt.cli.add_entry_points`: the ranker has its own
+        # client and can be pointed at its own model, and the footer names every
+        # model that wrote something on the page.
+        for name in client.usage.models:
+            if name not in assessment.models:
+                assessment.models.append(name)
         self._emit(
             events.StageFinished(
                 stage="pathfinder", seconds=0.0, summary=f"{len(ranked)} issues ranked"

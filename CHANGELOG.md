@@ -1403,3 +1403,40 @@ extra: **79 passed, 1 skipped** — the skip is the screen tests, reporting
 themselves absent rather than failing. `uv sync --extra tui`: 5 screen tests pass
 on top. `holt tui` without the extra prints how to install it and exits 2. The
 observation layer's 8 tests run either way, because it does not import Textual.
+
+## Iteration 23 — the report names the model that wrote it (2026-08-31)
+
+**Observed.** Three live runs made under a local Ollama configuration
+(`llama3.2`, a 3B model) produced reports that were wrong in three different
+ways. `aden-hive/hive`, a software project, was classified `registry`.
+`pytorch/pytorch` was described as "a mirror of the official PyTorch
+repository" with advice to "contribute upstream at github.com/pytorch/pytorch"
+— a claim that refutes itself in its own sentence. `psf/requests` reached the
+reader with **0 evidence claims**, every finding having cited an id that did
+not resolve, while the prose went on quoting statistics nothing backed.
+
+**What that says about the design.** The deterministic half held in all three:
+"where work landed" is arithmetic over crawled file lists, and `requests` still
+came out `viable` on 13 merges by 13 people at a 4.9h median first reply, with
+no model able to move it. The model-derived half degraded exactly as far as the
+model behind it did. Stage D behaved as specified — it dropped every
+unresolvable citation rather than softening it — and `repo_kind` remains the one
+model-derived input that can flip a verdict alone, which is what turned a bad
+classification into a bad answer twice.
+
+**Tried.** Nothing that guards against a weak model, because a verification
+stage that checks whether cited evidence *resolves* cannot check whether a claim
+is *true*, and the fix for a 3B model is not a 3B-model detector. What the three
+screenshots could not do was say which model wrote them. So `Assessment` now
+carries the model ids that actually answered, recorded in `Usage` at the one
+seam every call passes through, and the footer prints them: *"Model output from
+gpt-5-mini-2025-08-07."* The TUI prints the same line under `method`. On a
+replay these are the ids from the recording, not whatever the reader has
+configured today — a test holds that, since the whole point is to describe the
+run in front of you.
+
+**Decision.** Kept. Additive only: no prompt changed, no trajectory was
+invalidated, no verdict logic was touched, and the frozen benchmark still
+replays. The three committed reading copies in `trajectories/` were regenerated
+from the recordings for free and now carry the line. **219 passed** (`pytest -rs`,
+no skips), including two new tests on `Usage` and one on the footer.

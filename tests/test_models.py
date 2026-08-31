@@ -155,6 +155,31 @@ def test_patch_model_replays_hits_and_records_only_misses(tmp_path):
     assert client.patched == 1
 
 
+def test_usage_records_which_models_answered_in_first_use_order():
+    usage = model_mod.Usage()
+    usage.add(SMALL, 10, 1)
+    usage.add("llama3.2:latest", 10, 1)
+    usage.add(SMALL, 10, 1)
+    assert usage.models == [SMALL, "llama3.2:latest"]
+
+
+def test_a_replay_reports_the_recorded_model_not_the_configured_one(tmp_path):
+    """The footer has to describe the run the reader is looking at.
+
+    A recording made on one model, replayed by someone configured for another,
+    must still name the model whose words are on the page.
+    """
+    path = tmp_path / "t.jsonl"
+    path.write_text(json.dumps({
+        "key": call_key("classify", "s", "p"),
+        "label": "classify", "model": SMALL, "system": "s", "prompt": "p",
+        "response": {"kept": True}, "usage": {"input_tokens": 1, "output_tokens": 1},
+    }) + "\n")
+    client = model_mod.ReplayModel(path)
+    client.complete(label="classify", system="s", prompt="p", schema={})
+    assert client.usage.models == [SMALL]
+
+
 def test_cli_models_warns_when_config_diverges_from_the_recorded_defaults(
     tmp_path, monkeypatch, capsys
 ):

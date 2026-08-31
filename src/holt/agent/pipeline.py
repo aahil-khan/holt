@@ -107,6 +107,7 @@ def analyze(
         claims=claims,
         method="holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)",
         replayed=model.replayed,
+        models=list(model.usage.models),
     )
     return assessment, Trace(
         signals=signals,

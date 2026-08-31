@@ -85,4 +85,5 @@ def assess(repo: str, provider: EvidenceProvider, model: ModelClient) -> Assessm
         claims=claims,
         method="baseline (single prompt over README and metadata)",
         replayed=model.replayed,
+        models=list(model.usage.models),
     )

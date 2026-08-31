@@ -82,6 +82,12 @@ def add_entry_points(assessment, repo: str, provider, args) -> None:
     assessment.entry_points = [
         EntryPoint(r["evidence_id"], r["first_step"], r.get("why", "")) for r in ranked
     ]
+    # The ranker runs on its own client, and `--stage pathfinder=` can point it
+    # at a different model. The footer names every model that wrote something on
+    # the page, so it has to hear about this one too.
+    for name in client.usage.models:
+        if name not in assessment.models:
+            assessment.models.append(name)
 
 
 def cmd_analyze(args: argparse.Namespace) -> int:

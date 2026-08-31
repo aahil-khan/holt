@@ -84,6 +84,12 @@ class Assessment:
     # The date evidence was cut at. Stated in the output because a reader cannot
     # otherwise tell a quiet repository from one whose recent months were excluded.
     as_of: datetime | None = None
+    # The models that actually answered, in first-use order. Printed because the
+    # model-written sections degrade with the model behind them while the counts
+    # and the verdict do not, and a report that does not name its model leaves a
+    # reader unable to tell those two halves apart. On a replay these are the ids
+    # from the recording.
+    models: list[str] = field(default_factory=list)
 
     def render(self) -> str:
         lines = [f"# {self.repo}", ""]
@@ -128,4 +134,6 @@ class Assessment:
                 if point.why:
                     lines.append(f"  {point.why}")
         lines += ["", f"*{self.method}*"]
+        if self.models:
+            lines += [f"*Model output from {', '.join(self.models)}.*"]
         return "\n".join(lines).rstrip() + "\n"

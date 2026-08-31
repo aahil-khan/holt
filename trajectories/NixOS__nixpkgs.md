@@ -386,4 +386,5 @@ Outsiders attempted these and none were merged: `maintainers/maintainer-list.nix
 - merged without engagement — “Approved automatically following the successful run of `nixpkgs-review`.” — `pr:NixOS/nixpkgs#526419:opened`
 
 *holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)*
+*Model output from gpt-5-mini-2025-08-07.*
 

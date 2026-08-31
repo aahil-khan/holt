@@ -92,4 +92,5 @@ def assess(repo: str, provider: EvidenceProvider, model: ModelClient) -> Assessm
         claims=[Claim(text=r, evidence_id=None) for r in result.get("reasons", [])],
         method="baseline, evidence-matched (one prompt, the same signals and threads Holt reads)",
         replayed=model.replayed,
+        models=list(model.usage.models),
     )

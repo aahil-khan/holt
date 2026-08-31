@@ -71,6 +71,19 @@ def test_a_claim_keeps_its_evidence_id_next_to_it():
     assert "- merged after review — `pr:a/b#1:opened`" in out
 
 
+def test_the_report_names_the_model_that_wrote_it():
+    """A screenshot has to be able to answer "which model said this?".
+
+    The prose, the classification and the limits degrade with the model behind
+    them; the counts and the verdict do not. A report that does not name its
+    model leaves a reader unable to tell one half from the other.
+    """
+    out = build(models=["llama3.2:latest"])
+    assert "Model output from llama3.2:latest." in out
+    # And nothing is claimed when nothing answered.
+    assert "Model output from" not in build()
+
+
 def test_the_day_budget_never_reaches_the_narration_prompt():
     """`--days` must cost zero model calls, so it cannot change a prompt.
 

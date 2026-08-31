@@ -430,4 +430,5 @@ Outsiders attempted these and none were merged: `apps/api` (160), `(root)` (20),
 - ignored, nothing said — `pr:SecureBananaLabs/bug-bounty#3046:opened`
 
 *holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)*
+*Model output from gpt-5-mini-2025-08-07.*
 

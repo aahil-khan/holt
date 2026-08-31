@@ -387,4 +387,5 @@ Outsiders attempted these and none were merged: `(root)` (3). That is what this 
 - merged without engagement, nothing said — `pr:is-a-dev/register#39677:opened`
 
 *holt (A classify, B opportunity, C outcomes, D verify, deterministic verdict, E narrate)*
+*Model output from gpt-5-mini-2025-08-07.*
 

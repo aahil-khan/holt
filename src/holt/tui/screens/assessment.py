@@ -136,6 +136,16 @@ class AssessmentScreen(Screen):
                 Text(f"method  {assessment.method}", style=theme.FAINT),
                 classes="section-label",
             )
+            # The model-written sections are only as good as the model behind
+            # them, while the counts and the verdict are not model-derived at
+            # all. Naming the model is what lets a reader — or a screenshot —
+            # tell those two halves apart afterwards.
+            models = getattr(assessment, "models", None)
+            if models:
+                yield Line(
+                    Text(f"model   {', '.join(models)}", style=theme.FAINT),
+                    classes="section-label",
+                )
         yield Line("─" * 240, classes="rule")
         yield Footer()
 

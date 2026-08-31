@@ -190,12 +190,19 @@ class Usage:
     input_tokens: int = 0
     output_tokens: int = 0
     cost_usd: float = 0.0
+    # Which models actually answered, in first-use order. Recorded here rather
+    # than read back off the configuration because this is the one place that
+    # sees every call: on replay it is the ids from the recording, not whatever
+    # the reader happens to have configured today.
+    models: list[str] = field(default_factory=list)
 
     def add(self, model: str, inp: int, out: int) -> None:
         rate_in, rate_out = PRICES.get(model, (0.0, 0.0))
         self.input_tokens += inp
         self.output_tokens += out
         self.cost_usd += inp / 1e6 * rate_in + out / 1e6 * rate_out
+        if model not in self.models:
+            self.models.append(model)
 
 
 class ModelClient(Protocol):
