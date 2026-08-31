@@ -43,6 +43,7 @@ class AssessmentScreen(Screen):
         ("escape", "home", "home"),
         ("enter", "inspect", "open evidence"),
         ("ctrl+r", "rerun", "re-run"),
+        ("n", "next", "what next"),
         ("t", "trace", "trace"),
         ("q", "quit", "quit"),
     ]
@@ -176,6 +177,12 @@ class AssessmentScreen(Screen):
                 contributor_days=session.options.contributor_days,
             )
         )
+
+    def action_next(self) -> None:
+        """Where someone who has already landed work here might look next."""
+        from holt.tui.screens.next_steps import NextScreen
+
+        self.app.push_screen(NextScreen(self.app.session.assessment.repo))
 
     def action_trace(self) -> None:
         """Back to the run that produced this, when there was one."""

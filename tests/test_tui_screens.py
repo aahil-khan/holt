@@ -413,3 +413,104 @@ def test_finishing_a_run_stores_it_and_home_lists_it(tmp_path):
         assert "Worth your time" in text
 
     drive(body, tmp_path)
+
+
+# ─── discover, profile, what next ────────────────────────────────────────────
+
+
+def test_discover_lists_survivors_and_what_it_cut(tmp_path):
+    """The rejected candidates are the interesting half. They stay on screen."""
+    from holt.tui import discovery
+
+    if not discovery.manifest_path_exists():
+        pytest.skip("the recorded discovery session is not present")
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+f")
+        await pilot.pause(0.6)
+        assert app.screen.__class__.__name__ == "DiscoverScreen"
+        text = screen_text(app)
+        assert "screened at no model cost" in text
+        assert "worth a closer look" in text
+        assert "cut" in text
+        assert "survived screening" in text
+
+    drive(body, tmp_path, size=(100, 60))
+
+
+def test_discover_says_so_when_the_session_is_missing(tmp_path):
+    from holt.tui.screens.discover import DiscoverScreen
+
+    async def body(app, pilot):
+        await app.push_screen(DiscoverScreen("no-such-session"))
+        await pilot.pause(0.4)
+        text = screen_text(app)
+        assert "No recorded search" in text
+        assert "--record" in text
+
+    drive(body, tmp_path)
+
+
+def test_profile_round_trips_through_the_same_file_the_cli_uses(tmp_path, monkeypatch):
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+o")
+        await pilot.pause(0.4)
+        assert app.screen.__class__.__name__ == "ProfileScreen"
+
+        from textual.widgets import Input
+
+        app.screen.query_one("#profile-languages", Input).value = "python, rust"
+        app.screen.query_one("#profile-topics", Input).value = "cli"
+        app.screen.query_one("#profile-days", Input).value = "3"
+        app.screen.action_save()
+        await pilot.pause(0.3)
+        assert "Saved to" in screen_text(app)
+
+        from holt import profile as profile_mod
+
+        stored = profile_mod.load()
+        assert stored.languages == ["python", "rust"]
+        assert stored.topics == ["cli"]
+        assert stored.days == 3
+
+    drive(body, tmp_path)
+
+
+def test_profile_refuses_a_day_budget_that_is_not_a_number(tmp_path, monkeypatch):
+    monkeypatch.setenv("XDG_CONFIG_HOME", str(tmp_path / "config"))
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+o")
+        await pilot.pause(0.4)
+        from textual.widgets import Input
+
+        app.screen.query_one("#profile-days", Input).value = "soon"
+        app.screen.action_save()
+        await pilot.pause(0.3)
+        assert "is not a number of days" in screen_text(app)
+
+        from holt import profile as profile_mod
+
+        assert profile_mod.load() is None, "nothing should have been written"
+
+    drive(body, tmp_path)
+
+
+def test_what_next_says_plainly_when_the_login_has_landed_nothing(tmp_path):
+    """An empty list would read as a ranking that found nothing, rather than a
+    question that cannot be asked yet."""
+    from holt.tui.screens.next_steps import NextScreen
+
+    async def body(app, pilot):
+        app.session = fake_run.finished()
+        await app.push_screen(NextScreen(CLEAN))
+        await pilot.pause(0.3)
+        await type_repo(pilot, "nobody-at-all")
+        await pilot.press("enter")
+        await pilot.pause(0.6)
+        text = screen_text(app)
+        assert "no merged pull request here" in text
+
+    drive(body, tmp_path)

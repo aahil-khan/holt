@@ -204,19 +204,6 @@ ClaimList:focus > ListItem.--highlight {{
     height: 1fr;
     padding: 0 1;
 }}
-#repo-input {{
-    /* The one focusable box on the screen, so it is marked by its border
-       rather than by a label telling you to type in it. */
-    background: transparent;
-    border: none;
-    border-left: outer {RULE};
-    padding: 0 1;
-    height: 1;
-    margin: 0 0 0 0;
-}}
-#repo-input:focus {{
-    border-left: outer {CITE};
-}}
 #home-notice {{
     height: auto;
     padding: 1 1 0 2;
@@ -261,6 +248,62 @@ EntryPointRow {{
 }}
 .entry-index {{ color: {FAINT}; width: 4; }}
 .entry-why {{ color: {FAINT}; padding-left: 4; }}
+
+/* discover, profile, what-next ---------------------------------------------- */
+
+#discover-body, #profile-body, #next-body {{
+    height: 1fr;
+    padding: 0 1;
+}}
+#candidate-scroll, #next-results {{
+    height: 1fr;
+    scrollbar-size: 1 1;
+}}
+CandidateList {{
+    height: auto;
+    background: transparent;
+    border: none;
+}}
+CandidateList > ListItem {{
+    background: transparent;
+    padding: 0 1 1 1;
+}}
+CandidateList > ListItem.--highlight {{
+    background: $boost;
+}}
+CandidateList:focus > ListItem.--highlight {{
+    background: $boost;
+}}
+#discover-hint {{
+    height: auto;
+    padding: 1 1 1 1;
+}}
+Input {{
+    /* Every input in the app, marked by a rail rather than boxed in. The
+       default border draws three lines around one line of text, which on a
+       screen made of hairlines is the loudest thing on it. */
+    background: transparent;
+    border: none;
+    border-left: outer {RULE};
+    padding: 0 1;
+    height: 1;
+    margin: 0 0 1 0;
+}}
+Input:focus {{
+    border-left: outer {CITE};
+}}
+.field-note {{
+    color: {FAINT};
+    padding: 0 1 0 2;
+}}
+#profile-notice, #next-notice {{
+    height: auto;
+    padding: 1 1 0 2;
+}}
+.next-row {{
+    height: auto;
+    padding: 0 1 1 1;
+}}
 
 .section-label {{
     color: {DIM};
