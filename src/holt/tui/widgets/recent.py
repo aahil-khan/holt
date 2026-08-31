@@ -54,13 +54,20 @@ class RecentRow(ListItem):
 
 
 def _repo(repo: str, width: int = 31) -> str:
-    """Elide the owner, keep the name. The name is what you recognise."""
+    """Elide the owner first, then the name. The name is what you recognise.
+
+    `Sistema-de-certificacion-academica/Sistema-de-certificacion-academica`
+    truncated from the right is all owner and no name, which is the one part
+    that distinguishes it from its neighbours.
+    """
     if len(repo) <= width:
         return repo
-    owner, _, name = repo.partition("/")
-    if name and len(name) + 2 <= width:
-        return f"…/{name}"[:width]
-    return repo[: width - 1] + "…"
+    owner, sep, name = repo.partition("/")
+    if not sep:
+        return repo[: width - 1] + "…"
+    if len(name) + 2 <= width:
+        return f"…/{name}"
+    return "…/" + name[: width - 3] + "…"
 
 
 class RecentList(ListView):
