@@ -25,6 +25,7 @@ from textual.widgets import Footer
 
 from holt.tui import animation, events, mascot, theme
 from holt.tui.visual import Line
+from holt.types import T_CUTOFF
 from holt.tui.widgets.masthead import Cat
 from holt.tui.widgets.stages import DroppedFinding, EmittedFinding, StageList, unknown
 
@@ -33,6 +34,23 @@ POLL_SECONDS = 0.05
 #: How long the finished screen stays up before the report replaces it. Long
 #: enough to see the last stage land, short enough not to feel like waiting.
 HANDOFF_SECONDS = 0.45
+
+
+def evidence_line(event: events.EvidenceLoaded) -> str:
+    """What the run read, and the boundary it actually stopped at.
+
+    The date is the provider's, never a constant written here. T = 2026-06-01
+    is an evaluation device: a live run reads through today, and a screen that
+    printed T anyway would claim a holdout the run did not apply. Naming the
+    holdout only when the cutoff really is T keeps the benchmark's own framing
+    where it is true and out of the way where it is not.
+    """
+    if event.cutoff is None:
+        return f"{event.count} evidence records"
+    day = event.cutoff.date().isoformat()
+    if event.cutoff == T_CUTOFF:
+        return f"{event.count} evidence records · holdout window, ≤ {day}"
+    return f"{event.count} evidence records · read through {day}"
 
 
 class LiveScreen(Screen):
@@ -98,12 +116,7 @@ class LiveScreen(Screen):
         return
 
     def _on_evidence_loaded(self, event: events.EvidenceLoaded) -> None:
-        self._line(
-            Text(
-                f"{event.count} evidence records · window {event.window} ≤ 2026-06-01",
-                style=theme.FAINT,
-            )
-        )
+        self._line(Text(evidence_line(event), style=theme.FAINT))
 
     def _on_stage_started(self, event: events.StageStarted) -> None:
         self.query_one("#stages", StageList).ensure(event.stage).started(event.model)

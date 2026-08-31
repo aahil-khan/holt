@@ -97,7 +97,13 @@ class ObservingProvider:
     def fetch(self, request: str, /, **params: object) -> list:
         records = self._inner.fetch(request, **params)
         window = getattr(getattr(self._inner, "window", None), "value", "")
-        self._emit(events.EvidenceLoaded(count=len(records), window=window))
+        self._emit(
+            events.EvidenceLoaded(
+                count=len(records),
+                window=window,
+                cutoff=getattr(self._inner, "cutoff", None),
+            )
+        )
         return records
 
     def resolve(self, evidence_id: str):

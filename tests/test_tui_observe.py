@@ -246,3 +246,56 @@ def test_replay_usage_describes_the_recording_not_a_purchase():
     assert usage[-1].input_tokens > 0
     # Monotonic: it is a running total, not a per-call figure.
     assert [u.input_tokens for u in usage] == sorted(u.input_tokens for u in usage)
+
+
+# ─── the window the run actually applied ────────────────────────────────────
+
+
+class _StubProvider:
+    """A provider with nothing but a cutoff and a window. That is all `fetch`
+    reports about, and building a real one would drag the network in."""
+
+    def __init__(self, cutoff, window=Window.PRE_T):
+        self.cutoff = cutoff
+        self.window = window
+
+    def fetch(self, request, /, **params):
+        return []
+
+    def resolve(self, evidence_id):
+        return None
+
+
+def test_the_evidence_event_carries_the_cutoff_the_run_actually_used():
+    """Live means now, and the stream has to say which "now" it meant.
+
+    `LiveGitHubProvider` defaults its cutoff to today rather than the
+    benchmark's T, because T is an evaluation device. Anything watching the run
+    has to be told the real boundary; a watcher that assumed T would report a
+    holdout the run never applied.
+    """
+    from datetime import UTC, datetime
+
+    from holt.types import T_CUTOFF
+
+    today = datetime(2026, 8, 31, tzinfo=UTC)
+    seen: list = []
+    ObservingProvider(_StubProvider(today), seen.append).fetch("owner/name")
+    loaded = [e for e in seen if isinstance(e, events.EvidenceLoaded)]
+    assert len(loaded) == 1
+    assert loaded[0].cutoff == today
+
+    seen.clear()
+    ObservingProvider(_StubProvider(T_CUTOFF), seen.append).fetch("owner/name")
+    assert [e.cutoff for e in seen if isinstance(e, events.EvidenceLoaded)] == [T_CUTOFF]
+
+
+def test_a_replayed_run_reports_the_holdout_boundary():
+    """The other side of it: a fixture run really is cut at T."""
+    from holt.types import T_CUTOFF
+
+    _, _, seen = _run(CLEAN)
+    loaded = [e for e in seen if isinstance(e, events.EvidenceLoaded)]
+    assert loaded, "no evidence event was emitted"
+    assert all(e.cutoff == T_CUTOFF for e in loaded)
+
