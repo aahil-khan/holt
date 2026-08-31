@@ -691,3 +691,39 @@ def test_the_model_screen_never_reaches_the_network_in_tests(tmp_path, monkeypat
         assert models_layer.NO_NETWORK_ENV in screen_text(app)
 
     drive(body, tmp_path, size=(110, 40))
+
+
+def test_the_run_names_the_boundary_it_actually_read_to(tmp_path):
+    """The evidence line reports the run's own cutoff, not the benchmark's T.
+
+    This was wrong for as long as the date was a literal in the screen: a live
+    run reads through today, and the line claimed a 2026-06-01 holdout anyway.
+    """
+    from datetime import UTC, datetime
+
+    async def body(app, pilot):
+        await show_run(app, pilot, complete=False, cutoff=datetime(2026, 8, 31, tzinfo=UTC))
+        text = screen_text(app)
+        assert "read through 2026-08-31" in text
+        assert "2026-06-01" not in text
+        assert "pre_t" not in text
+
+    drive(body, tmp_path)
+
+
+def test_a_replayed_run_still_says_it_is_reading_the_holdout(tmp_path):
+    async def body(app, pilot):
+        await show_run(app, pilot, complete=False)
+        assert "holdout window, ≤ 2026-06-01" in screen_text(app)
+
+    drive(body, tmp_path)
+
+
+def test_the_evidence_line_says_nothing_it_cannot_back():
+    """A provider that reports no cutoff gets no window claim at all."""
+    from holt.tui import events
+    from holt.tui.screens.live import evidence_line
+
+    assert evidence_line(events.EvidenceLoaded(count=95, window="pre_t")) == (
+        "95 evidence records"
+    )

@@ -30,6 +30,7 @@ import time
 from typing import Any
 
 from holt.report import Assessment, Claim, EntryPoint, Verdict
+from holt.types import T_CUTOFF
 from holt.tui import events, store
 from holt.tui.session import RunOptions, Session
 
@@ -84,11 +85,17 @@ def _set(obj: Any, name: str, value: Any) -> None:
         setattr(obj, name, value)
 
 
-def script(repo: str = REPO, drop: bool = False, fail: str = "") -> list:
-    """The events a run emits, in the order a real one emits them."""
+def script(
+    repo: str = REPO, drop: bool = False, fail: str = "", cutoff=T_CUTOFF
+) -> list:
+    """The events a run emits, in the order a real one emits them.
+
+    `cutoff` defaults to T because the scripted run is a replay off committed
+    fixtures, which really is cut there. A live run passes its own.
+    """
     out: list = [
         events.RunStarted(repo=repo, replayed=True),
-        events.EvidenceLoaded(count=1231, window="pre_t"),
+        events.EvidenceLoaded(count=1231, window="pre_t", cutoff=cutoff),
     ]
     for stage, summary in (
         ("classify", "real_software"),

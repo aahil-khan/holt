@@ -22,6 +22,7 @@ the CLI and the eval harness untouched.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import datetime
 from typing import Any, Union
 
 # ─── the stage vocabulary ───────────────────────────────────────────────────
@@ -81,10 +82,19 @@ class RunStarted:
 
 @dataclass(frozen=True, slots=True)
 class EvidenceLoaded:
-    """The provider handed over its records. The size of what the agent may see."""
+    """The provider handed over its records. The size of what the agent may see.
+
+    `cutoff` is the boundary the provider *actually* applied, not the benchmark
+    constant. A live provider defaults it to today; only a fixture run or an
+    explicit `--as-of` is cut at T. A watcher that assumed T would report a
+    holdout the run never applied, so the run states its own.
+    """
 
     count: int
     window: str
+    #: Defaulted rather than required: events are added to, never changed, and
+    #: a caller written before this field existed still constructs a valid one.
+    cutoff: datetime | None = None
 
 
 @dataclass(frozen=True, slots=True)
