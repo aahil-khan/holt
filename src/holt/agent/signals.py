@@ -155,6 +155,14 @@ class Signals:
     # which is the likeliest reason that attempt failed.
     reviewed_share: float | None
     merge_rate: float | None
+    # The shape of a merged contribution: how many files it touched, and how
+    # many top-level directories those spanned, at the median. A catalogue entry
+    # is one file in one place almost by definition; a change to running
+    # software is not. These exist so a claim *about* that shape -- `registry`,
+    # `awesome_list` -- can be checked against it rather than trusted.
+    merged_files_median: float | None = None
+    merged_dirs_median: float | None = None
+    merged_with_files: int = 0
 
     def as_dict(self) -> dict:
         return {
@@ -168,12 +176,22 @@ class Signals:
             "distinct_merged_authors": self.distinct_merged_authors,
             "reviewed_share": self.reviewed_share,
             "merge_rate": self.merge_rate,
+            "merged_files_median": self.merged_files_median,
+            "merged_dirs_median": self.merged_dirs_median,
+            "merged_with_files": self.merged_with_files,
         }
 
 
 def compute(threads: dict[str, Thread]) -> Signals:
     outsiders = newcomer_threads(threads)
     merged_threads = [t for t in threads.values() if t.merged]
+    # Every merge with a file list, not only the outsiders': what a merged
+    # contribution *is* here is a property of the repository, and narrowing it
+    # to newcomers would measure it on a handful of threads in a repository that
+    # merges hundreds.
+    shaped = [t for t in merged_threads if t.files]
+    file_counts = [len(t.files) for t in shaped]
+    dir_counts = [len({f.split("/")[0] for f in t.files}) for t in shaped]
     latencies = [h for t in outsiders if (h := t.first_response_hours) is not None]
     bots = sum(1 for t in threads.values() if t.author_is_bot)
 
@@ -196,4 +214,7 @@ def compute(threads: dict[str, Thread]) -> Signals:
         ),
         merge_rate=(len(outsiders) and sum(1 for t in outsiders if t.merged) / len(outsiders))
         or (None if not outsiders else 0.0),
+        merged_files_median=statistics.median(file_counts) if file_counts else None,
+        merged_dirs_median=statistics.median(dir_counts) if dir_counts else None,
+        merged_with_files=len(shaped),
     )

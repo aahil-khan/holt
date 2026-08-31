@@ -14,6 +14,7 @@ from holt.agent import landing, stages
 from holt.agent.findings import Finding, Findings
 from holt.agent.signals import Signals, build_threads, compute
 from holt.agent.verdict import classify as decide
+from holt.agent.verdict import contested_kind
 from holt.agent.verify import check_quotes, verify
 from holt.evidence.provider import EvidenceProvider
 from holt.model import ModelClient
@@ -65,7 +66,19 @@ def analyze(
     before = len(findings)
     findings, dropped = verify(findings, provider)
 
+    # `repo_kind` is the only model-derived field that can decide the answer by
+    # itself, and Stage D cannot check it -- an id resolving says nothing about
+    # whether a classification is true. Where the evidence contradicts the
+    # reason the kind rule would give, the field is dropped before it decides
+    # anything and the disagreement is printed. See eval/PREREGISTRATION-4.md.
+    meta = next((r for r in records if r.evidence_id.endswith(":meta")), None)
+    contested = contested_kind(findings, signals, meta.payload if meta else None)
+    if contested:
+        findings.drop("repo_kind")
+
     verdict, rules = decide(findings, signals, contributor_days)
+    if contested:
+        rules.insert(0, contested)
     # The narration prompt is deliberately held to the signal fields that existed
     # when the trajectories were recorded. New signals reach the *verdict*
     # immediately but only reach the prose on the next re-record, so adding one
@@ -74,7 +87,8 @@ def analyze(
     # the rule trace.
     narrated_signals = {
         k: v for k, v in signals.as_dict().items()
-        if k not in ("reviewed_share", "merge_rate")
+        if k not in ("reviewed_share", "merge_rate", "merged_files_median",
+                     "merged_dirs_median", "merged_with_files")
     }
     narrated = stages.narrate(
         repo, verdict.value, rules, findings, narrated_signals, model

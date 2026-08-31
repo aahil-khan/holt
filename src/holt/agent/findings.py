@@ -27,6 +27,15 @@ class Findings:
     def add(self, field_name: str, value: Any, evidence_ids=(), note: str = "") -> None:
         self.items.append(Finding(field_name, value, tuple(evidence_ids), note))
 
+    def drop(self, field_name: str) -> None:
+        """Remove a field entirely.
+
+        Used where two sources of evidence disagree: the standing rule is to
+        drop the contested field rather than pick a side, and a field that is
+        dropped must not survive in the claim list either.
+        """
+        self.items = [i for i in self.items if i.field != field_name]
+
     def get(self, field_name: str, default: Any = None) -> Any:
         for item in self.items:
             if item.field == field_name:

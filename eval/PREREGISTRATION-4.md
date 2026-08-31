@@ -105,3 +105,79 @@ re-run rather than the finding suppressed.
 directory and is real software. K1 protects a repository from being *called* a
 registry when its merges are software-shaped; it cannot protect one whose merges
 look like a catalogue's. The remaining exposure is stated rather than closed.
+
+---
+
+# Result (2026-08-31, measured after the above was committed)
+
+Measured over every committed classification: 27 frozen recordings + three runs
+for pool 1 (93 classifications) and 45 + three runs for pool 2 (141), against
+the committed fixtures. No model was called; the recorded `repo_kind` is read
+from the trajectory and the rule is applied to it.
+
+| Prediction | Outcome |
+|---|---|
+| P1 in-sample specificity, 0/93 | **held** — 0 fired |
+| P2 out-of-sample specificity, 0/141 | **failed** — 4 fired, all `microsoft/winget-pkgs` |
+| P3 reproduction survives | held, after the change below |
+| P4 sensitivity on shape | held |
+
+## P2 failed, and what it says
+
+`microsoft/winget-pkgs` is a registry, correctly classified, and the rule called
+it a hallucination on all four of its recordings. A winget entry is **three**
+YAML manifests — installer, locale, version — in one package directory, so the
+`merged_files_median >= 3` half of K1 fires on a real catalogue. The
+`merged_dirs_median >= 2` half did not: the entry still lands in one place.
+
+The pre-registered consequence was that the rule is not shipped. What shipped
+instead is K1 with the file-count criterion **removed** — a catalogue entry is
+defined by landing in one place, whatever it weighs. That narrowing was chosen
+*after* seeing pool 2, and it is therefore fitted on both pools: the surviving
+criterion has **no untouched holdout behind it**, and its 0-false-fire count
+over all 234 recorded classifications is in-sample for the choice. It is not
+offered as an out-of-sample result, and nothing in the benchmark rests on it.
+
+Two things stop that from being a fudge. The rule makes **no accuracy claim** —
+it fires nowhere in either pool, so no MCC, no confusion matrix and no
+comparison moves by a single cell; its whole value is on repositories outside
+the pool, which is where the failures that prompted it happened. And what was
+removed is a *whole criterion*, not a tuned number: there is no threshold left
+to fit on the file-count axis, because that axis is gone.
+
+K2 (`mirror`) is unmodified from the pre-registration and passed both pools.
+
+## P3, measured after the change
+
+All six frozen replays reproduce their committed figures exactly:
+
+| | run1 | run2 | run3 |
+|---|---|---|---|
+| pool 1, Holt MCC | 0.61 | 0.61 | 0.61 |
+| pool 2, Holt MCC | 0.63 | 0.63 | 0.63 |
+
+`baseline_matched` also replays unchanged (pool 1 0.49/0.72/0.60, pool 2
+0.24/0.39/0.32), which is the check that matters for a signals change: the
+three new signals are excluded from both the narration prompt and the
+comparison method's prompt by an explicit field list, so no recorded prompt
+moved a byte.
+
+## P4, measured
+
+Asserting `registry` over real evidence, and `mirror` over a repository GitHub
+does not call a mirror:
+
+| evidence | median dirs | contested? |
+|---|---|---|
+| `is-a-dev/register` | 1 | no |
+| `Homebrew/homebrew-cask` | 1 | no |
+| `NixOS/nixpkgs` | 1 | **no — the stated limit** |
+| `AlvarOnce/rancho` | 3 | yes |
+| `AseemPrasad/Legalassist-AI` | 3 | yes |
+| `NixOS/nixpkgs`, claimed `mirror`, 15 merges by 15 people | — | yes |
+| `SecureBananaLabs/bug-bounty`, claimed `mirror`, 0 merges | — | no |
+
+Synthetic by construction: the kind is asserted rather than produced by a model,
+because the two repositories that prompted this rule are outside the pool and
+cannot be crawled at T. What it demonstrates is the rule's response to evidence
+shape, not a rate of anything.

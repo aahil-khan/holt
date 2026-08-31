@@ -57,6 +57,20 @@ SCHEMA = {
 THREAD_SAMPLE = 12
 
 
+RECORDED_SIGNAL_FIELDS = (
+    "total_threads",
+    "outsider_threads",
+    "outsider_merged",
+    "outsider_ignored",
+    "median_first_response_hours",
+    "bot_share",
+    "distinct_outsider_authors",
+    "distinct_merged_authors",
+    "reviewed_share",
+    "merge_rate",
+)
+
+
 def assess(repo: str, provider: EvidenceProvider, model: ModelClient) -> Assessment:
     records = provider.fetch(repo)
     meta = next((r.payload for r in records if r.evidence_id.endswith(":meta")), {})
@@ -77,7 +91,13 @@ def assess(repo: str, provider: EvidenceProvider, model: ModelClient) -> Assessm
                 "is_archived", "is_fork", "is_mirror", "homepage_url"):
         parts.append(f"  {key}: {meta.get(key)!r}")
     parts += ["", "Measured from pull request history before the cutoff:"]
-    parts += [f"  {k}: {v}" for k, v in signals.as_dict().items()]
+    # The exact ten fields this prompt was recorded with, listed rather than
+    # taken from `as_dict()`. This is the *comparison* method: a signal added to
+    # the pipeline must not silently change what the baseline is shown, or the
+    # ablation stops being the same experiment -- and every recorded
+    # `baseline_matched` call becomes a replay miss the moment anyone adds one.
+    measured = signals.as_dict()
+    parts += [f"  {k}: {measured[k]}" for k in RECORDED_SIGNAL_FIELDS]
     parts += ["", "README:", (readme or "(none at the cutoff)")[:6000], ""]
     parts += ["Pull request threads:", ""]
     parts += [_render_thread(t) for t in talkative]

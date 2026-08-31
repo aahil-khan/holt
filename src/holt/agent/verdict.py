@@ -24,6 +24,42 @@ NON_SOFTWARE_KINDS = {"registry", "awesome_list", "portfolio", "course_material"
 # Kinds where outside contribution is not accepted regardless of activity.
 CLOSED_KINDS = {"mirror"}
 
+# --- contesting the one field that can decide alone -------------------------
+#
+# `repo_kind` is the only model-derived input either of the rules above reads,
+# and Stage D cannot check it: it verifies that a cited id resolves, and a
+# classification is not a quotation. A model that answers `mirror` while citing
+# a real README has made a claim that verifies perfectly and is false -- which
+# is exactly what happened to `pytorch/pytorch` under a 3B local model, and to
+# `aden-hive/hive`, which was called a registry.
+#
+# So the two kinds that can flip a verdict are checked against the evidence they
+# implicitly claim something about. What is contested is the rule's stated
+# *reason*, never what the repository "really is": a catalogue entry is one file
+# in one place, and a mirror does not merge outsiders' pull requests. Where the
+# evidence disagrees the field is dropped rather than overridden -- no verdict
+# is asserted in its place, `classify` falls through to the arithmetic, and the
+# disagreement is printed for the reader.
+#
+# Pre-registered with its predictions in eval/PREREGISTRATION-4.md; thresholds
+# chosen on pool 1 and that fitting disclosed there.
+CATALOGUE_KINDS = {"registry", "awesome_list"}
+
+# `portfolio` and `course_material` are deliberately not contested this way.
+# Their reason is about whose project it is, not the shape of a diff, and a
+# portfolio being real code is not a contradiction.
+MIN_MERGES_FOR_SHAPE = 5
+
+# One directory. Not "few enough files": that criterion was pre-registered,
+# failed out-of-sample, and is gone. `microsoft/winget-pkgs` is a real registry
+# whose every entry is three YAML manifests -- installer, locale, version -- in
+# one package directory, so a median-files test called a correct classification
+# a hallucination on all four of its recordings. What survived is the criterion
+# that did not misfire: a catalogue entry lands in one place, whatever it
+# weighs. The narrowing was chosen after seeing that failure and is disclosed as
+# such in eval/PREREGISTRATION-4.md; it has no untouched holdout behind it.
+CATALOGUE_DIRS_MAX = 2
+
 # How long the contributor has. Everything time-shaped scales from this, because
 # "is this repository worth my time" has no answer independent of how much time
 # you have: a maintainer who replies in five days is fine if you have three
@@ -54,6 +90,48 @@ IGNORED_SHARE = 0.7
 # request traffic is automation, leaving a handful of outsider threads. Without
 # this guard the rule turns a thin sample into a confident accusation.
 MIN_ATTEMPTS_FOR_HOSTILE = 8
+
+
+def contested_kind(
+    findings: Findings, signals: Signals, meta: dict | None = None
+) -> str | None:
+    """Why the claimed `repo_kind` disagrees with the evidence, or None.
+
+    Returns the sentence a reader should see, not a boolean: a field being
+    dropped is a thing that happened to their report and it is printed.
+    """
+    kind = findings.get("repo_kind")
+
+    if kind in CATALOGUE_KINDS:
+        if (
+            signals.merged_with_files >= MIN_MERGES_FOR_SHAPE
+            and signals.merged_dirs_median is not None
+            and signals.merged_dirs_median >= CATALOGUE_DIRS_MAX
+        ):
+            return (
+                f"repo_kind={kind} was claimed, but merged work here spans a "
+                f"median of {signals.merged_dirs_median:g} top-level directories "
+                "rather than landing in one place, which is not a catalogue "
+                "entry; the field is dropped and decided nothing"
+            )
+
+    if kind in CLOSED_KINDS:
+        # `is_mirror` alone would not be enough -- GitHub sets it only for
+        # repositories created as mirrors, so a genuine mirror can report
+        # false. The merges are what disprove the claim being made.
+        if (
+            (meta or {}).get("is_mirror") is False
+            and signals.outsider_merged >= MIN_MERGES
+            and signals.distinct_merged_authors >= MIN_DISTINCT_AUTHORS
+        ):
+            return (
+                f"repo_kind={kind} was claimed, but GitHub does not report this "
+                f"repository as a mirror and {signals.outsider_merged} outside "
+                f"pull requests by {signals.distinct_merged_authors} people were "
+                "merged in the period read; the field is dropped and decided nothing"
+            )
+
+    return None
 
 
 def classify(
