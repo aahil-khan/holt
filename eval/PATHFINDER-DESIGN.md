@@ -9,7 +9,7 @@
 > of 25 carry fewer than three — so on most of the pool the `good first issue`
 > comparator reorders nothing and *is* recency under another name. The ranking is
 > printed with its own losing number beside it, in the tool's output rather than
-> only here. See `ASSESSMENT.md`.
+> only here.
 >
 > The document below is unedited, so the design can be read against what it
 > produced.

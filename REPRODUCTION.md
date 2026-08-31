@@ -1,6 +1,8 @@
 # Reproducing Holt
 
-Written for someone starting from a clean machine with nothing installed.
+Written for someone starting from a clean machine with nothing installed, who
+wants to check the result rather than use the tool. **If you just want to use
+Holt on a repository, [USAGE.md](USAGE.md) is the shorter page.**
 
 **The headline result needs no API key, no GitHub token, and no money.**
 
@@ -35,7 +37,7 @@ uv sync
 uv run pytest -rs
 ```
 
-**Expected after a plain `uv sync`:** `284 passed`, `1 skipped`. The skip is the
+**Expected after a plain `uv sync`:** `287 passed`, `1 skipped`. The skip is the
 terminal-interface suite, and it is honest rather than incidental: `tui` is an
 optional extra precisely so that every reproduction command works on a machine
 that has never installed Textual. To run the interface tests too:
@@ -45,7 +47,7 @@ uv sync --extra tui
 uv run pytest -rs
 ```
 
-**Expected:** `372 passed`, no skips. **Runtime:** about two minutes either way.
+**Expected:** `375 passed`, no skips. **Runtime:** about two minutes either way.
 
 The `-rs` flag reports skipped tests explicitly — a skipped test is not a
 passing one, which is why the count above says which one it is.
@@ -55,8 +57,8 @@ reads the import graph and fails if any label module imports the agent,
 `tests/test_evidence_bounds.py` constructs a deliberately misbehaving provider
 subclass to confirm it still cannot return evidence from the wrong side of the
 cutoff, and `tests/test_docs_claims.py` recomputes the numbers printed in this
-guide, `README.md` and `ASSESSMENT.md` from the committed results and runs every
-command this guide prints — so a claim that goes stale fails the build rather
+guide, `README.md` and `USAGE.md` from the committed results and runs every
+command either guide prints — so a claim that goes stale fails the build rather
 than sitting on the page.
 
 ## 3. Reproduce the headline result — no key, no spend

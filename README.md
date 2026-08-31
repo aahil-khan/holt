@@ -25,17 +25,20 @@ PYTHONPATH=. uv run python eval/harness.py --replay --run-tag run1   # the headl
 Both run from committed evidence and committed model trajectories. Nothing is
 fetched and no model runs.
 
+To point it at a repository *you* care about, [USAGE.md](USAGE.md) is the whole
+product in one page. The rest of this file is the argument and the measurement.
+
 ## Where everything is
 
 | | |
 |---|---|
+| [USAGE.md](USAGE.md) | **start here if you want to use it**: install, ask about a repository, read the answer |
 | [REPRODUCTION.md](REPRODUCTION.md) | every command, from a clean machine: tests, the headline result, both solutions, the pool draw, the labels |
 | [docs/COMMANDS.md](docs/COMMANDS.md) | what each command does, and what the report says that GitHub does not |
 | [docs/DESIGN.md](docs/DESIGN.md) | why this is a pipeline and not a prompt — and, measured, what that does *not* buy |
 | [docs/EVALUATION.md](docs/EVALUATION.md) | the holdout, the pool, the labels, the sensitivities, the limitations |
 | [CHANGELOG.md](CHANGELOG.md) | every iteration, including the experiments that were removed and the results that went against us — the whole story in one table at the top |
 | [docs/CHANGELOG-FULL.md](docs/CHANGELOG-FULL.md) | the same log unabridged, with every evidence table as it was written on the day |
-| [ASSESSMENT.md](ASSESSMENT.md) | an honest self-assessment of what is weak |
 | [docs/INTERFACE-LOG.md](docs/INTERFACE-LOG.md) | the terminal interface's design history |
 
 ---

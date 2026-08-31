@@ -14,7 +14,7 @@ actually run, not read off a document.
 | # | Deliverable | Status |
 |---|---|---|
 | 01 | Complete solution code + **Improvement Changelog** | **Done.** `CHANGELOG.md` is titled *Improvement Changelog* and opens with *The story in one table* — 14 rows, baseline through final, each giving what was tried, the evidence and the decision, in exactly the shape the brief's example asks for. Iterations 1–32 follow in full, including five removed experiments. Failure mode and hot take are at the end, as the brief asks. |
-| 02 | Reproduction guide | **Done.** `REPRODUCTION.md` — clean machine, exact commands, versions, runtimes, costs. Verified: full suite is **372 passed** in 118 s. |
+| 02 | Reproduction guide | **Done.** `REPRODUCTION.md` — clean machine, exact commands, versions, runtimes, costs. Verified: full suite is **375 passed** in 114 s. |
 | 03 | Solution video, ≤ 5 min | **Not started.** Script and shot list: [`VIDEO-SCRIPT.md`](VIDEO-SCRIPT.md). |
 | 04 | Agent trajectories for **every agent you used** | **Substantially done, one gap.** See §3 below. |
 
@@ -138,7 +138,7 @@ the three rendered files concludes two arms are undocumented, and they are not.
 | 05 | Qualified human reviewer where it affects someone | ✅ Verdicts are about fit for a contributor's time, not maintainer quality; every negative claim links to evidence a maintainer can contest. Already in the README. |
 | 06 | Legal and ethical use case | ✅ |
 | 07 | Data you are allowed to share | ✅ Public data only. |
-| 08 | **Credentials outside the submission** | ⚠️ **Open.** A scrub runs before the content hash and a test fails on any credential-shaped string in any fixture — good. But `ASSESSMENT.md` records that the PAT and the OpenAI key appeared in working sessions and lists rotating both as open. **Rotate them.** Also record the recording shell for the video with `env -u OPENAI_API_KEY -u GITHUB_TOKEN`. |
+| 08 | **Credentials outside the submission** | ⚠️ **Open.** A scrub runs before the content hash and a test fails on any credential-shaped string in any fixture — good. But the self-assessment (kept outside the repository) records that the PAT and the OpenAI key appeared in working sessions and lists rotating both as open. **Rotate them.** Also record the recording shell for the video with `env -u OPENAI_API_KEY -u GITHUB_TOKEN`. |
 | 09 | Every claim connected to evidence | ✅ This is the project. `tests/test_docs_claims.py` recomputes the documented numbers and runs every command the guide prints. |
 | 10 | Judges can run it and reproduce the main result | ✅ via the public repo — see §1 for the zip caveat. |
 
@@ -146,12 +146,12 @@ the three rendered files concludes two arms are undocumented, and they are not.
 
 ## 5. Judging rubric (p.05) — where the points are
 
-`ASSESSMENT.md` §5b already walks this honestly. Two notes that bear on what is
+The self-assessment (kept outside the repository) §5b already walks this honestly. Two notes that bear on what is
 left to do rather than on what is written:
 
 - **End to End Quality (20)** — *"would the intended user consider this high
-  quality, or does it read as clearly AI generated?"* The one gap `ASSESSMENT.md`
-  names as not ours to close is that **nobody outside the project has read a
+  quality, or does it read as clearly AI generated?"* The one gap the
+  self-assessment names as not ours to close is that **nobody outside the project has read a
   report**. If you can get one developer to read one assessment and say whether
   they would act on it, that is a bigger marginal gain than any remaining code
   change. It costs one message to one person.

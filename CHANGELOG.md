@@ -1006,6 +1006,40 @@ missing key until `ctrl+t` answers it.
 
 ---
 
+## Iteration 33 — the guide for someone who just wants to use it (2026-08-31)
+
+`REPRODUCTION.md` had become the only entry point, and it is written for a
+judge: a clean machine, a test count, six replay tags, a pool draw, a labels
+re-run. Nothing on that page answers *"I have a week, is this repository worth
+it?"* — the question the product exists for. The user we wrote the README's
+"who this is for" section about had no page to land on.
+
+`USAGE.md` is that page. Install, ask about one repository, read the three
+headlines and what each section is for, `--days` for the budget you actually
+have, `compare` for a shortlist, `discover` when you have none, `next` after
+you have landed something, and the free `--no-model --live` path for a reader
+with a GitHub token and no model key. It states the one number a user will act
+on — balanced accuracy 0.80 in sample, 0.82 out of sample, so roughly a fifth
+of calls are wrong — because a filter that hides its error rate is worse than
+no filter.
+
+The failure recorded in iteration 24 is exactly the one this page invites: a
+documented command nobody runs. So `tests/test_docs_claims.py` now parses
+`USAGE.md` alongside the reproduction guide and runs every keyless command
+either one prints, and recomputes the balanced accuracy figures from the frozen
+runs. The paid and interactive commands (`--live`, `tui`) are skipped by name.
+
+**No benchmark number moved.** This is a documentation split, recorded here
+because "the intended user has no page to start from" was a real defect and the
+log is meant to include the ones that were not measurable.
+
+Separately, the self-assessment moved out of the repository altogether. It was
+a working document about our own gaps — including that a PAT and an API key had
+appeared in working sessions — and it does not belong in a public clone. Its
+name is in `.gitignore` now, so it cannot come back by accident.
+
+---
+
 ## The main failure mode
 
 **A sentence is not an assertion, and unverified sentences are where this system
