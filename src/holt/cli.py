@@ -105,12 +105,16 @@ def cmd_analyze(args: argparse.Namespace) -> int:
         if args.show_verification:
             print(
                 f"<!-- findings before verification: {trace.before_verification}, "
-                f"after: {trace.after_verification}, dropped: {len(trace.dropped)} -->",
+                f"after: {trace.after_verification}, dropped: {len(trace.dropped)}, "
+                f"unquoted: {len(trace.invented)} -->",
                 file=sys.stderr,
             )
             for d in trace.dropped:
                 print(f"<!-- DROPPED {d.field}={d.value!r} cited {list(d.evidence_ids)} -->",
                       file=sys.stderr)
+            for d in trace.invented:
+                print(f"<!-- UNQUOTED {d.field}={d.value!r} cited {list(d.evidence_ids)}: "
+                      "the thread resolves and does not say this -->", file=sys.stderr)
     if not args.baseline and args.entry_points:
         add_entry_points(assessment, repo, provider, args)
     print(assessment.render())

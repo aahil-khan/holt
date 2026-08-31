@@ -134,11 +134,17 @@ class EvidenceResolved:
 
 @dataclass(frozen=True, slots=True)
 class FindingDropped:
-    """Stage D removed a claim. The moment the whole pipeline exists to make."""
+    """A claim was removed. The moment the whole pipeline exists to make.
+
+    Two reasons, and the difference matters to a reader watching: the cited
+    thread does not exist, or it exists and does not contain the quoted words.
+    Defaulted so an older producer of this event still describes itself.
+    """
 
     field: str
     value: Any
     cited: tuple[str, ...] = ()
+    reason: str = "unresolved"
 
 
 @dataclass(frozen=True, slots=True)

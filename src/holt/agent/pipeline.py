@@ -14,7 +14,7 @@ from holt.agent import landing, stages
 from holt.agent.findings import Finding, Findings
 from holt.agent.signals import Signals, build_threads, compute
 from holt.agent.verdict import classify as decide
-from holt.agent.verify import verify
+from holt.agent.verify import check_quotes, verify
 from holt.evidence.provider import EvidenceProvider
 from holt.model import ModelClient
 from holt.report import Assessment, Claim, Verdict
@@ -41,6 +41,8 @@ class Trace:
     before_verification: int = 0
     after_verification: int = 0
     dropped: list[Finding] = field(default_factory=list)
+    # Findings whose id resolved but whose quotation is not in the record.
+    invented: list[Finding] = field(default_factory=list)
     rules: list[str] = field(default_factory=list)
 
 
@@ -80,8 +82,19 @@ def analyze(
 
     # The evidence list is built from verified findings, not written by the
     # model. Stage E supplies prose; it cannot introduce a citation.
+    #
+    # The quote check runs here rather than inside Stage D on purpose. A claim
+    # whose id does not resolve is worthless to everyone, narrator included, so
+    # `verify` removes it before anything else runs. A claim whose id resolves
+    # but whose words are not in the record is a different failure: the thread
+    # is real and the outcome may well be right, and what must not reach the
+    # reader is the quotation. Filtering the claim list is exactly that, and it
+    # leaves the narration prompt byte-identical, so every committed trajectory
+    # still replays -- a guarantee that would otherwise cost a re-record of the
+    # frozen benchmark to buy.
+    quoting, invented = check_quotes(findings, records)
     claims: list[Claim] = []
-    for item in findings:
+    for item in quoting:
         if item.field == "thread_outcome":
             outcome = item.value["outcome"].replace("_", " ")
             quote = (item.value.get("quote") or "").strip()
@@ -114,5 +127,6 @@ def analyze(
         before_verification=before,
         after_verification=len(findings),
         dropped=dropped,
+        invented=invented,
         rules=rules,
     )

@@ -230,6 +230,16 @@ class Session:
                         field=dropped.field,
                         value=dropped.value,
                         cited=tuple(dropped.evidence_ids),
+                        reason="unresolved",
+                    )
+                )
+            for invented in trace.invented:
+                self._emit(
+                    events.FindingDropped(
+                        field=invented.field,
+                        value=invented.value,
+                        cited=tuple(invented.evidence_ids),
+                        reason="unquoted",
                     )
                 )
             self._emit(
@@ -239,6 +249,7 @@ class Session:
                     summary=(
                         f"{trace.before_verification} findings → "
                         f"{trace.after_verification} kept, {len(trace.dropped)} dropped"
+                        + (f", {len(trace.invented)} unquoted" if trace.invented else "")
                     ),
                 )
             )

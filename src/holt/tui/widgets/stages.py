@@ -190,11 +190,18 @@ class DroppedFinding(Widget):
         head.append(f"{event.field} = {event.value!r}")
         yield Line(head)
 
+        unquoted = getattr(event, "reason", "unresolved") == "unquoted"
         for eid in event.cited:
             row = Text("  ")
             row.append("cited  ", style=theme.DIM)
-            row.append_text(cite(eid, resolves=False, width=50))
-            row.append("   does not resolve", style=theme.DROP)
+            # An unquoted claim cites a thread that is perfectly real; it is the
+            # words that are not there, and colouring the id as unresolvable
+            # would say the opposite of what happened.
+            row.append_text(cite(eid, resolves=unquoted, width=50))
+            row.append(
+                "   says no such thing" if unquoted else "   does not resolve",
+                style=theme.DROP,
+            )
             yield Line(row)
         if not event.cited:
             row = Text("  ")
@@ -204,6 +211,9 @@ class DroppedFinding(Widget):
 
         yield Line(
             Text(
+                "Dropped, not softened. The quoted words are not in that thread, so "
+                "the claim does not reach the reader."
+                if unquoted else
                 "Dropped, not softened. The claim was asserted without a record that "
                 "carries it, so it does not reach the reader.",
                 style=theme.FAINT,

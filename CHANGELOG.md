@@ -1440,3 +1440,58 @@ invalidated, no verdict logic was touched, and the frozen benchmark still
 replays. The three committed reading copies in `trajectories/` were regenerated
 from the recordings for free and now carry the line. **219 passed** (`pytest -rs`,
 no skips), including two new tests on `Usage` and one on the footer.
+
+## Iteration 24 — the fidelity metric becomes the guard (2026-08-31)
+
+**Tried.** Stage D checked that a cited id *resolves*. It never checked that the
+thread said the words the claim puts in its mouth — a gap this project has
+measured since Iteration 11 and never closed. Closed now: a claim whose
+quotation is not in the record it cites is dropped, using the *same* matcher
+`eval/evidence_integrity.py` measures with, imported rather than reimplemented.
+The metric and the guarantee can no longer drift apart.
+
+**Why now.** A weak model made the gap visible. Under `llama3.2` the reports
+quoted freely and cited badly; under `gpt-5-mini` the same failure exists at 2%
+and had been sitting in the eval output as a number rather than a behaviour.
+
+**Where it runs, and why not in Stage D itself.** Resolution failure makes a
+finding worthless to everyone, narrator included, so `verify` still removes it
+first. A quote failure is different: the thread is real and the outcome may well
+be right — what must not reach the reader is the quotation. So the check filters
+the *claim list*, which leaves the narration prompt byte-identical and every
+committed trajectory replayable. Buying the same guarantee inside Stage D would
+have cost a re-record of the frozen benchmark.
+
+**Evidence.** Over all 69 committed recordings, 994 claims, **9 removed**:
+
+| what was quoted | count | why it is not evidence |
+|---|---|---|
+| `[stephengillie]`, `[Sacchi-X]`, … | 7 | our own `[speaker]` scaffold; no human said it |
+| "Bump! We need this openclaw v4 support so bad." | 1 | real words, said on `paperclip#7166`, cited as `#7219` |
+| "please follow the PR template in …" | 1 | real words, said on `tidb#68652`, cited as `#68668` |
+
+The cross-thread pair is the interesting failure: a quotation that resolves,
+reads perfectly, and belongs to a different pull request. Both were verified by
+hand against the fixtures.
+
+**Two false accusations were found and removed before shipping.** The first
+draft dropped **41** claims, not 9. Thirty of those were ours: `_render_thread`
+prefixes replies with `[AUTHOR]`, models copy the prefix, and the guard was
+blaming them for our formatting — the same lesson NO_REPLIES taught in Iteration
+11. Two more were punctuation (`` [`nixpkgs-review`]. `` against
+`` [`nixpkgs-review`](https://…) ``). The matcher now strips the speaker tag and
+folds punctuation, and the number a reader is asked to trust is the one that
+survived being wrong twice.
+
+**The metric changed too, and in the honest direction.** It used to exclude
+quotes beginning with `[` as unmeasurable, which quietly hid all seven
+scaffold-only quotes from its own denominator. They are counted now: raw model
+fidelity is **514/523 (98%)** where it previously read 438/442 (99%). The
+report's fidelity is 100% by construction, and the number worth reading is the
+9 the reader never sees.
+
+**Nothing measured moved.** The guard is verdict-neutral by construction —
+`verdict.classify` reads only `repo_kind` and `is_archived` from findings, and a
+test asserts it — and the frozen benchmark replays unchanged: pool 1 run1
+**MCC 0.61**, pool 2 p2r1 **MCC 0.63**, matching the committed tables. Six new
+tests (**225 passed**, `pytest -rs`, no skips).

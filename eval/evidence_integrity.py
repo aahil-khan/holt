@@ -11,9 +11,14 @@ Two measures, both mechanical, both computed against the committed fixtures:
   fidelity     every quoted string actually appears in the record it is attributed to
 
 Holt should score near-perfectly on resolution by construction -- Stage D drops
-findings whose citations do not resolve. Fidelity is *not* guaranteed by
-anything: Stage D checks that an id exists, never that the evidence supports the
-claim. So this measures a real gap in our own design as well as the baseline's.
+findings whose citations do not resolve.
+
+Fidelity used to be guaranteed by nothing. Since Iteration 24 the pipeline drops
+a claim whose quotation is not in the record, using the *same* matcher this file
+measures with (`holt.agent.verify`), so the metric and the guarantee cannot
+drift apart. What is measured here is still the model's raw output, not the
+filtered report -- so this remains an honest count of how often the model
+invents, and the line below it says how many of those the reader never sees.
 
 Run:  PYTHONPATH=. uv run python eval/evidence_integrity.py
 """
@@ -25,30 +30,13 @@ import pathlib
 import re
 
 from holt.agent.stages import normalise_citation
+# One matcher, imported rather than reimplemented: the number reported here is
+# the rule the pipeline enforces, not a second opinion about it.
+from holt.agent.verify import quote_supported, spoken_part
 from holt.evidence.fixtures import FixtureProvider
 from holt.types import Window
 
-# A quote is judged present if a long-enough run of its words appears verbatim in
-# the record. Models normalise whitespace and clip mid-sentence, and penalising
-# that would measure formatting rather than fidelity.
-SHINGLE = 6
 PR_REF = re.compile(r"(?:pr:[\w.\-]+/[\w.\-]+#(\d+)|#(\d{2,6}))")
-
-
-def normalise(text: str) -> str:
-    return " ".join((text or "").lower().split())
-
-
-def quote_supported(quote: str, haystack: str) -> bool:
-    q, h = normalise(quote), normalise(haystack)
-    if not q:
-        return False
-    words = q.split()
-    if len(words) <= SHINGLE:
-        return q in h
-    return any(
-        " ".join(words[i : i + SHINGLE]) in h for i in range(len(words) - SHINGLE + 1)
-    )
 
 
 def bodies_for(records, pr_number: str) -> str:
@@ -92,11 +80,18 @@ def main() -> None:
             cited = normalise_citation(slug, entry.get("pr_id", ""))
             stats["holt"]["cited"] += 1
             stats["holt"]["resolved"] += cited in known
-            quote = entry.get("quote", "")
-            if quote and not quote.startswith("["):
+            # A quote that is only our own `[speaker]` scaffold was previously
+            # excluded from the denominator as unmeasurable. It is measurable and
+            # it is a failure: the model quoted a username, and a reader shown
+            # `“[octocat]”` has been shown nothing. Counted, and the tag is
+            # stripped from the rest rather than disqualifying them.
+            quote = spoken_part(entry.get("quote", ""))
+            if entry.get("quote", "").strip():
                 stats["holt"]["quoted"] += 1
                 num = cited.split("#")[-1].split(":")[0] if "#" in cited else ""
-                stats["holt"]["supported"] += quote_supported(quote, bodies_for(records, num))
+                stats["holt"]["supported"] += bool(quote) and quote_supported(
+                    quote, bodies_for(records, num)
+                )
 
         # The evidence-matched prompt: free prose, but it was shown the same ids
         # and asked to cite them. Pull every pull-request reference out and check.
@@ -121,9 +116,11 @@ def main() -> None:
     if h["quoted"]:
         print(f"\nHolt resolution is {100*h['resolved']/h['cited']:.0f}% by construction: "
               "Stage D drops findings whose ids do not resolve.")
-        print(f"Fidelity is {100*h['supported']/h['quoted']:.0f}% and is guaranteed by "
-              "nothing — Stage D checks that an id exists, never that the evidence")
-        print("says what the claim says. That gap is ours, and it is measured here.")
+        gap = h["quoted"] - h["supported"]
+        print(f"Fidelity of the model's raw quotes is {100*h['supported']/h['quoted']:.0f}%. "
+              f"The {gap} that are not in the record are")
+        print("dropped before the reader by the same check that counted them here, so the "
+              "report's own fidelity is 100% by construction.")
 
 
 if __name__ == "__main__":

@@ -115,7 +115,8 @@ class AssessmentScreen(Screen):
             yield Line(
                 Text(
                     f"EVIDENCE   {count} {'claim' if count == 1 else 'claims'}, "
-                    "every one carrying an id that resolved",
+                    "every one carrying an id that resolved and words the "
+                    "thread actually said",
                     style=theme.DIM,
                 ),
                 classes="section-label",
