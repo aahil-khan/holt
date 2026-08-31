@@ -32,6 +32,29 @@ from tests import fake_run  # noqa: E402
 CLEAN = fake_run.REPO
 
 
+@pytest.fixture(autouse=True)
+def _forget_reused_reads():
+    """Every test starts with the screen's read cache empty.
+
+    `next_steps._CACHE` is keyed on `(repo, kind, live)` and lives for the
+    process, so a read taken by one test answered the fetch of a later one.
+    That is not a slow test, it is a different code path: a fetch that hits the
+    cache returns before it posts the "reading…" notice, so the test asserting
+    the screen keeps answering during a read saw a screen that had never
+    started one. It passed alone and failed after any test that had already
+    ranked the same repository — order-dependence, not timing, and the window
+    is ten minutes against a suite that runs in two.
+
+    Cleared on the way out as well so the dict does not outlive the test that
+    filled it.
+    """
+    from holt.tui.screens import next_steps
+
+    next_steps.cache_clear()
+    yield
+    next_steps.cache_clear()
+
+
 def screen_text(app) -> str:
     return "\n".join(
         "".join(segment.text for segment in strip)

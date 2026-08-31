@@ -1040,6 +1040,61 @@ name is in `.gitignore` now, so it cannot come back by accident.
 
 ---
 
+## Iteration 34 — the suite was reading its own cache (2026-08-31)
+
+**The symptom lied about its own cause.** The test asserting that "what next"
+keeps answering while the evidence is being read failed in the full suite and
+passed on its own, so it was written up as a timing flake — a 0.2 s assertion
+losing a race under load. It is not. It fails in 5.8 seconds with two tests on
+an idle machine, and it fails every time. Ordering was the variable, not speed.
+
+**The cache is process-lifetime, and the tests share the process.**
+`next_steps._CACHE` is keyed on `(repo, kind, live)` and deliberately outlives
+the screen, because the screen is rebuilt on every `n`. The test forty lines
+earlier — the one that will not show an order without its measurement — ranks
+the same repository and leaves its read behind. The window is ten minutes; the
+suite runs in two, so nothing expires mid-run.
+
+**A warm cache is a different code path, not a faster one.** `_fetch` checks
+`_cached()` before it posts `reading committed evidence…`, and returns on a
+hit. So the test that asserts the screen keeps answering *during* a read was
+handed a screen that had never started one: the slow provider it monkeypatches
+was never called. The assertion was right and the state it ran against was
+wrong.
+
+**Fixed where the state is shared, not where it was noticed.** Five tests
+already bracketed themselves with `cache_clear()` — the authors knew, and
+patched the instances they hit. That is a per-test remedy for a per-module
+defect, and the sixth test that needed it did not get one. An autouse fixture
+now clears the dict before and after every test in the file, so no test can
+inherit another's read. The manual calls stay: they are load-bearing inside the
+two tests that assert on cache contents mid-body.
+
+**Not fixed by widening the assertion.** Loosening the 0.2 s window, or polling
+until "reading" appeared, would have bought a green suite with a test that no
+longer tested anything — the read it is about would still have been served from
+cache.
+
+**Evidence.** `uv run pytest -rs`: **375 passed**, no skips, 121 s. The count is
+unchanged because no test was added or removed. What changed is that
+`REPRODUCTION.md`'s promise of "375 passed, no skips" is now true, which it was
+not when that line was written. The pair that reproduces it, red in file order
+before this and green after:
+
+```sh
+uv run pytest \
+  "tests/test_tui_screens.py::test_what_next_never_shows_an_order_without_its_measurement" \
+  "tests/test_tui_screens.py::test_what_next_keeps_answering_while_the_evidence_is_being_read"
+```
+
+**Worth recording about the diagnosis rather than the bug.** There is no
+ordering plugin here, so file order *is* the order, and a shared-state defect
+presents as a stable failure rather than an intermittent one. "Passes alone,
+fails together" was the whole signal; reading it as load was the mistake, and
+running the two together cost six seconds and settled it.
+
+---
+
 ## The main failure mode
 
 **A sentence is not an assertion, and unverified sentences are where this system
