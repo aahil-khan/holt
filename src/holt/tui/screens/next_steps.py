@@ -14,6 +14,12 @@ would have answered for immediately. The evidence the report was built from is
 tried first and the other source second, so a miss is a miss about the
 repository rather than about where we happened to look.
 
+**The read happens off the screen's own message pump.** Reading evidence takes
+a thread and, on a live repository, a minute; awaiting it inside the submit
+handler meant the screen answered no keys at all until it came back. It runs as
+a worker, so the notice moves, escape still works, and pressing enter again
+replaces the ranking in flight.
+
 The ranking is `progression.path_overlap_rank`: deterministic, no model call.
 Each row shows the tokens that put it there, so the order is inspectable rather
 than asserted — the same standard the rest of the interface holds evidence to.
@@ -66,9 +72,17 @@ class NextScreen(Screen):
 
         with Vertical(id="next-body"):
             yield Line(
-                Text("Whose next issues?", style=theme.DIM), classes="section-label"
+                Text(
+                    "Whose next issues?  A GitHub username — yours, or anyone "
+                    "who has had work merged here.",
+                    style=theme.DIM,
+                ),
+                classes="section-label",
             )
-            yield Input(placeholder="a GitHub login", id="login-input")
+            yield Input(
+                placeholder="GitHub username, e.g. frenck — enter to rank",
+                id="login-input",
+            )
             yield Line(
                 Text(
                     "Ranked by overlap with the files they have already had merged "
@@ -155,11 +169,22 @@ class NextScreen(Screen):
             f"GitHub{detail}, so there is nothing to rank from."
         )
 
-    async def on_input_submitted(self, event: Input.Submitted) -> None:
+    def on_input_submitted(self, event: Input.Submitted) -> None:
+        """Start the ranking. Deliberately not `async`, and deliberately not
+        awaited.
+
+        A message handler owns the screen's message pump for as long as it
+        runs, and this one runs for as long as the evidence takes to read —
+        which on a live repository is a minute of network. Awaiting it here
+        meant the screen took no keys at all in the meantime: no escape, no
+        typing, nothing. The work moves to a worker so the screen keeps
+        answering while it happens, and pressing enter again replaces the
+        ranking in flight rather than queueing a second one behind it.
+        """
         login = event.value.strip().lstrip("@")
         if not login:
             return
-        await self._rank(login)
+        self.run_worker(self._rank(login), group="rank", exclusive=True)
 
     async def _rank(self, login: str) -> None:
         from holt.agent import progression
@@ -179,7 +204,12 @@ class NextScreen(Screen):
             self._notice(str(miss), theme.DROP)
             return
 
-        contributor = progression.history_for(login, build_threads(records))
+        # Off the loop for the same reason the fetch is: on a large repository
+        # this is a second of work, and a second of dropped frames reads as the
+        # interface having stopped.
+        contributor = await asyncio.to_thread(
+            lambda: progression.history_for(login, build_threads(records))
+        )
         if not contributor.merged_count:
             # Said plainly, because an empty list would look like a ranking that
             # found nothing rather than a question that cannot be asked yet.
@@ -205,7 +235,9 @@ class NextScreen(Screen):
                          theme.DROP)
             return
 
-        ranked = progression.path_overlap_rank(contributor.files, candidates)
+        ranked = await asyncio.to_thread(
+            progression.path_overlap_rank, contributor.files, candidates
+        )
         read = "read live from GitHub" if from_live and issues_live else (
             "read from committed evidence" if not (from_live or issues_live)
             else "read from both live and committed evidence"

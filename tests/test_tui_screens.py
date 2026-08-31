@@ -838,6 +838,63 @@ def test_what_next_reads_what_the_report_read_first(monkeypatch):
     assert NextScreen("x/y", live=False)._sources() == [False]
 
 
+def test_what_next_keeps_answering_while_the_evidence_is_being_read(
+    tmp_path, monkeypatch
+):
+    """It used to freeze for the whole read.
+
+    The submit handler awaited the ranking, and a message handler owns the
+    screen's message pump while it runs — so for as long as the evidence took
+    to read, which on a live repository is a minute of network, the screen took
+    no keys at all. Escape is the one that matters: the way out.
+    """
+    import time as _time
+
+    from holt.tui import session as session_module
+    from holt.tui.screens.next_steps import NextScreen
+
+    class Slow:
+        def fetch(self, repo):
+            _time.sleep(1.0)
+            return []
+
+    monkeypatch.setattr(session_module, "_provider", lambda live: Slow())
+
+    async def body(app, pilot):
+        app.session = fake_run.finished()
+        await app.push_screen(NextScreen(CLEAN))
+        await pilot.pause(0.3)
+        await type_repo(pilot, "frenck")
+        await pilot.press("enter")
+        await pilot.pause(0.2)
+        # Enter came back before the read did. It used to return only once the
+        # whole thing had finished, which is the freeze.
+        assert "reading" in screen_text(app), (
+            "pressing enter did not return until the evidence had been read"
+        )
+
+        await pilot.press("escape")
+        await pilot.pause(0.2)
+        assert app.screen.__class__.__name__ != "NextScreen"
+
+    drive(body, tmp_path, size=(120, 44))
+
+
+def test_what_next_asks_for_a_github_username_in_those_words(tmp_path):
+    """"a GitHub login" left people guessing what belonged in the box."""
+    from holt.tui.screens.next_steps import NextScreen
+
+    async def body(app, pilot):
+        app.session = fake_run.finished()
+        await app.push_screen(NextScreen(CLEAN))
+        await pilot.pause(0.3)
+        flat = " ".join(screen_text(app).split())
+        assert "GitHub username" in flat
+        assert "enter to rank" in flat
+
+    drive(body, tmp_path, size=(120, 44))
+
+
 def test_what_next_says_plainly_when_the_login_has_landed_nothing(tmp_path):
     """An empty list would read as a ranking that found nothing, rather than a
     question that cannot be asked yet."""

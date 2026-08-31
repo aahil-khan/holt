@@ -45,7 +45,7 @@ uv sync --extra tui
 uv run pytest -rs
 ```
 
-**Expected:** `362 passed`, no skips. **Runtime:** about two minutes either way.
+**Expected:** `364 passed`, no skips. **Runtime:** about two minutes either way.
 
 The `-rs` flag reports skipped tests explicitly — a skipped test is not a
 passing one, which is why the count above says which one it is.

@@ -528,3 +528,37 @@ were not kept, `t` opens the stored trace and escape returns to the report, and
 an assessment stored without one says that. Verified by hand against a real
 `home-assistant/core` replay: 69 events in, 64 stored, `repo:home-assistant/core:meta`
 resolving after a round trip through the store.
+
+---
+
+## Iteration 33 — "what next" froze on the key that starts it (2026-08-31)
+
+**The report.** Type a username on the what-next screen, press enter, and the
+interface stops. No cursor, no escape, no way out until it comes back.
+
+**Iteration 31 moved the fetch off the event loop and that was not enough.** The
+read really does run in a thread — but `on_input_submitted` was `async` and
+awaited it, and a message handler owns its screen's message pump for as long as
+it runs. Nothing else on that screen was processed in the meantime, including
+keys. On a committed fixture the block is a few hundred milliseconds and reads
+as a stutter; on a live repository it is the whole crawl, and the way out is
+gone for the length of it.
+
+**The work moved to a worker.** The handler starts it and returns, so the notice
+updates, escape works while GitHub is being read, and pressing enter again
+replaces the ranking in flight instead of queueing a second one behind it. The
+two pieces of real CPU work — building the threads, and scoring the overlap —
+went to a thread as well, on the same principle: dropped frames read as an
+interface that has stopped.
+
+**And the box now asks for what it wants.** The placeholder said `a GitHub
+login`, which left people guessing whether it wanted a username, an email, or a
+URL. It says `GitHub username, e.g. frenck — enter to rank`, and the label above
+it says whose name is worth typing: yours, or anyone who has had work merged
+there.
+
+**Evidence.** `HOLT_NO_NETWORK=1 pytest -q -rs`: **364 passed**, no skips (was 362). Two
+new tests — one drives the screen against a deliberately slow provider and
+asserts enter returns before the read does, then that escape still leaves (it
+fails on the old handler), and one that the box asks for a GitHub username in
+those words.
