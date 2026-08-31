@@ -1,0 +1,987 @@
+{
+ "captured_at": "2026-08-31T01:07:17.826123+00:00",
+ "content_sha256": "a8cd8ce7d6bd96f056981bb7281cc89bd913ef35331361990b98acde0252fedb",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:pallets/click:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Python composable command line interface toolkit",
+    "homepage_url": "https://click.palletsprojects.com",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-30T09:09:19Z",
+    "stargazer_count": 17641
+   },
+   "source": "github",
+   "timestamp": "2014-04-24T09:52:19+00:00",
+   "url": "https://github.com/pallets/click"
+  },
+  {
+   "evidence_id": "repo:pallets/click:readme",
+   "payload": {
+    "commit_oid": "36baa15ff831b939a22bc527cd76ce653ef6f66d",
+    "kind": "readme",
+    "text": "<div align=\"center\"><img src=\"https://raw.githubusercontent.com/pallets/click/refs/heads/stable/docs/_static/click-name.svg\" alt=\"\" height=\"150\"></div>\n\n# Click\n\nClick is a Python package for creating beautiful command line interfaces\nin a composable way with as little code as necessary. It's the \"Command\nLine Interface Creation Kit\". It's highly configurable but comes with\nsensible defaults out of the box.\n\nIt aims to make the process of writing command line tools quick and fun\nwhile also preventing any frustration caused by the inability to\nimplement an intended CLI API.\n\nClick in three points:\n\n-   Arbitrary nesting of commands\n-   Automatic help page generation\n-   Supports lazy loading of subcommands at runtime\n\n\n## A Simple Example\n\n```python\nimport click\n\n@click.command()\n@click.option(\"--count\", default=1, help=\"Number of greetings.\")\n@click.option(\"--name\", prompt=\"Your name\", help=\"The person to greet.\")\ndef hello(count, name):\n    \"\"\"Simple program that greets NAME for a total of COUNT times.\"\"\"\n    for _ in range(count):\n        click.echo(f\"Hello, {name}!\")\n\nif __name__ == '__main__':\n    hello()\n```\n\n```\n$ python hello.py --count=3\nYour name: Click\nHello, Click!\nHello, Click!\nHello, Click!\n```\n\n\n## Donate\n\nThe Pallets organization develops and supports Click and other popular\npackages. In order to grow the community of contributors and users, and\nallow the maintainers to devote more time to the projects, [please\ndonate today][].\n\n[please donate today]: https://palletsprojects.com/donate\n\n## Contributing\n\nSee our [detailed contributing documentation][contrib] for many ways to\ncontribute, including reporting issues, requesting features, asking or answering\nquestions, and making PRs.\n\n[contrib]: https://palletsprojects.com/contributing/\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T04:19:34+00:00",
+   "url": "https://github.com/pallets/click/blob/36baa15ff831b939a22bc527cd76ce653ef6f66d/README.md"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3816:opened",
+   "payload": {
+    "additions": 33,
+    "author": "sahabajalam",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "CHANGES.md",
+     "src/click/core.py",
+     "tests/test_info_dict.py"
+    ],
+    "title": "Include the usage string in Command.to_info_dict"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T17:29:52+00:00",
+   "url": "https://github.com/pallets/click/pull/3816"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3815:opened",
+   "payload": {
+    "additions": 42,
+    "author": "err0r4eve3",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "CHANGES.md",
+     "src/click/shell_completion.py",
+     "tests/test_shell_completion.py"
+    ],
+    "title": "Fix completion for attached option values"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T16:52:15+00:00",
+   "url": "https://github.com/pallets/click/pull/3815"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3814:opened",
+   "payload": {
+    "additions": 42,
+    "author": "MaxxxDong",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "Don't wrap usage lines in the middle of hyphenated option names"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T16:18:06+00:00",
+   "url": "https://github.com/pallets/click/pull/3814"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3813:opened",
+   "payload": {
+    "additions": 44,
+    "author": "cnbei",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "CHANGES.md",
+     "src/click/core.py",
+     "tests/test_utils/test_prompt.py"
+    ],
+    "title": "Fix KeyboardInterrupt leaking from Abort echo in prompt"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T16:03:23+00:00",
+   "url": "https://github.com/pallets/click/pull/3813"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3812:opened",
+   "payload": {
+    "additions": 45,
+    "author": "syedzeeshan-27",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "CHANGES.md",
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "Do not break hyphenated tokens when wrapping help text"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T20:21:33+00:00",
+   "url": "https://github.com/pallets/click/pull/3812"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3811:opened",
+   "payload": {
+    "additions": 0,
+    "author": "CyberneticX-Tech",
+    "author_is_bot": false,
+    "changed_files": 0,
+    "deletions": 0,
+    "files": [],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T19:48:16+00:00",
+   "url": "https://github.com/pallets/click/pull/3811"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3811:closed",
+   "payload": {
+    "author": "CyberneticX-Tech",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T19:59:54+00:00",
+   "url": "https://github.com/pallets/click/pull/3811"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3811:comment:0",
+   "payload": {
+    "author": "CyberneticX-Tech",
+    "author_is_bot": false,
+    "body": "Closing: Empty pull request with no changed files."
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T19:59:54+00:00",
+   "url": "https://github.com/pallets/click/pull/3811"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3811:comment:1",
+   "payload": {
+    "author": "ThiefMaster",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai\r\n\r\nAlso, this PR is complete junk."
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T22:04:35+00:00",
+   "url": "https://github.com/pallets/click/pull/3811"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3810:opened",
+   "payload": {
+    "additions": 55,
+    "author": "vikasvardhanv",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "Don't break usage-line options at a hyphen"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T15:59:53+00:00",
+   "url": "https://github.com/pallets/click/pull/3810"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3809:opened",
+   "payload": {
+    "additions": 12,
+    "author": "mikemikimike",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/click/core.py",
+     "tests/test_info_dict.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T12:04:50+00:00",
+   "url": "https://github.com/pallets/click/pull/3809"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3809:closed",
+   "payload": {
+    "author": "mikemikimike",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T12:48:37+00:00",
+   "url": "https://github.com/pallets/click/pull/3809"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3809:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:03:27+00:00",
+   "url": "https://github.com/pallets/click/pull/3809"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3808:opened",
+   "payload": {
+    "additions": 146,
+    "author": "kdeldycke",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 7,
+    "files": [
+     "tests/test_defaults.py",
+     "tests/test_options.py",
+     "tests/test_types.py"
+    ],
+    "title": "WIP: Test `set` and `frozenset` types in public API"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T10:30:28+00:00",
+   "url": "https://github.com/pallets/click/pull/3808"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3808:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "For 1, it should probably read \"If no type is provided, the type of the default value is used if it's recognized, otherwise `STRING` is used.\"\r\n\r\nOr it might have been trying to describe the current behavior, and been a little vague. \"If no type is provided, the type of the default is used directly, rather than applying a Click param type. This can lead to unexpected behavior when passing the string value to the type constructor, such as `set`.\""
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:09:55+00:00",
+   "url": "https://github.com/pallets/click/pull/3808"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3808:comment:1",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "For 2, I do not want to add comma splitting to the core behavior. It's maybe appropriate for a type, but not auto detected, and I'm not sure it needs to be in core at all. It's also very easy for users to misunderstand, if they type `a, b` suddenly it parses differently. The old PR you found seems like a different thing, it's about allowing `--key:value` instead of `--key=value` (also something I don't want to add, I agree with the closure.)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:17:46+00:00",
+   "url": "https://github.com/pallets/click/pull/3808"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3807:opened",
+   "payload": {
+    "additions": 8,
+    "author": "amtbsl",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "docs/utils.md",
+     "src/click/termui.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:30:41+00:00",
+   "url": "https://github.com/pallets/click/pull/3807"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3807:closed",
+   "payload": {
+    "author": "amtbsl",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:07:20+00:00",
+   "url": "https://github.com/pallets/click/pull/3807"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3807:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:07:20+00:00",
+   "url": "https://github.com/pallets/click/pull/3807"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3806:opened",
+   "payload": {
+    "additions": 36,
+    "author": "arimu1",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/_compat.py",
+     "tests/test_termui.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T03:45:59+00:00",
+   "url": "https://github.com/pallets/click/pull/3806"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3806:closed",
+   "payload": {
+    "author": "arimu1",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:06:01+00:00",
+   "url": "https://github.com/pallets/click/pull/3806"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3806:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T13:06:01+00:00",
+   "url": "https://github.com/pallets/click/pull/3806"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3805:opened",
+   "payload": {
+    "additions": 60,
+    "author": "kdeldycke",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "CHANGES.md",
+     "src/click/_utils.py",
+     "tests/test_utils/test_sentinel.py"
+    ],
+    "title": "Fix `copy`, `deepcopy` and `pickle` of `Sentinel` members"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T21:43:45+00:00",
+   "url": "https://github.com/pallets/click/pull/3805"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3805:merged",
+   "payload": {
+    "author": "kdeldycke",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T15:12:36+00:00",
+   "url": "https://github.com/pallets/click/pull/3805"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3805:review:0",
+   "payload": {
+    "author": "Rowlando13",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T04:48:29+00:00",
+   "url": "https://github.com/pallets/click/pull/3805"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3805:review:1",
+   "payload": {
+    "author": "kdeldycke",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T06:54:24+00:00",
+   "url": "https://github.com/pallets/click/pull/3805"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3804:opened",
+   "payload": {
+    "additions": 29,
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:01:09+00:00",
+   "url": "https://github.com/pallets/click/pull/3804"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3804:closed",
+   "payload": {
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:47:42+00:00",
+   "url": "https://github.com/pallets/click/pull/3804"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3804:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:47:42+00:00",
+   "url": "https://github.com/pallets/click/pull/3804"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3803:opened",
+   "payload": {
+    "additions": 59,
+    "author": "CAOShurong",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/_compat.py",
+     "tests/test_compat.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T17:48:07+00:00",
+   "url": "https://github.com/pallets/click/pull/3803"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3803:closed",
+   "payload": {
+    "author": "CAOShurong",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T18:08:12+00:00",
+   "url": "https://github.com/pallets/click/pull/3803"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3803:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai\n\nBeyond that, you also set the author info to a maintainer rather than yourself. This sort of deception is unacceptable. "
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T18:16:42+00:00",
+   "url": "https://github.com/pallets/click/pull/3803"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3801:opened",
+   "payload": {
+    "additions": 6,
+    "author": "Rowlando13",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "CHANGES.md",
+     "pyproject.toml",
+     "uv.lock"
+    ],
+    "title": "Start 8.5.1."
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T04:17:35+00:00",
+   "url": "https://github.com/pallets/click/pull/3801"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3801:merged",
+   "payload": {
+    "author": "Rowlando13",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T04:19:35+00:00",
+   "url": "https://github.com/pallets/click/pull/3801"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3800:opened",
+   "payload": {
+    "additions": 1371,
+    "author": "Rowlando13",
+    "author_is_bot": false,
+    "changed_files": 39,
+    "deletions": 429,
+    "files": [
+     ".github/workflows/lock.yaml",
+     ".github/workflows/nightly.yaml",
+     ".github/workflows/pre-commit.yaml",
+     ".github/workflows/publish.yaml",
+     ".github/workflows/tests.yaml",
+     ".github/workflows/zizmor.yaml",
+     "CHANGES.md",
+     "docs/arguments.md",
+     "docs/contributing.md",
+     "docs/documentation.md",
+     "docs/faqs.md",
+     "docs/option-decorators.md",
+     "docs/shell-completion.md",
+     "docs/testing.md",
+     "docs/upgrade-guides.md",
+     "docs/utils.md",
+     "pyproject.toml",
+     "src/click/_compat.py",
+     "src/click/_termui_impl.py",
+     "src/click/core.py"
+    ],
+    "title": "Merge main into stable"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T04:05:38+00:00",
+   "url": "https://github.com/pallets/click/pull/3800"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3800:merged",
+   "payload": {
+    "author": "Rowlando13",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T04:07:04+00:00",
+   "url": "https://github.com/pallets/click/pull/3800"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3799:opened",
+   "payload": {
+    "additions": 66,
+    "author": "22elix3r",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/core.py",
+     "tests/test_shell_completion.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T02:07:25+00:00",
+   "url": "https://github.com/pallets/click/pull/3799"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3799:closed",
+   "payload": {
+    "author": "22elix3r",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T03:03:31+00:00",
+   "url": "https://github.com/pallets/click/pull/3799"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3799:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T03:03:31+00:00",
+   "url": "https://github.com/pallets/click/pull/3799"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3798:opened",
+   "payload": {
+    "additions": 83,
+    "author": "22elix3r",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T02:00:41+00:00",
+   "url": "https://github.com/pallets/click/pull/3798"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3798:closed",
+   "payload": {
+    "author": "22elix3r",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T03:03:00+00:00",
+   "url": "https://github.com/pallets/click/pull/3798"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3798:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot was unable to review this pull request because the user who requested the review has reached their quota limit.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T02:00:46+00:00",
+   "url": "https://github.com/pallets/click/pull/3798"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3798:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T03:03:00+00:00",
+   "url": "https://github.com/pallets/click/pull/3798"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3797:opened",
+   "payload": {
+    "additions": 55,
+    "author": "mishra-naman",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T01:39:06+00:00",
+   "url": "https://github.com/pallets/click/pull/3797"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3797:closed",
+   "payload": {
+    "author": "mishra-naman",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T03:02:35+00:00",
+   "url": "https://github.com/pallets/click/pull/3797"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3797:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T03:02:35+00:00",
+   "url": "https://github.com/pallets/click/pull/3797"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3796:opened",
+   "payload": {
+    "additions": 37,
+    "author": "arpansahu",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T00:57:28+00:00",
+   "url": "https://github.com/pallets/click/pull/3796"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3796:closed",
+   "payload": {
+    "author": "arpansahu",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T01:32:05+00:00",
+   "url": "https://github.com/pallets/click/pull/3796"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3796:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T01:32:05+00:00",
+   "url": "https://github.com/pallets/click/pull/3796"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3795:opened",
+   "payload": {
+    "additions": 72,
+    "author": "arpansahu",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 10,
+    "files": [
+     "CHANGES.md",
+     "src/click/shell_completion.py",
+     "tests/test_shell_completion.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T00:28:42+00:00",
+   "url": "https://github.com/pallets/click/pull/3795"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3795:closed",
+   "payload": {
+    "author": "arpansahu",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T00:47:34+00:00",
+   "url": "https://github.com/pallets/click/pull/3795"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3795:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T01:32:41+00:00",
+   "url": "https://github.com/pallets/click/pull/3795"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3794:opened",
+   "payload": {
+    "additions": 77,
+    "author": "yfwmaniish",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGES.md",
+     "src/click/formatting.py",
+     "tests/test_formatting.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T12:52:02+00:00",
+   "url": "https://github.com/pallets/click/pull/3794"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3794:closed",
+   "payload": {
+    "author": "yfwmaniish",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T13:09:57+00:00",
+   "url": "https://github.com/pallets/click/pull/3794"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3794:comment:0",
+   "payload": {
+    "author": "yfwmaniish",
+    "author_is_bot": false,
+    "body": "Withdrawing this -- I found Pallets' AI contribution policy (https://palletsprojects.com/contributing/llm-ai) after opening this, which I should have checked before submitting. Closing it myself rather than leaving it for a maintainer to catch. Apologies for the noise."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T13:09:56+00:00",
+   "url": "https://github.com/pallets/click/pull/3794"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3793:opened",
+   "payload": {
+    "additions": 1,
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/contrib.md"
+    ],
+    "title": "Add `shtab` to third-party contrib list"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T17:25:10+00:00",
+   "url": "https://github.com/pallets/click/pull/3793"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3793:merged",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T09:09:20+00:00",
+   "url": "https://github.com/pallets/click/pull/3793"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3793:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "Could you explain what this is doing? It seems like it's trying to turn Click into argparse, removing all dynamic behavior and non-argparse-compatible behavior. Click and its shell completions are deliberately very customizable, it's not clear how this is supported. I don't think the basic description \"speed up tab completion scripts\" is accurate enough to capture the tradeoff."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T17:47:43+00:00",
+   "url": "https://github.com/pallets/click/pull/3793"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3793:comment:1",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Under-the-hood, a `click.Command` is turned into a temporary `argparse` object purely as an intermediate step in creating a completion script. Routing via any stdlib (such as `argparse`) is an implementation detail and unworthy of mention IMO.\r\n\r\nClick's completions are currently unusably slow for complex apps, and it's not always desirable to move everything to lazy imports purely to make click's completions faster.\r\n\r\nUsing `shtab.click` instead does indeed deliberately remove all side-effects of the completion scripts (though it's likely easy to auto-detect [`hasattr('shell_complete')`](https://click.palletsprojects.com/en/stable/shell-completion/#custom-type-completion) to retain dynamic completion support where appropriate, vis. https://github.com/tqdm/shtab/issues/255).\r\n\r\nThe speedup feels noticeable even with the simple examples in the table above."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T18:02:54+00:00",
+   "url": "https://github.com/pallets/click/pull/3793"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3793:comment:2",
+   "payload": {
+    "author": "Rowlando13",
+    "author_is_bot": false,
+    "body": "I think its okay. Generally the listed ones are much more focused on Click, rather than just supporting, so I had to think about it. And I think it would be a nice addition! @casperdcl I also like tdqm. Its a great package that I have used a bit. \r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T09:05:28+00:00",
+   "url": "https://github.com/pallets/click/pull/3793"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3793:comment:3",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Thanks @Rowlando13 - I believe this PR can make `click` users' lives easier and increase retention of those migrating away from it.\n\nIncidentally, any help with https://github.com/tqdm/shtab/issues/255 would be appreciated given that I'm not familiar with all internals/egde-cases of `click`"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T11:05:11+00:00",
+   "url": "https://github.com/pallets/click/pull/3793"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3792:opened",
+   "payload": {
+    "additions": 40,
+    "author": "Faseeh06",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "CHANGES.md",
+     "src/click/utils.py",
+     "tests/test_types.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T09:30:51+00:00",
+   "url": "https://github.com/pallets/click/pull/3792"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3792:closed",
+   "payload": {
+    "author": "Faseeh06",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:09:43+00:00",
+   "url": "https://github.com/pallets/click/pull/3792"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3792:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/security"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:09:43+00:00",
+   "url": "https://github.com/pallets/click/pull/3792"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3790:opened",
+   "payload": {
+    "additions": 56,
+    "author": "leilei3167",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "CHANGES.md",
+     "src/click/core.py",
+     "tests/test_commands.py"
+    ],
+    "title": "AI junk"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T01:42:43+00:00",
+   "url": "https://github.com/pallets/click/pull/3790"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3790:closed",
+   "payload": {
+    "author": "leilei3167",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T01:53:50+00:00",
+   "url": "https://github.com/pallets/click/pull/3790"
+  },
+  {
+   "evidence_id": "pr:pallets/click#3790:comment:0",
+   "payload": {
+    "author": "davidism",
+    "author_is_bot": false,
+    "body": "https://palletsprojects.com/contributing/llm-ai"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T01:53:50+00:00",
+   "url": "https://github.com/pallets/click/pull/3790"
+  }
+ ],
+ "repo": "pallets/click",
+ "window": "pre_t"
+}

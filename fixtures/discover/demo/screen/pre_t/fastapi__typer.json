@@ -1,0 +1,898 @@
+{
+ "captured_at": "2026-08-31T01:07:15.314526+00:00",
+ "content_sha256": "965551524e22f7ee692b3b0444e21639403fe338b47d562106c2f9ce5f8aac06",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:fastapi/typer:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Typer, build great CLIs. Easy to code. Based on Python type hints.",
+    "homepage_url": "https://typer.tiangolo.com/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-28T10:26:37Z",
+    "stargazer_count": 19936
+   },
+   "source": "github",
+   "timestamp": "2019-12-24T12:24:11+00:00",
+   "url": "https://github.com/fastapi/typer"
+  },
+  {
+   "evidence_id": "repo:fastapi/typer:readme",
+   "payload": {
+    "commit_oid": "99eb220df7c69a0f14a0b69214042677e0760b9d",
+    "kind": "readme",
+    "text": "<p align=\"center\">\n  <a href=\"https://typer.tiangolo.com\"><img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg#only-light\" alt=\"Typer\"></a>\n\n</p>\n<p align=\"center\">\n    <em>Typer, build great CLIs. Easy to code. Based on Python type hints.</em>\n</p>\n<p align=\"center\">\n<a href=\"https://github.com/fastapi/typer/actions?query=workflow%3ATest+event%3Apush+branch%3Amaster\">\n    <img src=\"https://github.com/fastapi/typer/actions/workflows/test.yml/badge.svg?event=push&branch=master\" alt=\"Test\">\n</a>\n<a href=\"https://coverage-badge.samuelcolvin.workers.dev/redirect/fastapi/typer\">\n    <img src=\"https://coverage-badge.samuelcolvin.workers.dev/fastapi/typer.svg\" alt=\"Coverage\">\n<a href=\"https://pypi.org/project/typer\">\n    <img src=\"https://img.shields.io/pypi/v/typer?color=%2334D058&label=pypi%20package\" alt=\"Package version\">\n</a>\n</p>\n\n---\n\n**Documentation**: [https://typer.tiangolo.com](https://typer.tiangolo.com)\n\n**Source Code**: [https://github.com/fastapi/typer](https://github.com/fastapi/typer)\n\n---\n\nTyper is a library for building <abbr title=\"command line interface, programs executed from a terminal\">CLI</abbr> applications that users will **love using** and developers will **love creating**. Based on Python type hints.\n\nIt's also a command line tool to run scripts, automatically converting them to CLI applications.\n\nThe key features are:\n\n* **Intuitive to write**: Great editor support. <abbr title=\"also known as auto-complete, autocompletion, IntelliSense\">Completion</abbr> everywhere. Less time debugging. Designed to be easy to use and learn. Less time reading docs.\n* **Easy to use**: It's easy to use for the final users. Automatic help, and automatic completion for all shells.\n* **Short**: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.\n* **Start simple**: The simplest example adds only 2 lines of code to your app: **1 import, 1 function call**.\n* **Grow large**: Grow in complexity as much as you want, create arbitrarily complex trees of commands and groups of subcommands, with options and arguments.\n* **Run scripts**: Typer includes a `typer` command/program that you can use to run scripts, automatically converting them to CLIs, even if they don't use Typer internally.\n\n## FastAPI of CLIs\n\n**Typer** is [FastAPI](https://fastapi.tiangolo.com)'s little sibling, it's the FastAPI of CLIs.\n\n## Installation\n\nFirst, [install `uv`](https://docs.astral.sh/uv/getting-started/installation/), and then add **Typer** to your project:\n\n<div class=\"termy\">\n\n```console\n$ uv add typer\n---> 100%\n```\n\n</div>\n\nThis installs both the Typer library and the `typer` command in the project's virtual environment. To use `typer` directly with shell completion, [activate the project environment and install completion](tutorial/install.md#activate-the-virtual-environment).\n\nIf you prefer to use `pip`, install `typer` inside a virtual environment. See the [installation guide](tutorial/install.md) for the alternative steps.\n\n## Example\n\n### The absolute minimum\n\n* Create a file `main.py` with:\n\n```Python\ndef main(name: str):\n    print(f\"Hello {name}\")\n```\n\nThis script doesn't even use Typer internally. But you can use the `typer` command to run it as a CLI application.\n\n### Run it\n\nRun your application with the `typer` command:\n\n<div class=\"termy\">\n\n```console\n// Run your application\n$ typer main.py run\n\n// You get a nice error, you are missing 'name'\nUsage: typer [PATH_OR_MODULE] run [OPTIONS] {name}\nTry 'typer [PATH_OR_MODULE] run --help' for help.\n\u256d\u2500 Error \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Missing argument 'name'.                          \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n\n// You get a --help for free\n$ typer main.py run --help\n\nUsage: typer [PATH_OR_MODULE] run [OPTIONS] {name}\n\nRun the provided Typer app.\n\n\u256d\u2500 Arguments \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 *    name      <str>  [required]                  \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Options \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 --help          Show this message and exit.       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n// Now pass the 'name' argument\n$ typer main.py run Camila\n\nHello Camila\n\n// It works! \ud83c\udf89\n```\n\n</div>\n\nThis is the simplest use case, not even using Typer internally, but it can already be quite useful for simple scripts.\n\n**Note**: auto-completion works when you create a Python package and run it with `--install-completion` or when you use the `typer` command.\n\n## Use Typer in your code\n\nNow let's start using Typer in your own code, update `main.py` with:\n\n```Python\nimport typer\n\n\ndef main(name: str):\n    print(f\"Hello {name}\")\n\n\nif __name__ == \"__main__\":\n    typer.run(main)\n```\n\nNow you could run it with Python directly:\n\n<div class=\"termy\">\n\n```console\n// Run your application\n$ uv run python main.py\n\n// You get a nice error, you are missing 'name'\nUsage: main.py [OPTIONS] {name}\nTry 'main.py --help' for help.\n\u256d\u2500 Error \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Missing argument 'name'.                          \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n\n// You get a --help for free\n$ uv run python main.py --help\n\nUsage: main.py [OPTIONS] {name}\n\n\u256d\u2500 Arguments \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 *    name      <str>  [required]                  \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Options \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 --help          Show this message and exit.       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n// Now pass the 'name' argument\n$ uv run python main.py Camila\n\nHello Camila\n\n// It works! \ud83c\udf89\n```\n\n</div>\n\n**Note**: you can also call this same script with the `typer` command, but you don't need to.\n\n## Example upgrade\n\nThis was the simplest example possible.\n\nNow let's see one a bit more complex.\n\n### An example with two subcommands\n\nModify the file `main.py`.\n\nCreate a `typer.Typer()` app, and create two subcommands with their parameters.\n\n```Python hl_lines=\"3  6  11  20\"\nimport typer\n\napp = typer.Typer()\n\n\n@app.command()\ndef hello(name: str):\n    print(f\"Hello {name}\")\n\n\n@app.command()\ndef goodbye(name: str, formal: bool = False):\n    if formal:\n        print(f\"Goodbye Ms. {name}. Have a good day.\")\n    else:\n        print(f\"Bye {name}!\")\n\n\nif __name__ == \"__main__\":\n    app()\n```\n\nAnd that will:\n\n* Explicitly create a `typer.Typer` app.\n    * The previous `typer.run` actually creates one implicitly for you.\n* Add two subcommands with `@app.command()`.\n* Execute the `app()` itself, as if it was a function (instead of `typer.run`).\n\n### Run the upgraded example\n\nCheck the new help:\n\n<div class=\"termy\">\n\n```console\n$ uv run python main.py --help\n\n Usage: main.py [OPTIONS] COMMAND [ARGS]...\n\n\u256d\u2500 Options \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 --install-completion          Install completion  \u2502\n\u2502                               for the current     \u2502\n\u2502                               shell.              \u2502\n\u2502 --show-completion             Show completion for \u2502\n\u2502                               the current shell,  \u2502\n\u2502                               to copy it or       \u2502\n\u2502                               customize the       \u2502\n\u2502                               installation.       \u2502\n\u2502 --help                        Show this message   \u2502\n\u2502                               and exit.           \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Commands \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 hello                                             \u2502\n\u2502 goodbye                                           \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n// When you create a package you get \u2728 auto-completion \u2728 for free, installed with --install-completion\n\n// You have 2 subcommands (the 2 functions): hello and goodbye\n```\n\n</div>\n\nNow check the help for the `hello` command:\n\n<div class=\"termy\">\n\n```console\n$ uv run python main.py hello --help\n\n Usage: main.py hello [OPTIONS] {name}\n\n\u256d\u2500 Arguments \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 *    name      <str>  [required]                  \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Options \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 --help          Show this message and exit.       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n```\n\n</div>\n\nAnd now check the help for the `goodbye` command:\n\n<div class=\"termy\">\n\n```console\n$ uv run python main.py goodbye --help\n\n Usage: main.py goodbye [OPTIONS] {name}\n\n\u256d\u2500 Arguments \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 *    name      <str>  [required]                  \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Options \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 --formal    --no-formal      [default: no-formal] \u2502\n\u2502 --help                       Show this message    \u2502\n\u2502                              and exit.            \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\n// Automatic --formal and --no-formal for the bool option \ud83c\udf89\n```\n\n</div>\n\nNow you can try out the new command line application:\n\n<div class=\"termy\">\n\n```console\n// Use it with the hello command\n\n$ uv run python main.py hello Camila\n\nHello Camila\n\n// And with the goodbye command\n\n$ uv run python main.py goodbye Camila\n\nBye Camila!\n\n// And with --formal\n\n$ uv run python main.py goodbye --formal Camila\n\nGoodbye Ms. Camila. Have a good day.\n```\n\n</div>\n\n**Note**: If your app only has one command, by default the command name is **omitted** in usage: `python main.py Camila`. However, when there are multiple commands, you must **explicitly include the command name**: `python main.py hello Camila`. See [One or Multiple Commands](https://typer.tiangolo.com/tutorial/commands/one-or-multiple/) for more details.\n\n### Recap\n\nIn summary, you declare **once** the types of parameters (*CLI arguments* and *CLI options*) as function parameters.\n\nYou do that with standard modern Python types.\n\nYou don't have to learn a new syntax, the methods or classes of a specific library, etc.\n\nJust standard **Python**.\n\nFor example, for an `int`:\n\n```Python\ntotal: int\n```\n\nor for a `bool` flag:\n\n```Python\nforce: bool\n```\n\nAnd similarly for **files**, **paths**, **enums** (choices), etc. And there are tools to create **groups of subcommands**, add metadata, extra **validation**, etc.\n\n**You get**: great editor support, including **completion** and **type checks** everywhere.\n\n**Your users get**: automatic **`--help`**, **auto-completion** in their terminal (Bash, Zsh, Fish, PowerShell) when they install your package or when using the `typer` command.\n\nFor a more complete example including more features, see the <a href=\"https://typer.tiangolo.com/tutorial/\">Tutorial - User Guide</a>.\n\n## Dependencies\n\n**Typer** requires only a few dependencies (most are tiny):\n\n* [`rich`](https://rich.readthedocs.io/en/stable/index.html): to show nicely formatted errors automatically.\n* [`shellingham`](https://github.com/sarugaku/shellingham): to automatically detect the current shell when installing completion.\n* [`annotated-doc`](https://github.com/fastapi/annotated-doc): to generate documentation from Python type annotations.\n* [`colorama`](https://github.com/tartley/colorama) (only on Windows): for producing colored terminal text on Windows.\n\n### Click code\n\nTyper used to depend on [Click](https://click.palletsprojects.com/) as well, a popular tool for building CLIs in Python.\n\nSince version 0.26.0, Typer has vendored Click (included Click's source code internally, instead of installing it as a third party package) and has unified the code interactions between Typer and the embedded Click source code for easier maintainability in the future.\n\nNote that some Click functionality will not be available anymore in the future, as we continue to improve and extend Typer's codebase.\n\n### `typer-slim`\n\nThere used to be a slimmed-down version of Typer called `typer-slim`, which didn't include the dependencies `rich` and `shellingham`, nor the `typer` command.\n\nHow",
+    "text_original_chars": 12301,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:21:20+00:00",
+   "url": "https://github.com/fastapi/typer/blob/99eb220df7c69a0f14a0b69214042677e0760b9d/README.md"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1945:opened",
+   "payload": {
+    "additions": 32,
+    "author": "AIlord1501",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "tests/test_cli/test_help.py",
+     "typer/rich_utils.py"
+    ],
+    "title": "Fix Rich help terminal width"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T20:57:21+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1945"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1943:opened",
+   "payload": {
+    "additions": 3,
+    "author": "pr-submit",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "docs/release-notes.md",
+     "typer/__init__.py"
+    ],
+    "title": "\ud83d\udd16 Release version 0.27.2"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:15:57+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1943"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1943:merged",
+   "payload": {
+    "author": "pr-submit",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:21:21+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1943"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1943:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "## \ud83d\udcdd Docs preview\n\nLast commit e5c63ab923290ab1a7cd2702f7713a7f335224a2 at: https://f23029d8.typertiangolo.pages.dev\n\n### Modified Pages\n\n* https://f23029d8.typertiangolo.pages.dev/release-notes/ - ([before](https://typer.tiangolo.com/release-notes/))\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:17:45+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1943"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1942:opened",
+   "payload": {
+    "additions": 49,
+    "author": "svlandeg",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 52,
+    "files": [
+     "typer/__init__.py",
+     "typer/_click/core.py",
+     "typer/_click/exceptions.py",
+     "typer/_click/termui.py",
+     "typer/_completion_shared.py",
+     "typer/core.py",
+     "typer/exceptions.py"
+    ],
+    "title": "\u267b\ufe0f Create `exceptions` module and `TyperException` base class"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T09:49:23+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1942"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1942:merged",
+   "payload": {
+    "author": "svlandeg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:15:00+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1942"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1942:review:0",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "body": "Nice, thank you! \ud83d\ude80 \n\nThis will be available in Typer 0.27.2 in the next few hours.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:14:49+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1942"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1941:opened",
+   "payload": {
+    "additions": 1,
+    "author": "eknathdj",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "typer/rich_utils.py"
+    ],
+    "title": "Fix OptionHighlighter regex incorrectly highlighting comparison operators as metavars"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T15:29:03+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1941"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1940:opened",
+   "payload": {
+    "additions": 22,
+    "author": "YuriiMotov",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 44,
+    "files": [
+     ".github/workflows/build-docs.yml",
+     ".github/workflows/bump-pre-commit-hooks.yml",
+     ".github/workflows/create-draft-release.yml",
+     ".github/workflows/deploy-docs.yml",
+     ".github/workflows/pre-commit.yml",
+     ".github/workflows/prepare-release.yml",
+     ".github/workflows/publish.yml",
+     ".github/workflows/smokeshow.yml",
+     ".github/workflows/test-cpython-nightly.yml",
+     ".github/workflows/test.yml"
+    ],
+    "title": "\u2b06\ufe0f Bump setup-uv action to 10.0.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T14:00:25+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1940"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1940:merged",
+   "payload": {
+    "author": "YuriiMotov",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T18:38:49+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1940"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1940:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "## \ud83d\udcdd Docs preview\n\nLast commit 47d8f4f488ad56b0d02cd6c3b1f0410b7a2f7a07 at: https://f5ebf454.typertiangolo.pages.dev"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T14:04:35+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1940"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1938:opened",
+   "payload": {
+    "additions": 0,
+    "author": "noQbot",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "typer/_click/types.py"
+    ],
+    "title": "refactor: remove unused OptionHelpExtra TypedDict from _click.types"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T16:25:19+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1938"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1938:closed",
+   "payload": {
+    "author": "noQbot",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:23:58+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1938"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1938:review:0",
+   "payload": {
+    "author": "svlandeg",
+    "author_is_bot": false,
+    "body": "Closing, violates the [guidelines](https://tiangolo.com/open-source/contributing/) on user contributions.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:23:54+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1938"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1936:opened",
+   "payload": {
+    "additions": 1,
+    "author": "aoright",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "typer/_types.py"
+    ],
+    "title": "docs: fix grammar in TyperChoice._normalized_mapping docstring"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T03:11:56+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1936"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1936:closed",
+   "payload": {
+    "author": "aoright",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:26:58+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1936"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1936:review:0",
+   "payload": {
+    "author": "svlandeg",
+    "author_is_bot": false,
+    "body": "Closing, cf contribution guidelines.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:26:54+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1936"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1935:opened",
+   "payload": {
+    "additions": 188,
+    "author": "spacemonkeyrocks",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "tests/test_rich_utils.py",
+     "typer/core.py",
+     "typer/main.py",
+     "typer/rich_utils.py"
+    ],
+    "title": "feat: add align_panel_columns to align Rich help panel columns"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T13:08:13+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1935"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1934:opened",
+   "payload": {
+    "additions": 36,
+    "author": "VenishPaneliya",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/test_deprecation.py",
+     "typer/main.py"
+    ],
+    "title": "Keep the sub-app's deprecated flag in add_typer()"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T10:40:22+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1934"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1933:opened",
+   "payload": {
+    "additions": 3,
+    "author": "aoright",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "typer/colors.py",
+     "typer/testing.py"
+    ],
+    "title": "docs: add module docstring in colors.py and fix punctuation in testing.py"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T08:12:09+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1933"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1933:closed",
+   "payload": {
+    "author": "aoright",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:28:11+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1933"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1933:review:0",
+   "payload": {
+    "author": "svlandeg",
+    "author_is_bot": false,
+    "body": "Closing, cf contribution guidelines.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:28:07+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1933"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1932:opened",
+   "payload": {
+    "additions": 1,
+    "author": "adivx",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "typer/completion.py"
+    ],
+    "title": "DOC: fix comment grammar in typer/completion.py"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T17:16:57+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1932"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1932:closed",
+   "payload": {
+    "author": "adivx",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T12:57:59+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1932"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1932:review:0",
+   "payload": {
+    "author": "svlandeg",
+    "author_is_bot": false,
+    "body": "We'll pass on this, thanks.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T12:57:55+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1932"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1931:opened",
+   "payload": {
+    "additions": 10,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 43,
+    "files": [
+     ".github/labeler.yml",
+     ".github/latest-changes.yml",
+     ".github/workflows/labeler.yml"
+    ],
+    "title": "\ud83d\udc77 Migrate automatic labels to Latest Changes"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T06:30:26+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1931"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1931:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T07:20:11+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1931"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1930:opened",
+   "payload": {
+    "additions": 0,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 17,
+    "files": [
+     ".github/workflows/labeler.yml"
+    ],
+    "title": "\ud83d\udc77 Remove legacy label check"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T20:29:23+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1930"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1930:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T20:42:30+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1930"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1928:opened",
+   "payload": {
+    "additions": 24,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 13,
+    "files": [
+     ".github/pr-submit.yml",
+     ".github/workflows/bump-pre-commit-hooks.yml",
+     ".github/workflows/prepare-release.yml"
+    ],
+    "title": "\ud83d\udd10 Use PR Submit for pull requests"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T22:40:24+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1928"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1928:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T22:47:46+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1928"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1927:opened",
+   "payload": {
+    "additions": 2,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/pre-commit.yml"
+    ],
+    "title": "\ud83d\udc77 Use GitHub CLI for Git authentication"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T22:22:58+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1927"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1927:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T22:28:25+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1927"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1926:opened",
+   "payload": {
+    "additions": 2,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/pre-commit.yml"
+    ],
+    "title": "\ud83d\udc77 Use PR Push commit identity"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:18:47+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1926"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1926:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:26:19+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1926"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1925:opened",
+   "payload": {
+    "additions": 1,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "pr-push-test.md"
+    ],
+    "title": "\ud83e\uddea Test PR Push"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T16:18:55+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1925"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1925:closed",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T16:33:48+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1925"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1924:opened",
+   "payload": {
+    "additions": 4,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "\u2b06 Bump pymdown-extensions from 11.0 to 11.0.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T16:10:10+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1924"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1924:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "## \ud83d\udcdd Docs preview\n\nLast commit 24b1d4c4985643781040d7da0a147b61e04daaa1 at: https://3ce4cb1e.typertiangolo.pages.dev"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T16:17:44+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1924"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1923:opened",
+   "payload": {
+    "additions": 26,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     ".github/pr-push.yml",
+     ".github/workflows/pre-commit.yml"
+    ],
+    "title": "\ud83d\udd12 Replace pre-commit PAT with PR Push"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T15:54:48+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1923"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1923:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T16:07:57+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1923"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1922:opened",
+   "payload": {
+    "additions": 0,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     ".github/workflows/build-docs.yml"
+    ],
+    "title": "\ud83d\udc77 Remove Zensical docs cache"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T17:36:35+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1922"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1922:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T17:42:15+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1922"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1922:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "## \ud83d\udcdd Docs preview\n\nLast commit 970e02cbe15f79689b9f6f10953b39943804f02f at: https://41d6d9fa.typertiangolo.pages.dev"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T17:41:26+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1922"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1921:opened",
+   "payload": {
+    "additions": 0,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 46,
+    "files": [
+     ".github/workflows/latest-changes.yml"
+    ],
+    "title": "\ud83d\udd25 Remove the old Latest Changes workflow"
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:01:29+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1921"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1921:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:10:36+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1921"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1920:opened",
+   "payload": {
+    "additions": 49,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 52,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "\u2b06 Bump cryptography from 48.0.1 to 50.0.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T03:51:10+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1920"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1920:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "## \ud83d\udcdd Docs preview\n\nLast commit 690217753301ed29b74d106019a2121dacfd63ff at: https://31377115.typertiangolo.pages.dev"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T03:52:42+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1920"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1919:opened",
+   "payload": {
+    "additions": 3,
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "docs/release-notes.md",
+     "typer/__init__.py"
+    ],
+    "title": "\ud83d\udd16 Release version 0.27.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T14:36:25+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1919"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1919:merged",
+   "payload": {
+    "author": "tiangolo",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T14:40:05+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1919"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1919:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "## \ud83d\udcdd Docs preview\n\nLast commit 09ee950866a81610ea533fba12c0401b54ffb775 at: https://f998e7fa.typertiangolo.pages.dev\n\n### Modified Pages\n\n* https://f998e7fa.typertiangolo.pages.dev/release-notes/ - ([before](https://typer.tiangolo.com/release-notes/))\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T14:38:26+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1919"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1918:opened",
+   "payload": {
+    "additions": 58,
+    "author": "wterrr",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "tests/test_atomic_file.py",
+     "typer/_click/_compat.py",
+     "typer/_click/types.py",
+     "typer/_click/utils.py"
+    ],
+    "title": "Fix atomic writes replacing destinations after command failures"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T14:12:54+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1918"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1918:review:0",
+   "payload": {
+    "author": "kramlipi",
+    "author_is_bot": false,
+    "body": "Automated code review by **kramlipi code-agent**.\n---\n*Review notes from **kramlipi code-agent** (@kramlipi_code_review_bot) \u2014 grounded scanners + critic, not a rubber stamp.*\n\n**Free for open-source / public repos.** Ready-made GitHub Actions: [code-review CI setup](https://kramlipi.github.io/code-review-ci/) \u00b7 Product: [www.kramlipi.com](https://www.kramlipi.com) \u00b7 Docs: [https://kramlipi.github.io/](https://kramlipi.github.io/)",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T18:29:42+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1918"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1918:comment:0",
+   "payload": {
+    "author": "kramlipi",
+    "author_is_bot": false,
+    "body": "### Skipped findings (line not in PR diff or over max_comments)\n\n- `typer/_click/_compat.py:404` [info] No blast-radius risk\n---\n*Review notes from **kramlipi code-agent** (@kramlipi_code_review_bot) \u2014 grounded scanners + critic, not a rubber stamp.*\n\n**Free for open-source / public repos.** Ready-made GitHub Actions: [code-review CI setup](https://kramlipi.github.io/code-review-ci/) \u00b7 Product: [www.kramlipi.com](https://www.kramlipi.com) \u00b7 Docs: [https://kramlipi.github.io/](https://kramlipi.github.io/)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T18:29:44+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1918"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1918:comment:1",
+   "payload": {
+    "author": "kramlipi",
+    "author_is_bot": false,
+    "body": "### Review notes\n\n**3 note(s)** \u2014 0 must-fix \u00b7 1 should-fix \u00b7 2 worth a look \u00b7 1 from deterministic scanners\n\nThemes: reliability (1), consistency (1), design (1)\n\nStart here:\n- `typer/_click/_compat.py:419` (should-fix) \u2014 Potential resource leak on os.replace failure\n- `tests/test_atomic_file.py:6` (look) \u2014 PR title/diff inconsistency\n- `typer/_click/types.py:542` (look) \u2014 No behavior risk: api_signature\n---\n*Review notes from **kramlipi code-agent** (@kramlipi_code_review_bot) \u2014 grounded scanners + critic, not a rubber stamp.*\n\n**Free for open-source / public repos.** Ready-made GitHub Actions: [code-review CI setup](https://kramlipi.github.io/code-review-ci/) \u00b7 Product: [www.kramlipi.com](https://www.kramlipi.com) \u00b7 Docs: [https://kramlipi.github.io/](https://kramlipi.github.io/)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T18:29:46+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1918"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1918:comment:2",
+   "payload": {
+    "author": "phalberg",
+    "author_is_bot": false,
+    "body": "Please follow the [contribution guidelines](https://tiangolo.com/open-source/contributing/#help). This will help ensure the PR can be reviewed according to the project\u2019s contribution process."
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T14:21:36+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1918"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1918:comment:3",
+   "payload": {
+    "author": "kramlipi",
+    "author_is_bot": false,
+    "body": "Sure got it will keep this in mind\r\n\r\nOn Fri, Aug 7, 2026, 19:51 Philipp Stahlberg ***@***.***>\r\nwrote:\r\n\r\n> *phalberg* left a comment (fastapi/typer#1918)\r\n> <https://github.com/fastapi/typer/pull/1918#issuecomment-5218239780>\r\n>\r\n> Please follow the contribution guidelines\r\n> <https://tiangolo.com/open-source/contributing/#help>. This will help\r\n> ensure the PR can be reviewed according to the project\u2019s contribution\r\n> process.\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/fastapi/typer/pull/1918?email_source=notifications&email_token=CHURIZ2URI3KGTFITKA3XKT5IXQYPA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKMRRHAZDGOJXHAYKM4TFMFZW63VHMNXW23LFNZ2KKZLWMVXHJLDGN5XXIZLSL5RWY2LDNM#issuecomment-5218239780>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/CHURIZYYEYUSAMJV64NLWL35IXQYPAVCNFSNUABFKJSXA33TNF2G64TZHMZDEOJZGM3TIMBVHNEXG43VMU5TKMBUGI4DCNRXGY4KC5QC>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/CHURIZ2KHV4X6HZ35VQ3SLL5IXQYPA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKMRRHAZDGOJXHAYKM4TFMFZW63VHMNXW23LFNZ2KKZLWMVXHJKTGN5XXIZLSL5UW64Y>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/CHURIZ2FZMTAVJHCGTCLPFL5IXQYPA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKMRRHAZDGOJXHAYKM4TFMFZW63VHMNXW23LFNZ2KKZLWMVXHJLTGN5XXIZLSL5QW4ZDSN5UWI>.\r\n> Download it today!\r\n> You are receiving this because you commented.Message ID:\r\n> ***@***.***>\r\n>\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T15:06:02+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1918"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1917:opened",
+   "payload": {
+    "additions": 255,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 249,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "\u2b06 Bump the python-packages group with 6 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T10:28:02+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1917"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1917:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T20:59:37+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1917"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1917:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "## \ud83d\udcdd Docs preview\n\nLast commit 21db8dc0cf48467cbe6dca82aec8dfa73a8e1540 at: https://08f52749.typertiangolo.pages.dev"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T10:29:40+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1917"
+  },
+  {
+   "evidence_id": "pr:fastapi/typer#1917:comment:1",
+   "payload": {
+    "author": "YuriiMotov",
+    "author_is_bot": false,
+    "body": "Ruff 0.16.0 started linting code examples inside .md-files.\r\nIt hit the FastAPI repo - ruff tries to add missing new lines in .md-files inside `fastapi/.agents`.\r\nI think this is useless and we should disable checking .md-files.\r\nWill discuss this with Sebastian and apply the decision he accepts to all projects"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T19:09:40+00:00",
+   "url": "https://github.com/fastapi/typer/pull/1917"
+  }
+ ],
+ "repo": "fastapi/typer",
+ "window": "pre_t"
+}

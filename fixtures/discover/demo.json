@@ -1,0 +1,204 @@
+{
+ "analysed": [
+  "tqdm/tqdm",
+  "fastapi/typer",
+  "pallets/click",
+  "beetbox/beets",
+  "pypa/pipx"
+ ],
+ "as_of": "2026-08-31T01:06:53.358758+00:00",
+ "candidates": [
+  {
+   "description": "A feature-rich command-line audio/video downloader",
+   "language": "Python",
+   "pushed_at": "2026-08-30T13:58:45Z",
+   "slug": "yt-dlp/yt-dlp",
+   "stars": 187956
+  },
+  {
+   "description": "Hunt down social media accounts by username across social networks",
+   "language": "Python",
+   "pushed_at": "2026-08-30T05:15:47Z",
+   "slug": "sherlock-project/sherlock",
+   "stars": 90661
+  },
+  {
+   "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu \u2014 one CLI, zero API fees.",
+   "language": "Python",
+   "pushed_at": "2026-08-25T05:36:18Z",
+   "slug": "Panniantong/Agent-Reach",
+   "stars": 76787
+  },
+  {
+   "description": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f Collect a dossier on a person by username from 3000+ sites",
+   "language": "Python",
+   "pushed_at": "2026-08-30T21:28:23Z",
+   "slug": "soxoj/maigret",
+   "stars": 37163
+  },
+  {
+   "description": "The lean application framework for Python.  Build sophisticated user interfaces with a simple Python API. Run your apps in the terminal and a web browser.",
+   "language": "Python",
+   "pushed_at": "2026-07-11T06:02:34Z",
+   "slug": "Textualize/textual",
+   "stars": 37098
+  },
+  {
+   "description": ":zap: A Fast, Extensible Progress Bar for Python and CLI",
+   "language": "Python",
+   "pushed_at": "2026-08-17T21:24:27Z",
+   "slug": "tqdm/tqdm",
+   "stars": 31305
+  },
+  {
+   "description": "Typer, build great CLIs. Easy to code. Based on Python type hints.",
+   "language": "Python",
+   "pushed_at": "2026-08-28T10:26:37Z",
+   "slug": "fastapi/typer",
+   "stars": 19936
+  },
+  {
+   "description": "Python composable command line interface toolkit",
+   "language": "Python",
+   "pushed_at": "2026-08-30T09:09:19Z",
+   "slug": "pallets/click",
+   "stars": 17641
+  },
+  {
+   "description": "music library manager and MusicBrainz tagger",
+   "language": "Python",
+   "pushed_at": "2026-08-30T11:26:41Z",
+   "slug": "beetbox/beets",
+   "stars": 15600
+  },
+  {
+   "description": "Install and Run Python Applications in Isolated Environments",
+   "language": "Python",
+   "pushed_at": "2026-08-30T19:38:48Z",
+   "slug": "pypa/pipx",
+   "stars": 12950
+  },
+  {
+   "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+   "language": "Python",
+   "pushed_at": "2026-08-28T19:05:16Z",
+   "slug": "ifixai-ai/iFixAi",
+   "stars": 11851
+  },
+  {
+   "description": "Streamlink is a CLI utility which pipes video streams from various services into a video player",
+   "language": "Python",
+   "pushed_at": "2026-08-30T19:44:04Z",
+   "slug": "streamlink/streamlink",
+   "stars": 11723
+  },
+  {
+   "description": "The recursive internet scanner for hackers. \ud83e\udde1",
+   "language": "Python",
+   "pushed_at": "2026-08-30T04:44:02Z",
+   "slug": "blacklanternsecurity/bbot",
+   "stars": 10517
+  },
+  {
+   "description": "A terminal spreadsheet multitool for discovering and arranging data",
+   "language": "Python",
+   "pushed_at": "2026-08-28T00:09:56Z",
+   "slug": "saulpw/visidata",
+   "stars": 9257
+  },
+  {
+   "description": "CLI tool and python library that converts the output of popular command-line tools, file-types, and common strings to JSON, YAML, or Dictionaries. This allows piping of output to tools like jq and simplifying automation scripts.",
+   "language": "Python",
+   "pushed_at": "2026-08-28T23:45:47Z",
+   "slug": "kellyjonbrazil/jc",
+   "stars": 8670
+  },
+  {
+   "description": "Automatic CPU speed & power optimizer for Linux",
+   "language": "Python",
+   "pushed_at": "2026-08-29T09:22:49Z",
+   "slug": "AdnanHodzic/auto-cpufreq",
+   "stars": 7743
+  },
+  {
+   "description": "Collect your thoughts and notes without leaving the command line.",
+   "language": "Python",
+   "pushed_at": "2026-08-29T02:40:32Z",
+   "slug": "jrnl-org/jrnl",
+   "stars": 7305
+  },
+  {
+   "description": "Modern, extensible Python project management",
+   "language": "Python",
+   "pushed_at": "2026-08-18T23:06:33Z",
+   "slug": "pypa/hatch",
+   "stars": 7231
+  },
+  {
+   "description": ":bookmark: Personal mini-web in text",
+   "language": "Python",
+   "pushed_at": "2026-08-16T04:31:40Z",
+   "slug": "jarun/buku",
+   "stars": 7186
+  },
+  {
+   "description": "A Python utility / library to sort imports.",
+   "language": "Python",
+   "pushed_at": "2026-08-27T20:30:57Z",
+   "slug": "PyCQA/isort",
+   "stars": 6949
+  },
+  {
+   "description": "A trilingual (\u7e41\u4e2d / English / \u7b80\u4e2d) learning roadmap for agentic AI: from LLM basics to multi-agent systems, with 240+ curated resources and hands-on examples. \u4e2d\u6587 AI agent \u5b78\u7fd2\u5730\u5716\u3002",
+   "language": "Python",
+   "pushed_at": "2026-08-30T23:58:25Z",
+   "slug": "WenyuChiou/awesome-agentic-ai-zh",
+   "stars": 6523
+  },
+  {
+   "description": "Agent OS: the agent gets smarter on its own. We just hold the line: the grading command and expected result never make it into the success contract we hand it. Interview-gated, staged evaluation, budgeted evolution loop. MCP server, 13 runtimes: Claude Code, Codex CLI, Gemini CLI, OpenCode, Copilot, Kiro and more.",
+   "language": "Python",
+   "pushed_at": "2026-08-30T19:56:23Z",
+   "slug": "Q00/ouroboros",
+   "stars": 5735
+  },
+  {
+   "description": "Remove visible and invisible AI watermarks and provenance metadata from images and video. Python library and CLI for SynthID, C2PA, EXIF, IPTC, XMP, and common generative-AI marks.",
+   "language": "Python",
+   "pushed_at": "2026-08-31T00:50:58Z",
+   "slug": "wiltodelta/remove-ai-watermarks",
+   "stars": 5326
+  },
+  {
+   "description": "Repair malformed JSON from LLMs, APIs, logs, and user input in Python.",
+   "language": "Python",
+   "pushed_at": "2026-08-27T11:15:52Z",
+   "slug": "mangiucugna/json_repair",
+   "stars": 5080
+  },
+  {
+   "description": "Terminal-based CPU stress and monitoring utility",
+   "language": "Python",
+   "pushed_at": "2026-08-27T03:20:53Z",
+   "slug": "amanusk/s-tui",
+   "stars": 5077
+  }
+ ],
+ "captured_at": "2026-08-31T01:06:53.358758+00:00",
+ "name": "demo",
+ "profile": {
+  "contributions": [
+   "tests"
+  ],
+  "days": 7,
+  "languages": [
+   "python"
+  ],
+  "topics": [
+   "cli"
+  ]
+ },
+ "queries": [
+  "language:python topic:cli pushed:>2026-07-02 archived:false fork:false stars:>=10"
+ ]
+}

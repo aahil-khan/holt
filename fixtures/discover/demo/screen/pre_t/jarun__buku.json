@@ -1,0 +1,2359 @@
+{
+ "captured_at": "2026-08-31T01:07:53.035592+00:00",
+ "content_sha256": "4bf09d53adc00e4dc8640f728242173eae9f5481d6d786b73f0330d020d4b3b1",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:jarun/buku:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": ":bookmark: Personal mini-web in text",
+    "homepage_url": "",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-16T04:31:40Z",
+    "stargazer_count": 7186
+   },
+   "source": "github",
+   "timestamp": "2015-11-01T19:53:18+00:00",
+   "url": "https://github.com/jarun/buku"
+  },
+  {
+   "evidence_id": "repo:jarun/buku:readme",
+   "payload": {
+    "commit_oid": "c949a5553173b63154a114ddc002173394532dce",
+    "kind": "readme",
+    "text": "<h1 align=\"center\">buku</h1>\n\n<p align=\"center\">\n<a href=\"https://github.com/jarun/buku/releases/latest\"><img src=\"https://img.shields.io/github/release/jarun/buku.svg?maxAge=600\" alt=\"Latest release\" /></a>\n<a href=\"https://repology.org/project/buku/versions\"><img src=\"https://repology.org/badge/tiny-repos/buku.svg?header=repos\" alt=\"Availability\"></a>\n<a href=\"https://pypi.org/project/buku/\"><img src=\"https://img.shields.io/pypi/v/buku.svg?maxAge=600\" alt=\"PyPI\" /></a>\n<a href=\"https://circleci.com/gh/jarun/workflows/buku\"><img src=\"https://img.shields.io/circleci/project/github/jarun/buku.svg\" alt=\"Build Status\" /></a>\n<a href=\"https://buku.readthedocs.io/en/latest/?badge=latest\"><img src=\"https://readthedocs.org/projects/buku/badge/?version=latest\" alt=\"Docs Status\" /></a>\n<a href=\"https://en.wikipedia.org/wiki/Privacy-invasive_software\"><img src=\"https://img.shields.io/badge/privacy-\u2713-crimson\" alt=\"Privacy Awareness\" /></a>\n<a href=\"https://github.com/jarun/buku/blob/master/LICENSE\"><img src=\"https://img.shields.io/badge/license-GPLv3-yellowgreen.svg?maxAge=2592000\" alt=\"License\" /></a>\n</p>\n\n<p align=\"center\">\n<a href=\"https://asciinema.org/a/137065\"><img src=\"https://github.com/user-attachments/assets/6688d1eb-e268-4b00-8e8f-044803c3040f\" alt=\"buku in action!\" width=\"734\"/></a>\n</p>\n\n<p align=\"center\"><i>buku in action!</i></p>\n\n### Introduction\n\n`buku` is a powerful bookmark manager and a personal textual mini-web.\n\nFor those who prefer the GUI, `bukuserver` exposes a browsable front-end on a local web host server. See [bukuserver page](https://github.com/jarun/buku/tree/master/bukuserver#readme) for config and screenshots.\n\nWhen I started writing it, I couldn't find a flexible command-line solution with a private, portable, merge-able database along with seamless GUI integration. Hence, `buku`.\n\n`buku` can import bookmarks from browser(s) or fetch the title, tags and description of a URL from the web. Use your favourite editor to add, compose and update bookmarks. Search bookmarks instantly with multiple search options, including regex and a deep scan mode (handy with URLs).\n\nIt can look up broken links on the Wayback Machine. There's an Easter Egg to revisit random bookmarks.\n\nThere's no tracking, hidden history, obsolete records, usage analytics or homing.\n\nTo get started right away, jump to the [Quickstart](#quickstart) section. `buku` has one of the best documentation around. The man page comes with examples. For internal details, please refer to the [operational notes](https://github.com/jarun/buku/wiki/Operational-notes).\n\n`buku` is a library too! There are several related projects, including a browser plug-in.\n\n### Table of Contents\n\n- [Features](#features)\n- [Installation](#installation)\n  - [Dependencies](#dependencies)\n  - [From a package manager](#from-a-package-manager)\n  - [Release packages](#release-packages)\n  - [From source](#from-source)\n  - [Running standalone](#running-standalone)\n- [Shell completion](#shell-completion)\n- [Usage](#usage)\n  - [Command-line options](#command-line-options)\n  - [Colors](#colors)\n- [Quickstart](#quickstart)\n- [Examples](#examples)\n- [Automation](#automation)\n- [Troubleshooting](#troubleshooting)\n  - [Editor integration](#editor-integration)\n- [Collaborators](#collaborators)\n- [Contributions](#contributions)\n- [Related projects](#related-projects)\n- [In the Press](#in-the-press)\n\n### Features\n\n- Store bookmarks with auto-fetched title, tags and description\n- Auto-import from Firefox, Google Chrome, Chromium, Vivaldi, Vivaldi Beta (Internal), Brave, and MS Edge\n- Open bookmarks and search results in browser\n- Browse cached page from the Wayback Machine\n- Text editor integration\n- Lightweight, clean interface, custom colors\n- Powerful search options (regex, substring...)\n- Continuous search with on the fly mode switch\n- Portable, merge-able database to sync between systems\n- Import/export bookmarks from/to HTML, XBEL, Markdown, RSS/Atom or Orgfile\n- Smart tag management using redirection (>>, >, <<)\n- Multi-threaded full DB refresh\n- Manual encryption support\n- Shell completion scripts, man page with handy examples\n- Privacy-aware (no unconfirmed user data collection)\n- Can be used as a Python library ([_API documentation_](https://buku.readthedocs.io/en/latest/?badge=latest))\n- Has a compation Web-application ([Bukuserver](https://github.com/jarun/buku/wiki/Bukuserver-%28WebUI%29)) with an HTTP-based API (for personal use only)\n\n### Installation\n\n#### Dependencies\n\n| Feature | Dependency |\n| --- | --- |\n| Lang, SQLite | Python 3.10+ |\n| HTTPS | certifi, urllib3 |\n| Encryption | cryptography |\n| HTML | beautifulsoup4, html5lib |\n\nTo copy URL to clipboard `buku` uses `xsel` (or `xclip`) on Linux, `pbcopy` (default installed) on OS X, `clip` (default installed) on Windows, `termux-clipboard` on Termux (terminal emulation for Android), `wl-copy` on Wayland. If X11 is missing, GNU Screen or tmux copy-paste buffers are recognized.\n\n#### From a package manager\n\nTo install buku with all its dependencies from PyPI, run:\n\n    # pip3 install buku\n\nYou can also install `buku` from your package manager. If the version available is dated try an alternative installation method.\n\n<details><summary>Packaging status (expand)</summary>\n<p>\n<br>\n<a href=\"https://repology.org/project/buku/versions\"><img src=\"https://repology.org/badge/vertical-allrepos/buku.svg\" alt=\"Packaging status\"></a>\n</p>\nUnlisted packagers:\n<p>\n<br>\n\u25cf <a href=\"https://pypi.org/project/buku/\">PyPI</a> (<code>pip3 install buku</code>)<br>\n\u25cf Termux (<code>pip3 install buku</code>)<br>\n</p>\n</details>\n\n#### Release packages\n\nAuto-generated packages (with only the cli component) for Arch Linux, CentOS, Debian, Fedora, openSUSE Leap and Ubuntu are available with the [latest stable release](https://github.com/jarun/buku/releases/latest).\n\nNOTE: CentOS may not have the python3-beautifulsoup4 package in the repos. Install it using pip3.\n\n#### From source\n\nIf you have git installed, clone this repository. Otherwise download the [latest stable release](https://github.com/jarun/buku/releases/latest) or [development version](https://github.com/jarun/buku/archive/master.zip) (*risky*).\n\nInstall the dependencies. For example, on Ubuntu:\n\n    $ apt-get install ca-certificates python3-urllib3 python3-cryptography python3-bs4\n\nInstall the cli component to default location (`/usr/local`):\n\n    $ sudo make install\n\nTo remove, run:\n\n    $ sudo make uninstall\n\n`PREFIX` is supported, in case you want to install to a different location.\n\n#### Running standalone\n\n`buku` is a standalone utility. From the containing directory, run:\n\n    $ chmod +x buku.py\n    $ ./buku.py\n\n### Shell completion\n\nShell completion scripts for Bash, Fish and Zsh can be found in respective subdirectories of [auto-completion/](https://github.com/jarun/buku/blob/master/auto-completion). Please refer to your shell's manual for installation instructions.\n\n### Usage\n\n#### Command-line options\n\n```\nusage: buku [OPTIONS] [KEYWORD [KEYWORD ...]]\n\nBookmark manager like a text-based mini-web.\n\nPOSITIONAL ARGUMENTS:\n      KEYWORD              search keywords\n\nGENERAL OPTIONS:\n      -a, --add URL [+|-] [tag, ...]\n                           bookmark URL with comma-separated tags\n                           (prepend tags with '+' or '-' to use fetched tags)\n      -u, --update [...]   update fields of an existing bookmark\n                           accepts indices and ranges\n                           refresh title and desc if no edit options\n                           if no arguments:\n                           - update results when used with search\n                           - otherwise refresh all titles and desc\n      -w, --write [editor|index]\n                           edit and add a new bookmark in editor\n                           else, edit bookmark at index in EDITOR\n                           edit last bookmark, if index=-1\n                           if no args, edit new bookmark in EDITOR\n      -d, --delete [...]   remove bookmarks from DB\n                           accepts indices or a single range\n                           if no arguments:\n                           - delete results when used with search\n                           - otherwise delete all bookmarks\n      --retain-order       prevents reordering after deleting a bookmark\n      -h, --help           show this information and exit\n      -v, --version        show the program version and exit\n\nEDIT OPTIONS:\n      --url keyword        bookmark link\n      --tag [+|-] [...]    comma-separated tags\n                           clear bookmark tagset, if no arguments\n                           '+' appends to, '-' removes from tagset\n      --title [...]        bookmark title; if no arguments:\n                           -a: do not set title, -u: clear title\n      -c, --comment [...]  notes or description of the bookmark\n                           clears description, if no arguments\n      --immutable N        disable web-fetch during auto-refresh\n                           N=0: mutable (default), N=1: immutable\n      --swap N M           swap two records at specified indices\n\nSEARCH OPTIONS:\n      -s, --sany [...]     find records with ANY matching keyword\n                           this is the default search option\n      -S, --sall [...]     find records matching ALL the keywords\n                           special keywords -\n                           \"blank\": entries with empty title/tag\n                           \"immutable\": entries with locked title\n      --deep               match substrings ('pen' matches 'opens')\n      --markers            search for keywords in specific fields\n                           based on (optional) prefix markers:\n                           '.' - title, '>' - description, ':' - URL,\n                           '#' - tags (comma-separated, PARTIAL matches)\n                           '#,' - tags (comma-separated, EXACT matches)\n                           '*' - any field (same as no prefix)\n      -r, --sreg expr      run a regex search\n      -t, --stag [tag [,|+] ...] [- tag, ...]\n                           search bookmarks by tags\n                           use ',' to find entries matching ANY tag\n                           use '+' to find entries matching ALL tags\n                           excludes entries with tags after ' - '\n                           list all tags, if no search keywords\n      -x, --exclude [...]  omit records matching specified keywords\n      --random [N]         output random bookmarks out of the selection (default 1)\n      --order fields [...] comma-separated list of fields to order the output by\n                           (prepend with '+'/'-' to choose sort direction)\n\nENCRYPTION OPTIONS:\n      -l, --lock [N]       encrypt DB in N (default 8) # iterations\n      -k, --unlock [N]     decrypt DB in N (default 8) # iterations\n\nPOWER TOYS:\n      --ai                 auto-import bookmarks from web browsers\n                           Firefox, Chrome, Chromium, Vivaldi, Vivaldi\n                           Internal, Brave, Edge\n                           (Firefox profile can be specified using\n                           environment variable FIREFOX_PROFILE;\n                           Firefox profiles directory can be specified using\n                           environment variable FIREFOX_PROFILES_DIR)\n      -e, --export file    export bookmarks to Firefox format HTML\n                           export XBEL, if file ends with '.xbel'\n                           export Markdown, if file ends with '.md'\n                           format: [title](url) <!-- TAGS -->\n                           export Orgfile, if file ends with '.org'\n                           format: *[[url][title]] :tags:\n                           export rss feed if file ends with '.rss'/'.atom'\n                           export buku DB, if file ends with '.db'\n                           combines with search results, if opted\n      -i, --import file    imp",
+    "text_original_chars": 31999,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T04:31:12+00:00",
+   "url": "https://github.com/jarun/buku/blob/c949a5553173b63154a114ddc002173394532dce/README.md"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:opened",
+   "payload": {
+    "additions": 10,
+    "author": "dertuxmalwieder",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 5,
+    "files": [
+     "README.md",
+     "buku.1",
+     "buku.py"
+    ],
+    "title": "Support Vivaldi's test versions (\"Vivaldi Internal\") as well."
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T14:17:17+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:merged",
+   "payload": {
+    "author": "dertuxmalwieder",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T13:32:28+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "\u2026I haven't managed to find any mention of \"Vivaldi Internal\" anywhere on the web; and \"Vivaldi Sopranos\" was only mentioned as a testing version on _Android_ \ud83d\ude05\r\n\r\nTest/beta version of Vivaldi appears to be called [\"Snapshot\"](https://vivaldi.com/blog/snapshot-vs-stable); and unless it's been changed since that post, their data folder seems to be named [accordingly](https://vivaldi.com/blog/desktop/friday-vivaldi-browser-snapshot-3206-29).\r\n\r\nIf I'm mistaken here, can you provide sources to your names & data folder locations (at least the Windows one)? Otherwise those should be amended in your commit.\r\n\r\n(\u2026Incidentally, the owner of this repo prefers having incoming pull-requests as a _single_ commit, so you may want to squash yours; e.g. by using soft-reset + amend-commit.)",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T15:24:25+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:review:1",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T17:26:04+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:comment:0",
+   "payload": {
+    "author": "dertuxmalwieder",
+    "author_is_bot": false,
+    "body": "Snapshots are **public** testing versions. The Sopranos builds are the **internal** testing versions, available to all (registered) beta testers. I have no idea where the public testing version places its files, the Sopranos version - which has been around for years now - uses \"Vivaldi Internal\".\n\nAdmittedly, this PR caters the needs of a very specific demographic (Buku users who also happen to be Vivaldi beta testers). I can understand if this will be a WONTFIX. I'll still use my patch locally then."
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T15:41:10+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:comment:1",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "Well, I personally won't be able to verify functionality implemented in this code :man_shrugging:\r\n\r\n@jarun What do you think?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T17:24:59+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:comment:2",
+   "payload": {
+    "author": "dertuxmalwieder",
+    "author_is_bot": false,
+    "body": "Tried and tested with the upstream code on macOS:\r\n\r\n```shell\r\nmkdir -p '~/Library/Application Support/Vivaldi/Default'\r\ncp '~/Library/Application Support/Vivaldi Internal/Default/Bookmarks' '~/Library/Application Support/Vivaldi/Default'\r\nbuku --ai Vivaldi\r\n```\r\n\r\nWorks.\r\n\r\nSo my code is probably correct. :-) "
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:52:36+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:comment:3",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "@dertuxmalwieder Long time no see! Hope you are doing good! Yes, life is hard... and overwhelmingly busy... I am running against time myself.\r\n\r\n@LeXofLeviafan I will merge it. For an old acquaintance who had been extremely helpful when I needed years back. :)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T13:32:23+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#905:comment:4",
+   "payload": {
+    "author": "dertuxmalwieder",
+    "author_is_bot": false,
+    "body": "> Yes, life is hard... and overwhelmingly busy... I am running against time myself.\r\n\r\nHope you're doing as fine as you can! Thank you for merging."
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T13:34:06+00:00",
+   "url": "https://github.com/jarun/buku/pull/905"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#904:opened",
+   "payload": {
+    "additions": 0,
+    "author": "mgorny",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "pyproject.toml"
+    ],
+    "title": "Remove unnecessary `py` dependency"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T16:19:53+00:00",
+   "url": "https://github.com/jarun/buku/pull/904"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#904:merged",
+   "payload": {
+    "author": "mgorny",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T16:45:01+00:00",
+   "url": "https://github.com/jarun/buku/pull/904"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#904:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T16:45:08+00:00",
+   "url": "https://github.com/jarun/buku/pull/904"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#903:opened",
+   "payload": {
+    "additions": 24,
+    "author": "abyworkings-coder",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "llms.txt"
+    ],
+    "title": "Add llms.txt for LLM/agent-readable project summary"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T08:40:35+00:00",
+   "url": "https://github.com/jarun/buku/pull/903"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#902:opened",
+   "payload": {
+    "additions": 65,
+    "author": "juliagzr",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 3,
+    "files": [
+     "README.md",
+     "buku.1",
+     "buku.py",
+     "tests/test_buku.py",
+     "tests/test_bukuDb.py"
+    ],
+    "title": "Add CSV and plain-text URL list export formats (-e file.csv/.txt)"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T01:40:32+00:00",
+   "url": "https://github.com/jarun/buku/pull/902"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#902:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T13:44:10+00:00",
+   "url": "https://github.com/jarun/buku/pull/902"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#902:comment:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "> This PR was developed as a final project for the Software Engineering II course, Computer Science program, at Universidade Federal de S\u00e3o Carlos (UFSCar), Brazil, by a team of 4 students.\r\n\r\n:sweat_smile:"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T13:50:47+00:00",
+   "url": "https://github.com/jarun/buku/pull/902"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#902:comment:1",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "@LeXofLeviafan please take your call on this one."
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T16:10:33+00:00",
+   "url": "https://github.com/jarun/buku/pull/902"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#902:comment:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "@jarun I think I'll wait for their update first; at least on that import thing"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T17:45:50+00:00",
+   "url": "https://github.com/jarun/buku/pull/902"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#901:opened",
+   "payload": {
+    "additions": 257,
+    "author": "TatianeMaia1415",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 10,
+    "files": [
+     ".github/workflows/tests.yml",
+     ".gitignore",
+     "auto-completion/bash/buku-completion.bash",
+     "buku.1",
+     "buku.py",
+     "tests/test_buku.py",
+     "tests/test_bukuDb.py",
+     "videos/v\u00eddeo-preliminar-Es2.mp4"
+    ],
+    "title": "Remove unused local IFS variable in bash completion script"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T21:45:28+00:00",
+   "url": "https://github.com/jarun/buku/pull/901"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#901:closed",
+   "payload": {
+    "author": "TatianeMaia1415",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T21:47:22+00:00",
+   "url": "https://github.com/jarun/buku/pull/901"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#901:comment:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": ":raised_eyebrow:"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T13:37:53+00:00",
+   "url": "https://github.com/jarun/buku/pull/901"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#900:opened",
+   "payload": {
+    "additions": 2,
+    "author": "tkossak",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "buku.py"
+    ],
+    "title": "Fix interactive prompt: keep reverse-video escape inside readline non-printing markers"
+   },
+   "source": "github",
+   "timestamp": "2026-07-08T17:26:33+00:00",
+   "url": "https://github.com/jarun/buku/pull/900"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#898:opened",
+   "payload": {
+    "additions": 2,
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "buku.py"
+    ],
+    "title": "[jarun#894] fix: cannot append or remove tags for single record at pr\u2026"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T02:19:06+00:00",
+   "url": "https://github.com/jarun/buku/pull/898"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#898:merged",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T14:15:13+00:00",
+   "url": "https://github.com/jarun/buku/pull/898"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#898:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T14:15:21+00:00",
+   "url": "https://github.com/jarun/buku/pull/898"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:opened",
+   "payload": {
+    "additions": 24,
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     "buku.py",
+     "tests/test_bukuDb.py"
+    ],
+    "title": "fix: apply sort order in interactive prompt"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T00:06:27+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:merged",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T19:21:08+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T10:09:55+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:1",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T16:57:05+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T17:00:37+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:3",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T01:16:51+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:4",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T16:09:11+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:5",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T16:57:14+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:6",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T18:08:04+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:7",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T20:01:09+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:8",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-27T20:58:40+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:9",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T12:23:01+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:10",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-28T23:45:27+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:review:11",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T08:50:10+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:comment:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "Incidentally, you can prepend `[jarun#895] ` to your commit name to indicate the relevant issue in commit history\r\n\r\n(Also the repo owner doesn't like clutter in commit history, so when pushing changes to pull-request you may want to replace the existing commit in your feature-branch instead of adding new ones.)"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T10:53:05+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:comment:1",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "> `v tag` is still invalid; use `v tags`\r\n\r\n\u2026Well, yes? We don't have a _singular_ \"tag\" field, so ordering by it was never an option :sweat_smile:"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T10:57:47+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:comment:2",
+   "payload": {
+    "author": "rtmongold",
+    "author_is_bot": false,
+    "body": "Thank you for the review and the all suggestions.\r\n\r\n> Incidentally, you can prepend `[jarun#895] ` to your commit name to indicate the relevant issue in commit history\r\n> \r\n> (Also the repo owner doesn't like clutter in commit history, so when pushing changes to pull-request you may want to replace the existing commit in your feature-branch instead of adding new ones.)\r\n\r\nI will make sure to prefix it when I get a revised commit done and will make sure to amend so there is only one commit.\r\n\r\n\r\n> > `v tag` is still invalid; use `v tags`\r\n> \r\n> \u2026Well, yes? We don't have a _singular_ \"tag\" field, so ordering by it was never an option \ud83d\ude05\r\n\r\nI noticed that, only mentioned because it had been noted as one of the steps taken in the original issue."
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T16:36:45+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:comment:3",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "> I noticed that, only mentioned because it had been noted as one of the steps taken in the original issue.\r\n\r\nOh, I see. \u2026In that case, this note would probably be more useful in a direct response (comment) to said issue :thinking:"
+   },
+   "source": "github",
+   "timestamp": "2026-06-26T16:51:43+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#897:comment:4",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "@LeXofLeviafan please merge if this is good to go."
+   },
+   "source": "github",
+   "timestamp": "2026-06-29T17:59:45+00:00",
+   "url": "https://github.com/jarun/buku/pull/897"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#892:opened",
+   "payload": {
+    "additions": 1,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "tests/test_views.py"
+    ],
+    "title": "updating a functional test to match behaviour changes made in Flask-Admin v2.1.0"
+   },
+   "source": "github",
+   "timestamp": "2026-06-13T14:03:27+00:00",
+   "url": "https://github.com/jarun/buku/pull/892"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#892:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T02:12:09+00:00",
+   "url": "https://github.com/jarun/buku/pull/892"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#892:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-06-14T02:12:21+00:00",
+   "url": "https://github.com/jarun/buku/pull/892"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#891:opened",
+   "payload": {
+    "additions": 17,
+    "author": "lphuc2250gma",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "tests/test_cli.py",
+     "tests/util.py"
+    ],
+    "title": "chore: improve buku maintenance path"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T05:52:35+00:00",
+   "url": "https://github.com/jarun/buku/pull/891"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#891:closed",
+   "payload": {
+    "author": "lphuc2250gma",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T03:04:45+00:00",
+   "url": "https://github.com/jarun/buku/pull/891"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#891:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "Was this pull-request generated by a machine learning tool? The description checks out, and I don't really see any point in adding these changes \ud83e\udd14",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T12:06:16+00:00",
+   "url": "https://github.com/jarun/buku/pull/891"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#891:comment:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "@jarun functional tests seem to be failing on `master`; I'll check it out when I have the time"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T12:19:52+00:00",
+   "url": "https://github.com/jarun/buku/pull/891"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:opened",
+   "payload": {
+    "additions": 34,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 18,
+    "files": [
+     "README.md",
+     "buku.1",
+     "buku.py",
+     "tests/test_buku.py"
+    ],
+    "title": "adding autoimport support for multiple/custom Firefox profile directories"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:02:56+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T21:31:47+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:06:44+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:review:1",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:08:45+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:review:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:10:27+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:review:3",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:11:03+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:review:4",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:12:58+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:review:5",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T19:14:56+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#890:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T21:31:55+00:00",
+   "url": "https://github.com/jarun/buku/pull/890"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#888:opened",
+   "payload": {
+    "additions": 5,
+    "author": "tranquac",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "bukuserver/views.py"
+    ],
+    "title": "fix: prevent open redirect in bookmark swap endpoint"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T16:37:05+00:00",
+   "url": "https://github.com/jarun/buku/pull/888"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#888:merged",
+   "payload": {
+    "author": "tranquac",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T16:54:18+00:00",
+   "url": "https://github.com/jarun/buku/pull/888"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#888:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T16:54:31+00:00",
+   "url": "https://github.com/jarun/buku/pull/888"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#887:opened",
+   "payload": {
+    "additions": 13,
+    "author": "BrookeYangRui",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "CHANGELOG",
+     "bukuserver/README.md",
+     "bukuserver/server.py"
+    ],
+    "title": "fix(bukuserver): mitigate Host Name Poisoning via BUKUSERVER_SERVER_NAME"
+   },
+   "source": "github",
+   "timestamp": "2026-02-15T16:14:20+00:00",
+   "url": "https://github.com/jarun/buku/pull/887"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#887:merged",
+   "payload": {
+    "author": "BrookeYangRui",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-02-15T16:28:51+00:00",
+   "url": "https://github.com/jarun/buku/pull/887"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#887:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-02-15T16:29:00+00:00",
+   "url": "https://github.com/jarun/buku/pull/887"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#883:opened",
+   "payload": {
+    "additions": 2,
+    "author": "branchv",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "MANIFEST.in",
+     "buku.py"
+    ],
+    "title": "fix type error and missing apidocs"
+   },
+   "source": "github",
+   "timestamp": "2025-12-10T06:33:19+00:00",
+   "url": "https://github.com/jarun/buku/pull/883"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#883:merged",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-12-13T07:55:28+00:00",
+   "url": "https://github.com/jarun/buku/pull/883"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#883:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-12-13T07:55:38+00:00",
+   "url": "https://github.com/jarun/buku/pull/883"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#881:opened",
+   "payload": {
+    "additions": 7,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 5,
+    "files": [
+     "buku.py",
+     "tests/test_buku.py"
+    ],
+    "title": "adding Sec-Fetch-Mode header"
+   },
+   "source": "github",
+   "timestamp": "2025-11-29T03:09:16+00:00",
+   "url": "https://github.com/jarun/buku/pull/881"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#881:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-12-01T13:54:14+00:00",
+   "url": "https://github.com/jarun/buku/pull/881"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#881:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-12-01T13:54:20+00:00",
+   "url": "https://github.com/jarun/buku/pull/881"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#878:opened",
+   "payload": {
+    "additions": 4,
+    "author": "branchv",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 10,
+    "files": [
+     ".readthedocs.yaml"
+    ],
+    "title": "Fix readthedocs (again)"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T05:10:43+00:00",
+   "url": "https://github.com/jarun/buku/pull/878"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#878:merged",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-12-01T13:53:37+00:00",
+   "url": "https://github.com/jarun/buku/pull/878"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#878:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T09:56:58+00:00",
+   "url": "https://github.com/jarun/buku/pull/878"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#878:review:1",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T15:55:26+00:00",
+   "url": "https://github.com/jarun/buku/pull/878"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#878:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thanks again!"
+   },
+   "source": "github",
+   "timestamp": "2025-12-01T13:53:47+00:00",
+   "url": "https://github.com/jarun/buku/pull/878"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#877:opened",
+   "payload": {
+    "additions": 2,
+    "author": "branchv",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     ".readthedocs.yaml"
+    ],
+    "title": "Fix readthedocs"
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T17:14:20+00:00",
+   "url": "https://github.com/jarun/buku/pull/877"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#877:merged",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T01:31:07+00:00",
+   "url": "https://github.com/jarun/buku/pull/877"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#877:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T01:31:14+00:00",
+   "url": "https://github.com/jarun/buku/pull/877"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#877:comment:1",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Unfortunately it still fails with the following:\r\n\r\n\r\n    Config file validation error Config validation error in python.install.0. Expected a dictionary, got type str (pip install --upgrade pip).\r\n\r\n```\r\nRead the Docs build information\r\nBuild id: 30462040\r\nProject: buku\r\nVersion: latest\r\nCommit: None\r\nDate: 2025-11-26T01:31:09.468679Z\r\nState: finished\r\nSuccess: False\r\n\r\n\r\n[rtd-command-info] start-time: 2025-11-26T01:31:10.018948Z, end-time: 2025-11-26T01:31:10.312304Z, duration: 0, exit-code: 0\r\ngit clone --depth 1 https://github.com/jarun/Buku.git .\r\nCloning into '.'...\r\n\r\n[rtd-command-info] start-time: 2025-11-26T01:31:10.351352Z, end-time: 2025-11-26T01:31:10.852731Z, duration: 0, exit-code: 0\r\ngit fetch origin --force --prune --prune-tags --depth 50 refs/heads/master:refs/remotes/origin/master\r\nFrom https://github.com/jarun/Buku\r\n * [new tag]         pre-bootstrap4 -> pre-bootstrap4\r\n * [new tag]         v5.0           -> v5.0\r\n\r\n[rtd-command-info] start-time: 2025-11-26T01:31:10.960872Z, end-time: 2025-11-26T01:31:11.014955Z, duration: 0, exit-code: 0\r\ngit checkout --force origin/master\r\nNote: switching to 'origin/master'.\r\n\r\nYou are in 'detached HEAD' state. You can look around, make experimental\r\nchanges and commit them, and you can discard any commits you make in this\r\nstate without impacting any branches by switching back to a branch.\r\n\r\nIf you want to create a new branch to retain commits you create, you may\r\ndo so (now or later) by using -c with the switch command. Example:\r\n\r\n  git switch -c <new-branch-name>\r\n\r\nOr undo this operation with:\r\n\r\n  git switch -\r\n\r\nTurn off this advice by setting config variable advice.detachedHead to false\r\n\r\nHEAD is now at b0ec410 Merge pull request #877 from branchvincent/docs\r\n\r\n[rtd-command-info] start-time: 2025-11-26T01:31:11.054003Z, end-time: 2025-11-26T01:31:11.091325Z, duration: 0, exit-code: 0\r\ncat .readthedocs.yaml\r\n# .readthedocs.yaml\r\n# Read the Docs configuration file\r\n# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details\r\n\r\n# Required\r\nversion: 2\r\n\r\n# Set the version of Python and other tools you might need\r\nbuild:\r\n  os: ubuntu-24.04\r\n  tools:\r\n    python: '3.12'\r\n    # You can also specify other tool versions:\r\n    # nodejs: \"16\"\r\n    # rust: \"1.55\"\r\n    # golang: \"1.17\"\r\n\r\n# Build documentation in the docs/ directory with Sphinx\r\nsphinx:\r\n  configuration: docs/source/conf.py\r\n\r\n# If using Sphinx, optionally build your docs in additional formats such as PDF\r\n# formats:\r\n#    - pdf\r\n\r\n# Optionally declare the Python requirements required to build your docs\r\npython:\r\n  install:\r\n  - pip install --upgrade pip\r\n  - pip install .[locales,server] --group docs\r\n\r\n```"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T01:33:03+00:00",
+   "url": "https://github.com/jarun/buku/pull/877"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#877:comment:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "\u2026That's because what you've merged here doesn't match [the config specification](https://rtd-with-docsearch.readthedocs.io/en/latest/config-file/v2.html#packages) \ud83e\udee0\n\nIt seems that raw shell commands can only be added in [`build.jobs`](https://rtd-with-docsearch.readthedocs.io/en/latest/config-file/v2.html#build-jobs) section \ud83e\udd14"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T01:53:01+00:00",
+   "url": "https://github.com/jarun/buku/pull/877"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#877:comment:3",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "Interesting, sorry not familiar with readthedocs. Might be worth enabling builds on [pull requests](https://docs.readthedocs.com/platform/latest/pull-requests.html) to help contributors"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T04:50:31+00:00",
+   "url": "https://github.com/jarun/buku/pull/877"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#877:comment:4",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "Created #878"
+   },
+   "source": "github",
+   "timestamp": "2025-11-26T05:11:28+00:00",
+   "url": "https://github.com/jarun/buku/pull/877"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:opened",
+   "payload": {
+    "additions": 139,
+    "author": "branchv",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 150,
+    "files": [
+     ".circleci/config.yml",
+     "pyproject.toml",
+     "setup.py",
+     "tests/test_requirements.py",
+     "tests/test_setup.py",
+     "tox.ini"
+    ],
+    "title": "Install manpage and migrate to pyproject.toml"
+   },
+   "source": "github",
+   "timestamp": "2025-11-15T22:40:22+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:merged",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-11-21T13:20:19+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-15T23:54:45+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:1",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T00:21:40+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T01:06:41+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:3",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T01:25:49+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:4",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T02:52:00+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:5",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T03:27:35+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:6",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T04:05:53+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:7",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T04:44:16+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:8",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T08:04:30+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:9",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T08:06:04+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:10",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T08:10:49+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:11",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T08:12:54+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:12",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T09:17:00+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:13",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T09:56:05+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:review:14",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "Seems to work fine now.\r\n\r\n@jarun I suggest double-checking before merge, in case I missed anything.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-18T17:54:15+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:comment:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "\u2026After a few reinstalls in `tox`, the installs started failing. I'm not _quite_ certain what happened, but my attention was caught by the following line in the build log (added a linebreak to improve readability):\r\n```\r\ncopying build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/bukuserver/util.py\r\n -> build/bdist.linux-x86_64/wheel/./build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/build/lib/bukuserver\r\n```\r\nI suspect your `pyproject.toml` is incorrect, and attempts to install folders that should be excluded; particularly `build/` \u2013 the _build output directory_ :melting_face: (after removing it, builds stopped failing)\r\n***\r\nAdditionally, I've checked the `top_level.txt` file that got installed in my venv (first thing when I added it); here's what it looks like:\r\n```\r\nauto-completion\r\nbukuserver\r\nbukuserver-runner\r\ndocker-compose\r\ndocs\r\nvenv\r\n```\r\n(`build` is also listed if it existed before the installation was invoked.)\r\n\r\nFor comparison, here's the same file when using current `master`:\r\n```\r\nbuku\r\nbukuserver\r\n```\r\nWhich certainly makes a lot more sense, since these _are_ top-level Python modules that need to be installed.\r\n\r\n\u2026Actually, the lack of `buku` in your file means _it doesn't actually get installed_ :melting_face:  \r\n(Invoking `buku -p` with a venv installed from your branch raises `ModuleNotFoundError`)"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T01:24:11+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:comment:1",
+   "payload": {
+    "author": "branchv",
+    "author_is_bot": false,
+    "body": "> I suspect your pyproject.toml is incorrect,\r\n\r\nThanks, looks like I needed to carry over the `py-modules` setting (I wrongly assumed setuptools would have inferred that from the project name). Here's the new diff:\r\n\r\n```\r\nuvx pip-wheel-diff https://github.com/jarun/buku/archive/refs/heads/master.tar.gz https://github.com/jarun/buku/archive/refs/pull/876/head.tar.gz\r\n```\r\n\r\n```diff\r\ndiff -r /var/folders/1r/p5nhsx151fd7j63p9r1zz4kw0000gn/T/tmpsfa_k0f2/v1/buku.dist-info/METADATA /var/folders/1r/p5nhsx151fd7j63p9r1zz4kw0000gn/T/tmpsfa_k0f2/v2/buku.dist-info/METADATA\r\n5,8c5,7\r\n< Home-page: https://github.com/jarun/buku\r\n< Author: Arun Prakash Jana\r\n< Author-email: engineerarun@gmail.com\r\n< License: GPLv3\r\n---\r\n> Author-email: Arun Prakash Jana <engineerarun@gmail.com>\r\n> License-Expression: GPL-3.0-or-later\r\n> Project-URL: Homepage, https://github.com/jarun/buku\r\n13,14c12\r\n< Keywords: cli bookmarks tag utility\r\n< Platform: any\r\n---\r\n> Keywords: cli,bookmarks,tag,utility\r\n19d16\r\n< Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)\r\n31c28\r\n< Requires-Python: >=3.8\r\n---\r\n> Requires-Python: >=3.10\r\n41,65d37\r\n< Provides-Extra: tests\r\n< Requires-Dist: attrs>=17.4.0; extra == \"tests\"\r\n< Requires-Dist: beautifulsoup4>=4.6.0; extra == \"tests\"\r\n< Requires-Dist: Click>=7.0; extra == \"tests\"\r\n< Requires-Dist: flake8>=3.4.1; extra == \"tests\"\r\n< Requires-Dist: hypothesis>=6.0.0; extra == \"tests\"\r\n< Requires-Dist: mypy-extensions==0.4.1; extra == \"tests\"\r\n< Requires-Dist: py>=1.5.0; extra == \"tests\"\r\n< Requires-Dist: pylint>=1.7.2; extra == \"tests\"\r\n< Requires-Dist: pytest-cov; extra == \"tests\"\r\n< Requires-Dist: pytest-recording>=0.12.1; extra == \"tests\"\r\n< Requires-Dist: pytest-timeout; extra == \"tests\"\r\n< Requires-Dist: pytest>=6.2.1; extra == \"tests\"\r\n< Requires-Dist: PyYAML>=4.2b1; extra == \"tests\"\r\n< Requires-Dist: setuptools>=41.0.1; extra == \"tests\"\r\n< Requires-Dist: vcrpy>=1.13.0; extra == \"tests\"\r\n< Requires-Dist: lxml; extra == \"tests\"\r\n< Requires-Dist: Flask-Admin[translation]; extra == \"tests\"\r\n< Requires-Dist: arrow>=1.2.2; extra == \"tests\"\r\n< Requires-Dist: Flask-Admin>=2.0.0; extra == \"tests\"\r\n< Requires-Dist: flask-paginate>=2022.1.8; extra == \"tests\"\r\n< Requires-Dist: Flask-WTF>=1.0.1; extra == \"tests\"\r\n< Requires-Dist: Flask>=2.2.2; extra == \"tests\"\r\n< Requires-Dist: Jinja2>=3; extra == \"tests\"\r\n< Requires-Dist: flasgger; extra == \"tests\"\r\n76,89d47\r\n< Provides-Extra: docs\r\n< Requires-Dist: myst-parser>=0.17.0; extra == \"docs\"\r\n< Requires-Dist: sphinx-rtd-theme>=1.0.0; extra == \"docs\"\r\n< Requires-Dist: sphinx-autobuild>=2021.3.14; extra == \"docs\"\r\n< Provides-Extra: packaging\r\n< Requires-Dist: twine>=1.11.0; extra == \"packaging\"\r\n< Dynamic: author\r\n< Dynamic: author-email\r\n< Dynamic: classifier\r\n< Dynamic: description\r\n< Dynamic: description-content-type\r\n< Dynamic: home-page\r\n< Dynamic: keywords\r\n< Dynamic: license\r\n91,96d48\r\n< Dynamic: platform\r\n< Dynamic: project-url\r\n< Dynamic: provides-extra\r\n< Dynamic: requires-dist\r\n< Dynamic: requires-python\r\n< Dynamic: summary\r\nOnly in /var/folders/1r/p5nhsx151fd7j63p9r1zz4kw0000gn/T/tmpsfa_k0f2/v2: share\r\n```\r\n"
+   },
+   "source": "github",
+   "timestamp": "2025-11-16T03:11:39+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:comment:2",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-11-21T13:20:34+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:comment:3",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Readthedocs is failing with the below error:\r\n\r\n```\r\npython -m pip install --upgrade --upgrade-strategy only-if-needed --no-cache-dir .[docs]  \r\nProcessing /home/docs/checkouts/readthedocs.org/user_builds/buku/checkouts/latest\r\n  Installing build dependencies: started\r\n  Installing build dependencies: finished with status 'done'\r\n  Getting requirements to build wheel: started\r\n  Getting requirements to build wheel: finished with status 'done'\r\n  Preparing metadata (pyproject.toml): started\r\n  Preparing metadata (pyproject.toml): finished with status 'done'\r\nINFO: pip is looking at multiple versions of buku to determine which version is compatible with other requirements. This could take a while.\r\nERROR: Package 'buku' requires a different Python: 3.9.22 not in '>=3.10'\r\n```"
+   },
+   "source": "github",
+   "timestamp": "2025-11-21T16:46:54+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:comment:4",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "3.9 [hit end-of-life already](https://devguide.python.org/versions/). I'm pretty sure I've updated the project accordingly\u2026 Why is it used by the docs build? :thinking:"
+   },
+   "source": "github",
+   "timestamp": "2025-11-21T17:08:53+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:comment:5",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "\u2026Oh\r\n\r\n[`.readthedocs.yaml`](https://github.com/jarun/buku/blob/master/.readthedocs.yaml) needs to be updated :sweat_smile:"
+   },
+   "source": "github",
+   "timestamp": "2025-11-21T17:17:32+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#876:comment:6",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Updated."
+   },
+   "source": "github",
+   "timestamp": "2025-11-21T17:34:14+00:00",
+   "url": "https://github.com/jarun/buku/pull/876"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#874:opened",
+   "payload": {
+    "additions": 3,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "Makefile",
+     "README.md"
+    ],
+    "title": "renaming mentions of main file"
+   },
+   "source": "github",
+   "timestamp": "2025-11-06T13:35:21+00:00",
+   "url": "https://github.com/jarun/buku/pull/874"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#874:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-11-06T15:33:10+00:00",
+   "url": "https://github.com/jarun/buku/pull/874"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#874:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-11-06T15:33:18+00:00",
+   "url": "https://github.com/jarun/buku/pull/874"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#873:opened",
+   "payload": {
+    "additions": 0,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 6,
+    "files": [
+     ".gitignore",
+     "buku.py",
+     "setup.py"
+    ],
+    "title": "renaming the main file"
+   },
+   "source": "github",
+   "timestamp": "2025-11-02T20:23:04+00:00",
+   "url": "https://github.com/jarun/buku/pull/873"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#873:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-11-06T13:02:44+00:00",
+   "url": "https://github.com/jarun/buku/pull/873"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#873:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-11-06T13:02:51+00:00",
+   "url": "https://github.com/jarun/buku/pull/873"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:opened",
+   "payload": {
+    "additions": 48,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 43,
+    "files": [
+     "bukuserver/README.md",
+     "bukuserver/__init__.py",
+     "bukuserver/requirements.txt",
+     "bukuserver/server.py",
+     "bukuserver/templates/bukuserver/lib.html",
+     "bukuserver/views.py",
+     "setup.py",
+     "tests/test_setup.py",
+     "tests/test_views.py"
+    ],
+    "title": "migrating to Flask-Admin v2"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:35:20+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-11-09T14:38:11+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:38:55+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:1",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:43:13+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:45:57+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:3",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:50:07+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:4",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:50:39+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:5",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:52:01+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:6",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:53:42+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:7",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:54:51+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:8",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:57:47+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:9",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-02T00:01:47+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:10",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-02T00:04:33+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#872:review:11",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-02T00:05:50+00:00",
+   "url": "https://github.com/jarun/buku/pull/872"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:opened",
+   "payload": {
+    "additions": 33,
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 19,
+    "files": [
+     "README.md",
+     "buku",
+     "buku.1",
+     "tests/test_cli.py"
+    ],
+    "title": "support default uri scheme customization"
+   },
+   "source": "github",
+   "timestamp": "2025-10-24T18:40:44+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:merged",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-11-02T12:49:01+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-25T19:40:09+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:1",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-25T21:11:45+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T12:35:46+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:3",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T17:02:19+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:4",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T17:05:44+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:5",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T17:08:10+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:6",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T17:08:39+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:7",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T19:05:05+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:8",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T21:29:00+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:9",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T23:25:38+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:10",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T23:32:29+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:11",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T23:41:20+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:12",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T23:57:26+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:13",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T23:57:37+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:14",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T00:01:12+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:15",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T00:05:46+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:16",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T00:07:34+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:review:17",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T23:11:28+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:0",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "Ah shoot, lemme review https://github.com/jarun/buku/wiki/PR-guidelines and rebase again."
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T03:04:32+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:1",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "Ok, done! Hopefully. :-)\r\n\r\nI did my best with respect to the PR guidelines, but I'm confused about fstrings... some others exist in the file, but circleci didn't like any of mine (but I got no flake8 output when I ran that locally, so :shrug:)\r\n\r\nAs for pylint, that spit out the same 428 lines before and after my changes.\r\n\r\nI'm new to flake8 and pylint so I'm sorry if I'm missing something obvious there.\r\n\r\nLet me know if you want me to make any further changes or squash this or whatnot."
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T03:38:30+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "In order to execute local test runs accurately for this project, you should use [`tox`](https://tox.wiki/en/4.32.0) (e.g. `tox -e flake8,pylint`).\r\n\r\nThis way it runs linters with the same config as in CI. (Sometimes it can still miss some errors, but that happens after a linter adds a new rule to check in a recent update; deleting the `.tox/` folder to force an update rectifies that.)\r\n\r\n> As for pylint, that spit out the same 428 lines before and after my changes.\r\n\r\n\u2026I'm not sure what you're talking about; but if you mean it doesn't modify anything, then yes, linters were _not_ configured to overwrite source code."
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T12:33:46+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:3",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "> In order to execute local test runs accurately for this project, you should use [`tox`](https://tox.wiki/en/4.32.0) (e.g. `tox -e flake8,pylint`).\r\n>\r\n> This way it runs linters with the same config as in CI. (Sometimes it can still miss some errors, but that happens after a linter adds a new rule to check in a recent update; deleting the `.tox/` folder to force an update rectifies that.)\r\n\r\nOh thanks! If that's documented somewhere I must have missed it. https://github.com/jarun/buku/wiki/PR-guidelines looks outdated in this respect, or is missing context.\r\n\r\nI was using tox, but incorrectly, it seems. I destroyed my initial venv and I used `uv` to set up a new Python 3.13 venv. Seems to be working better (more like buku's CI).\r\n\r\n```bash\r\nuv run --python 3.13 python -m venv /buku-tmp/buku-venv\r\nsource /buku-tmp/buku-venv/bin/activate\r\n\r\n# test and run static analysis\r\ntox\r\n\r\n# run static analysis only\r\ntox -e flake8,pylint\r\n```\r\n \r\n> > As for pylint, that spit out the same 428 lines before and after my changes.\r\n> \r\n> \u2026I'm not sure what you're talking about; but if you mean it doesn't modify anything, then yes, linters were _not_ configured to overwrite source code.\r\n\r\nHuh, I wasn't assuming that. No, what I said was that my changes didn't appear to have any effect on linting output. e.g. I didn't introduce any new linting errors. It's a bit moot because I think I was linting differently than ci does. Hopefully I'm aligned now."
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T16:51:03+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:4",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "Why is there code to trigger opening bookmarks in a browser *in the database abstraction layer*?"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T18:53:35+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:5",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "What convention is being followed for docstrings? I'm seeing both `str` and `string`... maybe settle on one or the other?"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T18:57:49+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:6",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "How do you decide when to use one of the various forms of python string parameter expansion?"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T20:25:00+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:7",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "I didn't touch bukuserver... should I? That part should be pretty straightforward, I think just add, e.g. `BUKUSERVER_DEFAULT_SCHEME`, change the `BukuDb()` call, and update docs/tests?"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T20:34:06+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:8",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "> Why is there code to trigger opening bookmarks in a browser _in the database abstraction layer_?\r\n\r\n\u2026Where did you find a \"database abstraction layer\" in Buku? :sweat_smile:\r\n\r\nThat being said, I certainly wasn't the one to implement this part of the code so I don't really know what's going on there to begin with.\r\n\r\n> What convention is being followed for docstrings? I'm seeing both str and string... maybe settle on one or the other?\r\n\r\nI don't believe there's one. When I need to modify the docs (which I haven't done much really) I just write it the way that the closest one is written :man_shrugging:\r\n\r\n> How do you decide when to use one of the various forms of python string parameter expansion?\r\n\r\nEr\u2026 what? Do you mean string templates?\r\n\r\nF-strings are usually the convenient way since it's direct string interpolation. Logging library seems to prefer handling string templates personally though, so I guess it's either [printf-style](https://docs.python.org/3.14/library/stdtypes.html#printf-style-string-formatting) or [format strings](https://docs.python.org/3/library/string.html#formatstrings) for it (there's not much difference in practice so I just go with what's being used already).\r\n\r\n> I didn't touch bukuserver... should I?\r\n\r\n`browser()` isn't used there\u2026 I think it just allows the browser to figure it out based to its own settings :man_shrugging:"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T21:26:52+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:9",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "\u2026One thing to note about running tests, is that the `buku` file gets copied to `buku.py` beforehands (or when installing the module). I'd say it'd be more convenient to just rename the source to `buku.py` in the repo, but that's probably up to @jarun to make the call on that."
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T21:45:41+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:10",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "> \u2026Where did you find a \"database abstraction layer\" in Buku?\r\n\r\nNot sure if you're joking, but:\r\n\r\n```python\r\nclass BukuDb:\r\n    \"\"\"Abstracts all database operations.\r\n```"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T23:45:39+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:11",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "Why are there type hints in `BukuDb.__init__()` but not `browse()`?"
+   },
+   "source": "github",
+   "timestamp": "2025-10-31T23:48:45+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:12",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "> `class BukuDb:`\r\n\r\nThat's just the main class. I'm not sure why it's documented as being database-specific, but it implements pretty much everything.\r\n\r\nA better question would be \"why does it contain interactive I/O?\" :melting_face:\r\n\r\n> Why are there type hints in `BukuDb.__init__()` but not `browse()`?\r\n\r\nCheck git blame? I'm guessing they were added relatively recently and no one bothered going over the entire codebase just to add them :man_shrugging:"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T01:02:18+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:13",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "Incidentally, the repo owner prefers having pre-squashed commits in a pull-request, for sake of cleaner commit history (i.e. soft-reset + amend + force-push to have a single new commit in the branch).\r\n\r\n\u2026I also doubt anyone would care to know exactly how many times the contributor adjusted his branch before merge :sweat_smile:"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T01:12:44+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:14",
+   "payload": {
+    "author": "meonkeys",
+    "author_is_bot": false,
+    "body": "As they wish, then!"
+   },
+   "source": "github",
+   "timestamp": "2025-11-01T01:36:27+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#871:comment:15",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-11-02T12:49:17+00:00",
+   "url": "https://github.com/jarun/buku/pull/871"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#870:opened",
+   "payload": {
+    "additions": 32,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 33,
+    "files": [
+     ".circleci/config.yml",
+     "README.md",
+     "buku",
+     "setup.py",
+     "tox.ini"
+    ],
+    "title": "Updating supported Python versions"
+   },
+   "source": "github",
+   "timestamp": "2025-10-19T17:00:56+00:00",
+   "url": "https://github.com/jarun/buku/pull/870"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#870:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-10-26T13:28:24+00:00",
+   "url": "https://github.com/jarun/buku/pull/870"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#870:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-10-26T13:28:33+00:00",
+   "url": "https://github.com/jarun/buku/pull/870"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:opened",
+   "payload": {
+    "additions": 149,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 181,
+    "files": [
+     "buku",
+     "tests/test_BukuCrypt.py",
+     "tests/test_cli.py"
+    ],
+    "title": "[API] BukuCrypt improvements"
+   },
+   "source": "github",
+   "timestamp": "2025-10-03T23:48:01+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-10-26T13:29:06+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-03T23:49:40+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:1",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-03T23:50:26+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:2",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-03T23:54:20+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:3",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-03T23:56:02+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:4",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-03T23:57:31+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:5",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-03T23:58:09+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:6",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-04T00:01:01+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:7",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-04T00:04:14+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:8",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-04T00:05:47+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:9",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-04T00:07:46+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:review:10",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2025-10-04T00:10:17+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:comment:0",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "body": "Note: these changes do not affect the regular usage (CLI/shell/webUI), so the merge can be delayed until after the next release without much issue."
+   },
+   "source": "github",
+   "timestamp": "2025-10-25T20:00:00+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#867:comment:1",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you! It's OK to roll out the improvements."
+   },
+   "source": "github",
+   "timestamp": "2025-10-26T13:29:38+00:00",
+   "url": "https://github.com/jarun/buku/pull/867"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#864:opened",
+   "payload": {
+    "additions": 65,
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 49,
+    "files": [
+     "bukuserver/README.md",
+     "bukuserver/server.py",
+     "bukuserver/templates/bukuserver/lib.html",
+     "bukuserver/translations/de/LC_MESSAGES/messages.po",
+     "bukuserver/translations/fr/LC_MESSAGES/messages.po",
+     "bukuserver/translations/ru/LC_MESSAGES/messages.mo",
+     "bukuserver/translations/ru/LC_MESSAGES/messages.po",
+     "bukuserver/views.py"
+    ],
+    "title": "[Bukuserver] a setting to override Fetch checkbox"
+   },
+   "source": "github",
+   "timestamp": "2025-06-26T18:19:19+00:00",
+   "url": "https://github.com/jarun/buku/pull/864"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#864:merged",
+   "payload": {
+    "author": "LeXofLeviafan",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-06-30T12:58:11+00:00",
+   "url": "https://github.com/jarun/buku/pull/864"
+  },
+  {
+   "evidence_id": "pr:jarun/buku#864:comment:0",
+   "payload": {
+    "author": "jarun",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2025-06-30T12:58:17+00:00",
+   "url": "https://github.com/jarun/buku/pull/864"
+  }
+ ],
+ "repo": "jarun/buku",
+ "window": "pre_t"
+}

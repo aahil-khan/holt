@@ -1,0 +1,708 @@
+{
+ "captured_at": "2026-08-31T01:07:09.631494+00:00",
+ "content_sha256": "d52fff20c318ce49b9912c88c26f34e99c2828574ca3e9976019c2410f556a3d",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:Textualize/textual:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "The lean application framework for Python.  Build sophisticated user interfaces with a simple Python API. Run your apps in the terminal and a web browser.",
+    "homepage_url": "https://textual.textualize.io/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-07-11T06:02:34Z",
+    "stargazer_count": 37098
+   },
+   "source": "github",
+   "timestamp": "2021-04-08T15:24:47+00:00",
+   "url": "https://github.com/Textualize/textual"
+  },
+  {
+   "evidence_id": "repo:Textualize/textual:readme",
+   "payload": {
+    "commit_oid": "06dbeef4bb70fb718236aa418ed658ef4667a126",
+    "kind": "readme",
+    "text": "\n\n[![Discord](https://img.shields.io/discord/1026214085173461072)](https://discord.gg/Enf6Z3qhVr)\n[![Supported Python Versions](https://img.shields.io/pypi/pyversions/textual)](https://pypi.org/project/textual/)\n[![PyPI version](https://badge.fury.io/py/textual.svg?)](https://badge.fury.io/py/textual)\n![OS support](https://img.shields.io/badge/OS-macOS%20Linux%20Windows-red)\n\n\n\n![textual-splash](https://github.com/user-attachments/assets/4caeb77e-48c0-4cf7-b14d-c53ded855ffd)\n\n# Textual\n\n<img align=\"right\" width=\"250\" alt=\"clock\" src=\"https://github.com/user-attachments/assets/63e839c3-5b8e-478d-b78e-cf7647eb85e8\" />\n\nBuild cross-platform user interfaces with a simple Python API. Run your apps in the terminal *or* a web browser.\n\nTextual's API combines modern Python with the best of developments from the web world, for a lean app development experience.\nDe-coupled components and an advanced [testing](https://textual.textualize.io/guide/testing/) framework ensure you can maintain your app for the long-term.\n\nWant some more examples? See the [examples](https://github.com/Textualize/textual/tree/main/examples) directory.\n\n```python\n\"\"\"\nAn App to show the current time.\n\"\"\"\n\nfrom datetime import datetime\n\nfrom textual.app import App, ComposeResult\nfrom textual.widgets import Digits\n\n\nclass ClockApp(App):\n    CSS = \"\"\"\n    Screen { align: center middle; }\n    Digits { width: auto; }\n    \"\"\"\n\n    def compose(self) -> ComposeResult:\n        yield Digits(\"\")\n\n    def on_ready(self) -> None:\n        self.update_clock()\n        self.set_interval(1, self.update_clock)\n\n    def update_clock(self) -> None:\n        clock = datetime.now().time()\n        self.query_one(Digits).update(f\"{clock:%T}\")\n\n\nif __name__ == \"__main__\":\n    app = ClockApp()\n    app.run()\n```\n\n> [!TIP]\n> Textual is an asynchronous framework under the hood. Which means you can integrate your apps with async libraries &mdash; if you want to.\n> If you don't want or need to use async, Textual won't force it on you. \n\n\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"64\"/>\n\n## Widgets\n\nTextual's library of [widgets](https://textual.textualize.io/widget_gallery/) covers everything from buttons, tree controls, data tables, inputs, text areas, and more\u2026\nCombined with a flexible [layout](https://textual.textualize.io/how-to/design-a-layout/) system, you can realize any User Interface you need.\n\nPredefined themes ensure your apps will look good out of the box. \n\n\n<table>\n\n<tr>\n\n  <td>\n    \n  ![buttons](https://github.com/user-attachments/assets/2ac26387-aaa3-41ed-bc00-7d488600343c)\n    \n  </td>\n\n  <td>\n    \n![tree](https://github.com/user-attachments/assets/61ccd6e9-97ea-4918-8eda-3ee0f0d3770e)\n    \n  </td>\n  \n</tr>\n\n\n<tr>\n\n  <td>\n    \n  ![datatables](https://github.com/user-attachments/assets/3e1f9f7a-f965-4901-a114-3c188bd17695)\n    \n  </td>\n\n  <td>\n    \n![inputs](https://github.com/user-attachments/assets/b02aa203-7c37-42da-a1bb-2cb244b7d0d3)\n    \n  </td>\n  \n</tr>\n<tr>\n\n<td>\n\n![listview](https://github.com/user-attachments/assets/963603bc-aa07-4688-bd24-379962ece871)\n\n</td>\n\n<td>\n\n![textarea](https://github.com/user-attachments/assets/cd4ba787-5519-40e2-8d86-8224e1b7e506)\n  \n</td>\n\n  \n</tr>\n\n</table>\n\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"32\"/>\n\n## Installing\n\nInstall Textual via pip:\n\n```\npip install textual textual-dev\n```\n\nSee [getting started](https://textual.textualize.io/getting_started/) for details.\n\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"32\"/>\n\n## Demo\n\n\nRun the following command to see a little of what Textual can do:\n\n```\npython -m textual\n```\n\nOr try the [textual demo](https://github.com/textualize/textual-demo) *without* installing (requires [uv](https://docs.astral.sh/uv/)):\n\n```bash\nuvx --python 3.12 textual-demo\n```\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"32\"/>\n\n## Dev Console\n\n<img align=\"right\" width=\"40%\" alt=\"devtools\" src=\"https://github.com/user-attachments/assets/12c60d65-e342-4b2f-9372-bae0459a7552\" />\n\n\nHow do you debug an app in the terminal that is also running in the terminal?\n\nThe `textual-dev` package supplies a dev console that connects to your application from another terminal.\nIn addition to system messages and events, your logged messages and print statements will appear in the dev console.\n\nSee [the guide](https://textual.textualize.io/guide/devtools/) for other helpful tools provided by the `textual-dev` package.\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"32\"/>\n\n## Command Palette\n\n\nTextual apps have a *fuzzy search* command palette.\nHit `ctrl+p` to open the command palette.\n\nIt is easy to extend the command palette with [custom commands](https://textual.textualize.io/guide/command_palette/) for your application.\n\n\n![Command Palette](https://github.com/user-attachments/assets/94d8ec5d-b668-4033-a5cb-bf820e1b8d60)\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"32\"/>\n\n# Textual \u2764\ufe0f Web\n\n<img align=\"right\" width=\"40%\" alt=\"textual-serve\" src=\"https://github.com/user-attachments/assets/a25820fb-87ae-433a-858b-ac3940169242\">\n\n\nTextual apps are equally at home in the browser as they are the terminal. Any Textual app may be served with `textual serve` &mdash; so you can share your creations on the web.\nHere's how to serve the demo app:\n\n```\ntextual serve \"python -m textual\"\n```\n\nIn addition to serving your apps locally, you can serve apps with [Textual Web](https://github.com/Textualize/textual-web).\n\nTextual Web's firewall-busting technology can serve an unlimited number of applications.\n\nSince Textual apps have low system requirements, you can install them anywhere Python also runs. Turning any device into a connected device.\nNo desktop required!\n\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"32\"/>\n\n\n## Join us on Discord\n\nJoin the Textual developers and community on our [Discord Server](https://discord.gg/Enf6Z3qhVr).\n"
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T06:02:34+00:00",
+   "url": "https://github.com/Textualize/textual/blob/06dbeef4bb70fb718236aa418ed658ef4667a126/README.md"
+  },
+  {
+   "evidence_id": "repo:Textualize/textual:contributing",
+   "payload": {
+    "commit_oid": "06dbeef4bb70fb718236aa418ed658ef4667a126",
+    "kind": "contributing",
+    "text": "# Contributing to Textual\n\nFirst of all, thanks for taking the time to contribute to Textual!\n\n## How can I contribute?\n\nYou can contribute to Textual in many ways:\n\n 1. [Report a bug](https://github.com/textualize/textual/issues/new?title=%5BBUG%5D%20short%20bug%20description&template=bug_report.md)\n 2. Add a new feature\n 3. Fix a bug\n 4. Improve the documentation\n\n\n## Setup\n\nTo make a code or documentation contribution you will need to set up Textual locally.\nYou can follow these steps:\n\n 1. Make sure you have Poetry installed ([see instructions here](https://python-poetry.org))\n 2. Clone the Textual repository\n 3. Run `poetry shell` to create a virtual environment for the dependencies\n 4. Run `make setup` to install all dependencies\n 5. Make sure the latest version of Textual was installed by running the command `textual --version`\n 6. Install the pre-commit hooks with the command `pre-commit install`\n\n([Read this](#makefile-commands) if the command `make` doesn't work for you.)\n\n## Demo\n\nOnce you have Textual installed, run the Textual demo to get an impression of what Textual can do and to double check that everything was installed correctly:\n\n```bash\npython -m textual\n```\n\n## Guidelines\n\n- Read any issue instructions carefully. Feel free to ask for clarification if any details are missing.\n\n- Add docstrings to all of your code (functions, methods, classes, ...). The codebase should have enough examples for you to copy from.\n\n- Write tests for your code.\n  - If you are fixing a bug, make sure to add regression tests that link to the original issue.\n  - If you are implementing a visual element, make sure to add _snapshot tests_. [See below](#snapshot-testing) for more details.\n\n## Before opening a PR\n\nBefore you open your PR, please go through this checklist and make sure you've checked all the items that apply:\n\n - [ ] Update the `CHANGELOG.md`\n - [ ] Format your code with black (`make format`)\n - [ ] All your code has docstrings in the style of the rest of the codebase\n - [ ] Your code passes all tests (`make test`)\n\n([Read this](#makefile-commands) if the command `make` doesn't work for you.)\n\n## Updating and building the documentation\n\nIf you change the documentation, you will want to build the documentation to make sure everything looks like it should.\nThe command `make docs-serve-offline` should start a server that will let you preview the documentation locally and that should reload whenever you save changes to the documentation or the code files.\n\n([Read this](#makefile-commands) if the command `make` doesn't work for you.)\n\nWe strive to write our documentation in a clear and accessible way so, if you find any issues with the documentation, we encourage you to open an issue where you can enumerate the things you think should be changed or added.\n\nOpening an issue or a discussion is typically better than opening a PR directly.\nThat's because there are many subjective considerations that go into writing documentation and we cannot expect you, a well-intentioned external contributor, to be aware of those subjective considerations that we take into account when writing our documentation.\n\nOf course, this does not apply to objective/technical issues with the documentation like bugs or broken links.\n\n## After opening a PR\n\nWhen you open a PR, your code will be reviewed by one of the Textual maintainers.\nIn that review process,\n\n- We will take a look at all of the changes you are making\n- We might ask for clarifications (why did you do X or Y?)\n- We might ask for more tests/more documentation\n- We might ask for some code changes\n\nThe sole purpose of those interactions is to make sure that, in the long run, everyone has the best experience possible with Textual and with the feature you are implementing/fixing.\n\nDon't be discouraged if a reviewer asks for code changes.\nIf you go through our history of pull requests, you will see that every single one of the maintainers has had to make changes following a review.\n\n## Snapshot testing\n\nSnapshot tests ensure that visual things (like widgets) look like they are supposed to.\nPR [#1969](https://github.com/Textualize/textual/pull/1969) is a good example of what adding snapshot tests looks like: it amounts to a change in the file `tests/snapshot_tests/test_snapshots.py` that should run an app that you write and compare it against a historic snapshot of what that app should look like.\n\nWhen you create a new snapshot test, run it with `pytest -vv tests/snapshot_tests/test_snapshots.py`.\nBecause you just created this snapshot test, there is no history to compare against and the test will fail.\nAfter running the snapshot tests, you should see a link that opens an interface in your browser.\nThis interface should show all failing snapshot tests and a side-by-side diff between what the app looked like when the test ran versus the historic snapshot.\n\nMake sure your snapshot app looks like it is supposed to and that you didn't break any other snapshot tests.\nIf everything looks fine, you can run `make test-snapshot-update` to update the snapshot history with your new snapshot.\nThis will write a new SVG file to the `tests/snapshot_tests/__snapshots__/` directory.\nYou should NOT modify these files by hand.\nIf a pre-existing snapshot tests fails, you should carefully inspect the diff and decide if the new snapshot is correct or if the pre-existing one is.\nIf the new snapshot is correct, you should update the snapshot history with your new snapshot using `make test-snapshot-update`.\nIf the pre-existing snapshot is correct, your change has likely introduced a bug, and you should try to fix it.\nAfter fixing it, and checking the output of `make test-snapshot` now looks correct, you should run `make test-snapshot-update` to update the snapshot history with your new snapshot.\n\n\n([Read this](#makefile-commands) if the command `make` doesn't work for you.)\n\n## Join the community\n\nSeems a little overwhelming?\nJoin our community on [Discord](https://discord.gg/Enf6Z3qhVr) to get help!\n\n## Makefile commands\n\nTextual has a `Makefile` file that contains the most common commands used when developing Textual.\n([Read about Make and makefiles on Wikipedia.](https://en.wikipedia.org/wiki/Make_(software)))\nIf you don't have Make and you're on Windows, you may want to [install Make](https://stackoverflow.com/q/32127524/2828287).\n"
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T06:02:34+00:00",
+   "url": "https://github.com/Textualize/textual/blob/06dbeef4bb70fb718236aa418ed658ef4667a126/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6703:opened",
+   "payload": {
+    "additions": 25,
+    "author": "davidfokkema",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGELOG.md",
+     "src/textual/style.py",
+     "tests/test_style_parse.py"
+    ],
+    "title": "Reuse link_id if link is split across lines"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:53:30+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6703"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6703:comment:0",
+   "payload": {
+    "author": "davidfokkema",
+    "author_is_bot": false,
+    "body": "Small patch, extra tests, no conflicts. I can merge this but I'm not sure if you want to take a look first and make changes, @willmcgugan ?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T15:22:50+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6703"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6697:opened",
+   "payload": {
+    "additions": 629,
+    "author": "nicholasirwin",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 9,
+    "files": [
+     "src/textual/_text_selection.py",
+     "src/textual/_word_segmentation.py",
+     "src/textual/widget.py",
+     "tests/snapshot_tests/__snapshots__/test_snapshots/test_click_selection_disabled_when_allow_select_is_false[True-True-True].svg",
+     "tests/test_selection.py",
+     "tests/test_text_selection.py"
+    ],
+    "title": "Fix double-click and triple-click selection behavior"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T20:18:36+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6697"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6696:opened",
+   "payload": {
+    "additions": 49,
+    "author": "Jyotish08",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 3,
+    "files": [
+     "src/textual/_xterm_parser.py",
+     "src/textual/driver.py",
+     "src/textual/drivers/linux_driver.py",
+     "src/textual/drivers/linux_inline_driver.py",
+     "src/textual/drivers/web_driver.py",
+     "src/textual/messages.py",
+     "tests/test_driver.py",
+     "tests/test_xterm_parser.py"
+    ],
+    "title": "Fix: prevent crash on legacy X10 mouse reports after terminal rebuild"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T10:21:32+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6696"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6696:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR hardens Textual\u2019s input pipeline against legacy X10 mouse reporting that can appear after a terminal teardown/rebuild (e.g., VS Code terminal reload), preventing UTF-8 decode crashes and restoring full mouse tracking by re-enabling SGR mouse mode when X10 sequences are detected.\n\n**Changes:**\n- Switch stdin byte-stream decoding in terminal/web drivers to a fault-tolerant UTF-8 incremental decoder (`errors=\"replace\"`) to avoid `UnicodeDecodeError` on non-UTF-8 X10 coordinate bytes.\n- Introduce a `LegacyMouseReport` message and teach `XTermParser` to emit it when `ESC [ M ...` (X10) is seen, prompting the driver to re-assert mouse mode via `_enable_mouse_support()`.\n- Add targeted tests covering parser emission and driver behavior on legacy X10 reports.\n\n### Reviewed changes\n\nCopilot reviewed 8 out of 8 changed files in this pull request and generated no comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| tests/test_xterm_parser.py | Adds regression test ensuring X10 sequences emit `LegacyMouseReport`. |\r\n| tests/test_driver.py | Adds regression test ensuring the driver re-enables mouse support on `LegacyMouseReport`. |\r\n| src/textual/messages.py | Introduces the `LegacyMouseReport` message type. |\r\n| src/textual/drivers/web_driver.py | Makes UTF-8 decoding tolerant (`errors=\"replace\"`) in the web input loop. |\r\n| src/textual/drivers/linux_inline_driver.py | Makes UTF-8 decoding tolerant (`errors=\"replace\"`) in the inline terminal input loop. |\r\n| src/textual/drivers/linux_driver.py | Makes UTF-8 decoding tolerant (`errors=\"replace\"`) in the terminal input loop. |\r\n| src/textual/driver.py | Handles `LegacyMouseReport` by re-enabling mouse support from the input thread. |\r\n| src/textual/_xterm_parser.py | Detects X10 mouse sequences and emits `LegacyMouseReport` prior to mouse parsing. |\n</details>\n\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/Textualize/textual/new/main?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T10:25:47+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6696"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6695:opened",
+   "payload": {
+    "additions": 113,
+    "author": "Jyotish08",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 8,
+    "files": [
+     "src/textual/_compositor.py",
+     "src/textual/visual.py",
+     "src/textual/widget.py",
+     "tests/test_anchor.py",
+     "tests/test_selection.py"
+    ],
+    "title": "Fix/preserve link style during selection #6672"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:46:17+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6695"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6695:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR addresses a rendering regression where link styling (e.g., link color + underline) disappears while text drag-selection is active, by ensuring link styles are applied even when `Screen._selecting` is `True`. It also includes additional changes and tests around anchored scrolling behavior.\n\n**Changes:**\n- Apply link styling in `Visual.to_strips` regardless of whether screen selection is active.\n- Add a regression test to ensure link styling remains visible throughout mouse drag-selection.\n- Add/adjust anchoring logic (and a new test) to better preserve/re-engage \u201canchored to bottom\u201d scrolling during streaming content updates.\n\n### Reviewed changes\n\nCopilot reviewed 5 out of 5 changed files in this pull request and generated 3 comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| `src/textual/visual.py` | Removes the selection-state guard so link styles are consistently applied. |\r\n| `tests/test_selection.py` | Adds a regression test for link style preservation during selection (with some brittleness to address). |\r\n| `src/textual/widget.py` | Updates anchor/scroll behavior to avoid releasing/re-enable anchoring when scrolling to bottom. |\r\n| `src/textual/_compositor.py` | Calls `_check_anchor()` during composition to help re-engage anchoring appropriately. |\r\n| `tests/test_anchor.py` | Adds a test covering anchored scrolling behavior during streaming/mount updates. |\n</details>\n\n\n\n\n\n<details>\n<summary>Suppressed comments (2)</summary>\n\n**tests/test_selection.py:259**\n* Same brittleness during the selecting-state check: matching by \"docs\" text and asserting color.name == \"#00ffff\" can break if segment boundaries or color naming differ. Use the \"@click\" meta to identify link segments and compare to static_widget.link_style.\n```\n        strip_selecting = static_widget.render_line(0)\n        docs_seg_selecting = [seg for seg in strip_selecting if \"docs\" in seg.text][0]\n        assert docs_seg_selecting.style.underline is True\n        assert docs_seg_selecting.style.color.name == \"#00ffff\"\n```\n**tests/test_selection.py:270**\n* After mouse-up, the current filter can accidentally match non-link segments (it matches any segment containing any of the letters d/o/c/s) and still asserts an exact hex string. Filtering by \"@click\" meta makes the test unambiguous and resilient to selection splitting.\n```\n        strip_after = static_widget.render_line(0)\n        docs_segs = [seg for seg in strip_after if any(char in seg.text for char in \"docs\") and seg.text not in (\"See the \", \" link.\")]\n        assert len(docs_segs) > 0\n        for seg in docs_segs:\n            assert seg.style.underline is True\n            assert seg.style.color.name == \"#00ffff\"\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/Textualize/textual/new/main?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:50:47+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6695"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6694:opened",
+   "payload": {
+    "additions": 113,
+    "author": "Jyotish08",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 8,
+    "files": [
+     "src/textual/_compositor.py",
+     "src/textual/visual.py",
+     "src/textual/widget.py",
+     "tests/test_anchor.py",
+     "tests/test_selection.py"
+    ],
+    "title": "Fix container anchor re-engagement during continuous content streaming"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:23:56+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6694"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6694:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR adjusts Textual\u2019s anchoring behavior for scrollable containers so that anchors can be re-engaged reliably while content is continuously appended (streaming/mounting), and adds a regression test to cover the reported flow.\n\n**Changes:**\n- Update `Widget._check_anchor()` to allow re-engagement based on `scroll_target_y` as well as `scroll_y`.\n- Prevent \u201cscroll-to-bottom\u201d operations from releasing the anchor, and ensure anchor state is restored when targeting the bottom.\n- Call `_check_anchor()` during compositor layout before applying anchored \u201cglue to bottom\u201d behavior; add a streaming regression test.\n\n### Reviewed changes\n\nCopilot reviewed 3 out of 3 changed files in this pull request and generated 2 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `tests/test_anchor.py` | Adds regression coverage for anchor release + re-engagement during incremental mounting. |\n| `src/textual/widget.py` | Updates anchor restoration criteria and modifies scroll methods to preserve anchoring when targeting the bottom. |\n| `src/textual/_compositor.py` | Ensures anchor state is re-checked during layout before applying anchored scroll positioning. |\n\n\n\n\n<details>\n<summary>Suppressed comments (1)</summary>\n\n**src/textual/widget.py:2909**\n* Same as `_scroll_to`: the `release_anchor` parameter docs here currently imply anchor release happens whenever `release_anchor=True`, but this method now intentionally preserves anchoring when scrolling to/beyond `max_scroll_y`. Please update the docstring line so it matches the new semantics.\n```\n        if release_anchor:\n            if y is not None and y >= self.max_scroll_y:\n                release_anchor = False\n                if self._anchored:\n                    self._anchor_released = False\n            else:\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/Textualize/textual/new/main?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:28:00+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6694"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6693:opened",
+   "payload": {
+    "additions": 65,
+    "author": "fudianchn",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 11,
+    "files": [
+     "src/textual/app.py",
+     "tests/test_suspend.py"
+    ],
+    "title": "fix: resume application mode when a suspended body raises"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T00:05:46+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6693"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6693:closed",
+   "payload": {
+    "author": "fudianchn",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T11:55:44+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6693"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6693:comment:0",
+   "payload": {
+    "author": "fudianchn",
+    "author_is_bot": false,
+    "body": "Hi @willmcgugan, I'm going to close this PR.\n\nTo be transparent about how it was made: this was an AI-generated contribution (Claude, via Claude Code), which I should have disclosed up front. More importantly, reading your `AI_POLICY.md`, I see AI PRs should link to an issue where a solution has already been approved by a maintainer \u2014 #6692 only has the original report and no maintainer sign-off yet, so I jumped the gun by opening this before that discussion happened.\n\nI'm a full-stack developer and I personally reviewed and tested the fix, but that doesn't change that I skipped your process. I'll close this; if you're open to it, I'm happy to discuss the approach in #6692 first and re-open once there's alignment. Sorry for the extra noise.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T11:55:42+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6693"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6690:opened",
+   "payload": {
+    "additions": 105,
+    "author": "m-k-l-s",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "CHANGELOG.md",
+     "src/textual/drivers/linux_driver.py",
+     "src/textual/drivers/linux_inline_driver.py",
+     "tests/test_driver_input_eof.py"
+    ],
+    "title": "Fix input thread busy-looping at 100% CPU when stdin reaches EOF"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T11:12:43+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6690"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6690:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR fixes a runaway CPU usage issue in the POSIX (Linux/macOS) input thread when stdin reaches EOF (e.g., stdin redirected from `/dev/null` or an SSH session drops and stdin closes). The fix ensures the selector loop terminates instead of repeatedly treating EOF as a permanently-readable file descriptor.\n\n**Changes:**\n- Detect `os.read(...) == b\"\"` (EOF) in `LinuxDriver` and `LinuxInlineDriver` input loops and stop selecting to prevent busy-looping.\n- Add a regression test that asserts the input thread terminates promptly when its input FD is permanently at EOF.\n- Document the fix in the changelog under \u201cUnreleased\u201d.\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 1 comment.\n\n| File | Description |\n| ---- | ----------- |\n| `src/textual/drivers/linux_driver.py` | Stops the POSIX input thread when stdin hits EOF to prevent a 100% CPU busy loop. |\n| `src/textual/drivers/linux_inline_driver.py` | Applies the same EOF handling to the inline POSIX driver input thread. |\n| `tests/test_driver_input_eof.py` | Adds a regression test ensuring the input thread exits when reading from an EOF FD. |\n| `CHANGELOG.md` | Notes the bugfix under \u201cUnreleased\u201d. |\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/Textualize/textual/new/main?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T11:27:01+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6690"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6690:review:1",
+   "payload": {
+    "author": "m-k-l-s",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T11:28:22+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6690"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6690:review:2",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot was unable to review this pull request because the user who requested the review has reached their quota limit.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T11:28:53+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6690"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6689:opened",
+   "payload": {
+    "additions": 20,
+    "author": "mmaxjr",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/textual/drivers/win32.py",
+     "tests/test_driver.py"
+    ],
+    "title": "Keep Win32 IME character events"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T10:58:26+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6689"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6688:opened",
+   "payload": {
+    "additions": 2,
+    "author": "mmaxjr",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/guide/reactivity.md"
+    ],
+    "title": "Fix typo in reactivity guide"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T10:53:42+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6688"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6687:opened",
+   "payload": {
+    "additions": 26,
+    "author": "guillaumelgf",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/textual/widgets/_text_area.py",
+     "tests/text_area/test_history.py"
+    ],
+    "title": "Fix textarea undo crash"
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T15:41:32+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6687"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6687:comment:0",
+   "payload": {
+    "author": "goransh-walia",
+    "author_is_bot": false,
+    "body": "This looks good to me at a glance \u2014 thanks for putting it together."
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T14:53:49+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6687"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6685:opened",
+   "payload": {
+    "additions": 25,
+    "author": "darkdi",
+    "author_is_bot": false,
+    "changed_files": 22,
+    "deletions": 32,
+    "files": [
+     "CHANGELOG.md",
+     "src/textual/_binary_encode.py",
+     "src/textual/_border.py",
+     "src/textual/_compositor.py",
+     "src/textual/_loop.py",
+     "src/textual/_styles_cache.py",
+     "src/textual/clock.py",
+     "src/textual/containers.py",
+     "src/textual/css/_help_text.py",
+     "src/textual/css/_style_properties.py",
+     "src/textual/css/stylesheet.py",
+     "src/textual/document/_syntax_aware_document.py",
+     "src/textual/dom.py",
+     "src/textual/driver.py",
+     "src/textual/drivers/linux_driver.py",
+     "src/textual/drivers/linux_inline_driver.py",
+     "src/textual/fuzzy.py",
+     "src/textual/layout.py",
+     "src/textual/renderables/text_opacity.py",
+     "src/textual/screen.py"
+    ],
+    "title": "Fix docstring Args names that do not match the signatures"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T23:28:42+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6685"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6684:opened",
+   "payload": {
+    "additions": 2,
+    "author": "blockersiontko",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/guide/reactivity.md"
+    ],
+    "title": "Fix typos in reactivity documentation"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T08:35:19+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6684"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6684:closed",
+   "payload": {
+    "author": "blockersiontko",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T08:37:17+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6684"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6684:comment:0",
+   "payload": {
+    "author": "blockersiontko",
+    "author_is_bot": false,
+    "body": "Closing - mb, this was already addressed in #6660"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T08:37:17+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6684"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6683:opened",
+   "payload": {
+    "additions": 165,
+    "author": "prabinKh",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 24,
+    "files": [
+     "src/textual/_compositor.py",
+     "src/textual/widget.py",
+     "tests/test_anchor_scroll.py"
+    ],
+    "title": "fixt the Scrolling back to the bottom does not restore anchored scroll"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T08:01:00+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6683"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6682:opened",
+   "payload": {
+    "additions": 27,
+    "author": "deepakganesh78",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "CHANGELOG.md",
+     "src/textual/css/_style_properties.py",
+     "tests/test_app.py"
+    ],
+    "title": "Fix pointer style crash during early theme changes"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T17:04:20+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6682"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6681:opened",
+   "payload": {
+    "additions": 5,
+    "author": "rudrakumar07",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/textual/markup.py",
+     "src/textual/widgets/_select.py"
+    ],
+    "title": "Fix markup.escape regex to handle nested brackets (#6614)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T14:44:21+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6681"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6680:opened",
+   "payload": {
+    "additions": 4,
+    "author": "rudrakumar07",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "src/textual/widgets/_select.py"
+    ],
+    "title": "Fix SelectCurrent.update() crash when called before mount (#6581)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T14:44:00+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6680"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6679:opened",
+   "payload": {
+    "additions": 5,
+    "author": "rudrakumar07",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/textual/markup.py",
+     "src/textual/widgets/_select.py"
+    ],
+    "title": "Fix SelectCurrent.update() crash and markup.escape nested brackets (#6581, #6614)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T14:34:42+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6679"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6679:closed",
+   "payload": {
+    "author": "rudrakumar07",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T14:44:30+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6679"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6679:comment:0",
+   "payload": {
+    "author": "rudrakumar07",
+    "author_is_bot": false,
+    "body": "Closing in favor of two separate PRs: #6680 and #6681. Maintainers prefer one fix per PR."
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T14:44:30+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6679"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6678:opened",
+   "payload": {
+    "additions": 8,
+    "author": "santiagobasulto",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/textual/_xterm_parser.py",
+     "tests/test_xterm_parser.py"
+    ],
+    "title": "Fixes #6663: Alt modifier dropped for non-kitty terminals"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T12:43:51+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6678"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6676:opened",
+   "payload": {
+    "additions": 98,
+    "author": "happykawayigt",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "src/textual/reactive.py",
+     "tests/test_reactive.py"
+    ],
+    "title": "Fix cleanup of cross-object reactive watchers"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T03:53:15+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6676"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6675:opened",
+   "payload": {
+    "additions": 46,
+    "author": "happykawayigt",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "CHANGELOG.md",
+     "src/textual/drivers/win32.py",
+     "tests/test_win32.py"
+    ],
+    "title": "Fix CJK IME key events on Windows"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T01:14:36+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6675"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6674:opened",
+   "payload": {
+    "additions": 7,
+    "author": "happykawayigt",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     "CHANGELOG.md",
+     "src/textual/_xterm_parser.py",
+     "tests/test_xterm_parser.py"
+    ],
+    "title": "Fix Alt modifier on named keys"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T23:11:10+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6674"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6673:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Jyotish08",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/textual/drivers/linux_inline_driver.py",
+     "src/textual/layout.py"
+    ],
+    "title": "fix: resolve inline app duplicate frame stacking and height bounding"
+   },
+   "source": "github",
+   "timestamp": "2026-07-28T17:04:08+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6673"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6673:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot was unable to review this pull request because the user who requested the review has reached their quota limit.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-28T17:04:16+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6673"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6670:opened",
+   "payload": {
+    "additions": 146,
+    "author": "krishagarwal314",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/textual/widgets/_button.py",
+     "tests/test_event_handler_dispatch.py"
+    ],
+    "title": "Scope: exp4-D"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T20:53:14+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6670"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6669:opened",
+   "payload": {
+    "additions": 77,
+    "author": "krishagarwal314",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/textual/widgets/_input.py",
+     "tests/test_input.py"
+    ],
+    "title": "Scope: exp4-E"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T20:49:48+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6669"
+  },
+  {
+   "evidence_id": "pr:Textualize/textual#6664:opened",
+   "payload": {
+    "additions": 210,
+    "author": "MRThugh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.ar.md"
+    ],
+    "title": "docs: add Arabic translation for README"
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T18:54:38+00:00",
+   "url": "https://github.com/Textualize/textual/pull/6664"
+  }
+ ],
+ "repo": "Textualize/textual",
+ "window": "pre_t"
+}

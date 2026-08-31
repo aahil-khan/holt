@@ -1,0 +1,1076 @@
+{
+ "captured_at": "2026-08-31T01:08:06.693179+00:00",
+ "content_sha256": "92ad3ef928b5ac01f8d1603474277ad9e451e97a7e5c5c5b7de0114b58a2251c",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:wiltodelta/remove-ai-watermarks:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Remove visible and invisible AI watermarks and provenance metadata from images and video. Python library and CLI for SynthID, C2PA, EXIF, IPTC, XMP, and common generative-AI marks.",
+    "homepage_url": "https://raiw.cc",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-31T00:50:58Z",
+    "stargazer_count": 5326
+   },
+   "source": "github",
+   "timestamp": "2026-03-25T18:15:24+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks"
+  },
+  {
+   "evidence_id": "repo:wiltodelta/remove-ai-watermarks:readme",
+   "payload": {
+    "commit_oid": "1d0e6b54dd8c4f8a939a353e48e3ea3712642cfe",
+    "kind": "readme",
+    "text": "# Remove AI Watermarks\n\nRemove AI provenance marks from images and video you generated yourself:\n\n- known visible labels such as the Google Gemini sparkle watermark and vendor text marks;\n- invisible pixel watermarks through diffusion regeneration;\n- C2PA, EXIF, XMP, IPTC, and related AI metadata.\n\nVideo support covers provenance identification, complete visible-plus-metadata\ncleaning, directory batches, visible Sora, Veo, Seedance, Dola, Hailuo AI, and\nKling AI mark removal, and oracle-certified VAE regeneration for video SynthID\nremoval.\n\n> [raiw.cc](https://raiw.cc) runs this library as a hosted service, with the GPU\n> included and nothing to install. Visible mark and metadata removal at Standard\n> output up to 12 MP are free there; original resolution above 12 MP and invisible\n> watermark removal are paid.\n\n[![PyPI](https://img.shields.io/pypi/v/remove-ai-watermarks?logo=pypi&logoColor=white)](https://pypi.org/project/remove-ai-watermarks/)\n[![Python](https://img.shields.io/pypi/pyversions/remove-ai-watermarks?logo=python&logoColor=white)](https://pypi.org/project/remove-ai-watermarks/)\n[![Downloads](https://static.pepy.tech/badge/remove-ai-watermarks/month)](https://pepy.tech/project/remove-ai-watermarks)\n[![License](https://img.shields.io/pypi/l/remove-ai-watermarks?color=blue)](LICENSE)\n[![Tests](https://github.com/wiltodelta/remove-ai-watermarks/actions/workflows/test.yml/badge.svg)](https://github.com/wiltodelta/remove-ai-watermarks/actions/workflows/test.yml)\n[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/wiltodelta)\n\n> This project is for lawful use on content you own. It does not target stock\n> agency previews or other watermarks that protect third party paid content.\n> See [scope, safety, and legal notes](docs/legal-and-safety.md).\n\n## Choose what you want to do\n\n| Goal | Command | GPU |\n| --- | --- | --- |\n| Find provenance signals and watermarks | `identify` | No |\n| Remove known visible AI marks | `visible` | No |\n| Erase a region you select | `erase` | No |\n| Strip AI metadata | `metadata` | No |\n| Identify supported video provenance | `video identify` | No |\n| Remove visible marks and AI metadata from video | `video all` | No |\n| Strip AI metadata from video | `video metadata` | No |\n| Remove a registered visible AI mark from video | `video visible` | No |\n| Process a directory of videos | `video batch` | Depends on mode |\n| Remove video SynthID with the certified VAE profile | `video invisible` | Recommended |\n| Regenerate an image to disrupt invisible watermarks | `invisible` | Required (CUDA) |\n| Run visible, invisible, and metadata removal | `all` | Recommended |\n| Process a directory | `batch` | Depends on mode |\n\nMicrosoft Paint and Photos InvisMark declarations are routed automatically to\npixel regeneration. The `all` command removes both the hidden pixel watermark and\nits linked C2PA manifest; metadata stripping alone removes only the manifest.\n\n## Installation modes\n\n| Need | Install |\n| --- | --- |\n| Metadata inspection and stripping | `remove-ai-watermarks` |\n| Visible detection and removal | `remove-ai-watermarks[visible]` |\n| Visible video processing | `remove-ai-watermarks[video]` |\n| Video SynthID removal | `remove-ai-watermarks[video,diffusion]` |\n| Torch-free DWT-DCT detection | `remove-ai-watermarks[detect]` |\n| Invisible image removal (needs CUDA) | `remove-ai-watermarks[qwen-zimage]` |\n| Every production feature available on the active Python | `remove-ai-watermarks[all]` |\n\nLower-level and specialized extras include `pixels`, `heif`, `trustmark`,\n`migan`, `lama`, and `diffusion`. The\n[installation guide](docs/installation.md#feature-extras) documents their exact\ndependency composition, Python compatibility, and model requirements.\n\n## Quick start\n\nInstall the metadata-focused default CLI:\n\n```bash\nuv tool install remove-ai-watermarks\n```\n\nInspect an image:\n\n```bash\nremove-ai-watermarks identify image.png\n```\n\nFor visible watermark removal, install the pixel dependencies:\n\n```bash\nuv tool install --force \"remove-ai-watermarks[visible]\"\n```\n\nThen remove a known visible mark and AI metadata:\n\n```bash\nremove-ai-watermarks visible image.png -o clean.png\n```\n\nStrip metadata without running visible inpainting or diffusion:\n\n```bash\nremove-ai-watermarks metadata image.png --remove -o clean.png\n```\n\nWithout `-o` this command overwrites the source in place.\n\nInspect or remove AI metadata from an MP4, MOV, M4V, WebM, MKV, AVI, or FLV\nfile:\n\n```bash\nremove-ai-watermarks video metadata input.mp4 --check\nremove-ai-watermarks video metadata input.mp4 --remove -o clean.mp4\n```\n\nThe `video metadata` command does not transcode video or audio streams. Unlike\nthe image command above, when `-o` is omitted it writes `<source>_clean` and\npreserves the original. MP4 and MOV\ninspection includes the native TC260 `AIGC` tag in\n`moov.udta.meta.keys/ilst`, including a `moov` placed after the media payload,\nplus the QuickTime-form `meta` variants Doubao's iOS export writes (a bare\n`meta` box as a direct `moov` child, and a keyless `hdlr=mdir` metadata list).\nMKV and WebM inspection reads the normative\n`Segment.Tags.Tag.SimpleTag` placement. AVI uses `LIST/INFO/AIGC`, while FLV\nuses `script.onMetaData.AIGC`. The non-ISOBMFF formats are remuxed with stream\ncopy for removal.\n\nUse the product-oriented video path to identify or clean a file:\n\n```bash\nuv tool install --force \"remove-ai-watermarks[video]\"\nremove-ai-watermarks video identify input.mp4\nremove-ai-watermarks video all input.mp4 -o clean.mp4\n```\n\n`video all` removes a stable registered visible mark when present and always\nstrips verified AI metadata. If neither signal is found, it still writes a\nsame-container passthrough, so application callers get one predictable output\ncontract. Proprietary invisible-video removal is excluded by default.\n`--invisible` opts into the lossy, oracle-certified video SynthID profile.\n\nProcess a directory with the same contract:\n\n```bash\nremove-ai-watermarks video batch ./videos --mode all\n```\n\nRemove a supported visible video mark:\n\n```bash\nremove-ai-watermarks video visible input.mp4 -o clean.mp4\nremove-ai-watermarks video visible veo.mp4 --mark veo -o veo_clean.mp4\nremove-ai-watermarks video visible seedance.mp4 --mark seedance -o seedance_clean.mp4\nremove-ai-watermarks video visible dola.mp4 --mark dola -o dola_clean.mp4\nremove-ai-watermarks video visible hailuo.mp4 --mark hailuo -o hailuo_clean.mp4\nremove-ai-watermarks video visible kling.mp4 --mark kling -o kling_clean.mp4\n```\n\nThis path scans the complete sequence before changing pixels. It accepts only a\nmark that repeats at a stable position across adjacent frames, then reuses the\nsame OpenCV, MI-GAN, or LaMa fill backends as image removal. Audio is copied\nwithout re-encoding and is allowed to reach its natural end; the video stream\nis transcoded because its pixels change. By default, a guarded optical-flow\npass motion-aligns the preceding accepted fill and blends it only when the\nnearby source context agrees; use `--no-temporal-consistency` to disable it.\nThe encoder preserves supported\n8-bit source chroma sampling, color tags, and MP4/MOV track timescale instead\nof relying on ffmpeg's implicit raw-BGR defaults. Variable frame intervals are\npreserved through a timestamped in-memory NUT bridge instead of being flattened\nto the average frame rate. Non-zero source start timestamps are retained\ntogether with the copied audio offset. The default `--mark auto`\nscans all providers in one decode pass and selects the first stable match in\nthe specificity order shown below. Pass an explicit mark to restrict detection\nto one provider.\nSora covers the moving Sora 2 mascot and wordmark. Veo covers both the current\nfour-point diamond and the legacy `Veo` text. Seedance covers the fixed boxed\n`AI` label, Dola covers the fixed `Dola AI` text, Hailuo AI covers the composite\n`MINIMAX | hailuo AI` label, and Kling AI covers the bottom-right `KLING AI`\nlabel with its version suffix. A completed encode is published atomically. No\noutput is written when no stable mark is found.\nHDR, PQ/HLG, and greater-than-8-bit inputs are rejected before encoding rather\nthan silently reduced through OpenCV's 8-bit BGR boundary.\n\nRemove video SynthID:\n\n```bash\nuv tool install --force \"remove-ai-watermarks[video,diffusion]\"\nremove-ai-watermarks video invisible input.mp4 -o clean.mp4\n```\n\nThis path regenerates the complete sequence with one latent-noise field shared\nacross time, copies complete audio, strips source metadata, and publishes the\ncompleted encode atomically. The default `noise_std=0.15` profile passed both\nthe two-carrier calibration and a complete public eight-second Veo oracle\ncheck. Google does not publish a local decoder, so a fresh provider check\nremains useful for unusually important files or after provider changes, but it\nis not a product result state.\n\nFor invisible watermark removal, install the `qwen-zimage` extra. **An NVIDIA GPU\nis required**: all profiles are CUDA-only, and there is no CPU or MPS fallback.\n\n```bash\nuv tool install --force \"remove-ai-watermarks[qwen-zimage]\"\nremove-ai-watermarks invisible image.png -o clean.png\n```\n\nIf the local detectors cannot confirm an invisible watermark but you know the\nimage came from an AI generator, add `--force`:\n\n```bash\nremove-ai-watermarks invisible image.png -o clean.png --force\n```\n\nTypography-heavy images can opt into the experimental verified-text post-pass.\nIt accepts manually reviewed strings and line boxes or an operator-verified\ngeometry-only manifest; it never treats raw OCR output as ground truth or runs\nautomatically:\n\n```bash\nuv tool install --force \"remove-ai-watermarks[text-restoration]\"\nremove-ai-watermarks invisible image.png -o clean.png \\\n  --text-manifest verified-lines.json --force\n```\n\nSee the [CLI guide](docs/cli.md#restore-operator-verified-text) for the manifest\nschema, compatibility restrictions, and oracle caveats.\n\nSee the [installation guide](docs/installation.md) for Homebrew, uv, optional\nfeatures, and development setup.\n\n## Examples\n\n### Visible Gemini mark\n\n| Before | After |\n| --- | --- |\n| ![Image with a visible Gemini watermark](demo_banana_before.png) | ![Image after visible watermark removal](demo_banana_after.png) |\n\nThe `after` raster is generated from the tracked `before` raster by the public path:\n\n```bash\nuv run remove-ai-watermarks visible demo_banana_before.png \\\n  --backend cv2 -o demo_banana_after.png\n```\n\n### High quality invisible removal\n\n`qwen-zimage` is the default profile: a Qwen-Image-2512 Lightning pass under Canny\nControlNet, followed by SAM-masked Z-Image repair of any detected face. The\nalternative, `sdxl-zimage`, swaps the global stage for SDXL and keeps the same face\nstage. A third profile, `chroma-zimage`, uses the Apache-2.0 Chroma1 global pass\nwith its own flat vendor floors; see `docs/chroma1-engine-research.md` for the\ncalibration. All are CUDA only.\n\n```bash\nuv tool install --force \"remove-ai-watermarks[qwen-zimage]\"\nremove-ai-watermarks invisible image.png -o clean.png --force\n```\n\n| OpenAI example before | OpenAI example after |\n| --- | --- |\n| [![OpenAI portrait grid before qwen-zimage](data/synthid/originals/ChatGPT%20Image%20May%2030,%202026,%2010_31_08%20AM.png)](data/synthid/originals/ChatGPT%20Image%20May%2030,%202026,%2010_31_08%20AM.png) | [![OpenAI portrait grid after qwen-zimage](docs/images/qwen-zimage/ChatGPT/ChatGPT%20Image%20May%2030,%202026,%2010_31_08%20AM_full_clean.png)](docs/images/qwen-zimage/ChatGPT/ChatGPT%20Image%20May%2030,%202026,%2010_31_08%20AM_full_clean.png) |\n\n| Gemini example before | Gemini example after |\n| --- | --- |\n| [![Gemini sign before qwen-zimage](data/synthid/originals/Gemini_Generated_Image_633uuy633uuy633u.png)](data/synthid/originals/Gemini_Generated_Image_633uuy633uuy633u.png) | [![Gemini sign after qwen-zimage](docs/images/qwen-zimage/Gemini/Gemini_Generated_Image_633uuy633uuy633u_full_clean.p",
+    "text_original_chars": 20509,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-31T00:50:56+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/blob/1d0e6b54dd8c4f8a939a353e48e3ea3712642cfe/README.md"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#87:opened",
+   "payload": {
+    "additions": 112,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 112,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "Bump the minor-and-patch group with 5 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T08:48:22+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/87"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#87:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T18:50:54+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/87"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#87:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T08:48:23+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/87"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#86:opened",
+   "payload": {
+    "additions": 230,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 199,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "Bump the minor-and-patch group across 1 directory with 7 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T17:19:13+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/86"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#86:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T19:22:54+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/86"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#86:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T17:19:14+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/86"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#85:opened",
+   "payload": {
+    "additions": 115,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 115,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "Bump the minor-and-patch group with 5 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T08:47:10+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/85"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#85:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T17:18:51+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/85"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#85:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T08:47:10+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/85"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#85:comment:1",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "Looks like these dependencies are updatable in another way, so this is no longer needed."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T17:18:48+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/85"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#83:opened",
+   "payload": {
+    "additions": 2582,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 35,
+    "deletions": 98,
+    "files": [
+     "README.md",
+     "data/evaluations/fidelity/README.md",
+     "data/evaluations/fidelity/anytext2-restoration-2026-08-13.csv",
+     "data/evaluations/fidelity/face-stage-isolation-2026-08-13.csv",
+     "data/evaluations/fidelity/ground-truth.json",
+     "data/evaluations/fidelity/selective-text-restoration-2026-08-13.csv",
+     "data/evaluations/fidelity/text-lines.json",
+     "data/evaluations/fidelity/text-preservation-2026-08-13.csv",
+     "data/evaluations/fidelity/text-restoration-2026-08-13.csv",
+     "data/evaluations/fidelity/upstream-v2-reproduction-2026-08-13.csv",
+     "docs/cli.md",
+     "docs/installation.md",
+     "docs/known-limitations.md",
+     "docs/module-internals.md",
+     "docs/python-api.md",
+     "docs/text-protection-research.md",
+     "pyproject.toml",
+     "scripts/_text_eval.py",
+     "scripts/fidelity_metrics.py",
+     "scripts/infer_text_lines.py"
+    ],
+    "title": "Add verified text restoration"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T19:26:22+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/83"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#83:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T19:30:27+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/83"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#82:opened",
+   "payload": {
+    "additions": 826,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 47,
+    "files": [
+     "docs/cli.md",
+     "docs/module-internals.md",
+     "docs/python-api.md",
+     "docs/supported-signals.md",
+     "docs/verification-plan.md",
+     "src/remove_ai_watermarks/_internal/c2pa.py",
+     "src/remove_ai_watermarks/_internal/constants.py",
+     "src/remove_ai_watermarks/api.py",
+     "src/remove_ai_watermarks/cli.py",
+     "src/remove_ai_watermarks/identify.py",
+     "src/remove_ai_watermarks/metadata.py",
+     "tests/conftest.py",
+     "tests/test_api.py",
+     "tests/test_cli.py",
+     "tests/test_identify.py",
+     "tests/test_metadata.py",
+     "tests/test_metadata_internals.py",
+     "tests/test_metadata_record.py"
+    ],
+    "title": "Validate C2PA credentials before attribution"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:32:21+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/82"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#82:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:38:47+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/82"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#81:opened",
+   "payload": {
+    "additions": 131,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "data/evaluations/video-synthid-oracle.csv",
+     "docs/known-limitations.md",
+     "docs/video-synthid-quality-research.md"
+    ],
+    "title": "Record the video SynthID measurements and park the investigation"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:08:37+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/81"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#81:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:11:06+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/81"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#80:opened",
+   "payload": {
+    "additions": 96,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 96,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "Bump the minor-and-patch group across 1 directory with 5 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T08:47:56+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/80"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#80:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T03:49:38+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/80"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#80:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T08:47:57+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/80"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#78:opened",
+   "payload": {
+    "additions": 1205,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 27,
+    "files": [
+     ".claude/rules/development.md",
+     ".github/workflows/test.yml",
+     "README.md",
+     "data/README.md",
+     "data/evaluations/video-synthid-oracle.csv",
+     "docs/index.md",
+     "docs/known-limitations.md",
+     "docs/module-internals.md",
+     "docs/synthid.md",
+     "docs/video-synthid-quality-research.md",
+     "scripts/video_fidelity_probe.py",
+     "scripts/video_synthid_sweep.py",
+     "src/remove_ai_watermarks/video_invisible.py",
+     "src/remove_ai_watermarks/video_synthid.py",
+     "tests/test_video_fidelity_probe.py",
+     "tests/test_video_invisible.py"
+    ],
+    "title": "Make the video SynthID operating point measurable and hard to move silently"
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T05:25:16+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/78"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#78:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T05:35:17+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/78"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#77:opened",
+   "payload": {
+    "additions": 3668,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 31,
+    "deletions": 1240,
+    "files": [
+     ".claude/rules/development.md",
+     ".github/workflows/test.yml",
+     ".gitignore",
+     "docs/module-internals.md",
+     "docs/python-api.md",
+     "docs/release-and-distribution.md",
+     "docs/watermarking-landscape.md",
+     "pyproject.toml",
+     "scripts/ai_score.py",
+     "scripts/detection_timing.py",
+     "scripts/detection_timing_report.py",
+     "scripts/record_parity_audit.py",
+     "src/remove_ai_watermarks/__init__.py",
+     "src/remove_ai_watermarks/_internal/c2pa.py",
+     "src/remove_ai_watermarks/_internal/constants.py",
+     "src/remove_ai_watermarks/_internal/isobmff.py",
+     "src/remove_ai_watermarks/_internal/schema.py",
+     "src/remove_ai_watermarks/forensic_metadata.py",
+     "src/remove_ai_watermarks/identify.py",
+     "src/remove_ai_watermarks/metadata.py"
+    ],
+    "title": "Add versioned metadata and pixel evidence transports"
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T04:14:34+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/77"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#77:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T04:19:33+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/77"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#76:opened",
+   "payload": {
+    "additions": 227,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 39,
+    "files": [
+     ".claude/rules/development.md",
+     "docs/module-internals.md",
+     "docs/python-api.md",
+     "src/remove_ai_watermarks/api.py",
+     "src/remove_ai_watermarks/cli.py",
+     "tests/test_api.py",
+     "tests/test_cli.py",
+     "tests/test_identify.py"
+    ],
+    "title": "Make InvisibleOptions engine knobs only and pin the forwarding"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T02:34:20+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/76"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#76:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T02:38:08+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/76"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#75:opened",
+   "payload": {
+    "additions": 3427,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 49,
+    "deletions": 1548,
+    "files": [
+     ".claude/rules/development.md",
+     ".gitignore",
+     "CLAUDE.md",
+     "docs/cli.md",
+     "docs/module-internals.md",
+     "docs/python-api.md",
+     "docs/watermarking-landscape.md",
+     "scripts/ladder_headroom.py",
+     "scripts/vendor_cohort_harvest.py",
+     "scripts/vendor_mark_calibrate.py",
+     "src/remove_ai_watermarks/__init__.py",
+     "src/remove_ai_watermarks/_internal/c2pa.py",
+     "src/remove_ai_watermarks/_internal/constants.py",
+     "src/remove_ai_watermarks/_internal/qwen_zimage_pipeline.py",
+     "src/remove_ai_watermarks/_internal/watermark_profiles.py",
+     "src/remove_ai_watermarks/_text_mark_engine.py",
+     "src/remove_ai_watermarks/api.py",
+     "src/remove_ai_watermarks/baidu_engine.py",
+     "src/remove_ai_watermarks/cli.py",
+     "src/remove_ai_watermarks/doubao_engine.py"
+    ],
+    "title": "Collapse the duplicated detection path and lift the image pipeline into the library"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T05:55:56+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/75"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#75:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T17:21:43+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/75"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#74:opened",
+   "payload": {
+    "additions": 354,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 22,
+    "files": [
+     "docs/module-internals.md",
+     "src/remove_ai_watermarks/_internal/sdxl_zimage_pipeline.py",
+     "src/remove_ai_watermarks/_internal/watermark_profiles.py",
+     "src/remove_ai_watermarks/_internal/watermark_remover.py",
+     "src/remove_ai_watermarks/invisible_engine.py",
+     "tests/test_qwen_zimage_pipeline.py"
+    ],
+    "title": "Add the sdxl-zimage profile: the same recipe on an SDXL global stage"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T04:24:07+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/74"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#74:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T04:27:54+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/74"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#73:opened",
+   "payload": {
+    "additions": 25,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/module-internals.md"
+    ],
+    "title": "Document how the face stage actually composites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T03:44:37+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/73"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#73:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T03:47:58+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/73"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#72:opened",
+   "payload": {
+    "additions": 60,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 9,
+    "files": [
+     "docs/synthid.md"
+    ],
+    "title": "Record the qwen-zimage global denoise boundary against the Gemini oracle"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T02:46:51+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/72"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#72:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T03:16:58+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/72"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#71:opened",
+   "payload": {
+    "additions": 301,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 32,
+    "files": [
+     ".claude/rules/development.md",
+     "docs/module-internals.md",
+     "src/remove_ai_watermarks/_internal/qwen_zimage_pipeline.py",
+     "tests/test_qwen_zimage_pipeline.py"
+    ],
+    "title": "Serve the static prompt embeddings from a persistent cache"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T22:37:15+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/71"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#71:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T22:39:37+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/71"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#70:opened",
+   "payload": {
+    "additions": 12172,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 85,
+    "deletions": 4214,
+    "files": [
+     ".github/workflows/test.yml",
+     ".gitignore",
+     "CLAUDE.md",
+     "README.md",
+     "data/README.md",
+     "data/evaluations/video-synthid-oracle.csv",
+     "docs/cli.md",
+     "docs/code-provenance.md",
+     "docs/controlnet-removal-pipeline-research.md",
+     "docs/index.md",
+     "docs/installation.md",
+     "docs/known-limitations.md",
+     "docs/module-internals.md",
+     "docs/python-api.md",
+     "docs/qwen-improvement-research.md",
+     "docs/release-and-distribution.md",
+     "docs/research-doubao-distillation.md",
+     "docs/supported-signals.md",
+     "docs/synthid.md",
+     "docs/verification-plan.md"
+    ],
+    "title": "Complete product video watermark pipeline"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T17:53:38+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/70"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#70:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T00:00:56+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/70"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#69:opened",
+   "payload": {
+    "additions": 369,
+    "author": "Kaevan89",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 44,
+    "files": [
+     "pyproject.toml",
+     "src/remove_ai_watermarks/dwt_dct.py",
+     "src/remove_ai_watermarks/invisible_watermark.py",
+     "tests/test_invisible_watermark.py",
+     "uv.lock"
+    ],
+    "title": "feat: add torch-free detect-pywavelets extra for DWT-DCT detection"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T16:24:04+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/69"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#69:closed",
+   "payload": {
+    "author": "Kaevan89",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T18:08:55+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/69"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#68:opened",
+   "payload": {
+    "additions": 18,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 18,
+    "files": [
+     "pyproject.toml",
+     "uv.lock"
+    ],
+    "title": "chore(deps): bump the minor-and-patch group across 1 directory with 2 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T23:26:39+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/68"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#68:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T00:30:10+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/68"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#68:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T23:26:40+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/68"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#68:comment:1",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "Looks like these dependencies are no longer updatable, so this is no longer needed."
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T00:30:08+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/68"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#67:opened",
+   "payload": {
+    "additions": 76,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 76,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "chore(deps): bump huggingface-hub from 1.24.0 to 1.25.1 in the minor-and-patch group across 1 directory"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T19:55:40+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/67"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#67:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T23:26:31+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/67"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#67:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T19:55:40+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/67"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#67:comment:1",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "Looks like huggingface-hub is updatable in another way, so this is no longer needed."
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T23:26:29+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/67"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#65:opened",
+   "payload": {
+    "additions": 12,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 12,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "chore(deps): bump the minor-and-patch group across 1 directory with 2 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-07-29T08:47:15+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/65"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#65:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T19:55:34+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/65"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#65:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-07-29T08:47:16+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/65"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#65:comment:1",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "Looks like these dependencies are updatable in another way, so this is no longer needed."
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T19:55:33+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/65"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#64:opened",
+   "payload": {
+    "additions": 200,
+    "author": "salomonMuriel",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 16,
+    "files": [
+     "CLAUDE.md",
+     "README.md",
+     "docs/known-limitations.md",
+     "docs/module-internals.md",
+     "src/remove_ai_watermarks/cli.py",
+     "src/remove_ai_watermarks/invisible_engine.py",
+     "src/remove_ai_watermarks/noai/watermark_remover.py",
+     "tests/test_cli.py",
+     "tests/test_cpu_offload.py"
+    ],
+    "title": "Add --cpu-offload flag for low-VRAM CUDA cards"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T21:07:31+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/64"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#64:merged",
+   "payload": {
+    "author": "salomonMuriel",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T02:08:24+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/64"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#64:comment:0",
+   "payload": {
+    "author": "salomonMuriel",
+    "author_is_bot": false,
+    "body": "Thanks for merging! This fixed a big pain for older GPUs."
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T02:03:00+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/64"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#63:opened",
+   "payload": {
+    "additions": 95,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 87,
+    "files": [
+     "CLAUDE.md",
+     "pyproject.toml",
+     "src/remove_ai_watermarks/noai/qwen_zimage_pipeline.py",
+     "uv.lock"
+    ],
+    "title": "chore(deps): bump the minor-and-patch group across 1 directory with 5 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T16:20:58+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/63"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#63:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T02:04:06+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/63"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#63:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T16:20:58+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/63"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#62:opened",
+   "payload": {
+    "additions": 36,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 36,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "chore(deps): bump the minor-and-patch group with 4 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T08:47:16+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/62"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#62:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T16:20:31+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/62"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#62:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T08:47:17+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/62"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#62:comment:1",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "Looks like these dependencies are updatable in another way, so this is no longer needed."
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T16:20:28+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/62"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#61:opened",
+   "payload": {
+    "additions": 101,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 93,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "chore(deps): bump the minor-and-patch group with 4 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T08:46:37+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/61"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#61:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T22:58:12+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/61"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#61:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "### Labels\n\nThe following labels could not be found: `dependencies`, `python`. Please create them before Dependabot can add them to a pull request.\n\n\nPlease fix the above issues or remove invalid values from `dependabot.yml`."
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T08:46:37+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/61"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#60:opened",
+   "payload": {
+    "additions": 2363,
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "changed_files": 48,
+    "deletions": 2469,
+    "files": [
+     "CLAUDE.md",
+     "README.md",
+     "docs/known-limitations.md",
+     "docs/module-internals.md",
+     "docs/research-doubao-distillation.md",
+     "docs/watermarking-landscape.md",
+     "maintain.sh",
+     "pyproject.toml",
+     "src/remove_ai_watermarks/__init__.py",
+     "src/remove_ai_watermarks/_text_mark_engine.py",
+     "src/remove_ai_watermarks/api.py",
+     "src/remove_ai_watermarks/cli.py",
+     "src/remove_ai_watermarks/doubao_engine.py",
+     "src/remove_ai_watermarks/gemini_engine.py",
+     "src/remove_ai_watermarks/identify.py",
+     "src/remove_ai_watermarks/image_io.py",
+     "src/remove_ai_watermarks/invisible_engine.py",
+     "src/remove_ai_watermarks/invisible_watermark.py",
+     "src/remove_ai_watermarks/jimeng_engine.py",
+     "src/remove_ai_watermarks/metadata.py"
+    ],
+    "title": "v0.14.0: visible-mark localize\u2192fill rewrite, backend priority, fixes"
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T06:43:36+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/60"
+  },
+  {
+   "evidence_id": "pr:wiltodelta/remove-ai-watermarks#60:merged",
+   "payload": {
+    "author": "wiltodelta",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-11T06:53:08+00:00",
+   "url": "https://github.com/wiltodelta/remove-ai-watermarks/pull/60"
+  }
+ ],
+ "repo": "wiltodelta/remove-ai-watermarks",
+ "window": "pre_t"
+}

@@ -119,6 +119,23 @@ PYTHONPATH=. uv run holt analyze NixOS/nixpkgs --replay --show-verification
 Findings whose evidence ids do not resolve are printed as `DROPPED` on stderr and
 never appear in the report.
 
+The other commands run from the same committed evidence, still with no key:
+
+```sh
+# a shortlist, side by side; rows in the order you asked for
+PYTHONPATH=. uv run holt compare runelite/plugin-hub NixOS/nixpkgs --replay
+
+# open issues ranked for someone who has merged work there; no model call at all
+PYTHONPATH=. uv run holt next NixOS/nixpkgs --as mweinelt
+
+# a recorded discovery session: sourcing, free screening, survivor analyses
+PYTHONPATH=. uv run holt discover
+```
+
+`discover` states in its own output that it is replaying a recorded session and
+which GitHub search produced the candidates. `next` prints its measured numbers
+— including the interval that spans zero — above every ranking.
+
 ## 5. Verify the pool was not chosen to flatter the result
 
 ```sh

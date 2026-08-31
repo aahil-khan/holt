@@ -1,0 +1,877 @@
+{
+ "captured_at": "2026-08-31T01:07:49.198313+00:00",
+ "content_sha256": "8bdc7101e9aa41ee334c64e66ed11c0a96ff21ca5d0f6baffe72f6401b5bdd09",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:pypa/hatch:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Modern, extensible Python project management",
+    "homepage_url": "https://hatch.pypa.io/latest/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-18T23:06:33Z",
+    "stargazer_count": 7231
+   },
+   "source": "github",
+   "timestamp": "2017-05-31T23:37:53+00:00",
+   "url": "https://github.com/pypa/hatch"
+  },
+  {
+   "evidence_id": "repo:pypa/hatch:readme",
+   "payload": {
+    "commit_oid": "ed8e30bebf98f2fe4d70c18a32a50a8160c391cb",
+    "kind": "readme",
+    "text": "# Hatch\n\n<div align=\"center\">\n\n<img src=\"https://raw.githubusercontent.com/pypa/hatch/master/docs/assets/images/logo.svg\" alt=\"Hatch logo\" width=\"500\" role=\"img\">\n\n| | |\n| --- | --- |\n| CI/CD | [![CI - Test](https://github.com/pypa/hatch/actions/workflows/test.yml/badge.svg)](https://github.com/pypa/hatch/actions/workflows/test.yml) [![CD - Build Hatch](https://github.com/pypa/hatch/actions/workflows/build-hatch.yml/badge.svg)](https://github.com/pypa/hatch/actions/workflows/build-hatch.yml) [![CD - Build Hatchling](https://github.com/pypa/hatch/actions/workflows/build-hatchling.yml/badge.svg)](https://github.com/pypa/hatch/actions/workflows/build-hatchling.yml) |\n| Docs | [![Docs - Release](https://github.com/pypa/hatch/actions/workflows/docs-release.yml/badge.svg)](https://github.com/pypa/hatch/actions/workflows/docs-release.yml) [![Docs - Dev](https://github.com/pypa/hatch/actions/workflows/docs-dev.yml/badge.svg)](https://github.com/pypa/hatch/actions/workflows/docs-dev.yml) |\n| Package | [![PyPI - Version](https://img.shields.io/pypi/v/hatch.svg?logo=pypi&label=PyPI&logoColor=gold)](https://pypi.org/project/hatch/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hatch.svg?logo=python&label=Python&logoColor=gold)](https://pypi.org/project/hatch/) [![PyPI - Installs](https://img.shields.io/pypi/dm/hatchling.svg?color=blue&label=Installs&logo=pypi&logoColor=gold)](https://pypi.org/project/hatch/) [![Release - Downloads](https://img.shields.io/github/downloads/pypa/hatch/total?label=Downloads)](https://github.com/pypa/hatch/releases) |\n| Meta | [![Hatch project](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pypa/hatch/master/docs/assets/badge/v0.json)](https://github.com/pypa/hatch) [![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff) [![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg)](https://github.com/python/mypy) [![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/) [![GitHub Sponsors](https://img.shields.io/github/sponsors/ofek?logo=GitHub%20Sponsors&style=social)](https://github.com/sponsors/ofek) |\n\n</div>\n\n-----\n\nHatch is a modern, extensible Python project manager.\n\n## Features\n\n- Standardized [build system](https://hatch.pypa.io/latest/config/build/#build-system) with reproducible builds by default\n- Robust [environment management](https://hatch.pypa.io/latest/environment/) with support for custom scripts and UV\n- Configurable [Python distribution management](https://hatch.pypa.io/latest/tutorials/python/manage/)\n- [Test execution](https://hatch.pypa.io/latest/tutorials/testing/overview/) with known best practices\n- [Static analysis](https://hatch.pypa.io/latest/config/static-analysis/) with sane defaults\n- Built-in Python [script runner](https://hatch.pypa.io/latest/how-to/run/python-scripts/)\n- Easy [publishing](https://hatch.pypa.io/latest/publish/) to PyPI or other indices\n- [Version](https://hatch.pypa.io/latest/version/) management\n- Best practice [project generation](https://hatch.pypa.io/latest/config/project-templates/)\n- Responsive [CLI](https://hatch.pypa.io/latest/cli/about/), ~2-3x [faster](https://github.com/pypa/hatch/actions/workflows/cli.yml) than equivalent tools\n\nSee the [Why Hatch?](https://hatch.pypa.io/latest/why/) page for more information.\n\n## Documentation\n\nThe [documentation](https://hatch.pypa.io/) is made with [Material for MkDocs](https://github.com/squidfunk/mkdocs-material) and is hosted by [GitHub Pages](https://docs.github.com/en/pages).\n\n## License\n\nHatch is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T20:47:42+00:00",
+   "url": "https://github.com/pypa/hatch/blob/ed8e30bebf98f2fe4d70c18a32a50a8160c391cb/README.md"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2407:opened",
+   "payload": {
+    "additions": 145,
+    "author": "MaxxxDong",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "src/hatch/env/plugin/interface.py",
+     "src/hatch/project/core.py",
+     "tests/cli/build/test_build.py",
+     "tests/env/plugin/test_interface.py"
+    ],
+    "title": "Fix require-runtime-dependencies not being installed in the build environment"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T15:58:10+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2407"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2405:opened",
+   "payload": {
+    "additions": 36,
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 7,
+    "files": [
+     "src/hatch/python/core.py",
+     "src/hatch/python/distributions.py",
+     "src/hatch/python/resolve.py",
+     "tests/python/test_core.py",
+     "tests/python/test_resolve.py"
+    ],
+    "title": "Support free-threaded Python aliases"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:50:03+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2405"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2404:opened",
+   "payload": {
+    "additions": 1,
+    "author": "MsfPablo",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/how-to/config/constrain-hatch.md"
+    ],
+    "title": "docs: fix 'contraints' typo in constrain-hatch guide"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T19:00:08+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2404"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2403:opened",
+   "payload": {
+    "additions": 14,
+    "author": "SirHegel",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "docs/history/hatch.md",
+     "src/hatch/env/lockers/uv.py",
+     "src/hatch/env/virtual.py"
+    ],
+    "title": "Strip the free-threaded suffix before handing a version to uv"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T20:03:30+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2403"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2401:opened",
+   "payload": {
+    "additions": 3,
+    "author": "Himanshuagrawal4",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "docs/how-to/integrate/vscode.md"
+    ],
+    "title": "docs: update VS Code integration"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T09:05:05+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2401"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2400:opened",
+   "payload": {
+    "additions": 5,
+    "author": "musicinmybrain",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "tests/cli/build/test_build.py",
+     "tests/cli/version/test_version.py"
+    ],
+    "title": "Mark a few more tests that require Internet access"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T07:51:49+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2400"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2399:opened",
+   "payload": {
+    "additions": 17,
+    "author": "musicinmybrain",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "tests/cli/run/test_run.py"
+    ],
+    "title": "Fix a couple of tests when no \u201cpython\u201d in path"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T06:08:12+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2399"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2399:comment:0",
+   "payload": {
+    "author": "musicinmybrain",
+    "author_is_bot": false,
+    "body": "On MacOS: `/bin/sh: /Users/runner/Library/Application: No such file or directory`\r\n\r\nThis is because `sys.executable` is something like `/Users/runner/Library/Application Support/hatch/env/virtual/hatch/h61Cbry8/hatch-test.py3.14/bin/python3`, the construction of the test config doesn\u2019t do shell quoting, and there is whitespace in the path.\r\n\r\nI suppose one option would be to assume that just having the correct executable *name* from `sys.executable` suffices, and that the executable name itself doesn\u2019t have whitespace. These aren\u2019t necessarily bulletproof assumptions, but they are probably good enough for testing, and still an improvement over a hard-coded `python`.\r\n\r\nAnother option would be to map `sys.executable` through [`shlex.quote`](https://docs.python.org/3/library/shlex.html#shlex.quote), but this is only guaranteed to work properly for POSIXy shells."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T08:04:45+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2399"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2399:comment:1",
+   "payload": {
+    "author": "musicinmybrain",
+    "author_is_bot": false,
+    "body": "> I suppose one option would be to assume that just having the correct executable _name_ from `sys.executable` suffices, and that the executable name itself doesn\u2019t have whitespace. These aren\u2019t necessarily bulletproof assumptions, but they are probably good enough for testing, and still an improvement over a hard-coded `python`.\r\n\r\nI implemented this for now. Let\u2019s see how it goes."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T09:03:51+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2399"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2398:opened",
+   "payload": {
+    "additions": 39,
+    "author": "cjames23",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 6,
+    "files": [
+     "backend/src/hatchling/metadata/core.py",
+     "backend/src/hatchling/metadata/spec.py",
+     "tests/backend/metadata/test_core.py",
+     "tests/backend/metadata/test_spec.py"
+    ],
+    "title": "Fix version metadata to preserve leading zeros in CalVer"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T22:38:48+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2398"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2397:opened",
+   "payload": {
+    "additions": 39,
+    "author": "valentinoli",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/hatch/env/utils.py",
+     "tests/env/test_utils.py"
+    ],
+    "title": "Fix env var formatting in `get_env_var()` function"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T20:56:48+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2397"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2397:comment:0",
+   "payload": {
+    "author": "valentinoli",
+    "author_is_bot": false,
+    "body": "@cjames23 can you please review this bug fix? "
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T11:13:10+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2397"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2397:comment:1",
+   "payload": {
+    "author": "valentinoli",
+    "author_is_bot": false,
+    "body": "@cjames23 I would appreciate if this gets fixed soon as variables containing a dash are currently not made available in Hatch\r\n\r\nFor instance, the below variable is not exposed:\r\n\r\n```toml\r\n[tool.hatch.envs.default.env-vars]\r\n\"HATCH_ENV_TYPE_PIP-COMPILE_UV_PATH\" = \"{root:real}/scripts/uv\"\r\n```\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T12:47:25+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2397"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2397:comment:2",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "@valentinoli I will look at this when I have some free time. Keep in mind that Ofek and I both do this outside of our regular jobs so we might not be looking every single day at PRs and issues created"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T20:53:39+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2397"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2397:comment:3",
+   "payload": {
+    "author": "valentinoli",
+    "author_is_bot": false,
+    "body": "> @valentinoli I will look at this when I have some free time. Keep in mind that Ofek and I both do this outside of our regular jobs so we might not be looking every single day at PRs and issues created\r\n\r\nI completely understand, take your time as always and thank you for your dedication to this project. <3 "
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T23:42:03+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2397"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2396:opened",
+   "payload": {
+    "additions": 41,
+    "author": "arose26",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "backend/src/hatchling/builders/config.py",
+     "docs/config/build.md",
+     "docs/history/hatchling.md",
+     "tests/backend/builders/test_config.py"
+    ],
+    "title": "Honor .git/info/exclude when excluding files based on version control"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T22:01:02+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2396"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2395:opened",
+   "payload": {
+    "additions": 43,
+    "author": "arose26",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "src/hatch/env/lockers/uv.py",
+     "src/hatch/env/virtual.py",
+     "tests/env/lockers/__init__.py",
+     "tests/env/lockers/test_uv.py"
+    ],
+    "title": "Strip the build variant when passing a Python version to uv"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T14:47:55+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2395"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2395:closed",
+   "payload": {
+    "author": "arose26",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T15:58:01+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2395"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2395:comment:0",
+   "payload": {
+    "author": "mochaaP",
+    "author_is_bot": false,
+    "body": "not sure if this is what we want to do: there are wheels targeting the freethreading ABI (there is a separate abi tag for it), so the value matters.\r\n\r\nI'm not sure what's uv's stance on this.\r\n\r\nrepro:\r\n\r\n```\r\n# list taken from https://hugovk.dev/free-threaded-wheels/\r\ncat <<EOF > requirements.in\r\ncryptography\r\ncffi\r\npyyaml\r\nnumpy\r\npydantic-core\r\nmarkupsafe\r\npandas\r\naiohttp\r\npillow\r\nwebsockets\r\nscipy\r\nlxml\r\ntomli\r\nEOF\r\n\r\ndiff -u \\\r\n  <(uv pip compile requirements.in --format pylock.toml --python=3.14) \\\r\n  <(uv pip compile requirements.in --format pylock.toml --python=3.14t)\r\n```\r\n\r\nplease do not submit code that you don't fully understand, thanks."
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T22:25:33+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2395"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2395:comment:1",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "> please do not submit code that you don't fully understand, thanks.\r\n\r\n@mochaaP Please leave these types of comments to maintainers to make. It is our call when we look at PRs as to what we consider meets our AI contribution policy or not. "
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T21:49:01+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2395"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2394:opened",
+   "payload": {
+    "additions": 36,
+    "author": "r-w-dev",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/hatch/env/virtual.py",
+     "tests/cli/env/test_create.py"
+    ],
+    "title": "Fix: Resolve already installed internal interpreter path"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T11:01:03+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2394"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2392:opened",
+   "payload": {
+    "additions": 79,
+    "author": "aryansk",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "src/hatch/cli/application.py",
+     "tests/cli/test_application.py"
+    ],
+    "title": "Fix pip --python flag ordering in PYAPP-mode plugin dependency sync"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T00:42:17+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2392"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2390:opened",
+   "payload": {
+    "additions": 91,
+    "author": "davebelais",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 24,
+    "files": [
+     "docs/history/hatch.md",
+     "src/hatch/cli/application.py",
+     "tests/cli/env/test_create.py",
+     "tests/conftest.py",
+     "tests/helpers/helpers.py"
+    ],
+    "title": "Fix `hatch.cli.application.Application.ensure_plugin_dependencies` PyApp Compatibility"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T23:29:46+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2390"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2390:review:0",
+   "payload": {
+    "author": "alvinhenrick",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T16:23:02+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2390"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2388:opened",
+   "payload": {
+    "additions": 88,
+    "author": "Kayforkind",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "backend/src/hatchling/builders/utils.py",
+     "tests/backend/builders/plugin/test_interface.py"
+    ],
+    "title": "Skip in-tree directory links so sdist keeps the real package"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T06:59:39+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2388"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2388:review:0",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T21:55:55+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2388"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2388:comment:0",
+   "payload": {
+    "author": "Kayforkind",
+    "author_is_bot": false,
+    "body": "@cjames23 thanks for the master sync. Comment cleanup in \backend/src/hatchling/builders/utils.py and \tests/backend/builders/plugin/test_interface.py is in ef34209 \u2014 issue links dropped, comment kept to the inode first-seen-wins trap that isn't obvious from the code. CI is green on the merged HEAD. Ready when you are for another look."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T15:27:59+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2388"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2387:opened",
+   "payload": {
+    "additions": 218,
+    "author": "Kayforkind",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 1,
+    "files": [
+     "backend/src/hatchling/builders/sdist.py",
+     "docs/config/build.md",
+     "docs/history/hatchling.md",
+     "docs/plugins/builder/sdist.md",
+     "docs/plugins/builder/wheel.md",
+     "tests/backend/builders/test_sdist.py"
+    ],
+    "title": "Include in-tree wheel sources in source distributions"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T06:33:22+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2387"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2386:opened",
+   "payload": {
+    "additions": 230,
+    "author": "Kayforkind",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 22,
+    "files": [
+     "backend/src/hatchling/builders/sdist_wheel.py",
+     "backend/src/hatchling/cli/build/__init__.py",
+     "docs/build.md",
+     "src/hatch/cli/build/__init__.py",
+     "tests/cli/build/test_build.py"
+    ],
+    "title": "Build wheel from sdist when both targets are requested"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T03:00:29+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2386"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2385:opened",
+   "payload": {
+    "additions": 22,
+    "author": "aryansk",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 6,
+    "files": [
+     "backend/src/hatchling/metadata/core.py",
+     "backend/src/hatchling/metadata/spec.py",
+     "tests/backend/metadata/test_core.py"
+    ],
+    "title": "Preserve original version strings in core metadata"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:22:54+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2385"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2385:review:0",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T00:38:04+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2385"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2383:opened",
+   "payload": {
+    "additions": 123,
+    "author": "cjames23",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 78,
+    "files": [
+     "src/hatch/cli/__init__.py",
+     "src/hatch/cli/check/__init__.py",
+     "src/hatch/cli/env/__init__.py",
+     "src/hatch/cli/lazy.py",
+     "src/hatch/cli/python/__init__.py"
+    ],
+    "title": "Lazy import of commands startup perf"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T04:56:48+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2383"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:opened",
+   "payload": {
+    "additions": 375,
+    "author": "cjames23",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 44,
+    "files": [
+     "src/hatch/dep/sync.py",
+     "src/hatch/env/plugin/interface.py",
+     "src/hatch/utils/dep.py",
+     "tests/env/plugin/test_interface.py"
+    ],
+    "title": "Refactor extras so that the logic is in one place"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T00:16:35+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:merged",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T20:47:43+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:review:0",
+   "payload": {
+    "author": "myaibiz5388-design",
+    "author_is_bot": false,
+    "body": "",
+    "state": "DISMISSED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T03:20:10+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:review:1",
+   "payload": {
+    "author": "flying-sheep",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T08:23:01+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:review:2",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T18:30:13+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:review:3",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T18:30:40+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:comment:0",
+   "payload": {
+    "author": "flying-sheep",
+    "author_is_bot": false,
+    "body": "Very cool! *Please* make sure to move over the regression tests from https://github.com/pypa/hatch/pull/2381 so it\u2019s clear that these cases are fixed. We *need* to make sure that further changes don\u2019t regress.\r\n\r\nComments that don\u2019t need to be part of this PR:\r\n\r\nI do wonder why this PR has a positive diff ratio. If it would unify the logic, wouldn\u2019t that mean that there\u2019s more code reuse and the diff is neutral or negative? Or is that because of the hatch-hatchling split so the logic is duplicated between both? If so \u2013 why is removing hatchling as a runtime dependency a goal if it contains logic we otherwise need to duplicate in `hatch`?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T07:00:04+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:comment:1",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "> I do wonder why this PR has a positive diff ratio. If it would unify the logic, wouldn\u2019t that mean that there\u2019s more code reuse and the diff is neutral or negative? Or is that because of the hatch-hatchling split so the logic is duplicated between both? If so \u2013 why is removing hatchling as a runtime dependency a goal if it contains logic we otherwise need to duplicate in `hatch`?\r\n\r\nThe code reuse is there but in order to properly centralize the logic it required an additional function in Project. \r\n\r\nIn terms of removing hatchling as a runtime dependency as a goal, hatch as a CLI should not require hatchling the build backend in order to be used. The same is true of hatchling which already does not require hatch to be used. We are trying to have that decoupling be completed fully. Right now hatchling has to be installed even if it is not the build backend that will be used. "
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T14:32:21+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2382:comment:2",
+   "payload": {
+    "author": "flying-sheep",
+    "author_is_bot": false,
+    "body": "Very cool, thank you!\r\n\r\nI feel like with all the different properties, the design could still be simplified, but that\u2019s not as urgent as a fix."
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T19:00:47+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2382"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2381:opened",
+   "payload": {
+    "additions": 280,
+    "author": "flying-sheep",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 18,
+    "files": [
+     "docs/history/hatch.md",
+     "src/hatch/env/plugin/interface.py",
+     "tests/env/plugin/test_interface.py"
+    ],
+    "title": "fix: expand recursive extras manually, normalize extra names"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T13:26:32+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2381"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2380:opened",
+   "payload": {
+    "additions": 65,
+    "author": "aryansk",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 6,
+    "files": [
+     "backend/src/hatchling/builders/sdist.py",
+     "backend/src/hatchling/metadata/core.py",
+     "tests/backend/builders/test_sdist.py",
+     "tests/backend/metadata/test_core.py"
+    ],
+    "title": "fix(metadata): allow readme paths outside the project directory"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T11:14:01+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2380"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2380:comment:0",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "https://hatch.pypa.io/latest/community/contributing/#ai-contributions"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T01:03:56+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2380"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2380:comment:1",
+   "payload": {
+    "author": "aryansk",
+    "author_is_bot": false,
+    "body": "Thanks for pointing me to the policy. I added an AI Assistance Disclosure to the PR body, naming Codex and describing the implementation, test-design, and verification assistance."
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T05:29:52+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2380"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:opened",
+   "payload": {
+    "additions": 75,
+    "author": "shixi-li",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/hatch/env/virtual.py",
+     "tests/env/test_virtual.py"
+    ],
+    "title": "fix: preserve local projects in locked uv environments"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T08:53:59+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:review:0",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "Please keep changes to what needs to be done to address the problem, renaming variables does not fall underneath that. ",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T22:52:27+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:review:1",
+   "payload": {
+    "author": "shixi-li",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T14:37:27+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:comment:0",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "body": "Thanks for the contribution. The reordering (lock first, then reinstall local packages) is the right direction, but I don't think this actually fixes the reported issue. In a single-project setup with no workspace members (which is what #2372 describes),` local_dependencies_complex` won't include the root project as it's installed separately via `install_project_dev_mode()` during env creation, so `workspace_install_args` will be empty and the `if workspace_install_args:` guard means the root editable never gets reinstalled after `uv pip sync` nukes it. The fix needs to also re-install the root project itself (when skip-install is false and dev-mode is true) after applying the lock. Additionally, `get_source_install_args(self.all_dependencies_complex)` triggers metadata preparation which is wasted work under `--no-deps` since no index is consulted \u2014 the install args should just be `[\"--no-deps\"] + workspace_install_args` directly."
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T01:37:51+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:comment:1",
+   "payload": {
+    "author": "shixi-li",
+    "author_is_bot": false,
+    "body": "Addressed both points in b3ef4022. The current local_dependencies_complex does include the root project, but the locked-sync path now makes root restoration explicit instead of depending on that collection: it adds the root whenever skip-install is false, preserves dev-mode behavior, skips the duplicate root entry, and restores workspace members separately after the lock sync. The post-lock install command is now exactly --no-deps plus the local install arguments, so it no longer prepares source metadata. The regression test explicitly asserts a single-project setup with no workspace members and verifies lock then editable root install. Validation: 34 focused lock tests passed (tests/env/test_virtual.py plus tests/cli/env/test_lock.py); test_sync_dependencies_uv passed; Ruff check/format and the targeted mypy check passed. The five upstream workflows for this fork update are currently action_required before creating checks; could a maintainer approve them when reviewing the update?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T03:06:59+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:comment:2",
+   "payload": {
+    "author": "mochaaP",
+    "author_is_bot": false,
+    "body": "Hi, if this PR is mainly or partially generated with LLM, please disclose it."
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T06:34:06+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:comment:3",
+   "payload": {
+    "author": "shixi-li",
+    "author_is_bot": false,
+    "body": "Thanks for checking. This is already disclosed in the PR description under **AI assistance**: I used OpenAI Codex for implementation analysis, drafting the focused patch and regression test, and validation, and I reviewed and understand the final diff. If Hatch expects a different placement or disclosure format, please let me know and I\u2019ll update it."
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T15:30:01+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2379:comment:4",
+   "payload": {
+    "author": "shixi-li",
+    "author_is_bot": false,
+    "body": "Follow-up on the remaining review gate: the requested variable-name cleanup is addressed in `92619485`, the review thread is resolved, and all current GitHub Actions checks are green. I do not have permission to use GitHub\u2019s re-request-review action on this repository. @cjames23, could you please re-review the updated head when convenient?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T06:01:56+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2379"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2377:opened",
+   "payload": {
+    "additions": 2,
+    "author": "cjames23",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/build-hatch.yml",
+     ".github/workflows/build-hatchling.yml"
+    ],
+    "title": "Fix ci"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T04:53:15+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2377"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2377:merged",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T04:55:21+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2377"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2376:opened",
+   "payload": {
+    "additions": 128,
+    "author": "cjames23",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "docs/blog/posts/release-hatch-1180.md",
+     "docs/history/hatch.md"
+    ],
+    "title": "release Hatch v1.18.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T04:16:02+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2376"
+  },
+  {
+   "evidence_id": "pr:pypa/hatch#2376:merged",
+   "payload": {
+    "author": "cjames23",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T04:30:57+00:00",
+   "url": "https://github.com/pypa/hatch/pull/2376"
+  }
+ ],
+ "repo": "pypa/hatch",
+ "window": "pre_t"
+}

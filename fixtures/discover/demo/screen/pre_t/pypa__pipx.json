@@ -1,0 +1,935 @@
+{
+ "captured_at": "2026-08-31T01:07:23.681748+00:00",
+ "content_sha256": "173c4bc08c53c0f5b61951cd7aa3e86fd6dd405be09ebb2b1aa3a65327679d50",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:pypa/pipx:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Install and Run Python Applications in Isolated Environments",
+    "homepage_url": "https://pipx.pypa.io",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-30T19:38:48Z",
+    "stargazer_count": 12950
+   },
+   "source": "github",
+   "timestamp": "2018-10-06T18:47:46+00:00",
+   "url": "https://github.com/pypa/pipx"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2025:opened",
+   "payload": {
+    "additions": 60,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 13,
+    "files": [
+     "changelog.d/2025.misc.md",
+     "tests/conftest.py",
+     "tests/test_install.py",
+     "tests/test_run.py"
+    ],
+    "title": "\ud83d\udc77 test: keep the suite off the real internet"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T18:01:59+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2025"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2025:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:30:33+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2025"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2024:opened",
+   "payload": {
+    "additions": 152,
+    "author": "dylanpulver",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 64,
+    "files": [
+     "changelog.d/2024.bugfix.md",
+     "src/pipx/commands/environment.py",
+     "tests/conftest.py",
+     "tests/test_environment.py",
+     "tests/test_install.py",
+     "tests/test_run.py"
+    ],
+    "title": "fix(environment): report PIPX_MAX_LOGS"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T07:05:26+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2024"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2024:merged",
+   "payload": {
+    "author": "dylanpulver",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T18:49:47+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2024"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2023:opened",
+   "payload": {
+    "additions": 145,
+    "author": "iam-kira",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 166,
+    "files": [
+     "changelog.d/2021.misc.md",
+     "tests/conftest.py",
+     "tests/test_uninject.py"
+    ],
+    "title": "tests: make utils_temp_dir work without symlink privilege"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T17:50:17+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2023"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2023:merged",
+   "payload": {
+    "author": "iam-kira",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T17:57:43+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2023"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2022:opened",
+   "payload": {
+    "additions": 27,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 19,
+    "files": [
+     "changelog.d/2022.misc.md",
+     "tests/conftest.py"
+    ],
+    "title": "\ud83e\uddea test(conftest): run without symlink privilege on Windows"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T14:25:19+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2022"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2022:closed",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:56:26+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2022"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2022:comment:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "Closing in favour of #2023, which @iam-kira opened with the same fix from the original report."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:56:25+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2022"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2020:opened",
+   "payload": {
+    "additions": 4,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "tests/test_main.py"
+    ],
+    "title": "\ud83e\uddea test: isolate the verbosity test from the real pipx home"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:55:15+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2020"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2020:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:15:52+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2020"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2019:opened",
+   "payload": {
+    "additions": 52,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 22,
+    "files": [
+     "pyproject.toml",
+     "tests/conftest.py",
+     "tests/test_standalone_interpreter.py"
+    ],
+    "title": "\ud83e\uddea test: fail the suite on warnings"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:54:36+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2019"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2019:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:16:35+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2019"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2018:opened",
+   "payload": {
+    "additions": 278,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 11,
+    "files": [
+     "changelog.d/2014.feature.md",
+     "docs/explanation/scope.rst",
+     "docs/how-to/dependency-cooldown.rst",
+     "docs/how-to/index.rst",
+     "docs/how-to/use-uv-backend.rst",
+     "docs/reference/environment-variables.rst",
+     "docs/reference/metadata.rst",
+     "docs/tutorial/install-applications.rst",
+     "src/pipx/commands/environment.py",
+     "src/pipx/commands/install.py",
+     "src/pipx/constants.py",
+     "src/pipx/main.py",
+     "tests/test_install.py",
+     "tests/test_main.py"
+    ],
+    "title": "\u2728 feat(cooldown): add PIPX_COOLDOWN environment default"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:34:13+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2018"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2018:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:16:10+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2018"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2017:opened",
+   "payload": {
+    "additions": 4,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "changelog.d/2015.bugfix.md",
+     "pyproject.toml"
+    ],
+    "title": "\ud83d\udc1b fix(deps): require packaging>=26"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:34:03+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2017"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2017:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:15:30+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2017"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2016:opened",
+   "payload": {
+    "additions": 186,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 12,
+    "files": [
+     "changelog.d/2014.feature.md",
+     "changelog.d/2015.bugfix.md",
+     "docs/reference/environment-variables.rst",
+     "src/pipx/commands/environment.py",
+     "src/pipx/commands/install.py",
+     "src/pipx/constants.py",
+     "src/pipx/main.py",
+     "src/pipx/package_specifier.py",
+     "tests/test_install.py",
+     "tests/test_main.py"
+    ],
+    "title": "\u2728\ud83d\udc1b feat(cooldown): add PIPX_COOLDOWN, pin direct-reference spelling"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:15:30+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2016"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2016:closed",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:33:23+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2016"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2016:comment:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "Splitting into one PR per issue: #2014 and #2015 are unrelated and should land separately."
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:33:23+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2016"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2013:opened",
+   "payload": {
+    "additions": 2,
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     ".pre-commit-config.yaml"
+    ],
+    "title": "[pre-commit.ci] pre-commit autoupdate"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T18:59:49+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2013"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2013:merged",
+   "payload": {
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T20:34:42+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2013"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2013:review:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "LGTM",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T20:34:39+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2013"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2012:opened",
+   "payload": {
+    "additions": 4,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     ".github/workflows/tests.yml"
+    ],
+    "title": "build(deps): bump astral-sh/setup-uv from 10.0.0 to 10.0.1 in the actions group"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T18:37:55+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2012"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2012:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T18:54:29+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2012"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2011:opened",
+   "payload": {
+    "additions": 1,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".github/dependabot.yaml"
+    ],
+    "title": "\ud83d\udd27 chore: batch dependency updates weekly on Tuesday"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T21:57:10+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2011"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2011:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T18:36:31+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2011"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2010:opened",
+   "payload": {
+    "additions": 4,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     ".github/workflows/tests.yml"
+    ],
+    "title": "build(deps): bump astral-sh/setup-uv from 9.0.0 to 10.0.0 in the actions group"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T18:03:21+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2010"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2010:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T19:44:35+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2010"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2010:review:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "LGTM",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T19:44:32+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2010"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2009:opened",
+   "payload": {
+    "additions": 30,
+    "author": "SirHegel",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/pipx/main.py",
+     "tests/test_main.py"
+    ],
+    "title": "Fall back to 'pipx' when argv[0] is not pipx"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:53:36+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2009"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2009:closed",
+   "payload": {
+    "author": "SirHegel",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T19:40:09+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2009"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2009:comment:0",
+   "payload": {
+    "author": "SirHegel",
+    "author_is_bot": false,
+    "body": "Closing \u2014 #2007 predates this by five days and fixes #2005 more surgically: it threads an explicit `prog` through `get_command_parser()` so only `build_parser()` overrides it, leaving `prog_name()` alone.\n\nOne difference worth having on record, since the two are not equivalent in scope. #2007 fixes the docs build. This one changed `prog_name()` itself to fall back to `\"pipx\"` whenever `argv[0]` is neither a `pipx*` binary nor `__main__.py`, which also covers any *other* host process that imports the parser \u2014 a test runner, an embedding tool. Whether that wider behaviour is wanted is a design call, not a bug fix, so #2007 is the right shape for this issue.\n\nSorry for the duplicate; I filtered #2005 on having no assignee and no comments and did not check for a PR already referencing it."
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T19:40:09+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2009"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2008:opened",
+   "payload": {
+    "additions": 2,
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     ".pre-commit-config.yaml"
+    ],
+    "title": "[pre-commit.ci] pre-commit autoupdate"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T19:21:17+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2008"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2008:merged",
+   "payload": {
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T22:12:02+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2008"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2008:review:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "LGTM",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T22:11:58+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2008"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2007:opened",
+   "payload": {
+    "additions": 51,
+    "author": "karlhillx",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 31,
+    "files": [
+     "changelog.d/2005.doc.md",
+     "pyproject.toml",
+     "src/pipx/main.py",
+     "tests/test_main.py"
+    ],
+    "title": "DOC: Use pipx as the docs parser program name"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T12:19:29+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2007"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2007:merged",
+   "payload": {
+    "author": "karlhillx",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T04:14:50+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2007"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2007:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR fixes the generated CLI reference in the Sphinx docs so it consistently shows `pipx` as the program name (instead of inheriting `sys.argv[0]` like `sphinx-build` during documentation builds).\n\n**Changes:**\n- Adds an optional `prog` override to `get_command_parser()` and uses it in `build_parser()` to force `prog=\"pipx\"` for docs generation.\n- Adds a regression test asserting both the root parser `prog` and the nested `run` subparser `prog`.\n- Adds a changelog fragment documenting the docs output fix.\n\n### Reviewed changes\n\nCopilot reviewed 3 out of 3 changed files in this pull request and generated 2 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `src/pipx/main.py` | Allows explicitly overriding the argparse `prog` and forces `pipx` for the docs parser returned by `build_parser()`. |\n| `tests/test_main.py` | Adds a regression test ensuring docs parser naming stays `pipx` even when `sys.argv[0]` is `sphinx-build`. |\n| `changelog.d/2005.doc.md` | Documents the CLI reference output correction in the changelog fragments. |\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/pypa/pipx/new/main?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T12:21:21+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2007"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2006:opened",
+   "payload": {
+    "additions": 113,
+    "author": "DSeaStar",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 27,
+    "files": [
+     "changelog.d/2004.bugfix.md",
+     "docs/how-to/use-uv-backend.rst",
+     "pyproject.toml",
+     "src/pipx/commands/run.py",
+     "tests/test_run.py"
+    ],
+    "title": "Honor [pipx.run] for typed --spec app names on the uv backend"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T15:14:13+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2006"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2006:merged",
+   "payload": {
+    "author": "DSeaStar",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T04:14:56+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2006"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2003:opened",
+   "payload": {
+    "additions": 2,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/release.yml",
+     ".github/workflows/zizmor.yml"
+    ],
+    "title": "build(deps): bump the actions group with 2 updates"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T18:04:00+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2003"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2003:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T22:06:23+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2003"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2002:opened",
+   "payload": {
+    "additions": 4,
+    "author": "aroh3006",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "changelog.d/2002.doc.md",
+     "docs/how-to/configure-paths.rst",
+     "docs/reference/environment-variables.rst"
+    ],
+    "title": "docs: correct the Windows default for PIPX_HOME"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T09:41:45+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2002"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2002:merged",
+   "payload": {
+    "author": "aroh3006",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T18:07:59+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2002"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2002:review:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T16:00:19+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2002"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2001:opened",
+   "payload": {
+    "additions": 306,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 101,
+    "files": [
+     "changelog.d/2001.bugfix.md",
+     "src/pipx/standalone_python.py",
+     "testdata/standalone_python_index_20250818.json",
+     "testdata/standalone_python_index_20250828.json",
+     "tests/conftest.py",
+     "tests/helpers.py",
+     "tests/test_install.py",
+     "tests/test_interpreter.py",
+     "tests/test_list.py",
+     "tests/test_standalone_interpreter.py"
+    ],
+    "title": "\ud83d\udc1b fix(standalone): retry index fetch, resume dropped downloads"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T19:26:07+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2001"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2001:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T21:36:10+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2001"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2000:opened",
+   "payload": {
+    "additions": 5,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "docs/conf.py",
+     "pyproject.toml"
+    ],
+    "title": "\ud83d\udcc4 docs: publish llms.txt from the docs build"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T16:42:44+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2000"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#2000:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T20:51:07+00:00",
+   "url": "https://github.com/pypa/pipx/pull/2000"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1999:opened",
+   "payload": {
+    "additions": 69,
+    "author": "Cycloctane",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 32,
+    "files": [
+     "changelog.d/1999.bugfix.md",
+     "src/pipx/backends/pip.py",
+     "src/pipx/shared_libs.py",
+     "src/pipx/util.py",
+     "src/pipx/venv.py",
+     "tests/test_shared_libs.py",
+     "tests/test_venv.py"
+    ],
+    "title": "Handle multiple site-packages paths in virtual environments"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T14:52:00+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1999"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1999:merged",
+   "payload": {
+    "author": "Cycloctane",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T18:26:06+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1999"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1999:review:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T18:08:48+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1999"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1999:comment:0",
+   "payload": {
+    "author": "Cycloctane",
+    "author_is_bot": false,
+    "body": "The reproducer test case in commit <https://github.com/pypa/pipx/pull/1999/commits/efcd89d53df47f7a830244be77e7e12754696a29> fails when running with python3.15b in fedora container. It is not reproducible in ubuntu runners."
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T15:14:14+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1999"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1998:opened",
+   "payload": {
+    "additions": 8,
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     ".pre-commit-config.yaml",
+     "src/pipx/pipx_metadata_file.py"
+    ],
+    "title": "[pre-commit.ci] pre-commit autoupdate"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T18:59:48+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1998"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1998:merged",
+   "payload": {
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T15:49:29+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1998"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1998:review:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "LGTM",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T15:49:25+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1998"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1996:opened",
+   "payload": {
+    "additions": 109,
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 50,
+    "files": [
+     "changelog.d/1189.bugfix.md",
+     "changelog.d/1994.bugfix.md",
+     "docs/how-to/use-uv-backend.rst",
+     "src/pipx/commands/run.py",
+     "tests/test_run.py"
+    ],
+    "title": "\ud83d\udc1b fix(run): discover entry points for inferred names"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T06:00:27+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1996"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1996:merged",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T14:08:03+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1996"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1995:opened",
+   "payload": {
+    "additions": 1,
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".pre-commit-config.yaml"
+    ],
+    "title": "[pre-commit.ci] pre-commit autoupdate"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T18:55:41+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1995"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1995:merged",
+   "payload": {
+    "author": "pre-commit-ci",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T19:22:23+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1995"
+  },
+  {
+   "evidence_id": "pr:pypa/pipx#1995:review:0",
+   "payload": {
+    "author": "gaborbernat",
+    "author_is_bot": false,
+    "body": "LGTM",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T19:22:20+00:00",
+   "url": "https://github.com/pypa/pipx/pull/1995"
+  }
+ ],
+ "repo": "pypa/pipx",
+ "window": "pre_t"
+}

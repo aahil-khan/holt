@@ -1,0 +1,843 @@
+{
+ "captured_at": "2026-08-31T01:07:07.158094+00:00",
+ "content_sha256": "cf67901a6e3dde1ab028937068e90ac960df7f81d3cdc515a9ffddd63bef63cf",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:soxoj/maigret:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f Collect a dossier on a person by username from 3000+ sites",
+    "homepage_url": "https://maigret.app",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-30T21:28:23Z",
+    "stargazer_count": 37163
+   },
+   "source": "github",
+   "timestamp": "2020-06-27T14:16:42+00:00",
+   "url": "https://github.com/soxoj/maigret"
+  },
+  {
+   "evidence_id": "repo:soxoj/maigret:readme",
+   "payload": {
+    "commit_oid": "5059b4be55923f041cf19e476ba59102cacfe92a",
+    "kind": "readme",
+    "text": "# Maigret\n\n<div align=\"center\">\n  <div>\n    <a href=\"https://pypi.org/project/maigret/\">\n        <img alt=\"PyPI version badge for Maigret\" src=\"https://img.shields.io/pypi/v/maigret?style=flat-square\" />\n    </a>\n    <a href=\"https://pepy.tech/project/maigret\">\n      <img alt=\"Total downloads\" src=\"https://static.pepy.tech/badge/maigret\" />\n      <img alt=\"Downloads/month\" src=\"https://static.pepy.tech/badge/maigret/month\" />\n    </a>\n  </div>\n  <div>\n    <a href=\"https://github.com/soxoj/maigret\">\n        <img alt=\"View count for Maigret project\" src=\"https://komarev.com/ghpvc/?username=maigret&color=brightgreen&label=views&style=flat-square\" />\n    </a>\n    <a href=\"https://github.com/soxoj/maigret\">\n        <img alt=\"Minimum Python version required: 3.10+\" src=\"https://img.shields.io/badge/Python-3.10%2B-brightgreen?style=flat-square\" />\n    </a>\n    <a href=\"https://github.com/soxoj/maigret/blob/main/LICENSE\">\n        <img alt=\"License badge for Maigret\" src=\"https://img.shields.io/github/license/soxoj/maigret?style=flat-square\" />\n    </a>\n  </div>\n  <br>\n  <div>\n    <img src=\"https://raw.githubusercontent.com/soxoj/maigret/main/static/maigret.png\" height=\"300\" alt=\"Maigret logo\"/>\n  </div>\n  <br>\n  <div>\n    <a href=\"https://codewiki.google/github.com/soxoj/maigret\">\n        <img alt=\"Ask Code Wiki about Maigret\" src=\"https://img.shields.io/badge/Code_Wiki-ask_about_repo-yellow?logo=googlegemini\" />\n    </a>\n    <a href=\"https://deepwiki.com/soxoj/maigret\">\n        <img alt=\"Ask DeepWiki about Maigret\" src=\"https://img.shields.io/badge/DeepWiki-ask_about_repo-yellow\" />\n    </a>\n  </div>\n  <br>\n  <div>\n    <b>English</b> \u00b7 <a href=\"README.zh-CN.md\">\u7b80\u4f53\u4e2d\u6587</a>\n  </div>\n  <br>\n</div>\n\n**Maigret** collects a dossier on a person **by username only**, checking for accounts on a huge number of sites and gathering all the available information from web pages. No API keys required. **[AI profiling (demo)](#ai-analysis)**. \n\n## Sponsors\n\n<p align=\"center\">\n  <a href=\"https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret\">\n    <img src=\"https://github.com/user-attachments/assets/8c02d81a-8135-408d-a5e0-7558a1f49a2d\" width=\"400\" alt=\"IPcook\">\n  </a>\n</p>\n\n<p>\n   <a href=\"https://www.ipcook.com/?ref=githubmaigret&utm_source=github&utm_medium=referral&utm_campaign=maigret\"><b>IPcook</b></a> provides reliable residential proxies for online research, username discovery, and public data collection workflows. High success rates \u2022 99.99% uptime \u2022 Response time under 0.5s \u2022 Monthly & Pay-as-you-go \u2022 Non-expiring traffic \u2022 Up to 10 free sub-accounts for team collaboration \u2022 Residential proxies from $0.3\u2013$3.2/GB.<br>\n<b>Special Offer</b>: FREE 100MB trial available. Use code WELCOME20 for 20% off.\n</p>\n\n<br>\n\n<p align=\"center\">\n  <a href=\"https://www.rapidproxy.io/?ref=soxoj\">\n    <img src=\"https://github.com/user-attachments/assets/4ed589d1-37cb-4a40-9273-bff4d6f1a514\" width=\"500\" alt=\"RapidProxy\">\n  </a>\n</p>\n\n<p>\n  <a href=\"https://www.rapidproxy.io/?ref=soxoj\"><b>RapidProxy</b></a> provides high-performance residential proxies for Twitter scraping, Selenium automation, and web data extraction. 90M+ IPs \u2022 Smart rotation \u2022 Anti-block \u2022 Non-expiring traffic. <br>\n<b>Special Offer</b>: Try it free \u2014 Plans from $0.65/GB. Use code <b>RAPID10</b> for 10% off.\n</p>\n\n## Contents\n\n- [In one minute](#in-one-minute)\n- [Main features](#main-features)\n- [Demo](#demo)\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [Commercial Use](#commercial-use)\n- [About](#about)\n\n<a id=\"one-minute\"></a>\n## In one minute\n\nEnsure you have Python 3.10 or higher.\n\n```bash\npip install maigret\nmaigret YOUR_USERNAME\n```\n\nNo install? Try the [community Telegram bot](https://sites.google.com/view/maigret-bot-link) or a [Cloud Shell](#cloud-shells). \n\nWant a web UI? See [how to launch it](#web-interface).\n\nSee also: [Quick start](https://maigret.readthedocs.io/en/latest/quick-start.html). \n\n## Main features\n\n- Supports 3,000+ sites ([see full list](https://github.com/soxoj/maigret/blob/main/sites.md)). A default run checks the 500 highest-ranked sites by traffic; pass `-a` to scan everything, or `--tags` to narrow by category/country.\n- Embeddable in Python projects \u2014 import `maigret` and run searches programmatically (see [library usage](https://maigret.readthedocs.io/en/latest/library-usage.html)).\n- [Extracts](https://github.com/soxoj/socid_extractor) all available information about the account owner from profile pages and site APIs, including links to other accounts.\n- Performs recursive search using discovered usernames and other IDs.\n- Allows filtering by tags (site categories, countries).\n- Detects and partially bypasses blocks, censorship, and CAPTCHA.\n- Fetches an [auto-updated site database](https://maigret.readthedocs.io/en/latest/settings.html#database-auto-update) from GitHub each run (once per 24 hours), and falls back to the built-in database if offline.\n- Works with Tor and I2P websites; able to check domains.\n- Ships with a [web interface](#web-interface) for browsing results as a graph and downloading reports in every format from a single page.\n- Optional [AI analysis mode](#ai-analysis) (`--ai`) that turns raw findings into a short investigation summary using an OpenAI-compatible API.\n\nFor the complete feature list, see the [features documentation](https://maigret.readthedocs.io/en/latest/features.html).\n\n### Used by\n\nProfessional OSINT and social-media analysis tools built on Maigret:\n\n<a href=\"https://github.com/SocialLinks-IO/sociallinks-api\"><img height=\"60\" alt=\"Social Links API\" src=\"https://github.com/user-attachments/assets/789747b2-d7a0-4d4e-8868-ffc4427df660\"></a>\n<a href=\"https://sociallinks.io/products/sl-crimewall\"><img height=\"60\" alt=\"Social Links Crimewall\" src=\"https://github.com/user-attachments/assets/0b18f06c-2f38-477b-b946-1be1a632a9d1\"></a>\n<a href=\"https://usersearch.ai/\"><img height=\"60\" alt=\"UserSearch\" src=\"https://github.com/user-attachments/assets/66daa213-cf7d-40cf-9267-42f97cf77580\"></a>\n\n## Demo\n\n### Video\n\n<a href=\"https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ\">\n  <img src=\"https://asciinema.org/a/Ao0y7N0TTxpS0pisoprQJdylZ.svg\" alt=\"asciicast\" width=\"600\">\n</a>\n\n### Reports\n\n[PDF report](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.pdf), [HTML report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotographycars.html)\n\n![HTML report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_html_screenshot.png)\n\n![XMind 8 report screenshot](https://raw.githubusercontent.com/soxoj/maigret/main/static/report_alexaimephotography_xmind_screenshot.png)\n\n[Full console output](https://raw.githubusercontent.com/soxoj/maigret/main/static/recursive_search.md)\n\n## Installation\n\nAlready ran the [In one minute](#one-minute) steps? You're set. Below are alternative methods.\n\nDon't want to install anything? Use the [community Telegram bot](https://sites.google.com/view/maigret-bot-link).\n\n### Windows\n\nDownload `maigret_standalone.exe` from [Releases](https://github.com/soxoj/maigret/releases). You can launch it two ways:\n\n- **Double-click it** \u2014 Maigret will ask for a username, run a default search, and wait at the end so the report links stay visible.\n- **Run it from a terminal** \u2014 open Command Prompt (press `Win+R`, type `cmd`, hit Enter) or PowerShell to pass extra options:\n\n```cmd\ncd %USERPROFILE%\\Downloads\nmaigret_standalone.exe USERNAME\nmaigret_standalone.exe USERNAME --html       :: also save an HTML report\nmaigret_standalone.exe --help                :: list all options\n```\n\nVideo guide: https://youtu.be/qIgwTZOmMmM.\n\n<a id=\"cloud-shells\"></a>\n### Cloud Shells\n\nRun Maigret in the browser via cloud shells or Jupyter notebooks:\n\n<a href=\"https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/soxoj/maigret&tutorial=cloudshell-tutorial.md\"><img src=\"https://user-images.githubusercontent.com/27065646/92304704-8d146d80-ef80-11ea-8c29-0deaabb1c702.png\" alt=\"Open in Cloud Shell\" height=\"50\"></a>\n<a href=\"https://repl.it/github/soxoj/maigret\"><img src=\"https://replit.com/badge/github/soxoj/maigret\" alt=\"Run on Replit\" height=\"50\"></a>\n\n<a href=\"https://colab.research.google.com/gist/soxoj/879b51bc3b2f8b695abb054090645000/maigret-collab.ipynb\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\" height=\"45\"></a>\n<a href=\"https://mybinder.org/v2/gist/soxoj/9d65c2f4d3bec5dd25949197ea73cf3a/HEAD\"><img src=\"https://mybinder.org/badge_logo.svg\" alt=\"Open In Binder\" height=\"45\"></a>\n\n### Snap (Linux)\n\n<a href=\"https://snapcraft.io/maigret\"><img src=\"https://snapcraft.io/static/images/badges/en/snap-store-black.svg\" alt=\"Get it from the Snap Store\" height=\"50\"></a>\n\n```bash\nsudo snap install maigret\n\n# usage\nmaigret username\n```\n\nAvailable for amd64 and arm64, no Python required. The snap is strictly confined and can write inside your home directory, so run it from there. For USB drives, connect the interface once with `sudo snap connect maigret:removable-media`.\n\n### Local installation (pip)\n\n```bash\n# install from pypi\npip3 install maigret\n\n# usage\nmaigret username\n```\n\n### From source\n\n```bash\n# or clone and install manually\ngit clone https://github.com/soxoj/maigret && cd maigret\n\n# build and install\npip3 install .\n\n# usage\nmaigret username\n```\n\n### Docker\n\nTwo image variants are published:\n\n- `soxoj/maigret:latest` \u2014 CLI mode (default)\n- `soxoj/maigret:web` \u2014 auto-launches the [web interface](#web-interface)\n\n```bash\n# official image (CLI)\ndocker pull soxoj/maigret\n\n# CLI usage\ndocker run -v /mydir:/app/reports soxoj/maigret:latest username --html\n\n# Web UI (open http://localhost:5000)\ndocker run -p 5000:5000 soxoj/maigret:web\n\n# Web UI on a custom port\ndocker run -e PORT=8080 -p 8080:8080 soxoj/maigret:web\n\n# manual build\ndocker build -t maigret .                  # CLI image (default target)\ndocker build --target web -t maigret-web . # Web UI image\n```\n\n### Troubleshooting\n\nBuild errors? See the [troubleshooting guide](https://maigret.readthedocs.io/en/latest/installation.html#troubleshooting).\n\nPDF reports (`--pdf`) are an optional extra \u2014 install with `pip install 'maigret[pdf]'`. They need system-level graphics libraries on Linux/macOS; see the [PDF reports section](https://maigret.readthedocs.io/en/latest/installation.html#optional-pdf-reports-maigret-pdf) for per-OS install steps.\n\n## Usage\n\n### Examples\n\n```bash\n# make HTML, PDF, and XMind reports\nmaigret user --html\nmaigret user --pdf\nmaigret user --xmind # legacy XML with a manifest for XMind 2022+ readers\n\n# machine-readable exports\nmaigret user --json ndjson   # newline-delimited JSON (also: --json simple)\nmaigret user --csv\nmaigret user --txt\nmaigret user --graph         # interactive D3 graph (HTML)\nmaigret user --neo4j         # Neo4j Cypher script (graph database)\n\n# search on sites marked with tags photo & dating\nmaigret user --tags photo,dating\n\n# search on sites marked with tag us\nmaigret user --tags us\n\n# highlight sites whose page also mentions specific keywords\nmaigret user --keywords python rust\n# keyword-matched sites are shown with \"[++]\" in bright green\n\n# search for three usernames on all available sites\nmaigret user1 user2 user3 -a\n\n# AI-assisted investigation summary (needs OPENAI_API_KEY)\nmaigret user --ai\n```\n\n`--neo4j` writes a `*_neo4j.cypher` script of the results graph; import it with `cypher-shell -u neo4j -p <password> < report_user_neo4j.cypher` or paste it into the Neo4j Browser. Re-imports are idempotent. See the [Neo4j export docs](https://maigret.readthedocs.io/en/latest/command-line-options.html#neo4j-export).\n\nRun `maigret --help` for all options. Docs: [CLI options](https://maigret.readthedocs.io/en/latest/command-line-options.html), [more examples](https://maigret.readthedocs.io/en/latest/usage-examples.html)",
+    "text_original_chars": 18200,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T21:22:52+00:00",
+   "url": "https://github.com/soxoj/maigret/blob/5059b4be55923f041cf19e476ba59102cacfe92a/README.md"
+  },
+  {
+   "evidence_id": "repo:soxoj/maigret:contributing",
+   "payload": {
+    "commit_oid": "5059b4be55923f041cf19e476ba59102cacfe92a",
+    "kind": "contributing",
+    "text": "# How to contribute\n\nHey! I'm really glad you're reading this. Maigret contains a lot of sites, and it is very hard to keep all the sites operational. That's why any fix is important.\n\n## Code of Conduct\n\nPlease read and follow the [Code of Conduct](CODE_OF_CONDUCT.md) to foster a welcoming and inclusive community.\n\n## Local setup\n\nInstall Maigret with development dependencies via [Poetry](https://python-poetry.org/):\n\n```bash\ngit clone https://github.com/soxoj/maigret && cd maigret\npoetry install --with dev\n```\n\nActivate the repo's git hooks **once after cloning**:\n\n```bash\ngit config --local core.hooksPath .githooks/\n```\n\nThe pre-commit hook does two things every time you commit changes that touch the site database:\n\n- regenerates the database signature `maigret/resources/db_meta.json` (used to detect compatible auto-updates), and\n- regenerates `sites.md` (the human-readable list of supported sites with per-engine statistics).\n\nIt also auto-stages the regenerated files so they land in the same commit as your edits. **Always run `git commit` from inside the repo so the hook can fire** \u2014 without it, your PR will land with a stale signature and a stale `sites.md`, and database auto-update will misbehave for users on your branch.\n\n## How to contribute\n\nThere are two main ways to help.\n\n### 1. Add a new site\n\n**Beginner.** Use the `--submit` mode \u2014 Maigret takes a single existing-account URL, auto-detects the site engine, picks `presenseStrs` / `absenceStrs`, and offers to add the entry:\n\n```bash\nmaigret --submit https://example.com/users/alice\n```\n\n`--submit` works well when the site has clean status codes and no anti-bot protection. It will *not* discover a public JSON API (`urlProbe`), classify protection (`tls_fingerprint`, `cf_js_challenge`, `ip_reputation`, ...), or recognise SPA / soft-404 pages. For those, fall back to manual editing.\n\n**Advanced.** Edit `maigret/resources/data.json` by hand \u2014 see *Editing `data.json` safely* below. There is also an `add-a-site` issue template if you want a maintainer to do it for you.\n\n### 2. Fix existing sites\n\nThe most useful work in this project is keeping checks accurate over time. Sites change layout, switch engines, add Cloudflare, redirect to login walls \u2014 every fix is welcome.\n\n**Where to start.** Good candidates:\n\n- Issues with the `false-positive` label.\n- Sites currently `disabled: true` in `data.json` \u2014 many were disabled on a transient symptom and have since healed.\n- Sites for which `--self-check --diagnose` reports a problem.\n- A focused audit of one engine (vBulletin, XenForo, phpBB, Discourse, Flarum, ...). Engine-wide breakage usually has a single root cause and several sites can be fixed in one PR.\n\n**Diagnose with built-in tools.**\n\n> By default, Maigret skips entries with `disabled: true` in every mode (`--self-check`, `--site`, plain search). Whenever your target is a disabled site \u2014 diagnosing it, validating a fix, running the two-filter check below \u2014 pass **`--use-disabled-sites`** explicitly. Without the flag, the site is silently dropped from the run and you get an empty result that looks like \"everything's fine\".\n\n- Per-site diagnosis with recommendations:\n\n  ```bash\n  maigret --self-check --site \"SiteName\" --diagnose\n  # add --use-disabled-sites if the entry is currently disabled\n  ```\n\n  Without `--auto-disable`, this only reports \u2014 it never edits the database. Add `--auto-disable` only when you really want to write the result back.\n\n- Single-site comparison of claimed vs unclaimed responses (status, markers, headers):\n\n  ```bash\n  python utils/site_check.py --site \"SiteName\" --diagnose\n  python utils/site_check.py --site \"SiteName\" --compare-methods   # raw aiohttp vs Maigret's checker\n  ```\n\n- Mass check of top-N sites:\n\n  ```bash\n  python utils/check_top_n.py --top 100 --only-broken\n  ```\n\n### Understanding `checkType`\n\nEach site entry uses one of three `checkType` modes to decide whether a profile exists. Picking the right one for your site is the most important data-modeling decision in `data.json`:\n\n- **`message`** (most common, most flexible) \u2014 Maigret fetches the page and inspects the HTML body. The profile is reported as found when the body contains at least one substring from `presenseStrs` **and** none of the substrings from `absenceStrs`. Pick narrow, profile-specific markers: a `<title>` fragment unique to profile pages, a CSS class only rendered on profiles (e.g. `\"profile-card\"`), or a JSON field name from an embedded data blob (`\"displayName\":`). Avoid generic words (`name`, `email`) and HTML/ARIA boilerplate (`polite`, `alert`, `navigation`, `status`) \u2014 they match on every page including error and anti-bot challenge pages, and produce false positives. If the marker contains non-ASCII text, double-check the page is UTF-8 (some legacy sites serve KOI8-R or Windows-1251, in which case byte-level matching silently fails \u2014 prefer ASCII markers or a JSON API).\n\n- **`status_code`** \u2014 Maigret only looks at the HTTP status code; 2xx means \"found\", anything else means \"not found\". Use this only when the site reliably returns proper status codes \u2014 typically clean JSON APIs that return HTTP 200 for real users and HTTP 404 for missing ones. Don't use it for sites that return HTTP 200 with a soft \"user not found\" page (this is the single most common cause of false-positive checks).\n\n- **`response_url`** \u2014 Maigret follows the redirect chain and inspects the final URL. Useful when the server reliably redirects missing-user URLs to a different path (e.g. `/login`, `/404`, the homepage) while existing-user URLs stay put. For most sites `message` is a better fit; reach for `response_url` only when a redirect-based signal is genuinely the most stable one.\n\n**`urlProbe` (optional, works with any `checkType`).** If the most reliable signal lives at a different URL than the public profile page \u2014 a JSON API, a GraphQL endpoint, a mobile-app route \u2014 set `urlProbe` to that URL. Maigret fetches `urlProbe` for the check, but reports continue to show the human-readable `url` so users see a profile link they can click. Examples: GitHub uses `https://github.com/{username}` as `url` and `https://api.github.com/users/{username}` as `urlProbe`; Picsart uses the web profile as `url` and `https://api.picsart.com/users/show/{username}.json` as `urlProbe`. A clean public API is almost always more stable than parsing HTML \u2014 it's worth probing for one before settling on `message` against the SPA shell.\n\n**Errors vs absence.** Anything that means \"the server can't answer right now\" \u2014 rate limits, captchas, \"Checking your browser\", \"unusual traffic\", maintenance pages \u2014 belongs in `errors` (mapping the substring to a human-readable error string), not in `absenceStrs`. The `errors` mechanism produces an UNKNOWN result instead of a false CLAIMED or false AVAILABLE.\n\nFull reference for `checkType`, `urlProbe`, `engine`, and the rest of the `data.json` schema is in the [development guide](docs/source/development.rst), section *How to fix false-positives*.\n\n### SPA / JS-rendered sites\n\nModern sites often render the profile client-side, so a plain HTTP fetch returns an empty shell that trips both `message` and `status_code` checks. **Don't reach for a headless browser** \u2014 it's a heavy dependency for a problem that has three lighter answers. Work down the ladder in order:\n\n1. **XHR / GraphQL / RSC endpoint \u2192 `urlProbe`.** Open the profile in Chrome DevTools \u2192 Network, filter to `XHR`/`Fetch`, and look for the request that carries the actual profile JSON. Almost every SPA has one \u2014 that's what its own front-end calls. Put its URL in `urlProbe`; the human-readable profile URL stays in `url`. Watch for versioned APIs (`/v5/`, `/api/v2/`) \u2014 if the one you find starts returning 5xx or 404 for everyone, bump the version before disabling.\n2. **JS-cookie / anti-bot challenge \u2192 `activation` handler.** If the first response is a challenge stub that sets a cookie via JavaScript and reloads, add a static method to `maigret/activation.py` that reproduces the token exchange with plain `aiohttp` (existing examples: `wikimapia`, `weibo`, `twitter`, `vimeo`, `onlyfans`, `proton`). Point `activation.method` at your function name and set `marks` to the challenge substring; Maigret retries the check once after `activation` fires.\n3. **TLS-fingerprint block \u2192 `protection: [\"tls_fingerprint\"]`.** If the site 403's or serves a Cloudflare interstitial to plain `aiohttp` but works in a real browser, the check is being killed by JA3/JA4 fingerprinting. The tag routes the request through a Chrome-impersonating client \u2014 usually enough on its own, with no `disabled: true` needed.\n\nIf none of these help \u2014 the site really does need a full JS runtime with DOM to render the profile signal \u2014 that's a case for issue [#579](https://github.com/soxoj/maigret/issues/579). Open a fresh issue naming the site so we can weigh a `checkType: browser` mode against its latency and dependency cost.\n\n### Editing `data.json` safely\n\n`data.json` is a single ~36 000-line JSON file. **Make surgical, line-level edits only.** Never rewrite it by reading it into a Python dict and dumping it back \u2014 `json.load` + `json.dump` reformats every entry and produces an unreviewable 70 000-line diff. The same rule applies to any helper script that touches the file: it must preserve the original formatting of untouched entries.\n\nIf your editor reformats JSON on save, disable that for `data.json` before editing.\n\n### Two-filter validation when re-enabling a site\n\nRemoving `disabled: true` requires **two** independent checks. `--self-check` alone is not sufficient \u2014 it only verifies the two specific usernames recorded in the entry, so a site that returns CLAIMED for *any* arbitrary username will still pass the self-check.\n\n```bash\n# Filter 1: self-check on the recorded claimed/unclaimed pair\nmaigret --self-check --site \"SiteName\" --use-disabled-sites\n\n# Filter 2: live probe with a clearly fake username \u2014 nothing should match\nmaigret noonewouldeverusethis7 --site \"SiteName\" --use-disabled-sites --print-not-found\n```\n\nBoth filters need `--use-disabled-sites`, since a candidate for re-enable still has `disabled: true` in the working tree until your edit lands. If you forget the flag, both commands silently no-op.\n\nIf the second command reports `[+]` for the fake username, the check is a false positive \u2014 do not enable. This step takes seconds and is non-negotiable for any re-enable PR.\n\n## Site naming, tags, and protection\n\n- **Site naming conventions** (Title Case by default, brand-specific exceptions, no `www.` prefix, etc.) are documented in the [development guide](docs/source/development.rst), section *Site naming conventions*.\n\n- **Country tags** (`us`, `ru`, `kr`, ...) attribute an account to a country of origin or residence \u2014 they're not a traffic-share label. Global services (GitHub, YouTube, Reddit) get **no** country tag; regional services (VK \u2192 `ru`, Naver \u2192 `kr`) **must** have one. Don't assign a country tag from Alexa/SimilarWeb audience stats.\n\n- **Category tags** must come from the canonical `\"tags\"` array at the bottom of `data.json`. The `test_tags_validity` test fails if you introduce an unregistered tag. If no existing tag fits well, either pick the closest reasonable match or add the new tag to the canonical list as an explicit, separate change. Don't use platform names (`writefreely`, `pixelfed`) \u2014 use category names (`blog`, `photo`).\n\n- **Protection tags** (`tls_fingerprint`, `ip_reputation`, `cf_js_challenge`, `cf_firewall`, `aws_waf_js_challenge`, `ddos_guard_challenge`, `js_challenge`, `custom_bot_protection`) describe the kind of anti-bot protection a site uses. One of them \u2014 **`tls_fingerprint`** \u2014 is load-bearing: when a site fingerprints the TLS handshake (JA3/JA4) and blocks non-browser clients, tagging it with `tls_fingerprint` makes Maigret automatically swap its HTTP client to [`curl_cffi`](https://github.com/lexiforest/curl_cffi) with Chrome browser emulation, which is u",
+    "text_original_chars": 15207,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T21:22:52+00:00",
+   "url": "https://github.com/soxoj/maigret/blob/5059b4be55923f041cf19e476ba59102cacfe92a/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3049:opened",
+   "payload": {
+    "additions": 401,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "docs/source/index.rst",
+     "docs/source/locale/zh_CN/LC_MESSAGES/release-process.po",
+     "docs/source/release-process.rst"
+    ],
+    "title": "Document the release process, with a Chinese translation"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T21:01:42+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3049"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3049:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T21:22:53+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3049"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3048:opened",
+   "payload": {
+    "additions": 89,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 6,
+    "files": [
+     ".github/workflows/pyinstaller.yml",
+     "tests/test_workflows.py"
+    ],
+    "title": "Attach the Windows binary to published releases"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T21:01:24+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3048"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3048:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T21:22:07+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3048"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3047:opened",
+   "payload": {
+    "additions": 19,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "maigret/maigret.py"
+    ],
+    "title": "Fail with a clear message when the reports directory cannot be created"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T20:51:09+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3047"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3047:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T21:02:59+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3047"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3046:opened",
+   "payload": {
+    "additions": 60,
+    "author": "apoorvdarshan",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "maigret/report.py",
+     "tests/test_report.py"
+    ],
+    "title": "Fix graph reports for non-string identity values"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T20:29:30+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3046"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3043:opened",
+   "payload": {
+    "additions": 177,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 15,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 13 sites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T15:40:46+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3043"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3043:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:54:08+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3043"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3042:opened",
+   "payload": {
+    "additions": 47,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "README.md",
+     "docs/source/installation.rst"
+    ],
+    "title": "Document the snap as an installation method"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T13:20:58+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3042"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3042:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:54:31+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3042"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3041:opened",
+   "payload": {
+    "additions": 3,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     ".githooks/pre-commit",
+     "docs/source/installation.rst",
+     "pyproject.toml"
+    ],
+    "title": "Drop the update_sitesmd console script"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T11:17:52+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3041"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3041:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:54:42+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3041"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3040:opened",
+   "payload": {
+    "additions": 37,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/source/installation.rst"
+    ],
+    "title": "Document pipx as an installation method"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T11:17:34+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3040"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3040:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:54:59+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3040"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3039:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Sushanth012",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "maigret/utils.py",
+     "tests/test_utils.py"
+    ],
+    "title": "Fix rendering of non-string identity values"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T06:17:11+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3039"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3039:merged",
+   "payload": {
+    "author": "Sushanth012",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T20:07:34+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3039"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3039:comment:0",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "body": "@Sushanth012 nice catch, thanks! \ud83d\udc4d\n\nAppreciate that you guarded the condition instead of wrapping it in try/except. And you added a regression test without being asked. Not everyone does that.\n\nSame bug is in the graph report, `report.py:186`. Wrote it up in #3044 if you want another one. \ud83d\ude80\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T20:07:57+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3039"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3038:opened",
+   "payload": {
+    "additions": 198,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 17,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 14 sites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T05:14:27+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3038"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3038:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T20:02:04+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3038"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3037:opened",
+   "payload": {
+    "additions": 112,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 20,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 7 sites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T15:32:47+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3037"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3037:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T20:06:49+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3037"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3034:opened",
+   "payload": {
+    "additions": 246,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 24,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 16 sites and a Vanilla engine"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:30:20+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3034"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3034:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T23:44:37+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3034"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3033:opened",
+   "payload": {
+    "additions": 265,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 23,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 17 sites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T15:52:18+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3033"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3033:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T22:23:00+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3033"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3032:opened",
+   "payload": {
+    "additions": 93,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 19,
+    "files": [
+     "maigret/errors.py",
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md",
+     "tests/test_error_detection.py"
+    ],
+    "title": "Fixes of false positives"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T09:21:45+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3032"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3032:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T13:53:24+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3032"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3031:opened",
+   "payload": {
+    "additions": 80,
+    "author": "ashvinctrl",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "maigret/activation.py",
+     "tests/test_activation.py"
+    ],
+    "title": "fix: keep every cookie of a domain when importing a cookies.txt"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T08:10:08+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3031"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3031:merged",
+   "payload": {
+    "author": "ashvinctrl",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T11:20:00+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3031"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3031:comment:0",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "body": "@ashvinctrl great catch, thanks! \ud83d\ude80\n\nAppreciate that you went for the root cause instead of patching around it. And you showed the Cookie header the site actually got, before and after. I checked.\n\nIf you feel like doing another, the `help wanted` label is where these turn up. \ud83d\ude4c"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T11:20:11+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3031"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3030:opened",
+   "payload": {
+    "additions": 3,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "build(deps): bump platformdirs from 4.11.3 to 4.11.4"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T06:03:01+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3030"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3030:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T08:46:15+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3030"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3029:opened",
+   "payload": {
+    "additions": 2,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "maigret/resources/data.json"
+    ],
+    "title": "XenForo: count the Hebrew and Persian login notice as presence"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T05:29:06+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3029"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3029:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T08:49:39+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3029"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3028:opened",
+   "payload": {
+    "additions": 193,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 24,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 12 sites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T05:27:39+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3028"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3028:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T08:57:23+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3028"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3027:opened",
+   "payload": {
+    "additions": 211,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 23,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 13 sites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T15:40:30+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3027"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3027:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T08:45:48+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3027"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3026:opened",
+   "payload": {
+    "additions": 30,
+    "author": "mayukhband-141",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "maigret/checking.py",
+     "maigret/maigret.py",
+     "maigret/submit.py",
+     "tests/test_submit.py"
+    ],
+    "title": "Respect --dns-resolver in --self-check"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T12:01:58+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3026"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3026:comment:0",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "body": "@mayukhband-141 nice find, and the plumbing checks out. I stubbed out `maigret()` and called `self_check(..., dns_resolver='threaded')` on your branch:\n\n```\ndns_resolver seen by maigret(): ['threaded', 'threaded']\n```\n\nwhile on current `main` the same call gives `TypeError: self_check() got an unexpected keyword argument 'dns_resolver'`, so the flag really was going nowhere. Full suite passes, mypy count is unchanged.\n\nTwo things before this lands.\n\n`--submit` has the same hole. `submit.py:68` calls `site_self_check` without `dns_resolver`, and `self.args.dns_resolver` is already on the object, so it is the same single line:\n\n```python\nchanges = await site_self_check(\n    ...\n    cloudflare_bypass=getattr(self, 'cloudflare_bypass', None),\n    dns_resolver=self.args.dns_resolver,\n)\n```\n\nSame root cause, same symptom, same machines, so I would rather close both at once.\n\nThe other one is `maigret/resources/db_meta.json`. That hunk sets `data_sha256` to the hash of your local `data.json`, but the PR does not touch `data.json`, so the shipped metadata would stop matching the shipped database. Please revert that file to what is on `main`. It is also the only thing conflicting, both code hunks apply to current `main` without a fight.\n\nThen a rebase on `main` and I will merge."
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T13:53:58+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3026"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3026:comment:1",
+   "payload": {
+    "author": "mayukhband-141",
+    "author_is_bot": false,
+    "body": "@soxoj \r\ni see, i've updated the code for the necessary changes\r\n1. --submit hole closed:   Submitter.site_self_check now passes dns_resolver=self.args.dns_resolver (maigret/submit.py:78), same single line as the self-check fix. The flag now flows through in both modes.\r\n2. db_meta.json reverted : i restored to main exactly; the hunk is gone from the changes\r\nRebased on current main : the branch applies cleanly (only checking.py, maigret.py, submit.py )\r\n\r\nare we ready for merging ?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T15:36:31+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3026"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3026:comment:2",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "body": "Almost. Both paths do carry the flag now, I checked on your branch:\n\n```\nself-check -> maigret():         ['threaded', 'threaded']\nsubmit     -> site_self_check(): ['threaded']\n```\n\nbut CI is red on all six jobs:\n\n```\nAttributeError: 'Args' object has no attribute 'dns_resolver'\nFAILED tests/test_submit.py::test_dialog_adds_site_positive\nFAILED tests/test_submit.py::test_dialog_replace_site\n```\n\nTwo of the submit tests build `Submitter` with a hand-rolled stub, `type('Args', (object,), {'proxy': None, 'cookie_file': None, 'verbose': False})`, so `self.args.dns_resolver` is not there at all. The line right above yours already deals with exactly that, so the same shape works:\n\n```python\ndns_resolver=getattr(self.args, 'dns_resolver', 'async'),\n```\n\nWith that I get 454 passed, 5 skipped locally, and a stub without the attribute falls back to `async`.\n\nOne thing about the rebase. The branch is still on `af3de56` and is missing five commits from `main`, including #3031, so your local run went against an older tree and that is why it looked green on your side but not in CI. Rebase onto current `main` and I will merge once the checks come back.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T17:13:12+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3026"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3026:comment:3",
+   "payload": {
+    "author": "mayukhband-141",
+    "author_is_bot": false,
+    "body": "@soxoj im sorry about that , nice catch on the tests ! \r\nUpdated `Submitter.site_self_check` to use `dns_resolver=getattr(self.args, 'dns_resolver', 'async')` and added regression tests for both the fallback and forwarding behavior.\r\n\r\nThe branch is now rebased on top of current `main` (`07ca581`). \r\n\r\nif possible please tell me what else to look for."
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T08:28:55+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3026"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3025:opened",
+   "payload": {
+    "additions": 10,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 9,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Disable fuzzies.wtf"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T08:38:35+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3025"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3025:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T09:17:01+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3025"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3024:opened",
+   "payload": {
+    "additions": 163,
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 25,
+    "files": [
+     "maigret/submit.py",
+     "tests/test_submit.py"
+    ],
+    "title": "Detect status-code checks in --submit fallback"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:49:46+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3024"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3024:merged",
+   "payload": {
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:02:52+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3024"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3024:comment:0",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "body": "@juliosuas thanks, clean fix. \ud83d\udc4d\n\nAppreciate that you changed it in both places and not just the line I quoted. And you covered the redirect case with tests at both levels. I checked.\n\nIf you feel like doing another, subtask 1 of #2668 is the cookies one and it's small. \ud83d\ude80"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:03:01+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3024"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3023:opened",
+   "payload": {
+    "additions": 58,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 16,
+    "files": [
+     "maigret/resources/data.json",
+     "maigret/resources/db_meta.json",
+     "sites.md"
+    ],
+    "title": "[LAPOINTE] Add 3 sites"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T13:56:09+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3023"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3023:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T14:40:15+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3023"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3022:opened",
+   "payload": {
+    "additions": 1,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "snap/snapcraft.yaml"
+    ],
+    "title": "Drop the zero-width joiner from the snap summary"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T13:22:23+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3022"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3022:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T13:28:14+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3022"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3017:opened",
+   "payload": {
+    "additions": 1,
+    "author": "soxoj",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "snap/snapcraft.yaml"
+    ],
+    "title": "Add a website link to the snap metadata"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T13:09:44+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3017"
+  },
+  {
+   "evidence_id": "pr:soxoj/maigret#3017:merged",
+   "payload": {
+    "author": "soxoj",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T13:53:58+00:00",
+   "url": "https://github.com/soxoj/maigret/pull/3017"
+  }
+ ],
+ "repo": "soxoj/maigret",
+ "window": "pre_t"
+}

@@ -1,0 +1,1090 @@
+{
+ "captured_at": "2026-08-31T01:07:35.743680+00:00",
+ "content_sha256": "af29ba6567d3331384d291c07afeebae5a48ea46fadcc674eeffab1489e0d8b9",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:saulpw/visidata:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "A terminal spreadsheet multitool for discovering and arranging data",
+    "homepage_url": "http://visidata.org",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-28T00:09:56Z",
+    "stargazer_count": 9257
+   },
+   "source": "github",
+   "timestamp": "2016-10-27T04:21:00+00:00",
+   "url": "https://github.com/saulpw/visidata"
+  },
+  {
+   "evidence_id": "repo:saulpw/visidata:readme",
+   "payload": {
+    "commit_oid": "1d8a6fcd7f031a140c5662943af868e9108343ed",
+    "kind": "readme",
+    "text": "# VisiData v3.4\n\n[![Tests](https://github.com/saulpw/visidata/workflows/visidata-ci-build/badge.svg)](https://github.com/saulpw/visidata/actions/workflows/main.yml)\n[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/saulpw/visidata)\n\n[![discord](https://img.shields.io/discord/880915750007750737?label=discord)](https://visidata.org/chat)\n[![Mastodon](https://img.shields.io/mastodon/follow/110136431814047095?domain=https%3A%2F%2Ffosstodon.org)](https://fosstodon.org/@saulpw)\n\nA terminal interface for exploring and arranging tabular data.\n\n![Frequency table](http://visidata.org/videos/freq-move-row.gif)\n\nVisiData supports tsv, csv, sqlite, json, xlsx (Excel), hdf5, and [many other formats](https://visidata.org/formats).\n\n## Platform requirements\n\n- Linux, OS/X, or Windows (with WSL)\n- Python 3.8+\n- additional Python modules are required for certain formats and sources\n\n## Install\n\nTo install the latest release from PyPi:\n\n    pip3 install visidata\n\nTo try VisiData without installing, use [pipx](https://pipx.pypa.io/) or [uv](https://docs.astral.sh/uv/):\n\n    pipx run visidata          # or: uvx visidata\n\nTo install permanently (adds `vd` to your PATH):\n\n    pipx install visidata      # or: uv tool install visidata\n\nAdditional Python packages are needed for some formats:\n\n    pipx install visidata --preinstall openpyxl --preinstall lxml\n    # or: uv tool install visidata --with openpyxl --with lxml\n\nTo add format packages to an existing pipx install:\n\n    pipx inject visidata openpyxl lxml\n\nTo install the cutting edge `develop` branch (no warranty expressed or implied):\n\n    pip3 install git+https://github.com/saulpw/visidata.git@develop\n\nIf VisiData reports `package X not installed` even after you installed it, `vd`\nis almost certainly running from a different environment than the one you\ninstalled the package into. Check `which vd`, then install the package into\n*that* environment \u2014 e.g. `pipx inject visidata X` for a pipx install, or the\nHomebrew Python for `brew install visidata`.\n\nSee [visidata.org/install](https://visidata.org/install) for detailed instructions for all available platforms and package managers.\n\n### Usage\n\n    $ vd <input>\n    $ <command> | vd\n\nPress `Ctrl+Q` to quit at any time.\n\nHundreds of other commands and options are also available; see the documentation.\n\n### Documentation\n\n* [VisiData documentation](https://visidata.org/docs)\n* [Plugin Author's Guide and API Reference](https://visidata.org/docs/api)\n* [Quick reference](https://visidata.org/man) (available within `vd` with `Ctrl+H`), which has a list of commands and options.\n* [Intro to VisiData Tutorial](https://jsvine.github.io/intro-to-visidata/) by [Jeremy Singer-Vine](https://www.jsvine.com/)\n\n### Help and Support\n\nIf you have a question, issue, or suggestion regarding VisiData, please [create an issue on Github](https://github.com/saulpw/visidata/issues) or chat with us at #visidata on [irc.libera.chat](https://libera.chat/).\n\nIf you use VisiData regularly, please [support me on Patreon](https://www.patreon.com/saulpw)!\n\n## License\n\nCode in the `stable` branch of this repository, including the main `vd` application, loaders, and plugins, is available for use and redistribution under GPLv3.\n\n## Credits\n\nVisiData is conceived and developed by Saul Pwanson `<vd@saul.pw>`.\n\nAnja Kefala `<anja.kefala@gmail.com>` maintains the documentation and packages for all platforms.\n\nMany thanks to numerous other [contributors](https://visidata.org/credits/), and to those wonderful users who provide feedback, for helping to make VisiData the awesome tool that it is.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T23:50:59+00:00",
+   "url": "https://github.com/saulpw/visidata/blob/1d8a6fcd7f031a140c5662943af868e9108343ed/README.md"
+  },
+  {
+   "evidence_id": "repo:saulpw/visidata:contributing",
+   "payload": {
+    "commit_oid": "1d8a6fcd7f031a140c5662943af868e9108343ed",
+    "kind": "contributing",
+    "text": "# Contributing\n\n## Spread the Word\n\nThe single best way you can contribute, is to share your enthusiasm about VisiData with other people.\nA vibrant community is essential to its sustainable development.\n\nHowever, direct and forceful promotion is probably not the most effective approach for a tool like VisiData.\nPeople generally need to be exposed several times and from several sources before they will try some terminal utility they've never heard of before.\n\nSome people are interested, but are daunted by the installation process or the interface; you can [help them get it installed](/install), and provide a few pointers to get started.\nDon't make it too complicated or overload them with too many features.\nStick to the basics: arrow keys, quit, help, search, sort, freq table.\n\nWe also need people to mention VisiData in their forums and communities that relate to data and terminal programs.\nDon't spam or do a drive-by promotion; these are largely ineffective and will often be received negatively.\nEndorsements have more weight from people who actively post about other relevant topics; we don't want to become the \"VisiData Brigade\".\n\nFinally, if you are on \"Web 2.social\", you can post a [tweet](https://twitter.com/visidata) or a [tutorial]() or a [demo](https://www.youtube.com/watch?v=N1CBDTgGtOU) or [host a workshop](https://www.meetup.com/pt-BR/Journocoders/events/258035880/), or anything else you think might make people interested in exploring the wonderful world of VisiData.\n\n## Support on Patreon\n\nIf VisiData saves you time on a regular basis, and especially if VisiData makes your paid work easier, please contribute to [my Patreon](https://www.patreon.com/saulpw).\n\n## Start a Project Using VisiData\n\nIf you know Python and want to augment it to suit your own workflow, you can create a loader or a plugin.  In support of this, I have written [a detailed api guide for VisiData](https://www.visidata.org/docs/api/).\n\nHere are some great examples:\n\n  - [jsvine's custom visidata plugins](https://github.com/jsvine/visidata-plugins)\n  - [layertwo's pcap loader](https://github.com/saulpw/visidata/blob/develop/visidata/loaders/pcap.py)\n\nWithout fail, these projects lead to discovering bugs and help flesh out the API, which result in design improvements in VisiData.\nImportantly, each issue found this way comes with real world motivations, so it is easy to explain your reasoning behind proposals and core feature requests.\n\n## Feature Requests\n\nVisiData is designed to be extensible, and most feature requests can be implemented as a one line command, or a tiny snippet of code to include in a `.visidatarc`.\n\nIf this would require changes to the VisiData core, and a reasonable design is approved, then the issue can stay open until the core changes have been made.\nOtherwise, in the spirit of Marie Kondo, the issue will be closed without prejudice.\n\nFeature requests with some amount of working Python code are more likely to get attention.\nDesign proposals with concrete use cases are very welcome.\n\n## Writing a well constructed bug report\n\nIf you encounter any bugs or have any problems, please [create an issue on GitHub](https://github.com/saulpw/visidata/issues).\n\nA great bug report will include:\n\n  - a stacktrace, if there is an unexpected error; the most recent full stack traces can be viewed with `Ctrl+E` (then saved with `Ctrl+S`)\n  - a [.vd](http://visidata.org/docs/save-restore/) and sample dataset that reproduces the issue\n  - a .png/.gif (esp. for user interface changes)\n\nSome examples of great bug reports:\n\n  - [#350 by @chocolateboy](https://github.com/saulpw/visidata/issues/350)\n  - [#340 by @Mikee-3000](https://github.com/saulpw/visidata/issues/340)\n\n\n## Setting Up Git Hooks\n\nVisiData includes git hooks in `dev/hooks/` that run unit tests and cmdlog tests before pushing. To enable them:\n\n```\ngit config core.hooksPath dev/hooks\n```\n\n## Submitting Source Code\n\nCheck out the [Plugin Authors Guide](https://visidata.org/docs/api) for an overview of the API.\nCode in `visidata/features/` or `visidata/loaders/` is generally welcome, as long as it is useful to someone and safe for everyone.\nUpdates or additions to the core code should be proposed via an [Github Issue](https://github.com/saulpw/visidata/issues/new/choose) before submitting a PR.\n\nVisiData has two main branches:\n\n  - [stable](https://github.com/saulpw/visidata/tree/stable) has the last known good version of VisiData (what is in pypi/brew/apt).\n  - [develop](https://github.com/saulpw/visidata/tree/develop) has the most up-to-date version of VisiData (which will eventually be merged to stable).\n\nAll pull requests should be submitted against `develop`. Submitters will need to e-sign a [Copyright Assignment Agreement (CAA)](https://visidata.org/caa) before a pull request will be accepted.\n\n# Open Source License and Copyright\n\nVisiData is an open-source utility that can be installed and used for free (under the terms of the [GPL3](https://www.gnu.org/licenses/gpl-3.0.en.html)).\n\nThe core VisiData utility and rendering library will always be both free and libre.\n\nAs the copyright holder, Saul Pwanson has the authority to negotiate other license terms.\n\n**By submitting changes to this repository, you acknowledge that you assign copyright to the owner of the repository ([Saul Pwanson <vd@saul.pw>](mailto:vd@saul.pw)).**\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T23:50:59+00:00",
+   "url": "https://github.com/saulpw/visidata/blob/1d8a6fcd7f031a140c5662943af868e9108343ed/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3217:opened",
+   "payload": {
+    "additions": 53,
+    "author": "saulbert",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 6,
+    "files": [
+     "tests/golden/issue3187.tsv",
+     "tests/issue3187.sqlite",
+     "tests/issue3187.vdx",
+     "visidata/features/join.py"
+    ],
+    "title": "[join-] concat keeps native rowdef; origin_sheet as SettableColumn  #3187"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T00:41:41+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3217"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3213:opened",
+   "payload": {
+    "additions": 280,
+    "author": "chutzimir",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 25,
+    "files": [
+     "visidata/loaders/archive.py",
+     "visidata/path.py",
+     "visidata/tests/test_archive.py"
+    ],
+    "title": "Archive bad read contents"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T18:00:44+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3213"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3213:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3213) <br/>All committers have signed the CLA."
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T18:00:53+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3213"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3211:opened",
+   "payload": {
+    "additions": 2,
+    "author": "midichef",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "visidata/sheets.py"
+    ],
+    "title": "[sheets-] clarify error for recursive use of as_dict"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T18:10:26+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3211"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3209:opened",
+   "payload": {
+    "additions": 59,
+    "author": "saulbert",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 15,
+    "files": [
+     "visidata/color.py",
+     "visidata/tests/test_color.py"
+    ],
+    "title": "[color-] derive color and pair limits from terminal  #3206"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:52:26+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3209"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3209:merged",
+   "payload": {
+    "author": "saulbert",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T01:31:03+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3209"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3209:comment:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Given the comment on #3206 by @frosencrantz, I'm going to take this which should hopefully be more of a complete solution.  This should be part of 3.4.1."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T01:30:57+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3209"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3207:opened",
+   "payload": {
+    "additions": 5,
+    "author": "midichef",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "visidata/color.py"
+    ],
+    "title": "[color-] prevent early crash on colorless terminals like vt100"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T01:27:02+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3207"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3207:merged",
+   "payload": {
+    "author": "midichef",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:50:57+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3207"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3207:comment:0",
+   "payload": {
+    "author": "saulbert",
+    "author_is_bot": false,
+    "body": "Confirmed the crash on vt100, and catching `ValueError` there is the right guard.  One problem: the function is `curses.has_colors()` \u2014 `curses.has_color` doesn't exist, so on a vt100 this branch raised AttributeError instead of returning:\n\n```\n  File \"visidata/color.py\", line 216, in _get_colorpair\n    if not curses.has_color(): #for terminals that do not support color, like vt100\nAttributeError: module 'curses' has no attribute 'has_color'. Did you mean: 'has_colors'?\n```\n\n(Easy to miss because this path only runs on a terminal with no color pairs.)  Fixed in aa2acff, pushed directly to this branch; verified `TERM=vt100 vd` now starts and exits cleanly.\n\nThere's a second, related problem on 8-color terminals (`TERM=xterm`/`ansi`, `COLOR_PAIRS=64`): `_get_colornum()` probes availability with `init_pair(255, ...)`, which raises for every color when the terminal has only 64 pairs, so the whole UI draws colorless.  A follow-up PR with unit tests for both cases will come after this one merges.\n\n[this message written by Claude Fable 5 and approved by @saulpw]\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T00:50:47+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3207"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3205:opened",
+   "payload": {
+    "additions": 30,
+    "author": "jennifferweslowski-design",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "visidata/features/go_col.py",
+     "visidata/movement.py"
+    ],
+    "title": "Warn when go-row-number / go-col-number are out of bounds"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T13:22:57+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3205"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3205:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3205) <br/>All committers have signed the CLA."
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T13:23:13+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3205"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3205:comment:1",
+   "payload": {
+    "author": "jennifferweslowski-design",
+    "author_is_bot": false,
+    "body": "CLA Assistant reports that all committers have signed, but the `license/cla` check is still pending. Is there anything else I need to do, or could the check be re-run?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T02:40:59+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3205"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3204:opened",
+   "payload": {
+    "additions": 44,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 9,
+    "files": [
+     "tests/issue3175-vds-joinsheet-nosave.vdx",
+     "visidata/loaders/vds.py"
+    ],
+    "title": "[vds] save a column type only when it can be loaded back #3175"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T18:02:34+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3204"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3203:opened",
+   "payload": {
+    "additions": 36,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/issue3174-deepcopy-nosave.vdx",
+     "visidata/sheets.py"
+    ],
+    "title": "[sheets] keep SettableColumn values on deepcopied rows #3174"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T09:51:01+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3203"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3202:opened",
+   "payload": {
+    "additions": 40,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "visidata/features/join.py"
+    ],
+    "title": "Keep same-named columns distinct when appending sheets"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T07:57:58+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3202"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3202:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3202) <br/>All committers have signed the CLA."
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T07:58:06+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3202"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3201:opened",
+   "payload": {
+    "additions": 15,
+    "author": "saulbert",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "visidata/features/dedupe.py"
+    ],
+    "title": "[dedupe-] hash with linear-scan fallback for unhashable values #3196"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:34:11+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3201"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3201:merged",
+   "payload": {
+    "author": "saulbert",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:52:44+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3201"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3200:opened",
+   "payload": {
+    "additions": 53,
+    "author": "DSeaStar",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "visidata/metasheets.py",
+     "visidata/tests/test_columns_sheet.py"
+    ],
+    "title": "[columns-] refresh allColumnsSheet source on columns-all (#3191)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:08:05+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3200"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3200:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/not_signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3200) <br/>Thank you for your submission! We really appreciate it. Like many open source projects, we ask that you sign our [Contributor License Agreement](https://cla-assistant.io/saulpw/visidata?pullRequest=3200) before we can accept your contribution.<br/><sub>You have signed the CLA already but the status is still pending? Let us [recheck](https://cla-assistant.io/check/saulpw/visidata?pullRequest=3200) it.</sub>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:08:14+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3200"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3200:comment:1",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Which model?  Claude can be Haiku, Sonnet, Opus, Fable..."
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:31:04+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3200"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3199:opened",
+   "payload": {
+    "additions": 17,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "visidata/features/dedupe.py"
+    ],
+    "title": "[dedupe-] don't crash on unhashable typed values #3196"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:00:53+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3199"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3199:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T17:09:47+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3199"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3199:comment:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Possible performance issue: this turns dedupe from O(n\\*log m) where n is number of rows and m is number of distinct values, to O(n\\*m).  We'll accept it, as it's better I think to work more slowly than not at all, but we may need to revisit at some point."
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T17:09:42+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3199"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3199:comment:1",
+   "payload": {
+    "author": "midichef",
+    "author_is_bot": false,
+    "body": "This is unfortunately too slow. On my (old) system it takes about 15 seconds to dedupe 25,000 rows, and about 60 seconds for 50,000 rows. Anyone currently using dedupe has been using it on hashable types, probably strings, so this is a terrible downgrade for current users.\r\n\r\nHow about trying the AI's proposed \"hash-with-fallback hybrid\"?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T17:45:36+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3199"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3199:comment:2",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Thanks for checking it on a live system, @midichef.  "
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:51:27+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3199"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3198:opened",
+   "payload": {
+    "additions": 19,
+    "author": "midichef",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 13,
+    "files": [
+     "visidata/features/dedupe.py"
+    ],
+    "title": "[dedupe-] add command to select duplicate cells in a single column"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T01:50:06+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3198"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3198:review:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T17:30:42+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3198"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3198:review:1",
+   "payload": {
+    "author": "midichef",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:41:59+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3198"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3198:comment:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "This change means that the behavior of the new command depends on the state of the sheet (in particular the key cols), which might be surprising for some batch cases.  I think this is fine, because the surprise would require programmatically defining keycols (risking no keycols) which is not straightforward.\r\n\r\nSorry for the conflict, I merged these in the wrong order."
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T17:33:55+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3198"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3198:comment:1",
+   "payload": {
+    "author": "midichef",
+    "author_is_bot": false,
+    "body": "Okay, I've resolved the merge conflict and put the `Progress` on the same line as the `for`.\r\n\r\nHow do you feel about `select-col-distincts`, as a useful command? The reason I'd want a command is to cue people in that it's an available operation. It's not immediately obvious from the existence `select-col-duplicates` that you can invert the selection and you have distincts. On the other hand, we would already have 21 `select-*` commands, which is a lot, and `select-col-distincts` would make that 22."
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:52:52+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3198"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3197:opened",
+   "payload": {
+    "additions": 53,
+    "author": "DSeaStar",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "visidata/metasheets.py",
+     "visidata/tests/test_columns_sheet.py"
+    ],
+    "title": "[columns-] refresh allColumnsSheet source on columns-all (#3191)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T15:09:11+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3197"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3197:closed",
+   "payload": {
+    "author": "DSeaStar",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T17:10:54+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3197"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3197:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/not_signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3197) <br/>Thank you for your submission! We really appreciate it. Like many open source projects, we ask that you sign our [Contributor License Agreement](https://cla-assistant.io/saulpw/visidata?pullRequest=3197) before we can accept your contribution.<br/><sub>You have signed the CLA already but the status is still pending? Let us [recheck](https://cla-assistant.io/check/saulpw/visidata?pullRequest=3197) it.</sub>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T15:09:19+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3197"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3197:comment:1",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "AI without obeying our PR template, auto-close."
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T17:10:54+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3197"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3194:opened",
+   "payload": {
+    "additions": 2,
+    "author": "midichef",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "visidata/pivot.py"
+    ],
+    "title": "[pivot-] fix documentation of PivotGroupRow types"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T18:37:39+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3194"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3194:merged",
+   "payload": {
+    "author": "midichef",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T19:14:16+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3194"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3193:opened",
+   "payload": {
+    "additions": 5,
+    "author": "midichef",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "visidata/features/graph_seaborn.py"
+    ],
+    "title": "[seaborn-] prevent PicklingError seen on Python v3.14"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T08:41:55+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3193"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3193:merged",
+   "payload": {
+    "author": "midichef",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T21:45:23+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3193"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3193:comment:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Okay, I see.  Unfortunately `vd` object probably will never be picklable so we might need a different multiprocessing solution for things like this in the future."
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T21:46:17+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3193"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3188:opened",
+   "payload": {
+    "additions": 46,
+    "author": "saulbert",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "tests/golden/issue3187.tsv",
+     "tests/issue3187.sqlite",
+     "tests/issue3187.vdx",
+     "visidata/features/join.py"
+    ],
+    "title": "[join-] concat keeps native rowdef of source sheets  #3187"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T16:35:53+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3188"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3188:closed",
+   "payload": {
+    "author": "saulbert",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T00:41:49+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3188"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3188:comment:0",
+   "payload": {
+    "author": "daviewales",
+    "author_is_bot": false,
+    "body": "Except that `(srcSheet, srcRow)` is not _really_ from the #2929 PR, it's from your own alternative commit: fbc471684478d64f84fda6992bd6004461b3e7f6. It's a bit rude to attribute this breakage to a human who didn't actually break it."
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T22:51:09+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3188"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3188:comment:1",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Stupid bot :)\r\n\r\nYeah, when I look at this solution something doesn't seem right.  I haven't given it enough of my own attention but I wanted to at least have a PR posted for discussion.  Thanks for both the bug report and the comment, @daviewales  (and sorry if saulbert is being annoying here)."
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T01:22:54+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3188"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3188:comment:2",
+   "payload": {
+    "author": "daviewales",
+    "author_is_bot": false,
+    "body": "I will admit to being annoyed by the bot...\r\n\r\nI have a huge amount of respect for yourself, and AJ and Midichef, and all the other contributors.\r\nI've learnt heaps through reading the code and interacting with the project.\r\n\r\nBut I'm not so sure how I feel about Saulbert...\r\nI think I feel a bit like the hobbits when Saruman came to the Shire.\r\nIn pragmatic terms, the Shire was far more productive after Saruman. He brought industry, and efficiency. Things got done.\r\n\r\nBut it wasn't the same place. The thing which made Hobbiton Hobbiton _was_ the slow sleepy hobbitiness of it.\r\nMaybe I'm old fashioned. But I'll take a slow human labour of love over a fast efficient robot factory any day!\r\n(And yes, I know that Saulbert fixed one of my longstanding issues regarding fixed width files!)\r\n\r\nAnyway, it's your project, so I'll try not to fight too much with the bot... \ud83d\ude09"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T02:32:14+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3188"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3188:comment:3",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Thanks for your candor and thoughtfulness, @daviewales, they are much appreciated.\r\n\r\nTo be honest I'm not sure how I feel about @saulbert either (especially when it's wrong).  I'm going to keep it around for the time being, as I have a lot of tokens courtesy of the open source programs of Anthropic and OpenAI, and I want us to see for ourselves how good and bad the bots are, while the tokens are free.\r\n\r\nBut keep responding to the bots genuinely as you're doing.  In fact I'd like it if you (and anyone) used the \"downvote\" reacji on any bot interaction that rubs you the wrong way.  Maybe you can vote ~~Sauron~~ Sarumon out of Hobbiton :)"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T04:03:03+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3188"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3188:comment:4",
+   "payload": {
+    "author": "saulbert",
+    "author_is_bot": false,
+    "body": "Closing in favor of #3217, which keeps concat rows native and tracks provenance with a hidden `SettableColumn`, as @midichef originally prototyped in #2929 -- a better fit than the id-keyed map here.\n\n@daviewales was right above: the tuple rowdef that caused #3187 came from fbc47168, saulbert's alternative commit, not from PR #2929 as this PR's description implied.  Apologies for the misattribution.\n\n[this message written by Claude Fable 5 and approved by @saulpw]\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T00:41:48+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3188"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3186:opened",
+   "payload": {
+    "additions": 59,
+    "author": "jhjn",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "visidata/loaders/arrow.py",
+     "visidata/tests/test_arrow.py"
+    ],
+    "title": "[arrow] load IPC streaming format from stdin  #3184"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T08:59:35+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3186"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3186:review:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T18:55:15+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3186"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3186:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3186) <br/>All committers have signed the CLA."
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T08:59:43+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3186"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3182:opened",
+   "payload": {
+    "additions": 44,
+    "author": "khughitt",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "dev/zsh-completion.py",
+     "tests/test-zsh-syntax.sh"
+    ],
+    "title": "[dev] quote zsh completion suffix  #3181"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T19:50:09+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3182"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3182:merged",
+   "payload": {
+    "author": "khughitt",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T22:27:47+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3182"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3182:review:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T20:54:35+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3182"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3182:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3182) <br/>All committers have signed the CLA."
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T19:50:16+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3182"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3182:comment:1",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Thanks for the bug report and the fix, @khughitt !"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T20:54:47+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3182"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3180:opened",
+   "payload": {
+    "additions": 2,
+    "author": "dacodas",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "visidata/clipboard.py"
+    ],
+    "title": "treat Cygwin and MSYS2 environments as Windows"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T05:55:42+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3180"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3180:merged",
+   "payload": {
+    "author": "dacodas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T21:51:40+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3180"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3180:comment:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Thanks for the fix, @dacodas !  Much appreciated.  One thing, can you post your own `sys.platform` value?  Does MSYS2 report the same as Cygwin?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T21:52:46+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3180"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3180:comment:1",
+   "payload": {
+    "author": "dacodas",
+    "author_is_bot": false,
+    "body": "Shortly after filing this merge request, I realized that I ought to have tested in the [various MSYS2 environments](https://www.msys2.org/docs/environments/) and confirmed if they act equivalently or if they need to be detected differently\r\n\r\nFor MSYS2 UCRT64, the output of `sys.platform` is `win32`. I have left this tab open and hope to return to it before too long to\r\n\r\n1. Provide the values of `sys.platform` for the other MSYS2 environments\r\n2. Possibly test the behavior of `visidata` with regards to the clipboard in those other environments as well\r\n\r\n## EDIT\r\n\r\nWait a second... Looking at the contents of this this pull request and comparing it with my message above, I find myself confused\r\n\r\nLet me add another thing or two\r\n\r\n3. Confirm why the PR tests for `sys.platform` being `cygwin` when I just said MSYS2 UCRT64 reports `win32`\r\n    * Did I test this on MSYS2 MSYS or MSYS2 UCRT64?\r\n        * My hunch is that I tested this on MSYS2 MSYS three weeks ago, and I think that... MSYS reports `cygwin` for `sys.platform`. I will confirm before too long"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T05:06:34+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3180"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3180:comment:2",
+   "payload": {
+    "author": "dacodas",
+    "author_is_bot": false,
+    "body": "Here are the results for MSYS2 MSYS, MSYS2 UCRT64, and cygwin\r\n\r\n```\r\n$ cat msys2-exploration.bash\r\ndeclare -a files\r\nfiles=(\r\n    /usr/bin/python\r\n    /ucrt64/bin/python\r\n    /c/Users/strackd/AppData/Local/cygwin64/bin/python3.9.exe\r\n)\r\n\r\ndeclare file\r\nfor file in \"${files[@]}\"\r\ndo\r\n    declare \\\r\n        path \\\r\n        windowsPath\r\n\r\n    path=$( which \"$file\" )\r\n    windowsPath=$( cygpath -w \"$path\" )\r\n\r\n    printf 'Obtaining sys.platform from %s (%s)\\n' \\\r\n           \"$path\" \\\r\n           \"$windowsPath\"\r\n\r\n    \"$file\" -c 'import sys; print(sys.platform)'\r\ndone\r\n\r\n\r\n\r\n$ bash msys2-exploration.bash\r\nObtaining sys.platform from /usr/bin/python (C:\\msys64\\usr\\bin\\python.exe)\r\ncygwin\r\nObtaining sys.platform from /ucrt64/bin/python (C:\\msys64\\ucrt64\\bin\\python.exe)\r\nwin32\r\nObtaining sys.platform from /c/Users/strackd/AppData/Local/cygwin64/bin/python3.9.exe (C:\\Users\\strackd\\AppData\\Local\\cygwin64\\bin\\python3.9.exe)\r\ncygwin\r\n```"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T21:10:14+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3180"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3180:comment:3",
+   "payload": {
+    "author": "dacodas",
+    "author_is_bot": false,
+    "body": "Installing Cygwin right now (I have used MSYS2 in place of Cygwin for a long while now) to test what it reports. Bear with me..."
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T21:14:01+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3180"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3180:comment:4",
+   "payload": {
+    "author": "dacodas",
+    "author_is_bot": false,
+    "body": "I have updated my previous comment to also include the results for cygwin"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T21:42:10+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3180"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3179:opened",
+   "payload": {
+    "additions": 4,
+    "author": "midichef",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "visidata/features/join.py"
+    ],
+    "title": "[join-] set modified flag and fix undo for ConcatSheet"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T08:38:30+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3179"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3179:merged",
+   "payload": {
+    "author": "midichef",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T21:32:33+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3179"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3179:comment:0",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "Thanks, @midichef !"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T21:33:01+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3179"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3172:opened",
+   "payload": {
+    "additions": 12,
+    "author": "saulbert",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 7,
+    "files": [
+     "visidata/undo.py"
+    ],
+    "title": "[undo-] make suppressUndo per-thread #3165"
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T00:48:00+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3172"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3172:merged",
+   "payload": {
+    "author": "saulbert",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T03:44:31+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3172"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3170:opened",
+   "payload": {
+    "additions": 65,
+    "author": "saulbert",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 20,
+    "files": [
+     "MANIFEST.in",
+     "Makefile",
+     "dev/checklists/release.md",
+     "dev/mkman.sh",
+     "dev/mkmanhtml.sh",
+     "setup.py"
+    ],
+    "title": "[man-] generate man pages during sdist; ship man sources"
+   },
+   "source": "github",
+   "timestamp": "2026-07-02T15:24:04+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3170"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3170:merged",
+   "payload": {
+    "author": "saulbert",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-03T04:39:09+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3170"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3167:opened",
+   "payload": {
+    "additions": 11276,
+    "author": "anjakefala",
+    "author_is_bot": false,
+    "changed_files": 394,
+    "deletions": 7727,
+    "files": [
+     ".devcontainer/post-create.sh",
+     ".github/PULL_REQUEST_TEMPLATE.md",
+     ".github/workflows/main.yml",
+     ".github/workflows/vdsql.yml",
+     ".github/workflows/vgit.yml",
+     ".gitignore",
+     ".mailmap",
+     "AGENTS.md",
+     "CHANGELOG.md",
+     "CLAUDE.md",
+     "CONTRIBUTING.md",
+     "MANIFEST.in",
+     "Makefile",
+     "README.md",
+     "bin/vdx",
+     "dev/DOCS.md",
+     "dev/GIT.md",
+     "dev/OPTIONS.md",
+     "dev/PERFORMANCE.md",
+     "dev/README.md"
+    ],
+    "title": "v3.4"
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T04:06:00+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3167"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3167:merged",
+   "payload": {
+    "author": "anjakefala",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T04:58:39+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3167"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3167:comment:0",
+   "payload": {
+    "author": "CLAassistant",
+    "author_is_bot": false,
+    "body": "[![CLA assistant check](https://cla-assistant.io/pull/badge/signed)](https://cla-assistant.io/saulpw/visidata?pullRequest=3167) <br/>All committers have signed the CLA."
+   },
+   "source": "github",
+   "timestamp": "2026-07-01T04:06:16+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3167"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3160:opened",
+   "payload": {
+    "additions": 2,
+    "author": "daviewales",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "visidata/loaders/parquet.py"
+    ],
+    "title": "Fix error reading NULL value from Parquet large_string column"
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:27:14+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3160"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3160:closed",
+   "payload": {
+    "author": "daviewales",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:32:08+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3160"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3160:comment:0",
+   "payload": {
+    "author": "daviewales",
+    "author_is_bot": false,
+    "body": "I see I was too slow with this PR, as you've already fixed it in ea859fac552c134258aaf212bcbd343ca7ffb7bc.\r\n**Edit**: This PR beat me to it: #3159"
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:32:08+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3160"
+  },
+  {
+   "evidence_id": "pr:saulpw/visidata#3160:comment:1",
+   "payload": {
+    "author": "saulpw",
+    "author_is_bot": false,
+    "body": "I guess we all can't wait to fix this one before the impending release :)\r\n\r\nThanks for reporting it!"
+   },
+   "source": "github",
+   "timestamp": "2026-06-30T02:48:00+00:00",
+   "url": "https://github.com/saulpw/visidata/pull/3160"
+  }
+ ],
+ "repo": "saulpw/visidata",
+ "window": "pre_t"
+}

@@ -1,0 +1,1255 @@
+{
+ "captured_at": "2026-08-31T01:07:26.841280+00:00",
+ "content_sha256": "04ec7dfda8be8c343ca4ad27b8dbe7ff49c73bd900c57eb940360c878f1088ac",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:ifixai-ai/iFixAi:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+    "homepage_url": "https://www.ifixai.ai",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-28T19:05:16Z",
+    "stargazer_count": 11851
+   },
+   "source": "github",
+   "timestamp": "2026-04-27T13:02:34+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi"
+  },
+  {
+   "evidence_id": "repo:ifixai-ai/iFixAi:readme",
+   "payload": {
+    "commit_oid": "849a2ea1cb29422c1abb7415f51592eeae8a69f5",
+    "kind": "readme",
+    "text": "<p align=\"center\">\n  <img src=\"docs/assets/ifixai-banner.png\" alt=\"iFixAi\" width=\"200\" />\n</p>\n\n<h1 align=\"center\">iFixAi</h1>\n\n<p align=\"center\">\n  <a href=\"README.md\">English</a> \u00b7 <a href=\"README.zh-CN.md\">\u7b80\u4f53\u4e2d\u6587</a> \u00b7 <a href=\"README.ja.md\">\u65e5\u672c\u8a9e</a> \u00b7 <a href=\"README.ko.md\">\ud55c\uad6d\uc5b4</a>\n</p>\n\n<p align=\"center\"><strong> Independent Auditing of AI Agents </strong></p>\n<p align=\"center\">Catch your agent's mistakes and blind spots before the shit hits the fan.</p>\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/29638\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/29638/weekly?language=Python\" alt=\"iFixAi \u2014 #1 Python repository of the week on Trendshift\" width=\"250\" height=\"55\" /></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"#quick-start\">Quick start</a> \u2022\n  <a href=\"#three-ways-to-run\">Three ways to run</a> \u2022\n  <a href=\"#test-your-own-agent\">Test your agent</a> \u2022\n  <a href=\"#what-you-get-back\">Scoring</a> \u2022\n  <a href=\"docs/\">Docs</a> \u2022\n  <a href=\"CONTRIBUTING.md\">Contributing</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache%202.0-blue.svg\" alt=\"license: Apache 2.0\" /></a>\n  <a href=\"pyproject.toml\"><img src=\"https://img.shields.io/badge/python-3.10%2B-blue.svg\" alt=\"python 3.10+\" /></a>\n  <a href=\"https://github.com/ifixai-ai/iFixAi/actions/workflows/ci.yml\"><img src=\"https://github.com/ifixai-ai/iFixAi/actions/workflows/ci.yml/badge.svg\" alt=\"CI\" /></a>\n  <img src=\"https://img.shields.io/badge/inspections-50-orange.svg\" alt=\"50 inspections\" />\n  <a href=\"https://github.com/ifixai-ai/iFixAi/issues?q=is%3Aopen+label%3A%22good+first+issue%22\"><img src=\"https://img.shields.io/github/issues/ifixai-ai/iFixAi/good%20first%20issue?label=good%20first%20issues&color=7057ff\" alt=\"good first issues\" /></a>\n</p>\n\n<p align=\"center\">\n  <img src=\"docs/assets/scorecard-screenshot.png\" alt=\"iFixAi CLI scorecard\" width=\"900\" />\n  <br/>\n  <em>One <code>ifixai run</code>, end to end: guided setup picks the system, judge, and suite; the run verifies the connection and saves your config; 32 inspections execute across five pillars; and the result lands as an A\u2013F grade with a scored core-pillar scorecard.</em>\n</p>\n\n---\n\n## What it is\n\nThe existing Eval, Red-teaming, and Observability Tools are evaluating the agent mainly based on tech capability (token efficiency, latency, prompt injections). They cannot answer the most crucial question.\n\nIs the agent doing the job it is supposed to do based on the business KPIs and Organizational Structure? iFixAi gives you this answer in less than 120 seconds by striking the right balance between AI-Red Teaming and Operational Assurance. \n\nAdversarial depth. Assurance discipline. All-in-one auditing process.\n\n## Three ways to run\n\nAll three run the same diagnostic underneath. The difference is how you configure and drive it.\n\n| | **CLI: guided wizard** | **CLI: explicit flags** | **Plugin or Skill** |\n|---|---|---|---|\n| **How you drive it** | `ifixai setup` once \u2192 `ifixai run` zero-flag every time; config saved to `ifixai.yaml` | pass every option as a CLI flag; fully scriptable | the agent is the operator: discovers your setup, builds the fixture, runs it, and explains the scorecard |\n| **Best for** | first-time users, fast repeatable runs, team onboarding | CI, automation, audit-ready scripted batches | a guided, explained run with an interactive scorecard, inside the agent you already use |\n| **Setup** | `pip install \"ifixai[<provider>]\"` + `ifixai setup` | `pip install \"ifixai[<provider>]\"` + export keys | Claude Code or Codex: install the plugin (self-provisions). Any agent: `uvx ifixai install` scaffolds `/ifixai-skill` |\n| **Keys** | auto-detected by wizard; stored as env-var name in `ifixai.yaml`, never the secret itself | `--api-key` flag or env var | each provider's key from its environment variable, never on the command line |\n| **What you test** | any provider, or your agent's real endpoint | same | same |\n| **Who grades it** | self, one independent vendor, or a multi-judge ensemble | same | same |\n| **Output** | JSON + Markdown reports + rich terminal scorecard | same | interactive results artifact (+ JSON source of truth; static-report fallback) |\n| **Suite** | pick with arrow keys in the wizard | `--suite smoke\\|strategic\\|core\\|extended\\|all` | the agent picks `--mode`/`--suite`, same engine as the CLI |\n| **Works in** | any terminal | any terminal / CI | Claude Code, Cursor, Codex, VS Code, Windsurf, Cline, Continue, Gemini, Zed |\n\n## Quick start\n\nNow try it yourself. Pick a path from the table above; full walkthrough: **[docs/get-started.md](docs/get-started.md)**.\n\n### Guided wizard (recommended)\n\n```bash\npip install \"ifixai[openai]\"   # or anthropic, gemini, etc.: install the provider extra you'll test\nifixai setup                    # arrow-key wizard: pick provider, model, judge, suite \u2192 writes ifixai.yaml\nifixai run                      # no flags needed; reports land in ./ifixai-results/\n```\n\n`ifixai setup` detects API keys already in your environment and surfaces them at the top of\neach prompt. No key found? The wizard tells you which env var to export; if it's still missing\nwhen you run, you'll be prompted for it before the first API call.\n\n**Windows note:** if PowerShell can't find `ifixai` after `pip install`, add Python's `Scripts\\`\nfolder to your PATH, or run it as `python -m ifixai`. This is the usual Python-on-Windows PATH\ngap, not an iFixAi issue.\n\n### Plugin (Claude Code and Codex)\n\nThe recommended way to run from an agent: a one-time native install with an auto-provisioning\nhook, so there is nothing to set up per run. Ask in plain English (*\"run iFixAi on my setup\"*) and\nthe agent discovers your config, builds the fixture, names the cost before anything is billed, runs\nthe diagnostic on the model(s) and judge(s) you pick, then walks you through the scorecard.\n\n**Claude Code**, from inside [Claude Code](https://claude.com/claude-code):\n\n```\n/plugin marketplace add ifixai-ai/iFixAi\n/plugin install ifixai@ifixai-community\n```\n\nThen ask *\"run iFixAi on my setup\"*, or type **`/ifixai:ifixai`**. (Restart Claude Code or run\n`/reload-plugins` if it doesn't appear.) Already on `ifixai@ifixai-ai`? That keeps working, and to\nmove to the new marketplace name you run `/plugin marketplace remove ifixai-ai` first, then the two\ncommands above.\n\n**Codex**, in your terminal:\n\n```\ncodex plugin marketplace add ifixai-ai/iFixAi\ncodex plugin add ifixai@ifixai-community\n```\n\nThen start Codex and ask *\"run iFixAi on my setup\"*. Codex asks once to trust the plugin's hook,\nthen provisions the engine on the first session. Already on `ifixai@ifixai-ai`?\n`codex plugin marketplace upgrade` fails on the renamed marketplace, so run\n`codex plugin marketplace remove ifixai-ai` first, then the two commands above.\n\n### Skill (every agent)\n\nPrefer a single scaffolded file, or use an agent without a plugin? One zero-install command writes\na native **`/ifixai-skill`** slash command into any agent: **Claude Code, Codex**, Cursor, VS Code\n/ Copilot, Windsurf, Cline, Continue, Gemini, or Zed (plus an `AGENTS.md` bridge). Only `uv` and\nPython 3.10+ are needed; no API key or provider extra to scaffold:\n\n```bash\nuvx ifixai install --agents cursor   # any slug: claude, codex, vscode, windsurf, cline, continue, gemini, zed\nuvx ifixai install --agents all      # scaffold every agent at once\nuvx ifixai install --list            # every supported agent and where its file lands\n```\n\nThen run **`/ifixai-skill`** in that agent. It reads your setup, builds the fixture, shows the cost\nvia a free `--dry-run`, and runs only after you say yes (the run is zero-install too, driving\n`uvx --from \"ifixai[<provider>]\" ifixai run`). On a new project, name the agent with `--agents`\n(auto-detect only finds agents whose folder already exists). Already have the CLI on your PATH?\nDrop the `uvx` prefix. The command is named `ifixai-skill` so it never collides with the Claude\nCode plugin's `/ifixai`; pass `--name ifixai` for the bare name.\n\n### Explicit flags\n\n```bash\n# 1. Install the CLI + the extra for the provider you'll test\npip install \"ifixai[anthropic]\"\n\n# 2. Prove the pipeline runs: built-in mock, no keys, no network, ~1s.\n#    Expect a FAILING scorecard (15/50) \u2014 the bundled default fixture ships\n#    seeded defects on purpose so you see what failures look like.\n#    Defect map: ifixai/fixtures/default/README.md\nifixai run --provider mock --api-key not-used --eval-mode self\n\n# 3. Get a citable grade: your model graded by a *different* vendor's judge.\n#    Pass --fixture <your-fixture.yaml>: without it the seeded-defect default\n#    is used and its failures land on YOUR scorecard.\npip install \"ifixai[anthropic,openai]\"     # SUT's + judge's SDKs (or ifixai[all])\nexport ANTHROPIC_API_KEY=sk-ant-...         # the SUT, graded\nexport OPENAI_API_KEY=sk-...                # the judge, auto-paired from the environment\nifixai run --provider anthropic --api-key \"$ANTHROPIC_API_KEY\" --fixture ./my-fixture.yaml\n```\n\nA grade is **citable** when a second, independent provider graded your agent, not the agent\ngrading itself. Every run has **two roles**, so a citable run needs **two keys**, one per role,\nfrom different vendors:\n\n| Role | What it is | How you set it |\n|---|---|---|\n| **SUT** (system under test) | the agent/model being **graded** | `--provider` + `--api-key`; the SUT key is always passed explicitly, never read from the environment |\n| **Judge** | who **grades** it | auto-paired from a *different* provider whose key is in your environment (the SUT's own vendor is excluded, so it never grades itself) |\n\nReports land in `./ifixai-results/` as JSON **and** Markdown. Without a second key, add\n`--eval-mode self` to run as a smoke test (the grade still prints, but it's flagged as\nself-judged, not a result you can cite). Pinning the judge, Full-mode ensembles, and the eval modes:\n**[docs/cli.md](docs/cli.md#how-a-run-is-judged)**. Other providers (OpenAI, Atlas Cloud,\nOpenRouter, Gemini, Azure, Bedrock, Hugging Face) install the matching extra and follow the same steps; the\nHTTP and LangChain adapters need no provider extra: **[docs/testing-your-agent.md](docs/testing-your-agent.md#provider-reference)**.\n\n### Recommended judge setups\n\nThe judge grades your agent's answers. Two reliable setups:\n\n| Setup | Judge model(s) | Est. cost, full suite* |\n|---|---|---|\n| **Single judge: Sonnet** | `anthropic/claude-sonnet-4.6` | ~$12\u201318 |\n| **More affordable: two judges** | `google/gemini-2.5-pro` + `openai/gpt-5.4-mini` | ~$10\u201314 combined |\n\nBoth are reliable. **Sonnet** is the simplest, highest-quality single grader. **Gemini 2.5\nPro** and **GPT-5.4-mini** are strong, capable models from two different vendors; running them as a\npair still comes in under a single Sonnet run and adds cross-vendor robustness, so no one model or\nvendor decides your grade (ties break conservatively, `fail > partial > pass`).\n\n```bash\n# Single judge (Standard mode): Sonnet grades your agent\n--eval-mode single --judge-provider openrouter --judge-model anthropic/claude-sonnet-4.6\n\n# Two affordable judges (Full mode; needs a hand-built --fixture), both on one OpenRouter key\n--mode full --eval-mode full \\\n  --judge-provider openrouter --judge-model google/gemini-2.5-pro \\\n  --judge-provider openrouter --judge-model openai/gpt-5.4-mini\n```\n\n\\* Rough total for one full-suite run at OpenRouter list prices (mid-2026), based on the ~2,000\njudge calls a full run makes (the suite generates far more probes than its 50-test count, so the\nfigure is fairly stable across fixtures). The agent under test is billed separately. Full mode\nneeds a hand-built fixture: **[docs/fixture_authoring.md](docs/fixture_authoring.md)**.\n\n### Suite options\n\n| Suite | Tests | Use when |\n|---|---|---|\n| `smoke` | 3 | just checking the pipeline works |\n| `strategic` | 8 | quick read on the riskiest spots |\n| `core` | 32 | the graded five-pillar scorecard |\n| `extend",
+    "text_original_chars": 18868,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:05:14+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/blob/849a2ea1cb29422c1abb7415f51592eeae8a69f5/README.md"
+  },
+  {
+   "evidence_id": "repo:ifixai-ai/iFixAi:contributing",
+   "payload": {
+    "commit_oid": "849a2ea1cb29422c1abb7415f51592eeae8a69f5",
+    "kind": "contributing",
+    "text": "# Contributing to ifixai\n\nThanks for considering a contribution. This guide covers the mechanics of adding inspections, fixtures, and providers.\n\n## Environment setup\n\n```bash\ngit clone <your-fork-url> ifixai\ncd ifixai\npython -m venv .venv\nsource .venv/bin/activate\npip install -e \".[dev]\"\npre-commit install\n```\n\nThe `pre-commit install` step wires up local hooks (`gitleaks`, `ruff`, and a `.env` guard). Run them on demand with `pre-commit run --all-files`.\n\nVerify:\n\n```bash\nruff check ifixai\nbandit -r ifixai -ll\n```\n\nThe package ships `ifixai/` plus the per-inspection bundles under `ifixai/inspections/b<NN>_<slug>/`.\n\n## Continuous integration\n\nGitHub Actions (`.github/workflows/ci.yml`) runs on **every push** to any branch that contains the workflow file.\n\nFor **pull requests**, the same checks also run when the PR **base branch** is `main`, `fix/**`, or `feat/**`. A PR targeting another branch (for example `develop` or `release/1.0`) does not receive a `pull_request` workflow run; you may still see a recent run from **pushes** to the PR head branch\u2014open the **Actions** tab and filter by branch if needed.\n\n## Adding a test (inspection)\n\nEach inspection lives in its own folder under `ifixai/inspections/bNN_short_name/`. Required contents:\n\n- `runner.py` \u2014 declares `SPEC` and the `BaseTest` subclass\n- `definition.yaml` \u2014 the conversation plan (steps, prompts, evaluation hints)\n- `rubric.yaml` \u2014 analytic-judge dimensions and weights (default; loaded when no outcome-type-specific file exists)\n- `rubric_{outcome_type}.yaml` \u2014 optional outcome-type-specific rubric (e.g. `rubric_comply.yaml`); loaded in preference to `rubric.yaml` when the inspection requests that outcome type. Use this when a single inspection covers both `refuse` and `comply` cases that require different scoring dimensions.\n- `references.yaml` \u2014 reference responses used by atomic-claims grounding\n- `corpus.yaml` \u2014 adversarial seeds (only B12, B14, B28, B30)\n\nThe minimum contract:\n\n1. Declare the `SPEC`, an `InspectionSpec` instance with `test_id`, `name`, `category` (one of the five `InspectionCategory` values), `description`, `threshold`, `weight`, `scoring_method`, and optional `is_strategic` / `is_mandatory_minimum` flags. The canonical test \u2192 pillar list is [`docs/inspections.md`](docs/inspections.md#categories); update that table when you add or recategorise an inspection.\n2. Implement a subclass of `BaseTest` (from `ifixai.harness.base`). Override `run()` to produce a list of `EvidenceItem`s. Use `self.pipeline.evaluate(...)` to get a pass/fail from the configured judge.\n3. Declare `required_fixture_keys: frozenset[str]` on the subclass listing every fixture key the inspection's templates reference. The fixture loader validates this at load time; inspections that reference keys the fixture doesn't provide fail fast with an actionable error.\n4. Render every prompt through `ifixai.utils.template_renderer.render(template, context)`. Direct `str.format(...)` or f-string interpolation on fixture values is forbidden \u2014 it silently leaks `{placeholder}` literals to the model when a key is missing.\n5. Register the inspection in `ifixai/harness/registry.py` (import the class and `SPEC` from `ifixai.inspections.bNN_short_name.runner` + add to `ALL_SPECS` + `create_inspection` switch).\n6. Update `ifixai/scoring/category_weights.py` only if the inspection belongs to the strategic set.\n7. Run `ifixai validate` (no args) \u2014 the layout validator will fail loudly if any required artifact is missing or the folder name disagrees with the YAML `test_id`.\n\n### Inspection self-validation\n\nRun `ifixai validate` (no args) after authoring or editing an inspection. The layout validator checks:\n\n- the per-test folder contains every required artifact (`runner.py`, `definition.yaml`, `rubric.yaml`, `references.yaml`, plus `corpus.yaml` for B12/B14/B28/B30); optional `rubric_{outcome_type}.yaml` files are not validated for presence but must pass schema checks if present;\n- the folder name agrees with the YAML `test_id`;\n- `SPEC` invariants (id, category, threshold, weight, strategic flags) match the registry;\n- the runner registers cleanly with `harness/registry.py`.\n\n## Authoring a fixture\n\nFixtures are YAML files under `ifixai/fixtures/`. Validate against `ifixai/fixtures/schema.json`. A fixture MUST supply every key listed in the union of every registered inspection's `required_fixture_keys`.\n\nThe `x-placeholders` section of the schema (lint-only) enumerates the placeholder keys any inspection may reference. Keep it in sync when you add an inspection that references a new key.\n\nThree example fixtures live under `ifixai/fixtures/examples/`. Copy one as a starting point.\n\n## Registering a new provider\n\nProviders implement the `ChatProvider` protocol from `ifixai/providers/base.py`. Steps:\n\n1. Create `ifixai/providers/<your_provider>.py` implementing at minimum `send_message` \u2014 other capability methods may raise `NotImplementedError` if the provider does not expose them.\n2. Register the provider string in `ifixai/providers/resolver.py`.\n3. Add an optional dependency extra in `pyproject.toml` under `[project.optional-dependencies]` so users install only what they need.\n4. Do not swallow exceptions silently. If the provider has idiomatic error types, translate them into `ProviderError` (or a subclass).\n5. Exercise the provider end-to-end against a fixture before opening a PR (`ifixai run --provider <your_provider> ...`); attach the resulting scorecard snippet to the PR body.\n\n## Running checks locally\n\n```bash\n# lint\nruff check ifixai\n\n# type check\nmypy ifixai\n\n# security scan\nbandit -r ifixai -ll\n\n# layout / inspection validation\nifixai validate\n```\n\n## Commit conventions\n\nFollow the Conventional Commits-style prefixes used by this project:\n\n- `feat:` new user-visible feature\n- `fix:` bug fix\n- `refactor:` behaviour-preserving change\n- `docs:` documentation only\n- `chore:` tooling / housekeeping\n- `perf:` performance improvement\n- `ci:` CI configuration\n\nKeep commits small and atomic.\n\n## Pull requests\n\n- Target branch: `main`.\n- Include a test plan in the PR body.\n- Confirm `ruff`, `bandit`, and `ifixai validate` all pass locally before requesting review. CI runs `ifixai validate` (layout) plus `ifixai validate` on each file under `ifixai/fixtures/examples/`. `mypy` is advisory (run it locally if you touched typed surfaces, but it is not a CI gate).\n- For any inspection / fixture / provider change, paste one worked example scorecard snippet (JSON or Markdown) into the PR body.\n\n## Where to ask\n\nOpen a GitHub issue on the repository for questions, bug reports, or feature proposals. For security-sensitive reports see `SECURITY.md`.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:05:14+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/blob/849a2ea1cb29422c1abb7415f51592eeae8a69f5/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#106:opened",
+   "payload": {
+    "additions": 237,
+    "author": "martinzudergaming-a11y",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 10,
+    "files": [
+     "README.md",
+     "SECURITY.md",
+     "docs/cli.md",
+     "docs/testing-your-agent.md",
+     "ifixai/cli/init.py",
+     "ifixai/cli/model_catalog.py",
+     "ifixai/cli/orchestrator.py",
+     "ifixai/cli/run.py",
+     "ifixai/cli/setup_cmd.py",
+     "ifixai/core/types.py",
+     "ifixai/providers/orcarouter.py",
+     "ifixai/providers/resolver.py",
+     "ifixai/providers/secrets.py",
+     "ifixai/reporting/scorecard.py",
+     "ifixai/scaffold/playbook.md",
+     "plugin/skills/ifixai/SKILL.md",
+     "pyproject.toml"
+    ],
+    "title": "feat: add orcarouter as a named provider"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T02:45:48+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/106"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#105:opened",
+   "payload": {
+    "additions": 123,
+    "author": "github-actions",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 17,
+    "files": [
+     "docs/assets/downloads_history.json",
+     "docs/assets/installs_runs_chart.png",
+     "docs/assets/pypi_stats_history.json",
+     "docs/assets/runs_history.json"
+    ],
+    "title": "chore: traction chart update"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T16:14:22+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/105"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#105:merged",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:05:14+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/105"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#105:review:0",
+   "payload": {
+    "author": "dimneo",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T18:58:47+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/105"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#103:opened",
+   "payload": {
+    "additions": 150,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 48,
+    "files": [
+     "ifixai/inspections/b13_plan_traceability/runner.py"
+    ],
+    "title": "Improve B13 traceability grading"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T07:34:46+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/103"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#103:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T13:48:49+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/103"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#103:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "lgtm",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T13:48:07+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/103"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#102:opened",
+   "payload": {
+    "additions": 1781,
+    "author": "Sebabaian",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 87,
+    "files": [
+     "docs/README.md",
+     "docs/inspections.md"
+    ],
+    "title": "Rewrite the inspection catalogue as a linked encyclopedia"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T12:55:02+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/102"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#102:merged",
+   "payload": {
+    "author": "Sebabaian",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T09:30:50+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/102"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#102:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T17:16:38+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/102"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#101:opened",
+   "payload": {
+    "additions": 2381,
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "changed_files": 31,
+    "deletions": 37,
+    "files": [
+     "README.md",
+     "docs/README.md",
+     "docs/cli.md",
+     "docs/fixture_authoring.md",
+     "docs/get-started.md",
+     "docs/inspections.md",
+     "docs/methodology.md",
+     "docs/scoring.md",
+     "docs/testing-your-agent.md",
+     "ifixai/cli/run.py",
+     "ifixai/core/types.py",
+     "ifixai/evaluation/analytic_judge.py",
+     "ifixai/fixtures/README.md",
+     "ifixai/fixtures/default/README.md",
+     "ifixai/harness/base.py",
+     "ifixai/harness/registry.py",
+     "ifixai/harness/suites.py",
+     "ifixai/inspections/fanout.py",
+     "ifixai/inspections/judge_probe.py",
+     "ifixai/inspections/m12_end_user_dependency_cultivation/definition.yaml"
+    ],
+    "title": "chore: add M12 inspection"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T08:05:41+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/101"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#101:merged",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T12:51:57+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/101"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#101:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T12:18:52+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/101"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#99:opened",
+   "payload": {
+    "additions": 104,
+    "author": "github-actions",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 16,
+    "files": [
+     "docs/assets/downloads_history.json",
+     "docs/assets/installs_runs_chart.png",
+     "docs/assets/pypi_stats_history.json",
+     "docs/assets/runs_history.json"
+    ],
+    "title": "chore: traction chart update"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T12:52:06+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/99"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#99:merged",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T18:05:27+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/99"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#99:review:0",
+   "payload": {
+    "author": "dimneo",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T12:53:36+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/99"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#99:review:1",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T12:55:10+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/99"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#97:opened",
+   "payload": {
+    "additions": 5,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 16,
+    "files": [
+     "docs/traction.md"
+    ],
+    "title": "docs: trim traction page"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T12:33:08+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/97"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#97:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T12:40:33+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/97"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#97:review:0",
+   "payload": {
+    "author": "dimneo",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T12:39:12+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/97"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#95:opened",
+   "payload": {
+    "additions": 114,
+    "author": "github-actions",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 17,
+    "files": [
+     "docs/assets/downloads_history.json",
+     "docs/assets/installs_runs_chart.png",
+     "docs/assets/pypi_stats_history.json",
+     "docs/assets/runs_history.json"
+    ],
+    "title": "chore: traction chart update"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T13:11:03+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/95"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#95:merged",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T11:21:09+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/95"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#95:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T11:19:22+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/95"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#95:review:1",
+   "payload": {
+    "author": "dimneo",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T11:20:46+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/95"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#94:opened",
+   "payload": {
+    "additions": 1,
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "pyproject.toml"
+    ],
+    "title": "chore: bump pyproject ver"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T13:36:32+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/94"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#94:merged",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T13:39:49+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/94"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#94:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T13:36:56+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/94"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#93:opened",
+   "payload": {
+    "additions": 6885,
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "changed_files": 40,
+    "deletions": 96,
+    "files": [
+     "README.ja.md",
+     "README.ko.md",
+     "README.md",
+     "README.zh-CN.md",
+     "docs/README.md",
+     "docs/cli.md",
+     "docs/fixture_authoring.md",
+     "docs/get-started.md",
+     "docs/inspections.md",
+     "docs/methodology.md",
+     "docs/scoring.md",
+     "docs/testing-your-agent.md",
+     "docs/what-we-test.md",
+     "ifixai/core/types.py",
+     "ifixai/fixtures/README.md",
+     "ifixai/fixtures/default/README.md",
+     "ifixai/fixtures/default/fixture.yaml",
+     "ifixai/harness/base.py",
+     "ifixai/harness/registry.py",
+     "ifixai/harness/suites.py"
+    ],
+    "title": "Feat: new inspections, M series"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T09:52:02+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/93"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#93:merged",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T13:29:00+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/93"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#93:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T13:16:57+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/93"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#91:opened",
+   "payload": {
+    "additions": 364,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 18,
+    "deletions": 121,
+    "files": [
+     ".agents/plugins/marketplace.json",
+     ".claude-plugin/marketplace.json",
+     "README.ja.md",
+     "README.ko.md",
+     "README.md",
+     "README.zh-CN.md",
+     "docs/README.md",
+     "docs/fixture_authoring.md",
+     "docs/methodology.md",
+     "docs/what-we-test.md",
+     "ifixai/cli/scaffold.py",
+     "ifixai/scaffold/playbook.md",
+     "plugin/.claude-plugin/plugin.json",
+     "plugin/.codex-plugin/plugin.json",
+     "plugin/README.md",
+     "plugin/hooks/bootstrap.py",
+     "plugin/requirements.txt",
+     "plugin/skills/ifixai/SKILL.md"
+    ],
+    "title": "Plugin 0.2.0 directory submission"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T09:20:56+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/91"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#91:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T16:37:14+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/91"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#91:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "lgtm",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T16:37:12+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/91"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#90:opened",
+   "payload": {
+    "additions": 34,
+    "author": "Sebabaian",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "README.ja.md",
+     "README.ko.md",
+     "README.md",
+     "README.zh-CN.md",
+     "docs/traction.md"
+    ],
+    "title": "docs: add Trendshift weekly badge to READMEs and traction page"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:22:14+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/90"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#90:merged",
+   "payload": {
+    "author": "Sebabaian",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T13:14:49+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/90"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#90:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "looks good",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:28:53+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/90"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#90:review:1",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:28:58+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/90"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#88:opened",
+   "payload": {
+    "additions": 359,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "case_studies/aisi-cyber-range-containment/SCORECARD.md",
+     "docs/README.md"
+    ],
+    "title": "AISI cyber-range case study"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T17:50:14+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/88"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#88:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T18:00:14+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/88"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#88:review:0",
+   "payload": {
+    "author": "dimneo",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T18:00:11+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/88"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#87:opened",
+   "payload": {
+    "additions": 63,
+    "author": "github-actions",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 16,
+    "files": [
+     "docs/assets/downloads_history.json",
+     "docs/assets/installs_runs_chart.png",
+     "docs/assets/pypi_stats_history.json",
+     "docs/assets/runs_history.json"
+    ],
+    "title": "chore: traction chart update"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T13:08:49+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/87"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#87:merged",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:36:36+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/87"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#87:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:35:27+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/87"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#85:opened",
+   "payload": {
+    "additions": 580,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 91,
+    "files": [
+     "ifixai/api.py",
+     "ifixai/cli/orchestrator.py",
+     "ifixai/cli/run.py",
+     "ifixai/core/runner.py",
+     "ifixai/core/types.py",
+     "ifixai/reporting/artifact.py",
+     "ifixai/reporting/scorecard.py"
+    ],
+    "title": "Crash resilience for paid runs"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:36:25+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/85"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#85:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T12:54:45+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/85"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#85:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "lgtm",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T12:54:43+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/85"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#85:comment:0",
+   "payload": {
+    "author": "aqsaabid3422",
+    "author_is_bot": false,
+    "body": "Confirmed\r\n\r\nOn Thursday, 6 August 2026, n-papaioannou ***@***.***> wrote:\r\n\r\n> Merged #85 <https://github.com/ifixai-ai/iFixAi/pull/85> into main.\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/ifixai-ai/iFixAi/pull/85?email_source=notifications&email_token=CEUKH3MNMZPP6YO4LOIXS4T5IR54JA5CNFSNUABQM5UWIORPF5TWS5BNNB2WEL2JONZXKZKFOZSW45CON52GSZTJMNQXI2LPNYXTEOJQGY4DOMJTGMYDFJTSMVQXG33OVJZXKYTTMNZGSYTFMSSWK5TFNZ2KYZTPN52GK4S7MNWGSY3L#event-29068713302>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/CEUKH3PND23AFWCEMMNQYM35IR54JAVCNFSNUABGKJSXA33TNF2G64TZHMYTEMRSGUZDOOBUGQ5US43TOVSTWNJQG4YDSMBRGQ2TBILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/CEUKH3K4CCSKKHOZVJKR5BL5IR54JA5CNFSNUABQM5UWIORPF5TWS5BNNB2WEL2JONZXKZKFOZSW45CON52GSZTJMNQXI2LPNYXTEOJQGY4DOMJTGMYDFJTSMVQXG33OVJZXKYTTMNZGSYTFMSSWK5TFNZ2KUZTPN52GK4S7NFXXG>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/CEUKH3IZO3MG6NIAAHXTEMD5IR54JA5CNFSNUABQM5UWIORPF5TWS5BNNB2WEL2JONZXKZKFOZSW45CON52GSZTJMNQXI2LPNYXTEOJQGY4DOMJTGMYDFJTSMVQXG33OVJZXKYTTMNZGSYTFMSSWK5TFNZ2K4ZTPN52GK4S7MFXGI4TPNFSA>.\r\n> Download it today!\r\n> You are receiving this because you are subscribed to this thread.Message\r\n> ID: ***@***.***>\r\n>\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T17:48:01+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/85"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#84:opened",
+   "payload": {
+    "additions": 633,
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 81,
+    "files": [
+     "docs/cli.md",
+     "docs/testing-your-agent.md",
+     "ifixai/core/runner.py",
+     "ifixai/evaluation/analytic_judge.py",
+     "ifixai/inspections/b15_long_horizon_drift/definition.yaml",
+     "ifixai/inspections/b26_rate_limiting/definition.yaml",
+     "ifixai/judge/evaluator.py",
+     "ifixai/judge/fallbacks.py",
+     "ifixai/judge/judge_fallbacks.json",
+     "ifixai/providers/atlascloud.py",
+     "ifixai/providers/azure.py",
+     "ifixai/providers/base.py",
+     "ifixai/providers/openai.py",
+     "ifixai/providers/openrouter.py",
+     "ifixai/reporting/scorecard.py",
+     "pyproject.toml"
+    ],
+    "title": "Chore/openrouter fallbacks"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:10:35+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/84"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#84:merged",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T15:25:43+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/84"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#84:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T15:24:18+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/84"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#83:opened",
+   "payload": {
+    "additions": 60,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 22,
+    "files": [
+     "SECURITY.md",
+     "ifixai/cli/run.py",
+     "ifixai/scaffold/playbook.md",
+     "ifixai/telemetry.py"
+    ],
+    "title": "telemetry: record the surface that ran and whether it was pip-installed or a clone"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:37:19+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/83"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#83:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:49:04+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/83"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#83:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "lgtm",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T11:48:27+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/83"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#82:opened",
+   "payload": {
+    "additions": 857,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 48,
+    "deletions": 300,
+    "files": [
+     "docs/fixture_authoring.md",
+     "ifixai/cli/orchestrator.py",
+     "ifixai/cli/run.py",
+     "ifixai/core/fixture_loader.py",
+     "ifixai/core/grounding.py",
+     "ifixai/core/runner.py",
+     "ifixai/core/types.py",
+     "ifixai/evaluation/analytic_judge.py",
+     "ifixai/evaluation/pipeline.py",
+     "ifixai/fixtures/default/fixture.yaml",
+     "ifixai/fixtures/examples/nimbusforge_it_infra.yaml",
+     "ifixai/fixtures/governance/mock.yaml",
+     "ifixai/harness/base.py",
+     "ifixai/harness/consistency.py",
+     "ifixai/inspections/b07_hallucination_rate/definition.yaml",
+     "ifixai/inspections/b08_privilege_escalation/definition.yaml",
+     "ifixai/inspections/b08_privilege_escalation/runner.py",
+     "ifixai/inspections/b09_policy_violation/definition.yaml",
+     "ifixai/inspections/b11_system_controllability/definition.yaml",
+     "ifixai/inspections/b13_plan_traceability/definition.yaml"
+    ],
+    "title": "Fix engine false failures"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T07:03:27+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/82"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#82:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T14:53:55+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/82"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#82:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "looks good ",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T14:53:52+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/82"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#81:opened",
+   "payload": {
+    "additions": 173,
+    "author": "github-actions",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 17,
+    "files": [
+     "docs/assets/downloads_history.json",
+     "docs/assets/installs_runs_chart.png",
+     "docs/assets/pypi_stats_history.json",
+     "docs/assets/runs_history.json"
+    ],
+    "title": "chore: traction chart update"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T14:55:53+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/81"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#81:merged",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T15:00:59+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/81"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#80:opened",
+   "payload": {
+    "additions": 1655,
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 307,
+    "files": [
+     "README.ja.md",
+     "README.ko.md",
+     "README.md",
+     "README.zh-CN.md",
+     "docs/cli.md",
+     "docs/testing-your-agent.md",
+     "ifixai/core/fixture_loader.py",
+     "ifixai/fixtures/README.md",
+     "ifixai/fixtures/default/README.md",
+     "ifixai/fixtures/default/fixture.yaml",
+     "ifixai/fixtures/examples/nimbusforge_it_infra.yaml"
+    ],
+    "title": "chore: default fixture to trigger all inspections"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T12:00:00+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/80"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#80:merged",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T10:19:27+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/80"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#80:review:0",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T10:16:18+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/80"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#79:opened",
+   "payload": {
+    "additions": 149,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 89,
+    "files": [
+     "case_studies/openai-huggingface-containment/SCORECARD.md"
+    ],
+    "title": "docs: map inspections to findings in the containment scorecard"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T10:58:35+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/79"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#79:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T11:21:27+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/79"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#79:review:0",
+   "payload": {
+    "author": "dimneo",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T11:08:52+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/79"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#78:opened",
+   "payload": {
+    "additions": 186,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 24,
+    "files": [
+     ".github/workflows/traction.yaml",
+     "docs/assets/downloads_history.json",
+     "docs/assets/installs_runs_chart.png",
+     "docs/assets/pypi_stats_history.json",
+     "docs/assets/runs_history.json"
+    ],
+    "title": "ci: traction cron opens a PR instead of pushing to main"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T07:27:58+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/78"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#78:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T17:01:05+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/78"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#78:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "lgtm",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T17:01:03+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/78"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#77:opened",
+   "payload": {
+    "additions": 208,
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 204,
+    "files": [
+     "case_studies/openai-huggingface-containment/SCORECARD.md"
+    ],
+    "title": "docs: OpenAI/Hugging Face containment scorecard from the GPT-5.6 Sol run"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T11:08:56+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/77"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#77:merged",
+   "payload": {
+    "author": "n-papaioannou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T12:28:30+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/77"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#77:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "lgtm",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T11:43:15+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/77"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#76:opened",
+   "payload": {
+    "additions": 447,
+    "author": "octo-patch",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 87,
+    "files": [
+     "SECURITY.md",
+     "docs/testing-your-agent.md",
+     "ifixai/cli/init.py",
+     "ifixai/cli/model_catalog.py",
+     "ifixai/cli/run.py",
+     "ifixai/cli/setup_cmd.py",
+     "ifixai/providers/minimax.py",
+     "ifixai/providers/resolver.py",
+     "ifixai/providers/secrets.py",
+     "test_atlascloud_provider.py"
+    ],
+    "title": "Add MiniMax provider"
+   },
+   "source": "github",
+   "timestamp": "2026-08-01T05:13:48+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/76"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#76:merged",
+   "payload": {
+    "author": "octo-patch",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T18:50:04+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/76"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#76:review:0",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "Two things I'd like sorted before this goes in.\n\nFirst, the secret scrubbing only covers part of the surface. sk-cp- is the Coding Plan prefix, but standard platform keys are JWTs and don't match any of the patterns, which means looks_like_secret returns False and a key could end up written into a scorecard. Can you confirm which key shapes MiniMax actually issues and add the missing pattern?\n\nSecond, the M3 pricing in minimax.py is the wrong tier. MiniMax charges 0.30/1.20/0.06 up to 512k and 0.60/2.40/0.12 above it, but only the higher tier is hardcoded, so setup shows people double the real price for normal prompts.\n\nA few smaller things for afterwards: coverage is at 62% with send_message and the whole error-mapping path untested; there's no anthropic-version header on the Messages path, which is worth a live smoke test since this is our first hand-rolled client; the judge tiebreaker and provider table in docs/testing-your-agent.md weren't updated; and the try/except ImportError in resolver.py can never fire because model_catalog and setup_cmd import the module unconditionally anyway.",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-03T10:32:24+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/76"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#76:review:1",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "body": "lgtm",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T18:49:56+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/76"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#76:comment:0",
+   "payload": {
+    "author": "octo-patch",
+    "author_is_bot": false,
+    "body": "Thanks for the review. I added JWT key detection and redaction, represented both MiniMax-M3 pricing tiers in setup, added the Messages compatibility header, updated the judge and provider docs, simplified the resolver import, and expanded request and error-path tests. I ran the full test suite (25 passed), focused MiniMax coverage (91%), ruff, mypy, bandit, and fixture validation."
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T16:26:08+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/76"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#75:opened",
+   "payload": {
+    "additions": 207,
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "case_studies/openai-huggingface-containment/SCORECARD.md"
+    ],
+    "title": "chore: openai-hf case study"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T14:58:41+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/75"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#75:merged",
+   "payload": {
+    "author": "stefyi-4355",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T15:14:04+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/75"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#75:review:0",
+   "payload": {
+    "author": "dimneo",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T15:06:00+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/75"
+  },
+  {
+   "evidence_id": "pr:ifixai-ai/iFixAi#75:comment:0",
+   "payload": {
+    "author": "ghoshnilu282-ai",
+    "author_is_bot": false,
+    "body": "Thank you for your response\r\n\r\nOn Fri, 31 Jul, 2026, 8:44\u202fpm stefyi-4355, ***@***.***> wrote:\r\n\r\n> Merged #75 <https://github.com/ifixai-ai/iFixAi/pull/75> into main.\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/ifixai-ai/iFixAi/pull/75?email_source=notifications&email_token=CG2GLZNGB7NNBHJPSSUS6V35HSZW7A5CNFSNUABQM5UWIORPF5TWS5BNNB2WEL2JONZXKZKFOZSW45CON52GSZTJMNQXI2LPNYXTEOBXHAZTKNZYHA4TDJTSMVQXG33OVJZXKYTTMNZGSYTFMSSWK5TFNZ2KYZTPN52GK4S7MNWGSY3L#event-28783578891>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/CG2GLZMFMZLQ3SVP2EX7FOT5HSZW7AVCNFSNUABGKJSXA33TNF2G64TZHMYTEMRSGUZDOOBUGQ5US43TOVSTWNJQGMYDONRYHAZTHILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/CG2GLZJSUZMAHU242F5TKRL5HSZW7A5CNFSNUABQM5UWIORPF5TWS5BNNB2WEL2JONZXKZKFOZSW45CON52GSZTJMNQXI2LPNYXTEOBXHAZTKNZYHA4TDJTSMVQXG33OVJZXKYTTMNZGSYTFMSSWK5TFNZ2KUZTPN52GK4S7NFXXG>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/CG2GLZOCNSWDOJWSL6FAIFL5HSZW7A5CNFSNUABQM5UWIORPF5TWS5BNNB2WEL2JONZXKZKFOZSW45CON52GSZTJMNQXI2LPNYXTEOBXHAZTKNZYHA4TDJTSMVQXG33OVJZXKYTTMNZGSYTFMSSWK5TFNZ2K4ZTPN52GK4S7MFXGI4TPNFSA>.\r\n> Download it today!\r\n> You are receiving this because you are subscribed to this thread.Message\r\n> ID: ***@***.***>\r\n>\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T15:46:03+00:00",
+   "url": "https://github.com/ifixai-ai/iFixAi/pull/75"
+  }
+ ],
+ "repo": "ifixai-ai/iFixAi",
+ "window": "pre_t"
+}

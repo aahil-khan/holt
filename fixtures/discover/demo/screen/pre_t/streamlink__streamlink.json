@@ -1,0 +1,972 @@
+{
+ "captured_at": "2026-08-31T01:07:29.320636+00:00",
+ "content_sha256": "bbd5dab7bf166b74c35293e3ee0d3f126886def76e0ef07867154ff6ac4eaf7e",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:streamlink/streamlink:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Streamlink is a CLI utility which pipes video streams from various services into a video player",
+    "homepage_url": "https://streamlink.github.io/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-30T19:44:04Z",
+    "stargazer_count": 11723
+   },
+   "source": "github",
+   "timestamp": "2016-09-16T17:52:50+00:00",
+   "url": "https://github.com/streamlink/streamlink"
+  },
+  {
+   "evidence_id": "repo:streamlink/streamlink:readme",
+   "payload": {
+    "commit_oid": "b0328ab9ff7138d77c7aaa6691952879e23e014b",
+    "kind": "readme",
+    "text": "<h1 align=\"center\"><a href=\"https://streamlink.github.io/\">Streamlink<br><img height=\"150\" alt=\"Streamlink\" src=\"https://raw.githubusercontent.com/streamlink/streamlink/master/icon.svg\"></a></h1>\n\n<p align=\"center\">\n  <a href=\"https://streamlink.github.io/install.html\"><img alt=\"Supported Python versions\" src=\"https://img.shields.io/pypi/pyversions/streamlink.svg?style=flat-square&maxAge=86400\"></a>\n  <a href=\"https://streamlink.github.io/changelog.html\"><img alt=\"Latest release\" src=\"https://img.shields.io/github/release/streamlink/streamlink.svg?style=flat-square&maxAge=86400\"></a>\n  <a href=\"https://github.com/streamlink/streamlink\"><img alt=\"License\" src=\"https://img.shields.io/github/license/streamlink/streamlink.svg?style=flat-square&maxAge=86400\"></a>\n  <a href=\"https://github.com/streamlink/streamlink/issues\"><img alt=\"Open issues\" src=\"https://img.shields.io/github/issues/streamlink/streamlink.svg?style=flat-square&maxAge=86400\"></a>\n  <a href=\"https://github.com/streamlink/streamlink/actions?query=event%3Apush\"><img alt=\"Build status\" src=\"https://img.shields.io/github/actions/workflow/status/streamlink/streamlink/test.yml?branch=master&event=push&style=flat-square&maxAge=86400\"></a>\n  <a href=\"https://codecov.io/github/streamlink/streamlink?branch=master\"><img alt=\"Overall code coverage\" src=\"https://img.shields.io/codecov/c/github/streamlink/streamlink.svg?branch=master&style=flat-square&maxAge=86400\"></a>\n</p>\n\n<p align=\"center\">\n  A Python library and command-line interface which pipes streams from various services into a video player.<br>\n  Avoid resource-heavy and unoptimized websites, and still enjoy streamed content.\n</p>\n\n<p align=\"center\">\n  Streamlink was forked in 2016 from the abandoned <em>Livestreamer</em> project.\n</p>\n\n\n# \ud83d\udce6 Installation\n\nPlease take a look at the documentation for different ways of installing Streamlink:\n\n- [Windows][streamlink-installation-windows]\n- [macOS][streamlink-installation-macos]\n- [Linux and BSD][streamlink-installation-linux-and-bsd]\n- [PyPI package and source code][streamlink-installation-pypi-source]\n\n\n# \ud83d\udc4d Features\n\nStreamlink is built on top of a plugin system which allows support for new services to be added easily.  \nMost of the popular streaming services are supported, such as [Twitch](https://www.twitch.tv), [YouTube](https://www.youtube.com), and many more.\n\nA list of all plugins currently included can be found on the [plugins page][streamlink-plugins].\n\n\n# \ud83d\udca1 Quickstart\n\nAfter installing, simply run:\n\n```sh\nstreamlink \"STREAMURL\" best\n```\n\nThe default behavior of Streamlink is to play back streams in the [VLC player][player-vlc], but a lot of other options and output methods are available, such as writing the stream to the filesystem, reading stream metadata, etc.\n\nFor more in-depth usage, please refer to the [CLI documentation][streamlink-documentation-cli].\n\nAn [API guide][streamlink-documentation-apiguide] and [API reference][streamlink-documentation-apiref] is available for Python implementors of Streamlink.\n\n\n# \ud83d\ude4f Contributing\n\nAll contributions are welcome.\nFeel free to open a new thread on the issue tracker or submit a new pull request.\nPlease read [CONTRIBUTING.md][contributing] first. Thanks!\n\n\n# \u2764\ufe0f Support\n\nIf you think that Streamlink is useful and if you want to keep the project alive, then please consider supporting its maintainers by sending a small and optionally recurring tip via the [available options][support].  \nYour support is very much appreciated, thank you!\n\n\n  [streamlink-installation-windows]: https://streamlink.github.io/install.html#windows\n  [streamlink-installation-macos]: https://streamlink.github.io/install.html#macos\n  [streamlink-installation-linux-and-bsd]: https://streamlink.github.io/install.html#linux-and-bsd\n  [streamlink-installation-pypi-source]: https://streamlink.github.io/install.html#pypi-package-and-source-code\n  [streamlink-documentation-cli]: https://streamlink.github.io/cli.html\n  [streamlink-documentation-apiguide]: https://streamlink.github.io/api_guide.html\n  [streamlink-documentation-apiref]: https://streamlink.github.io/api.html\n  [streamlink-plugins]: https://streamlink.github.io/plugins.html\n  [player-vlc]: https://www.videolan.org/vlc/\n  [contributing]: https://github.com/streamlink/streamlink/blob/master/CONTRIBUTING.md\n  [support]: https://streamlink.github.io/latest/support.html\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:44:03+00:00",
+   "url": "https://github.com/streamlink/streamlink/blob/b0328ab9ff7138d77c7aaa6691952879e23e014b/README.md"
+  },
+  {
+   "evidence_id": "repo:streamlink/streamlink:contributing",
+   "payload": {
+    "commit_oid": "b0328ab9ff7138d77c7aaa6691952879e23e014b",
+    "kind": "contributing",
+    "text": "# Contributing to Streamlink\n\nWant to get involved? Thanks! There are plenty of ways to help!\n\n\n## Reporting issues\n\nA bug is a *demonstrable problem* that is caused by the **latest version** of the code in the repository. Good bug reports are extremely helpful - thank you!\n\nPlease read the following guidelines before you [report an issue][issues]:\n\n1. **Use the GitHub issue search**\n\n   Check if the issue has already been reported. If it has been and is still unresolved, then please comment on the existing issue.\n\n   Please avoid comments like \"+1\", \"me too\", etc., as they don't contribute to solving the issue and instead unnecessarily notify users subscribed to the issue or activities of the entire repository. Instead, use GitHub's notification feature on specific issues or pull requests via the sidebar on the right in order to receive status updates, or click the watch button at the top.\n\n2. **Check if the issue has been resolved**\n\n   The `master` branch may already contain a fix, so please have a look at the recent commit history first. Don't comment on commits and instead open a new thread on the issue tracker if you have found a mistake in a code commit.\n\n   Resolved issues or merged pull requests should never be commented on and a new issue should be opened if something is still not working or has stopped working again. But before opening a new issue, check that you are indeed using the latest stable or development version.\n\n3. **Isolate the demonstrable problem**\n\n   Make sure that the code in the project's repository is *definitely* responsible for the issue by excluding external factors which may influence the results.\n\n   These external factors can be specific configurations in the used environment, the connection to a specific website or streaming service, the usage of VPNs or proxy servers, and many other things. Please keep that in mind when reporting issues.\n\n   The project maintainers must be able to reproduce the issue you're trying to report, which is the reason why **a full debug log is required** when reporting plugin issues or general bugs, as it includes important information about the environment Streamlink is run in.\n\n4. **Format your issue report**\n\n   [Well formatted texts][mastering-markdown] will make it much easier for developers to understand your report.\n\n   Please at the very least put your (additional) log output or code snippets into markdown code-blocks (surrounded by triple backticks - see the link above).\n\n   The various issue templates will aid you in structuring your report when submitting a new issue. Thank you!\n\n\n## Feature requests\n\nFeature requests are welcome, but take a moment to find out whether your idea fits with the scope and aims of the project. It's up to *you* to make a strong case to convince the project's developers of the merits of this feature. Please provide as much detail and context as possible.\n\n\n## Plugin requests\n\nPlugin submissions and requests are a great way to improve Streamlink. Requests should be as detailed as possible and dedicated to only a single streaming website/service.\n\nInformation about the website, as well as explicit URLs from your web browser's URL address bar are required, as are details regarding the website, what it is, who it is run by, and more. This allows for easier plugin review and implementation. We reserve the right to refuse to implement, develop, or update any plugin. In addition, we may remove existing plugins at our own discretion at any time without explanation.\n\nBefore you request a plugin, please be aware that this will merely be a suggestion for the project maintainers (or anyone else) to have a look at the website and implement a new plugin for it. In the vast majority of cases, no one except you will initially have an interest in such a plugin, so you should think about whether it will be useful for other users of Streamlink.\n\nImplementing new plugins can be a lot of effort, as well as keeping them maintained. Providing plugin code in a pull request written on your own after it has been discussed and approved in the request issue is therefore much appreciated, if the code quality is acceptable. Further assistance in plugin maintenance via plugin issues or bugfix pull requests will be greatly appreciated as well.\n\nPlease remember that custom plugins can always be [sideloaded][plugin-sideloading], in case your request will be rejected or if plugins will be removed from Streamlink's `master` branch.\n\n**Plugins which fall under the following categories will not be implemented and any requests will be rejected.** Depending on the case, already existing plugins which don't meet these plugin criteria, may be kept.\n\n\n### Plugin rules\n\n1. **Any kind of streaming service that uses DRM protection**\n\n    Streamlink won't implement or break any DRM schemes.\n\n2. **Sites which are hosting stolen content as their main source of content**\n\n    Plugins must only support websites with authentic content.\n\n3. **Sites which are primarily rehosting content**\n\n    Plugins must only implement the original/primary website where the content is hosted or shown.\n\n4. **Sites which require paid logins or subscriptions**\n\n    Plugin implementations and maintenance must be possible by everyone. Paid access prevents this.\n\n5. **NSFW sites of a pornographic nature**\n\n    This also includes borderline NSFW content, as it lowers the bar for follow-up plugin requests.\n\n6. **Sites which don't provide any real live-streaming content**\n\n    For example VOD-only content or VODs being re-broadcasted.\n\n7. **Sites which don't provide any video streaming content**\n\n    For example radio stations or streams where the primary focus is the audio content.\n\n8. **Sites where the maintainer has requested we don't add their site to Streamlink**\n\n    We respect legitimate requests by the owners of certain websites, depending on their size.\n\n9. **Sites which are unmaintained, are in beta or are undergoing heavy amounts of development and may change rapidly**\n\n    Stability of new plugin implementations must be guaranteed.\n\n10. **Sites which have no way to determine viewership numbers**\n\n    Plugins must not implement websites which are unused or which only have a handful of real/actual users.\n\n11. **Sites which are static cameras of a physical location**\n\n    We don't consider plugin implementations for this kind of content to be useful.\n\n\n## Pull requests\n\nGood pull requests - patches, improvements, and new features - are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.\n\n**Please ask first** before embarking on any significant pull request, for example:\n\n- implementing features\n- adding new plugins\n- refactoring code\n\nOtherwise, you risk spending a lot of time working on something that the project's developers might not want to merge into the project.\n\nPlease adhere to the coding conventions used throughout a project (i.e. indentation, white space, accurate comments) and any other requirements, such as test coverage.\n\nAdhering to the following process is the best way to get your work included in the project:\n\n1. [Fork][howto-fork] the project, clone your fork, and configure the remotes:\n   ```bash\n   git clone git@github.com:YOUR-USERNAME/streamlink.git\n   cd streamlink\n   git remote add upstream https://github.com/streamlink/streamlink.git\n   ```\n\n2. If you cloned a while ago, get the latest changes from upstream:\n   ```bash\n   git checkout master\n   git pull upstream master\n   ```\n\n3. Create a new topic branch (off the main project branch) to contain your feature, change, or fix:\n   ```bash\n   git checkout -b TOPIC-BRANCH-NAME\n   ```\n\n4. Commit your changes in logical chunks. Please adhere to our [git commit message style][howto-format-commits] or your code is unlikely be merged into the project. Use git's [interactive rebase][howto-rebase] feature to tidy up your commits before making them public.\n\n5. If your topic branch is based off an outdated commit on the master branch, then rebase first:\n   ```bash\n   git checkout master\n   git pull upstream master\n   git checkout TOPIC-BRANCH-NAME\n   git rebase --interactive master\n   ```\n\n6. Push your topic branch up to your fork:\n   ```bash\n   git push origin TOPIC-BRANCH-NAME\n   ```\n\n7. [Open a Pull Request][howto-open-pull-requests] with a clear title and description.\n\n8. After rebasing or making amending commits, force-push the branch to your fork:\n   ```bash\n   git rebase --interactive master\n   git push --force origin TOPIC-BRANCH-NAME\n   ```\n\n**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work\nunder the terms of the [BSD 2-clause license][license].\n\n\n## AI-assisted contributions\n\nWe value the time of our maintainers and the quality of our codebase above all else. While AI tools can assist in development, they can also result in low-effort, subpar, or broken submissions.\n\nTo maintain the integrity of the project, we enforce the following rules. Failure to comply will result in your pull request being closed immediately. Repeat or extreme offenses will lead to an organization-wide ban.\n\n1. **Mandatory disclosure**\n\n    You must disclose any level of AI assistance used in your contribution (code, documentation, etc.). This includes fully AI-generated content or refactors, AI-based code completions, as well as AI-generated or translated text within the pull request description.\n\n2. **Full comprehension**\n\n    You are the owner of your submission. You must be able to explain every line of your code upon request. If a reviewer asks about a specific logic block, data structure, or the use of a particular API, \"the AI suggested it\" is never an acceptable answer. If you do not understand the code you are submitting, do not submit it.\n\n3. **Functionality and intent**\n\n    Unless explicitly marked as a draft, code must be fully functional and tested. We do not accept \"hallucinated\" or unfinished code with the expectation that maintainers will fix or complete it.\n\n    You must test your changes before submission. For example, if adding or fixing a plugin, you must include debug log output for at least one verified input URL in the PR description.\n\n    While we don't expect \"perfect\" code and are always happy to provide guidance or mentorship, we only do so for genuine attempts. We will not provide assistance for code that was mindlessly generated and submitted without verification.\n\n\n## Pull request feedback\n\nPlease don't hesitate to provide feedback after a pull request was submitted which will close/resolve an issue you've opened or which you've been following. Depending on the kind of issue the pull request will solve, additional feedback from users is important. This feedback can either be a comment, a simple code review, or better, a validation of all the changes by installing and running Streamlink from the pull request's branch and [providing a full debug log][debug-log].\n\n### Sideloading plugin changes\n\nIf the pull request is just about a plugin fix or a new plugin inclusion **without additional changes to Streamlink's codebase**, then the new plugin file can be [sideloaded][plugin-sideloading] **when running the latest stable release version of Streamlink**. However, if the pull request is based on changes that have been made to Streamlink's master branch since the latest stable release, then an installation from the pull request's own git branch or Streamlink's master branch will be necessary.\n\nPreview builds from Streamlink's **master branch** are available [on Windows][preview-builds-windows] as well as on [Linux (via AppImages)][preview-builds-linux].\n\nIn case sideloading is possible, simply download the pull request's plugin changes using your web browser from GitHub's pull request interface: \"Files changed\" tab at the top -> breadcrumbs button of the specific plugin file (\"...\") -> \"View raw\". Then download the file into the directory described by the [plugin sideloading documentat",
+    "text_original_chars": 15398,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:44:03+00:00",
+   "url": "https://github.com/streamlink/streamlink/blob/b0328ab9ff7138d77c7aaa6691952879e23e014b/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7066:opened",
+   "payload": {
+    "additions": 0,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     ".github/ISSUE_TEMPLATE/config.yml"
+    ],
+    "title": "chore: remove custom blank GH issue template link"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:38:33+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7066"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7066:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:41:48+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7066"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7065:opened",
+   "payload": {
+    "additions": 30,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "src/streamlink/plugins/douyu.py"
+    ],
+    "title": "plugins.douyu: use timestamp from API date header"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:30:44+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7065"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7065:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:34:34+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7065"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7063:opened",
+   "payload": {
+    "additions": 100,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 60,
+    "files": [
+     "src/streamlink/plugins/vidio.py",
+     "tests/plugins/test_vidio.py"
+    ],
+    "title": "plugins.vidio: rewrite plugin"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T15:25:14+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7063"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7062:opened",
+   "payload": {
+    "additions": 82,
+    "author": "serrolido",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "src/streamlink/plugins/atresplayer.py"
+    ],
+    "title": "plugins.atresplayer: refactor stream retrieval"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:08:51+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7062"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7062:review:0",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "Thanks for the PR. Instead of closing the previous PR, you could've simply rebased the branch and it would've been fine. Doesn't matter though...\n\nThe changes are looking fine now. I'm however not a fan of yielding all available streams at once, since there's a lot of duplicates, which is unnecessary and confusing, as it leads to `_alt` stream names on name collisions from duplicates.\n\nYou should instead sort the stream types and return only the one that's considered the best. For example, the legacy HLS type should have the lowest priority, with HEVC having the highest one. The for-loop therefore needs to be rewritten. Put the sorted priorities into a class attribute and then sort the sources data using these keys.\n\nTheir site unfortunately is very aggressive against VPNs, so I can't test any of this. So when you're done, please post a debug log of one or two working streams. Thanks.\n\n```\n$ ./script/test-plugin-urls.py atresplayer\n:: https://www.atresplayer.com/directos/antena3-internacional/\n:::: Player API error: required_paid - Required paid\n!! No streams found\n:: https://www.atresplayer.com/directos/antena3/\n:::: Player API error: required_paid - Required paid\n!! No streams found\n:: https://www.atresplayer.com/directos/lasexta/\n:::: Player API error: geoblocked - Content is geoblocked\n!! No streams found\n```\n```\n$ ./script/test-plugin-urls.py --interface tun0 atresplayer\n:: https://www.atresplayer.com/directos/antena3-internacional/\n:::: Could not find live channel: /directos/antena3-internacional/\n!! No streams found\n:: https://www.atresplayer.com/directos/antena3/\n:::: Player API error: vpn - Using VPN\n!! No streams found\n:: https://www.atresplayer.com/directos/lasexta/\n:::: Player API error: vpn - Using VPN\n!! No streams found\n```",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:57:13+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7062"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7062:comment:0",
+   "payload": {
+    "author": "serrolido",
+    "author_is_bot": false,
+    "body": "### Testing\r\n\r\nPersonal/local filesystem information has been redacted from the logs.\r\n\r\n#### HLS\r\n\r\n```text id=\"k8qou0\"\r\n$ python -m streamlink --loglevel debug \"https://www.atresplayer.com/directos/aqui-no-hay-quien-viva/\" best\r\n\r\n[cli][debug] OS:         Windows 11\r\n[cli][debug] Python:     3.13.15\r\n[cli][debug] OpenSSL:    OpenSSL 3.0.21 9 Jun 2026\r\n[cli][debug] Streamlink: 0.0.0+unknown\r\n[cli][debug] Dependencies:\r\n[cli][debug]  certifi: 2026.7.22\r\n[cli][debug]  isodate: 0.7.2\r\n[cli][debug]  lxml: 6.1.2\r\n[cli][debug]  pycountry: 26.2.16\r\n[cli][debug]  pycryptodome: 3.23.0\r\n[cli][debug]  PySocks: 1.7.1\r\n[cli][debug]  requests: 2.34.2\r\n[cli][debug]  trio: 0.34.0\r\n[cli][debug]  trio-websocket: 0.12.2\r\n[cli][debug]  urllib3: 2.7.0\r\n[cli][debug]  websocket-client: 1.9.0\r\n[cli][debug] Arguments:\r\n[cli][debug]  url=https://www.atresplayer.com/directos/aqui-no-hay-quien-viva/\r\n[cli][debug]  stream=['best']\r\n[cli][debug]  --loglevel=debug\r\n[cli][debug]  --ffmpeg-ffmpeg=C:\\Users\\<redacted>\\AppData\\Local\\Programs\\Streamlink\\ffmpeg\\ffmpeg.exe\r\n[cli][info] Found matching plugin atresplayer for URL https://www.atresplayer.com/directos/aqui-no-hay-quien-viva/\r\n[plugins.atresplayer][debug] Channel path: /directos/aqui-no-hay-quien-viva/\r\n[plugins.atresplayer][debug] Page API URL: https://api.atresplayer.com/client/v1/page/live/648ef3951756b0e425af83cc\r\n[plugins.atresplayer][debug] Video API URL: https://api.atresplayer.com/player/v1/live/648ef3951756b0e425af83cc\r\n[plugins.atresplayer][debug] Stream source: https://fast-channels.atresmedia.com/d01102c4456a8ae778967d6abba1a303df697aa6/648ef3951756b0e425af83cc/648ef3951756b0e425af83cc.m3u8 (application/vnd.apple.mpegurl)\r\n[utils.l10n][debug] Language code: es_ES\r\n[cli][info] Available streams: 404p_alt2 (worst), 404p_alt, 404p (best)\r\n[cli][info] Opening stream: 404p (hls)\r\n[cli][info] Starting player: C:\\Program Files\\VideoLAN\\VLC\\vlc.exe\r\n[stream.hls][debug] Reloading playlist\r\n[cli][debug] Pre-buffering 8192 bytes\r\n[stream.hls][debug] First Sequence: 4212839; Last Sequence: 4212845\r\n[stream.hls][debug] Start offset: -0.0; Duration: 0.0; Start Sequence: 4212843; End Sequence: None\r\n[stream.segmented][debug] Queuing HLSSegment(num=4212843, init=False, discontinuity=False, duration=10.000, title=None, key=None, byterange=None, date=2026-08-31T00:27:24.065000Z, map=None, fileext='ts')\r\n[stream.segmented][debug] Queuing HLSSegment(num=4212844, init=False, discontinuity=False, duration=10.000, title=None, key=None, byterange=None, date=2026-08-31T00:27:34.065000Z, map=None, fileext='ts')\r\n[stream.segmented][debug] Queuing HLSSegment(num=4212845, init=False, discontinuity=False, duration=10.000, title=None, key=None, byterange=None, date=2026-08-31T00:27:44.065000Z, map=None, fileext='ts')\r\n[stream.hls][debug] Writing segment 4212843 to output\r\n[stream.hls][debug] Segment 4212843 complete\r\n[cli.output][debug] Opening subprocess: ['C:\\\\Program Files\\\\VideoLAN\\\\VLC\\\\vlc.exe', '--input-title-format', 'https://www.atresplayer.com/directos/aqui-no-hay-quien-viva/', '-']\r\n[stream.hls][debug] Writing segment 4212844 to output\r\n[stream.hls][debug] Segment 4212844 complete\r\n[stream.hls][debug] Writing segment 4212845 to output\r\n[stream.hls][debug] Segment 4212845 complete\r\n[cli][debug] Writing stream to output\r\n```\r\n\r\nThe `_alt` names above are variants from within the selected HLS playlist itself, rather than duplicates caused by parsing multiple `sourcesLive` entries.\r\n\r\n#### DASH\r\n\r\n```text id=\"zhlo4d\"\r\n$ python -m streamlink --loglevel debug \"https://www.atresplayer.com/directos/lasexta/\" best\r\n\r\nNoTagError: `git describe --long --dirty --always --tags` could not find a tag\r\n[cli][debug] OS:         Windows 11\r\n[cli][debug] Python:     3.13.15\r\n[cli][debug] OpenSSL:    OpenSSL 3.0.21 9 Jun 2026\r\n[cli][debug] Streamlink: 0.0.0+unknown\r\n[cli][debug] Dependencies:\r\n[cli][debug]  certifi: 2026.7.22\r\n[cli][debug]  isodate: 0.7.2\r\n[cli][debug]  lxml: 6.1.2\r\n[cli][debug]  pycountry: 26.2.16\r\n[cli][debug]  ",
+    "body_original_chars": 15989,
+    "body_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-31T00:47:18+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7062"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7060:opened",
+   "payload": {
+    "additions": 54,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 6,
+    "files": [
+     "src/streamlink/plugins/dash.py",
+     "src/streamlink/plugins/hls.py",
+     "src/streamlink/plugins/http.py",
+     "tests/plugins/test_dash.py",
+     "tests/plugins/test_hls.py",
+     "tests/plugins/test_http.py"
+    ],
+    "title": "plugins: fix invalid protocol-plugin input URLs"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T20:09:26+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7060"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7060:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T20:13:57+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7060"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7059:opened",
+   "payload": {
+    "additions": 73,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 58,
+    "files": [
+     "src/streamlink/plugins/bigo.py",
+     "src/streamlink/stream/hls/hls.py",
+     "src/streamlink/stream/hls/segment.py",
+     "tests/plugins/test_bigo.py"
+    ],
+    "title": "stream.hls: refactor HLSStreamWriter"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T17:06:40+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7059"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7059:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:44:04+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7059"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7057:opened",
+   "payload": {
+    "additions": 104668,
+    "author": "serrolido",
+    "author_is_bot": false,
+    "changed_files": 665,
+    "deletions": 0,
+    "files": [
+     ".codecov.yml",
+     ".editorconfig",
+     ".git-blame-ignore-revs",
+     ".gitattributes",
+     ".github/DISCUSSION_TEMPLATE/general.yml",
+     ".github/DISCUSSION_TEMPLATE/q-a.yml",
+     ".github/FUNDING.yml",
+     ".github/ISSUE_TEMPLATE/1_plugin_issue.yml",
+     ".github/ISSUE_TEMPLATE/2_bug_report.yml",
+     ".github/ISSUE_TEMPLATE/3_plugin_request.yml",
+     ".github/ISSUE_TEMPLATE/4_feature_request.yml",
+     ".github/ISSUE_TEMPLATE/config.yml",
+     ".github/dependabot.yml",
+     ".github/pull_request_template.md",
+     ".github/release_template.md",
+     ".github/workflows/docs.yml",
+     ".github/workflows/lint.yml",
+     ".github/workflows/preview-build.yml",
+     ".github/workflows/release.yml",
+     ".github/workflows/scripts/fetch-tags.sh"
+    ],
+    "title": "plugins.atresplayer: refactor stream retrieval"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:45:39+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7057"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7057:closed",
+   "payload": {
+    "author": "serrolido",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T13:57:28+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7057"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7056:opened",
+   "payload": {
+    "additions": 213,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/streamlink/plugins/bigo.py",
+     "tests/plugins/test_bigo.py"
+    ],
+    "title": "plugins.bigo: implement web-protection"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T21:24:23+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7056"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7056:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T21:52:39+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7056"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7054:opened",
+   "payload": {
+    "additions": 37,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "src/streamlink_cli/main.py",
+     "tests/cli/main/test_main.py"
+    ],
+    "title": "cli: fix status code on setup error"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:21:40+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7054"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7054:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:26:07+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7054"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7053:opened",
+   "payload": {
+    "additions": 150,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 114,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: bump lxml from 6.1.1 to 6.1.2"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T23:34:29+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7053"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7052:opened",
+   "payload": {
+    "additions": 71,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 24,
+    "files": [
+     "pyproject.toml",
+     "src/streamlink/session/http.pyi",
+     "uv.lock"
+    ],
+    "title": "tools: bump ty to 0.0.74 and fix issues"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T19:52:12+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7052"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7052:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T19:55:41+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7052"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7051:opened",
+   "payload": {
+    "additions": 14,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "src/streamlink_cli/main.py",
+     "tests/cli/main/test_create_output.py"
+    ],
+    "title": "cli: fix bound ifaces of non-external HTTP output"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T17:27:20+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7051"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7051:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T17:59:44+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7051"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7049:opened",
+   "payload": {
+    "additions": 19,
+    "author": "vhsgreed",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/migrations.rst"
+    ],
+    "title": "docs: add trovo plugin removal to migrations guide"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T11:21:30+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7049"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7049:closed",
+   "payload": {
+    "author": "vhsgreed",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T11:26:19+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7049"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7049:comment:0",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "That's not what the migrations docs page is for. It's for Streamlink API or CLI changes, not for random plugins / streaming sites. We're not an authority to tell people where to stream."
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T11:26:19+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7049"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:opened",
+   "payload": {
+    "additions": 163,
+    "author": "fl-Henry",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 25,
+    "files": [
+     "src/streamlink/plugins/pluto.py",
+     "tests/plugins/test_pluto.py"
+    ],
+    "title": "plugins.pluto: fix URL matching and channel resolution"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T00:15:01+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:merged",
+   "payload": {
+    "author": "fl-Henry",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T22:14:46+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:review:0",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "Thanks for the PR, @fl-Henry.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T11:31:54+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:review:1",
+   "payload": {
+    "author": "fl-Henry",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T17:45:13+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:review:2",
+   "payload": {
+    "author": "fl-Henry",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T17:49:41+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:review:3",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T19:39:19+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:review:4",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "Thanks for the update.\n\nSince you've now added a second method for making GraphQL API requests, I think it'd be better to write a common method for it, so that you don't have to call `json.dumps()` everywhere.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T19:42:17+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:review:5",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "Thanks for the update. There are some region-block issues with the validation schemas that need to be fixed. Looking fine otherwise.\n\nGerman IP\n```\n$ streamlink https://pluto.tv/fr/watch/live-tv/31528/ best\n[cli][info] Found matching plugin pluto for URL https://pluto.tv/fr/watch/live-tv/31528/\nerror: Unable to validate response text: ValidationError(dict):\n  Unable to validate value of key 'data'\n  Context(dict):\n    Unable to validate value of key 'channels'\n    Context(dict):\n      Key 'channel' not found in <{'__typename': 'ChannelResponseError', 'message': 'No r...>\n```\n\nGerman IP\n```\n$ streamlink https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\n[cli][info] Found matching plugin pluto for URL https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\nerror: Unable to validate response text: ValidationError(dict):\n  Unable to validate value of key 'data'\n  Context(dict):\n    Unable to validate value of key 'fullEpisodes'\n    Context(type):\n      Type of None should be dict, but is NoneType\n```\n\n----\n\nWith my change suggestions:\n\nGerman IP:\nfirst link redirects to a different channel\n`on-demand/series` has no metadata but doesn't raise anymore\n\n```\n$ ./script/test-plugin-urls.py pluto -m\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\n::   {'id': '61409f8d6feb30000766b675', 'author': None, 'category': None, 'title': 'Pluto TV Space'}\n:: https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9\n!! Error while fetching streams\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\n::   {'id': '60dee91cfc802600134b886d', 'author': None, 'category': None, 'title': None}\n:: https://pluto.tv/fr/watch/live-tv/31528/\n!! No streams found\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\n::   {'id': '60dee91cfc802600134b886d', 'author': 'South Park', 'category': 'Comedy', 'title': 'Cartman und die Analsonde'}\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\n!! Error while fetching streams\n```\n\nFrench IP:\n\n```\n$ ./script/test-plugin-urls.py pluto -m --http-proxy socks5h://localhost:1920\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\n!! Error while fetching streams\n:: https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9\n!! Error while fetching streams\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\n!! Error while fetching streams\n:: https://pluto.tv/fr/watch/live-tv/31528/\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\n::   {'id': '5f8eb66537867f0007146953', 'author': None, 'category': None, 'title': 'CATFISH TV'}\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\n!! Error while fetching streams\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\n!! Error while fetching streams\n```\n\nPluto is blocking my VPNs, so I can't test the streams which fail on both addresses above.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T17:59:49+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:comment:0",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "Btw, when I initially quickly checked #7037 two weeks ago, I could see two different versions of their site. With a German IP address, it was the old one, and with a French IP address, it was the new one. Now it's also the new one with my German IP address."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T19:55:21+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:comment:1",
+   "payload": {
+    "author": "fl-Henry",
+    "author_is_bot": false,
+    "body": "> Btw, when I initially quickly checked #7037 two weeks ago, I could see two different versions of their site. With a German IP address, it was the old one, and with a French IP address, it was the new one. Now it's also the new one with my German IP address.\r\n\r\nI have noticed that the website uses different manifests (mpd or m3u8) when I use different locations and browsers.\r\nI also noticed that, even when I keep using the same browser and location, different pages can have different manifests.\r\nHowever, even if the website serves mpd, we can access the media via m3u8.\r\n\r\nI didn't notice any difference in the frontend. The only difference is in the provision of mpd/m3u8 manifests."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T17:16:51+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:comment:2",
+   "payload": {
+    "author": "fl-Henry",
+    "author_is_bot": false,
+    "body": "I tried several locations Franch, German, United Kingdon, USA and cannot find this stream using any of FR/GE/UK/US locations (even via a browser)\r\n```\r\n:: https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9\r\n!! Error while fetching streams\r\n```\r\n\r\nThe tests with your change suggestions:\r\n```\r\n[1]> # German IP\r\n[1]> ./script/test-plugin-urls.py pluto -m\r\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '61409f8d6feb30000766b675', 'author': None, 'category': None, 'title': 'Pluto TV Space'}\r\n:: https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': None, 'category': None, 'title': None}\r\n:: https://pluto.tv/fr/watch/live-tv/31528/\r\n!! No streams found\r\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': 'South Park', 'category': 'Comedy', 'title': 'Cartman und die Analsonde'}\r\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\r\n!! Error while fetching streams\r\n\r\n[1]> # French IP\r\n[1]> ./script/test-plugin-urls.py pluto -m\r\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\r\n!! Error while fetching streams\r\n:: https://pluto.tv/fr/watch/live-tv/31528/\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '5f8eb66537867f0007146953', 'author': None, 'category': None, 'title': 'CATFISH TV'}\r\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\r\n!! Error while fetching streams\r\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\r\n!! Error while fetching streams\r\n\r\n[1]> # US IP\r\n[1]> ./script/test-plugin-urls.py pluto -m\r\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\r\n!! No streams found\r\n:: https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9\r\n!! No streams found\r\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': None, 'category': None, 'title': None}\r\n:: https://pluto.tv/fr/watch/live-tv/31528/\r\n!! No streams found\r\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': None, 'category': None, 'title': None}\r\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '6925771d1a8e9be91b1b7d22', 'author': None, 'category': 'Comedy', 'title': 'Ted'}\r\n\r\n[1]> # UK IP\r\n[1]> ./script/test-plugin-urls.py pluto -m\r\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\r\n!! Error while fetching streams\r\n:: https://pluto.tv/fr/watch/live-tv/31528/\r\n!! No streams found\r\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\r\n!! Error while fetching streams\r\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\r\n!! Error while fetching streams\r\n```\r\n\r\nShould I just push the corrected code with the suggestion you gave or there is something else I missed?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T21:13:12+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:comment:3",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "> `https://pluto.tv/en/on-demand/movies/600545d1813b2d001b686fa9`\r\n\r\nThis seems like a dead link. Just replace it with any working movie URL, confirm that it's working, and we're good to go. Thanks."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T21:33:41+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:comment:4",
+   "payload": {
+    "author": "fl-Henry",
+    "author_is_bot": false,
+    "body": "\r\nHere is the mapping of URLs to locations:\r\n- `https://pluto.tv/en/live-tv/61409f8d6feb30000766b675` - GE\r\n- `https://pluto.tv/en/on-demand/movies/5ed28c8cefbd62001b280de6` - US\r\n- `https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d` - US, GE\r\n- `https://pluto.tv/fr/watch/live-tv/31528/` - FR\r\n- `https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/` - US, GE\r\n- `https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open` - US\r\n\r\nThe plugin tests for different locations:\r\n```\r\n[1]> # US IP\r\n[1]> ./script/test-plugin-urls.py pluto -m\r\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\r\n!! No streams found\r\n:: https://pluto.tv/en/on-demand/movies/5ed28c8cefbd62001b280de6\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '5ed28c8cefbd62001b280de6', 'author': None, 'category': 'Comedy', 'title': 'South Park: Bigger, Longer & Uncut'}\r\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': None, 'category': None, 'title': None}\r\n:: https://pluto.tv/fr/watch/live-tv/31528/\r\n!! No streams found\r\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': None, 'category': None, 'title': None}\r\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '6925771d1a8e9be91b1b7d22', 'author': None, 'category': 'Comedy', 'title': 'Ted'}\r\n[1]> \r\n[1]> # German IP\r\n[1]> ./script/test-plugin-urls.py pluto -m\r\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '61409f8d6feb30000766b675', 'author': None, 'category': None, 'title': 'Pluto TV Space'}\r\n:: https://pluto.tv/en/on-demand/movies/5ed28c8cefbd62001b280de6\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': None, 'category': None, 'title': None}\r\n:: https://pluto.tv/fr/watch/live-tv/31528/\r\n!! No streams found\r\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '60dee91cfc802600134b886d', 'author': 'South Park', 'category': 'Comedy', 'title': 'Cartman und die Analsonde'}\r\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\r\n!! Error while fetching streams\r\n[1]> \r\n[1]> # French IP\r\n[1]> ./script/test-plugin-urls.py pluto -m\r\n:: https://pluto.tv/en/live-tv/61409f8d6feb30000766b675\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/movies/5ed28c8cefbd62001b280de6\r\n!! Error while fetching streams\r\n:: https://pluto.tv/en/on-demand/series/5e00cd538e67b0dcb2cf3bcd/season/1/episode/60dee91cfc802600134b886d\r\n!! Error while fetching streams\r\n:: https://pluto.tv/fr/watch/live-tv/31528/\r\n::  640k, 1000k, 1600k, 2300k, 3300k, worst, best\r\n::   {'id': '5f8eb66537867f0007146953', 'author': None, 'category': None, 'title': 'CATFISH TV'}\r\n:: https://pluto.tv/gsa/shows/2740225/episode/60dee91cfc802600134b886d/\r\n!! Error while fetching streams\r\n:: https://pluto.tv/us/movies/6925771d1a8e9be91b1b7d22/#open\r\n!! Error while fetching streams\r\n```"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T22:07:28+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7048:comment:5",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "Thank you!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T22:14:54+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7048"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7047:opened",
+   "payload": {
+    "additions": 105,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 98,
+    "files": [
+     "pyproject.toml",
+     "uv.lock"
+    ],
+    "title": "tools: bump ruff to 0.16.4, ty to 0.0.73, mypy to 2.3.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T20:33:50+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7047"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7047:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T20:40:53+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7047"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7046:opened",
+   "payload": {
+    "additions": 3,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: bump shtab to 1.11.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T23:34:06+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7046"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7046:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T09:00:51+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7046"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7044:opened",
+   "payload": {
+    "additions": 11,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "CHANGELOG.md"
+    ],
+    "title": "release: 8.6.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T20:03:50+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7044"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7043:opened",
+   "payload": {
+    "additions": 3,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: bump trio to 0.34.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:05:42+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7043"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7043:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:11:31+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7043"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7042:opened",
+   "payload": {
+    "additions": 6,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: bump setuptools to 84.0.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T09:56:41+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7042"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7042:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:02:42+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7042"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7042:comment:0",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "No breaking changes for us. Also checked the sdist + wheels. Looking fine..."
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:01:24+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7042"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7041:opened",
+   "payload": {
+    "additions": 19,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 19,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: remove redundant env markers from uv.lock"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T09:39:33+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7041"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7041:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T09:44:24+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7041"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7040:opened",
+   "payload": {
+    "additions": 22,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 22,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: bump types-setuptools from 83.0.0.20260724 to 83.0.0.20260807"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T23:35:33+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7040"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7040:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:02:44+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7040"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7040:comment:0",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "OK, I won't notify you again about this release, but will get in touch when a new version is available. If you'd rather skip all updates until the next major or minor version, let me know by commenting `@dependabot ignore this major version` or `@dependabot ignore this minor version`. You can also ignore all major, minor, or patch releases for a dependency by adding an [`ignore` condition](https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#ignore) with the desired `update_types` to your config file.\n\nIf you change your mind, just re-open this PR and I'll resolve any conflicts on it."
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:02:46+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7040"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7039:opened",
+   "payload": {
+    "additions": 3,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: bump shtab to 1.10.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T23:35:18+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7039"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7039:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T09:53:04+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7039"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7039:comment:0",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "@dependabot rebase"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T09:45:25+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7039"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7038:opened",
+   "payload": {
+    "additions": 3,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "build: bump setuptools from 83.0.0 to 84.0.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T23:35:05+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7038"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7038:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:02:43+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7038"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7038:comment:0",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "body": "@dependabot rebase"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T09:45:41+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7038"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7038:comment:1",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "OK, I won't notify you again about this release, but will get in touch when a new version is available. If you'd rather skip all updates until the next major or minor version, let me know by commenting `@dependabot ignore this major version` or `@dependabot ignore this minor version`. You can also ignore all major, minor, or patch releases for a dependency by adding an [`ignore` condition](https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#ignore) with the desired `update_types` to your config file.\n\nIf you change your mind, just re-open this PR and I'll resolve any conflicts on it."
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T10:02:46+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7038"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7036:opened",
+   "payload": {
+    "additions": 18,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 13,
+    "files": [
+     "src/streamlink/plugins/cdnbg.py",
+     "tests/plugins/test_cdnbg.py"
+    ],
+    "title": "plugins.cdnbg: fix player_url schema"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T13:16:20+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7036"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7036:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T13:21:22+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7036"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7034:opened",
+   "payload": {
+    "additions": 1,
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "pyproject.toml"
+    ],
+    "title": "tools: disable ruff rule missing-trailing-comma"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T16:52:28+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7034"
+  },
+  {
+   "evidence_id": "pr:streamlink/streamlink#7034:merged",
+   "payload": {
+    "author": "bastimeyer",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T16:56:08+00:00",
+   "url": "https://github.com/streamlink/streamlink/pull/7034"
+  }
+ ],
+ "repo": "streamlink/streamlink",
+ "window": "pre_t"
+}

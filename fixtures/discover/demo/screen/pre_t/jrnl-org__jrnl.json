@@ -1,0 +1,727 @@
+{
+ "captured_at": "2026-08-31T01:07:46.391230+00:00",
+ "content_sha256": "e4e0e16efbda22a460a99766cacd85b126c8205c589793fc84dd09f2f787d57b",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:jrnl-org/jrnl:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Collect your thoughts and notes without leaving the command line.",
+    "homepage_url": "https://jrnl.sh",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-29T02:40:32Z",
+    "stargazer_count": 7305
+   },
+   "source": "github",
+   "timestamp": "2012-03-29T17:23:58+00:00",
+   "url": "https://github.com/jrnl-org/jrnl"
+  },
+  {
+   "evidence_id": "repo:jrnl-org/jrnl:readme",
+   "payload": {
+    "commit_oid": "90de4948d79a4fca8c7238dd2487b599f458c903",
+    "kind": "readme",
+    "text": "<!--\nCopyright \u00a9 2012-2023 jrnl contributors\nLicense: https://www.gnu.org/licenses/gpl-3.0.html\n-->\n\n<p align=\"center\">\n<a href=\"https://jrnl.sh\">\n<img align=\"center\" src=\"https://raw.githubusercontent.com/jrnl-org/jrnl/main/docs_theme/assets/readme-header.png\"/>\n</a>\n</p>\n\njrnl\n [![Testing](https://github.com/jrnl-org/jrnl/workflows/Testing/badge.svg)](https://github.com/jrnl-org/jrnl/actions?query=workflow%3ATesting)\n [![Downloads](https://pepy.tech/badge/jrnl)](https://pepy.tech/project/jrnl)\n [![Version](http://img.shields.io/pypi/v/jrnl.svg?style=flat)](https://pypi.python.org/pypi/jrnl/)\n [![Homebrew](https://img.shields.io/homebrew/v/jrnl?style=flat-square)](https://formulae.brew.sh/formula/jrnl)\n [![Gitter](https://img.shields.io/gitter/room/jrnl-org/jrnl)](https://gitter.im/jrnl-org/jrnl)\n [![Changelog](https://img.shields.io/badge/changelog-on%20github-green)](https://github.com/jrnl-org/jrnl/blob/main/CHANGELOG.md)\n====\n\n_To get help, [submit an issue](https://github.com/jrnl-org/jrnl/issues/new/choose) on\nGitHub._\n\n`jrnl` is a simple journal application for the command line.\n\nYou can use it to easily create, search, and view journal entries. Journals are\nstored as human-readable plain text, and can also be encrypted using  [AES\nencryption](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard).\n\n## In a Nutshell\n\nTo make a new entry, just enter\n\n``` sh\njrnl yesterday: Called in sick. Used the time to clean the house and write my\nbook.\n```\n\n`yesterday:` is  interpreted by `jrnl` as a timestamp. Everything until the\nfirst sentence ending (either `.`, `?`, or `!`) is interpreted as the title, and\nthe rest as the body. In your journal file, the result will look like this:\n\n    [2012-03-29 09:00] Called in sick.\n    Used the time to clean the house and write my book.\n\nIf you just call `jrnl`, you will be prompted to compose your entry - but you\ncan also configure _jrnl_ to use your external editor.\n\nFor more information, please read the\n[documentation](https://jrnl.sh).\n\n## Contributors\n\n### Maintainers\n\nOur maintainers help keep the lights on for the project:\n\n * Jonathan Wren ([wren](https://github.com/wren))\n * Micah Ellison ([micahellison](https://github.com/micahellison))\n * Aaron Lichtman ([alichtman](https://github.com/alichtman))\n\nPlease thank them if you like `jrnl`!\n\n### Code Contributors\n\nThis project is made with love by the many fabulous people who have contributed.\n`jrnl` couldn't exist without each and every one of you!\n\n<a href=\"https://github.com/jrnl-org/jrnl/graphs/contributors\"><img\nsrc=\"https://opencollective.com/jrnl/contributors.svg?width=890&button=false\"\n/></a>\n\nIf you'd also like to help make `jrnl` better, please see our [contributing\ndocumentation](docs/contributing.md).\n\n### Financial Backers\n\nAnother way show support is through direct financial contributions. These funds\ngo to covering our costs, and are a quick way to show your appreciation for\n`jrnl`.\n\n[Become a financial contributor](https://opencollective.com/jrnl/contribute)\nand help us sustain our community.\n\n<a href=\"https://opencollective.com/jrnl\"><img\nsrc=\"https://opencollective.com/jrnl/individuals.svg?width=890\"></a>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:36:34+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/blob/90de4948d79a4fca8c7238dd2487b599f458c903/README.md"
+  },
+  {
+   "evidence_id": "repo:jrnl-org/jrnl:contributing",
+   "payload": {
+    "commit_oid": "90de4948d79a4fca8c7238dd2487b599f458c903",
+    "kind": "contributing",
+    "text": "<!--\nCopyright \u00a9 2012-2023 jrnl contributors\nLicense: https://www.gnu.org/licenses/gpl-3.0.html\n-->\n\n# Contributing\n\nSee \"[Contributing](docs/contributing.md)\" in the `docs` directory.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:36:34+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/blob/90de4948d79a4fca8c7238dd2487b599f458c903/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2123:opened",
+   "payload": {
+    "additions": 47,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 47,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Update dependency cryptography to v50.0.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T20:01:43+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2123"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2122:opened",
+   "payload": {
+    "additions": 1,
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".gitattributes"
+    ],
+    "title": "fix(tests): normalize .txt fixture line endings so folder journals load on Windows"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T06:59:20+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2122"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2121:opened",
+   "payload": {
+    "additions": 19,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 19,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Update dependency ruff to v0.16.5"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T19:56:26+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2121"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2120:opened",
+   "payload": {
+    "additions": 49,
+    "author": "rahul188",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "jrnl/args.py",
+     "tests/unit/test_parse_args.py"
+    ],
+    "title": "fix: reject --format with --import instead of listing export formats (#1990)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T17:25:45+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2120"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2120:comment:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Checked this out on Windows 11 / Python 3.14.7 and it does what the description says.\n\nBefore, on `main`:\n\n```\npython -m jrnl: error: argument --format: invalid choice: 'whatformats'\n(choose from 'boxed', 'calendar', 'dates', 'fancy', 'heatmap', 'json', 'markdown',\n 'md', 'pretty', 'short', 'tags', 'text', 'txt', 'xml', 'yaml')\n```\n\nOn this branch:\n\n```\npython -m jrnl: error: argument --format: not allowed with argument --import\n```\n\n`tests/unit/test_parse_args.py` gives 55 passed, and the full suite on this branch is 696 passed, 44 skipped.\n\nOne thing I could not check: whether `--format` still behaves for a normal export. My run hit first-run journal setup rather than the export path, so that is my environment and not evidence either way about this change.\n\nRan the commands above myself; the write-up was drafted with AI assistance.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T07:34:13+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2120"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2119:opened",
+   "payload": {
+    "additions": 4,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Update dependency tox to v4.61.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T00:51:08+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2119"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2118:opened",
+   "payload": {
+    "additions": 1714,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 28,
+    "deletions": 562,
+    "files": [
+     "docs/advanced.md",
+     "docs/reference-command-line.md",
+     "docs/reference-config-file.md",
+     "jrnl/args.py",
+     "jrnl/config.py",
+     "jrnl/controller.py",
+     "jrnl/git.py",
+     "jrnl/journals/FolderJournal.py",
+     "jrnl/journals/Journal.py",
+     "jrnl/messages/MsgText.py",
+     "poetry.lock",
+     "pyproject.toml",
+     "tests/bdd/features/git.feature",
+     "tests/bdd/test_features.py",
+     "tests/data/configs/git_file_journal.yaml",
+     "tests/data/configs/git_folder_journal.yaml",
+     "tests/data/configs/git_global_file_journal.yaml",
+     "tests/data/configs/git_global_folder_journal.yaml",
+     "tests/data/configs/git_pull_file_journal.yaml",
+     "tests/data/configs/git_pull_folder_journal.yaml"
+    ],
+    "title": "Add git integration for automatic commit, push, and pull"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T22:13:36+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2118"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2117:opened",
+   "payload": {
+    "additions": 177,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 6,
+    "files": [
+     "docs/reference-config-file.md",
+     "jrnl/config.py",
+     "jrnl/journals/Entry.py",
+     "jrnl/journals/Journal.py",
+     "jrnl/time.py",
+     "tests/bdd/features/datetime.feature",
+     "tests/data/configs/timeformat_display.yaml",
+     "tests/unit/test_parse_args.py",
+     "tests/unit/test_time.py"
+    ],
+    "title": "WIP: Add timeformat_display config key (relative/custom entry display)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T11:47:09+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2117"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2116:opened",
+   "payload": {
+    "additions": 4,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/renovate.json"
+    ],
+    "title": "Enable automerge for Renovate PRs"
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:46:03+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2116"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2116:merged",
+   "payload": {
+    "author": "alichtman",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:49:18+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2116"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2115:opened",
+   "payload": {
+    "additions": 46,
+    "author": "youdie006",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "jrnl/journals/FolderJournal.py",
+     "tests/unit/test_journals_folder_journal.py"
+    ],
+    "title": "Derive folder-journal entry dates from the folder path"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T06:37:58+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2115"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2115:merged",
+   "payload": {
+    "author": "youdie006",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:31:43+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2115"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2115:comment:0",
+   "payload": {
+    "author": "alichtman",
+    "author_is_bot": false,
+    "body": "Thanks for the fix, and adding a regression test!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:31:54+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2115"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2114:opened",
+   "payload": {
+    "additions": 47,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 47,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Update dependency cryptography to v50"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T17:56:55+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2114"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2114:merged",
+   "payload": {
+    "author": "renovate",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:24:48+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2114"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2112:opened",
+   "payload": {
+    "additions": 31,
+    "author": "abyworkings-coder",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "llms.txt"
+    ],
+    "title": "Add llms.txt for LLM/agent-readable project summary"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T08:30:22+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2112"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2111:opened",
+   "payload": {
+    "additions": 35,
+    "author": "Sanjays2402",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 2,
+    "files": [
+     "jrnl/journals/DayOneJournal.py",
+     "jrnl/journals/Journal.py",
+     "tests/unit/test_journals_dayone_journal.py"
+    ],
+    "title": "fix: search DayOne tags with any configured tag symbol"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T13:11:31+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2111"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2110:opened",
+   "payload": {
+    "additions": 20,
+    "author": "Sanjays2402",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "jrnl/config.py",
+     "tests/unit/test_parse_args.py"
+    ],
+    "title": "fix: fall back to literal string when override value is not valid YAML"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T01:10:02+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2110"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2109:opened",
+   "payload": {
+    "additions": 19,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 19,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Update dependency ruff to v0.16.2"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T21:09:23+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2109"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2109:merged",
+   "payload": {
+    "author": "renovate",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:35:42+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2109"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2109:review:0",
+   "payload": {
+    "author": "alichtman",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:35:40+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2109"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2108:opened",
+   "payload": {
+    "additions": 3,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Update dependency tox to v4.58.0"
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T02:42:13+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2108"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2108:merged",
+   "payload": {
+    "author": "renovate",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:40:52+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2108"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2107:opened",
+   "payload": {
+    "additions": 12,
+    "author": "natejswenson",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/external-editors.md"
+    ],
+    "title": "docs: add gedit to external editors"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T19:04:42+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2107"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2107:merged",
+   "payload": {
+    "author": "natejswenson",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-06T13:24:13+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2107"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2106:opened",
+   "payload": {
+    "additions": 25,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 17,
+    "files": [
+     "jrnl/controller.py",
+     "jrnl/editor.py"
+    ],
+    "title": "fix: guarantee editor tempfile cleanup and add debug logging"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T10:49:34+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2106"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2106:merged",
+   "payload": {
+    "author": "alichtman",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T10:58:17+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2106"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2105:opened",
+   "payload": {
+    "additions": 33,
+    "author": "rahul188",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "jrnl/journals/Entry.py",
+     "tests/unit/test_entry.py"
+    ],
+    "title": "fix: don't treat runs made up only of tagsymbols as tags"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T10:36:53+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2105"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2105:comment:0",
+   "payload": {
+    "author": "rahul188",
+    "author_is_bot": false,
+    "body": "Hi \ud83d\udc4b Gentle nudge on this PR \u2014 it's **mergeable and CI is passing**, just waiting on a review. Would really appreciate a look whenever you have bandwidth, and I'm glad to make any changes you'd like. Thanks for your time and for maintaining this project! \ud83d\ude4f"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T02:39:59+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2105"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2105:comment:1",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Reproduced and confirmed on Windows 11 / Python 3.14.7. Probe: https://gist.github.com/MohammedAlkindi/9e2161d587c805fea4bc4f41b1c38feb\n\nOn `main` at `90de494`, then on this branch at `83a1247`:\n\n```\ninput                       main            this branch\n'### heading'               ['###']         []\n'@#@'                       ['@#']          []\n'####'                      ['####']        []\n'## heading with #realtag'  ['##','#realtag'] ['#realtag']\n'#realtag and @person'      unchanged       unchanged\n```\n\nFull suite on this branch is 694 passed, 44 skipped, and `tests/unit/test_entry.py` is 3 passed.\n\nOne correction to the description rather than the code: `@@` is listed as an affected case, but it already returns `[]` on `main`. The trailing class is `[-+*#/\\w]`, which contains `#` but not `@`, so `@@` never matched the pattern in the first place. The other three cases do reproduce exactly as described.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T11:06:51+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2105"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2104:opened",
+   "payload": {
+    "additions": 94,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 47,
+    "files": [
+     "jrnl/controller.py",
+     "jrnl/editor.py",
+     "tests/unit/test_editor.py"
+    ],
+    "title": "fix: don't crash on invalid UTF-8 from stdin when writing an entry"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T10:09:17+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2104"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2104:merged",
+   "payload": {
+    "author": "alichtman",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T10:14:17+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2104"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2102:opened",
+   "payload": {
+    "additions": 3,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     ".github/actions/run_tests/action.yaml",
+     ".github/workflows/docs.yaml",
+     ".github/workflows/release.yaml"
+    ],
+    "title": "Update actions/setup-python action to v7"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T07:22:55+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2102"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2102:merged",
+   "payload": {
+    "author": "renovate",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T07:49:05+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2102"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2101:opened",
+   "payload": {
+    "additions": 26,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 7,
+    "files": [
+     "jrnl/commands.py",
+     "jrnl/config.py",
+     "jrnl/controller.py",
+     "tests/bdd/features/config_file.feature"
+    ],
+    "title": "fix: don't overwrite the default config when using --config-file"
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T00:23:33+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2101"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2101:merged",
+   "payload": {
+    "author": "alichtman",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T07:22:13+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2101"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2100:opened",
+   "payload": {
+    "additions": 11,
+    "author": "deeferentleeg",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "docs/formats.md",
+     "docs/reference-command-line.md"
+    ],
+    "title": "docs: clarify that --import only supports 'jrnl' format"
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T05:57:31+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2100"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2098:opened",
+   "payload": {
+    "additions": 19,
+    "author": "renovate",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 19,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Update dependency ruff to v0.15.22"
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T18:03:23+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2098"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2098:merged",
+   "payload": {
+    "author": "renovate",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T07:49:21+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2098"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2097:opened",
+   "payload": {
+    "additions": 1243,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 41,
+    "deletions": 304,
+    "files": [
+     ".github/PULL_REQUEST_TEMPLATE.md",
+     ".github/actions/run_tests/action.yaml",
+     ".github/workflows/changelog.yaml",
+     ".github/workflows/docs.yaml",
+     ".github/workflows/release.yaml",
+     ".github/workflows/testing_pipelines.yaml",
+     ".github/workflows/testing_prs.yaml",
+     "CHANGELOG.md",
+     "CLAUDE.md",
+     "README.md",
+     "docs/contributing.md",
+     "docs/encryption.md",
+     "docs/formats.md",
+     "jrnl/commands.py",
+     "jrnl/config.py",
+     "jrnl/controller.py",
+     "jrnl/editor.py",
+     "jrnl/encryption/Jrnlv3Encryption.py",
+     "jrnl/journals/DayOneJournal.py",
+     "jrnl/journals/Journal.py"
+    ],
+    "title": "fix: prevent concurrent jrnl processes from silently clobbering each other's changes"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T12:58:54+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2097"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2096:opened",
+   "payload": {
+    "additions": 73,
+    "author": "alichtman",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 6,
+    "files": [
+     "jrnl/journals/DayOneJournal.py",
+     "jrnl/journals/FolderJournal.py",
+     "jrnl/journals/Journal.py",
+     "jrnl/path.py",
+     "tests/unit/test_path.py"
+    ],
+    "title": "fix: write journal files atomically to avoid corruption on crash"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T12:35:02+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2096"
+  },
+  {
+   "evidence_id": "pr:jrnl-org/jrnl#2096:merged",
+   "payload": {
+    "author": "alichtman",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T12:57:24+00:00",
+   "url": "https://github.com/jrnl-org/jrnl/pull/2096"
+  }
+ ],
+ "repo": "jrnl-org/jrnl",
+ "window": "pre_t"
+}

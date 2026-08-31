@@ -1,0 +1,1367 @@
+{
+ "captured_at": "2026-08-31T01:07:59.516801+00:00",
+ "content_sha256": "f26ee99052cb38dddd290865878ef899e7b066db2eb885b80b20580e4de795e9",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:WenyuChiou/awesome-agentic-ai-zh:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "A trilingual (\u7e41\u4e2d / English / \u7b80\u4e2d) learning roadmap for agentic AI: from LLM basics to multi-agent systems, with 240+ curated resources and hands-on examples. \u4e2d\u6587 AI agent \u5b78\u7fd2\u5730\u5716\u3002",
+    "homepage_url": "https://wenyuchiou.github.io/awesome-agentic-ai-zh/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-30T23:58:25Z",
+    "stargazer_count": 6523
+   },
+   "source": "github",
+   "timestamp": "2026-05-04T22:18:51+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh"
+  },
+  {
+   "evidence_id": "repo:WenyuChiou/awesome-agentic-ai-zh:readme",
+   "payload": {
+    "commit_oid": "befbb320de0219f4b176834102945d1fcca2ea75",
+    "kind": "readme",
+    "text": "<div align=\"right\">\n  <strong>\u7e41\u9ad4\u4e2d\u6587</strong> | <a href=\"./README.zh-Hans.md\">\u7b80\u4f53\u4e2d\u6587</a> | <a href=\"./README.en.md\">English</a>\n</div>\n\n<div align=\"center\" markdown=\"1\">\n\n![AI Agent \u5b78\u7fd2\u8def\u5f91](resources/diagrams/banner.png)\n\n# awesome-agentic-ai-zh\n\n**\ud83e\udd16 \u4e00\u5f35\u5f9e\u300cAI Agent \u662f\u4ec0\u9ebc\u300d\u8d70\u5230\u300c\u80fd\u505a\u51fa\u53ef\u9760\u7cfb\u7d71\u300d\u7684\u5b78\u7fd2\u5730\u5716**\n\n**\u5148\u9078\u4e00\u689d\u8def\uff0c\u518d\u4e00\u6b65\u4e00\u6b65\u8d70\u3002\u91cd\u8981\u6982\u5ff5\u3001\u52d5\u624b\u7df4\u7fd2\u8207\u7cbe\u9078\u8cc7\u6e90\u90fd\u5e6b\u4f60\u6392\u597d\u9806\u5e8f\u3002**\n\n[![License](https://img.shields.io/badge/license-MIT-blue?style=flat)](LICENSE)\n[![\u7e41\u4e2d](https://img.shields.io/badge/\u8a9e\u8a00-\u7e41\u9ad4\u4e2d\u6587-red?style=flat)](README.md)\n[![\u7b80\u4e2d](https://img.shields.io/badge/\u8a9e\u8a00-\u7b80\u4f53\u4e2d\u6587-orange?style=flat)](README.zh-Hans.md)\n[![EN](https://img.shields.io/badge/lang-English-blue?style=flat)](README.en.md)\n![GitHub stars](https://img.shields.io/github/stars/WenyuChiou/awesome-agentic-ai-zh?style=flat&logo=github)\n[![\u7dda\u4e0a\u6587\u4ef6\u7ad9](https://img.shields.io/badge/\u7dda\u4e0a\u95b1\u8b80-\u7acb\u5373\u958b\u59cb-2ea44f?style=flat)](https://wenyuchiou.github.io/awesome-agentic-ai-zh/)\n\n</div>\n\n> \ud83d\udcf1 \u624b\u6a5f\u95b1\u8b80\u8acb\u4f7f\u7528[\u7dda\u4e0a\u6587\u4ef6\u7ad9](https://wenyuchiou.github.io/awesome-agentic-ai-zh/)\u3002\n\n## \ud83c\udfaf \u9019\u4efd\u5730\u5716\u5e6b\u4f60\u505a\u4ec0\u9ebc\uff1f\n\n**AI Agent** \u662f\u300c\u80fd\u8b80\u61c2\u76ee\u6a19\u3001\u4f7f\u7528\u5de5\u5177\uff0c\u4e26\u4f9d\u7d50\u679c\u7e7c\u7e8c\u4e0b\u4e00\u6b65\u7684\u7a0b\u5f0f\u300d\u3002\u9019\u500b repo \u4e0d\u8981\u6c42\u4f60\u4e00\u958b\u59cb\u5c31\u61c2\u6240\u6709\u540d\u8a5e\uff0c\u800c\u662f\u5e36\u4f60\u4f9d\u5e8f\u5b8c\u6210\u4e09\u4ef6\u4e8b\uff1a\n\n1. **\u5148\u61c2\u57fa\u790e**\uff1aLLM\u3001Prompt\u3001API \u8207 Token \u662f\u4ec0\u9ebc\u3002\n2. **\u518d\u505a\u51fa\u6771\u897f**\uff1a\u8b93\u6a21\u578b\u547c\u53eb\u5de5\u5177\u3001\u8dd1 Agent Loop\u3001\u8b80\u6587\u4ef6\u8207\u8a18\u4f4f\u4e8b\u60c5\u3002\n3. **\u6700\u5f8c\u505a\u5f97\u53ef\u9760**\uff1a\u52a0\u5165\u6b0a\u9650\u3001Eval\u3001\u4eba\u5de5\u6279\u51c6\u3001\u89c0\u6e2c\u8207\u5931\u6557\u5fa9\u539f\u3002\n\n\u9019\u88e1\u7684\u89d2\u8272\u662f**\u5b78\u7fd2\u8def\u7dda\u5716 + \u7cbe\u9078\u8cc7\u6e90 + \u53ef\u76f4\u63a5\u57f7\u884c\u7684\u5c0f\u7df4\u7fd2**\u3002\u9700\u8981\u5b8c\u6574\u7ae0\u7bc0\u6642\uff0c\u6211\u5011\u6703\u5e36\u4f60\u53bb\u5b98\u65b9\u6587\u4ef6\u3001[Datawhale Hello-Agents](https://github.com/datawhalechina/hello-agents) \u6216\u5c0d\u61c9\u7684 Cookbook\uff0c\u4e0d\u91cd\u5beb\u53e6\u4e00\u5957\u767e\u79d1\u5168\u66f8\u3002\u9700\u8981\u9023\u6a21\u578b\u6642\uff0c\u6bcf\u500b\u7df4\u7fd2\u6703\u518d\u8aaa\u660e\u96f2\u7aef\u6216\u672c\u6a5f\u8def\u5f91\u3002\n\n\u91cd\u8981\u6280\u8853\u8a5e\u7b2c\u4e00\u6b21\u51fa\u73fe\u6642\u6703\u5148\u7528\u767d\u8a71\u8aaa\u660e\uff0c\u518d\u4fdd\u7559\u6b63\u5f0f\u82f1\u6587\u3002\u5fd8\u8a18\u67d0\u500b\u8a5e\u6642\uff0c\u76f4\u63a5\u67e5[\u540d\u8a5e\u8868](resources/glossary.md)\u3002\n\n## \ud83d\ude80 \u73fe\u5728\u5c31\u958b\u59cb\n\n1. **\u5b8c\u5168\u6c92\u5beb\u904e\u7a0b\u5f0f**\uff1a\u5f9e [Stage 0\uff1a\u57fa\u790e\u6e96\u5099](stages/00-foundations.md)\u958b\u59cb\uff1bAPI \u6216 CLI Agent \u4e0d\u719f\u6642\uff0c\u642d\u914d[\u96f6\u57fa\u790e\u8a2d\u5b9a\u6307\u5357](resources/setup-guide.md)\u3002\n2. **\u5df2\u7d93\u6703 Python\u3001Git \u8207 API**\uff1a\u5f9e [Stage 1\uff1aLLM \u57fa\u790e](stages/01-llm-basics.md)\u958b\u59cb\u3002\n3. **\u9084\u4e0d\u78ba\u5b9a\u8981\u8d70\u54ea\u689d\u8def**\uff1a\u5148\u770b\u4e0b\u9762\u7684 Track A\uff0fTrack B \u9078\u64c7\u8868\u3002\n\n\u8d70 Track A \u6216 Track B \u524d\uff0c\u5148\u78ba\u8a8d Stage 0\u20132\uff1b\u53ea\u8d70\u65e5\u5e38\u4f7f\u7528\u8005\u8def\u7dda\u7684\u4eba\u53ef\u4ee5\u76f4\u63a5\u6253\u958b\u89d2\u8272\u6307\u5357\u3002\n\n| \u4f60\u73fe\u5728\u60f3\u505a\u4ec0\u9ebc\uff1f | \u5efa\u8b70\u8def\u7dda | \u8def\u7dda\u5165\u53e3 |\n|---|---|---|\n| \u7528 Claude Code\u3001Codex\u3001OpenCode \u7b49 CLI Agent \u5b8c\u6210\u5de5\u4f5c | **Track A \u2014 CLI Power User** | [A1\uff1a\u9078\u4e00\u500b CLI Agent](tracks/cli/A1-cli-intro.md) |\n| \u81ea\u5df1\u5beb Agent\u3001\u5de5\u5177\u8ff4\u5708\u3001Workflow \u8207\u670d\u52d9 | **Track B \u2014 Agent Builder** | [Stage 3\uff1a\u7b2c\u4e00\u500b Agent Loop](stages/03-tool-use-and-hello-agent.md) |\n| \u53ea\u60f3\u5728\u65e5\u5e38\u751f\u6d3b\u5b89\u5168\u4f7f\u7528 AI\uff0c\u66ab\u6642\u4e0d\u5beb\u7a0b\u5f0f | **\u65e5\u5e38\u4f7f\u7528\u8005\u8def\u7dda** | [\u65e5\u5e38\u4f7f\u7528\u8005\u6307\u5357](branches/for-everyday-users.md) |\n\n<details markdown=\"1\">\n<summary>\ud83d\udcbb \u5c55\u958b\uff1a\u4e0b\u8f09\u5230\u672c\u6a5f</summary>\n\n```powershell\ngit clone https://github.com/WenyuChiou/awesome-agentic-ai-zh.git\ncd awesome-agentic-ai-zh\n```\n\n\u4e0b\u8f09\u5f8c\u5148\u958b\u555f `stages/00-foundations.md`\uff0c\u6216\u4f9d\u4e0a\u8868\u76f4\u63a5\u524d\u5f80\u9069\u5408\u4f60\u7684\u7b2c\u4e00\u7ad9\u3002\n\n</details>\n\n## \u5f9e Stage 0 \u5230 Stage 8\uff0c\u53e6\u6709 Stage 7.5 \u95b1\u8b80\u7ad9\n\n![AI Agent \u5b78\u7fd2\u5730\u5716](resources/diagrams/learning-map.png)\n\n\u9019\u5f35\u5730\u5716\u5171\u6709 **8 \u500b\u4e3b\u984c Stage + Stage 0 \u6e96\u5099\u95dc + Stage 7.5 \u9032\u968e\u95b1\u8b80\u7ad9**\uff0c\u4e5f\u5c31\u662f **10 \u500b\u5b78\u7fd2\u7ad9**\u3002Track A\uff0fB \u8b80\u8005\u5148\u78ba\u8a8d **Stage 0\u20132 \u5171\u7528\u57fa\u790e**\uff1b\u5df2\u7d93\u6703 Python\u3001Git \u8207 API \u7684\u4eba\u53ef\u4ee5\u8df3\u904e Stage 0\u3002\u65e5\u5e38\u4f7f\u7528\u8005\u53ef\u4ee5\u76f4\u63a5\u8d70\u89d2\u8272\u6307\u5357\u3002\n\n### \u5171\u7528\u57fa\u790e\uff1aStage 0\u20132\n\n| Stage | \u9019\u4e00\u6b65\u89e3\u6c7a\u4ec0\u9ebc\uff1f | \u5b8c\u6210\u5f8c\u4f60\u80fd\u505a\u4ec0\u9ebc\uff1f |\n|---|---|---|\n| **0** \u00b7 [\u57fa\u790e\u6e96\u5099](stages/00-foundations.md) | \u96fb\u8166\u8207\u57fa\u672c\u5de5\u5177\u6e96\u5099\u597d\u4e86\u55ce\uff1f | \u7528 Python \u547c\u53eb\u516c\u958b API\u3001\u8b80 JSON\uff0c\u4e26\u7528 Git \u4fdd\u5b58\u6210\u679c |\n| **1** \u00b7 [LLM \u57fa\u790e](stages/01-llm-basics.md) | LLM\u3001Token\u3001Context \u8207\u6a21\u578b\u5dee\u5728\u54ea\u88e1\uff1f | \u547c\u53eb\u4e00\u500b LLM\uff0c\u4e26\u4f9d\u9700\u6c42\u9078\u96f2\u7aef\u6216\u672c\u6a5f\u6a21\u578b |\n| **2** \u00b7 [Prompt \u8a2d\u8a08](stages/02-prompt-engineering.md) | \u600e\u9ebc\u628a\u76ee\u6a19\u3001\u8cc7\u6599\u3001\u898f\u5247\u8207\u8f38\u51fa\u8aaa\u6e05\u695a\uff1f | \u7528\u56fa\u5b9a\u6848\u4f8b\u6bd4\u8f03 Zero-Shot\u3001One-Shot\u3001Few-Shot \u8207 CoT \u7684\u908a\u754c |\n\n### Track A\uff1a\u4f7f\u7528 CLI Agent \u628a\u5de5\u4f5c\u505a\u5b8c\n\n\u6b63\u5f0f\u9806\u5e8f\u662f `A1 \u2192 A2 \u2192 Stage 5 \u2192 A3 \u2192 Stage 8`\u3002\n\n| \u9806\u5e8f | \u9019\u4e00\u6b65\u89e3\u6c7a\u4ec0\u9ebc\uff1f | \u5b8c\u6210\u5f8c\u4f60\u80fd\u505a\u4ec0\u9ebc\uff1f |\n|---|---|---|\n| **A1** \u00b7 [\u9078\u4e00\u500b CLI Agent](tracks/cli/A1-cli-intro.md) | OpenRouter\u3001OpenCode\u3001Pi\u3001Ollama \u5206\u5225\u662f\u4ec0\u9ebc\uff1f | \u9078\u5c0d\u5de5\u5177\u4e26\u5b8c\u6210\u7b2c\u4e00\u500b\u5c0f\u4efb\u52d9 |\n| **A2** \u00b7 [\u5efa\u7acb\u53ef\u91cd\u8907\u6d41\u7a0b](tracks/cli/A2-cli-workflow.md) | \u600e\u9ebc\u628a\u898f\u5247\u8207\u6b65\u9a5f\u7559\u7d66\u4e0b\u4e00\u6b21\u4f7f\u7528\uff1f | \u5beb Project Instructions\u3001Skill \u8207\u53ef\u91cd\u7528\u5de5\u4f5c\u6d41\u7a0b |\n| **5** \u00b7 [Claude Code \u751f\u614b](stages/05-claude-code-ecosystem.md) | MCP\u3001Skills\u3001Plugins\u3001Hooks \u8207 Subagents \u600e\u9ebc\u5206\uff1f | \u5148\u8b80\u6838\u5fc3 5.1\u20135.4\uff1b5.5\u20135.8 \u4f9d\u5de5\u4f5c\u9700\u8981\u9078\u8b80 |\n| **A3** \u00b7 [\u63a5\u9032\u771f\u5be6\u5de5\u4f5c](tracks/cli/A3-cli-production.md) | \u600e\u9ebc\u5b89\u5168\u9023\u63a5\u5916\u90e8\u5de5\u5177\u3001CI \u8207\u5718\u968a\u6d41\u7a0b\uff1f | \u7528\u6700\u5c0f\u6b0a\u9650\u3001\u4eba\u5de5\u6aa2\u67e5\u8207\u7d00\u9304\u5b8c\u6210\u6574\u5408 |\n| **8** \u00b7 [Agent \u64cd\u4f5c\u4ecb\u9762](stages/08-agent-interfaces.md) | Agent \u600e\u9ebc\u64cd\u4f5c\u700f\u89bd\u5668\u3001\u756b\u9762\u8207 Sandbox\uff1f | \u5224\u65b7\u4efb\u52d9\u8a72\u7528 CLI\u3001Browser\u3001Computer Use \u9084\u662f API |\n\n### Track B\uff1a\u5f9e\u96f6\u6253\u9020 Agent\n\n| \u9806\u5e8f | \u9019\u4e00\u6b65\u89e3\u6c7a\u4ec0\u9ebc\uff1f | \u5b8c\u6210\u5f8c\u4f60\u80fd\u505a\u4ec0\u9ebc\uff1f |\n|---|---|---|\n| **3** \u00b7 [\u5de5\u5177\u4f7f\u7528\u8207\u7b2c\u4e00\u500b Agent Loop](stages/03-tool-use-and-hello-agent.md) | \u6a21\u578b\u600e\u9ebc\u5b89\u5168\u547c\u53eb\u5de5\u5177\u4e26\u91cd\u8907\u4e0b\u4e00\u6b65\uff1f | \u505a\u51fa\u6709\u6700\u5927\u8f2a\u6578\u3001\u6703\u9a57\u8b49\u53c3\u6578\u7684 Agent Loop |\n| **4** \u00b7 [Workflow Graph \u8207 Agent \u6846\u67b6](stages/04-agent-frameworks.md) | \u600e\u9ebc\u628a\u591a\u500b\u6b65\u9a5f\u756b\u6210\u5de5\u4f5c\u5730\u5716\uff1f | \u9078\u64c7 Workflow\u3001Agent\u3001Graph \u8207 Framework |\n| **5** \u00b7 [Claude Code \u751f\u614b](stages/05-claude-code-ecosystem.md) | MCP\u3001Skills\u3001Plugins\u3001Hooks \u8207 Subagents \u600e\u9ebc\u5408\u4f5c\uff1f | \u7d44\u5408\u5de5\u5177\u3001\u898f\u5247\u8207\u53ef\u91cd\u7528\u80fd\u529b |\n| **6** \u00b7 [Memory \u00b7 RAG](stages/06-memory-rag.md) | Agent \u600e\u9ebc\u67e5\u6587\u4ef6\u3001\u4fdd\u5b58\u8207\u53d6\u56de\u91cd\u8981\u8cc7\u8a0a\uff1f | \u5efa\u7acb\u6700\u5c0f RAG\u3001long-term memory \u8207 contextual retrieval \u6d41\u7a0b |\n| **7** \u00b7 [Agent Production Engineering\uff1aHarness\u3001Loop \u8207 Graph](stages/07-multi-agent-production.md) | Agent \u600e\u9ebc\u5728\u771f\u5be6\u74b0\u5883\u7a69\u5b9a\u904b\u4f5c\uff1f | \u52a0\u5165 Eval\u3001\u89c0\u6e2c\u3001\u9810\u7b97\u3001Human-in-the-loop\uff08HITL\uff0c\u4eba\u5de5\u6279\u51c6\uff09\u8207\u5fa9\u539f |\n| **7.5** \u00b7 [\u9032\u968e Agentic \u6982\u5ff5\u5730\u5716](stages/07.5-advanced-agentic-concepts.md) | \u9084\u6709\u54ea\u4e9b\u9032\u968e Pattern \u503c\u5f97\u8a8d\u5f97\uff1f | \u5f9e 12 \u500b\u6982\u5ff5\u9078\u8b80 PAR loop\u3001agent-as-judge \u7b49\u9700\u8981\u7684\u4e3b\u984c |\n| **8** \u00b7 [Agent \u64cd\u4f5c\u4ecb\u9762](stages/08-agent-interfaces.md) | Agent \u600e\u9ebc\u64cd\u4f5c API \u4ee5\u5916\u7684\u771f\u5be6\u74b0\u5883\uff1f | \u9078\u64c7 Computer Use\u3001Browser Use \u6216 Code Sandbox |\n\nStage 4 \u5148\u770b\u61c2 **Workflow Graph**\uff0c\u518d\u7528 framework \u628a\u5b83\u505a\u51fa\u4f86\uff1bStage 7 \u518d\u52a0\u5165 Eval\u3001\u89c0\u6e2c\u3001\u6279\u51c6\u8207\u5fa9\u539f\uff0c\u8b93\u540c\u4e00\u5f35\u5de5\u4f5c\u5716\u53ef\u4ee5\u7a69\u5b9a\u904b\u4f5c\u3002\n\n> \ud83d\udd2d **\u5b78\u7fd2\u9806\u5e8f**\uff1aStage 2 Prompt \u2192 Stage 3 **Agent Loop** \u2192 Stage 4 **Workflow Graph**\uff0fFramework \u2192 Stage 5 \u5de5\u5177\u8207\u898f\u5247 \u2192 Stage 6 **Context Engineering** \u2192 Stage 7 production\u3002`prompt \u2192 context \u2192 harness \u2192 loop \u2192 graph` \u662f\u4e94\u500b\u63a7\u5236\u554f\u984c\uff0c\u4e0d\u662f\u7ae0\u7bc0\u9806\u5e8f\u3002\n\n\u5b8c\u6210 A3 \u6216 Stage 7 \u5f8c\uff0c\u53ef\u4ee5\u958b\u59cb [Capstone \u5c08\u6848](CAPSTONE.md)\uff1b\u60f3\u8a18\u9304\u9032\u5ea6\u53ef\u4f7f\u7528 [PROGRESS.md](PROGRESS.md)\u3002\n\n<details markdown=\"1\">\n<summary>\u23f1\ufe0f \u67e5\u770b\u6642\u9593\u4f30\u7b97\uff08\u5b89\u6392\u53c3\u8003\uff0c\u4e0d\u662f\u622a\u6b62\u65e5\u671f\uff09</summary>\n\n- **Track A**\uff1a\u7d04 8\u201310 \u9031\u3002\u91cd\u9ede\u662f\u4f7f\u7528\u73fe\u6210 CLI Agent \u5b8c\u6210\u5de5\u4f5c\u3002\n- **Track B**\uff1a\u4e3b\u5e79\u7d04 16\u201322 \u9031\uff1b\u6bcf\u9031\u6295\u5165 5\u20138 \u5c0f\u6642\u6642\uff0c\u901a\u5e38\u9700\u8981 5\u20137 \u500b\u6708\u3002\n- **Stage 5** \u662f\u5de5\u5177\u8207\u898f\u5247 Hub\uff1aTrack A \u770b\u600e\u9ebc\u7528\uff0cTrack B \u770b\u600e\u9ebc\u7d44\u5408\u3002\n- **Stage 8** \u662f\u64cd\u4f5c\u4ecb\u9762 Hub\uff1aTrack A \u770b\u600e\u9ebc\u59d4\u6d3e\uff0cTrack B \u770b\u600e\u9ebc\u63a5\u9032\u81ea\u5df1\u7684 Agent\u3002\n\n\u6642\u7a0b\u53ea\u662f\u5b89\u6392\u53c3\u8003\u3002\u5148\u5b8c\u6210\u773c\u524d\u7684\u4e00\u6b65\uff0c\u4e0d\u9700\u8981\u4e00\u6b21\u8b80\u5b8c\u6574\u5f35\u5730\u5716\u3002\n\n</details>\n\n### \u4f9d\u4f60\u7684\u8eab\u5206\u7e7c\u7e8c\u8d70\n\n![\u4f9d\u8eab\u5206\u9078\u64c7\u5ef6\u4f38\u8def\u7dda](resources/diagrams/branch-decision-tree.png)\n\n| \u8def\u7dda | \u9069\u5408\u8ab0 | \u4f60\u6703\u8655\u7406\u4ec0\u9ebc\uff1f |\n|---|---|---|\n| \ud83d\udd2c [\u7814\u7a76\u4eba\u54e1](branches/for-researcher.md) | \u7814\u7a76\u751f\u3001\u535a\u5f8c\u3001PI | \u6587\u737b\u8b49\u64da\u3001\u53ef\u91cd\u73fe\u6d41\u7a0b\u3001Multi-Agent Review |\n| \ud83d\udcbb [\u958b\u767c\u8005](branches/for-developer.md) | \u8edf\u9ad4\u5de5\u7a0b\u5e2b | CLI Delegation\u3001Code Review\u3001\u6e2c\u8a66\u8207\u56de\u5fa9 |\n| \ud83c\udf93 [\u6559\u5e2b](branches/for-teacher.md) | \u8001\u5e2b\u3001\u8b1b\u5e2b | \u5099\u8ab2\u3001\u56de\u994b\u3001\u96b1\u79c1\u8207\u6559\u5b78 Prompt |\n| \ud83d\udcca [\u77e5\u8b58\u5de5\u4f5c\u8005](branches/for-knowledge-worker.md) | \u9867\u554f\u3001PM\u3001\u5206\u6790\u5e2b | Email\u3001\u6703\u8b70\u8207\u5831\u544a\u5de5\u4f5c\u6d41\u7a0b |\n| \ud83d\udc65 [\u65e5\u5e38\u4f7f\u7528\u8005](branches/for-everyday-users.md) | \u4e0d\u4e00\u5b9a\u5beb\u7a0b\u5f0f\u7684 AI \u4f7f\u7528\u8005 | \u5beb\u4f5c\u3001\u5b78\u7fd2\u3001\u96b1\u79c1\u8207\u5b89\u5168\u4f7f\u7528 |\n\n## \ud83d\udca1 \u600e\u9ebc\u5b78\u624d\u4e0d\u5bb9\u6613\u5361\u4f4f\uff1f\n\n1. **\u4e00\u6b21\u53ea\u8d70\u4e00\u500b Stage**\uff1a\u5148\u56de\u7b54\u9019\u4e00\u7ae0\u7684\u6838\u5fc3\u554f\u984c\u3002\n2. **\u6838\u5fc3\u8a5e\u8207\u5fc5\u8b80\u5148\u770b**\uff1a\u5b83\u5011\u6703\u76f4\u63a5\u7528\u5728\u5f8c\u9762\u7684\u7df4\u7fd2\u3002\n3. **\u76f4\u63a5\u8907\u88fd\u7b2c\u4e00\u500b\u6307\u4ee4**\uff1a\u5148\u8dd1\u4e0d\u9023\u7db2\u7684\u6e2c\u8a66\uff0c\u4e0d\u5fc5\u6284\u4e00\u4efd\u7a7a\u767d\u6a94\u6848\u3002\n4. **\u4e00\u6b21\u53ea\u6539\u4e00\u4ef6\u4e8b**\uff1a\u6539\u5b8c\u7acb\u523b\u518d\u8dd1\u6e2c\u8a66\uff0c\u624d\u77e5\u9053\u662f\u54ea\u500b\u6539\u52d5\u9020\u6210\u7d50\u679c\u3002\n5. **\u505a\u5230\u5b8c\u6210\u689d\u4ef6\u518d\u5f80\u4e0b\u8d70**\uff1a\u770b\u61c2\u4e0d\u7b49\u65bc\u505a\u5f97\u5230\u3002\n\n\u6bcf\u500b `starter.py` \u90fd\u662f\u53ef\u57f7\u884c\u53c3\u8003\u3002\u5148\u770b\u984c\u76ee\u8207\u6210\u529f\u689d\u4ef6\uff0c\u518d\u4fee\u6539\u4e00\u500b\u5730\u65b9\u4e26\u91cd\u8dd1\u6e2c\u8a66\u3002\u5b8c\u6574\u65b9\u6cd5\u898b[\u5982\u4f55\u4f7f\u7528\u9019\u4efd\u6559\u6750](docs/HOW_TO_USE.md)\u3002\n\n## \ud83d\udcda \u5148\u6536\u85cf\u7684\u5b78\u7fd2\u5165\u53e3\n\n\u9019\u88e1\u53ea\u653e\u6700\u5e38\u7528\u5165\u53e3\uff1b\u5b8c\u6574\u6e05\u55ae\u5728 [RESOURCES.md](RESOURCES.md)\u3002\u661f\u865f\u8868\u793a**\u5b78\u7fd2\u512a\u5148\u9806\u5e8f**\uff0c\u4e0d\u662f\u5c08\u6848\u6392\u884c\u699c\u3002\n\n<table>\n  <thead><tr><th>\u7528\u9014</th><th>\u5165\u53e3</th><th>\u4ec0\u9ebc\u6642\u5019\u7528\uff1f</th><th>\u91cd\u8981\u6027</th></tr></thead>\n  <tbody>\n    <tr><th scope=\"rowgroup\" rowspan=\"3\">\u958b\u59cb</th><td><a href=\"resources/setup-guide.md\">\u96f6\u57fa\u790e\u8a2d\u5b9a\u6307\u5357</a></td><td>\u7b2c\u4e00\u6b21\u5b89\u88dd\u8207\u57f7\u884c</td><td>\u2b50\u2b50\u2b50\u2b50\u2b50</td></tr>\n    <tr><td><a href=\"docs/HOW_TO_USE.md\">\u5982\u4f55\u4f7f\u7528\u9019\u4efd\u6559\u6750</a></td><td>\u958b\u59cb\u7b2c\u4e00\u500b\u52d5\u624b\u7df4\u7fd2\u524d</td><td>\u2b50\u2b50\u2b50\u2b50\u2b50</td></tr>\n    <tr><td><a href=\"PROGRESS.md\">\u5b78\u7fd2\u9032\u5ea6\u8868</a></td><td>\u60f3\u77e5\u9053\u4e0b\u4e00\u6b65\u6216\u8a18\u9304\u5b8c\u6210\u9805\u76ee</td><td>\u2b50\u2b50\u2b50\u2b50</td></tr>\n  </tbody>\n  <tbody>\n    <tr><th scope=\"rowgroup\" rowspan=\"3\">\u5b78\u7fd2</th><td><a href=\"resources/glossary.md\">\u6838\u5fc3\u540d\u8a5e\u8868</a></td><td>\u9047\u5230 Token\u3001RAG\u3001MCP \u7b49\u964c\u751f\u8a5e</td><td>\u2b50\u2b50\u2b50\u2b50\u2b50</td></tr>\n    <tr><td><a href=\"examples/README.md\">\u53ef\u57f7\u884c\u7bc4\u4f8b\u5165\u53e3</a></td><td>\u60f3\u76f4\u63a5\u8dd1\u96e2\u7dda\u6e2c\u8a66\u8207\u5c0f\u578b\u6848\u4f8b</td><td>\u2b50\u2b50\u2b50\u2b50\u2b50</td></tr>\n    <tr><td><a href=\"resources/cookbook.md\">\u5be6\u4f5c Cookbook</a></td><td>\u60f3\u505a Skill\u3001MCP\u3001Office\u3001Zotero \u6216\u672c\u6a5f LLM</td><td>\u2b50\u2b50\u2b50\u2b50</td></tr>\n  </tbody>\n  <tbody>\n    <tr><th scope=\"rowgroup\" rowspan=\"4\">\u67e5\u8cc7\u6599</th><td><a href=\"resources/README.md\">\u8cc7\u6e90\u5de5\u5177\u6ac3</a></td><td>\u4e0d\u77e5\u9053\u8a72\u67e5 Guide\u3001Catalog \u9084\u662f Cookbook</td><td>\u2b50\u2b50\u2b50\u2b50\u2b50</td></tr>\n    <tr><td><a href=\"RESOURCES.md\">\u5b8c\u6574\u8cc7\u6e90\u6e05\u55ae</a></td><td>\u60f3\u627e\u5b98\u65b9\u6587\u4ef6\u3001\u8ab2\u7a0b\u3001\u793e\u7fa4\u8207\u5ef6\u4f38\u95b1\u8b80</td><td>\u2b50\u2b50\u2b50\u2b50</td></tr>\n    <tr><td><a href=\"resources/cli-agents-guide.md\">CLI Agent \u9078\u64c7\u6307\u5357</a></td><td>\u6e96\u5099\u8d70 Track A \u6216\u6bd4\u8f03 CLI \u5de5\u5177</td><td>\u2b50\u2b50\u2b50\u2b50</td></tr>\n    <tr><td><a href=\"resources/courses.md\">\u8ab2\u7a0b\u8207\u8a8d\u8b49\u5730\u5716</a></td><td>\u5206\u6e05\u5b8c\u6210\u8b49\u66f8\u3001\u6280\u80fd\u5fbd\u7ae0\u8207\u8a8d\u8b49\u8003\u8a66</td><td>\u2b50\u2b50\u2b50\u2b50</td></tr>\n  </tbody>\n</table>\n\n## \ud83e\udd1d \u4e00\u8d77\u6539\u9032\u9019\u5f35\u5730\u5716\n\n- \u5167\u5bb9\u932f\u8aa4\u3001\u5931\u6548\u9023\u7d50\u6216\u904e\u6642\u8cc7\u8a0a\uff1a\u8acb\u958b [Issue](https://github.com/WenyuChiou/awesome-agentic-ai-zh/issues)\u3002\n- \u60f3\u88dc\u4e00\u500b\u5c08\u6848\u6216\u5b78\u7fd2\u8cc7\u6e90\uff1a\u8acb\u9644\u4e0a\u300c\u5b83\u6559\u54ea\u500b Stage \u7684\u4ec0\u9ebc\u300d\u3002\n- \u6e96\u5099\u9001 PR\uff1a\u5148\u770b [CONTRIBUTING.md](CONTRIBUTING.md) \u8207[\u5beb\u4f5c\u898f\u7bc4](resources/style-guide.md)\u3002\n- \u6700\u8fd1\u66f4\u65b0\u5167\u5bb9\uff1a\u67e5\u770b [CHANGELOG.md](CHANGELOG.md)\u3002\n\n<details markdown=\"1\">\n<summary>\ud83e\uddf0 \u5c55\u958b\uff1a\u5b8c\u6574\u8ca2\u737b\u65b9\u5f0f\u8207\u81ea\u52d5\u6aa2\u67e5</summary>\n\n\u4f60\u53ef\u4ee5\u4fee\u6b63\u6587\u5b57\u3001\u88dc\u4e09\u8a9e\u93e1\u50cf\u3001\u56de\u5831\u7f3a\u5c11\u7684\u4e3b\u984c\uff0c\u6216\u9577\u671f\u7dad\u8b77\u4e00\u500b Stage\uff0f\u89d2\u8272\u8def\u7dda\u3002\u65b0\u589e GitHub \u5c08\u6848\u9023\u7d50\u6642\uff0c\u81ea\u52d5\u6aa2\u67e5\u6703\u5354\u52a9\u67e5\u770b\u5c01\u5b58\u72c0\u614b\u3001License \u8207\u6700\u8fd1\u66f4\u65b0\uff1b\u662f\u5426\u6536\u9304\u4ecd\u7531 maintainer \u4f9d\u5b78\u7fd2\u50f9\u503c\u5224\u65b7\u3002\n\n\u5b8c\u6574\u89d2\u8272\u8207\u898f\u5247\u898b [CONTRIBUTORS.md](CONTRIBUTORS.md)\u3002\n\n</details>\n\n## \ud83d\ude4f \u91cd\u8981\u555f\u767c\u8207\u76f8\u95dc\u5c08\u6848\n\n- [**Datawhale Hello-Agents**](https://github.com/datawhalechina/hello-agents) \u2014 \u9069\u5408\u9700\u8981\u5b8c\u6574\u7ae0\u7bc0\u8207\u6df1\u5ea6\u5be6\u4f5c\u7684\u8b80\u8005\u3002\n- [**Datawhale \u793e\u7fa4**](https://github.com/datawhalechina) \u2014 \u4e2d\u6587\u6a5f\u5668\u5b78\u7fd2\u5171\u5b78\u793e\u7fa4\uff0c\u63d0\u4f9b\u8a31\u591a\u53ef\u9760\u7684\u5b78\u7fd2\u5165\u53e3\u3002\n- [**liyupi/ai-guide**](https://github.com/liyupi/ai-guide) \u2014 \u504f\u5411\u5ee3\u5ea6\u8cc7\u6e90\u5eab\uff1b\u672c repo \u5247\u8ca0\u8cac\u5b89\u6392\u5b78\u7fd2\u9806\u5e8f\u3002\n\n<details markdown=\"1\">\n<summary>\ud83d\udcd6 \u5c55\u958b\uff1a\u8ca2\u737b\u8005\u8207\u5f15\u7528\u683c\u5f0f</summary>\n\n[![Contributors](https://contrib.rocks/image?repo=WenyuChiou/awesome-agentic-ai-zh)](https://github.com/WenyuChiou/awesome-agentic-ai-zh/graphs/contributors)\n\n```bibtex\n@misc{awesome_agentic_ai_zh_2026,\n  title = {awesome-agentic-ai-zh: A Structured Learning Roadmap for Agentic AI},\n  author = {Chiou, Wenyu},\n  year = {2026},\n  url = {https://github.com/WenyuChiou/awesome-agentic-ai-zh}\n}\n```\n\n</details>\n\n## \u2615 \u652f\u6301\u8207\u806f\u7d61\n\n\u9019\u4efd\u5b78\u7fd2\u5730\u5716\u63a1 MIT \u6388\u6b0a\uff0c\u6703\u7e7c\u7e8c\u514d\u8cbb\u516c\u958b\u3002\u4e00\u822c\u554f\u984c\u8207\u5efa\u8b70\u8acb\u4f7f\u7528 Issue\uff1b\u9700\u8981\u79c1\u4e0b\u806f\u7d61\u6642\u53ef\u5bc4\u4fe1\u81f3 [wenyuchiou12@gmail.com](mailto:wenyuchiou12@gmail.com)\u3002\n\n\u5982\u679c\u9019\u4efd\u5730\u5716\u5e6b\u5230\u4f60\uff0c\u6b61\u8fce\u7d66\u4e00\u500b \u2b50 Star\uff0c\u6216[\u8acb\u4f5c\u8005\u559d\u676f\u5496\u5561](https://www.buymeacoffee.com/wenyuchiou)\u3002\n\n## License\n\nMIT\u3002Maintained by [@WenyuChiou](https://github.com/WenyuChiou)\u3002\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T23:57:28+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/blob/befbb320de0219f4b176834102945d1fcca2ea75/README.md"
+  },
+  {
+   "evidence_id": "repo:WenyuChiou/awesome-agentic-ai-zh:contributing",
+   "payload": {
+    "commit_oid": "befbb320de0219f4b176834102945d1fcca2ea75",
+    "kind": "contributing",
+    "text": "# \u8ca2\u737b\u6307\u5357\n\n> **\u7e41\u9ad4\u4e2d\u6587** | [\u7b80\u4f53\u4e2d\u6587](./CONTRIBUTING.zh-Hans.md) | [English](./CONTRIBUTING.en.md)\n\n\u8b1d\u8b1d\u4f60\u8003\u616e\u8ca2\u737b\u3002**\u9019\u662f\u4e00\u4efd\u7cbe\u9078\u7684\u5b78\u7fd2\u8def\u7dda\u5716\uff0c\u4e0d\u662f\u767e\u79d1\u76ee\u9304\u3002\u54c1\u8cea > \u6578\u91cf\u3002**\n\n\u9019\u500b repo **\u672c\u4f86\u5c31\u662f\u8a2d\u8a08\u7d66\u793e\u7fa4\u4e00\u8d77\u6539\u826f\u7684**\u2014\u2014\u4e00\u500b\u4eba curate \u6c38\u9060\u8ddf\u4e0d\u4e0a AI agent \u751f\u614b\u7684\u8b8a\u5316\u901f\u5ea6\u3002Maintainer \u4e00\u500b\u5b63\u5ea6\u8dd1 1 \u6b21 review \u4e0d\u5920\uff0c\u9700\u8981\u66f4\u591a\u773c\u775b\u770b\u3002\n\n\u9019\u4efd catalog \u5206**\u5169\u689d\u8ecc\u9053**\uff1a**Track A**\uff08CLI Power User\uff0c`tracks/cli/A1-A3`\uff09\u8ddf **Track B**\uff08Agent Builder\uff0c`stages/03-07`\uff09\u3002\u8ca2\u737b\u6642\u8acb\u8a3b\u660e\u4f60\u52d5\u7684\u662f\u54ea\u689d\u8ecc\u9053\u2014\u2014\u5169\u689d\u7684 audience \u4e0d\u4e00\u6a23\u3002\n\n## \ud83d\udeaa \u7b2c\u4e00\u6b21\u8ca2\u737b\uff1a\u597d\u4e0a\u624b\u7684 5 \u500b\u5207\u5165\u9ede\n\n\u4e0d\u78ba\u5b9a\u5f9e\u54ea\u958b\u59cb\uff1f\u6311\u4e00\u500b\u4f60 30 \u5206\u9418\u5167\u80fd\u505a\u5b8c\u7684\uff1a\n\n1. **\ud83d\udc1b \u56de\u5831\u904e\u6642 entry**\uff1a\u8dd1 `python scripts/refresh-stars.py` \u627e\u661f\u6578\u5dee\u8ddd\u5927\u7684 repo\uff0c\u958b issue \u8aaa\u300c\u9019\u500b\u61c9\u8a72\u79fb\u9664 / \u66f4\u65b0\u300d\n2. **\ud83d\udd17 \u4fee\u4e00\u500b\u5931\u6548\u9023\u7d50**\uff1a\u4f60\u770b stage X \u6642\u9023\u7d50 404 \u4e86\uff0c\u76f4\u63a5 PR \u6539\n3. **\u270d\ufe0f \u88dc\u4e00\u500b entry \u7684 `\u600e\u9ebc\u8dd1` section**\uff1a\u5f88\u591a entry \u6c92\u5beb\u5b89\u88dd\u6307\u4ee4\uff0c\u4f60\u8dd1\u904e\u5c31\u88dc\u4e0a\n4. **\ud83c\udf0f \u88dc\u82f1\u6587 companion \u6c92\u7ffb\u597d\u7684\u53e5\u5b50**\uff1a\u627e\u4e00\u500b `.en.md` \u8ddf zh \u5c0d\u7167\uff0c\u4f60\u89ba\u5f97\u7ffb\u5f97\u4e0d\u9806\u7684\u5730\u65b9\u6539\u4e00\u884c\n5. **\ud83d\udcac \u5c0d\u67d0\u500b entry \u52a0\u500b\u4eba\u7b46\u8a18**\uff1a\u4f60\u8dd1\u904e `\u7df4\u7fd2 3` \u5361\u67d0\u500b\u5730\u65b9\uff0c\u88dc\u4e00\u53e5\u300c\u6ce8\u610f\uff1axxx\u300d\n\n\u9019 5 \u7a2e\u90fd\u4e0d\u7528\u5148\u8b80\u5b8c\u6574\u4efd style-guide\uff0cmerge \u901f\u5ea6\u4e5f\u5feb\u2014\u2014\u9069\u5408\u7b2c\u4e00\u6b21\u8ca2\u737b\u3001\u7d2f\u7a4d\u4fe1\u5fc3\u3002\n\n> \ud83e\uddea **\u60f3\u8dd1 walkthrough / build script / CI workflow \u7b2c\u4e00\u6b21\uff1f** \u770b [`.github/TESTING-STATUS.md`](.github/TESTING-STATUS.md)\u2014\u2014\u9019\u4efd**\u8aa0\u5be6\u63ed\u9732**\u54ea\u4e9b code maintainer \u771f\u7684\u8dd1\u904e\u3001\u54ea\u4e9b\u53ea syntax check\u3001\u54ea\u4e9b\u5b8c\u5168\u6c92\u6e2c\u3002\u7b2c\u4e00\u500b\u8e29\u5230\u5751\u7684\u4eba\u958b issue + PR \u662f highest-value contribution\u3002\n\n## \u6211\u5011\u63a5\u53d7\u4ec0\u9ebc\n\n### \u9ad8\u50f9\u503c PR\n- **\u65b0\u589e project** \u5230\u67d0\u500b stage\uff0c\u4e26\u8aaa\u660e\u70ba\u4ec0\u9ebc\u9019\u500b project \u5c0d\u61c9\u8a72\u968e\u6bb5\u7684\u5b78\u7fd2\n- **\u7ffb\u8b6f** \u67d0\u500b stage \u9801\u9762\u6210\u7e41\u4e2d\uff08\u53ea\u8981\u7e41\u4e2d\u2014\u2014\u6211\u5011\u4e0d\u6536 zh-Hans\uff09\n- **\u6a19\u8a18\u505c\u6eef / \u5931\u7dad\u8b77\u7684 project**\uff08\u8acb\u5148\u958b issue\uff09\n- **\u6539\u5584\u73fe\u6709 project \u7684\u7b56\u5c55\u5099\u8a3b**\uff08\u8b93\u300c\u6559\u4ec0\u9ebc\u300d\u8aaa\u660e\u66f4\u6e05\u695a\uff09\n- **\u91cd\u65b0\u6574\u7406** \u67d0\u500b stage \u5167\u90e8\u9806\u5e8f\uff0c\u5982\u679c\u73fe\u5728\u7684\u9806\u5e8f\u4e0d\u7b26\u5408\u5b78\u7fd2\u9032\u7a0b\n\n### \u8f03\u4f4e\u512a\u5148\uff08\u4ecd\u7136\u6b61\u8fce\uff09\n- \u932f\u5b57\u4fee\u6b63\n- \u9023\u7d50\u4fee\u6b63\uff08\u8acb\u5148\u7528 `curl -I` \u9a57\u8b49\uff09\n- Stage \u4ecb\u7d39\u6587\u5b57\u512a\u5316\n\n### \u4e0d\u63a5\u53d7\n- \u6c92\u6709\u7b56\u5c55\u7406\u7531\u7684\u6279\u91cf\u52a0 repo\n- \u6c92\u6709\u6559\u5b78\u50f9\u503c\u7684\u81ea\u6211\u63a8\u92b7\n- \u6c92\u6587\u4ef6\u7684 project\n- \u6c92\u660e\u78ba license \u7684 project\n\n## \u600e\u9ebc\u65b0\u589e\u4e00\u500b project\n\n\u6bcf\u4e00\u500b project \u5728 stage \u9801\u9762\u5167\u61c9\u8a72\u7167\u9019\u500b\u683c\u5f0f\uff1a\n\n```markdown\n### [Project Name](url)\n\n| \u6b04\u4f4d | \u5167\u5bb9 |\n|---|---|\n| \u8a9e\u8a00 | Python / TS / etc. |\n| Stars | \u2605 k |\n| License | MIT / Apache 2 / ... |\n| \u63a8\u85a6\u5ea6 | \u2b50\u2b50\u2b50\u2b50 |\n\n**\u6559\u4ec0\u9ebc**\uff1a\u6838\u5fc3\u5b78\u7fd2\u4e00\u53e5\u8a71\u7e3d\u7d50\u3002\n\n**\u9069\u5408\u8ab0**\uff1a\u8ab0\u61c9\u8a72\u8b80\u9019\u500b\u3001\u70ba\u4ec0\u9ebc\u3002\n\n**\u5099\u8a3b**\uff1a1-3 \u53e5\u7684\u500b\u4eba\u8a55\u50f9\u3002\u54ea\u88e1\u597d\u3001\u54ea\u88e1\u5f31\u3001\u54ea\u88e1\u53ef\u4ee5\u8df3\u3002\n\n**\u600e\u9ebc\u8dd1**\uff1a\n\\`\\`\\`bash\n# \u6700\u5c0f\u5b89\u88dd / \u7b2c\u4e00\u6b21\u8dd1\u7684\u6307\u4ee4\n\\`\\`\\`\n```\n\n## \u7b56\u5c55\u6a19\u6e96\n\n\u503c\u5f97\u5217\u5165\u7684 project \u5fc5\u9808\uff1a\n\n1. **\u6709\u7dad\u8b77**\uff1a\u6700\u8fd1 6 \u500b\u6708\u5167\u6709 commit\uff0c\u6216\u660e\u78ba\u6a19\u793a\u300cstable, no longer maintained\u300d\n2. **\u6709 hello-world \u6587\u4ef6**\uff1a\u8b80\u8005\u61c9\u8a72\u80fd\u5728 30 \u5206\u9418\u5167\u628a\u6771\u897f\u8dd1\u8d77\u4f86\n3. **\u660e\u78ba license**\uff1aMIT\u3001Apache 2\u3001BSD \u6216\u985e\u4f3c\u3002\u907f\u514d\u6c92 license \u7684 repo\u3002\n4. **\u53ef\u4fe1\u8cf4\u7684\u7dad\u8b77\u8005**\uff1a\u77e5\u540d\u7d44\u7e54\u3001\u516c\u53f8\uff0c\u6216\u6709\u53e3\u7891\u7684\u500b\u4eba\n\n\u81ea\u52d5\u6aa2\u67e5\u6703\u5408\u4f75\u540c\u4e00\u500b repo \u7684\u91cd\u8907\u9023\u7d50\uff0c\u67e5\u5b83\u662f\u5426\u642c\u5bb6\u3001\u5c01\u5b58\u3001\u505c\u7528\uff0c\u4ee5\u53ca GitHub \u986f\u793a\u7684 SPDX license\u3002\u534a\u5e74\u6c92\u66f4\u65b0\u53ea\u662f\u4e00\u500b\u8acb\u4f60\u518d\u770b\u4e00\u773c\u7684\u63d0\u9192\uff1a\u7a69\u5b9a\u800c\u4e14\u4ecd\u6709\u6559\u5b78\u50f9\u503c\u7684\u5c08\u6848\u53ef\u4ee5\u4fdd\u7559\uff0c\u4f46\u8981\u628a\u72c0\u614b\u5beb\u6e05\u695a\u3002\u82e5 GitHub API \u66ab\u6642\u5931\u6557\uff0c\u7d50\u679c\u6703\u6a19\u6210\u300c\u7121\u6cd5\u78ba\u8a8d\u300d\uff0c\u4e0d\u6703\u5047\u88dd\u4e00\u5207\u6b63\u5e38\u3002\n\n## \u96d9\u8a9e\u98a8\u683c\n\n- **\u7e41\u4e2d\uff08Traditional Chinese, zh-TW\uff09\u70ba\u6b63\u672c**\uff0c\u82f1\u6587\u7248\uff08`*.en.md`\uff09\u662f companion\u3002\n- **\u4e0d\u63a5\u53d7 zh-Hans PR**\u3002\u5982\u679c\u4f60\u4ea4 zh-Hans \u7684 PR\uff0c\u6211\u5011\u6703\u8acb\u4f60\u8f49\u6210\u7e41\u4e2d\u3002\n- **\u81ea\u7136\u7ffb\u8b6f**\uff0c\u4e0d\u8981\u9010\u5b57\u5c0d\u8b6f\u3002\u6280\u8853\u8a5e\u5982\u679c\u76f4\u63a5\u7528\u82f1\u6587\u6bd4\u8f03\u81ea\u7136\uff0c\u5c31\u4fdd\u7559\u82f1\u6587\uff08\u300c\u4f7f\u7528 LangGraph \u5efa multi-agent \u7cfb\u7d71\u300d\uff09\u3002\n- **\u5b8c\u6574\u98a8\u683c\u898f\u7bc4\u8acb\u770b [`resources/style-guide.md`](resources/style-guide.md)**\u2014\u2014\u7981\u7528\u8a5e\u3001entry schema\u3001license \u6a19\u8a3b\u6163\u4f8b\u3001\u5beb\u4f5c\u98a8\u683c\u3001\u63a8\u85a6\u661f\u7b49\u5b9a\u7fa9\u90fd\u5728\u88e1\u9762\u3002PR \u4e4b\u524d\u8acb\u5148\u8b80\u3002\n\n## \u6d41\u7a0b\n\n1. \u65b0 project \u6216\u5927\u5e45\u91cd\u7d44\u8acb\u5148\u958b issue\n2. \u4e00\u6b21\u4e00\u500b stage\uff0cPR \u7bc4\u570d\u8981\u805a\u7126\n3. \u7b49\u5be9\u67e5\uff08\u901a\u5e38 7 \u5929\uff09\n4. Reviewer \u53ef\u80fd\u6703\u554f\u4f60\u300c\u70ba\u4ec0\u9ebc\u9019\u500b project \u6559\u9019\u500b stage\u300d\n\n## \u8981\u907f\u514d\u7684\u53cd\u6a21\u5f0f\n\n- \u274c \u300cleverage\u300d\u3001\u300cdelve\u300d\u3001\u300ccomprehensive\u300d\u3001\u300crobust\u300d\uff08LLM tell\uff09\n- \u274c \u904e\u5ea6\u884c\u92b7\uff08\u300crevolutionary\u300d\u3001\u300cgame-changing\u300d\uff09\n- \u274c \u53ea\u56e0\u70ba\u71b1\u9580\u5c31\u5217\u4e0a\u4f86\n- \u274c \u5927\u6bb5\u5f15\u7528 project \u81ea\u5df1\u7684\u884c\u92b7\u6587\u6848\n\n## \u64d4\u4efb Stage / Branch \u7dad\u8b77\u8005\n\n\u9664\u4e86\u4ea4\u4e00\u6b21\u6027 PR\uff0c\u4e5f\u6b61\u8fce\u64d4\u4efb**\u7279\u5b9a stage \u6216 branch \u7684\u9577\u671f\u7dad\u8b77\u8005**\u2014\u2014\u8ca0\u8cac\u5b9a\u671f review\u3001\u8655\u7406\u8a72\u9818\u57df\u7684 issue\u3001\u628a\u95dc\u8a72\u9818\u57df\u7684 PR\u3002\n\n\u81ea\u85a6\u6d41\u7a0b\uff1a\n\n1. \u958b\u4e00\u500b issue\uff0c\u6a19\u984c `[maintainer] Stage N \u2014 your-handle` \u6216 `[maintainer] for-X branch \u2014 your-handle`\n2. \u8b1b\u6e05\u695a\u4f60\u9858\u610f commit \u591a\u4e45\uff08\u5efa\u8b70\u81f3\u5c11\u4e00\u5b63 = 3 \u500b\u6708\uff09\n3. \u7c21\u8ff0\u4f60\u5728\u9019\u500b\u9818\u57df\u7684\u80cc\u666f\n\n\u8a73\u898b [`CONTRIBUTORS.md`](CONTRIBUTORS.md)\u3002\u6bcf\u500b stage / branch \u7684 maintainer \u540d\u55ae\u90fd\u5728\u90a3\u908a\u3002\n\n## License\n\n\u8ca2\u737b\u5373\u4ee3\u8868\u4f60\u540c\u610f\u4f60\u7684\u5167\u5bb9\u4ee5 MIT \u6388\u6b0a\u3002\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T23:57:28+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/blob/befbb320de0219f4b176834102945d1fcca2ea75/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#214:opened",
+   "payload": {
+    "additions": 636,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 831,
+    "files": [
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/TESTING_PLAN.md",
+     "scripts/repository-freshness-snapshot.json",
+     "scripts/test_courses_content.py",
+     "scripts/test_main_readme_content.py",
+     "scripts/test_site_route_coherence.py",
+     "stages/DESIGN.md"
+    ],
+    "title": "content(readme): simplify the learning-map entrance"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T23:44:25+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/214"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#214:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T23:57:28+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/214"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#213:opened",
+   "payload": {
+    "additions": 4,
+    "author": "liyangbing",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "stages/07-multi-agent-production.en.md",
+     "stages/07-multi-agent-production.md"
+    ],
+    "title": "Add SandBase Harness to Stage 7"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T22:15:36+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/213"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#213:comment:0",
+   "payload": {
+    "author": "liyangbing",
+    "author_is_bot": false,
+    "body": "Follow-up: added the matching English companion row in `stages/07-multi-agent-production.en.md` and updated the table rowspan. The Traditional Chinese primary entry remains unchanged in scope; both versions keep the backend/deployment-dependent isolation qualification.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T22:17:30+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/213"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#213:comment:1",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Maintainer preflight (2026-08-31 UTC): the project facts currently verify against the official GitHub API (`archived=false`, Apache-2.0, latest release `v0.3.8`), and the proposed isolation caveat is appropriately limited.\n\nThis PR is not merge-ready yet because it changes only zh-TW and English; `stages/07-multi-agent-production.zh-Hans.md` is missing the same entry and updated `rowspan`. The repository's public-content contract requires all three locales to say the same thing. It also currently has zero checks; after `Required / pr-gate` lands on `main`, I will run its manual PR-number path against #213 without checking out untrusted code with elevated permissions.\n\nI will keep this PR and issue #210 open until the trilingual gate is satisfied. No contributor branch was modified by this review."
+   },
+   "source": "github",
+   "timestamp": "2026-08-31T00:33:37+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/213"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#212:opened",
+   "payload": {
+    "additions": 644,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 14,
+    "files": [
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-30-agent-workflow-audit-demand-validation.md",
+     "mkdocs.yml",
+     "scripts/build-docs-tree.py",
+     "scripts/mkdocs_hooks.py",
+     "scripts/test_service_offer_content.py",
+     "services/agent-workflow-audit.en.md",
+     "services/agent-workflow-audit.md",
+     "services/agent-workflow-audit.zh-Hans.md"
+    ],
+    "title": "content(services): add the Agent Workflow Audit entrance"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T22:14:18+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/212"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#211:opened",
+   "payload": {
+    "additions": 1922,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 21,
+    "deletions": 1006,
+    "files": [
+     "CHANGELOG.md",
+     "mkdocs.yml",
+     "resources/advanced-rag.en.md",
+     "resources/advanced-rag.md",
+     "resources/advanced-rag.zh-Hans.md",
+     "resources/agent-memory.en.md",
+     "resources/agent-memory.md",
+     "resources/agent-memory.zh-Hans.md",
+     "resources/style-guide.en.md",
+     "resources/style-guide.md",
+     "resources/style-guide.zh-Hans.md",
+     "scripts/freshness-models.yml",
+     "scripts/reader-ux-pages.yml",
+     "scripts/repository-freshness-snapshot.json",
+     "scripts/test_stage06_content.py",
+     "scripts/test_stage06_deep_dives.py",
+     "scripts/test_stage06_rag_pipeline.py",
+     "stages/06-memory-rag.en.md",
+     "stages/06-memory-rag.md",
+     "stages/06-memory-rag.zh-Hans.md"
+    ],
+    "title": "content(stage6): split advanced RAG and agent memory"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T15:39:01+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/211"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#211:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T19:00:07+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/211"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#211:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [letta-ai/letta](https://github.com/letta-ai/letta) | 24.5k | Apache-2.0 | 2026-08-23 (0mo) | \u2705 |\n| [mem0ai/memory-benchmarks](https://github.com/mem0ai/memory-benchmarks) | 103 | Apache-2.0 | 2026-08-06 (1mo) | \u2705 |\n\n> All added repos look healthy against the inclusion bar. \ud83d\udc4d\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T15:39:18+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/211"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#209:opened",
+   "payload": {
+    "additions": 815,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/docs.yml",
+     ".github/workflows/lint.yml",
+     "CHANGELOG.md",
+     "docs/plans/2026-08-30-site-visual-responsive-audit.md",
+     "docs/stylesheets/extra.css",
+     "resources/style-guide.en.md",
+     "resources/style-guide.md",
+     "resources/style-guide.zh-Hans.md",
+     "scripts/check-image-delivery.py",
+     "scripts/mkdocs_hooks.py",
+     "scripts/test_image_delivery.py",
+     "stages/DESIGN.md"
+    ],
+    "title": "perf(site): make teaching diagrams easier to load"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:22:54+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/209"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#209:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T15:04:30+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/209"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#208:opened",
+   "payload": {
+    "additions": 5894,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 210,
+    "deletions": 4334,
+    "files": [
+     ".github/outreach/_send-day-packages.md",
+     ".github/outreach/awesome-claude-code.md",
+     ".github/outreach/awesome-lists-en.md",
+     ".github/outreach/awesome-mcp-servers.md",
+     ".github/outreach/datawhale.md",
+     ".github/outreach/hacker-news.md",
+     ".github/outreach/huggingface-zh.md",
+     ".github/outreach/langchain-ai.md",
+     ".github/outreach/liyupi.md",
+     ".github/outreach/moonshot.md",
+     ".github/outreach/newsletters-en.md",
+     ".github/outreach/reddit.md",
+     ".github/outreach/zhipu.md",
+     ".impeccable.md",
+     "CHANGELOG.md",
+     "CLAUDE.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "ROADMAP.en.md"
+    ],
+    "title": "chore(rollup): integrate the reviewed learning-map stack"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:15:42+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/208"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#208:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:17:38+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/208"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#208:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | 3.9k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [continuedev/continue](https://github.com/continuedev/continue) | 35.7k | Apache-2.0 | 2026-08-30 (0mo) | \u2705 |\n| [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 57.8k | MIT | 2026-08-28 (0mo) | \u2705 |\n| [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | 40.7k | MIT | 2026-08-30 (0mo) | \u2705 |\n| [letta-ai/letta-code](https://github.com/letta-ai/letta-code) | 3.2k | Apache-2.0 | 2026-08-30 (0mo) | \u2705 |\n| [microsoft/agent-framework](https://github.com/microsoft/agent-framework) | 13.2k | MIT | 2026-08-30 (0mo) | \u2705 |\n| [ollama/ollama](https://github.com/ollama/ollama) | 179.8k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [openai/openai-python](https://github.com/openai/openai-python) | 31.5k | Apache-2.0 | 2026-08-28 (0mo) | \u2705 |\n| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 388.1k | NOASSERTION | 2026-08-30 (0mo) | \u26a0\ufe0f no clear license |\n| [pydantic/pydantic](https://github.com/pydantic/pydantic) | 28.7k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [pytest-dev/pytest](https://github.com/pytest-dev/pytest) | 14.5k | MIT | 2026-08-30 (0mo) | \u2705 |\n| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 90.5k | Apache-2.0 | 2026-08-30 (0mo) | \u2705 |\n\n> **For flagged rows:** archived or stale repos need an explicit \u300c\u5df2\u5c01\u5b58 / no longer maintained\u300dnote in the entry; unlicensed repos are generally declined (CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`). Please confirm each flagged repo still earns its slot before merging.\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:16:00+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/208"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#207:opened",
+   "payload": {
+    "additions": 6709,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 217,
+    "deletions": 4335,
+    "files": [
+     ".github/outreach/_send-day-packages.md",
+     ".github/outreach/awesome-claude-code.md",
+     ".github/outreach/awesome-lists-en.md",
+     ".github/outreach/awesome-mcp-servers.md",
+     ".github/outreach/datawhale.md",
+     ".github/outreach/hacker-news.md",
+     ".github/outreach/huggingface-zh.md",
+     ".github/outreach/langchain-ai.md",
+     ".github/outreach/liyupi.md",
+     ".github/outreach/moonshot.md",
+     ".github/outreach/newsletters-en.md",
+     ".github/outreach/reddit.md",
+     ".github/outreach/zhipu.md",
+     ".github/workflows/docs.yml",
+     ".github/workflows/lint.yml",
+     ".impeccable.md",
+     "CHANGELOG.md",
+     "CLAUDE.md",
+     "README.en.md",
+     "README.md"
+    ],
+    "title": "perf(site): make teaching diagrams easier to load"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T13:41:48+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/207"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#207:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:37+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/207"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#207:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Superseded by #209 after roll-up #208. The replacement is based directly on main, has the identical reviewed tree and fingerprint, and restores the intended 12-file diff without force-pushing history."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:36+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/207"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#205:opened",
+   "payload": {
+    "additions": 1545,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 47,
+    "deletions": 1685,
+    "files": [
+     "CHANGELOG.md",
+     "CLAUDE.md",
+     "branches/for-developer.en.md",
+     "branches/for-developer.md",
+     "branches/for-developer.zh-Hans.md",
+     "branches/for-everyday-users.en.md",
+     "branches/for-everyday-users.md",
+     "branches/for-everyday-users.zh-Hans.md",
+     "docs/plans/2026-08-30-tool-landscape-freshness.md",
+     "examples/README.en.md",
+     "examples/README.md",
+     "examples/README.zh-Hans.md",
+     "examples/stage-1/04-cross-provider/README.en.md",
+     "examples/stage-1/04-cross-provider/README.md",
+     "examples/stage-1/04-cross-provider/README.zh-Hans.md",
+     "resources/agent-paradigms.en.md",
+     "resources/agent-paradigms.md",
+     "resources/agent-paradigms.zh-Hans.md",
+     "resources/cli-agents-guide.en.md",
+     "resources/cli-agents-guide.md"
+    ],
+    "title": "content(resources): clarify tools and runnable examples"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T12:27:21+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/205"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#205:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:56+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/205"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#205:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) | 3.9k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [continuedev/continue](https://github.com/continuedev/continue) | 35.7k | Apache-2.0 | 2026-08-30 (0mo) | \u2705 |\n| [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 57.8k | MIT | 2026-08-28 (0mo) | \u2705 |\n| [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | 40.7k | MIT | 2026-08-30 (0mo) | \u2705 |\n| [microsoft/agent-framework](https://github.com/microsoft/agent-framework) | 13.2k | MIT | 2026-08-30 (0mo) | \u2705 |\n| [ollama/ollama](https://github.com/ollama/ollama) | 179.8k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [openai/openai-python](https://github.com/openai/openai-python) | 31.5k | Apache-2.0 | 2026-08-28 (0mo) | \u2705 |\n| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 388k | NOASSERTION | 2026-08-30 (0mo) | \u26a0\ufe0f no clear license |\n| [pydantic/pydantic](https://github.com/pydantic/pydantic) | 28.7k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [pytest-dev/pytest](https://github.com/pytest-dev/pytest) | 14.5k | MIT | 2026-08-30 (0mo) | \u2705 |\n| [vllm-project/vllm](https://github.com/vllm-project/vllm) | 90.5k | Apache-2.0 | 2026-08-30 (0mo) | \u2705 |\n\n> **For flagged rows:** archived or stale repos need an explicit \u300c\u5df2\u5c01\u5b58 / no longer maintained\u300dnote in the entry; unlicensed repos are generally declined (CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`). Please confirm each flagged repo still earns its slot before merging.\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T12:27:38+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/205"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#205:comment:1",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:55+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/205"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#204:opened",
+   "payload": {
+    "additions": 375,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 73,
+    "files": [
+     ".impeccable.md",
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "ROADMAP.en.md",
+     "ROADMAP.md",
+     "ROADMAP.zh-Hans.md",
+     "docs/plans/2026-08-30-final-coherence-audit.md",
+     "scripts/test_site_route_coherence.py",
+     "stages/DESIGN.md",
+     "walkthroughs/build-first-agent-in-7-steps.en.md",
+     "walkthroughs/build-first-agent-in-7-steps.md",
+     "walkthroughs/build-first-agent-in-7-steps.zh-Hans.md"
+    ],
+    "title": "content(site): finish the public learning route"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T11:05:52+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/204"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#204:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:54+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/204"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#204:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:53+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/204"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#203:opened",
+   "payload": {
+    "additions": 930,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 71,
+    "deletions": 630,
+    "files": [
+     ".github/outreach/_send-day-packages.md",
+     ".github/outreach/awesome-claude-code.md",
+     ".github/outreach/awesome-lists-en.md",
+     ".github/outreach/awesome-mcp-servers.md",
+     ".github/outreach/datawhale.md",
+     ".github/outreach/hacker-news.md",
+     ".github/outreach/huggingface-zh.md",
+     ".github/outreach/langchain-ai.md",
+     ".github/outreach/liyupi.md",
+     ".github/outreach/moonshot.md",
+     ".github/outreach/newsletters-en.md",
+     ".github/outreach/reddit.md",
+     ".github/outreach/zhipu.md",
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/HOW_TO_USE.md",
+     "docs/TESTING_PLAN.md",
+     "examples/stage-1/04-cross-provider/README.en.md"
+    ],
+    "title": "docs(reader): align the public learning route"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T10:13:44+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/203"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#203:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:51+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/203"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#203:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:50+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/203"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#202:opened",
+   "payload": {
+    "additions": 1364,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 21,
+    "deletions": 642,
+    "files": [
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-30-setup-guide-reader-ux.md",
+     "examples/README.en.md",
+     "examples/README.md",
+     "examples/README.zh-Hans.md",
+     "resources/agent-paradigms.en.md",
+     "resources/agent-paradigms.md",
+     "resources/agent-paradigms.zh-Hans.md",
+     "resources/setup-guide.en.md",
+     "resources/setup-guide.md",
+     "resources/setup-guide.zh-Hans.md",
+     "scripts/freshness-models.yml",
+     "scripts/reader-ux-pages.yml",
+     "scripts/repository-freshness-snapshot.json",
+     "scripts/test_freshness.py",
+     "scripts/test_setup_guide_content.py"
+    ],
+    "title": "docs(setup): Integrate the beginner setup path"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T08:36:06+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/202"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#202:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:48+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/202"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#202:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [aaif-goose/goose](https://github.com/aaif-goose/goose) | 53.7k | Apache-2.0 | 2026-08-29 (0mo) | \u2705 |\n\n> All added repos look healthy against the inclusion bar. \ud83d\udc4d\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T08:36:18+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/202"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#202:comment:1",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:47+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/202"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#201:opened",
+   "payload": {
+    "additions": 280,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 35,
+    "deletions": 278,
+    "files": [
+     "CHANGELOG.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-30-visible-learning-contract.md",
+     "resources/style-guide.en.md",
+     "resources/style-guide.md",
+     "resources/style-guide.zh-Hans.md",
+     "scripts/check-reader-ux.py",
+     "scripts/reader-ux-pages.yml",
+     "scripts/test_reader_ux.py",
+     "scripts/test_stage05_content.py",
+     "stages/00-foundations.en.md",
+     "stages/00-foundations.md",
+     "stages/00-foundations.zh-Hans.md",
+     "stages/01-llm-basics.en.md",
+     "stages/01-llm-basics.md",
+     "stages/01-llm-basics.zh-Hans.md",
+     "stages/02-prompt-engineering.en.md",
+     "stages/02-prompt-engineering.md",
+     "stages/02-prompt-engineering.zh-Hans.md",
+     "stages/05-claude-code-ecosystem.en.md"
+    ],
+    "title": "Docs(reader UX): Keep essential learning paths visible"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T07:55:23+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/201"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#201:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:46+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/201"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#201:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:45+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/201"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#200:opened",
+   "payload": {
+    "additions": 65,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 36,
+    "files": [
+     "CHANGELOG.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-28-stage08-reader-ux.md",
+     "scripts/reader-ux-pages.yml",
+     "scripts/test_stage08_content.py",
+     "stages/08-agent-interfaces.en.md",
+     "stages/08-agent-interfaces.md",
+     "stages/08-agent-interfaces.zh-Hans.md",
+     "stages/DESIGN.md"
+    ],
+    "title": "docs(stage8): Keep full learning resources visible"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T06:45:28+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/200"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#200:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:44+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/200"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#200:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:43+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/200"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#199:opened",
+   "payload": {
+    "additions": 56,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 9,
+    "deletions": 30,
+    "files": [
+     "CHANGELOG.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-28-stage07-5-reader-ux.md",
+     "scripts/reader-ux-pages.yml",
+     "scripts/test_stage075_content.py",
+     "stages/07.5-advanced-agentic-concepts.en.md",
+     "stages/07.5-advanced-agentic-concepts.md",
+     "stages/07.5-advanced-agentic-concepts.zh-Hans.md",
+     "stages/DESIGN.md"
+    ],
+    "title": "docs(stage7.5): keep full learning resources visible"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T06:24:15+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/199"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#199:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:42+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/199"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#199:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:41+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/199"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#198:opened",
+   "payload": {
+    "additions": 75,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 19,
+    "deletions": 64,
+    "files": [
+     "CHANGELOG.md",
+     "docs/plans/2026-08-28-stage07-example-hardening.md",
+     "examples/stage-7/01-multi-agent-debate/README.en.md",
+     "examples/stage-7/01-multi-agent-debate/README.md",
+     "examples/stage-7/01-multi-agent-debate/README.zh-Hans.md",
+     "examples/stage-7/02-eval/README.en.md",
+     "examples/stage-7/02-eval/README.md",
+     "examples/stage-7/02-eval/README.zh-Hans.md",
+     "examples/stage-7/03-observability/README.en.md",
+     "examples/stage-7/03-observability/README.md",
+     "examples/stage-7/03-observability/README.zh-Hans.md",
+     "examples/stage-7/04-sdk-advanced/README.en.md",
+     "examples/stage-7/04-sdk-advanced/README.md",
+     "examples/stage-7/04-sdk-advanced/README.zh-Hans.md",
+     "examples/stage-7/05-deploy/README.en.md",
+     "examples/stage-7/05-deploy/README.md",
+     "examples/stage-7/05-deploy/README.zh-Hans.md",
+     "scripts/test_stage07_examples.py",
+     "stages/DESIGN.md"
+    ],
+    "title": "docs(stage7): keep example learning resources visible"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T06:01:59+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/198"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#198:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:40+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/198"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#198:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Integrated into main via roll-up PR #208. The resulting main tree was verified byte-for-byte equal to the reviewed #205 stack head; closing this stacked layer as superseded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:24:39+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/198"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#197:opened",
+   "payload": {
+    "additions": 1501,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 38,
+    "deletions": 1193,
+    "files": [
+     "CHANGELOG.md",
+     "examples/stage-6/01-embeddings/README.en.md",
+     "examples/stage-6/01-embeddings/README.md",
+     "examples/stage-6/01-embeddings/README.zh-Hans.md",
+     "examples/stage-6/01-embeddings/requirements.txt",
+     "examples/stage-6/01-embeddings/starter.py",
+     "examples/stage-6/01-embeddings/starter_anthropic.py",
+     "examples/stage-6/01-embeddings/test.py",
+     "examples/stage-6/02-vector-db/README.en.md",
+     "examples/stage-6/02-vector-db/README.md",
+     "examples/stage-6/02-vector-db/README.zh-Hans.md",
+     "examples/stage-6/02-vector-db/requirements.txt",
+     "examples/stage-6/02-vector-db/starter.py",
+     "examples/stage-6/02-vector-db/starter_anthropic.py",
+     "examples/stage-6/02-vector-db/test.py",
+     "examples/stage-6/02-vector-db/test_anthropic.py",
+     "examples/stage-6/03-chunking-comparison/README.en.md",
+     "examples/stage-6/03-chunking-comparison/README.md",
+     "examples/stage-6/03-chunking-comparison/README.zh-Hans.md",
+     "examples/stage-6/03-chunking-comparison/requirements.txt"
+    ],
+    "title": "examples(stage6): harden the RAG practice path"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T05:10:37+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/197"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#197:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T14:17:39+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/197"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#197:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [letta-ai/letta-code](https://github.com/letta-ai/letta-code) | 3.2k | Apache-2.0 | 2026-08-29 (0mo) | \u2705 |\n\n> All added repos look healthy against the inclusion bar. \ud83d\udc4d\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T05:18:45+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/197"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#196:opened",
+   "payload": {
+    "additions": 321,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 62,
+    "files": [
+     "CHANGELOG.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-28-stage06-rag-pipeline-refresh.md",
+     "docs/plans/2026-08-28-stage06-reader-ux.md",
+     "resources/diagrams/locale-variant-prompts.md",
+     "resources/diagrams/rag-pipeline-overview.en.png",
+     "resources/diagrams/rag-pipeline-overview.png",
+     "resources/diagrams/rag-pipeline-overview.zh-Hans.png",
+     "scripts/freshness-models.yml",
+     "scripts/reader-ux-pages.yml",
+     "scripts/repository-freshness-snapshot.json",
+     "scripts/test_stage06_content.py",
+     "scripts/test_stage06_rag_pipeline.py",
+     "stages/06-memory-rag.en.md",
+     "stages/06-memory-rag.md",
+     "stages/06-memory-rag.zh-Hans.md",
+     "stages/DESIGN.md"
+    ],
+    "title": "visuals(stage6): explain the RAG pipeline in two lanes"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T04:07:12+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/196"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#196:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T13:27:48+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/196"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#196:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [microsoft/graphrag](https://github.com/microsoft/graphrag) | 35.7k | MIT | 2026-08-24 (0mo) | \u2705 |\n| [vibrantlabsai/ragas](https://github.com/vibrantlabsai/ragas) | 15.5k | Apache-2.0 | 2026-02-24 (6mo) | \u26a0\ufe0f stale \u2014 last push 6mo ago |\n\n> **For flagged rows:** archived or stale repos need an explicit \u300c\u5df2\u5c01\u5b58 / no longer maintained\u300dnote in the entry; unlicensed repos are generally declined (CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`). Please confirm each flagged repo still earns its slot before merging.\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T04:07:26+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/196"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#195:opened",
+   "payload": {
+    "additions": 1339,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 636,
+    "files": [
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-30-setup-guide-reader-ux.md",
+     "resources/setup-guide.en.md",
+     "resources/setup-guide.md",
+     "resources/setup-guide.zh-Hans.md",
+     "scripts/freshness-models.yml",
+     "scripts/reader-ux-pages.yml",
+     "scripts/repository-freshness-snapshot.json",
+     "scripts/test_setup_guide_content.py",
+     "stages/DESIGN.md"
+    ],
+    "title": "content(setup): make the first tool choice progressive"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T03:30:09+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/195"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#195:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T08:37:14+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/195"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#195:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [aaif-goose/goose](https://github.com/aaif-goose/goose) | 53.7k | Apache-2.0 | 2026-08-29 (0mo) | \u2705 |\n\n> All added repos look healthy against the inclusion bar. \ud83d\udc4d\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T03:30:22+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/195"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#195:comment:1",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Superseded by Draft PR #202, which reapplies both #195 commits on top of #201, resolves the shared governance-file conflict, and adds the reviewer-requested trilingual freshness fixes. #195 was not merged. Its remote branch is retained for audit and rollback until the user approves the final stack."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T08:37:13+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/195"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#195:comment:2",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Superseded by #202. The trilingual setup-guide content, plan, README links, and regression test were verified byte-for-byte in #202; #202 also carries the newer shared freshness data and visibility contract. The obsolete head branch is being removed so the active stack remains #196 \u2192 #197 \u2192 #198 \u2192 #199 \u2192 #200 \u2192 #201 \u2192 #202."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T08:45:38+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/195"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#194:opened",
+   "payload": {
+    "additions": 67,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 17,
+    "deletions": 12,
+    "files": [
+     "CHANGELOG.md",
+     "resources/diagrams/branch-tier-progression.png",
+     "resources/diagrams/chunking-strategies.en.png",
+     "resources/diagrams/chunking-strategies.png",
+     "resources/diagrams/chunking-strategies.zh-Hans.png",
+     "resources/diagrams/locale-variant-prompts.md",
+     "resources/diagrams/multi-agent-debate-flow.en.png",
+     "resources/diagrams/multi-agent-debate-flow.png",
+     "resources/diagrams/multi-agent-debate-flow.zh-Hans.png",
+     "resources/diagrams/rag-pipeline-overview.en.png",
+     "resources/diagrams/rag-pipeline-overview.png",
+     "resources/diagrams/rag-pipeline-overview.zh-Hans.png",
+     "resources/diagrams/reflexion-persistent-memory-loop.en.png",
+     "resources/diagrams/reflexion-persistent-memory-loop.png",
+     "resources/diagrams/reflexion-persistent-memory-loop.zh-Hans.png",
+     "scripts/check-image-locale.py",
+     "scripts/test_image_locale.py"
+    ],
+    "title": "chore(visuals): Retire unused diagram assets"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:28:18+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/194"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#194:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:53:26+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/194"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#193:opened",
+   "payload": {
+    "additions": 1691,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 1237,
+    "files": [
+     "CHANGELOG.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-29-glossary-reader-ux.md",
+     "resources/glossary.en.md",
+     "resources/glossary.md",
+     "resources/glossary.zh-Hans.md",
+     "resources/style-guide.en.md",
+     "resources/style-guide.md",
+     "resources/style-guide.zh-Hans.md",
+     "scripts/freshness-models.yml",
+     "scripts/reader-ux-pages.yml",
+     "scripts/repository-freshness-snapshot.json",
+     "scripts/test_agent_engineering_route.py",
+     "scripts/test_glossary_content.py",
+     "scripts/test_stage08_content.py",
+     "stages/DESIGN.md"
+    ],
+    "title": "docs(glossary): Make key terms easy to find"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:06:25+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/193"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#193:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:52:44+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/193"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#193:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [earendil-works/pi](https://github.com/earendil-works/pi) | 99.1k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [firecracker-microvm/firecracker](https://github.com/firecracker-microvm/firecracker) | 36.4k | Apache-2.0 | 2026-08-28 (0mo) | \u2705 |\n| [ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm) | 6.8k | MIT | 2026-08-29 (0mo) | \u2705 |\n\n> All added repos look healthy against the inclusion bar. \ud83d\udc4d\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:06:39+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/193"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#192:opened",
+   "payload": {
+    "additions": 1052,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 15,
+    "deletions": 570,
+    "files": [
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-29-agent-production-engineering-title.md",
+     "resources/courses.en.md",
+     "resources/courses.md",
+     "resources/courses.zh-Hans.md",
+     "resources/diagrams/locale-variant-prompts.md",
+     "scripts/freshness-models.yml",
+     "scripts/reader-ux-pages.yml",
+     "scripts/repository-freshness-snapshot.json",
+     "scripts/test_courses_content.py",
+     "stages/DESIGN.md"
+    ],
+    "title": "docs(resources): Turn courses into a learning map"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T23:54:46+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/192"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#192:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:52:20+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/192"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#192:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents) | 75.5k | NOASSERTION | 2026-08-18 (0mo) | \u26a0\ufe0f no clear license |\n| [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | 73.5k | MIT | 2026-08-27 (0mo) | \u2705 |\n\n> **For flagged rows:** archived or stale repos need an explicit \u300c\u5df2\u5c01\u5b58 / no longer maintained\u300dnote in the entry; unlicensed repos are generally declined (CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`). Please confirm each flagged repo still earns its slot before merging.\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T23:55:00+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/192"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#191:opened",
+   "payload": {
+    "additions": 276,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 38,
+    "deletions": 232,
+    "files": [
+     "CHANGELOG.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-29-agent-production-engineering-title.md",
+     "resources/diagrams/agent-engineering-5layer.en.png",
+     "resources/diagrams/agent-engineering-5layer.png",
+     "resources/diagrams/agent-engineering-5layer.zh-Hans.png",
+     "resources/diagrams/agent-engineering-control-questions.en.png",
+     "resources/diagrams/agent-engineering-control-questions.png",
+     "resources/diagrams/agent-engineering-control-questions.zh-Hans.png",
+     "resources/diagrams/harness-loop-graph-boundary.en.png",
+     "resources/diagrams/harness-loop-graph-boundary.png",
+     "resources/diagrams/harness-loop-graph-boundary.zh-Hans.png",
+     "resources/diagrams/locale-variant-prompts.md",
+     "resources/glossary.en.md",
+     "resources/glossary.md",
+     "resources/glossary.zh-Hans.md",
+     "resources/style-guide.en.md"
+    ],
+    "title": "docs(stage7): Clarify Harness Loop and Graph boundaries"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T22:54:56+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/191"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#191:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:51:45+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/191"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#190:opened",
+   "payload": {
+    "additions": 2777,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 89,
+    "deletions": 2011,
+    "files": [
+     ".github/ISSUE_TEMPLATE/project-suggestion.md",
+     ".github/outreach/_send-day-packages.md",
+     ".github/outreach/langchain-ai.md",
+     "CHANGELOG.md",
+     "CONTRIBUTORS.md",
+     "PROGRESS.en.md",
+     "PROGRESS.md",
+     "PROGRESS.zh-Hans.md",
+     "README.en.md",
+     "README.md",
+     "README.zh-Hans.md",
+     "docs/HOW_TO_USE.md",
+     "docs/TESTING_PLAN.md",
+     "docs/plans/2026-08-29-stage07-harness-loop-graph.md",
+     "examples/README.en.md",
+     "examples/README.md",
+     "examples/README.zh-Hans.md",
+     "examples/stage-4/01-same-agent-two-frameworks/README.en.md",
+     "examples/stage-4/01-same-agent-two-frameworks/README.md",
+     "examples/stage-4/01-same-agent-two-frameworks/README.zh-Hans.md"
+    ],
+    "title": "chore(stack): Integrate reader UX stack with current main"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T21:40:39+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/190"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#190:merged",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:50:54+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/190"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#190:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "<!-- pr-link-audit -->\n### \ud83d\udd17 New repo links in this PR \u2014 automated audit\n\n_Advisory only (never blocks the PR). Checks CONTRIBUTING `\u00a7\u7b56\u5c55\u6a19\u6e96`: maintained within 6 months \u00b7 clear license \u00b7 not archived. Star counts are informational (no hard bar); self-promo / teaching value is a human call the bot can't make._\n\n| Repo | \u2605 Stars | License | Last push | Notes |\n|---|---|---|---|---|\n| [Aider-AI/aider](https://github.com/Aider-AI/aider) | 48.6k | Apache-2.0 | 2026-05-22 (3mo) | \u2705 |\n| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 202.4k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [earendil-works/pi](https://github.com/earendil-works/pi) | 99.1k | MIT | 2026-08-29 (0mo) | \u2705 |\n| [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | 24.2k | MIT | 2026-08-28 (0mo) | \u2705 |\n| [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) | 19k | MIT | 2026-08-30 (0mo) | \u2705 |\n\n> All added repos look healthy against the inclusion bar. \ud83d\udc4d\n\n<sub>\ud83e\udd16 pr-link-audit \u2014 facts only; the maintainer decides.</sub>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T21:40:53+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/190"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#189:opened",
+   "payload": {
+    "additions": 529,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 299,
+    "files": [
+     "CHANGELOG.md",
+     "docs/TESTING_PLAN.md",
+     "resources/README.en.md",
+     "resources/README.md",
+     "resources/README.zh-Hans.md",
+     "resources/style-guide.en.md",
+     "resources/style-guide.md",
+     "resources/style-guide.zh-Hans.md",
+     "scripts/reader-ux-pages.yml",
+     "scripts/test_resource_index_content.py",
+     "stages/DESIGN.md"
+    ],
+    "title": "content(resources): make the reference hub task-first"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T21:04:39+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/189"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#189:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:53:59+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/189"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#189:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Superseded by #190, which contains this PR commit history and has now been merged into main. Closing the obsolete stacked entry to remove the old conflict surface; no content is being discarded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:53:58+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/189"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#188:opened",
+   "payload": {
+    "additions": 133,
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 17,
+    "files": [
+     "CHANGELOG.md",
+     "docs/TESTING_PLAN.md",
+     "resources/diagrams/locale-variant-prompts.md",
+     "resources/diagrams/model-harness-fit.en.png",
+     "resources/diagrams/model-harness-fit.png",
+     "resources/diagrams/model-harness-fit.zh-Hans.png",
+     "scripts/reader-ux-pages.yml",
+     "scripts/test_stage075_content.py",
+     "stages/07.5-advanced-agentic-concepts.en.md",
+     "stages/07.5-advanced-agentic-concepts.md",
+     "stages/07.5-advanced-agentic-concepts.zh-Hans.md",
+     "stages/DESIGN.md"
+    ],
+    "title": "content(stage7.5): add model harness fit decision"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T20:11:40+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/188"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#188:closed",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:53:57+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/188"
+  },
+  {
+   "evidence_id": "pr:WenyuChiou/awesome-agentic-ai-zh#188:comment:0",
+   "payload": {
+    "author": "WenyuChiou",
+    "author_is_bot": false,
+    "body": "Superseded by #190, which contains this PR commit history and has now been merged into main. Closing the obsolete stacked entry to remove the old conflict surface; no content is being discarded."
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T02:53:56+00:00",
+   "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh/pull/188"
+  }
+ ],
+ "repo": "WenyuChiou/awesome-agentic-ai-zh",
+ "window": "pre_t"
+}

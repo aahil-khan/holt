@@ -1,0 +1,1008 @@
+{
+ "captured_at": "2026-08-31T01:08:09.956116+00:00",
+ "content_sha256": "701b8a90a14bbfdf72c2293f88896d7f6868b105d5132bbaa9c20251034b14a9",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:mangiucugna/json_repair:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Repair malformed JSON from LLMs, APIs, logs, and user input in Python.",
+    "homepage_url": "https://mangiucugna.github.io/json_repair/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-27T11:15:52Z",
+    "stargazer_count": 5080
+   },
+   "source": "github",
+   "timestamp": "2023-09-06T18:28:42+00:00",
+   "url": "https://github.com/mangiucugna/json_repair"
+  },
+  {
+   "evidence_id": "repo:mangiucugna/json_repair:readme",
+   "payload": {
+    "commit_oid": "76ee95a1d182e7165d004beaeb76033721f49f1a",
+    "kind": "readme",
+    "text": "[![PyPI](https://img.shields.io/pypi/v/json-repair)](https://pypi.org/project/json-repair/)\n![Python version](https://img.shields.io/badge/python-3.10+-important)\n[![PyPI downloads](https://img.shields.io/pypi/dm/json-repair)](https://pypi.org/project/json-repair/)\n[![PyPI Downloads](https://static.pepy.tech/badge/json-repair)](https://pepy.tech/projects/json-repair)\n[![Github Sponsors](https://img.shields.io/github/sponsors/mangiucugna)](https://github.com/sponsors/mangiucugna)\n[![GitHub Repo stars](https://img.shields.io/github/stars/mangiucugna/json_repair?style=flat)](https://github.com/mangiucugna/json_repair/stargazers)\n\nEnglish | [\u4e2d\u6587](https://github.com/mangiucugna/json_repair/blob/main/README.zh.md)\n\n# json_repair\n\nRepair malformed JSON from LLMs, APIs, logs, and user input in Python.\n\n- Fix missing quotes, commas, brackets, comments, stray prose, and truncated values.\n- Use it as a drop-in fallback for `json.loads()` or as a schema-guided repair step.\n- Install with `pip install json-repair` or try the [live demo](https://mangiucugna.github.io/json_repair/).\n\n![banner](https://raw.githubusercontent.com/mangiucugna/json_repair/main/banner.png)\n\n---\n\n## Quick example\n\n```python\nimport json_repair\n\nbad_json = '{\"users\":[{\"name\":\"Ada\",\"role\":\"admin\",}],\"ok\":true'\ndecoded_object = json_repair.loads(bad_json)\n\n# {'users': [{'name': 'Ada', 'role': 'admin'}], 'ok': True}\n```\n\nIf `json_repair` saves you time, [star the repository](https://github.com/mangiucugna/json_repair) so more people can find it.\n\n---\n\n# Demo\nIf you are unsure whether this library will fix your specific problem, or simply want your JSON validated online, try one of these:\n\n- Live demo: https://mangiucugna.github.io/json_repair/\n- Audio overview: [NotebookLM introduction](https://notebooklm.google.com/notebook/05312bb3-f6f3-4e49-a99b-bd51db64520b/audio)\n\n## Premium sponsors\n- [Icana-AI](https://github.com/Icana-AI) Makers of CallCoach, the world's best Call Centre AI Coach. Visit [https://www.icana.ai/](https://www.icana.ai/)\n- [mjharte](https://github.com/mjharte)\n\n---\n\n# Think about sponsoring this library!\nThis library is free for everyone and is maintained as a side project, so if it helps your work, consider becoming a sponsor: https://github.com/sponsors/mangiucugna\n\n---\n\n# Motivation\nSome LLMs are a bit iffy when it comes to returning well formed JSON data, sometimes they skip a parentheses and sometimes they add some words in it, because that's what an LLM does.\nLuckily, the mistakes LLMs make are simple enough to be fixed without destroying the content.\n\nI searched for a lightweight python package that was able to reliably fix this problem but couldn't find any.\n\n*So I wrote one*\n\n# Supported use cases\n\n### Fixing Syntax Errors in JSON\n\n- Missing quotes, misplaced commas, unescaped characters, and incomplete key-value pairs.\n- Missing quotation marks, improperly formatted values (true, false, null), and repairs corrupted key-value structures.\n- Python-style tuples: comma-separated parenthesized sequences become JSON arrays, while a single parenthesized value remains a scalar. Within arrays, objects, and tuples, `true`/`false`/`null` and `None` are recognized case-insensitively as JSON booleans or null.\n\n### Repairing Malformed JSON Arrays and Objects\n\n- Incomplete or broken arrays/objects by adding necessary elements (e.g., commas, brackets) or default values (null, \"\").\n- The library can process JSON that includes extra non-JSON characters like comments or improperly placed characters, cleaning them up while maintaining valid structure.\n\n### Auto-Completion for Missing JSON Values\n\n- Automatically completes missing values in JSON fields with reasonable defaults (like empty strings or null), ensuring validity.\n\n# How to use\n\nInstall the library with pip\n\n    pip install json-repair\n\nthen you can use use it in your code like this\n\n    from json_repair import repair_json\n\n    good_json_string = repair_json(bad_json_string)\n    # If the string was super broken this will return an empty string\n\n\nYou can use this library to completely replace `json.loads()`:\n\n    import json_repair\n\n    decoded_object = json_repair.loads(json_string)\n\nor just\n\n    import json_repair\n\n    decoded_object = json_repair.repair_json(json_string, return_objects=True)\n\n### Avoid this antipattern\nSome users of this library adopt the following pattern:\n\n    obj = {}\n    try:\n        obj = json.loads(string)\n    except json.JSONDecodeError as e:\n        obj = json_repair.loads(string)\n        ...\n\nThis is wasteful because `json_repair` already does that strict `json.loads()` check for you by default. The normal flow is:\n\n- try the built-in `json.loads()` / `json.load()` first\n- if that succeeds, return the decoded object\n- if that fails, run the repair parser\n\nUse the default call unless you explicitly want to skip that initial validation step:\n\n```python\nimport json_repair\n\ndecoded_object = json_repair.loads(json_string)\n```\n\n### Read json from a file or file descriptor\n\nJSON repair provides also a drop-in replacement for `json.load()`:\n\n    import json_repair\n\n    try:\n        file_descriptor = open(fname, 'rb')\n    except OSError:\n        ...\n\n    with file_descriptor:\n        decoded_object = json_repair.load(file_descriptor)\n\nand another method to read from a file:\n\n    import json_repair\n\n    try:\n        decoded_object = json_repair.from_file(json_file)\n    except OSError:\n        ...\n    except IOError:\n        ...\n\nKeep in mind that the library will not catch any IO-related exception and those will need to be managed by you\n\n### Non-Latin characters\n\nWhen working with non-Latin characters (such as Chinese, Japanese, or Korean), you need to pass `ensure_ascii=False` to `repair_json()` in order to preserve the non-Latin characters in the output.\n\nHere's an example using Chinese characters:\n\n    repair_json(\"{'test_chinese_ascii':'\u7edf\u4e00\u7801'}\")\n\nwill return\n\n    {\"test_chinese_ascii\": \"\\u7edf\\u4e00\\u7801\"}\n\nInstead passing `ensure_ascii=False`:\n\n    repair_json(\"{'test_chinese_ascii':'\u7edf\u4e00\u7801'}\", ensure_ascii=False)\n\nwill return\n\n    {\"test_chinese_ascii\": \"\u7edf\u4e00\u7801\"}\n\n### JSON dumps parameters\n\nMore in general, `repair_json` will accept all parameters that `json.dumps` accepts and just pass them through (for example indent)\n\n### Performance considerations\nBy default, `json_repair` first tries the standard-library JSON loader and only falls back to the repair parser when strict JSON parsing fails.\n\nIf you already know the input is invalid JSON and want to skip that initial validation step, pass `skip_json_loads=True`:\n\n    from json_repair import repair_json\n\n    good_json_string = repair_json(bad_json_string, skip_json_loads=True)\n\nThis is an explicit tradeoff:\n\n- default behavior: validate with stdlib JSON first, then repair only if needed\n- `skip_json_loads=True`: skip the validation fast path and go straight to the repair parser\n\nImportant: `skip_json_loads=True` is only for inputs you already know are invalid. If you force already-valid JSON through the repair parser, `json_repair` may still \"repair\" it and can change the resulting structure or values. If you need valid JSON to be preserved as-is, keep `skip_json_loads=False`.\n\n`json_repair` intentionally keeps the validation path on the standard library. It does not auto-detect or auto-use third-party JSON libraries, which keeps behavior predictable and avoids extra overhead on the common path.\n\nSome rules of thumb to use:\n- Setting `return_objects=True` will always be faster because the parser returns an object already and it doesn't have serialize that object to JSON\n- `skip_json_loads=True` is faster only if you 100% know that the string is not a valid JSON\n- `skip_json_loads=True` is not a \"faster but equivalent\" mode for valid JSON; it intentionally bypasses the stdlib success path, so valid inputs should use the default behavior\n- If you are having issues with escaping pass the string as **raw** string like: `r\"string with escaping\\\"\"`\n\n### When to use your own JSON library\n\nIf you want non-stdlib JSON semantics or a different performance profile, use your preferred JSON library yourself instead of expecting `json_repair` to switch parsers automatically. `orjson` is a common example people ask about, and the same pattern applies to any other JSON library.\n\nRecommended patterns:\n\nStrict JSON first, repair only if needed:\n\n```python\nimport json_repair\n\ndecoded_object = json_repair.loads(json_string)\n```\n\nKnown-bad input, so skip the validation step:\n\n```python\nfrom json_repair import repair_json\n\ndecoded_object = repair_json(bad_json_string, return_objects=True, skip_json_loads=True)\n```\n\n`orjson` first, `json_repair` only as a fallback:\n\n```python\nimport json_repair\nimport orjson\n\ntry:\n    decoded_object = orjson.loads(json_string)\nexcept orjson.JSONDecodeError:\n    decoded_object = json_repair.loads(json_string, skip_json_loads=True)\n```\n\n### Strict mode\n\nBy default `json_repair` does its best to \u201cfix\u201d input, even when the JSON is far from valid.  \nIn some scenarios you want the opposite behavior and need the parser to error out instead of repairing; pass `strict=True` to `repair_json`, `loads`, `load`, or `from_file` to enable that mode:\n\n```\nfrom json_repair import repair_json\n\nrepair_json(bad_json_string, strict=True)\n```\n\nThe CLI exposes the same behavior with `json_repair --strict input.json` (or piping data via stdin).\n\nIn strict mode the parser raises `ValueError` as soon as it encounters structural issues such as duplicate keys, missing `:` separators, empty keys/values introduced by stray commas, multiple top-level elements, or other ambiguous constructs. This is useful when you just need validation with friendlier error messages while still benefiting from json_repair\u2019s resilience elsewhere in your stack.\n\nStrict mode still honors `skip_json_loads=True`; combining them lets you skip the initial `json.loads` check but still enforce strict parsing rules.\n\n### Schema-guided repairs\n\nSchema-guided repairs are currently considered in beta. Bugs are to be expected.\n\nYou can guide repairs with a JSON Schema (or a Pydantic v2 model). When enabled, the parser will:\n\n- Fill missing values (defaults, required fields).\n- Coerce scalars where safe (e.g., `\"1\"` \u2192 `1` for integer fields, and `\"yes\"`/`\"no\"`/`1`/`0` for booleans).\n- Drop properties/items that the schema disallows.\n\nSchema mode can be selected with `schema_repair_mode`:\n\n- `standard` (default): existing schema-guided behavior.\n- `salvage`: includes `standard` and also:\n  - drops invalid array items when individual items cannot be repaired;\n  - maps arrays to objects by property order when schema/object shape is unambiguous.\n  - unwraps a root single-item array to an object when the root schema expects an object (`[{...}] -> {...}`);\n  - fills missing required fields only when a safe value can be inferred (`default`, `const`, first `enum`, or empty array/object when allowed by schema constraints).\n  - for sequential top-level fragments, skips schema-invalid fragments and returns the first fragment that satisfies the schema.\n\nThis is especially useful when you need deterministic, schema-valid outputs for downstream validation, storage, or typed processing. If the input cannot be repaired to satisfy the schema, `json_repair` raises `ValueError`.\n\nInstall the optional dependencies:\n\n    pip install 'json-repair[schema]'\n\n(For CLI usage, you can also use `pipx install 'json-repair[schema]'`.)\n\nWhen `schema` is provided, schema guidance is always applied (for both valid and invalid JSON). Schema guidance is mutually exclusive with `strict=True`.\n\n```\nfrom json_repair import repair_json\n\nschema = {\n    \"type\": \"object\",\n    \"properties\": {\"value\": {\"type\": \"integer\"}},\n    \"required\": [\"value\"],\n}\n\nrepair_json('{\"value\": \"1\"}', schema=schema, return_objects=True)\n\nrepair_json(\n    '{\"items\":[{\"id\":1,\"score\":85.6},{\"id\":2,\"score\":\"N/A\"}]}',\n    schema={\n        \"type\": \"object\",\n        \"properties\": {\n            \"it",
+    "text_original_chars": 19514,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T11:15:50+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/blob/76ee95a1d182e7165d004beaeb76033721f49f1a/README.md"
+  },
+  {
+   "evidence_id": "repo:mangiucugna/json_repair:contributing",
+   "payload": {
+    "commit_oid": "76ee95a1d182e7165d004beaeb76033721f49f1a",
+    "kind": "contributing",
+    "text": "# How to contribute\nPlease make sure to make a change grounded in the reality of production code and not based on theoretical issues that might never arises. The code is complex already as it is.\n\n## Step 1. Open an Issue to describe what you intend to do\nSo that everyone is aware of the intention before getting a surprise PR\n\n## Step 2. Work in a branch\nMake sure to work in a branch to make it easier to create a new PR.\n\n**Important: Update the unit tests each time!**\nWe use TDD for this project.\n\n## Step 3. Run pre-commit\nInstall the dev dependencies with `uv sync --group dev`, then run `uv run pre-commit run --all-files`.\nThis will run all the necessary tests and linters, saving lots of time to the reviewers.\n\n## Step 4. Open a PR to review\nRefer the Issue number in your PR\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T11:15:50+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/blob/76ee95a1d182e7165d004beaeb76033721f49f1a/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#222:opened",
+   "payload": {
+    "additions": 4,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     ".github/workflows/mypy.yml",
+     ".github/workflows/pytest.yml",
+     ".github/workflows/python-package.yml",
+     ".github/workflows/python-publish.yml"
+    ],
+    "title": "Bump astral-sh/setup-uv from 7.6.0 to 10.0.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T11:07:26+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/222"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#222:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T11:15:12+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/222"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#221:opened",
+   "payload": {
+    "additions": 1,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/ruff.yml"
+    ],
+    "title": "Bump astral-sh/ruff-action from 3.6.1 to 4.1.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T11:07:13+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/221"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#221:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T11:15:50+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/221"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#219:opened",
+   "payload": {
+    "additions": 6,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 6,
+    "deletions": 6,
+    "files": [
+     ".github/workflows/mypy.yml",
+     ".github/workflows/pytest.yml",
+     ".github/workflows/python-package.yml",
+     ".github/workflows/python-publish.yml",
+     ".github/workflows/pythonanywhere-sync.yml",
+     ".github/workflows/ruff.yml"
+    ],
+    "title": "Bump actions/checkout from 7.0.0 to 7.0.1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:44:41+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/219"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#219:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:52:26+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/219"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#218:opened",
+   "payload": {
+    "additions": 2,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/pytest.yml",
+     ".github/workflows/python-package.yml"
+    ],
+    "title": "Bump actions/setup-python from 6.3.0 to 7.0.0"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:44:37+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/218"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#218:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:52:42+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/218"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#217:opened",
+   "payload": {
+    "additions": 4,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     ".github/workflows/mypy.yml",
+     ".github/workflows/pytest.yml",
+     ".github/workflows/python-package.yml",
+     ".github/workflows/python-publish.yml"
+    ],
+    "title": "Bump astral-sh/setup-uv from 94527f2e458b27549849d47d273a16bec83a01e9 to 37802adc94f370d6bfd71619e3f0bf239e1f3b78"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:44:30+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/217"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#217:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:53:05+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/217"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#216:opened",
+   "payload": {
+    "additions": 1,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/python-publish.yml"
+    ],
+    "title": "Bump pypa/gh-action-pypi-publish from 1.14.0 to 1.14.2"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:44:25+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/216"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#216:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T08:14:47+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/216"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#215:opened",
+   "payload": {
+    "additions": 1,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/ruff.yml"
+    ],
+    "title": "Bump astral-sh/ruff-action from 146cd51f235777a9bc491eead18e0d5a4b05406a to 4919ec5cf1f49eff0871dbcea0da843445b837e6"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:44:22+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/215"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#215:merged",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T07:53:22+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/215"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#188:opened",
+   "payload": {
+    "additions": 3,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "Bump pygments from 2.19.2 to 2.20.0"
+   },
+   "source": "github",
+   "timestamp": "2026-03-30T19:55:10+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/188"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#188:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-14T10:45:23+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/188"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#185:opened",
+   "payload": {
+    "additions": 87,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 43,
+    "files": [
+     ".pre-commit-config.yaml",
+     "pyproject.toml",
+     "src/json_repair/json_repair.py",
+     "src/json_repair/schema_repair.py",
+     "tests/test_schema_repairer.py",
+     "tests/test_type_inference.py",
+     "uv.lock"
+    ],
+    "title": "Fix/overload stubs"
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T13:37:59+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/185"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#185:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T13:40:35+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/185"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#184:opened",
+   "payload": {
+    "additions": 86,
+    "author": "benmezger",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 42,
+    "files": [
+     ".pre-commit-config.yaml",
+     "src/json_repair/json_repair.py",
+     "src/json_repair/schema_repair.py",
+     "tests/test_schema_repairer.py",
+     "tests/test_type_inference.py",
+     "uv.lock"
+    ],
+    "title": "Fix overload causing wrong return type inference"
+   },
+   "source": "github",
+   "timestamp": "2026-03-15T20:46:11+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/184"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#184:closed",
+   "payload": {
+    "author": "benmezger",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T13:37:33+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/184"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#184:review:0",
+   "payload": {
+    "author": "benmezger",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T13:37:32+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/184"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#184:comment:0",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Hi, thanks for proposing this PR but I don't think it will fix the issue properly. I have pushed a new branch, as I can't push on your PR.\r\nCould you checkout the branch `fix/overload-stubs` to see if it works properly for you? I have added unit tests for it"
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T08:37:03+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/184"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#184:comment:1",
+   "payload": {
+    "author": "benmezger",
+    "author_is_bot": false,
+    "body": "@mangiucugna your approach is much cleaner. I will rebase your changes to this PR, but feel free to close it, and/or merge if as you wish. Thanks for taking care of it \ud83d\ude47 ."
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T13:36:13+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/184"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#184:comment:2",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "I'll close this one and do a quick release so it's fixed upstream.\r\n\r\nCheers"
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T13:37:33+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/184"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#183:opened",
+   "payload": {
+    "additions": 89,
+    "author": "dmarcato",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 13,
+    "files": [
+     "src/json_repair/json_parser.py",
+     "src/json_repair/json_repair.py",
+     "src/json_repair/parse_string.py",
+     "tests/test_parse_string.py",
+     "uv.lock"
+    ],
+    "title": "Add `remove_string_whitespace` parameter to control trailing-whitespace stripping in string values"
+   },
+   "source": "github",
+   "timestamp": "2026-03-10T04:23:39+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/183"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#183:closed",
+   "payload": {
+    "author": "dmarcato",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T08:42:34+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/183"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#183:comment:0",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Hi, when issue like this arises I would appreciate a discussion in the issue section instead of pushing a PR to avoid wasting time.\r\nAs a design philosophy I do not want this level of granularity on the rules, or it will naturally lead having 50 flags and an unmaintainable mess.\r\n\r\nFrom your example I gather that you would like to change the default behavior of the json library (if you turn on logging you will see the logs are empty so the library didn't repair) but that's contrary to what this library is for: be a drop-in replacement for the json library to always give you fully compatible json."
+   },
+   "source": "github",
+   "timestamp": "2026-03-16T08:42:34+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/183"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#182:opened",
+   "payload": {
+    "additions": 15,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 14,
+    "files": [
+     ".github/workflows/mypy.yml",
+     ".github/workflows/pytest.yml",
+     ".github/workflows/python-package.yml",
+     ".github/workflows/python-publish.yml",
+     "AGENTS.md",
+     "MANIFEST.in",
+     "pyproject.toml"
+    ],
+    "title": "chore(ci): simplify uv workflow steps and package checks"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T08:07:51+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/182"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#182:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T08:08:54+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/182"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#178:opened",
+   "payload": {
+    "additions": 713,
+    "author": "askliar",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 29,
+    "files": [
+     "src/json_repair/json_repair.py",
+     "src/json_repair/parse_object.py",
+     "src/json_repair/schema_repair.py",
+     "tests/test_schema_guided_parse.py",
+     "tests/test_schema_repairer.py"
+    ],
+    "title": "feat: add enable_shape_fixes and drop_invalid_items options for schema-guided repair"
+   },
+   "source": "github",
+   "timestamp": "2026-02-16T17:02:49+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/178"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#178:closed",
+   "payload": {
+    "author": "askliar",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-02-16T18:57:06+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/178"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#171:opened",
+   "payload": {
+    "additions": 372,
+    "author": "NICK-XoX",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "pyproject.toml",
+     "src/json_repair/__init__.py",
+     "src/json_repair/schema_rebuild.py"
+    ],
+    "title": "rebuild into provided JSON Schema"
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T19:18:48+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/171"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#171:closed",
+   "payload": {
+    "author": "NICK-XoX",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T19:36:12+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/171"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#171:comment:0",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Hi, this is not what I had in mind to be honest. The idea of a schema parameter is to use the schema to coerce the parser into specific repair actions to comply with the schema or return an error if not possible.\r\n\r\nBeside that, if you just want to validate against a schema there is a fairly robust solution available from the good folks of Pydantic https://docs.pydantic.dev/latest/concepts/json/#json-parsing that will also give you very explicit error messages.\r\n"
+   },
+   "source": "github",
+   "timestamp": "2025-11-25T19:28:46+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/171"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:opened",
+   "payload": {
+    "additions": 79,
+    "author": "kba977",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "pyproject.toml",
+     "src/json_repair/parse_object.py",
+     "tests/test_parse_object.py"
+    ],
+    "title": "fix: Enhance JSON object parsing to handle additional key-value pairs\u2026"
+   },
+   "source": "github",
+   "timestamp": "2025-09-17T02:59:06+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:merged",
+   "payload": {
+    "author": "kba977",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-09-19T04:11:07+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:0",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Hi, thanks for the PR and I think this a nice addition to the parser.\r\n\r\nI have a couple of concerns:\r\n- this test case will fail `assert repair_json('{\"key\": \"value\"}, [\"a\"]') == '[{\"key\": \"value\"}, [\"a\"]]'` because your code does not revert the index if the guess it's wrong. So this needs a solution before we can publish\r\n- I think the code can be refactored further as it's a lot of duplication from the code above in detecting key and value"
+   },
+   "source": "github",
+   "timestamp": "2025-09-17T08:52:45+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:1",
+   "payload": {
+    "author": "kba977",
+    "author_is_bot": false,
+    "body": "Thanks for adding more examples \u2014 really helpful! \r\nIn real-world cases I\u2019ve encountered:\r\nFor input like\r\n```\r\n{\"key\": \"value\"}, \"key2\": \"value2\"}\r\n```\r\nI think it makes sense to merge the fragments into a single object, returning:\r\n```\r\n{\"key\": \"value\", \"key2\": \"value2\"}\r\n```\r\n\r\nBut for input like\r\n```\r\n{\"key\": \"value\"}, []} or {\"key\": \"value\"}, [\"abc\"]} \r\n```\r\nI believe we should stop at the first valid JSON object, returning:\r\n```\r\n{\"key\": \"value\"}\r\n```\r\n\r\nI\u2019d love to hear your thoughts on how we should handle these cases consistently. Once we decide on the approach, I can adjust the implementation accordingly."
+   },
+   "source": "github",
+   "timestamp": "2025-09-17T09:25:51+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:2",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "well the reason why I raised it, it's because that behavior is already defined in the library. If multiple json fragments are found the library will return an array of all of them. So modifying that behavior would effectively break the contract."
+   },
+   "source": "github",
+   "timestamp": "2025-09-17T09:28:03+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:3",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "I also fixed the pytest CI so now you can also see failure in coverage:\r\n\r\n`src/json_repair/parse_object.py               94      5    95%   138, 146, 152, 168-169`"
+   },
+   "source": "github",
+   "timestamp": "2025-09-17T09:33:43+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:4",
+   "payload": {
+    "author": "kba977",
+    "author_is_bot": false,
+    "body": "I\u2019ve added more test cases to cover the scenarios you mentioned, and now the code has reached 100% test coverage."
+   },
+   "source": "github",
+   "timestamp": "2025-09-18T08:46:46+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:5",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Hi, I can still see the coverage error https://github.com/mangiucugna/json_repair/actions/runs/17794101690/job/50672263527?pr=151\r\n\r\nHave you installed pre-commit in your dev environment? It's much easier to just run pre-commit to make sure you don't have CI errors.\r\nOnce it's installed you can just run `pre-commit run --all-files` to do a sweep in your branch"
+   },
+   "source": "github",
+   "timestamp": "2025-09-18T09:11:39+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:6",
+   "payload": {
+    "author": "kba977",
+    "author_is_bot": false,
+    "body": "Sorry about that! I had run all the pytest tests and coverage locally, but hadn\u2019t set up pre-commit before.\r\nI\u2019ve just installed pre-commit in my local environment and ran `pre-commit run --all-files` \u2014 all checks passed \u2705.\r\n\r\n<img width=\"1302\" height=\"458\" alt=\"image\" src=\"https://github.com/user-attachments/assets/609d42c9-6212-42a2-b876-dfb17908099a\" />\r\n\r\n"
+   },
+   "source": "github",
+   "timestamp": "2025-09-18T10:21:33+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#151:comment:7",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Thanks, I will merge now and push some clean ups. Then publish 0.51.0 with this PR, feel free to check the changes I am gonna push to main to learn a bit more how this library works.\r\n\r\nCheers"
+   },
+   "source": "github",
+   "timestamp": "2025-09-19T04:11:03+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/151"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#150:opened",
+   "payload": {
+    "additions": 1,
+    "author": "du00cs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "README.md"
+    ],
+    "title": "[Readme] Add java implementation link"
+   },
+   "source": "github",
+   "timestamp": "2025-09-08T16:37:45+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/150"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#150:merged",
+   "payload": {
+    "author": "du00cs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-09-08T17:22:12+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/150"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#150:review:0",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2025-09-08T17:21:07+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/150"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#145:opened",
+   "payload": {
+    "additions": 26,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "src/json_repair/json_repair.py",
+     "tests/test_json_repair.py"
+    ],
+    "title": "Continue qchappat/main"
+   },
+   "source": "github",
+   "timestamp": "2025-08-10T08:29:13+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/145"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#145:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-08-10T08:30:39+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/145"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#144:opened",
+   "payload": {
+    "additions": 6,
+    "author": "qchappat",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "src/json_repair/json_repair.py"
+    ],
+    "title": "Update repair_json for logging is True"
+   },
+   "source": "github",
+   "timestamp": "2025-08-08T15:47:00+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/144"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#144:closed",
+   "payload": {
+    "author": "qchappat",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-08-10T08:30:00+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/144"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#144:comment:0",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Hi, I don\u2019t have time to look at this in detail before next week I think but tend to agree with your idea in principle .\r\n\r\nPlease two things:\r\n- add the right test case in the right file as the development philosophy is TDD and coverage must 100%\r\n- install pre-commit for this repository as the push would have been rejected for lack of coverage and you can be sure CI will not fail (ruff will lint, mypy will type check, etc etc)\r\n\r\n\r\nThanks for the PR and do ping me if I forget to review!"
+   },
+   "source": "github",
+   "timestamp": "2025-08-08T16:03:20+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/144"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#144:comment:1",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "Hi, I added some changes and pushed. See PR #145 as I couldn't push on this one. Will close this and merge the other. Thanks for the contribution!"
+   },
+   "source": "github",
+   "timestamp": "2025-08-10T08:30:00+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/144"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#144:comment:2",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "body": "0.49.0 contains this PR. Cheers"
+   },
+   "source": "github",
+   "timestamp": "2025-08-10T08:43:19+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/144"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#144:comment:3",
+   "payload": {
+    "author": "qchappat",
+    "author_is_bot": false,
+    "body": "Hey @mangiucugna, thank you for reviewing it and making the changes for tests and pre-commit. Sorry I did not pay attention to that. Happy to help and thanks a lot for all the work."
+   },
+   "source": "github",
+   "timestamp": "2025-08-11T13:37:42+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/144"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#127:opened",
+   "payload": {
+    "additions": 36,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "src/json_repair/json_parser.py",
+     "tests/test_json_repair.py"
+    ],
+    "title": "Fix unclosed array followed by object field"
+   },
+   "source": "github",
+   "timestamp": "2025-05-22T05:47:14+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/127"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#127:closed",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-05-22T06:16:35+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/127"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#125:opened",
+   "payload": {
+    "additions": 8,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 1,
+    "files": [
+     "README.md",
+     "pyproject.toml",
+     "src/json_repair/json_parser.py",
+     "tests/test_json_repair.py"
+    ],
+    "title": "Fix comment parser infinite loop"
+   },
+   "source": "github",
+   "timestamp": "2025-05-21T02:21:29+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/125"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#125:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-05-21T02:27:35+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/125"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#122:opened",
+   "payload": {
+    "additions": 3,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/pytest.yml"
+    ],
+    "title": "Potential fix for code scanning alert no. 8: Workflow does not contain permissions"
+   },
+   "source": "github",
+   "timestamp": "2025-05-19T10:58:33+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/122"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#122:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-05-19T11:00:50+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/122"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#120:opened",
+   "payload": {
+    "additions": 37,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 26,
+    "files": [
+     "src/json_repair/json_parser.py"
+    ],
+    "title": "Improve string/comment parsing performance"
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T14:27:00+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/120"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#120:closed",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T14:37:56+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/120"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#119:opened",
+   "payload": {
+    "additions": 1,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/json_repair/json_parser.py"
+    ],
+    "title": "Fix variable initialization in parser"
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T09:51:48+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/119"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#119:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T10:14:51+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/119"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#118:opened",
+   "payload": {
+    "additions": 21,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tests/test_json_repair.py"
+    ],
+    "title": "Add CLI argument validation tests"
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T09:50:37+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/118"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#118:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T10:13:09+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/118"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#117:opened",
+   "payload": {
+    "additions": 1,
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "src/json_repair/json_repair.py"
+    ],
+    "title": "Fix typo in json_repair docstring"
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T09:50:07+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/117"
+  },
+  {
+   "evidence_id": "pr:mangiucugna/json_repair#117:merged",
+   "payload": {
+    "author": "mangiucugna",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2025-05-18T10:02:15+00:00",
+   "url": "https://github.com/mangiucugna/json_repair/pull/117"
+  }
+ ],
+ "repo": "mangiucugna/json_repair",
+ "window": "pre_t"
+}

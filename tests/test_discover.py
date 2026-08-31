@@ -138,6 +138,19 @@ def test_recorded_session_replays_without_credentials(tmp_path, monkeypatch):
     assert "No candidate survived" in out
 
 
+def test_committed_demo_session_replays_from_a_clean_clone():
+    """The shipped demo: `holt discover` with no flags, no token, no key."""
+    import pytest
+
+    if not (discover.DISCOVER_ROOT / "demo.json").exists():
+        pytest.skip("demo session not recorded yet")
+    out = discover.run_replay("demo")
+    assert "Replaying a recorded discovery session" in out
+    assert "GitHub repository search" in out
+    assert "no model calls" in out
+    assert "not ranked" in out or "No candidate survived" in out
+
+
 def test_screening_needs_no_model():
     """Structural: the screening pass has no model parameter to pass one to."""
     import inspect

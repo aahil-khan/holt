@@ -1,0 +1,1288 @@
+{
+ "captured_at": "2026-08-31T01:08:13.259608+00:00",
+ "content_sha256": "5999ee05dbbcf3c160578b6d9927e62c1e3e73c0c3dace3eec8c6763f52735cb",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:amanusk/s-tui:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Terminal-based CPU stress and monitoring utility",
+    "homepage_url": "https://amanusk.github.io/s-tui/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-27T03:20:53Z",
+    "stargazer_count": 5077
+   },
+   "source": "github",
+   "timestamp": "2017-04-09T11:59:53+00:00",
+   "url": "https://github.com/amanusk/s-tui"
+  },
+  {
+   "evidence_id": "repo:amanusk/s-tui:readme",
+   "payload": {
+    "commit_oid": "43d46a12f67b40ed4210103d315150e7bddce121",
+    "kind": "readme",
+    "text": "# The Stress Terminal UI: s-tui\n\n[![PyPI version](https://badge.fury.io/py/s-tui.svg)](https://badge.fury.io/py/s-tui)\n[![Downloads](https://pepy.tech/badge/s-tui/month)](https://pepy.tech/project/s-tui)\n\n![](https://github.com/amanusk/s-tui/blob/master/ScreenShots/s-tui-logo-small.png?raw=true)\n\nStress-Terminal UI, s-tui, monitors CPU temperature, frequency, power and utilization in a graphical way from the terminal.\n\n## Screenshot\n\n![](https://github.com/amanusk/s-tui/blob/master/ScreenShots/s-tui-1.0.gif?raw=true)\n\n# Table of Contents\n\n- [The Stress Terminal UI: s-tui](#the-stress-terminal-ui-s-tui)\n  - [Screenshot](#screenshot)\n  - [What it does](#what-it-does)\n  - [Usage](#usage)\n  - [Simple installation](#simple-installation)\n    - [pip (x86 ARM)](#pip-x86--arm)\n  - [More installation methods](#more-installation-methods)\n    - [Ubuntu (18.10 and newer)](#ubuntu-1810-and-newer)\n    - [Ubuntu (18.04, 16.04)](#ubuntu-1804-1604)\n    - [Debian (10 and newer)](#debian-10-and-newer)\n    - [Arch Linux, Manjaro](#arch-linux-manjaro)\n    - [OpenSUSE](#opensuse)\n    - [Fedora](#fedora)\n  - [Options](#options)\n  - [Throttle Indicators](#throttle-indicators)\n  - [Dependencies](#dependencies)\n  - [Configuration](#configuration)\n    - [Saving a configuration](#saving-a-configuration)\n    - [Adding threshold scripts](#adding-threshold-scripts)\n  - [Run from source code](#run-from-source-code)\n  - [Compatibility](#compatibility)\n  - [FAQ](#faq)\n  - [Development](#development)\n  - [Contributing](#contributing)\n  - [Tip](#tip)\n\n## What it does\n\n- Monitoring your CPU temperature/utilization/frequency/power\n- Shows performance dips caused by thermal throttling\n- Requires no X-server\n- Built-in CPU stress test (zero dependencies, works out of the box)\n- Optional integration with external stress tools (stress/stress-ng)\n\n## Usage\n\n```\ns-tui\n```\n\n## Simple installation\n\n### pip (x86 + ARM)\n\nThe most up to date version of s-tui is available with pip.\n\nInstall with:\n\n```\npip install s-tui --user\n```\n\n(This usually creates an executable in ~/.local/bin/ dir. Make sure it is in your PATH)\n\nTo install as root\n\n```\nsudo pip install s-tui\n```\n\nYou might need to install `python-dev` first\n\nInstallation in virtualenv with [pipsi](https://github.com/mitsuhiko/pipsi):\n\n```\npipsi install s-tui\n```\n\n## More installation methods\n\n### Ubuntu (18.10 and newer)\n\n```\nsudo apt install s-tui\n```\n\n### Ubuntu (18.04, 16.04)\n\nA PPA is available but is not up to date\n\n```\nsudo add-apt-repository ppa:amanusk/python-s-tui\nsudo apt-get update\nsudo apt-get install python3-s-tui\n```\n\n### Debian (10 and newer)\n\n```\nsudo apt install s-tui\n```\n\n### Arch Linux, Manjaro\n\n`s-tui` is in the Arch repository:\n\n```\nsudo pacman -S s-tui\n```\n\n`s-tui-git` follows the master branch, maintained by [@MauroMombelli](https://github.com/MauroMombelli)\n\nInstall it with:\n`yay -S s-tui-git`\n\n### OpenSUSE\n\n```\nsudo zypper install s-tui\n```\n\n### Fedora\n\n`s-tui` is in the Fedora [repository](https://src.fedoraproject.org/rpms/s-tui):\n\n```\nsudo dnf install s-tui\n```\n\n## Options\n\n```\nTUI interface:\n\nThe side bar houses the controls for the displayed graphs.\nAt the bottom, all sensors reading are presented in text form.\n\n* Use the arrow keys or 'hjkl' to navigate the side bar\n* Toggle between stressed and regular operation using the radio buttons in 'Modes'.\n* If you wish to alternate stress defaults, you can do it in <Stress options>\n* Select graphs to display in the <Graphs> menu\n* Select summaries to display in the <Summaries> menu\n* Use the <Reset> button to reset graphs and statistics\n* If your system supports it, you can use the UTF-8 button to get a smoother graph\n* Save your current configuration with the <Save Settings> button\n* Press 'q' or the <Quit> button to quit\n\n* Run `s-tui --help` to get this message and additional cli options\n\noptional arguments:\n  -h, --help            show this help message and exit\n  -d, --debug           Output debug log to _s-tui.log\n  --debug-file DEBUG_FILE\n                        Use a custom debug file. Default: _s-tui.log\n  -dr, --debug_run      Run for 5 seconds and quit\n  -c, --csv             Save stats to csv file\n  --csv-file CSV_FILE   Use a custom CSV file. Default: s-tui_log_<TIME>.csv\n  -t, --terminal        Display a single line of stats without tui\n  -j, --json            Display a single line of stats in JSON format\n  -nm, --no-mouse       Disable Mouse for TTY systems\n  -v, --version         Display version\n  -tt T_THRESH, --t_thresh T_THRESH\n                        High Temperature threshold. Default: 80\n\n```\n\n## Throttle Indicators\n\nWhen CPU throttling is detected, s-tui changes the frequency graph and summary text color and appends a reason label. Labels may be combined with `/` (e.g. `T/W`).\n\n**Intel, with root + `msr` module** (detailed per-core reasons via `IA32_THERM_STATUS`):\n\n| Label | Meaning                                               |\n| ----- | ----------------------------------------------------- |\n| `T`   | Thermal \u2014 core temperature exceeded TjMax             |\n| `H`   | PROCHOT \u2014 external thermal signal (VRM, GPU, battery) |\n| `C`   | Critical \u2014 near emergency shutdown temperature        |\n| `W`   | Power limit \u2014 PL1/PL2 watt budget exceeded            |\n| `A`   | Current limit \u2014 electrical current (amps) limit hit   |\n| `X`   | Cross-domain \u2014 throttled by another domain (e.g. GPU) |\n\n**AMD, with root + `msr` module** (per-core P-state cap via `PStateCurLim`):\n\n| Label | Meaning                                                     |\n| ----- | ----------------------------------------------------------- |\n| `Pc`  | P-state cap \u2014 the SMU has barred the core from its top P-state |\n\nAMD exposes no equivalent of Intel's reason breakdown through MSRs. The\nthermal/power/current limits themselves (PPT, TDC, EDC, THM, STAPM) live in the\nSMU power-management table, which needs an out-of-tree kernel module to reach,\nso `PStateCurLim` is what remains: it indicates that a cap is in force, not why.\nIt behaves as a severity threshold rather than a reason code \u2014 the same chip\npinned at the same temperature was observed showing `Pc` under a load heavy\nenough to drive it below its rated base clock, and nothing under a lighter one.\nExpect it to stay clear on a well-cooled part that is boost-limited but never\nforced that far down.\n\n**Without root** (sysfs fallback, thermal only):\n\n| Label | Meaning                                      |\n| ----- | -------------------------------------------- |\n| `Tc`  | Core thermal throttle                        |\n| `Tp`  | Package thermal throttle (affects all cores) |\n\nWhen a temperature sensor exceeds the `high` value defined by the sensor, or a user configured threshold (default 80\u00b0C), the sensor summary text summary and associated graph will change color to indicate this.\n\n## Dependencies\n\ns-tui includes a built-in CPU stress test that works out of the box with no extra dependencies. For better stress performance, install numpy:\n\n```\npip install s-tui[stress]\n```\n\nor install numpy directly:\n\n```\npip install numpy\n```\n\nWhen numpy is available, the built-in stresser uses repeated dense matrix multiplication (BLAS) for maximum thermal output. Without numpy, it falls back to hashlib SHA-256 hashing which still provides good CPU load.\n\nFor additional stress options (memory, I/O, sync workers), you can optionally install the external `stress` or `stress-ng` tool:\n\n```\nsudo apt-get install stress\n```\n\n## Configuration\n\ns-tui is a self-contained application that can run out-of-the-box and doesn't need config files to drive its core features. However, additional features like running scripts when a certain threshold has been exceeded (e.g. CPU temperature) does necessitate creating a config directory. This directory will be made in `~/.config/s-tui` by default.\n\n### Saving a configuration\n\nSelecting \\<Save Settings\\> will save the current configuration to `~/.config/s-tui/s-tui.conf`. If you would like to restore defaults, simply remove the file.\n\n### Adding threshold scripts\n\ns-tui gives you the ability to run arbitrary shell scripts when a certain threshold is surpassed, like your CPU temperature. You can define this custom behaviour by adding a shell file to the directory `~/.config/s-tui/hooks.d` with one of the following names, depending on what threshold you're interested in reacting to:\n\n- `tempsource.sh`: triggered when the CPU temperature threshold is exceeded\n\nIf s-tui finds a script in the hooks directory with the name of a source it supports, it will run that script every 30 seconds as long as the current value of the source remains above the threshold.\n\nNote that at the moment only CPU temperature threshold hooks are supported.\n\n## Run from source code\n\nStart by cloning the repository\n\n```\ngit clone https://github.com/amanusk/s-tui.git\ncd s-tui\n```\n\nInstall required dependencies as \\[root\\] or as (local user)\n\n```\n[sudo] pip install urwid (--user)\n[sudo] pip install psutil (--user)\n```\n\nInstall stress (optional)\n\n```\nsudo apt-get install stress\n```\n\nRun the .py file\n\n```\npython -m s_tui.s_tui\n```\n\n## Compatibility\n\ns-tui uses [psutil](https://github.com/giampaolo/psutil) to probe hardware information. If your hardware is not supported, you might not see all the information.\n\ns-tui uses [urwid](https://github.com/urwid/urwid) as a graphical engine. urwid only works with UNIX-like systems\n\n- Power read is supported on Intel Core CPUs of the second generation and newer (Sandy Bridge)\n  and on AMD Family 17h CPUs through the [amd_energy](https://www.kernel.org/doc/html/latest/hwmon/amd_energy.html) driver.\n- s-tui tested to run on Raspberry-Pi 4,3,2,1\n\n## FAQ\n\n**Q**: How is this different from htop?  \n**A**: s-tui is not a processes monitor like htop. The purpose is to monitor your CPU statistics and have an option to test the system under heavy load. (Think AIDA64 stress test, not task manager).\n\n**Q**: I am using the TTY with no X server and s-tui crashes on start  \n**A**: By default, s-tui is handles mouse inputs. This causes some systems to crash. Try running `s-tui --no-mouse`\n\n**Q**: I am not seeing all the stats in the sidebar.  \n**A**: The sidebar is scrollable, you can scroll down with `DOWN` or `j` or scroll to the bottom with `PG-DN` or `G`. You might consider also decreasing the size of the font that you use in your terminal.:)\n\n## Development\n\nInstall dev dependencies:\n\n```\npip install -e \".[test]\"\npip install ruff==0.15.4 pyright==1.1.408\n```\n\nSet up pre-commit hooks (runs ruff + pyright automatically before each push):\n\n```\npip install pre-commit\npre-commit install --hook-type pre-push\n```\n\nRun checks manually:\n\n```\nruff check .          # lint\nruff format --check . # format check\npyright s_tui/        # type check\npytest                # tests\n```\n\nAuto-fix lint and formatting:\n\n```\nruff check --fix .\nruff format .\n```\n\n## Contributing\n\nNew issues and Pull Requests are welcome :)\n\nIf you notice a bug, please report it as a new issue, using the provided template.\n\nTo open a Pull Request, please see [CONTRIBUTING](https://github.com/amanusk/s-tui/blob/master/CONTRIBUTING.md) for more information.\n\n## Tip\n\nIf you like this work, please star it on GitHub.\n\nBTC: `1PPhYgecwvAN7utN2EotgTfy2mmLqzF8m3`  \nETH: `0xc169699A825066f2F07E0b29C4082094b32A3F3e`\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T07:16:44+00:00",
+   "url": "https://github.com/amanusk/s-tui/blob/43d46a12f67b40ed4210103d315150e7bddce121/README.md"
+  },
+  {
+   "evidence_id": "repo:amanusk/s-tui:contributing",
+   "payload": {
+    "commit_oid": "43d46a12f67b40ed4210103d315150e7bddce121",
+    "kind": "contributing",
+    "text": "1. Fork the `s-tui` repository. Work on your fork.\n2. Create a new branch on which to make your change, e.g. `git checkout -b my_feature`.\n3. Please work on one feature at a time, to make it easy to test and discuss pull requests.\n4. Format your code with [black](https://github.com/psf/black) before committing.\n5. Commit your change. Include a commit message describing you contribution.\n6. Submit a pull request to the main repository.\n\nThis repository follows PEP8 coding conventions (or at least makes an effort to do so)\n\n[GitHub Pull Request Tutorial](https://help.github.com/articles/creating-a-pull-request-from-a-fork)\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T07:16:44+00:00",
+   "url": "https://github.com/amanusk/s-tui/blob/43d46a12f67b40ed4210103d315150e7bddce121/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#305:opened",
+   "payload": {
+    "additions": 44,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "s_tui/sources/util_source.py",
+     "tests/test_runtime_disruption.py"
+    ],
+    "title": "fix: don't misread process affinity as offline cores under taskset (#303)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T03:21:11+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/305"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#305:comment:0",
+   "payload": {
+    "author": "arrowgent",
+    "author_is_bot": false,
+    "body": "wow, glad you were able to see a solution from the issue.\r\n\r\ngood job\r\n\r\nhow should i aquire a patch?\r\n\r\nextract into my VENV?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T06:00:32+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/305"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#305:comment:1",
+   "payload": {
+    "author": "arrowgent",
+    "author_is_bot": false,
+    "body": "i was able to download the zip code and extract\r\n`s-tui-fix-util-taskset-regression-303.zip`\r\n\r\ninto\r\n`/home/amdr18/.local/share/pipx/venvs/s-tui/lib/python3.14/site-packages/s_tui`\r\n\r\nwhich s-tui\r\n`/home/amdr18/.local/bin/s-tui`\r\n\r\nll /home/amdr18/.local/bin/s-tui\r\n`/home/amdr18/.local/bin/s-tui -> /home/amdr18/.local/share/pipx/venvs/s-tui/bin/s-tui*`\r\n\r\ns-tui --version\r\ns-tui 1.5.0 - (C) 2017-2025 Alex Manuskin, Gil Tsuker\r\n    Released under GNU GPLv2\r\n\r\n`taskset -ac 3-6 s-tui`\r\n\r\n\r\nconfirmed works as expected, all CPU information is shown\r\nand is updating\r\n\r\n\r\nvery good"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T06:07:05+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/305"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#305:comment:2",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "@arrowgent, thanks for opening the issue and verifying the fix works\r\nIt really captured a case I didn't cover, and revealed an incorrect assumption \r\nI'll merge it and make a patch release "
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T05:24:54+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/305"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#305:comment:3",
+   "payload": {
+    "author": "arrowgent",
+    "author_is_bot": false,
+    "body": "> @arrowgent, thanks for opening the issue and verifying the fix works It really captured a case I didn't cover, and revealed an incorrect assumption I'll merge it and make a patch release\r\n\r\nif i hadnt been using s-tui before ~1.3.0 then i might not have noticed it\r\nalso i use taskset to force tasks into certain cpu cores/threads (SMT) for high-intensity tasks (gaming) to allow other cpu cores to do things (steam background, game capture/ffmpeg encoding, etc)\r\n\r\n\r\nFWIW, ubuntu 20.04 (jammy) uses s-tui v1.1.3-1 & python3-psutil v5.9.0-1build1\r\nquite old, even with python3.10 VENV i can update to the latest version of s-tui and it works fine (v1.5.0)\r\n\r\n\r\ns-tui has been pretty useful for visualizing different cpu & hwmon while using the computer.  in combination with other tools (some that overlap information)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T06:11:56+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/305"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#301:opened",
+   "payload": {
+    "additions": 41,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 32,
+    "files": [
+     "pyrightconfig.json",
+     "s_tui/s_tui.py",
+     "s_tui/sturwid/complex_bar_graph.py",
+     "s_tui/sturwid/summary_text_list.py"
+    ],
+    "title": "chore(lint): pyright basic mode, drop 21 stale urwid ignores"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:08:28+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/301"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#301:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:10:41+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/301"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#300:opened",
+   "payload": {
+    "additions": 11,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "s_tui/sturwid/bar_graph_vector.py"
+    ],
+    "title": "fix: stop rebuilding Fan/Rapl widget tree every cycle (100% CPU after hours)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T10:50:10+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/300"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#300:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:47:06+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/300"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#300:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR addresses a long-running performance issue where `BarGraphVector.update()` could rebuild the urwid widget tree every refresh cycle (notably for Fan/RAPL sources that legitimately report `get_top() == 1`), eventually driving sustained 100% CPU due to accumulated GC and rebuild overhead.\n\n**Changes:**\n- Initialize `graph_max` from `source.get_top()` in `__init__`/`reset()` and remove the `graph_max == 1` \u201cuninitialized\u201d sentinel path in `update()`.\n- Add an explicit repaint path during `reset()` to keep the UI consistent after resets.\n\n\n\n\n<details>\n<summary>Suppressed comments (2)</summary>\n\n**s_tui/sturwid/bar_graph_vector.py:210**\n* After initializing `graph_max` from `source.get_top()`, `local_max > self.graph_max` is unlikely in normal operation, so `update_max` will stay `False` and `set_visible_graphs()` won't run. Since `set_y_label()` only updates `self.y_label` (not the rendered widget tree), the y-axis labels can remain stuck at the initial placeholder. Consider using a one-time rebuild flag (e.g., `self._needs_rebuild` from `__init__`/`reset`) to force exactly one `set_visible_graphs()` call on the next update.\n```\n        update_max = False\n        local_max = math.ceil(max(local_top_value))\n        if local_max > self.graph_max:\n            update_max = True\n            self.graph_max = local_max\n```\n**s_tui/sturwid/bar_graph_vector.py:256**\n* `reset()` rebuilds the widget tree via `set_visible_graphs()`, but the y-axis labels are only recalculated in `update()` (via `set_y_label()`). With the `graph_max == 1` sentinel removed, the post-reset `update()` may never rebuild again, so the y-axis labels can stay stale after reset. Consider preserving the immediate repaint, but also setting a one-time rebuild flag so the next `update()` applies the new y-label widget.\n```\n        self.graph_max = max(self.source.get_top(), 1)\n        # Repaint so the y-axis reflects the reset max.\n        self.set_visible_graphs()\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:01:07+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/300"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#300:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 1 out of 1 changed files in this pull request and generated no new comments.\n\n\n\n\n<details>\n<summary>Suppressed comments (1)</summary>\n\n**s_tui/sturwid/bar_graph_vector.py:260**\n* PR description says reset() adds an explicit set_visible_graphs() call so the reset repaint happens immediately, but the implementation only sets _needs_rebuild and relies on a later update() to rebuild. If reset() can be called without an immediate update() (or if availability prevents update()), the UI may continue to show the pre-reset widget tree until the next successful update. Consider calling set_visible_graphs() directly from reset() to make the reset repaint immediate and align behavior with the PR description.\n```\n    def reset(self):\n        self.graph_data = []\n        # Like in init, we create new instances for each list\n        for _ in range(self.graph_count):\n            self.graph_data.append([0] * self.num_samples)\n        self.graph_max = max(self.source.get_top(), 1)\n        # Let the next update() repaint with a fresh y_label.\n        self._needs_rebuild = True\n```\n</details>\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:27:19+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/300"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#299:opened",
+   "payload": {
+    "additions": 73,
+    "author": "gentosai404",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 9,
+    "files": [
+     "s_tui/sources/fan_source.py",
+     "s_tui/sources/freq_source.py",
+     "s_tui/sources/temp_source.py",
+     "tests/test_psutil_failures.py"
+    ],
+    "title": "fix: handle psutil sensor read failures"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T07:28:38+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/299"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#299:merged",
+   "payload": {
+    "author": "gentosai404",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:31:58+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/299"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#299:comment:0",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thanks for the fix. Merging"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:32:03+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/299"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#297:opened",
+   "payload": {
+    "additions": 2,
+    "author": "JosefSchoenberger",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "s_tui/sources/msr.py",
+     "tests/test_msr.py"
+    ],
+    "title": "Disable buffering on MSR reads"
+   },
+   "source": "github",
+   "timestamp": "2026-08-04T19:39:02+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/297"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#297:merged",
+   "payload": {
+    "author": "JosefSchoenberger",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:27:57+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/297"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#297:comment:0",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thank you for the PR!\r\nIt solves a real issue and significantly speeds up the process.\r\nOnly need to fix the test that tests the same thing for consistency and I'll merge"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T06:49:20+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/297"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#297:comment:1",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Merged\r\nThanks"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:28:12+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/297"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#296:opened",
+   "payload": {
+    "additions": 71,
+    "author": "Sanjays2402",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "s_tui/s_tui.py",
+     "tests/test_view_update_errors.py"
+    ],
+    "title": "Handle non-IndexError failures in graph and summary updates"
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T06:12:16+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/296"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#296:merged",
+   "payload": {
+    "author": "Sanjays2402",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:36:55+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/296"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#296:comment:0",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thanks for the fix.\r\nMerging"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:36:59+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/296"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#295:opened",
+   "payload": {
+    "additions": 29,
+    "author": "Sanjays2402",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "s_tui/helper_functions.py",
+     "tests/test_helper_functions.py"
+    ],
+    "title": "Fall back to /proc/device-tree/model for processor name"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T22:08:44+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/295"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#295:merged",
+   "payload": {
+    "author": "Sanjays2402",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:18:10+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/295"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#295:review:0",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T07:04:49+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/295"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#295:review:1",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thanks for the PR!\nVery useful for single board computers.\nJust left a minor suggestion",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T07:05:54+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/295"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#295:review:2",
+   "payload": {
+    "author": "Sanjays2402",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T11:18:51+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/295"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#295:comment:0",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thanks! \r\nMerging"
+   },
+   "source": "github",
+   "timestamp": "2026-08-05T12:18:16+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/295"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#292:opened",
+   "payload": {
+    "additions": 158,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 25,
+    "files": [
+     "s_tui/builtin_stress_menu.py",
+     "s_tui/s_tui.py",
+     "tests/test_builtin_stress_menu.py",
+     "tests/test_config_delimiter.py"
+    ],
+    "title": "Save stress menu options between sessions"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T15:08:12+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/292"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#292:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T15:09:15+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/292"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#291:opened",
+   "payload": {
+    "additions": 48,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 5,
+    "files": [
+     "s_tui/builtin_stress_menu.py",
+     "s_tui/builtin_stresser.py",
+     "tests/test_builtin_stress_menu.py"
+    ],
+    "title": "Do not show a strategy if it is not available"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T12:55:34+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/291"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#291:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T13:03:43+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/291"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#288:opened",
+   "payload": {
+    "additions": 93,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "s_tui/power_profile_menu.py",
+     "tests/test_power_profile_menu.py"
+    ],
+    "title": "Narrow EPP choices reactively when a write is rejected (Intel fix)"
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T08:04:26+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/288"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#288:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-16T03:59:04+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/288"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#287:opened",
+   "payload": {
+    "additions": 47,
+    "author": "s-stepien",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 24,
+    "files": [
+     "s_tui/power_profile_menu.py",
+     "s_tui/s_tui.py",
+     "tests/test_power_profile_menu.py"
+    ],
+    "title": "Handle dynamic Energy Performance Preference in Power Profile"
+   },
+   "source": "github",
+   "timestamp": "2026-07-13T07:22:02+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/287"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#287:merged",
+   "payload": {
+    "author": "s-stepien",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-15T04:01:30+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/287"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#287:comment:0",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thank you for the PR\r\nThere are some tests failing, probably just due to changes in urwid.\r\nRebase on top of master and these will likely be resolved.\r\n\r\nFix the CI please and I'll merge"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T17:20:27+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/287"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#287:comment:1",
+   "payload": {
+    "author": "s-stepien",
+    "author_is_bot": false,
+    "body": "> Thank you for the PR There are some tests failing, probably just due to changes in urwid. Rebase on top of master and these will likely be resolved.\r\n\r\nHmmm it seems that maybe some tests need update too. I will check them out and fix them if needed.\r\n\r\n> Fix the CI please and I'll merge\r\n\r\nThanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T20:03:03+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/287"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#286:opened",
+   "payload": {
+    "additions": 30,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 27,
+    "files": [
+     "README.md",
+     "s_tui/builtin_stresser.py",
+     "s_tui/sturwid/complex_bar_graph.py"
+    ],
+    "title": "Replace built-in stresser's numpy kernel with dense matmul for stronger thermal load"
+   },
+   "source": "github",
+   "timestamp": "2026-07-07T04:17:03+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/286"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#286:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-14T17:18:33+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/286"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#283:opened",
+   "payload": {
+    "additions": 23,
+    "author": "johnny-official",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "s-tui.rb"
+    ],
+    "title": "refactor: create homebrew formula for s-tui"
+   },
+   "source": "github",
+   "timestamp": "2026-03-28T04:20:30+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/283"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#282:opened",
+   "payload": {
+    "additions": 46,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 3,
+    "files": [
+     ".github/workflows/test.yml",
+     ".gitignore",
+     "s_tui/s_tui.py",
+     "s_tui/sturwid/bar_graph_vector.py",
+     "s_tui/sturwid/complex_bar_graph.py",
+     "tests/test_widgets.py"
+    ],
+    "title": "Change the dashed line, fixing #280"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T11:40:05+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/282"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#282:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T13:42:35+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/282"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#282:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nUpdates the UI\u2019s vertical separator rendering (to address the \u201cdashed line\u201d appearance reported in #280) and adds ignores for a few local dev tool artifacts.\n\n**Changes:**\n- Replace the ASCII `|` separator with the Unicode box-drawing `\u2502` in the main window and complex bar graph widgets.\n- Extend `.gitignore` to exclude `.aider*`, `.opencode/`, and `.claude/`.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 3 changed files in this pull request and generated 2 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `s_tui/sturwid/complex_bar_graph.py` | Switches graph column separator from `|` to `\u2502`. |\n| `s_tui/s_tui.py` | Switches main layout separator from `|` to `\u2502`. |\n| `.gitignore` | Ignores additional local/tool directories and files. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T11:42:42+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/282"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#282:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 5 out of 6 changed files in this pull request and generated no new comments.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T13:05:01+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/282"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#282:review:2",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 5 out of 6 changed files in this pull request and generated no new comments.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-27T13:18:23+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/282"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#281:opened",
+   "payload": {
+    "additions": 299,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 13,
+    "files": [
+     "README.md",
+     "s_tui/help_menu.py",
+     "s_tui/sources/amd_pstate_limit.py",
+     "s_tui/sources/freq_source.py",
+     "tests/test_amd_pstate_limit.py",
+     "tests/test_freq_source.py"
+    ],
+    "title": "Feat/amd throttle detect"
+   },
+   "source": "github",
+   "timestamp": "2026-03-26T15:05:47+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/281"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#281:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T12:34:08+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/281"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#281:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nAdds AMD throttle detection to `FreqSource` using an AMD-specific MSR (similar to the existing Intel MSR-based throttle decoding), with accompanying unit tests.\n\n**Changes:**\n- Add new `s_tui.sources.amd_therm` module to decode throttling state from AMD `PSTATE_CUR_LIMIT` (and optionally compare HW vs base frequency).\n- Extend `FreqSource` to select an MSR throttle backend (`intel_msr` preferred, otherwise `amd_msr`) and update labels accordingly.\n- Expand/adjust tests to cover AMD MSR backend behavior and the new backend-selection mechanism.\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 1 comment.\n\n| File | Description |\n| ---- | ----------- |\n| `s_tui/sources/freq_source.py` | Adds AMD MSR backend selection and per-core AMD throttle label updates. |\n| `s_tui/sources/amd_therm.py` | Introduces AMD MSR throttle-status decoding and availability detection. |\n| `tests/test_freq_source.py` | Updates existing assertions for new backend flag and adds AMD MSR backend tests. |\n| `tests/test_amd_therm.py` | Adds focused unit tests for AMD throttle decoding/availability. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-26T15:09:27+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/281"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#279:opened",
+   "payload": {
+    "additions": 284,
+    "author": "CkovMk",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 22,
+    "files": [
+     "s_tui/sources/rapl_power_source.py",
+     "s_tui/sources/rapl_read.py",
+     "tests/test_rapl_read.py"
+    ],
+    "title": "Add zenpower rapl source"
+   },
+   "source": "github",
+   "timestamp": "2026-03-22T13:00:28+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/279"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#279:comment:0",
+   "payload": {
+    "author": "CkovMk",
+    "author_is_bot": false,
+    "body": "Fixed ci lint issue. Having tested this on 3 of Zen-based PCs with 5950X, 5750G and 9700X, all works. "
+   },
+   "source": "github",
+   "timestamp": "2026-04-11T11:10:22+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/279"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#279:comment:1",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thanks for opening the PR\r\nFrom what I understand, this requires installing a kernel module to access the metrics.\r\nDo you know if there are plans to bake it in, so it is available out of the box?\r\nI'm a bit hesitant about adding reads that require external kernel modules.\r\nYes, this can be very useful and informative "
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T08:17:07+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/279"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#279:comment:2",
+   "payload": {
+    "author": "CkovMk",
+    "author_is_bot": false,
+    "body": "> From what I understand, this requires installing a kernel module to access the metrics.\r\nYes.\r\n\r\n> Do you know if there are plans to bake it in, so it is available out of the box?\r\n\r\nI'm happy to help, but I'm new to this project. Could you shed some light on how a custom kernel module could be added in your preferred way?\r\n\r\nI'm thinking of pull the kmod repo, build and install it in setup.py. But this seems unconventional...\r\n\r\nAlso, do you want this kernel module to be built unconditionally or just with supported AMD CPUs?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T02:29:51+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/279"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#278:opened",
+   "payload": {
+    "additions": 1,
+    "author": "tang-vu",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "s_tui/builtin_stress_menu.py"
+    ],
+    "title": "\u2728 Quality: Unsafe handling of psutil.cpu_count()"
+   },
+   "source": "github",
+   "timestamp": "2026-03-21T17:03:44+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/278"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#278:merged",
+   "payload": {
+    "author": "tang-vu",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-26T12:08:34+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/278"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#278:comment:0",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "Thanks for the PR!\r\nLooks good\r\nMerged"
+   },
+   "source": "github",
+   "timestamp": "2026-03-26T12:08:42+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/278"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#274:opened",
+   "payload": {
+    "additions": 893,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 16,
+    "deletions": 62,
+    "files": [
+     "README.md",
+     "s_tui/help_menu.py",
+     "s_tui/helper_functions.py",
+     "s_tui/sources/freq_source.py",
+     "s_tui/sources/intel_therm.py",
+     "s_tui/sources/msr.py",
+     "s_tui/sources/rapl_read.py",
+     "s_tui/sources/source.py",
+     "s_tui/sources/temp_source.py",
+     "s_tui/sturwid/summary_text_list.py",
+     "s_tui/sturwid/ui_elements.py",
+     "tests/test_freq_source.py",
+     "tests/test_helper_functions.py",
+     "tests/test_intel_therm.py",
+     "tests/test_msr.py",
+     "tests/test_temp_source.py"
+    ],
+    "title": "Feat/throttle detect"
+   },
+   "source": "github",
+   "timestamp": "2026-03-06T01:29:44+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/274"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#274:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-09T02:22:58+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/274"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#274:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nAdds sysfs-based CPU thermal throttling detection to the Frequency source and wires per-sensor alert coloring/suffix rendering into the TUI summary display.\n\n**Changes:**\n- Introduces `_read_throttle_count()` + throttle state tracking in `FreqSource` and exposes throttle alerts/suffixes for the UI.\n- Adds per-sensor alert API hooks to `Source` (default no-op) and implements temperature per-sensor alerts to match graph coloring.\n- Updates the urwid palette + summary rendering to show colored alerts and throttle suffixes; adds documentation and tests.\n\n### Reviewed changes\n\nCopilot reviewed 8 out of 8 changed files in this pull request and generated 4 comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| `s_tui/sources/freq_source.py` | Adds sysfs throttle counter reading/state and emits per-sensor alerts/suffixes + alert palette for throttle coloring. |\r\n| `s_tui/sources/source.py` | Extends base `Source` with per-sensor alert/suffix APIs and makes thresholds nullable. |\r\n| `s_tui/sources/temp_source.py` | Implements per-sensor alert attributes consistent with bar-graph threshold coloring. |\r\n| `s_tui/sturwid/summary_text_list.py` | Appends per-sensor suffixes and applies per-sensor alert attributes when rendering summary values. |\r\n| `s_tui/sturwid/ui_elements.py` | Adds urwid palette entries for throttle text and throttle graph colors. |\r\n| `tests/test_freq_source.py` | Adds tests for throttle detection, suffixes/alerts, and sysfs counter reader helper. |\r\n| `tests/test_temp_source.py` | Adds tests for temperature per-sensor alerts behavior. |\r\n| `README.md` | Documents throttle indicators (`Tc` / `Tp`) and their sysfs sources. |\n</details>\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-06T01:33:14+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/274"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#274:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 16 out of 16 changed files in this pull request and generated 3 comments.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-08T04:29:15+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/274"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#274:review:2",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 16 out of 16 changed files in this pull request and generated 1 comment.\n\n\n<details>\n<summary>Comments suppressed due to low confidence (1)</summary>\n\n**s_tui/helper_functions.py:146**\n* output_to_csv always appends a new \"Throttle\" column but still skips writing the header when the file already exists. If a user appends to a CSV created by an older s-tui version (without this column), rows will no longer match the header. Consider reading/validating the existing header (and reusing it), or forcing a new file/rewriting the header when the field set changes.\n```\ndef output_to_csv(sources: dict, csv_writeable_file: str) -> None:\n    \"\"\"Print statistics to csv file\"\"\"\n    file_exists = os.path.isfile(csv_writeable_file)\n\n    with open(csv_writeable_file, \"a\") as csvfile:\n        csv_dict = OrderedDict()\n        csv_dict.update({\"Time\": time.strftime(\"%Y-%m-%d_%H:%M:%S\")})\n        summaries = [val for key, val in sources.items()]\n        for summarie in summaries:\n            source = summarie.source\n            prefix = source.get_source_name() + \":\"\n            for prob, val in source.get_sensors_summary().items():\n                csv_dict[prefix + prob] = val\n\n        csv_dict[\"Throttle\"] = _get_throttle_label([s.source for s in summaries])\n\n        fieldnames = list(csv_dict.keys())\n        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)\n\n        if not file_exists:\n            writer.writeheader()  # file doesn't exist yet, write a header\n        writer.writerow(csv_dict)\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-09T01:23:20+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/274"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#274:review:3",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 16 out of 16 changed files in this pull request and generated no new comments.\n\n\n<details>\n<summary>Comments suppressed due to low confidence (1)</summary>\n\n**s_tui/helper_functions.py:146**\n* `output_to_csv` appends a new \"Throttle\" column but only writes the header when the file does not already exist. If a user appends to an existing CSV created by an older version (or before throttle support), the header will not include \"Throttle\", producing malformed/misaligned CSV output for downstream parsers. Consider detecting the existing header and either (a) rewriting/rotating the file with an updated header, or (b) failing with a clear message instructing the user to write to a new file when columns change.\n```\ndef output_to_csv(sources: dict, csv_writeable_file: str) -> None:\n    \"\"\"Print statistics to csv file\"\"\"\n    file_exists = os.path.isfile(csv_writeable_file)\n\n    with open(csv_writeable_file, \"a\") as csvfile:\n        csv_dict = OrderedDict()\n        csv_dict.update({\"Time\": time.strftime(\"%Y-%m-%d_%H:%M:%S\")})\n        summaries = [val for key, val in sources.items()]\n        for summarie in summaries:\n            source = summarie.source\n            prefix = source.get_source_name() + \":\"\n            for prob, val in source.get_sensors_summary().items():\n                csv_dict[prefix + prob] = val\n\n        csv_dict[\"Throttle\"] = _get_throttle_label([s.source for s in summaries])\n\n        fieldnames = list(csv_dict.keys())\n        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)\n\n        if not file_exists:\n            writer.writeheader()  # file doesn't exist yet, write a header\n        writer.writerow(csv_dict)\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-09T02:16:16+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/274"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#273:opened",
+   "payload": {
+    "additions": 811,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "s_tui/power_profile_menu.py",
+     "s_tui/s_tui.py",
+     "tests/test_power_profile_menu.py"
+    ],
+    "title": "Feat/governors"
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T04:40:32+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/273"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#273:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T19:40:16+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/273"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#273:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nAdds a new \u201cPower Profile\u201d feature to s-tui to view/apply CPU frequency governors and Energy Performance Preference (EPP), integrating it into the main UI and providing unit tests for the new menu and helper logic.\n\n**Changes:**\n- Introduces `PowerProfileMenu` with sysfs read/write support and optional `powerprofilesctl` integration for mapped EPP values.\n- Integrates the menu into the main UI (adds Governor/Energy Pref display and a \u201cPower Profile\u201d button when controllable).\n- Adds a comprehensive pytest suite covering menu construction, apply flows, error handling, and helper functions.\n\n### Reviewed changes\n\nCopilot reviewed 3 out of 3 changed files in this pull request and generated 5 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `s_tui/power_profile_menu.py` | New menu implementation + sysfs/powerprofilesctl helpers for governor/EPP control. |\n| `s_tui/s_tui.py` | Wires the new menu into GraphView/GraphController and displays current governor/EPP in the sidebar. |\n| `tests/test_power_profile_menu.py` | Adds unit tests for UI construction, apply logic, busy/error handling, and helper functions. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T04:44:56+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/273"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#273:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 3 out of 3 changed files in this pull request and generated 4 comments.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T18:08:14+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/273"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#272:opened",
+   "payload": {
+    "additions": 613,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 11,
+    "deletions": 97,
+    "files": [
+     ".gitignore",
+     ".gitmodules",
+     "FIRESTARTER",
+     "README.md",
+     "s_tui/builtin_stress_menu.py",
+     "s_tui/builtin_stresser.py",
+     "s_tui/s_tui.py",
+     "setup.py",
+     "tests/test_builtin_stress_menu.py",
+     "tests/test_builtin_stresser.py",
+     "tests/test_stress_controller.py"
+    ],
+    "title": "Feat/new stresser"
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T02:39:39+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/272"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#272:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T04:18:53+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/272"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#272:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR introduces a built-in Python CPU stresser (`BuiltinStresser`) that provides zero-external-dependency CPU load testing via `multiprocessing`, using either numpy FP operations or stdlib `hashlib` SHA-256 hashing as the workload strategy. It also removes the previously optional FIRESTARTER submodule integration.\n\n**Changes:**\n- Added `s_tui/builtin_stresser.py` and `s_tui/builtin_stress_menu.py` implementing the new built-in stress backend and its configuration UI\n- Integrated the built-in stresser into `s_tui/s_tui.py` (new `StressController` methods, lazy-init pattern, UI wiring) while removing FIRESTARTER support and renaming \"Stress\" to \"Stress (ext)\"\n- Updated tests, documentation, `setup.py` (numpy as an optional `[stress]` extra), and removed the FIRESTARTER git submodule\n\n### Reviewed changes\n\nCopilot reviewed 10 out of 11 changed files in this pull request and generated 2 comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| `s_tui/builtin_stresser.py` | New module: multiprocessing-based CPU stresser with numpy/hashlib strategies and graduated teardown |\r\n| `s_tui/builtin_stress_menu.py` | New module: urwid configuration menu for worker count and strategy selection |\r\n| `s_tui/s_tui.py` | Removes FIRESTARTER, renames \"Stress\" \u2192 \"Stress (ext)\", adds \"s-tui stress\" mode with lazy-init `builtin_stresser` property |\r\n| `tests/test_builtin_stresser.py` | New tests for worker lifecycle and strategy selection |\r\n| `tests/test_builtin_stress_menu.py` | New tests for `BuiltinStressMenu` configuration and save/cancel behavior |\r\n| `tests/test_stress_controller.py` | Updated for new `StressController` signature and new builtin stresser methods |\r\n| `setup.py` | Adds `stress` extras_require with `numpy` |\r\n| `README.md` | Documents built-in stresser, removes FIRESTARTER instructions |\r\n| `FIRESTARTER` | Submodule reference removed |\r\n| `.gitmodules` | FIRESTARTER submodule entry removed |\r\n| `.gitignore` | FIRESTARTER directory exclusion removed |\n</details>\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T02:45:58+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/272"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#272:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 10 out of 11 changed files in this pull request and generated 2 comments.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-04T03:11:03+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/272"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#269:opened",
+   "payload": {
+    "additions": 562,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 44,
+    "deletions": 486,
+    "files": [
+     ".github/workflows/pythonpackage.yml",
+     ".pre-commit-config.yaml",
+     "README.md",
+     "pyrightconfig.json",
+     "ruff.toml",
+     "s_tui/about_menu.py",
+     "s_tui/help_menu.py",
+     "s_tui/helper_functions.py",
+     "s_tui/s_tui.py",
+     "s_tui/sensors_menu.py",
+     "s_tui/sources/fan_source.py",
+     "s_tui/sources/freq_source.py",
+     "s_tui/sources/hook.py",
+     "s_tui/sources/hook_script.py",
+     "s_tui/sources/rapl_power_source.py",
+     "s_tui/sources/rapl_read.py",
+     "s_tui/sources/script_hook_loader.py",
+     "s_tui/sources/source.py",
+     "s_tui/sources/temp_source.py",
+     "s_tui/sources/util_source.py"
+    ],
+    "title": "Fix/pyright"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T04:00:14+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/269"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#269:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T04:32:12+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/269"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#269:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR modernizes the Python codebase to be friendlier to Pyright/Ruff by adding type annotations, simplifying control flow, and updating CI/docs to run the new lint/type-check steps.\n\n**Changes:**\n- Add typing annotations and Python-3-only cleanups across sources/UI code (e.g., `super()`, `contextlib.suppress`, improved exception narrowing).\n- Introduce Ruff + Pyright configuration and wire Ruff/Pyright into GitHub Actions and pre-commit.\n- Update and clean up tests to align with type/return-shape changes (notably `Source.get_summary()` values becoming strings).\n\n### Reviewed changes\n\nCopilot reviewed 44 out of 44 changed files in this pull request and generated 3 comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| tests/test_widgets.py | Import ordering adjustments for lint/type tooling. |\r\n| tests/test_temp_source.py | Import ordering cleanup. |\r\n| tests/test_stress_menu.py | Import ordering cleanup. |\r\n| tests/test_stress_controller.py | Remove unused imports after refactors. |\r\n| tests/test_source_base.py | Update expectations for `MockSource.get_summary()` value types. |\r\n| tests/test_sensors_menu.py | Remove unused import; keep tests aligned with menu behavior. |\r\n| tests/test_runtime_disruption.py | Import cleanup; update IOError\u2192OSError in mocks. |\r\n| tests/test_rapl_read.py | Reduce unused imports; update IOError\u2192OSError in mocks. |\r\n| tests/test_rapl_power_source.py | Import ordering cleanup. |\r\n| tests/test_psutil_failures.py | Simplify exception suppression; update IOError\u2192OSError in mocks. |\r\n| tests/test_integration_hw.py | Import cleanup; minor init assertions simplification. |\r\n| tests/test_hooks.py | Remove unused imports; minor variable rename to avoid unused `kwargs`. |\r\n| tests/test_helper_functions.py | Import cleanup; restructure `patch` contexts for lint/type checks. |\r\n| tests/test_fan_source.py | Remove unused `pytest` import. |\r\n| tests/test_config_delimiter.py | Import cleanup; small readability tweak in list comprehension. |\r\n| tests/test_cli.py | Remove unused imports; modernize argv patching. |\r\n| tests/conftest.py | Import ordering cleanup. |\r\n| setup.py | Minor modernizations; suppress SIM115 for README open. |\r\n| s_tui/tests/test_util_source.py | Formatting-only change. |\r\n| s_tui/sturwid/ui_elements.py | Modernize `super()` usage. |\r\n| s_tui/sturwid/summary_text_list.py | Import ordering cleanup. |\r\n| s_tui/sturwid/complex_bar_graph.py | Type-checker ignores + minor simplifications; `check_label` refactor. |\r\n| s_tui/sturwid/bar_graph_vector.py | Simplify logic; use `contextlib.suppress`; import cleanup. |\r\n| s_tui/stress_menu.py | Add typing; tighten exception handling; minor boolean normalization. |\r\n| s_tui/sources/util_source.py | Add typing and minor formatting cleanup. |\r\n| s_tui/sources/temp_source.py | Add typing; normalize OSError handling; improve `get_top` logic. |\r\n| s_tui/sources/source.py | Add typing; introduce `TYPE_CHECKING` hook typing; suppress patterns. |\r\n| s_tui/sources/script_hook_loader.py | Add typing and minor formatting. |\r\n| s_tui/sources/rapl_read.py | Add typing; modernize file handling; improve AMD checks. |\r\n| s_tui/sources/rapl_power_source.py | Add typing; narrow exceptions to OSError. |\r\n| s_tui/sources/hook_script.py | Add typing. |\r\n| s_tui/sources/hook.py | Add typing for hook callback + methods. |\r\n| s_tui/sources/freq_source.py | Add typing; narrow exceptions to OSError/NotImplementedError etc. |\r\n| s_tui/sources/fan_source.py | Add typing; normalize OSError handling; minor dict literal cleanup. |\r\n| s_tui/sensors_menu.py | Remove unused loop variable; minor import cleanup. |\r\n| s_tui/s_tui.py | Import consolidation; add MainLoop signal handling; config loading refactor; suppress patterns. |\r\n| s_tui/helper_functions.py | Python-3-oriented cleanup; add typing + overloads; keep packaging-safe imports. |\r\n| s_tui/help_menu.py | Remove legacy future imports; import fo",
+    "body_original_chars": 4978,
+    "body_truncated": true,
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T04:04:56+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/269"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#267:opened",
+   "payload": {
+    "additions": 119,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 14,
+    "files": [
+     "s_tui/helper_functions.py",
+     "s_tui/s_tui.py",
+     "tests/test_helper_functions.py",
+     "tests/test_runtime_disruption.py",
+     "tests/test_stress_controller.py"
+    ],
+    "title": "Harden stress test kill on exit"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T02:39:01+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/267"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#267:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T02:54:53+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/267"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#267:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR hardens stress-process cleanup by isolating stress runs into their own process group and ensuring the process tree is terminated on exit/signals.\n\n**Changes:**\n- Start stress subprocesses in a new session/process group (`os.setsid`) to improve kill reliability.\n- Extend shutdown handling (SIGTERM + `atexit`) to ensure stress processes are cleaned up when the app exits.\n- Rework `kill_child_processes` to attempt graceful termination (process group SIGTERM \u2192 per-proc terminate \u2192 SIGKILL) and add corresponding tests.\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 3 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `s_tui/s_tui.py` | Adds SIGTERM handling, `atexit` cleanup, and launches stress with process-group isolation. |\n| `s_tui/helper_functions.py` | Reworks stress process-tree termination logic to be more robust and time-bounded. |\n| `tests/test_stress_controller.py` | Adds test ensuring stress start uses `preexec_fn=os.setsid`. |\n| `tests/test_helper_functions.py` | Adds tests for new process-group-first termination behavior. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T02:43:16+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/267"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#266:opened",
+   "payload": {
+    "additions": 156,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 8,
+    "deletions": 54,
+    "files": [
+     "s_tui/s_tui.py",
+     "s_tui/sensors_menu.py",
+     "s_tui/sources/fan_source.py",
+     "s_tui/sources/temp_source.py",
+     "tests/test_config_delimiter.py",
+     "tests/test_fan_source.py",
+     "tests/test_runtime_disruption.py",
+     "tests/test_sensors_menu.py"
+    ],
+    "title": "Feat/dynamic temp sensors"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T16:16:02+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/266"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#266:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T02:48:26+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/266"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#266:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot encountered an error and was unable to review this pull request. You can try again by re-requesting a review.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T16:40:24+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/266"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#266:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 8 out of 8 changed files in this pull request and generated 8 comments.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-03T01:27:55+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/266"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#265:opened",
+   "payload": {
+    "additions": 7,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 7,
+    "files": [
+     "s_tui/s_tui.py",
+     "s_tui/sturwid/complex_bar_graph.py",
+     "s_tui/sturwid/ui_elements.py"
+    ],
+    "title": "Update urwid AttrWrap to AttrMap"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T15:06:13+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/265"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#265:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T15:21:10+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/265"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#265:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nUpdates the TUI code to use `urwid.AttrMap` instead of the deprecated `urwid.AttrWrap`, and adjusts pytest configuration to reduce urwid deprecation-warning noise during test runs.\n\n**Changes:**\n- Replace `urwid.AttrWrap(...)` with `urwid.AttrMap(...)` in multiple UI widget wrappers/separators.\n- Add a pytest `filterwarnings` rule to ignore a class of urwid \u201cmoved to\u201d deprecation warnings.\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 1 comment.\n\n| File | Description |\n| ---- | ----------- |\n| setup.cfg | Adds pytest warning filter configuration for urwid deprecations. |\n| s_tui/sturwid/ui_elements.py | Switches button/radio button styling wrapper from `AttrWrap` to `AttrMap`. |\n| s_tui/sturwid/complex_bar_graph.py | Switches vertical separator styling wrapper from `AttrWrap` to `AttrMap`. |\n| s_tui/s_tui.py | Switches horizontal/vertical separator styling wrappers from `AttrWrap` to `AttrMap`. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T15:09:30+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/265"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#264:opened",
+   "payload": {
+    "additions": 66,
+    "author": "amanusk",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 31,
+    "files": [
+     "s_tui/sources/rapl_power_source.py",
+     "tests/test_psutil_failures.py",
+     "tests/test_runtime_disruption.py"
+    ],
+    "title": "Solve issue #263, more robust poser reads"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T14:00:11+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/264"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#264:merged",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T14:32:04+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/264"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#264:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nImproves robustness of RAPL (power) sensor reads so runtime read failures (IOError/OSError/None/empty) don\u2019t crash update loops, aligning behavior with other \u201cfailure mid-run\u201d sources.\n\n**Changes:**\n- Make `RaplPowerSource.update()` tolerate reader failures/empty reads and per-sensor issues without throwing.\n- Update/add tests to assert RAPL update failures don\u2019t crash (and remove an `xfail` that is now expected to pass).\n- Minor initialization tweak (`last_measurement` uses floats).\n\n### Reviewed changes\n\nCopilot reviewed 3 out of 3 changed files in this pull request and generated 3 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `s_tui/sources/rapl_power_source.py` | Add defensive handling around `read_power()` and per-sensor computations to prevent crashes on mid-run disruptions. |\n| `tests/test_psutil_failures.py` | Update existing RAPL failure test and add coverage for `read_power()` returning `None`. |\n| `tests/test_runtime_disruption.py` | Remove `xfail` for \u201cRAPL reader fails during update\u201d now that update should not crash. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T14:04:40+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/264"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#264:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 3 out of 3 changed files in this pull request and generated 2 comments.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/amanusk/s-tui/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T14:24:01+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/264"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#264:review:2",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T14:31:26+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/264"
+  },
+  {
+   "evidence_id": "pr:amanusk/s-tui#264:review:3",
+   "payload": {
+    "author": "amanusk",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-03-02T14:31:43+00:00",
+   "url": "https://github.com/amanusk/s-tui/pull/264"
+  }
+ ],
+ "repo": "amanusk/s-tui",
+ "window": "pre_t"
+}

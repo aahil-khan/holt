@@ -1,0 +1,650 @@
+{
+ "captured_at": "2026-08-31T01:07:00.865752+00:00",
+ "content_sha256": "d0c9b8f5bf4923c0b0799446ebd925cab0df699fddb06e329661151c8a9c8b0f",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:sherlock-project/sherlock:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Hunt down social media accounts by username across social networks",
+    "homepage_url": "https://sherlockproject.xyz",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-30T05:15:47Z",
+    "stargazer_count": 90661
+   },
+   "source": "github",
+   "timestamp": "2018-12-24T14:30:48+00:00",
+   "url": "https://github.com/sherlock-project/sherlock"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3103:opened",
+   "payload": {
+    "additions": 9,
+    "author": "01097962319",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "test1235"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:35:20+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3103"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3103:closed",
+   "payload": {
+    "author": "01097962319",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:36:32+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3103"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3102:opened",
+   "payload": {
+    "additions": 9,
+    "author": "01097962319",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Malicious pr222"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:28:47+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3102"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3102:closed",
+   "payload": {
+    "author": "01097962319",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:30:49+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3102"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3101:opened",
+   "payload": {
+    "additions": 9,
+    "author": "01097962319",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Malicious pr1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:20:29+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3101"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3101:closed",
+   "payload": {
+    "author": "01097962319",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:21:51+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3101"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3100:opened",
+   "payload": {
+    "additions": 7,
+    "author": "01097962319",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Malicious pr"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:08:14+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3100"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3100:closed",
+   "payload": {
+    "author": "01097962319",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T18:12:12+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3100"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3099:opened",
+   "payload": {
+    "additions": 6,
+    "author": "01097962319",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Add new site: TestSite"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T17:54:09+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3099"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3099:closed",
+   "payload": {
+    "author": "01097962319",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T17:59:18+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3099"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3098:opened",
+   "payload": {
+    "additions": 7,
+    "author": "01097962319",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Add new site: TestSite"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T17:14:10+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3098"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3098:closed",
+   "payload": {
+    "author": "01097962319",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T17:37:03+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3098"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3094:opened",
+   "payload": {
+    "additions": 26,
+    "author": "Dev9269",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "sherlock_project/sherlock.py",
+     "tests/test_probes.py"
+    ],
+    "title": "fix: don't crash the scan on a location parse error (trailing-dot usernames)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T20:13:22+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3094"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3093:opened",
+   "payload": {
+    "additions": 0,
+    "author": "h9ff956mfn-lang",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/@werkvs"
+    ],
+    "title": "Rename README.md to @werkvs"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T23:16:12+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3093"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3093:closed",
+   "payload": {
+    "author": "h9ff956mfn-lang",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T04:46:43+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3093"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3093:comment:0",
+   "payload": {
+    "author": "h9ff956mfn-lang",
+    "author_is_bot": false,
+    "body": "h9ff956mfn-lang:patch-1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T23:16:40+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3093"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3092:opened",
+   "payload": {
+    "additions": 70,
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "sherlock_project/sherlock.py",
+     "tests/test_signal_handler.py"
+    ],
+    "title": "fix: cancel pending futures on SIGINT to prevent traceback on exit (Python 3.13+)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:48:21+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3092"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3091:opened",
+   "payload": {
+    "additions": 51,
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "sherlock_project/sherlock.py",
+     "tests/test_unicode.py"
+    ],
+    "title": "fix: percent-encode username in URL to handle non-ASCII characters (fixes UnicodeDecodeError)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:48:16+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3091"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3090:opened",
+   "payload": {
+    "additions": 1,
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     ".github/workflows/validate_modified_targets.yml"
+    ],
+    "title": "ci: skip modified target validation when no targets changed"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:48:08+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3090"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3089:opened",
+   "payload": {
+    "additions": 1,
+    "author": "loulanyue",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "docs/pyproject/README.md"
+    ],
+    "title": "docs: remove unmatched closing anchor tag in PyPI README"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T09:02:02+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3089"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3089:closed",
+   "payload": {
+    "author": "loulanyue",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T07:34:01+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3089"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3085:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dev9269",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "sherlock_project/sherlock.py"
+    ],
+    "title": "fix: treat status_code == 0 as a successfully-received response (#3027)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T21:08:47+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3085"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3084:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Dev9269",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 8,
+    "files": [
+     "sherlock_project/notify.py"
+    ],
+    "title": "fix: reset result counter per username scan (#2990)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T21:07:49+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3084"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3083:opened",
+   "payload": {
+    "additions": 1,
+    "author": "Dev9269",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "sherlock_project/sherlock.py"
+    ],
+    "title": "fix: --output flag writes the file without requiring --txt (#2992)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T21:06:13+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3083"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3082:opened",
+   "payload": {
+    "additions": 49,
+    "author": "Luka-codeur",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "sherlock_project/sherlock.py",
+     "tests/test_get_response.py"
+    ],
+    "title": "fix: prevent crash on non-requests exceptions in get_response"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T20:40:00+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3082"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3081:opened",
+   "payload": {
+    "additions": 3,
+    "author": "minhducngo2006",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Fix Instapaper false-positive detection"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T07:14:34+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3081"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3081:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "#### Automatic validation of changes\n\n| Target | F+ Check | F- Check |\n|---|---|---|\n| Instapaper | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T07:15:14+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3081"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3080:opened",
+   "payload": {
+    "additions": 5,
+    "author": "Dev9269",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Fix Discord.bio and interpals false positives"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T16:54:31+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3080"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3080:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "#### Automatic validation of changes\n\n| Target | F+ Check | F- Check |\n|---|---|---|\n| Discord.bio | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n| interpals | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T16:55:22+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3080"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3078:opened",
+   "payload": {
+    "additions": 855,
+    "author": "Ombhosalee19",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 842,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Fix #3075: Add Viblo site support"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T10:19:04+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3078"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3078:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "#### Automatic validation of changes\n\n| Target | F+ Check | F- Check |\n|---|---|---|\n| Viblo | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T10:20:47+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3078"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3077:opened",
+   "payload": {
+    "additions": 29,
+    "author": "alshamialaa",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 9,
+    "files": [
+     "sherlock_project/sherlock.py",
+     "sherlock_project/sites.py",
+     "tests/test_ux.py"
+    ],
+    "title": "Fix site metadata defaults and XLSX export"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T19:24:25+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3077"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3075:opened",
+   "payload": {
+    "additions": 6,
+    "author": "dn-cuong",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Add Viblo site support"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T18:30:42+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3075"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3075:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "#### Automatic validation of changes\n\n| Target | F+ Check | F- Check |\n|---|---|---|\n| Viblo | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T18:31:36+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3075"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3075:comment:1",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "#### Automatic validation of changes\n\n| Target | F+ Check | F- Check |\n|---|---|---|\n| Viblo | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T18:32:51+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3075"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3075:comment:2",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "#### Automatic validation of changes\n\n| Target | F+ Check | F- Check |\n|---|---|---|\n| Viblo | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T18:33:20+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3075"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3072:opened",
+   "payload": {
+    "additions": 68,
+    "author": "SkxOverKill",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "sherlock_project/sherlock.py",
+     "tests/test_probes.py"
+    ],
+    "title": "sherlock: gate errorType message on HTTP status (fixes #2950)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T08:06:57+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3072"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3071:opened",
+   "payload": {
+    "additions": 55,
+    "author": "SkxOverKill",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "sherlock_project/notify.py",
+     "sherlock_project/sherlock.py",
+     "tests/test_notify.py"
+    ],
+    "title": "notify: per-username result counts (fixes #2990)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T08:06:56+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3071"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3070:opened",
+   "payload": {
+    "additions": 40,
+    "author": "SkxOverKill",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 1,
+    "files": [
+     "pyproject.toml",
+     "sherlock_project/sherlock.py",
+     "tests/test_probes.py"
+    ],
+    "title": "fix: handle urllib3 LocationParseError (crash on usernames ending in .)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T07:06:09+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3070"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3069:opened",
+   "payload": {
+    "additions": 11,
+    "author": "siddharthaasal",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "sherlock_project/resources/data.json"
+    ],
+    "title": "Fix LeetCode detection via GraphQL API"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T10:54:01+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3069"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3069:comment:0",
+   "payload": {
+    "author": "github-actions",
+    "author_is_bot": true,
+    "body": "#### Automatic validation of changes\n\n| Target | F+ Check | F- Check |\n|---|---|---|\n| LeetCode | :heavy_check_mark: &nbsp; Pass | :heavy_check_mark: &nbsp; Pass |\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T10:54:52+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3069"
+  },
+  {
+   "evidence_id": "pr:sherlock-project/sherlock#3069:comment:1",
+   "payload": {
+    "author": "siddharthaasal",
+    "author_is_bot": false,
+    "body": "hi, any updates on this? is there anything on my end that I can offer help with?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T08:44:29+00:00",
+   "url": "https://github.com/sherlock-project/sherlock/pull/3069"
+  }
+ ],
+ "repo": "sherlock-project/sherlock",
+ "window": "pre_t"
+}

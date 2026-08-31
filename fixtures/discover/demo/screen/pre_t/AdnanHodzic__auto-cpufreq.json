@@ -1,0 +1,2415 @@
+{
+ "captured_at": "2026-08-31T01:07:43.287242+00:00",
+ "content_sha256": "6e4aea3f042c9db4be825a9ef0975230a54c43b15e153dc90b3b2c0e3e228a61",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:AdnanHodzic/auto-cpufreq:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "Automatic CPU speed & power optimizer for Linux",
+    "homepage_url": "https://foolcontrol.org/?p=4603",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-29T09:22:49Z",
+    "stargazer_count": 7743
+   },
+   "source": "github",
+   "timestamp": "2019-12-29T20:39:56+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq"
+  },
+  {
+   "evidence_id": "repo:AdnanHodzic/auto-cpufreq:readme",
+   "payload": {
+    "commit_oid": "6f3f8adbd2b62fc15f62e03a8bcaf8c57d6d77d7",
+    "kind": "readme",
+    "text": "# auto-cpufreq\n[![Linux Build](https://github.com/AdnanHodzic/auto-cpufreq/actions/workflows/build-linux.yml/badge.svg?event=push)](https://github.com/AdnanHodzic/auto-cpufreq/actions/workflows/build-linux.yml)\n[![Nix Flake](https://github.com/AdnanHodzic/auto-cpufreq/actions/workflows/build-nix.yaml/badge.svg?event=push)](https://github.com/AdnanHodzic/auto-cpufreq/actions/workflows/build-nix.yaml)\n\nAutomatic CPU speed & power optimizer for Linux. Actively monitors laptop battery state, CPU usage, CPU temperature, and system load, ultimately allowing you to improve battery life without making any compromises.\n\nFor tl;dr folks:\n\n* Youtube: \n[From 10 day vacation project to 100k users: auto-cpufreq v3 story](https://www.youtube.com/watch?v=VKqNjczvI88)\n* Blog post: [From 10 day vacation project to 100k users: auto-cpufreq v3 story](https://foolcontrol.org/?p=5114)\n\n[![](https://img.youtube.com/vi/VKqNjczvI88/0.jpg)](https://www.youtube.com/watch?v=VKqNjczvI88)\n\n* Youtube: [auto-cpufreq v2.0 release & demo of all available features and options](https://www.youtube.com/watch?v=SPGpkZ0AZVU)\n* Blog post: [auto-cpufreq v2.0](https://foolcontrol.org/?p=4603)\n\n[![](https://img.youtube.com/vi/SPGpkZ0AZVU/0.jpg)](https://www.youtube.com/watch?v=QkYRpVEEIlg)\n\n* Youtube: [auto-cpufreq - tool demo](https://www.youtube.com/watch?v=QkYRpVEEIlg)\n* Blog post: [auto-cpufreq \u2013 Automatic CPU speed & power optimizer for Linux](https://foolcontrol.org/?p=3124)\n\n[![](https://img.youtube.com/vi/QkYRpVEEIlg/0.jpg)](https://www.youtube.com/watch?v=QkYRpVEEIlg)\n\nIf you're having a problem with auto-cpufreq, before ([submitting an issue](https://github.com/AdnanHodzic/auto-cpufreq/issues)), it is strongly recommended to use the **[auto-cpufreq-genAI-chatbot](https://foolcontrol.org/?p=4903)** to get an immediate answer to your question.\n\n[![](https://img.youtube.com/vi/a-UcwAAXOoc/0.jpg)](https://www.youtube.com/watch?v=a-UcwAAXOoc)\n\nExample of auto-cpufreq GUI (available >= v2.0)\n\n<img src=\"https://github.com/user-attachments/assets/3e33bd92-964c-48f0-9825-4a66f9039261\" width=\"480\" alt=\"Example of auto-cpufreq GUI (available >= v2.0)\" />\n\nExample of `auto-cpufreq --stats` CLI output\n\n<img src=\"https://github.com/user-attachments/assets/1114e937-35bd-4943-8a74-a932c04c367e\" width=\"480\" alt=\"Example of auto-cpufreq CLI output\"/>\n\n## Looking for developers and co-maintainers\n\n- If you would like to discuss anything regarding auto-cpufreq or its development, please join the [auto-cpufreq Discord server!](https://discord.gg/Sjauxtj6kH)\n- auto-cpufreq is looking for [co-maintainers & open source developers to help shape the future of the project!](https://github.com/AdnanHodzic/auto-cpufreq/discussions/312)\n\n## Index\n\n- [Why do I need auto-cpufreq?](#why-do-i-need-auto-cpufreq)\n  - [Supported architectures and devices](#supported-architectures-and-devices)\n- [Features](#features)\n- [Installing auto-cpufreq](#installing-auto-cpufreq)\n  - [auto-cpufreq-installer](#auto-cpufreq-installer)\n  - [Snap Store](#snap-store)\n  - [AUR package (Arch based distributions)](#aur-package-arch-based-distributions)\n  - [NixOS](#nixos)\n  - [For developers](#installation-development-mode-only)\n- [Post-installation](#post-installation)\n- [Configuring auto-cpufreq](#configuring-auto-cpufreq)\n  - [1: power_helper.py script (Snap package install only)](#1-power_helperpy-script-snap-package-install-only)\n  - [2: `--force` governor override](#2---force-governor-override)\n  - [3: `--turbo` mode override](#3---turbo-mode-override)\n  - [4: auto-cpufreq config file](#4-auto-cpufreq-config-file)\n    - [Example config file contents](#example-config-file-contents)\n- [How to run auto-cpufreq](#how-to-run-auto-cpufreq)\n- [auto-cpufreq modes and options](#auto-cpufreq-modes-and-options)\n  - [monitor](#monitor)\n  - [live](#live)\n  - [GUI](#gui)\n  - [overriding governor](#overriding-governor)\n  - [overriding turbo mode](#overriding-turbo-mode)\n  - [Install - auto-cpufreq daemon](#install---auto-cpufreq-daemon)\n  - [Update - auto-cpufreq update](#update---auto-cpufreq-update)\n  - [Remove - auto-cpufreq daemon](#remove---auto-cpufreq-daemon)\n  - [stats](#stats)\n  - [bluetooth_boot_off](#bluetooth_boot_off)\n  - [bluetooth_boot_on](#bluetooth_boot_on)\n- [Intel HWP Dynamic Boost](#intel-hwp-dynamic-boost)\n- [Battery charging thresholds](#battery-charging-thresholds)\n  - [Supported Devices](#supported-devices)\n  - [Battery config](#battery-config)\n  - [Ignoring power supplies](#Ignoring-power-supplies)\n- [Troubleshooting](#troubleshooting)\n  - [AUR](#aur)\n- [Discussion](#discussion)\n- [Donate](#donate)\n  - [Financial donation](#financial-donation)\n    - [Become Github Sponsor](https://github.com/AdnanHodzic/auto-cpufreq/blob/master/README.md#become-github-sponsor)\n    - [pump.fun](https://github.com/AdnanHodzic/auto-cpufreq/blob/master/README.md#pumpfun)\n    - [BitCoin](#bitcoin)\n    - [Paypal](#paypal)\n  - [Code contribution](#code-contribution)\n\n## Why do I need auto-cpufreq?\n\nOne of the problems with Linux today on laptops is that the CPU will run in an unoptimized manner which will negatively impact battery life. For example, the CPU may run using the \"performance\" governor with turbo boost enabled regardless of whether it's plugged into a power outlet or not.\n\nThese issues can be mitigated by using tools like [indicator-cpufreq](https://itsfoss.com/cpufreq-ubuntu/) or [cpufreq](https://github.com/konkor/cpufreq), but those still require manual action from your side which can be daunting and cumbersome.\n\nTools like [TLP](https://github.com/linrunner/TLP) (which I used for numerous years) can help extend battery life, but may also create their own set of problems, such as losing turbo boost.\n\nGiven all of the above, I needed a simple tool that would automatically make CPU frequency-related changes and save battery life, but let the Linux kernel do most of the heavy lifting. That's how auto-cpufreq was born.\n\nPlease note: auto-cpufreq aims to replace TLP in terms of functionality, so after you install auto-cpufreq _it's recommended to remove TLP_. Using both for the same functionality (i.e., to set CPU frequencies) will lead to unwanted results like overheating. Hence, only use [both tools in tandem](https://github.com/AdnanHodzic/auto-cpufreq/discussions/176) if you know what you're doing.\n\nOne tool/daemon that does not conflict with auto-cpufreq in any way, and is even recommended to have running alongside, is [thermald](https://wiki.debian.org/thermald).\n\n#### Supported architectures and devices\n\nOnly devices with an Intel, AMD, or ARM CPU are supported. This tool was developed to improve performance and battery life on laptops, but running it on desktops/servers (to lower power consumption) should also be possible.\n\n## Features\n\n- Monitoring\n  - Basic system information\n  - CPU frequency (system total & per core)\n  - CPU usage (system total & per core)\n  - CPU temperature (total average & per core)\n  - Battery state\n  - System load\n- CPU frequency scaling, governor, and [turbo boost](https://en.wikipedia.org/wiki/Intel_Turbo_Boost) management based on\n  - Battery state\n  - CPU usage (total & per core)\n  - CPU temperature in combination with CPU utilization/load (to prevent overheating)\n  - System load\n- Automatic CPU & power optimization (temporary and persistent)\n- Settings battery charging thresholds (limited support)\n\n## Installing auto-cpufreq\n\n### auto-cpufreq-installer\n\n> As auto-cpufreq relies on git based versioning, users are advised to install `auto-cpufreq`  using `git clone` method only. Downloading source code as a zip/from release will emit build error like [these](https://github.com/AdnanHodzic/auto-cpufreq/issues/623).\n\nGet source code, run installer, and follow on-screen instructions:\n\n```\ngit clone https://github.com/AdnanHodzic/auto-cpufreq.git\ncd auto-cpufreq && sudo ./auto-cpufreq-installer\n```\n\n### Snap Store\n\n*Please note: while all [auto-cpufreq >= v2.0 CLI functionality](https://www.youtube.com/watch?v=SPGpkZ0AZVU&t=295s) will work as intended, [the GUI won't be available on Snap package installs](https://storage.googleapis.com/foolcontrol-media/2023/10/auto-cpufreq-v2-snap-deprecation-notice.png) due to [Snap package confinement limitations](https://forum.snapcraft.io/t/pkexec-not-found-python-gtk-gnome-app/36579). Hence, please consider installing auto-cpufreq using [auto-cpufreq-installer](#auto-cpufreq-installer)*.\n\nauto-cpufreq is available on the [Snap Store](https://snapcraft.io/auto-cpufreq) or via CLI:\n\n```\nsudo snap install auto-cpufreq\n```\n\n**Please note:**\n- Make sure [snapd](https://snapcraft.io/docs/installing-snapd) is installed and `snap version` is >= 2.44 for `auto-cpufreq` to fully work due to [recent snapd changes](https://github.com/snapcore/snapd/pull/8127).\n\n- Fedora users will [encounter the following error](https://twitter.com/killyourfm/status/1291697985236144130) due to `cgroups v2` [being in development](https://github.com/snapcore/snapd/pull/7825). This problem can be resolved by either running `sudo snap run auto-cpufreq` after the snap installation or by using the [auto-cpufreq-installer](#auto-cpufreq-installer) which doesn't have this issue.\n\n### AUR package (Arch based distributions)\n\n[![AUR package](https://repology.org/badge/version-for-repo/aur/auto-cpufreq.svg)](https://aur.archlinux.org/packages/auto-cpufreq)\n\nThe AUR [Release Package](https://aur.archlinux.org/packages/auto-cpufreq) is currently being maintained by [MusicalArtist12](https://github.com/MusicalArtist12), [liljaylj](https://github.com/liljaylj), and [parmjotsinghrobot](https://github.com/parmjotsinghrobot). \n\n**Notices**\n\n- The [Git Package](https://aur.archlinux.org/packages/auto-cpufreq-git) is seperately maintained and was last updated on version 1.9.6. \n- The build process links to `/usr/share/` instead of `/usr/local/share/`\n- The daemon installer provided does not work, instead start the daemon with \n\n``` \n# systemctl enable --now auto-cpufreq \n```\n- The GNOME Power Profiles daemon is [automatically disabled by auto-cpufreq-installer](https://github.com/AdnanHodzic/auto-cpufreq#1-power_helperpy-script-snap-package-install-only) due to it's conflict with auto-cpufreq.service. However, this doesn't happen with AUR installs, which can lead to problems (e.g., [#463](https://github.com/AdnanHodzic/auto-cpufreq/issues/463)) if not masked manually.\n  - Open a terminal and run `sudo systemctl mask power-profiles-daemon.service` (then `enable` and `start` the auto-cpufreq.service if you haven't already).\n- The TuneD daemon(enabled by default with Fedora 41) is [automatically disabled by auto-cpufreq-installer](https://github.com/AdnanHodzic/auto-cpufreq#1-power_helperpy-script-snap-package-install-only) due to it's conflict with auto-cpufreq.service.\n\n### Gentoo Linux (GURU Repository)\n\nNew versions of auto-cpufreq were recently added to GURU, Gentoo's official community-maintained ebuild repository. The [ebuild](https://github.com/gentoo-mirror/guru/tree/master/sys-power/auto-cpufreq) is maintaned by [S41G0N](https://github.com/S41G0N) and other [GURU contributors](https://bugs.gentoo.org), who can respond in case of issues.\n\nIn order to build auto-cpufreq, it is necessary to add & sync GURU repository first. Adding ~amd64 keyword is also needed to unmask the package.\n\n``` \n# echo \"sys-power/auto-cpufreq ~amd64\" >> /etc/portage/package.accept_keywords\n# eselect repository enable guru\n# emaint sync -r guru\n# emerge --ask auto-cpufreq\n```\n\n**Notices**\n\n- The build process links to `/usr/share/` instead of `/usr/local/share/`\n- The build works on both systemd/OpenRC systems (both systemd and OpenRC will have a service called auto-cpufreq which can be started automatically)\n- The daemon installer provided does work, but it is RECOMMENDED to install the daemon with:\n``` \n# systemctl enable --now auto-cpufreq \n# rc-update add auto-cpufreq default && rc-service auto-cpufreq start\n```\n\n### NixOS\n\n<details>\n<summary>Flakes",
+    "text_original_chars": 38871,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T09:22:48+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/blob/6f3f8adbd2b62fc15f62e03a8bcaf8c57d6d77d7/README.md"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#972:opened",
+   "payload": {
+    "additions": 1001,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 10,
+    "deletions": 130,
+    "files": [
+     "README.md",
+     "auto-cpufreq.conf-example",
+     "auto-cpufreq.conf-example.nix",
+     "auto_cpufreq/bin/auto_cpufreq.py",
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/gui/app.py",
+     "auto_cpufreq/modules/platform_profile.py",
+     "auto_cpufreq/modules/system_info.py",
+     "auto_cpufreq/modules/system_monitor.py",
+     "scripts/cpufreqctl.sh"
+    ],
+    "title": "Add Platform Profile reporting and modern kernel support"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T22:48:10+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/972"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#971:opened",
+   "payload": {
+    "additions": 91,
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 48,
+    "files": [
+     "auto_cpufreq/battery_scripts/battery.py",
+     "auto_cpufreq/bin/auto_cpufreq.py",
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/modules/system_info.py",
+     "auto_cpufreq/power_helper.py"
+    ],
+    "title": "Fix auto-cpufreq >= 3.1.0 snap package release"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:26:49+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/971"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#971:merged",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:28:27+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/971"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:opened",
+   "payload": {
+    "additions": 48,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 44,
+    "files": [
+     "auto_cpufreq/bin/auto_cpufreq.py",
+     "auto_cpufreq/power_helper.py"
+    ],
+    "title": "Fix native power-profiles-daemon handling"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T20:57:22+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "### \ud83d\udfe1 Changes recommended\n\n`gnome_power_svc_disable()` can become a no-op when the daemon is inactive-but-enabled, and the updated \u201cwill be disabled\u201d messaging is misleading in the `--live` flow.\n\n*Once you've addressed the issues Copilot identified, you can request another Copilot review.*\n\n<details>\n<summary>Pull request overview</summary>\n\nThis PR adjusts `power-profiles-daemon` handling in the power helper to avoid incorrectly inferring Snap installation in the native path, and to base behavior on actual service state instead.\n\n**Changes:**\n- Removes the Snap `snap list | grep auto-cpufreq` inference logic from the native `gnome_power_svc_disable()` path.\n- Updates user-facing GNOME Power Profiles messaging and CLI help text.\n- Cleans up unused `subprocess` imports related to the removed logic.\n</details>\n\n<details>\n<summary>File summaries</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| auto_cpufreq/power_helper.py | Simplifies GNOME Power Profiles disable logic, updates messaging/help text, removes Snap-inference code and unused imports. |\n</details>\n\n<details>\n<summary>Review details</summary>\n\n### Suppressed comments (1)\n\n**auto_cpufreq/power_helper.py:285**\n* `gnome_power_svc_disable()` returns early when `power-profiles-daemon` is not *active* (`gnome_power_status != 0`). This makes `--gnome_power_disable` a no-op when the service is inactive-but-enabled, which is a common state and means the helper won't actually disable/mask the unit as intended. Consider only using `gnome_power_status` to decide whether to call `powerprofilesctl`, and always disabling/masking the unit when `systemctl` is available.\n```\ndef gnome_power_svc_disable():\n    if not systemctl_exists or gnome_power_status != 0:\n        return\n\n    if powerprofilesctl_exists:\n```\n\n- **Files reviewed:** 1/1 changed files\n- **Comments generated:** 1\n- **Review effort level:** Lite\n</details>\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:13:45+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:18:53+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:review:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:19:28+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:review:3",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T15:31:40+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:review:4",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T15:32:59+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:review:5",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T18:13:28+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Minor thing, but in following output:\r\n\r\n```\r\n---------------------------------- Warning -----------------------------------\r\n\r\nDetected running GNOME Power Profiles daemon service!\r\n\r\nThis daemon might interfere with auto-cpufreq and will be disabled.\r\n\r\nThis daemon is not automatically disabled in \"monitor\" mode and\r\nwill be enabled after auto-cpufreq daemon is removed.\r\nUsing profile:  balanced\r\n\r\n* Disabling GNOME power profiles\r\nRemoved '/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service'.\r\nCreated symlink '/etc/systemd/system/power-profiles-daemon.service' \u2192 '/dev/null'.\r\n```\r\n\r\nLet's move `Using profile:  balanced` to its own new line, as now it's in same paragraph as mention above, but is unrelated."
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:20:37+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:comment:1",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "> Minor thing, but in following output:\r\n> \r\n> ```\r\n> ---------------------------------- Warning -----------------------------------\r\n> \r\n> Detected running GNOME Power Profiles daemon service!\r\n> \r\n> This daemon might interfere with auto-cpufreq and will be disabled.\r\n> \r\n> This daemon is not automatically disabled in \"monitor\" mode and\r\n> will be enabled after auto-cpufreq daemon is removed.\r\n> Using profile:  balanced\r\n> \r\n> * Disabling GNOME power profiles\r\n> Removed '/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service'.\r\n> Created symlink '/etc/systemd/system/power-profiles-daemon.service' \u2192 '/dev/null'.\r\n> ```\r\n> \r\n> Let's move `Using profile: balanced` to its own new line, as now it's in same paragraph as mention above, but is unrelated.\r\n\r\nFixed. `Using profile: balanced` is now on its own line, and I removed the extra space as well.\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T15:32:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:comment:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Actually, I built a .snap, and it seems to be completely broken:\r\n\r\n```\r\nsudo auto-cpufreq --install\r\n\r\n----------------------------------- Warning -----------------------------------\r\n\r\nDue to Snap package confinement limitations please consider installing auto-cpufreq using\r\nauto-cpufreq-installer: https://github.com/AdnanHodzic/auto-cpufreq#auto-cpufreq-installer\r\n\r\nUnable to detect state of GNOME Power Profiles daemon service!\r\nThis daemon might interfere with auto-cpufreq and should be disabled!\r\n\r\nSteps to perform this action using auto-cpufreq: power_helper script:\r\ngit clone https://github.com/AdnanHodzic/auto-cpufreq.git\r\npython3 -m auto_cpufreq.power_helper --gnome_power_disable\r\n\r\nReference: https://github.com/AdnanHodzic/auto-cpufreq#configuring-auto-cpufreq\r\n\r\n----------------------------------- Warning -----------------------------------\r\n\r\nUnable to detect if you are using a TLP service!\r\nThis daemon might interfere with auto-cpufreq which can lead to unexpected results.\r\nWe strongly encourage you not to use TLP unless you really know what you are doing.\r\n\r\n* Unable to turn off bluetooth on boot due to Snap package restrictions!\r\n\r\nSteps to perform this action using auto-cpufreq: power_helper script:\r\npython3 -m auto_cpufreq.power_helper --bluetooth_boot_off\r\n\r\nFor help see: https://github.com/AdnanHodzic/auto-cpufreq/#1-power_helperpy-script-snap-package-install-only\r\n\r\n----------------- auto-cpufreq daemon installed and running -----------------\r\n\r\nTo view live stats, run:\r\nauto-cpufreq --stats\r\n\r\nauto-cpufreq makes all decisions automatically, if you would like to\r\nconfigure certain setting to your own liking, please refer to:\r\nhttps://github.com/AdnanHodzic/auto-cpufreq#configuring-auto-cpufreq\r\n\r\nTo disable and remove auto-cpufreq daemon, run:\r\nsudo auto-cpufreq --remove\r\n\r\n-------------------------------------------------------------------------------\r\n\r\n ahodzic@carbon7 \ue0b0 ~/code/auto-cpufreq \ue0b0 \ue0a0 970-power-profiles \ue0b0 sudo auto-cpufreq --stats  \r\n\r\n------------------------ auto-cpufreq not running ------------------------------\r\n\r\nERROR: auto-cpufreq is not running in daemon mode.\r\n\r\nMake sure to run \"sudo auto-cpufreq --install\" first\r\n\r\n-------------------------------------------------------------------------------\r\n```\r\n\r\nSame with `--live` \r\n\r\n```\r\nsudo auto-cpufreq --live             \r\nTraceback (most recent call last):\r\n  File \"/snap/auto-cpufreq/168/bin/auto-cpufreq\", line 8, in <module>\r\n    sys.exit(main())\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/click/core.py\", line 1631, in __call__\r\n    return self.main(*args, **kwargs)\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/click/core.py\", line 1552, in main\r\n    rv = self.invoke(ctx)\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/click/core.py\", line 1415, in invoke\r\n    return ctx.invoke(self.callback, **ctx.params)\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/click/core.py\", line 910, in invoke\r\n    return callback(*args, **kwargs)\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/auto_cpufreq/bin/auto_cpufreq.py\", line 90, in main\r\n    start_battery_daemon()\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/auto_cpufreq/battery_scripts/battery.py\", line 27, in start_battery_daemon\r\n    dev = get_battery_device()\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/auto_cpufreq/battery_scripts/battery.py\", line 48, in get_battery_device\r\n    if lsmod(\"ideapad_acpi\"):\r\n  File \"/snap/auto-cpufreq/168/lib/python3.10/site-packages/auto_cpufreq/battery_scripts/battery.py\", line 15, in lsmod\r\n    module in run([\"lsmod\"], stdout=PIPE, stderr=PIPE, text=True).stdout\r\n  File \"/usr/lib/python3.10/subprocess.py\", line 503, in run\r\n    with Popen(*popenargs, **kwargs) as process:\r\n  File \"/usr/lib/python3.10/subprocess.py\", line 971, in __init__\r\n    self._execute_child(args, executable, preexec_fn, close_fds,\r\n  File \"/usr/lib/python3.10/subprocess.py\", line 1863, in ",
+    "body_original_chars": 7220,
+    "body_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T07:35:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#970:comment:3",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Thanks for testing the actual Snap package and for fixing those issues in #971. I've now updated #970 against the latest `master`, so it includes the Snap changes from #971 while keeping this PR focused on native `power-profiles-daemon` handling.\r\n\r\nWhile rechecking the combined flow, I found a few edge cases in the native PPD lifecycle and fixed them as well:\r\n* an active PPD is still stopped if `powerprofilesctl` is unavailable or fails;\r\n* an initially inactive PPD is no longer started when `--live` exits;\r\n* PPD is only stopped after the live-mode confirmation, so cancelling there does not leave it stopped;\r\n* an inactive-but-enabled PPD is still disabled during installation;\r\n* a machine where `power-profiles-daemon.service` is not installed no longer gets a new systemd mask created for it.\r\n\r\nI also changed the running-service checks to require an actual active state instead of treating an unknown state as active."
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T14:19:06+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/970"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#969:opened",
+   "payload": {
+    "additions": 15,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 6,
+    "files": [
+     "auto_cpufreq/gui/app.py",
+     "auto_cpufreq/gui/objects.py",
+     "auto_cpufreq/modules/system_info.py",
+     "auto_cpufreq/modules/system_monitor.py"
+    ],
+    "title": "Preserve zero RPM fan readings and stabilize GTK CPU columns"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T17:12:28+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/969"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#969:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:08:06+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/969"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#969:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "### \ud83d\udfe2 Approval recommended\n\nThe changes consistently implement the stated `None` vs `0` fan-speed semantics across all consumers and the GTK column-width fix is localized and appropriate.\n\n<details>\n<summary>Pull request overview</summary>\n\nThis PR refines the unified reporting pipeline introduced in #964 by (1) preserving legitimate `0 RPM` CPU fan readings (fan stopped) across all reporting frontends and (2) preventing the GTK per-core CPU table from resizing when usage reaches `100.0%`.\n\n**Changes:**\n- Treat `cpu_fan_speed` as unavailable only when it is `None` (not when it is `0`), consistently across GTK, Urwid/terminal, and textual reporting.\n- Update the fan-speed collector to ignore invalid/non-finite readings, return a positive RPM when present, and otherwise preserve a stopped-fan reading as `0`.\n- Stabilize the GTK \u201cUsage\u201d column by reserving enough character width for `100.0%`.\n</details>\n\n<details>\n<summary>File summaries</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| auto_cpufreq/modules/system_monitor.py | Urwid monitor now displays `0 RPM` (checks `is not None`). |\r\n| auto_cpufreq/modules/system_info.py | Fan-speed collection preserves `0` and textual report prints `0 RPM` (checks `is not None`). |\r\n| auto_cpufreq/gui/objects.py | GTK object view now displays `0 RPM` (checks `is not None`). |\r\n| auto_cpufreq/gui/app.py | GTK CPU usage column width is stabilized; fan label displays `0 RPM` (checks `is not None`). |\n</details>\n\n<details>\n<summary>Review details</summary>\n\n- **Files reviewed:** 4/4 changed files\n- **Comments generated:** 0\n- **Review effort level:** Lite\n</details>\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:03:13+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/969"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#969:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "LGTM! Thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T10:08:09+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/969"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#968:opened",
+   "payload": {
+    "additions": 6,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 6,
+    "files": [
+     "poetry.lock"
+    ],
+    "title": "Bump idna from 3.10 to 3.15"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:19:35+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/968"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#967:opened",
+   "payload": {
+    "additions": 671,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 162,
+    "files": [
+     "LICENSE",
+     "auto_cpufreq/gui/objects.py",
+     "nix/default.nix",
+     "snap/snapcraft.yaml"
+    ],
+    "title": "fix: Align project licensing with GPL-3.0-or-later"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T01:07:31+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/967"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#967:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:05:45+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/967"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#967:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Good catch, auto-cpufreq was originally released under GPL 3 license and then no one paid attention as other things were added. We should go with what's in `pyproject.toml` which is `GPL-3.0-or-later`, maybe even better simply stick to just GPL 3.\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T10:47:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/967"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#967:comment:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "LGTM! Tthank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:06:03+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/967"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#966:opened",
+   "payload": {
+    "additions": 53,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 31,
+    "files": [
+     "auto_cpufreq/config/config.py",
+     "auto_cpufreq/config/config_event_handler.py"
+    ],
+    "title": "supersede"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T00:40:59+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/966"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#966:closed",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T20:41:39+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/966"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#965:opened",
+   "payload": {
+    "additions": 12,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 37,
+    "files": [
+     "auto_cpufreq/power_helper.py"
+    ],
+    "title": "Fix native power-profiles-daemon handling during installation"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T00:40:55+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/965"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#965:closed",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T20:51:13+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/965"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:opened",
+   "payload": {
+    "additions": 2108,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 434,
+    "files": [
+     "README.md",
+     "auto_cpufreq/bin/auto_cpufreq.py",
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/gui/app.py",
+     "auto_cpufreq/gui/objects.py",
+     "auto_cpufreq/modules/system_info.py",
+     "auto_cpufreq/modules/system_monitor.py"
+    ],
+    "title": "Unify system reporting and GTK runtime state"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T12:29:18+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T05:29:56+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "### \ud83d\udfe1 Changes recommended\n\nThree unresolved findings remain, including a critical terminal monitor callback failure and two moderate GTK refresh issues.\n\n*Once you've addressed the issues Copilot identified, you can request another Copilot review.*\n\n<details>\n<summary>Pull request overview</summary>\n\nThis PR centralizes system telemetry through `SystemReport` and aligns GTK and terminal monitoring with observed runtime state.\n\n**Changes:**\n- Improves CPU, sensor, battery, distribution, and hotplug reporting.\n- Refactors GTK and terminal refresh lifecycles around shared reporting.\n- Updates controls, daemon detection, legacy output, and documentation.\n</details>\n\n<details>\n<summary>File summaries</summary>\n\n| File | Summary |\r\n|---|---|\r\n| `README.md` | Documents GTK modes and refresh options. |\r\n| `auto_cpufreq/modules/system_monitor.py` | Adds asynchronous terminal refresh handling. |\r\n| `auto_cpufreq/modules/system_info.py` | Implements shared system reporting. |\r\n| `auto_cpufreq/gui/objects.py` | Updates GTK controls and Monitor Mode. |\r\n| `auto_cpufreq/gui/app.py` | Adds shared dashboard rendering and refresh management. |\r\n| `auto_cpufreq/core.py` | Adjusts runtime overrides and daemon detection. |\r\n| `auto_cpufreq/bin/auto_cpufreq.py` | Uses shared reporting for legacy output. |\n</details>\n\n<details>\n<summary>Review details</summary>\n\n### Suppressed comments (10)\n\n**auto_cpufreq/gui/app.py:805**\n* On any report-collection exception this branch only resets the refresh state; it neither reports the error nor invalidates the previous values. The live dashboard can therefore continue showing stale observed governor, battery, and CPU data as if it were current, while Monitor Mode surfaces a refresh error. Surface an error/unknown state in the dashboard (or otherwise mark the snapshot stale) before allowing the next refresh.\n```\n        except Exception:\n            if not self.destroyed:\n                GLib.idle_add(self._finish_refresh)\n            return\n```\n**auto_cpufreq/gui/app.py:550**\n* The dashboard is newly placed in a `Gtk.ScrolledWindow`, but disabling focus here prevents keyboard-only users from focusing the scroller and using PageUp/PageDown or arrow scrolling to reach the lower report sections. Keep the scroller focusable (or provide equivalent keyboard bindings) so the new scrolling UI is accessible.\n```\n        self.scrolled.set_can_focus(False)\n```\n**auto_cpufreq/gui/app.py:664**\n* The new asynchronous path covers daemon install/remove and the controls, but `ToolWindow.handle_update` still invokes `run([\"pkexec\", ...])` synchronously and only treats exit codes 126/127 as failures. A non-zero update exit can therefore be reported as successful, and the privileged action can still block startup; route update through the same asynchronous path and apply `_privileged_command_error` to its result.\n```\n\n    def _on_refresh_interval_selected(\n        self,\n        item,\n        seconds,\n    ):\n        if item.get_active():\n            self.set_refresh_interval(seconds)\n```\n**auto_cpufreq/gui/objects.py:699**\n* The error dialog text contains the misspelling \u201coccured\u201d; use \u201coccurred\u201d so the user-facing failure message is correct.\n```\n                f\"The following error occured:\\n{e}\"\n```\n**auto_cpufreq/gui/objects.py:1108**\n* The error dialog text contains the misspelling \u201coccured\u201d; use \u201coccurred\u201d so the user-facing failure message is correct.\n```\n                f\"The following error occured:\\n{e}\"\n```\n**auto_cpufreq/gui/objects.py:886**\n* Monitor Mode is also newly scrollable, but `set_can_focus(False)` leaves only the Back button focusable; keyboard users have no way to scroll through the report rows. Keep this scroller focusable or add an equivalent keyboard scrolling path.\n```\n        self.scrolled.set_can_focus(False)\n```\n**auto_cpufreq/gui/objects.py:981**\n* When `report.current_gov` is unavailable, `None != suggested_governor` is still true, so Monitor Mode displays an actionable `Use ...` recommendation wi",
+    "body_original_chars": 6302,
+    "body_truncated": true,
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:36:42+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:37:25+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:37:31+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:37:37+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:4",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T19:59:55+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:5",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T20:01:03+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:6",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T20:04:21+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:review:7",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "### \ud83d\udd35 Needs a closer look\n\nFan-speed handling currently treats valid `0` RPM readings as \u201cmissing\u201d due to truthiness/`> 0` checks, which can cause incorrect reporting in both the textual report and GTK view.\n\n<details>\n<summary>Review details</summary>\n\n### Suppressed comments (3)\n\n**Previously missed (2)** \u2014 in code that hasn't changed since the last review.\n\n**auto_cpufreq/modules/system_info.py:433**\n* `cpu_fan_speed()` currently ignores a reported fan speed of `0` RPM (because of `if current > 0`). On systems where `0` is a valid reading (fan stopped), this will incorrectly be treated as \u201cno data\u201d and the UI/text report will hide the fan row.\n\nThis issue also appears on line 906 of the same file.\n```\n                try:\n                    current = float(fan.current)\n                except (AttributeError, TypeError, ValueError):\n                    continue\n                if current > 0:\n                    return int(current)\n```\n**auto_cpufreq/gui/app.py:322**\n* The GTK report view hides the fan-speed label when the value is `0` because it checks `if report.cpu_fan_speed:`. Use an explicit `is not None` check so `0` RPM (fan stopped) can still be displayed when reported.\n```\n        if report.cpu_fan_speed:\n```\n\n**auto_cpufreq/modules/system_info.py:907**\n* The textual system report hides fan speed when it is `0` because it checks `if report.cpu_fan_speed:`. If `cpu_fan_speed` can legitimately be `0`, this should check explicitly for `None` instead of truthiness.\n```\n    if report.cpu_fan_speed:\n        lines.extend([\"\", f\"CPU fan speed: {report.cpu_fan_speed} RPM\"])\n```\n\n- **Files reviewed:** 6/7 changed files\n- **Comments generated:** 0 new\n- **Review effort level:** Lite\n</details>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T05:31:35+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Note to myself: make sure [comment mentioned](https://github.com/AdnanHodzic/auto-cpufreq/pull/954#issuecomment-5337882767) in #962 & #954 is addressed."
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T08:47:39+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Note to myself: #963 merge is required first before reviewing this one."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:03:15+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Note to myself: make sure EBP is [displayed in GUI as mentioned](https://github.com/AdnanHodzic/auto-cpufreq/pull/960#issuecomment-5391138875) in #960"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T05:37:36+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:3",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Hi @AdnanHodzic! Regarding EPB, do you want me to keep the same wording as before, like `Setting to use: \"balance_power\" EPB`?\r\n\r\nIn #964 I changed it to a simpler `EPB` row with the observed value because I thought it looked cleaner and less confusing in the GTK dashboard, but I can keep the previous wording if you prefer.\r\n\r\nAlso, if there\u2019s anything else in #964 you\u2019d prefer changed just let me know."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T13:26:34+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:4",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "This looks absolutely great! Thank you for giving GTK/GUI its much needed revamp!\r\n\r\nPlease take a look at 3 mentioned Copilot suggestions, especially since one of them is \"high\".\r\n\r\nOther then that, I would suggest to make it look like something like this:\r\n\r\n<img width=\"944\" height=\"733\" alt=\"auto-cpufreq gtk revamp\" src=\"https://github.com/user-attachments/assets/20d95e2d-adc9-4b9e-88b1-3c7de017a53f\" />\r\n\r\n1. Move \"Advanced Settings\" button next to the \"Burger Menu\" button.\r\n2. Move \"configuration: /etc/auto-cpufreq.conf\" in Controls pane/box in button under CPU Turbo Override. Let's also rename it back to \"Using configuration file: /etc/auto-cpufreq.conf\" in case it's being used. Alternatively it can also be moved out of \"Controls\" to its own under \"Battery\" box.\r\n3. Move \"System Statistics\" under \"CPU Statistics\", the way window won't show scrollbar and it will fit perfectly and \"Advanced Settings\" button is clicked it'll have more space eto extend below.\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T14:57:19+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:5",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Updated. I moved Advanced Settings next to the hamburger menu, placed System Statistics below CPU Statistics, and kept the configuration path at the bottom of Controls so it moves down when Advanced Settings is expanded. I tested both the collapsed and expanded layouts locally.\r\n\r\n*Updated description with new screenshots."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T20:04:33+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:6",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Perfect, although it's mainly improvements I'll add this to be one of the features of upcoming releases, as it gave GTK a much needed revamp and could be considered as auto-cpufreq GUI v2. I also think it could close some of the exiting GUI related issues.\r\n\r\nRegardless, as always, thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T05:29:27+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#964:comment:7",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> ### \ud83d\udd35 Needs a closer look\r\n> Fan-speed handling currently treats valid `0` RPM readings as \u201cmissing\u201d due to truthiness/`> 0` checks, which can cause incorrect reporting in both the textual report and GTK view.\r\n> \r\n> Review details\r\n> ### Suppressed comments (3)\r\n> **Previously missed (2)** \u2014 in code that hasn't changed since the last review.\r\n> \r\n> **auto_cpufreq/modules/system_info.py:433**\r\n> \r\n> * `cpu_fan_speed()` currently ignores a reported fan speed of `0` RPM (because of `if current > 0`). On systems where `0` is a valid reading (fan stopped), this will incorrectly be treated as \u201cno data\u201d and the UI/text report will hide the fan row.\r\n> \r\n> This issue also appears on line 906 of the same file.\r\n> \r\n> ```\r\n>                 try:\r\n>                     current = float(fan.current)\r\n>                 except (AttributeError, TypeError, ValueError):\r\n>                     continue\r\n>                 if current > 0:\r\n>                     return int(current)\r\n> ```\r\n> \r\n> **auto_cpufreq/gui/app.py:322**\r\n> \r\n> * The GTK report view hides the fan-speed label when the value is `0` because it checks `if report.cpu_fan_speed:`. Use an explicit `is not None` check so `0` RPM (fan stopped) can still be displayed when reported.\r\n> \r\n> ```\r\n>         if report.cpu_fan_speed:\r\n> ```\r\n> \r\n> **auto_cpufreq/modules/system_info.py:907**\r\n> \r\n> * The textual system report hides fan speed when it is `0` because it checks `if report.cpu_fan_speed:`. If `cpu_fan_speed` can legitimately be `0`, this should check explicitly for `None` instead of truthiness.\r\n> \r\n> ```\r\n>     if report.cpu_fan_speed:\r\n>         lines.extend([\"\", f\"CPU fan speed: {report.cpu_fan_speed} RPM\"])\r\n> ```\r\n> \r\n> * **Files reviewed:** 6/7 changed files\r\n> * **Comments generated:** 0 new\r\n> * **Review effort level:** Lite\r\n\r\n@lucasleocs nothing major, this is now already merged, but probably a good idea to look into these in of the future PR's."
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T05:33:18+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/964"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:opened",
+   "payload": {
+    "additions": 118,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 67,
+    "files": [
+     "README.md",
+     "auto-cpufreq.conf-example",
+     "auto-cpufreq.conf-example.nix",
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/modules/system_info.py"
+    ],
+    "title": "Fix battery detection on multi-interface power supply systems"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T07:36:53+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:56:34+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "### \ud83d\udfe1 Changes recommended\n\nThe new `charging()` implementation may introduce avoidable per-loop sysfs I/O overhead and the new `is_ac_plugged=None` path can lead to inconsistent decision-making across call sites unless semantics are standardized.\n\n*Once you've addressed the issues Copilot identified, you can request another Copilot review.*\n\n<details>\n<summary>Pull request overview</summary>\n\nThis PR improves auto-cpufreq\u2019s power-supply topology handling on systems that expose multiple `/sys/class/power_supply` entries (system battery + peripheral batteries + multiple AC/USB-PD sources), making battery selection and external-power detection more accurate and deterministic.\n\n**Changes:**\n- Enhances battery auto-detection to respect the existing ignore list, prefer `scope=System` batteries, and make fallback selection deterministic.\n- Improves external-power detection by aggregating all non-battery power sources exposing a valid `online` state (including USB/USB-PD) while ignoring `scope=Device` sources.\n- Updates `core.charging()` to reuse `SystemInfo.battery_info().is_ac_plugged` so profile selection matches the topology-aware detection.\n</details>\n\n<details>\n<summary>File summaries</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| auto_cpufreq/modules/system_info.py | Deterministic battery selection with scope-aware prioritization and aggregated external-power detection across multiple sources. |\r\n| auto_cpufreq/core.py | Reuses the centralized topology-aware `is_ac_plugged` result for charging/profile decisions. |\n</details>\n\n<details>\n<summary>Review details</summary>\n\n- **Files reviewed:** 2/2 changed files\n- **Comments generated:** 2\n- **Review effort level:** Lite\n</details>\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T06:12:24+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:01:38+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:review:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:01:57+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:review:3",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:07:12+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:review:4",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:07:51+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:comment:0",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "This fix is also included in the larger integration work in #964, but this PR is intentionally standalone and can be reviewed/merged independently. If this lands first, I can update #964 afterwards to remove the overlapping changes and resolve any merge conflicts that result from the different merge order."
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T13:15:58+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:comment:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> This fix is also included in the larger integration work in #964, but this PR is intentionally standalone and can be reviewed/merged independently. If this lands first, I can update #964 afterwards to remove the overlapping changes and resolve any merge conflicts that result from the different merge order.\r\n\r\nInstead of doing multiple PR's in parallel, I'll start reviewing and merging them one by one. While I truly appreciate your eagerness and effort to make auto-cpufreq a better solution. There are some merge conflicts with previous PR's and I would like to first address [a comment](https://github.com/AdnanHodzic/auto-cpufreq/pull/962#issuecomment-5365358892)  I made in #962 as it introduces a serious and unmentioned change."
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T05:01:02+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:comment:2",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "> > This fix is also included in the larger integration work in #964, but this PR is intentionally standalone and can be reviewed/merged independently. If this lands first, I can update #964 afterwards to remove the overlapping changes and resolve any merge conflicts that result from the different merge order.\r\n> \r\n> Instead of doing multiple PR's in parallel, I'll start reviewing and merging them one by one. While I truly appreciate your eagerness and effort to make auto-cpufreq a better solution. There are some merge conflicts with previous PR's and I would like to first address [a comment](https://github.com/AdnanHodzic/auto-cpufreq/pull/962#issuecomment-5365358892) I made in #962 as it introduces a serious and unmentioned change.\r\n\r\nUnderstood, thanks. I'll keep the additional work in draft for now and avoid opening or marking more PRs as ready while you review the current ones one by one."
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T19:41:14+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:comment:3",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "While continuing to review some of the legacy power-related paths, I found another piece of logic that affects the same battery/external-power decision addressed by this PR, so I thought it made more sense to include the correction here rather than create a separate PR.\r\n\r\n`core.charging()` still had its own legacy power-source detection instead of using the updated `SystemInfo` result. That path only recognized `Mains` as external power and could also treat any `Battery` entry as the system battery, so daemon profile selection could still disagree with the detection fixed in this PR on systems using USB/USB-PD or exposing `scope=Device `peripheral batteries.\r\n\r\nI updated `core.charging()` to reuse `SystemInfo.battery_info().is_ac_plugged`, while preserving the previous fallback of assuming external power when the state cannot be determined.\r\n\r\nI also validated the change against USB-PD, peripheral-battery and unknown-state cases. The updated branch passes the local validation, Linux Build and Nix Flake."
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T00:53:14+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:comment:4",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@lucasleocs let's address the Copilot suggestions and think this can be merged, thanks"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:03:48+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:comment:5",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Done, thanks. I addressed both Copilot suggestions and replied to the review threads with the details.\r\nI also checked the behavior against the Linux power-supply implementation sysfs ABI, updated the related documentation. I think this should be ready for another look."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:18:23+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#963:comment:6",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "LGTM! Tthank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:56:25+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/963"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:opened",
+   "payload": {
+    "additions": 322,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 89,
+    "files": [
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/gui/objects.py",
+     "auto_cpufreq/modules/system_info.py",
+     "scripts/cpufreqctl.sh"
+    ],
+    "title": "Verify and report effective power and frequency settings"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T02:55:46+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T08:35:07+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR improves auto-cpufreq\u2019s correctness and user-facing reporting by verifying the *effective* kernel state after applying power/frequency settings, rather than assuming requested writes were accepted.\n\n**Changes:**\n- Enhance `cpufreqctl` write error tracking and exit-status propagation for rejected operations.\n- Read back and report effective EPP/EPB/Platform Profile and frequency limits (including heterogeneous policy outcomes and no-op detection).\n- Update GUI/system reporting to display *current* EPP/EPB and remove duplicated governor output.\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 2 comments.\n\n| File | Description |\n| ---- | ----------- |\n| scripts/cpufreqctl.sh | Tracks write failures more robustly and improves failure exit behavior for certain options. |\n| auto_cpufreq/modules/system_info.py | Reads current EPP/EPB from sysfs across CPUs and reports `mixed`/unverified states. |\n| auto_cpufreq/gui/objects.py | Updates labels to \u201cCurrent EPP/EPB\u201d and removes duplicated governor label in the main scaling box. |\n| auto_cpufreq/core.py | Adds effective-state verification helpers and improves frequency/platform/EPP/EPB application reporting and behavior. |\n\n\n\n\n<details>\n<summary>Suppressed comments (1)</summary>\n\n**scripts/cpufreqctl.sh:440**\n* `CORE` is unquoted in the `-z` test. If `CORE` is unset this can produce a `[ -z ]` test error and skip the intended error path, potentially attempting to write to an invalid sysfs path. Quote the variable in the test.\n```\n    if [ -z $CORE ]; then\n      verbose \"Should be specify --core=NUMBER\"\n      false\n    else\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:55:37+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:comment:0",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "### Interaction with other open PRs\n\nThis PR is based directly on the current master and does not include the commits below, but there is overlap in `auto_cpufreq/core.py`:\n\n- #959 (`76920c2`) changes governor/EPP handling for active `intel_pstate` performance mode. If it merges first, its skip-EPP behavior should be preserved together with the write/readback reporting here.\n- #960 (`cfc9331`) changes HWP Dynamic Boost defaults and EPP ordering. If it merges first, the ordering can be reconciled during rebase without changing the reporting semantics here.\n- #961 (`f875711`) converts several configuration-derived power-setting calls from `shell=True` to argv. This PR independently uses argv in overlapping paths because it also needs reliable return codes and readback verification.\n\nIf any of these merge first, I can rebase this branch and resolve the overlap while preserving the intended behavior."
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T02:55:47+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:comment:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Another great optimization attempt and it all looks good, **but one very serious** thing could my attention:\r\n\r\n```\r\nsudo auto-cpufreq --install\r\n\r\n--------------------- Deploying auto-cpufreq as a daemon ----------------------\r\n\r\n* Turn off Bluetooth on boot (only)!\r\n  If you want bluetooth enabled on boot run: auto-cpufreq --bluetooth_boot_on\r\n\r\n* Deploy auto-cpufreq install script\r\n\r\n* Deploy auto-cpufreq remove script\r\nauto-cpufreq snap package not installed\r\nGNOME Power Profiles Daemon should be enabled. run:\r\n\r\nsudo python3 -m auto_cpufreq.power_helper --gnome_power_enable\r\n...\r\n```\r\n\r\nThis is a serious breaking change that wasn't mentioned anywhere, which I'm surprised by as everything else is described in such high detail above.\r\n\r\n```\r\nGNOME Power Profiles Daemon should be enabled. run:\r\n\r\nsudo python3 -m auto_cpufreq.power_helper --gnome_power_enable\r\n```\r\n\r\nThis is absolutely not true, as [mentioned in ReadMe](https://github.com/AdnanHodzic/auto-cpufreq#:~:text=The%20GNOME%20Power%20Profiles%20daemon%20is) and [here](https://github.com/AdnanHodzic/auto-cpufreq#1-power_helperpy-script-snap-package-install-only).\r\n\r\nEven currently on `master` branch, it'll say this:\r\n\r\n```\r\nsudo auto-cpufreq --install\r\n\r\n--------------------- Deploying auto-cpufreq as a daemon ----------------------\r\n\r\n* Turn off Bluetooth on boot (only)!\r\n  If you want bluetooth enabled on boot run: auto-cpufreq --bluetooth_boot_on\r\n\r\n* Deploy auto-cpufreq install script\r\n\r\n* Deploy auto-cpufreq remove script\r\n\r\n----------------------------------- Warning -----------------------------------\r\n\r\nDetected running GNOME Power Profiles daemon service!\r\n\r\nThis daemon might interfere with auto-cpufreq and has been disabled.\r\n\r\nThis daemon is not automatically disabled in \"monitor\" mode and\r\nwill be enabled after auto-cpufreq daemon is removed.\r\nauto-cpufreq snap package installed, GNOME Power Profiles Daemon should be disabled.\r\n\r\nUsing profile:  balanced\r\n\r\n* Disabling GNOME power profiles\r\nRemoved '/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service'.\r\nCreated symlink '/etc/systemd/system/power-profiles-daemon.service' \u2192 '/dev/null'.\r\n```\r\n\r\nHence were you aware of this change/behavior, or did you use AI to create/test this PR? I'm truly puzzled."
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T04:53:45+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:comment:2",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Hi @AdnanHodzic, thanks for pointing this out. Your comment concerned me, so I went back and carefully traced both the install path and the history of this code.\r\n\r\nHowever, this behavior was not introduced by [#962](https://github.com/AdnanHodzic/auto-cpufreq/pull/962).\r\n\r\n`auto_cpufreq/power_helper.py`, which contains the message you quoted and the `gnome_power_svc_disable()` implementation, is not modified by this PR.\r\n\r\n[#962](https://github.com/AdnanHodzic/auto-cpufreq/pull/962) only changes:\r\n\r\n```text\r\nauto_cpufreq/core.py\r\nauto_cpufreq/gui/objects.py\r\nauto_cpufreq/modules/system_info.py\r\nscripts/cpufreqctl.sh\r\n```\r\n\r\nI also checked the indirect install path because `core.py` is modified by this PR. `deploy_daemon()` is unchanged between the PR base and #962, including:\r\n\r\n```python\r\ngnome_power_detect_install()\r\ngnome_power_svc_disable()\r\n```\r\n\r\nI then traced the history of the code that produces the message.\r\n\r\nThe exact `sudo python3 -m auto_cpufreq.power_helper --gnome_power_enable` wording was introduced in #836 in April 2025 and released in [v2.6.0](https://github.com/AdnanHodzic/auto-cpufreq/releases/tag/v2.6.0). That PR changed the existing `python3 power_helper.py` instructions to use module invocation, while the underlying code path and message predate that change.\r\n\r\nThe same code path is still present in the current [master](https://github.com/AdnanHodzic/auto-cpufreq/blame/master/auto_cpufreq/power_helper.py).\r\nI do use AI assistance as part of development and review, but the hardware tests described in this PR were actually run by me. In this case, the behavior you found comes from unchanged upstream code rather than from the changes introduced by #962.\r\n\r\nI'm also working on the larger #964  draft, where I had already replaced this legacy detection path with a direct service-state check, which also removes this behavior."
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T18:55:23+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:comment:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@lucasleocs thank you for your thorough reply and my apologizes! It seems I had some leftover changes or something else interfering, especially since I was the one who made changes in #836. After I removed this branch and re-fetched it's all reporting as it should:\r\n\r\n```\r\nsudo auto-cpufreq --install\r\n\r\n--------------------- Deploying auto-cpufreq as a daemon ----------------------\r\n\r\n* Turn off Bluetooth on boot (only)!\r\n  If you want bluetooth enabled on boot run: auto-cpufreq --bluetooth_boot_on\r\n\r\n* Deploy auto-cpufreq install script\r\n\r\n* Deploy auto-cpufreq remove script\r\n\r\n----------------------------------- Warning -----------------------------------\r\n\r\nDetected running GNOME Power Profiles daemon service!\r\n\r\nThis daemon might interfere with auto-cpufreq and has been disabled.\r\n\r\nThis daemon is not automatically disabled in \"monitor\" mode and\r\nwill be enabled after auto-cpufreq daemon is removed.\r\nauto-cpufreq snap package installed, GNOME Power Profiles Daemon should be disabled.\r\n\r\nUsing profile:  balanced\r\n\r\n* Disabling GNOME power profiles\r\nRemoved '/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service'.\r\nCreated symlink '/etc/systemd/system/power-profiles-daemon.service' \u2192 '/dev/null'.\r\n```\r\n\r\nNothing more to add related to changes made to code.\r\n\r\nOnly other comment I have is [the same one ](https://github.com/AdnanHodzic/auto-cpufreq/pull/954#issuecomment-5337882767) I made in #954 \r\n\r\nAs compared to CLI output, in \"CPU Frequency Scaling\" section in GTK/GUI doesn't output Intel HWP Dynamic Boost status or even which governor it's using. \r\n\r\nBut I saw you made more PR's and some related specifically to GTK/GUI and we can pick this discussion there.\r\n\r\nOtherwise, thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T08:34:42+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#962:comment:4",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "@AdnanHodzic No problem at all! Thanks for taking the time to double-check it. I really like your project. My laptop used to sound like a hair dryer, and now it's so much quieter, so I'm glad to contribute at least a little.\r\n\r\nAnd thank you again for the careful review and for helping the community!\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T13:11:06+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/962"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#961:opened",
+   "payload": {
+    "additions": 5,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 5,
+    "files": [
+     "auto_cpufreq/core.py"
+    ],
+    "title": "Avoid shell expansion for configured power settings"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T23:58:01+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/961"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#961:closed",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:23:27+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/961"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#961:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR hardens `auto_cpufreq/core.py` by avoiding `shell=True` for power-setting writes that originate from `auto-cpufreq.conf`, passing those values as literal `argv` elements to `subprocess.run()` instead.\n\n**Changes:**\n- Convert Platform Profile writes to `run([...])` (no shell) while preserving return-code handling.\n- Convert Energy Performance Bias (EPB) writes to `run([...])` (no shell).\n- Convert configured EPP writes (battery + charger paths for Intel and AMD pstate handling) to `run([...])` (no shell).\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:51:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/961"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#961:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Let's resolve merge conflicts please, thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T08:38:31+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/961"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#961:comment:1",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Thanks. I checked the conflict after #962 was merged. This PR only addressed five possible issues that Copilot pointed out during one of our reviews, and it ended up being the basis for part of #962. If you want, I can slightly update the #962 title/description to mention that #961 was incorporated into it.\r\n\r\nCould I close #961 as superseded by #962?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T13:12:28+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/961"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#961:comment:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> Thanks. I checked the conflict after #962 was merged. This PR only addressed five possible issues that Copilot pointed out during one of our reviews, and it ended up being the basis for part of #962. If you want, I can slightly update the #962 title/description to mention that #961 was incorporated into it.\r\n> \r\n> Could I close #961 as superseded by #962?\r\n\r\nYes, probably a good idea, so I'll close it myself then :) "
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:23:27+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/961"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:opened",
+   "payload": {
+    "additions": 76,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 13,
+    "files": [
+     "README.md",
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/gui/objects.py"
+    ],
+    "title": "Enable Intel HWP Dynamic Boost by default on AC power"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T02:16:42+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T05:36:13+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR updates auto-cpufreq\u2019s Intel HWP Dynamic Boost handling to apply a default policy on supported systems when the user has not explicitly configured `hwp_dynamic_boost`: enable on AC/charger and disable on battery, while keeping explicit configuration as the highest priority.\n\n**Changes:**\n- Adds a small policy helper and sysfs read/write helpers to manage `intel_pstate/hwp_dynamic_boost` with AC/battery defaults when unset.\n- Extends system reporting/UI to display the current HWP Dynamic Boost state when available.\n- Updates example configuration documentation to include `hwp_dynamic_boost` snippets.\n\n### Reviewed changes\n\nCopilot reviewed 6 out of 6 changed files in this pull request and generated 5 comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| README.md | Adds config example snippets for `hwp_dynamic_boost` in charger/battery sections. |\r\n| auto-cpufreq.conf-example.nix | Adds Nix example snippets for `hwp_dynamic_boost`. |\r\n| auto-cpufreq.conf-example | Adds config example snippets for `hwp_dynamic_boost`. |\r\n| auto_cpufreq/modules/system_monitor.py | Displays \u201cIntel HWP Dynamic Boost\u201d status in the TUI when available. |\r\n| auto_cpufreq/modules/system_info.py | Adds `current_hwp_dynamic_boost` to the system report data model and populates it. |\r\n| auto_cpufreq/core.py | Implements default-policy target selection plus sysfs get/set, and integrates with EPP ordering. |\n</details>\n\n\n\n\n\n<details>\n<summary>Suppressed comments (3)</summary>\n\n**auto-cpufreq.conf-example:80**\n* This sample config doesn\u2019t state the new default policy for HWP Dynamic Boost (enabled on charger/AC, disabled on battery when unset). Without that, users may assume the feature is only managed when explicitly configured.\n```\n# Intel HWP dynamic boost.\n# Only available with intel_pstate in active mode and HWP enabled.\n# Alters value in: /sys/devices/system/cpu/intel_pstate/hwp_dynamic_boost\n# Accepted values: true/false, yes/no, on/off, 1/0.\n# hwp_dynamic_boost = false\n```\n**auto-cpufreq.conf-example.nix:80**\n* This Nix example block doesn\u2019t mention the new default policy for HWP Dynamic Boost when the setting is omitted (enabled on charger/AC, disabled on battery). Adding a note clarifies behavior when users leave it commented out.\n```\n    # Intel HWP Dynamic Boost.\n    # Only available with intel_pstate in active mode and HWP enabled.\n    # Alters value in: /sys/devices/system/cpu/intel_pstate/hwp_dynamic_boost\n    # hwp_dynamic_boost = false;\n```\n**auto_cpufreq/core.py:747**\n* If disabling HWP Dynamic Boost fails, EPP may still be applied while Dynamic Boost remains enabled even when the target is false, which breaks the intended ordering. Skipping EPP whenever Dynamic Boost is enabled unless the target is explicitly True keeps the behavior consistent with the ordering guarantees.\n```\n            if dynboost_enabled and target_dynboost is None: print('Not setting EPP (dynamic boosting is enabled)')\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T04:49:43+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:07:06+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:07:21+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:07:52+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:4",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:08:07+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:5",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:09:11+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:6",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T23:39:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:7",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 3 out of 3 changed files in this pull request and generated no new comments.\n\n\n\n\n<details>\n<summary>Suppressed comments (2)</summary>\n\n**auto_cpufreq/core.py:801**\n* Same as above: when `target_dynboost` is `True` due to explicit config, this will call `set_hwp_dynamic_boost(True)` even on systems without the `hwp_dynamic_boost` sysfs attribute. Gating on `HWP_DYNAMIC_BOOST_PATH.exists()` keeps behavior consistent (unsupported systems remain unmanaged) and avoids noisy logs.\n```\n    if target_dynboost is True:\n        set_hwp_dynamic_boost(True)\n```\n**auto_cpufreq/core.py:680**\n* `set_hwp_dynamic_boost(True)` is called even when the system doesn\u2019t expose the sysfs attribute (e.g., user explicitly sets `hwp_dynamic_boost=true` on unsupported hardware). This makes explicit `true` behave differently from explicit `false` (which is already gated by `HWP_DYNAMIC_BOOST_PATH.exists()`), and it also contradicts the \u201cunsupported system -> leave unmanaged\u201d policy by attempting to manage it and printing a warning each run. Consider gating the enable path on `HWP_DYNAMIC_BOOST_PATH.exists()` as well.\n\nThis issue also appears on line 800 of the same file.\n```\n    if target_dynboost is True:\n        set_hwp_dynamic_boost(True)\n```\n</details>\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:59:52+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:8",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "### \ud83d\udfe1 Changes recommended\n\nExplicit `hwp_dynamic_boost` configuration can become silently ineffective on unsupported systems due to the new target helper returning `None` without emitting any warning.\n\n*Once you've addressed the issues Copilot identified, you can request another Copilot review.*\n\n<details>\n<summary>Review details</summary>\n\n- **Files reviewed:** 3/3 changed files\n- **Comments generated:** 1\n- **Review effort level:** Lite\n</details>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:10:37+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:9",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:14:38+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:review:10",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T18:18:40+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:0",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Hi @AdnanHodzic! Just a small merge-order note: #960 is intended as a follow-up to #954, so #954 should be merged first.\r\nI\u2019ve also tested the combined behavior of my other open PRs (#957, #958, and #959), and they are compatible with these changes. The only merge-order dependency is #954 before #960."
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T03:29:18+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> Hi @AdnanHodzic! Just a small merge-order note: #960 is intended as a follow-up to #954, so #954 should be merged first. I\u2019ve also tested the combined behavior of my other open PRs (#957, #958, and #959), and they are compatible with these changes. The only merge-order dependency is #954 before #960.\r\n\r\nClear, just merged #954 \r\n\r\nAlso please take a look at [comment I made](https://github.com/AdnanHodzic/auto-cpufreq/pull/954#issuecomment-5337882767) after #954 was merged, it could either be a new PR or it could also be taken care of this PR, up to you.\r\n\r\nPlease take a look at the comments after which you make those changes we should be good to merge. Thanks!\r\n\r\n\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:09:36+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:2",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "I went with this approach.\r\n\r\nI moved the explanation into a dedicated Intel HWP Dynamic Boost section in the README instead of repeating the same default-policy notes in each config example. I also tried to make the distinction between the kernel behavior and the new auto-cpufreq policy clearer: on typical non-server Intel systems, intel_pstate starts HWP Dynamic Boost disabled, so on battery auto-cpufreq keeps that usual disabled state. The new behavior introduced here is mainly that auto-cpufreq enables Dynamic Boost automatically on AC/charger power when the user hasn't configured it explicitly.\r\n\r\nI also mentioned the upstream server-profile exception, since current kernels may enable Dynamic Boost automatically on systems using the ACPI Enterprise Server or Performance Server profiles.\r\n\r\nThe section also explains the EPP ordering and links back to the config-file section for users who want to override either default.\r\n\r\nI think this makes it clearer which behavior comes from the kernel and which part is auto-cpufreq's policy."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T23:26:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Perfect, can you also look at [other comments copilot made](https://github.com/AdnanHodzic/auto-cpufreq/pull/960#pullrequestreview-4984841800)? Also let's resolve the merge conflict with core.py and this should be ready to be merged."
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:56:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:4",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@lucasleocs please let me know if all changes have been made for to be ready for review again."
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T04:56:59+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:5",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Yes, all requested changes are now addressed and the PR is ready for review again. Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T19:15:51+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:6",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> Yes, all requested changes are now addressed and the PR is ready for review again. Thanks!\r\n\r\nUnfortunately now we have merge conflicts, please resolve this and let's merge this. Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T08:37:36+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:7",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Resolved the conflicts against current `master` and rebuilt the branch as a single clean commit. I also kept the changes from #962 intact."
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T13:29:16+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:8",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@lucasleocs let's please address above suggestion mention by Copilot.\r\n\r\nBtw, I also noticed when automatically set that \"Intel HWP Dynamic Boost\" will be \"on\" while laptop is charging and while it's on battery. I think this is good, as I was proposed this if it wasn't the case (as in [config file we're suggesting it to be off](https://github.com/AdnanHodzic/auto-cpufreq#example-config-file-contents:~:text=%23%20hwp_dynamic_boost%20%3D%20false)).\r\n\r\nBut I'm looking at code, I'm missing what are the conditions \"Intel HWP Dynamic Boost\" will be \"off\" if ever while on e.g battery? As if it's supported it'll just be on \"on\" all the time unless in config file it was specified to have it off?"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T12:21:38+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:9",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "I\u2019m going to temporarily move this PR back to draft and do another validation pass before asking for review again.\r\n\r\nI haven\u2019t reproduced HWP Dynamic Boost staying enabled on battery on my system, and the current #960 logic does target `false` for the battery profile when the setting is not explicitly configured. Since #963 changes the power-source detection used to decide between the charger and battery profiles, I want to test #960 together with those changes and rule out any profile-selection issue before changing the HWP Dynamic Boost policy itself.\r\nSo I\u2019d like to verify first that the system is actually entering the battery profile and not being treated as plugged in because of the older power-supply detection path.\r\n\r\nI\u2019ll also address the Copilot suggestion about warning when an explicit `hwp_dynamic_boost` setting is used on unsupported hardware while doing this pass."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:30:11+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:10",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> I\u2019m going to temporarily move this PR back to draft and do another validation pass before asking for review again.\r\n> \r\n> I haven\u2019t reproduced HWP Dynamic Boost staying enabled on battery on my system, and the current #960 logic does target `false` for the battery profile when the setting is not explicitly configured. Since #963 changes the power-source detection used to decide between the charger and battery profiles, I want to test #960 together with those changes and rule out any profile-selection issue before changing the HWP Dynamic Boost policy itself. So I\u2019d like to verify first that the system is actually entering the battery profile and not being treated as plugged in because of the older power-supply detection path.\r\n> \r\n> I\u2019ll also address the Copilot suggestion about warning when an explicit `hwp_dynamic_boost` setting is used on unsupported hardware while doing this pass.\r\n\r\nSounds good, let me know once it's ready for review once agian."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:58:54+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:11",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Thanks. I looked at this a bit more closely, and I think the current AC/battery policy may actually be the simpler and more predictable option.\r\n\r\nOn typical non-server systems, HWP Dynamic Boost starts disabled in `intel_pstate`. However, `hwp_dynamic_boost` is a global driver state: once userspace enables it on AC, simply leaving it unmanaged after switching to battery would not restore the default value \u2014 it would remain enabled until something explicitly changes it again.\r\n\r\nSo the current #960 behavior avoids having to track and restore previous state:\r\n\r\n* AC \u2192 HWP Dynamic Boost `on`\r\n* battery \u2192 HWP Dynamic Boost `off`\r\n\r\nI validated this with the full set_autofreq() path on top of #963:\r\n\r\n* AC \u2192 charger profile \u2192 HWP `1`\r\n* battery \u2192 battery profile \u2192 HWP `0`\r\n* AC again \u2192 charger profile \u2192 HWP `1`\r\n\r\nThe battery `off` condition is the default battery target in `get_hwp_dynamic_boost_target()`, which is applied by `set_powersave()`.\r\n\r\nThis also keeps battery behavior close to the normal kernel default without adding state tracking, while still enabling Dynamic Boost automatically on AC. Users who want it enabled on battery as well can explicitly set hwp_dynamic_boost = true in the battery profile.\r\n\r\nIf you prefer the always-on default, I can still change it, but after checking the transition behavior I think the current AC=`on`, battery=`off` policy is simpler and more deterministic."
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T18:15:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#960:comment:12",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> If you prefer the always-on default, I can still change it, but after checking the transition behavior I think the current AC=on, battery=off policy is simpler and more deterministic. \r\n\r\nSounds good, let's leave it like this for now. I'll do some testing in meantime to see how it behaves like this in \"real life\". Otherwise we can also set HWP 1 on battery as well. \r\n\r\nI also noticed \"Setting to use: \"balance_power\" EPB\" is displayed in CLI, but not in GUI, but this could be addressed as part of #964? Maybe as part of same PR on supported systems, once \"performance\" button is checked in GUI/GTK then HWP would also be turned to true. As otherwise it's bit silly just to have button to enable it on its own.\r\n\r\nFor now, LGTM let's merge it. As always thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T05:33:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/960"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:opened",
+   "payload": {
+    "additions": 42,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 10,
+    "files": [
+     "auto_cpufreq/core.py"
+    ],
+    "title": "Fix: skip EPP writes when intel_pstate performance governor controls EPP"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T01:09:53+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:46:58+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis pull request adjusts auto-cpufreq\u2019s Intel EPP handling to avoid redundant or kernel-rejected EPP writes when `intel_pstate` (active mode) is already enforcing EPP under the `performance` governor, and it tightens profile application flow by stopping when governor writes fail.\n\n**Changes:**\n- Add `intel_pstate` active-mode detection via `/sys/devices/system/cpu/intel_pstate/status`.\n- Skip the post-governor EPP write when `intel_pstate` is active and the selected governor is `performance`.\n- Stop profile application early if the governor change fails (instead of proceeding under an incorrect assumption).\n\n\n\n\n<details>\n<summary>Suppressed comments (1)</summary>\n\n**auto_cpufreq/core.py:690**\n* `gov` originates from the config file, but it\u2019s concatenated into a `shell=True` command string. This can enable shell injection if the config is modified. Prefer `run([...])` with `shell=False` to pass arguments safely.\n```\n    print(f'Setting to use: \"{gov}\" governor')\n    if get_override() != \"default\": print(\"Warning: governor overwritten using `--force` flag.\")\n    result = run(\"cpufreqctl.auto-cpufreq --governor --set=\"+gov, shell=True)\n    if result.returncode != 0:\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:28:29+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T06:55:07+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:review:2",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T22:26:46+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:review:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:41:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:review:4",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 1 out of 1 changed files in this pull request and generated no new comments.\n\n\n\n\n<details>\n<summary>Suppressed comments (1)</summary>\n\n**auto_cpufreq/core.py:781**\n* `epp` is read from the config file and is interpolated into a `shell=True` command. This allows shell injection if the config is tampered with (auto-cpufreq often runs with elevated privileges). Use `subprocess.run([...])` (shell=False) to pass the EPP value as a single argument.\n```\n                    run(f\"cpufreqctl.auto-cpufreq --epp --set={epp}\", shell=True)\n```\n</details>\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:45:56+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#959:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "LGTM! Thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T15:47:14+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/959"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#958:opened",
+   "payload": {
+    "additions": 21,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "scripts/cpufreqctl.sh"
+    ],
+    "title": "Fix cpufreqctl reporting success after write failures"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T00:32:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/958"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#958:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:31:56+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/958"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#958:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nFixes `cpufreqctl` incorrectly exiting with status `0` after kernel-rejected sysfs writes by tracking write failures during multi-CPU operations and ensuring the script\u2019s final exit status reflects whether any attempted write failed.\n\n**Changes:**\n- Add global write-failure tracking (`WRITE_ERROR`) and set it on failed sysfs writes while continuing best-effort iteration across CPUs.\n- Apply the same \u201ccontinue but remember failure\u201d behavior to the multi-CPU EPB write path.\n- Preserve direct-write command exit codes (and return non-zero if any tracked write failed), while keeping read-only commands exiting `0`.\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:28:52+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/958"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#958:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "This is a great one to tackle as it's a long standing issue and this problem has been mentioned in 6 different issues: #927, #891, #842, #750, #741, #602. I'll update each one of them and let's see if these and/or other numerous changes made in meantime addressed it.\r\n\r\nAmazing stuff, as always thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:31:49+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/958"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#957:opened",
+   "payload": {
+    "additions": 2,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "auto_cpufreq/bin/auto_cpufreq_gtk.py"
+    ],
+    "title": "Fix GTK config initialization"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:49:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/957"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#957:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:16:39+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/957"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#957:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot wasn't able to review any files in this pull request.\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:10:28+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/957"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#957:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot wasn't able to review any files in this pull request.\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:15:03+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/957"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#957:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Love seeing auto-cpufreq GTK getting some much needed love, LGTM!\r\n\r\nThank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:16:18+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/957"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:opened",
+   "payload": {
+    "additions": 119,
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "changed_files": 6,
+    "deletions": 15,
+    "files": [
+     "README.md",
+     "auto-cpufreq.conf-example",
+     "auto-cpufreq.conf-example.nix",
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/modules/system_info.py",
+     "auto_cpufreq/modules/system_monitor.py"
+    ],
+    "title": "Add configurable Intel HWP dynamic boost"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T03:36:19+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:merged",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T04:42:06+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nAdds opt-in support for managing Intel `intel_pstate` HWP Dynamic Boost via a new `hwp_dynamic_boost` config key, integrating it into the existing charger/battery profile application flow.\n\n**Changes:**\n- Introduces parsing of an optional `hwp_dynamic_boost` boolean per profile and applies it with ordering relative to EPP.\n- Updates EPP application logic so configured EPP is applied even when dynamic boost is currently enabled (when explicitly configured).\n- Documents the new setting in the README and example config files (including the Nix example).\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 2 comments.\n\n| File | Description |\n| ---- | ----------- |\n| README.md | Documents the new `hwp_dynamic_boost` setting in charger/battery examples. |\n| auto-cpufreq.conf-example.nix | Adds commented Nix configuration examples for `hwp_dynamic_boost`. |\n| auto-cpufreq.conf-example | Adds commented configuration examples (and accepted boolean forms) for `hwp_dynamic_boost`. |\n| auto_cpufreq/core.py | Implements config parsing and sysfs management for HWP dynamic boost and adjusts EPP application logic accordingly. |\n\n\n\n\n<details>\n<summary>Suppressed comments (1)</summary>\n\n**auto_cpufreq/core.py:729**\n* Avoid invoking a shell via os.popen(\"cat ...\") to read the HWP dynamic boost sysfs attribute, and reuse the HWP_DYNAMIC_BOOST_PATH constant to keep the path consistent with set_hwp_dynamic_boost().\n```\n            dynboost_enabled = Path(\"/sys/devices/system/cpu/intel_pstate/hwp_dynamic_boost\").exists()\n\n            if dynboost_enabled:\n                dynboost_enabled = bool(int(\n                    os.popen(\"cat /sys/devices/system/cpu/intel_pstate/hwp_dynamic_boost\").read()\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T06:59:10+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T07:04:29+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:review:2",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T15:51:25+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Hey @lucasleocs, this looks great!\r\n\r\nCan you please take a look at couple of comments Copilot made, and comment I made in regards to config file contents.\r\n\r\nOne final thing to add, it would be great if during `auto-cpufreq --stats` or `auto-cpufreq --live` or `auto-cpufreq --monitor` there was another line under e.g `CPU Frequency Scaling` which would say something like: `Intel HWP Dynamic boost: on/off` in case user has hardware that supports it.\r\n\r\nAnother thing to consider, it might worth keeping `hwp_dynamic_boost = true ` by default in auto-cpufreq for supported hardware (even if you're not using config file), especially when laptop is charging or in performance mode. I even see value in setting it to `true` on powersave/balanced, as then it kicks in when IO is high, finishes what it needs to do and goes back to powersave.\r\n\r\nRegardless, this could be a a separate PR if you're interested, think for beginning it's great to have it as part of config file. "
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T07:11:22+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:comment:1",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Thanks, @AdnanHodzic! I addressed the review comments in 81c22e0.\r\n\r\nI also added the current Intel HWP Dynamic Boost state under CPU Frequency Scaling, so it is shown as on/off in --stats, --live, and --monitor on supported hardware.\r\n\r\nI kept the default behavior unchanged in this PR. I agree that enabling HWP Dynamic Boost by default is worth exploring in a follow-up PR."
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T15:55:14+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:comment:2",
+   "payload": {
+    "author": "lucasleocs",
+    "author_is_bot": false,
+    "body": "Hi @AdnanHodzic! I got a bit carried away today and ended up working on a few more improvements.\r\n\r\nI also implemented your suggestion of enabling HWP Dynamic Boost by default on supported hardware while charging. I kept it as a separate follow-up as suggested and opened #960 for it.\r\n\r\nI also submitted a few independent fixes/improvements (#957, #958, and #959), and tested the combined behavior to make sure the changes are compatible."
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T03:33:54+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:comment:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> Hi @AdnanHodzic! I got a bit carried away today and ended up working on a few more improvements.\r\n\r\nLove it! :) \r\n\r\n> I also implemented your suggestion of enabling HWP Dynamic Boost by default on supported hardware while charging. I kept it as a separate follow-up as suggested and opened #960 for it.\r\n\r\nChanges LGTM, and this will be a great new feature for next release. \r\n\r\n\r\n> I also submitted a few independent fixes/improvements (#957, #958, and #959), and tested the combined behavior to make sure the changes are compatible.\r\n\r\nPlease give me some time to take a look at all of them.\r\n\r\nIn meantime, thank you for your contribution, you will be credited for your work as part of [future releases](https://github.com/AdnanHodzic/auto-cpufreq/releases)."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T04:42:10+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#954:comment:4",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@lucasleocs btw, now that these changes have been merged, and related to #957 I noticed a bug with GTK where \"Intel HWP Dynamic Boost\" is not being reported under \"CPU Frequency Scaling\" in auto-cpufreq GTK.\r\n\r\nCan you please address this as part of a separate PR? Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T05:22:38+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/954"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#953:opened",
+   "payload": {
+    "additions": 10,
+    "author": "tiwiex",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "auto_cpufreq/bin/auto_cpufreq.py",
+     "auto_cpufreq/core.py"
+    ],
+    "title": "fix: prevent live mode conflict with daemon"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T22:30:01+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/953"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#953:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR prevents a conflict between `--live` mode and the running auto-cpufreq daemon by refusing to enter live mode when the daemon is detected, avoiding concurrent CPU-setting changes and preventing live-mode cleanup from breaking the daemon\u2019s helper dependency.\n\n**Changes:**\n- Updated the daemon-running guard messaging to accept an optional \u201cmode\u201d context and include a systemd stop hint when applicable.\n- Invoked `running_daemon_check(\"--live\")` before entering `--live` mode.\n\n### Reviewed changes\n\nCopilot reviewed 1 out of 2 changed files in this pull request and generated no comments.\n\n| File | Description |\n| ---- | ----------- |\n| auto_cpufreq/core.py | Enhances daemon-running error/warning messaging and plumbs an optional `mode` parameter through `running_daemon_check()` and `daemon_running_msg()`. |\n| auto_cpufreq/bin/auto_cpufreq.py | Blocks `--live` execution when the daemon is detected by calling `running_daemon_check(\"--live\")`. |\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T06:10:52+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/953"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#953:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Hey @tiwiex, this an excellent find! There used to be a functionality that would prevent --live from running if daemon was installed, but probably gotten lost in one of the refactors. \r\n\r\nFew remarks, let's update this message to say:\r\n\r\n```\r\n------------------------ auto-cpufreq running ------------------------------\r\n\r\nWARNING: auto-cpufreq is running in daemon mode.\r\n\r\nTo see view live stats of CPU optimizations made by daemon, run:\r\n\r\nauto-cpufreq --stats\r\n\r\n------\r\n\r\nAlternatively, you have to stop the daemon before running --live mode.\r\n\r\nYou can do this by removing the daemon:\r\n\r\nsudo auto-cpufreq --remove\r\n\r\nOr by temporary stopping the daemon by stopping its systemd service:\r\n\r\nsudo systemctl stop auto-cpufreq\r\n\r\n-------------------------------------------------------------------------------\r\n```\r\n\r\nSince auto-cpufreq support other init system besides systemd, this part of message and procedure:\r\n\r\n```\r\nOr by temporary stopping the daemon by stopping its systemd service:\r\n\r\nsudo systemctl stop auto-cpufreq\r\n```\r\n\r\nCould be different, but we can also leave like this for now, and once maintainers who are behind those can alter it, or I can tag you if raised.\r\n\r\nAlso, I think it would be a good idea besides --live to also link --monitor to output a same/similar message. Where by user running: `sudo auto-cpufreq --monitor` if daemon is already installed they would get:\r\n\r\n```\r\n------------------------ auto-cpufreq running ------------------------------\r\n\r\nWARNING: auto-cpufreq is running in daemon mode.\r\n\r\nTo see view live stats of CPU optimizations made by daemon, run:\r\n\r\nauto-cpufreq --stats\r\n\r\n------\r\n\r\nAlternatively, you have to stop the daemon before running --monitor mode.\r\n\r\nYou can do this by removing the daemon:\r\n\r\nsudo auto-cpufreq --remove\r\n\r\nOr by temporary stopping the daemon by stopping its systemd service:\r\n\r\nsudo systemctl stop auto-cpufreq\r\n\r\n-------------------------------------------------------------------------------\r\n```\r\n\r\nAfter that I think these changes are ready to be merged!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T06:43:21+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/953"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#952:opened",
+   "payload": {
+    "additions": 13,
+    "author": "shadeyg56",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 4,
+    "files": [
+     "auto_cpufreq/modules/system_info.py"
+    ],
+    "title": "Fix unsafe stat checks"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T15:31:17+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/952"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#952:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR hardens `SystemInfo` runtime stats collection to prevent crashes when per-core CPU usage counts don\u2019t match the number of frequency entries returned by `psutil`, and adds additional defensive guards for edge cases in load/temperature reporting.\n\n**Changes:**\n- Add safe fallback behavior when CPU frequency list length is shorter than CPU usage/core count.\n- Add guards against division-by-zero in average temperature calculation.\n- Wrap `os.getloadavg()` access in `try/except` to avoid crashing on unsupported platforms / unexpected results.\n\n\n\n\n<details>\n<summary>Suppressed comments (2)</summary>\n\n**auto_cpufreq/modules/system_info.py:185**\n* `avg_load()` is annotated to return a 3-tuple, but the exception path returns a single float (`0.0`). This will break callers expecting a tuple (e.g., `SystemReport.avg_load`). Return a 3-tuple of zeros (or `None`) consistently.\n```\n    def avg_load() -> Tuple[float, float, float]:\n        try:\n            return os.getloadavg()\n        except OSError:\n            return 0.0\n```\n**auto_cpufreq/modules/system_info.py:178**\n* The exception syntax `except OSError, IndexError:` is invalid in Python 3 (it treats `OSError` as the exception instance variable). Use a tuple of exception types instead.\n```\n        try:\n            return os.getloadavg()[0]\n        except OSError, IndexError:\n            return 0.0\n```\n</details>\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T16:42:35+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/952"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#952:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T16:44:11+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/952"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:opened",
+   "payload": {
+    "additions": 196,
+    "author": "filhocf",
+    "author_is_bot": false,
+    "changed_files": 14,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/build-deb.yml",
+     "auto_cpufreq/core.py",
+     "debian/.gitignore",
+     "debian/auto-cpufreq-gtk.sh",
+     "debian/auto-cpufreq.service",
+     "debian/auto-cpufreq.sh",
+     "debian/changelog",
+     "debian/control",
+     "debian/copyright",
+     "debian/install",
+     "debian/postinst",
+     "debian/postrm",
+     "debian/rules",
+     "debian/source/format"
+    ],
+    "title": "debian: add initial Debian packaging (.deb build)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T21:40:03+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR introduces an initial `debian/` packaging layout to build and install auto-cpufreq as a Debian/Ubuntu `.deb`, including wrapper entrypoints, a systemd unit, and maintainer scripts for lifecycle management.\n\n**Changes:**\n- Add Debian packaging metadata (`control`, `changelog`, `copyright`, `source/format`).\n- Add `debian/rules` + `debian/install` to stage Python sources and ship desktop/polkit/service assets.\n- Add system integration bits (systemd unit + postinst/postrm + CLI/GTK wrapper scripts).\n\n### Reviewed changes\n\nCopilot reviewed 12 out of 12 changed files in this pull request and generated 9 comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| debian/source/format | Declares Debian source format. |\r\n| debian/rules | Debhelper rules and manual installs for wrappers/assets. |\r\n| debian/postinst | Post-install service enable/start logic. |\r\n| debian/postrm | Post-remove service stop/disable/purge logic. |\r\n| debian/install | dh_install mapping for Python package and shipped assets. |\r\n| debian/control | Package metadata and runtime/build dependencies. |\r\n| debian/changelog | Initial Debian version entry. |\r\n| debian/copyright | Debian copyright/licensing declarations. |\r\n| debian/auto-cpufreq.service | Systemd unit shipped by the package. |\r\n| debian/auto-cpufreq.sh | CLI wrapper for running module entrypoint. |\r\n| debian/auto-cpufreq-gtk.sh | GTK wrapper for running module entrypoint. |\r\n| debian/.gitignore | Ignores Debian packaging build artifacts. |\n</details>\n\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/skills/code-review/SKILL.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add a `code-review` agent skill</a> or configure MCP servers for context-aware, tailored reviews. <a href=\"https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review#mcp-servers-and-agent-skills\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more in the docs.</a>",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T20:50:00+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:review:1",
+   "payload": {
+    "author": "shadeyg56",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:16:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:review:2",
+   "payload": {
+    "author": "shadeyg56",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:22:09+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:review:3",
+   "payload": {
+    "author": "shadeyg56",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:23:22+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:review:4",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 14 out of 14 changed files in this pull request and generated no new comments.\n\n\n\n\n<details>\n<summary>Suppressed comments (5)</summary>\n\n**debian/rules:39**\n* `style.css` is installed as executable (`-m 755`). Since this is a data file loaded by GTK, it should be non-executable (e.g. 0644) to avoid shipping unnecessary executable bits.\n```\n\tinstall -m 755 scripts/style.css debian/auto-cpufreq/usr/local/share/auto-cpufreq/scripts/\n```\n**debian/install:3**\n* The GUI hard-codes the icon path as `/usr/local/share/auto-cpufreq/images/icon.png` (e.g., auto_cpufreq/gui/app.py:21 and gui/objects.py:555), but this install map places the `images/` directory under `/usr/share/auto-cpufreq/`. That will cause the GTK app to fail when loading the icon on Debian installs.\n```\nimages usr/share/auto-cpufreq/\n```\n**debian/rules:23**\n* This dist-info generation block hard-codes `3.1.0` even though the comment says the version is extracted. This will silently break `--version` (and anything using importlib.metadata) as soon as the Debian packaging version changes.\n```\n\tmkdir -p debian/auto-cpufreq/usr/lib/python3/dist-packages/auto_cpufreq-3.1.0.dist-info\n\t# Extract version from pyproject.toml\n\tprintf 'Metadata-Version: 2.1\\nName: auto-cpufreq\\nVersion: 3.1.0\\nSummary: Automatic CPU speed & power optimizer for Linux\\n' > \\\n```\n**auto_cpufreq/core.py:997**\n* PR description says the Debian packaging is implemented with \u201czero changes to existing code\u201d, but this change updates the runtime process-detection logic in core.py. Please update the PR description (or the \u201cApproach\u201d section) so reviewers and packagers don\u2019t miss that behavioral change.\n```\n    # and find the one with name and args passed to the function.\n    # Also match the python module name (auto_cpufreq) so the daemon is\n    # detected regardless of how it was started: as the binary\n    # (auto-cpufreq --daemon) or via `python3 -m auto_cpufreq.bin.auto_cpufreq`\n    # as used by the Debian package wrapper.\n    module_name = program.replace(\"-\", \"_\")\n```\n**debian/copyright:12**\n* This packaging declares LGPL-3.0+, but upstream metadata in pyproject.toml currently says `license = \"GPL-3.0-or-later\"` (pyproject.toml:6). Please reconcile the license metadata so Debian\u2019s copyright file and upstream project metadata don\u2019t disagree.\n```\nLicense: LGPL-3.0+\n\nFiles: debian/*\nCopyright: 2026 Claudio Ferreira Filho <filhocf@gmail.com>\nLicense: LGPL-3.0+\n```\n</details>\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T07:00:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:review:5",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Full review mentioned as part of [following comment](https://github.com/AdnanHodzic/auto-cpufreq/pull/951#issuecomment-5387229542) and requesting numerous changes.",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:07:04+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:0",
+   "payload": {
+    "author": "shadeyg56",
+    "author_is_bot": false,
+    "body": "Copilot left some comments worth addressing. I commented on the issues I was able to reproduce. I do not know anything about Debian packaging, so I can't comment on the remaining issues. I'm sure @AdnanHodzic can answer as he is the in-house Debian expert.\r\n\r\nOther than that, I was able to build the .deb file and install it using a container. I wasn't able to test the service install and load since it was a distrobox container, but I did run the daemon on my underlying OS and did confirm I could read stats from the daemon, so apart from the small issues found I think this looks good. At some point the README file will need to be updated, but that might be best done after the package has been submitted.\r\n\r\nOne thing to consider adding would be an additional CI workflow to build the Debian package for new commits/PR. You can reference the existing workflows in the [.github/workflows](https://github.com/AdnanHodzic/auto-cpufreq/tree/master/.github/workflows) folder. It might even be convenient to have the workflow upload the resulting .deb file as an artifact that people could download if they are interested in running auto-cpufreq from latest commit as a .deb package without having to build it themselves. This is quite easy to do using the artifact action. \r\n\r\nFinally, if you plan on being the official maintainer for Debian, I recommend joining the [Discord](https://discord.gg/Sjauxtj6kH) server and making yourself known if you haven't already in case any discussions need to be had regarding the submission of the package and whatnot. We even have a fancy Package Maintainer role :)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:34:43+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:1",
+   "payload": {
+    "author": "filhocf",
+    "author_is_bot": false,
+    "body": "I've added a CI workflow (`.github/workflows/build-deb.yml`) that builds the `.deb` package on every push and PR, and uploads it as a downloadable artifact. This follows the same pattern as the existing `build-linux.yml` workflow.\n\nUsers can now download the latest `.deb` build from the Actions tab without building locally.\n\nThe three issues you flagged have also been fixed:\n- `After=multi-user.target` removed (ordering cycle)\n- `deb-systemd-helper start/stop` \u2192 `deb-systemd-invoke start/stop`\n- `--version` now works (added `dist-info` metadata to the package)\n\nLet me know if there's anything else to adjust."
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T11:39:09+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:2",
+   "payload": {
+    "author": "shadeyg56",
+    "author_is_bot": false,
+    "body": "I tested it on native Debian this time and got the following issue with systemd service \r\nWhen installing the .deb file I got \r\n```Failed to preset unit: Unit auto-cpufreq.service does not exist\r\n/usr/bin/deb-systemd-helper: error: systemctl preset failed on auto-cpufreq.service: No such file or directory\r\nauto-cpufreq.service is a disabled or a static unit, not starting it\r\n```\r\n\r\nThen if I ran `sudo auto-cpufreq --install`, I see \r\n```\r\nStarting auto-cpufreq daemon (systemd) service\r\nFailed to start auto-cpufreq.service: Unit auto-cpufreq.service not found.\r\n\r\nEnabling auto-cpufreq daemon (systemd) at boot\r\nFailed to enable unit: Unit auto-cpufreq.service does not exist\r\n```\r\n\r\nOther than that I didn't see any issues."
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T15:13:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:3",
+   "payload": {
+    "author": "filhocf",
+    "author_is_bot": false,
+    "body": "**Fix: systemd service unit was missing from the .deb package.**\n\nThe previous build shipped no `auto-cpufreq.service` to `/usr/lib/systemd/system/`, which caused `deb-systemd-helper` to fail with *\"No such file or directory\"* during install.\n\n**Changes:**\n\n| What | Why |\n|------|-----|\n| `debian/auto-cpufreq.service` (new) | Proper systemd unit pointing to `/usr/bin/auto-cpufreq --daemon` \u2014 the upstream `scripts/auto-cpufreq.service` references `/opt/auto-cpufreq/venv/` (installer path), which is wrong for the .deb |\n| `postinst`/`postrm` simplified | Removed hardcoded `deb-systemd-helper` commands \u2014 `#DEBHELPER#` now auto-generates the correct lifecycle code via `dh_installsystemd` |\n| `debian/rules` updated | The upstream service in `scripts/` is now overridden with the .deb-correct version, so running `auto-cpufreq --install` won`'t overwrite the proper service |\n\n**Tested:** install, purge, reinstall \u2014 service active and running, unit found at `/usr/lib/systemd/system/auto-cpufreq.service`, properly enabled and started.\n\n@shadeyg56 this should resolve both issues you reported."
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T11:18:37+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:4",
+   "payload": {
+    "author": "shadeyg56",
+    "author_is_bot": false,
+    "body": "LGTM now. Will wait for @AdnanHodzic to merge"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T15:22:03+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:5",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> LGTM now. Will wait for @AdnanHodzic to merge\r\n\r\nThanks for taking a look at this @shadeyg56! Much appreciated.\r\n\r\n@filhocf apologizes for such a delay from my side, been a crazy week and didn't get a chance to look into this before. \r\n\r\nOn first glimpse, I don't see anything wrong with package structure & code, I have some suggestions regarding dependencies and minor improvements, but we can figure this part later on, as my idea would be to push this into official Debian repos, and/or I can also setup a Debian repo people could use until it was part of official repos.\r\n\r\nBut first things first, after I built the package and installed it ... I ran:\r\n\r\n```\r\nsudo auto-cpufreq --install\r\n\r\n--------------------- Deploying auto-cpufreq as a daemon ----------------------\r\n\r\n* Turn off Bluetooth on boot (only)!\r\n  If you want bluetooth enabled on boot run: auto-cpufreq --bluetooth_boot_on\r\n\r\n* Deploy auto-cpufreq install script\r\n\r\n* Deploy auto-cpufreq remove script\r\nauto-cpufreq snap package not installed\r\nGNOME Power Profiles Daemon should be enabled. run:\r\n\r\nsudo python3 -m auto_cpufreq.power_helper --gnome_power_enable\r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Running auto-cpufreq daemon install script \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\r\n\r\nDeploying auto-cpufreq systemd unit file\r\n\r\n* Reloading systemd manager configuration\r\n\r\n* Starting auto-cpufreq daemon (systemd) service\r\n\r\n* Enabling auto-cpufreq daemon (systemd) at boot\r\n\r\n----------------- auto-cpufreq daemon installed and running -----------------\r\n\r\nTo view live stats, run:\r\nauto-cpufreq --stats\r\n\r\nauto-cpufreq makes all decisions automatically, if you would like to\r\nconfigure certain setting to your own liking, please refer to:\r\nhttps://github.com/AdnanHodzic/auto-cpufreq#configuring-auto-cpufreq\r\n\r\nTo disable and remove auto-cpufreq daemon, run:\r\nsudo auto-cpufreq --remove\r\n```\r\n\r\nand all went well, but then after I ran: \r\n\r\n```\r\nauto-cpufreq --stats\r\n\r\n------------------------ auto-cpufreq not running ------------------------------\r\n\r\nERROR: auto-cpufreq is not running in daemon mode.\r\n\r\nMake sure to run \"sudo auto-cpufreq --install\" first\r\n\r\n-------------------------------------------------------------------------------\r\n```\r\n\r\nIf I run: \r\n\r\n```\r\nsystemctl status auto-cpufreq           \r\n\u25cf auto-cpufreq.service - auto-cpufreq - Automatic CPU speed & power optimizer for Linux\r\n     Loaded: loaded (/etc/systemd/system/auto-cpufreq.service; enabled; preset: enabled)\r\n     Active: active (running) since Fri 2026-08-14 18:24:25 CEST; 1min 9s ago\r\n Invocation: 240085882a1e48a9821203532137e8a6\r\n       Docs: https://github.com/AdnanHodzic/auto-cpufreq\r\n   Main PID: 3895941 (python3)\r\n      Tasks: 3 (limit: 18071)\r\n     Memory: 32.7M (peak: 38.6M)\r\n        CPU: 3.475s\r\n     CGroup: /system.slice/auto-cpufreq.service\r\n             \u2514\u25003895941 /usr/bin/python3 -m auto_cpufreq.bin.auto_cpufreq --daemon\r\n\r\nAug 14 18:24:25 carbon7 systemd[1]: Started auto-cpufreq.service - auto-cpufreq - Automatic CPU speed & power optimizer for Linux.\r\n```\r\n\r\nAs evident, daemon is running behind a process and it all seems to be working fine. \r\n\r\nEven, restarting auto-cpufreq systemd service: `sudo systemctl restart auto-cpufreq.service` ran successfully and spawned a new process:\r\n\r\n```\r\nsystemctl status auto-cpufreq                             \r\n\u25cf auto-cpufreq.service - auto-cpufreq - Automatic CPU speed & power optimizer for Linux\r\n     Loaded: loaded (/etc/systemd/system/auto-cpufreq.service; enabled; preset: enabled)\r\n     Active: active (running) since Fri 2026-08-14 18:27:53 CEST; 4s ago\r\n Invocation: a841e7232f824a7f96f999fbf1288221\r\n       Docs: https://github.com/AdnanHodzic/auto-cpufreq\r\n   Main PID: 3901087 (python3)\r\n      Tasks: 3 (limit: 18071)\r\n     Memory: 32.6M (peak: 38.5M)\r\n        CPU: 591ms\r\n     CGroup: /system.slice/auto-cpufreq.service\r\n ",
+    "body_original_chars": 4993,
+    "body_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T16:34:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:6",
+   "payload": {
+    "author": "filhocf",
+    "author_is_bot": false,
+    "body": "Thanks for the detailed report \u2014 I've fixed it. The root cause: `is_running()` in `core.py` only matched the hyphenated binary name `auto-cpufreq` in the process cmdline. The .deb wrapper starts the daemon via `python3 -m auto_cpufreq.bin.auto_cpufreq --daemon`, so the cmdline contains the module name `auto_cpufreq` (underscore), and the check missed it \u2014 even though systemd shows the service active. In the official install the daemon runs as `/opt/.../bin/auto-cpufreq --daemon`, which is why it only broke in the .deb.\n\nThe fix makes `is_running()` also match the Python module name (`auto_cpufreq`), so detection works regardless of install method. I verified both launch paths (hyphenated binary and `python3 -m`) plus negative cases \u2014 all pass. `--stats` now correctly reports the running daemon.\n\nCommit `36dd266`."
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T11:07:15+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#951:comment:7",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@filhocf okay, I can confirm I can install the package with latest changes and auto-cpufreq daemon will be running. However there are few things that will need to be changed before this can be merged, as it introduces quite some breaking changes.\r\n\r\n**1. auto-cpufreq daemon should not be automatically installed as soon as .deb package is installed**\r\n\r\nRight now after I install e.g `auto-cpufreq_3.1.0-1_all.deb` file, `dh_installsystemd` will find and install the systemd unit file `/usr/lib/systemd/system/auto-cpufreq.service` and it'll enable and start service auto-cpufreq systemd service automatically and `sudo auto-cpufreq --stats` will be available.\r\n\r\nBut this is not the intended flow and will interefere and break things. After auto-cpufreq is installed with e.g: [auto-cpufreq-installer](https://github.com/AdnanHodzic/auto-cpufreq#auto-cpufreq-installer), `auto-cpufreq` becomes available as a binary, and user has all options listed with [auto-cpufreq --help](https://github.com/AdnanHodzic/auto-cpufreq#auto-cpufreq-modes-and-options) at their disposal. Maybe they want to run --monitor or --live first before they run --install.\r\n\r\nCurrently, after installing .deb and running `--remove` will also misinform the user:\r\n\r\n```\r\nsudo auto-cpufreq --remove                      \r\n\r\nauto-cpufreq daemon is not installed.\r\n```\r\n\r\nand even worse, if user runs `auto-cpufreq --install`, it'll proceed and re-do whole install, although it's already running in background, e.g:\r\n\r\n```\r\nsudo auto-cpufreq --install\r\n\r\n--------------------- Deploying auto-cpufreq as a daemon ----------------------\r\n\r\n* Turn off Bluetooth on boot (only)!\r\n  If you want bluetooth enabled on boot run: auto-cpufreq --bluetooth_boot_on\r\n\r\n* Deploy auto-cpufreq install script\r\n\r\n* Deploy auto-cpufreq remove script\r\n\r\n----------------------------------- Warning -----------------------------------\r\n\r\nDetected running GNOME Power Profiles daemon service!\r\n\r\nThis daemon might interfere with auto-cpufreq and has been disabled.\r\n\r\nThis daemon is not automatically disabled in \"monitor\" mode and\r\nwill be enabled after auto-cpufreq daemon is removed.\r\nauto-cpufreq snap package installed, GNOME Power Profiles Daemon should be disabled.\r\n\r\nUsing profile:  balanced\r\n\r\n* Disabling GNOME power profiles\r\nRemoved '/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service'.\r\nCreated symlink '/etc/systemd/system/power-profiles-daemon.service' \u2192 '/dev/null'.\r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Running auto-cpufreq daemon install script \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\r\n\r\nDeploying auto-cpufreq systemd unit file\r\n\r\n* Reloading systemd manager configuration\r\n\r\n* Starting auto-cpufreq daemon (systemd) service\r\n\r\n* Enabling auto-cpufreq daemon (systemd) at boot\r\n\r\n----------------- auto-cpufreq daemon installed and running -----------------\r\n\r\nTo view live stats, run:\r\nauto-cpufreq --stats\r\n\r\nauto-cpufreq makes all decisions automatically, if you would like to\r\nconfigure certain setting to your own liking, please refer to:\r\nhttps://github.com/AdnanHodzic/auto-cpufreq#configuring-auto-cpufreq\r\n\r\nTo disable and remove auto-cpufreq daemon, run:\r\nsudo auto-cpufreq --remove\r\n\r\n-------------------------------------------------------------------------------\r\n```\r\n\r\nNow, if I run --remove, it'll perform an actual uninstall:\r\n\r\n```\r\nsudo auto-cpufreq --remove \r\n\r\n--------------------- Removing auto-cpufreq daemon ----------------------\r\n\r\n* Turn on bluetooth on boot\r\n\r\n----------------------------------- Warning -----------------------------------\r\n\r\nDetected GNOME Power Profiles daemon service is stopped!\r\nThis service will now be enabled and started again.\r\n\r\n* Enabling GNOME power profiles\r\n\r\nRemoved '/etc/systemd/system/power-profiles-daemon.service'.\r\nCreated symlink '/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service' \u2192 '/usr/lib/systemd/system/power-profiles-daemon.service'.\r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Running auto-cpufreq daemon removal script \u2500\u2500",
+    "body_original_chars": 9189,
+    "body_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T17:05:13+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/951"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:opened",
+   "payload": {
+    "additions": 13,
+    "author": "mshzy",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 9,
+    "files": [
+     "auto_cpufreq/bin/auto_cpufreq.py",
+     "auto_cpufreq/core.py",
+     "auto_cpufreq/gui/objects.py",
+     "auto_cpufreq/modules/system_info.py",
+     "auto_cpufreq/power_helper.py"
+    ],
+    "title": "Fix: replace assert with explicit check + narrow bare excepts"
+   },
+   "source": "github",
+   "timestamp": "2026-06-02T12:13:15+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:merged",
+   "payload": {
+    "author": "mshzy",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T06:46:59+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR hardens runtime behavior by removing `assert`-based control flow and narrowing overly broad exception handling so that optimization flags and unexpected `BaseException`s (e.g., `KeyboardInterrupt`) don\u2019t silently bypass important logic.\n\n**Changes:**\n- Replaced an `assert`-guarded authorization check in the GTK UI with an explicit `if/raise` path.\n- Narrowed multiple bare `except:` blocks across the CLI/helpers to catch only expected exception types.\n- Adjusted the live daemon loop to re-raise `KeyboardInterrupt` while still swallowing other runtime exceptions.\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 5 changed files in this pull request and generated 2 comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| auto_cpufreq/power_helper.py | Narrows exception handling around `systemctl`/snap detection and service management calls. |\r\n| auto_cpufreq/modules/system_info.py | Narrows governor file read exception handling to `OSError`. |\r\n| auto_cpufreq/gui/objects.py | Replaces `assert` authorization check with explicit `RuntimeError`. |\r\n| auto_cpufreq/core.py | Narrows psutil process iteration exception handling in `is_running()`. |\r\n| auto_cpufreq/bin/auto_cpufreq.py | Re-raises `KeyboardInterrupt` and narrows live-loop exception handling to `Exception`. |\n</details>\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T11:32:06+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T11:33:58+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:review:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T11:34:03+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:review:3",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 4 out of 5 changed files in this pull request and generated 2 comments.\n\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T06:42:48+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "Can you please take a look into 2 minor things Copilot raised, other then that LGTM and could be merged. Please let me know once you pushed these changes, thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-06-06T11:34:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#947:comment:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "LGTM! Thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-06-07T06:47:21+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/947"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:opened",
+   "payload": {
+    "additions": 74,
+    "author": "tuasananh",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 7,
+    "files": [
+     "README.md",
+     "auto-cpufreq.conf-example",
+     "auto-cpufreq.conf-example.nix",
+     "auto_cpufreq/core.py"
+    ],
+    "title": "feat: add `enforce_platform_profile` configuration"
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T16:15:33+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:merged",
+   "payload": {
+    "author": "tuasananh",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T08:54:40+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nAdds a new per-profile configuration flag to control whether the configured ACPI platform profile is continuously enforced or only applied on charger/battery transitions, enabling temporary manual overrides (e.g., vendor hotkeys) without auto-cpufreq immediately reverting them.\n\n**Changes:**\n- Introduces `enforce_platform_profile` (default `true`) in config documentation/examples for both charger and battery profiles.\n- Updates platform-profile application logic to optionally skip re-applying the same profile on every daemon loop when enforcement is disabled.\n- Tracks the last applied profile section/profile value to support the \u201capply on transition\u201d behavior.\n\n### Reviewed changes\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 8 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `README.md` | Documents the new `enforce_platform_profile` option in both charger/battery example configs. |\n| `auto-cpufreq.conf-example.nix` | Adds commented NixOS example lines for `enforce_platform_profile`. |\n| `auto-cpufreq.conf-example` | Adds commented example lines for `enforce_platform_profile` in both sections. |\n| `auto_cpufreq/core.py` | Implements conditional platform-profile enforcement based on the new config flag. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:22:55+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:23:41+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:review:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:24:02+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:review:3",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 4 out of 4 changed files in this pull request and generated 2 comments.\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T08:43:57+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:review:4",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T08:50:57+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@tuasananh it already looks great, please take a look at couple of comments I added. Let's address those and we're good to merge this.\r\n\r\nJust let me know once you're done, thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:25:28+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:comment:1",
+   "payload": {
+    "author": "tuasananh",
+    "author_is_bot": false,
+    "body": "@AdnanHodzic I made the changes, mind you take a look?"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T15:48:20+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#945:comment:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> @AdnanHodzic I made the changes, mind you take a look?\r\n\r\nI made one commit suggestion myself, other then that tested changes and they LGMT.\r\n\r\nThank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)\r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-05-10T08:54:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/945"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#944:opened",
+   "payload": {
+    "additions": 5,
+    "author": "tuasananh",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "scripts/cpufreqctl.sh"
+    ],
+    "title": "fix: (NVIDIA GPU waking) Only set platform profile when it is different"
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T00:00:38+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/944"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#944:merged",
+   "payload": {
+    "author": "tuasananh",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T17:00:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/944"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#944:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "LGTM! Thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T17:01:00+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/944"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:opened",
+   "payload": {
+    "additions": 52,
+    "author": "Tato418",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 17,
+    "files": [
+     "README.md",
+     "auto_cpufreq/battery_scripts/ideapad_laptop.py"
+    ],
+    "title": "Add function to search conservation_mode across more Lenovo models."
+   },
+   "source": "github",
+   "timestamp": "2026-04-29T20:47:12+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:merged",
+   "payload": {
+    "author": "Tato418",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:16:09+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 3 comments.\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-06T17:10:57+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:review:1",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 4 comments.\n\n\n\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T05:07:15+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@Tato418 added some minor suggestions, please take a look at them and we can merge this."
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T05:06:12+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:comment:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "@Tato418 sorry for double Copilot review run, with just pushed changes, is this PR good for review again or?"
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T16:32:57+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:comment:2",
+   "payload": {
+    "author": "Tato418",
+    "author_is_bot": false,
+    "body": "Seems everything good to me, let me know if something comes up! :D"
+   },
+   "source": "github",
+   "timestamp": "2026-05-07T17:17:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#942:comment:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "LGTM! Thank you for your contribution, you will be credited for your work as part of [future release](https://github.com/AdnanHodzic/auto-cpufreq/releases)"
+   },
+   "source": "github",
+   "timestamp": "2026-05-08T10:15:57+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/942"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:opened",
+   "payload": {
+    "additions": 90,
+    "author": "drasch",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 23,
+    "files": [
+     "auto-cpufreq-installer",
+     "scripts/auto-cpufreq-install.sh"
+    ],
+    "title": "fix(atomic): make auto-cpufreq work with atomic distros like silverblue, bluefin, etc"
+   },
+   "source": "github",
+   "timestamp": "2026-04-07T02:34:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:closed",
+   "payload": {
+    "author": "drasch",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-04-25T20:15:09+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis PR attempts to make `auto-cpufreq` installable on Fedora Atomic variants (e.g., Silverblue/Kinoite) by adjusting install paths and adding `rpm-ostree`-based dependency installation.\n\n**Changes:**\n- Updates the daemon install script to copy init unit files from `/opt/auto-cpufreq/scripts`.\n- Modifies the source-based installer to install into `/opt/auto-cpufreq`, add Atomic-distro detection, and install deps via `rpm-ostree` (with reboot messaging).\n- Adds/changes desktop/icon/polkit install paths and adds SELinux `restorecon`.\n\n### Reviewed changes\n\nCopilot reviewed 2 out of 2 changed files in this pull request and generated 11 comments.\n\n| File | Description |\n| ---- | ----------- |\n| `scripts/auto-cpufreq-install.sh` | Switches unit-file source paths to `/opt/auto-cpufreq/scripts` for multiple init systems. |\n| `auto-cpufreq-installer` | Changes installer filesystem layout, adds Atomic detection + `rpm-ostree` deps, and adjusts desktop/icon/polkit handling. |\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/AdnanHodzic/auto-cpufreq/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:42:50+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:1",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:48:21+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:48:58+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:3",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:50:08+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:4",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:50:42+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:5",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:51:10+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:6",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:51:31+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:review:7",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:52:19+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:comment:0",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": "> I fully expect this PR to be closed and not merged\r\n\r\nAs long as the PR makes sense, improves things or adds new features it will be merged.\r\n\r\nHowever, at this point and in its current state, this PR is unmergable as it has breaking changes.\r\n\r\n> but it would have been super helpful for me to find this when trying to get auto-cpufreq to work on an atomic Fedora distro, so it'd be nice if there were a record folks could find!\r\n\r\nThere's an open issue regarding this in #677 and I even see another one that was closed with you adding the last comment #601.\r\n\r\nMy biggest concern was whether changing the paths will break this for rest of the distros (especially immutable ones), but you address it with: \r\n\r\n```\r\n    if [ -f /etc/os-release ]; then\r\n      . /etc/os-release\r\n      if [ \"$VARIANT_ID\" = \"silverblue\" ] || [ \"$VARIANT_ID\" = \"kinoite\" ] || [ \"$VARIANT_ID\" = \"sericea\" ] || [ \"$VARIANT_ID\" = \"onyx\" ]; then\r\n        detected_distro \"Fedora Atomic ($VARIANT_ID)\"\r\n```\r\n\r\nauto-cpufreq-installer goes through with some warnings, which I don't see normally:\r\n\r\n```\r\nWarning: /etc/polkit-1/polkit-agent is read-only. Skipping polkit policy installation.\r\nGUI might require 'sudo' to run if polkit is not available.\r\n```\r\n\r\nHowever, when I try to install auto-cpufreq daemon with your changes I get following error:\r\n\r\n```\r\nsudo auto-cpufreq --install\r\n\r\n--------------------- Deploying auto-cpufreq as a daemon ----------------------\r\n\r\nTraceback (most recent call last):\r\n  File \"/opt/auto-cpufreq/venv/bin/auto-cpufreq\", line 6, in <module>\r\n    sys.exit(main())\r\n             ~~~~^^\r\n  File \"/usr/lib/python3/dist-packages/click/core.py\", line 1161, in __call__\r\n    return self.main(*args, **kwargs)\r\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^\r\n  File \"/usr/lib/python3/dist-packages/click/core.py\", line 1082, in main\r\n    rv = self.invoke(ctx)\r\n  File \"/usr/lib/python3/dist-packages/click/core.py\", line 1443, in invoke\r\n    return ctx.invoke(self.callback, **ctx.params)\r\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/usr/lib/python3/dist-packages/click/core.py\", line 788, in invoke\r\n    return __callback(*args, **kwargs)\r\n  File \"/opt/auto-cpufreq/venv/lib/python3.13/site-packages/auto_cpufreq/bin/auto_cpufreq.py\", line 169, in main\r\n    deploy_daemon()\r\n    ~~~~~~~~~~~~~^^\r\n  File \"/opt/auto-cpufreq/venv/lib/python3.13/site-packages/auto_cpufreq/core.py\", line 340, in deploy_daemon\r\n    cpufreqctl() # deploy cpufreqctl script func call\r\n    ~~~~~~~~~~^^\r\n  File \"/opt/auto-cpufreq/venv/lib/python3.13/site-packages/auto_cpufreq/core.py\", line 312, in cpufreqctl\r\n    copy(SCRIPTS_DIR / \"cpufreqctl.sh\", \"/usr/local/bin/cpufreqctl.auto-cpufreq\")\r\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/usr/lib/python3.13/shutil.py\", line 428, in copy\r\n    copyfile(src, dst, follow_symlinks=follow_symlinks)\r\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/usr/lib/python3.13/shutil.py\", line 260, in copyfile\r\n    with open(src, 'rb') as fsrc:\r\n         ~~~~^^^^^^^^^^^\r\nFileNotFoundError: [Errno 2] No such file or directory: '/usr/local/share/auto-cpufreq/scripts/cpufreqctl.sh'\r\n```\r\n\r\nFurthermore, after I run `auto-cpufreq-installer --install` from master branch after having it previously installed with your changes, it breaks things in terms of symlinks:\r\n\r\n```\r\nSuccessfully installed auto-cpufreq-3.0.0+a620b99 charset_normalizer-3.4.7 pyasyncore-1.0.5 requests-2.33.1 urwid-3.0.5 wcwidth-0.6.0\r\ncp: not writing through dangling symlink '/usr/local/bin/auto-cpufreq'\r\nchmod: cannot operate on dangling symlink '/usr/local/bin/auto-cpufreq'\r\ncp: not writing through dangling symlink '/usr/local/bin/auto-cpufreq-gtk'\r\nchmod: cannot operate on dangling symlink '/usr/local/bin/auto-cpufreq-gtk'\r\n```\r\n\r\nand removal will also be broken:\r\n\r\n```\r\nsudo ./auto-cpufreq-installer --remove \r\n\r\nCouldn't remove the auto-cpufreq daemon, /usr/local/bin/auto-cpufreq-remove do not exist.\r\n\r\nauto-cpufreq tool",
+    "body_original_chars": 4628,
+    "body_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T07:47:26+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:comment:1",
+   "payload": {
+    "author": "drasch",
+    "author_is_bot": false,
+    "body": "I was able to use `auto-cpufreq`, but I uninstalled because it was just looping on/off with turbo boost on my cpu causing high-fan/no-fan. Is this the desired behavior? If it is, I can reinstall and make progress on the PR based on all this feedback."
+   },
+   "source": "github",
+   "timestamp": "2026-04-19T20:42:06+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  },
+  {
+   "evidence_id": "pr:AdnanHodzic/auto-cpufreq#937:comment:2",
+   "payload": {
+    "author": "AdnanHodzic",
+    "author_is_bot": false,
+    "body": ">  I uninstalled because it was just looping on/off with turbo boost on my cpu causing high-fan/no-fan. Is this the desired behavior? \r\n\r\nIf you're not happy with configuration and decision auto-cpufreq makes automatically, you can [configure them to your own liking](https://github.com/AdnanHodzic/auto-cpufreq#configuring-auto-cpufreq).\r\n\r\n> If it is, I can reinstall and make progress on the PR based on all this feedback.\r\n\r\nPlease feel free to do so :) "
+   },
+   "source": "github",
+   "timestamp": "2026-04-20T14:38:38+00:00",
+   "url": "https://github.com/AdnanHodzic/auto-cpufreq/pull/937"
+  }
+ ],
+ "repo": "AdnanHodzic/auto-cpufreq",
+ "window": "pre_t"
+}

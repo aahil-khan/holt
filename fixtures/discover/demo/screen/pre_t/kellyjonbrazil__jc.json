@@ -1,0 +1,1148 @@
+{
+ "captured_at": "2026-08-31T01:07:39.281328+00:00",
+ "content_sha256": "65879e2a62f333abeed294022694e320f9df0b8052a93538894160104a62e10d",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:kellyjonbrazil/jc:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "CLI tool and python library that converts the output of popular command-line tools, file-types, and common strings to JSON, YAML, or Dictionaries. This allows piping of output to tools like jq and simplifying automation scripts.",
+    "homepage_url": "",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-28T23:45:47Z",
+    "stargazer_count": 8670
+   },
+   "source": "github",
+   "timestamp": "2019-10-15T22:04:52+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc"
+  },
+  {
+   "evidence_id": "repo:kellyjonbrazil/jc:readme",
+   "payload": {
+    "commit_oid": "8290734a87a30e5f0af7e1fba5ecbda2e1c145a8",
+    "kind": "readme",
+    "text": "[![Pypi](https://img.shields.io/pypi/v/jc.svg)](https://pypi.org/project/jc/)\n\n> Check out the `jc` Python [package documentation](https://github.com/kellyjonbrazil/jc/tree/master/docs) for developers\n\n> Try the `jc` [web demo](https://jc-web.onrender.com/) and [REST API](https://github.com/kellyjonbrazil/jc-restapi)\n\n> `jc` is available as an\n[Ansible filter plugin](https://docs.ansible.com/ansible/latest/collections/community/general/jc_filter.html#ansible-collections-community-general-jc-filter)\nin the `community.general` collection. See this\n[blog post](https://blog.kellybrazil.com/2020/08/30/parsing-command-output-in-ansible-with-jc/)\nfor an example.\n\n# JC\nJSON Convert\n\n`jc` JSONifies the output of many CLI tools, file-types, and common strings\nfor easier parsing in scripts. See the [**Parsers**](#parsers) section for\nsupported commands, file-types, and strings.\n```bash\ndig example.com | jc --dig\n```\n```json\n[{\"id\":38052,\"opcode\":\"QUERY\",\"status\":\"NOERROR\",\"flags\":[\"qr\",\"rd\",\"ra\"],\n\"query_num\":1,\"answer_num\":1,\"authority_num\":0,\"additional_num\":1,\n\"opt_pseudosection\":{\"edns\":{\"version\":0,\"flags\":[],\"udp\":4096}},\"question\":\n{\"name\":\"example.com.\",\"class\":\"IN\",\"type\":\"A\"},\"answer\":[{\"name\":\n\"example.com.\",\"class\":\"IN\",\"type\":\"A\",\"ttl\":39049,\"data\":\"93.184.216.34\"}],\n\"query_time\":49,\"server\":\"2600:1700:bab0:d40::1#53(2600:1700:bab0:d40::1)\",\n\"when\":\"Fri Apr 16 16:09:00 PDT 2021\",\"rcvd\":56,\"when_epoch\":1618614540,\n\"when_epoch_utc\":null}]\n```\n\nThis allows further command-line processing of output with tools like `jq`\nor [`jello`](https://github.com/kellyjonbrazil/jello) by piping commands:\n```bash\n$ dig example.com | jc --dig | jq -r '.[].answer[].data'\n93.184.216.34\n```\n\nor using the alternative \"magic\" syntax:\n\n```bash\n$ jc dig example.com | jq -r '.[].answer[].data'\n93.184.216.34\n```\n\n`jc` can also be used as a python library. In this case the returned value\nwill be a python dictionary, a list of dictionaries, or even a\n[lazy iterable of dictionaries](#using-streaming-parsers-as-python-modules)\ninstead of JSON:\n```python\n>>> import subprocess\n>>> import jc\n>>>\n>>> cmd_output = subprocess.check_output(['dig', 'example.com'], text=True)\n>>> data = jc.parse('dig', cmd_output)\n>>>\n>>> data[0]['answer']\n[{'name': 'example.com.', 'class': 'IN', 'type': 'A', 'ttl': 29658, 'data':\n'93.184.216.34'}]\n```\n\n> For `jc` Python package documentation, use `help('jc')`, `help('jc.lib')`, or\nsee the [online documentation](https://github.com/kellyjonbrazil/jc/tree/master/docs).\n\nTwo representations of the data are available. The default representation uses a\nstrict schema per parser and converts known numbers to int/float JSON values.\nCertain known values of `None` are converted to JSON `null`, known boolean\nvalues are converted, and, in some cases, additional semantic context fields are\nadded.\n\nTo access the raw, pre-processed JSON, use the `-r` cli option or the `raw=True`\nfunction parameter in `parse()` when using `jc` as a python library.\n\nSchemas for each parser can be found at the documentation link beside each\n[**Parser**](#parsers) below.\n\nRelease notes can be found in the [Releases section](https://github.com/kellyjonbrazil/jc/releases) on Github.\n\n## Why Would Anyone Do This!?\nFor more information on the motivations for this project, please see my blog\npost on [Bringing the Unix Philosophy to the 21st Century](https://blog.kellybrazil.com/2019/11/26/bringing-the-unix-philosophy-to-the-21st-century/) and my [interview with Console](https://console.substack.com/p/console-89).\n\nSee also:\n- [libxo on FreeBSD](http://juniper.github.io/libxo/libxo-manual.html)\n- [powershell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7)\n- [blog: linux apps should have a json flag](https://thomashunter.name/posts/2012-06-06-linux-cli-apps-should-have-a-json-flag)\n- [Hacker News discussion](https://news.ycombinator.com/item?id=28266193)\n- [Reddit discussion](https://www.reddit.com/r/programming/comments/pa4cbb/bringing_the_unix_philosophy_to_the_21st_century/)\n\nUse Cases:\n- [Bash scripting](https://blog.kellybrazil.com/2021/04/12/practical-json-at-the-command-line/)\n- [Ansible command output parsing](https://blog.kellybrazil.com/2020/08/30/parsing-command-output-in-ansible-with-jc/)\n- [Saltstack command output parsing](https://blog.kellybrazil.com/2020/09/15/parsing-command-output-in-saltstack-with-jc/)\n- [Nornir command output parsing](https://blog.kellybrazil.com/2020/12/09/parsing-command-output-in-nornir-with-jc/)\n- [FortiSOAR command output parsing](https://docs.fortinet.com/document/fortisoar/1.0.0/jc-parse-command-output/323/jc-parse-command-output-v1-0-0)\n\n## Installation\nThere are several ways to get `jc`. You can install via `pip`, OS package\n[repositories](https://repology.org/project/jc/versions), or by downloading the\ncorrect [binary](https://github.com/kellyjonbrazil/jc/releases) for your\narchitecture and running it anywhere on your filesystem.\n\n### Pip (macOS, linux, unix, Windows)\n[![Pypi](https://img.shields.io/pypi/v/jc.svg)](https://pypi.org/project/jc/)\n```bash\npip3 install jc\n```\n\n### OS Package Repositories\n\n| OS                                   | Command                                                                       |\n|--------------------------------------|-------------------------------------------------------------------------------|\n| Debian/Ubuntu linux                  | `apt-get install jc`                                                          |\n| Fedora linux                         | `dnf install jc`                                                              |\n| openSUSE linux                       | `zypper install jc`                                                           |\n| Arch linux                           | `pacman -S jc`                                                                |\n| NixOS linux                          | `nix-env -iA nixpkgs.jc` or `nix-env -iA nixos.jc`                            |\n| Guix System linux                    | `guix install jc`                                                             |\n| Gentoo Linux                         | `emerge dev-python/jc`                                                        |\n| Photon linux                         | `tdnf install jc`                                                             |\n| macOS                                | `brew install jc`                                                             |\n| FreeBSD                              | `portsnap fetch update && cd /usr/ports/textproc/py-jc && make install clean` |\n| Ansible filter plugin                | `ansible-galaxy collection install community.general`                         |\n| FortiSOAR connector                  | Install from FortiSOAR Connector Marketplace                                  |\n\n> For more OS Packages, see https://repology.org/project/jc/versions.\n\n### Binaries\nFor precompiled binaries, see [Releases](https://github.com/kellyjonbrazil/jc/releases)\non Github.\n\n## Usage\n`jc` accepts piped input from `STDIN` and outputs a JSON representation of the\nprevious command's output to `STDOUT`.\n```bash\nCOMMAND | jc [SLICE] [OPTIONS] PARSER\ncat FILE | jc [SLICE] [OPTIONS] PARSER\necho STRING | jc [SLICE] [OPTIONS] PARSER\n```\n\nAlternatively, the \"magic\" syntax can be used by prepending `jc` to the command\nto be converted or in front of the absolute path for Proc files. Options can be\npassed to `jc` immediately before the command or Proc file path is given.\n(Note: command aliases and shell builtins are not supported)\n```bash\njc [SLICE] [OPTIONS] COMMAND\njc [SLICE] [OPTIONS] /proc/<path-to-procfile>\n```\n\nThe JSON output can be compact (default) or pretty formatted with the `-p`\noption.\n\n### Parsers\n\n| Argument          | Command or Filetype                                     | Documentation                                                              |\n|-------------------|---------------------------------------------------------|----------------------------------------------------------------------------|\n|          `--acpi` | `acpi` command parser                                   | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/acpi)           |\n|       `--airport` | `airport -I` command parser                             | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/airport)        |\n|     `--airport-s` | `airport -s` command parser                             | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/airport_s)      |\n|        `--amixer` | `amixer` command parser                                 | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/amixer)         |\n| `--apt-cache-show` | `apt-cache show` command parser                         | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/apt_cache_show) |\n|   `--apt-get-sqq` | `apt-get -sqq` command parser                           | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/apt_get_sqq)    |\n|           `--arp` | `arp` command parser                                    | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/arp)            |\n|    `--asciitable` | ASCII and Unicode table parser                          | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/asciitable)     |\n|  `--asciitable-m` | multi-line ASCII and Unicode table parser               | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/asciitable_m)   |\n|         `--blkid` | `blkid` command parser                                  | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/blkid)          |\n|  `--bluetoothctl` | `bluetoothctl` command parser                           | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/bluetoothctl)   |\n|           `--cbt` | `cbt` (Google Bigtable) command parser                  | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/cbt)            |\n|           `--cef` | CEF string parser                                       | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/cef)            |\n|         `--cef-s` | CEF string streaming parser                             | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/cef_s)          |\n|       `--certbot` | `certbot` command parser                                | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/certbot)        |\n|         `--chage` | `chage --list` command parser                           | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/chage)          |\n|         `--cksum` | `cksum` and `sum` command parser                        | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/cksum)          |\n|           `--clf` | Common and Combined Log Format file parser              | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/clf)            |\n|         `--clf-s` | Common and Combined Log Format file streaming parser    | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/clf_s)          |\n|       `--crontab` | `crontab` command and file parser                       | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/crontab)        |\n|     `--crontab-u` | `crontab` file parser with user support                 | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/crontab_u)      |\n|           `--csv` | CSV file parser                                         | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/csv)            |\n|        `--csv-ih` | CSV implicit header file parser                         | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/csv_ih)         |\n|         `--csv-s` | CSV file streaming parser                               | [details](https://kellyjonbrazil.github.io/jc/docs/parsers/csv_s)          |\n|      `--csv-ih-s` | CSV implicit header file streaming parser               | [details](https://kellyjonbrazil.github.io/jc/docs/parse",
+    "text_original_chars": 66675,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T16:57:31+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/blob/8290734a87a30e5f0af7e1fba5ecbda2e1c145a8/README.md"
+  },
+  {
+   "evidence_id": "repo:kellyjonbrazil/jc:contributing",
+   "payload": {
+    "commit_oid": "8290734a87a30e5f0af7e1fba5ecbda2e1c145a8",
+    "kind": "contributing",
+    "text": "# Contributing to jc\nWe love your input! We want to make contributing to this project as easy and\ntransparent as possible, whether it's:\n\n- Reporting a bug\n- Discussing the current state of the code\n- Submitting a fix\n- Proposing new features\n- Proposing a new parser\n\n## We Develop with Github\nWe use github to host code, to track issues and feature requests, as well as\naccept pull requests.\n\n## We Use Github Flow, So All Code Changes Happen Through Pull Requests\nPull requests are the best way to propose changes to the codebase (we use\n[Github Flow](https://guides.github.com/introduction/flow/index.html)). We\nactively welcome your pull requests:\n\n1. Open an issue to discuss the new feature, bug fix, or parser before opening\n   a pull request. For new parsers, it is important to agree upon a schema\n   before developing the parser.\n2. Fork the repo and create your branch from `dev`, if available, otherwise\n   `master`.\n3. For new parsers:\n   - Templates: Use the [`jc/parsers/foo.py`](https://github.com/kellyjonbrazil/jc/blob/master/jc/parsers/foo.py)\n     or [`jc/parsers/foo_s.py (streaming)`](https://github.com/kellyjonbrazil/jc/blob/master/jc/parsers/foo_s.py)\n     parsers as a template to get started.\n   - Local development: You can even place a new parser python module file in\n     the [parser plugin directory](https://github.com/kellyjonbrazil/jc#parser-plugins)\n     to get started right away with just a standard `jc` installation.\n   - Parser registry: Add the parser name to the [jc/lib.py](https://github.com/kellyjonbrazil/jc/blob/master/jc/lib.py)\n     file.\n4. If you've added code that should be tested, add tests. All new parsers should\n   have several sample outputs and tests.\n   - Templates:\n     - **Recommended:** [tests/templates/_test_foo_simple.py](https://github.com/kellyjonbrazil/jc/tree/master/tests/templates/_test_foo_simple.py) as a template if you only have test with fixtures.\n       Execute these steps for standard tests:\n       - Save this file as `test_{parser_name}.py` since the helper methods extract parser names from the filename. Use underscores instead of dashes for the parser name.\n       - Organize fixtures in `tests/fixtures` for optimal structure.\n       - Format fixtures as follows (using double dashes):\n           - `{parser_name}--{some_test_description}.out` for command output. (no dots in the filename except for the `.out` suffix)\n           - `{parser_name}--{some_test_description}.json` for expected JSON after parsing. (no dots in the filename except for the `.json` suffix)\n     - Custom: [tests/templates/_test_foo.py](https://github.com/kellyjonbrazil/jc/blob/master/tests/templates/_test_foo.py) as a template for tests.\n     - Custom: [tests/templates/_test_foo_s.py](https://github.com/kellyjonbrazil/jc/tree/master/tests/templates/_test_foo_s.py) as a template for **streaming parser** tests.\n   - Fixtures: Tests typically consist of an input file and an expected output\n     JSON file. Add the data files to the appropriate folder under [tests/fixtures](https://github.com/kellyjonbrazil/jc/tree/master/tests/fixtures)\n5. Documentation is auto-generated from docstrings, so ensure they are clear and\n   accurate.\n6. Ensure the test suite passes. (Note: \"**America/Los_Angeles**\" timezone\n   should be configured on the test system)\n7. Make sure your code lints.\n8. Issue that pull request!\n\n## Documentation And Completions\n\nNo need to worry about documentation and completions as those are auto generated\nvia the python doc strings.\n\n## Parser Schema Guidelines\n- Try to keep the schema as flat as possible - typically a list of flat\n  dictionaries\n- Keys should be lowercase, contain no special characters, and spaces should be\n  converted to underscores\n- Keys should be static, if possible. If they have to be dynamic, then they\n  should not contain lists or dictionaries\n\nThis will make it easier to use tools like `jq` without requiring escaping of\nspecial characters, encapsulating key names in `[\"\"]`, keeps paths predictable,\nand makes iterating and searching for values easier.\n\n**Examples**\n\nBad:\n```json\n{\n  \"Interface 1\": [\n    \"192.168.1.1\",\n    \"172.16.1.1\"\n  ],\n  \"Wifi Interface 1\": [\n    \"10.1.1.1\"\n  ]\n}\n```\nGood:\n```json\n[\n  {\n    \"interface\": \"Interface 1\",\n    \"ip_addresses\": [\n      \"192.168.1.1\",\n      \"172.16.1.1\"\n    ]\n  },\n  {\n    \"interface\": \"Wifi Interface 1\",\n    \"ip_addresses\": [\n      \"10.1.1.1\"\n    ]\n  }\n]\n```\n\n## Development Environment\nUse the following steps to set up the development environment.\n\n### Virtual Environment\nSet up a Python virtual environment for `jc` development so you won't have to\nworry about library conflicts. This can be done with something like\n[pyenv](https://github.com/pyenv/pyenv) and/or\n[venv](https://docs.python.org/3/library/venv.html)\n\n### Clone the repo\nOnce the virtual environment is set up, clone the `jc` repository inside:\n\n```bash\ngit clone https://github.com/kellyjonbrazil/jc.git\n```\n\n### Install In Developer Mode\nNext, use the `./install.sh` script to install `jc` and the requirements in\ndeveloper mode (code changes take effect immediately). This will install the\nconsole-script entry point to `$HOME/.local/bin` so you may need to add this\nto your path.\n\n## Tests\nIt is essential to have good command output sample coverage and tests to keep\nthe `jc` parser quality high.\n\nMany parsers include calculated timestamp fields using the `jc.utils.timestamp`\nclass. Naive timestamps created with this class should be generated on a system\nconfigured with the \"**America/Los_Angeles**\" timezone on linux/macOS/unix and\n\"**Pacific Standard Time**\" timezone on Windows for tests to pass on the Github\nActions CI tests. This timezone should be configured on your local system before\nrunning the tests locally, as well.\n\nYou can run all tests by running the `./runtests.sh` script.\n\n## Debug Messages\n\nUse `--debug` or `-d` to see debug error messages (double to see more):\n\n```shell\necho 'abc' | jc --parser-with-error -dd\n```\n\n## Any contributions you make will be under the MIT Software License\nIn short, when you submit code changes, your submissions are understood to be\nunder the same [MIT License](http://choosealicense.com/licenses/mit/) that\ncovers the project. Feel free to contact the maintainers if that's a concern.\n\n## Report bugs using Github's Issues\nWe use GitHub issues to track public bugs. Report a bug by\n[opening a new issue](https://github.com/kellyjonbrazil/jc/issues); it's that\neasy!\n\n## Write bug reports with detail, background, and sample code\n\n**Great Bug Reports** tend to have:\n\n- A quick summary and/or background\n- Steps to reproduce\n  - Be specific!\n  - Give sample code if you can.\n- What you expected would happen\n- What actually happens\n- Notes (possibly including why you think this might be happening, or stuff you\n  tried that didn't work)\n\n## Use a Consistent Coding Style\n\n* 4 spaces for indentation rather than tabs\n* Use a Python linter that will enforce PEP 8 and other best practices\n"
+   },
+   "source": "github",
+   "timestamp": "2026-06-18T16:57:31+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/blob/8290734a87a30e5f0af7e1fba5ecbda2e1c145a8/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#747:opened",
+   "payload": {
+    "additions": 456,
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "changed_files": 15,
+    "deletions": 0,
+    "files": [
+     "jc/lib.py",
+     "jc/parsers/ldd.py",
+     "tests/fixtures/generic/ldd--ls.json",
+     "tests/fixtures/generic/ldd--ls.out",
+     "tests/fixtures/generic/ldd--multifile.json",
+     "tests/fixtures/generic/ldd--multifile.out",
+     "tests/fixtures/generic/ldd--not-dynamic.json",
+     "tests/fixtures/generic/ldd--not-dynamic.out",
+     "tests/fixtures/generic/ldd--not-found.json",
+     "tests/fixtures/generic/ldd--not-found.out",
+     "tests/fixtures/generic/ldd--python3.json",
+     "tests/fixtures/generic/ldd--python3.out",
+     "tests/fixtures/generic/ldd--verbose.json",
+     "tests/fixtures/generic/ldd--verbose.out",
+     "tests/test_ldd.py"
+    ],
+    "title": "Add ldd parser"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T23:20:50+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/747"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#747:merged",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T23:42:50+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/747"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#746:opened",
+   "payload": {
+    "additions": 724,
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 561,
+    "files": [
+     "jc/parsers/lsusb.py",
+     "tests/fixtures/generic/lsusb-audio-midi-class.json",
+     "tests/fixtures/generic/lsusb-audio-midi-class.out",
+     "tests/fixtures/generic/lsusb-extra-hub-port-status-info.json",
+     "tests/fixtures/generic/lsusb-superspeed-endpoint-companion.json",
+     "tests/fixtures/generic/lsusb-superspeed-endpoint-companion.out",
+     "tests/test_lsusb.py"
+    ],
+    "title": "Simplify lsusb parser: single-pass stack-based tree build"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T21:17:56+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/746"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#746:merged",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T22:42:42+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/746"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#745:opened",
+   "payload": {
+    "additions": 234,
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "jc/lib.py",
+     "jc/parsers/authorized_keys.py",
+     "tests/fixtures/generic/authorized_keys--no-trailing-newline.json",
+     "tests/fixtures/generic/authorized_keys--no-trailing-newline.out",
+     "tests/fixtures/generic/authorized_keys--standard.json",
+     "tests/fixtures/generic/authorized_keys--standard.out",
+     "tests/test_authorized_keys.py"
+    ],
+    "title": "Add authorized_keys parser for ~/.ssh/authorized_keys files"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:23:56+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/745"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#745:merged",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T20:16:42+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/745"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#745:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "fixes #589 "
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T20:17:49+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/745"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#744:opened",
+   "payload": {
+    "additions": 224,
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 0,
+    "files": [
+     "jc/lib.py",
+     "jc/parsers/git_diff.py",
+     "tests/fixtures/generic/git_diff--copy.json",
+     "tests/fixtures/generic/git_diff--copy.out",
+     "tests/fixtures/generic/git_diff--mixed.json",
+     "tests/fixtures/generic/git_diff--mixed.out",
+     "tests/fixtures/generic/git_diff--renames.json",
+     "tests/fixtures/generic/git_diff--renames.out",
+     "tests/fixtures/generic/git_diff--type-change.json",
+     "tests/fixtures/generic/git_diff--type-change.out",
+     "tests/fixtures/generic/git_diff--unmerged.json",
+     "tests/fixtures/generic/git_diff--unmerged.out",
+     "tests/test_git_diff.py"
+    ],
+    "title": "Add git-diff parser for `git diff --name-status` output"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T18:08:11+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/744"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#744:merged",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T18:55:13+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/744"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#744:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Fixes #497 "
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T18:09:35+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/744"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#743:opened",
+   "payload": {
+    "additions": 10,
+    "author": "tunglambk",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "jc/parsers/hosts.py",
+     "tests/test_hosts.py"
+    ],
+    "title": "fix(hosts): ignore whitespace-only lines"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T07:27:52+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/743"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#743:merged",
+   "payload": {
+    "author": "tunglambk",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T15:31:20+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/743"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#743:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Nice! Thanks for the fix."
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T15:30:56+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/743"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#741:opened",
+   "payload": {
+    "additions": 25,
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "tests/test_jc.py"
+    ],
+    "title": "test: find setup.py when tests are copied into a build tree"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T17:55:52+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/741"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#741:merged",
+   "payload": {
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T19:20:01+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/741"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#741:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the fix! Looks good."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T19:19:39+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/741"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#739:opened",
+   "payload": {
+    "additions": 196,
+    "author": "ChrisJr404",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 29,
+    "files": [
+     "docs/parsers/typeset.md",
+     "jc/parsers/typeset.py",
+     "tests/fixtures/generic/typeset--ksh.json",
+     "tests/fixtures/generic/typeset--ksh.out",
+     "tests/fixtures/generic/typeset--zsh.json",
+     "tests/fixtures/generic/typeset--zsh.out",
+     "tests/test_typeset.py"
+    ],
+    "title": "Extend typeset parser to handle ksh and zsh output"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T02:29:55+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/739"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#739:merged",
+   "payload": {
+    "author": "ChrisJr404",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T22:11:28+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/739"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#738:opened",
+   "payload": {
+    "additions": 31,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 8,
+    "files": [
+     "jc/parsers/pgpass.py",
+     "tests/fixtures/generic/pgpass.json",
+     "tests/fixtures/generic/pgpass.txt"
+    ],
+    "title": "fix(pgpass): a backslash before a colon loses a field"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T19:17:55+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/738"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#738:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T00:57:41+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/738"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#738:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for these contributions! I\u2019ll start taking a look as I start working on the next release. "
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T21:42:51+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/738"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#738:comment:1",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for finding these!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T00:57:30+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/738"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#737:opened",
+   "payload": {
+    "additions": 23,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 0,
+    "files": [
+     "jc/parsers/fstab.py",
+     "tests/fixtures/generic/fstab-optional-fields.json",
+     "tests/fixtures/generic/fstab-optional-fields.out",
+     "tests/test_fstab.py"
+    ],
+    "title": "fix(fstab): a line omitting the optional fs_freq/fs_passno fields aborts the parse"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T16:59:45+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/737"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#737:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T00:35:55+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/737"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#737:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the fix!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T00:35:47+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/737"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#736:opened",
+   "payload": {
+    "additions": 53,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 12,
+    "files": [
+     "jc/utils.py",
+     "tests/test_jc_utils.py"
+    ],
+    "title": "fix(utils): stop timestamp leaking the environment locale into LC_TIME"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T14:36:40+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/736"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#736:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T23:52:08+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/736"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#736:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for finding and fixing this issue. A lot can go wrong when dealing with timestamps and formats!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T23:51:44+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/736"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#735:opened",
+   "payload": {
+    "additions": 5,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 4,
+    "files": [
+     "jc/parsers/ufw.py",
+     "tests/fixtures/ubuntu-18.04/ufw-verbose.json",
+     "tests/fixtures/ubuntu-18.04/ufw-verbose.out"
+    ],
+    "title": "fix(ufw): recognize the (log-all) rule marker"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T11:52:53+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/735"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#735:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T23:08:38+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/735"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#735:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the fix and tests!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T23:08:29+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/735"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#734:opened",
+   "payload": {
+    "additions": 88,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "jc/cli.py",
+     "tests/test_jc_cli.py"
+    ],
+    "title": "fix path traversal in /proc magic syntax"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T07:54:22+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/734"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#734:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T17:54:07+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/734"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#734:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thank you for the contribution. Looks pretty good!\r\n\r\nAt least one test is failing on macOS. It may also affect Windows:\r\n\r\n```\r\nFAIL: test_magic_proc_path_traversal_multiple_files (test_jc_cli.MyTests.test_magic_proc_path_traversal_multiple_files)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"/Users/runner/work/jc/jc/tests/test_jc_cli.py\", line 645, in test_magic_proc_path_traversal_multiple_files\r\n    self.assertIn('/proc/../etc/hosts', err.getvalue())\r\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: '/proc/../etc/hosts' not found in 'jc:  Error - \"/proc/uptime\" file could not be opened: No such file or directory.\\n'\r\n```\r\n\r\nMay just need to add the `@unittest.skipIf(not os.path.exists('/proc/uptime'), '/proc not available')` decorator before that test."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T15:53:48+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/734"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#733:opened",
+   "payload": {
+    "additions": 796,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 12,
+    "deletions": 8,
+    "files": [
+     "README.md",
+     "build-completions.py",
+     "completions/jc_bash_completion.sh",
+     "completions/jc_xonsh_completion.py",
+     "completions/jc_zsh_completion.sh",
+     "jc/cli.py",
+     "jc/cli_data.py",
+     "jc/shell_completions.py",
+     "man/jc.1",
+     "templates/manpage_template",
+     "templates/readme_template",
+     "tests/test_shell_completions.py"
+    ],
+    "title": "feat: add xonsh shell completions"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T19:26:00+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/733"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#733:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T19:26:13+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/733"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#733:review:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Looks great! Tests are failing on an f-string, but once we get that fixed it looks like it will be good to go. I would have never figured this out! \ud83d\ude04 ",
+    "state": "CHANGES_REQUESTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T22:40:52+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/733"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#733:comment:0",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "body": "Rebased onto current `dev`, no conflicts. Thanks for the branch update, this replaces it: the merge was against a `dev` from before #735 - #738 landed, so the branch was still 9 commits behind.\n\nOne real thing the rebase turned up: `dev` has gained the `upsc` parser since I generated the xonsh completions, so the committed script was stale. Regenerated, and `build-completions.py` is now a no-op against the tree:\n\n```\n$ python build-completions.py && git status --porcelain\n(no output)\n```\n\nFull suite on the new base, run the way `runtests.sh` does:\n\n```\n$ TZ=PST8PDT python -m unittest discover -s tests\nRan 1581 tests in 5.4s\nOK (skipped=7)\n```\n\nWorth noting the earlier red run was on the pre-rebase branch. Also, running without `TZ=PST8PDT` gives 161 timezone failures across the suite, unrelated to this PR, in case that ever shows up in CI.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T05:56:04+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/733"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#733:comment:1",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "body": "That red run was a real bug in this PR, not flakiness. `get_xonsh_command_descriptions` nested an f-string and escaped the inner quotes:\n\n```python\nf'{cmd!r}: {f\"run \\x22{cmd}\\x22 command with magic syntax.\"!r},'\n```\n\nA backslash inside an f-string expression is only legal from 3.12 (PEP 701). On 3.11 it is a `SyntaxError` at import, which is why two whole test modules failed to load rather than any single assertion. My local interpreter is 3.13, so it passed here and I missed it. `setup.py` says `python_requires='>=3.6'`, so that was plainly wrong.\n\nFixed by building the description before the f-string:\n\n```python\nitems = []\nfor cmd in command_list:\n    description = f'run \"{cmd}\" command with magic syntax.'\n    items.append(f'{cmd!r}: {description!r},')\nreturn items\n```\n\nVerified on a real 3.11, not just by reading:\n\n```\n$ .venv311/bin/python -c \"import jc.shell_completions\"   # old code\nSyntaxError: f-string expression part cannot include a backslash\n\n$ TZ=PST8PDT python3.11 -m unittest discover -s tests    # new code\nRan 1581 tests   OK (skipped=7)\n$ TZ=PST8PDT python3.13 -m unittest discover -s tests\nRan 1581 tests   OK (skipped=7)\n```\n\nThe generated completion script is byte-identical before and after, so this is a pure syntax fix with no output change.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T06:03:12+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/733"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#732:opened",
+   "payload": {
+    "additions": 14,
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 7,
+    "files": [
+     "jc/parsers/ip_route.py",
+     "tests/test_ip_route.py"
+    ],
+    "title": "ip_route: fix UnboundLocalError on whitespace-only input"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T18:11:43+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/732"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#732:merged",
+   "payload": {
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T18:12:58+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/732"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#732:comment:0",
+   "payload": {
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "body": "Hi! Gentle nudge on this one whenever you have some bandwidth. It's a small, self-contained fix (`ip_route: fix UnboundLocalError on whitespace-only input`), and it's currently mergeable with no conflicts. No urgency at all, and I'm happy to make any changes you'd like. Thanks for maintaining jc!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T08:35:50+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/732"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#732:comment:1",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Looks great! Thanks for the contribution. This will make it in the next release."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T18:12:36+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/732"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#731:opened",
+   "payload": {
+    "additions": 310,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 13,
+    "deletions": 372,
+    "files": [
+     "CHANGELOG",
+     "docs/parsers/git_log.md",
+     "docs/parsers/git_log_s.md",
+     "jc/parsers/git_log.py",
+     "jc/parsers/git_log_s.py",
+     "tests/fixtures/generic/git-log-fuller-numstat-streaming.json",
+     "tests/fixtures/generic/git-log-fuller-numstat.json",
+     "tests/fixtures/generic/git-log-fuller-numstat.out",
+     "tests/fixtures/generic/git-log-fuller-stat-numstat-streaming.json",
+     "tests/fixtures/generic/git-log-fuller-stat-numstat.json",
+     "tests/fixtures/generic/git-log-fuller-stat-numstat.out",
+     "tests/test_git_log.py",
+     "tests/test_git_log_s.py"
+    ],
+    "title": "feat(git-log): populate file_stats from --numstat"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T18:04:36+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/731"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#731:merged",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T15:49:58+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/731"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#731:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Nice contribution - looks great. Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T15:49:35+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/731"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#730:opened",
+   "payload": {
+    "additions": 42,
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 10,
+    "files": [
+     "jc/parsers/traceroute.py",
+     "tests/test_traceroute.py"
+    ],
+    "title": "traceroute: fix crash on input with no hop lines"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T16:11:04+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/730"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#730:merged",
+   "payload": {
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T22:04:38+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/730"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#730:comment:0",
+   "payload": {
+    "author": "eeshsaxena",
+    "author_is_bot": false,
+    "body": "Hi! Gentle nudge on this one whenever you have some bandwidth. It's a small, self-contained fix (`traceroute: fix crash on input with no hop lines`), and it's currently mergeable with no conflicts. No urgency at all, and I'm happy to make any changes you'd like. Thanks for maintaining jc!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T08:35:54+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/730"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#730:comment:1",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Appreciate the contributions! I'm planning on taking a look at these new PRs pretty soon when I start working on the next release. Thanks for the PR!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T14:29:32+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/730"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#729:opened",
+   "payload": {
+    "additions": 239,
+    "author": "chensimian",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 0,
+    "files": [
+     "jc/lib.py",
+     "jc/parsers/upsc.py",
+     "tests/fixtures/upsc--cyberpower.json",
+     "tests/fixtures/upsc--cyberpower.out",
+     "tests/test_upsc.py"
+    ],
+    "title": "fix: New Parser - NUT-upsc command"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T08:08:32+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/729"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#729:closed",
+   "payload": {
+    "author": "chensimian",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T23:15:17+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/729"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#729:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the contribution, but this is a duplicate. I did like the key normalization idea so I added that to the new upsc parser."
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T23:15:17+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/729"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#728:opened",
+   "payload": {
+    "additions": 133,
+    "author": "chensimian",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 2,
+    "files": [
+     "jc/parsers/nmcli.py",
+     "tests/fixtures/generic/nmcli-device-wifi-list.json",
+     "tests/fixtures/generic/nmcli-device-wifi-list.out",
+     "tests/test_nmcli.py"
+    ],
+    "title": "fix: [Feature] Add support for parsing WiFi from NetworkManager"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T03:32:02+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/728"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#728:merged",
+   "payload": {
+    "author": "chensimian",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T04:32:27+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/728"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#728:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the contribution! This will go into the next release."
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T04:32:15+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/728"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#727:opened",
+   "payload": {
+    "additions": 377,
+    "author": "chensimian",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "jc/lib.py",
+     "jc/parsers/prometheus.py",
+     "tests/test_prometheus.py"
+    ],
+    "title": "fix: New parser request: Prometheus metrics / OpenMetrics"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T13:23:02+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/727"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#727:review:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Please use the style of the other parsers and unittests. We prefer the parsers to have a similar style and approach so it is easier to troubleshoot.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T04:03:20+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/727"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#726:opened",
+   "payload": {
+    "additions": 151,
+    "author": "chensimian",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 0,
+    "files": [
+     "jc/lib.py",
+     "jc/parsers/php_fpm.py",
+     "tests/test_php_fpm.py"
+    ],
+    "title": "fix: New parser: php-fpm8.2 -tt"
+   },
+   "source": "github",
+   "timestamp": "2026-08-12T08:00:17+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/726"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#726:review:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the contribution! Please try to follow the style of other parsers more closely and find my specific review comments.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T00:27:06+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/726"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#725:opened",
+   "payload": {
+    "additions": 9,
+    "author": "TheGreatApollyon",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 4,
+    "files": [
+     "docs/parsers/typeset.md",
+     "jc/parsers/typeset.py",
+     "tests/fixtures/generic/typeset--brackets-empty.json",
+     "tests/fixtures/generic/typeset--brackets-empty.out",
+     "tests/fixtures/generic/typeset--plain.json"
+    ],
+    "title": "fix: typeset parser drops scalar variables with empty or bracket-prefixed values"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T03:18:45+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/725"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#725:closed",
+   "payload": {
+    "author": "TheGreatApollyon",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T21:29:42+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/725"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#725:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "## Pull request overview\n\nThis pull request fixes `typeset`/`declare` parsing so scalar variables are no longer silently dropped when their values are empty (`\"\"`) or begin with `[` (e.g., `\"[x]\"`), addressing #720 by loosening the scalar-value portion of `VAR_DEF_PATTERN` while keeping array detection intact.\n\n**Changes:**\n- Relaxed `VAR_DEF_PATTERN` to accept empty/bracket-prefixed scalar values and bumped the parser version to 1.1.\n- Added new regression fixtures covering bracket-prefixed and empty scalar values.\n- Regenerated the \u201cplain\u201d expected JSON fixture to include scalars that were previously (incorrectly) omitted.\n\n### Reviewed changes\n\nCopilot reviewed 5 out of 5 changed files in this pull request and generated no comments.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| `jc/parsers/typeset.py` | Fixes scalar variable matching by loosening `VAR_DEF_PATTERN` and bumps parser version to 1.1. |\r\n| `docs/parsers/typeset.md` | Updates documented parser version to 1.1. |\r\n| `tests/fixtures/generic/typeset--brackets-empty.out` | Adds new input fixture covering bracket-prefixed and empty scalar values in `declare` output. |\r\n| `tests/fixtures/generic/typeset--brackets-empty.json` | Adds expected parsed output fixture validating the regression cases. |\r\n| `tests/fixtures/generic/typeset--plain.json` | Updates expected parsed output to include previously dropped short/empty-ish scalar values. |\n</details>\n\n\n\n\n\n\n\n\n---\n\n\ud83d\udca1 <a href=\"/kellyjonbrazil/jc/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-31T03:21:21+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/725"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#725:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the contribution! Closing this out as duplicate of #722 "
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T21:29:42+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/725"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#724:opened",
+   "payload": {
+    "additions": 21,
+    "author": "abyworkings-coder",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "llms.txt"
+    ],
+    "title": "Add llms.txt for LLM/agent-readable project summary"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T08:06:34+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/724"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#724:merged",
+   "payload": {
+    "author": "abyworkings-coder",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T23:30:30+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/724"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#724:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thank you for the contribution!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T23:30:21+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/724"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#723:opened",
+   "payload": {
+    "additions": 8,
+    "author": "koteshyelamati",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 8,
+    "files": [
+     "jc/parsers/proc_driver_rtc.py",
+     "jc/parsers/xrandr.py",
+     "tests/test_jc_cli.py",
+     "tests/test_xml.py",
+     "tests/test_yaml.py"
+    ],
+    "title": "fix: replace bare except clauses with specific exception types"
+   },
+   "source": "github",
+   "timestamp": "2026-07-23T22:14:42+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/723"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#723:merged",
+   "payload": {
+    "author": "koteshyelamati",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T23:22:32+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/723"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#723:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thank you for the contribution!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T23:22:20+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/723"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#722:opened",
+   "payload": {
+    "additions": 18,
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 11,
+    "files": [
+     "jc/parsers/typeset.py",
+     "tests/fixtures/generic/typeset--plain.json",
+     "tests/fixtures/generic/typeset--scalar-edge-values.json",
+     "tests/fixtures/generic/typeset--scalar-edge-values.out"
+    ],
+    "title": "Preserve bracketed and empty scalar values"
+   },
+   "source": "github",
+   "timestamp": "2026-07-21T07:36:57+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/722"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#722:merged",
+   "payload": {
+    "author": "juliosuas",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-23T21:32:35+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/722"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#721:opened",
+   "payload": {
+    "additions": 299,
+    "author": "mayoka0",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 0,
+    "files": [
+     "jc/lib.py",
+     "jc/parsers/upsc.py",
+     "tests/fixtures/upsc--apc.json",
+     "tests/fixtures/upsc--apc.out",
+     "tests/fixtures/upsc--cyberpower.json",
+     "tests/fixtures/upsc--cyberpower.out",
+     "tests/test_upsc.py"
+    ],
+    "title": "Add upsc parser (#556)"
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T00:07:07+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/721"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#721:merged",
+   "payload": {
+    "author": "mayoka0",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T22:43:47+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/721"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#721:comment:0",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "Thanks for the contribution! I'll take a look for the next release."
+   },
+   "source": "github",
+   "timestamp": "2026-07-20T16:24:30+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/721"
+  },
+  {
+   "evidence_id": "pr:kellyjonbrazil/jc#721:comment:1",
+   "payload": {
+    "author": "kellyjonbrazil",
+    "author_is_bot": false,
+    "body": "I like the round-trip number conversion - I never thought of that. Great idea! I'll merge and get this into the next release. Thanks again for the contribution!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-24T22:41:09+00:00",
+   "url": "https://github.com/kellyjonbrazil/jc/pull/721"
+  }
+ ],
+ "repo": "kellyjonbrazil/jc",
+ "window": "pre_t"
+}

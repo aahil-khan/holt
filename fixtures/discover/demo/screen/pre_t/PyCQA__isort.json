@@ -1,0 +1,1305 @@
+{
+ "captured_at": "2026-08-31T01:07:55.515670+00:00",
+ "content_sha256": "dcf959a50b441084b6370fe6dece2e17b5246a4ab7171d7f3d21d69cef3579f7",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:PyCQA/isort:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": "A Python utility / library to sort imports.",
+    "homepage_url": "https://isort.readthedocs.io/",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-27T20:30:57Z",
+    "stargazer_count": 6949
+   },
+   "source": "github",
+   "timestamp": "2013-09-02T22:22:53+00:00",
+   "url": "https://github.com/PyCQA/isort"
+  },
+  {
+   "evidence_id": "repo:PyCQA/isort:readme",
+   "payload": {
+    "commit_oid": "131f4adcd5582bfc53928ab0d740eceb8b506b6c",
+    "kind": "readme",
+    "text": "[![isort - isort your imports, so you don't have to.](https://raw.githubusercontent.com/pycqa/isort/main/art/logo_large.png)](https://isort.readthedocs.io/)\n\n------------------------------------------------------------------------\n\n[![PyPI version](https://badge.fury.io/py/isort.svg)](https://badge.fury.io/py/isort)\n[![Python Version](https://img.shields.io/pypi/pyversions/isort)][pypi status]\n[![CI](https://github.com/PyCQA/isort/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/PyCQA/isort/actions/workflows/continuous-integration.yml)\n[![Code coverage Status](https://codecov.io/gh/pycqa/isort/branch/main/graph/badge.svg)](https://codecov.io/gh/pycqa/isort)\n[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.org/project/isort/)\n[![Downloads](https://pepy.tech/badge/isort)](https://pepy.tech/project/isort)\n[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)\n[![Imports: isort](https://img.shields.io/badge/imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://isort.readthedocs.io/)\n[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/pycqa/isort/?ref=repository-badge)\n\n[pypi status]: https://pypi.org/project/isort/\n_________________\n\n[Read Latest Documentation](https://isort.readthedocs.io/) - [Browse GitHub Code Repository](https://github.com/pycqa/isort/)\n_________________\n\n# isort your imports, so you don't have to.\n\nisort is a Python utility / library to sort imports alphabetically and\nautomatically separate into sections and by type. It provides a command line\nutility, Python library and [plugins for various\neditors](https://github.com/pycqa/isort/wiki/isort-Plugins) to\nquickly sort all your imports. It requires Python 3.10+ to run but\nsupports formatting Python 2 code too.\n\n- [Try isort now from your browser!](docs/quick_start/0.-try.md)\n- [Using black? See the isort and black compatibility guide.](docs/configuration/black_compatibility.md)\n- [isort has official support for pre-commit!](docs/configuration/pre-commit.md)\n\n![Example Usage](https://raw.github.com/pycqa/isort/main/example.gif)\n\nBefore isort:\n\n```python\nfrom my_lib import Object\n\nimport os\n\nfrom my_lib import Object3\n\nfrom my_lib import Object2\n\nimport sys\n\nfrom third_party import lib15, lib1, lib2, lib3, lib4, lib5, lib6, lib7, lib8, lib9, lib10, lib11, lib12, lib13, lib14\n\nimport sys\n\nfrom __future__ import absolute_import\n\nfrom third_party import lib3\n\nprint(\"Hey\")\nprint(\"yo\")\n```\n\nAfter isort:\n\n```python\nfrom __future__ import absolute_import\n\nimport os\nimport sys\n\nfrom third_party import (lib1, lib2, lib3, lib4, lib5, lib6, lib7, lib8,\n                         lib9, lib10, lib11, lib12, lib13, lib14, lib15)\n\nfrom my_lib import Object, Object2, Object3\n\nprint(\"Hey\")\nprint(\"yo\")\n```\n\n## Installing isort\n\nInstalling isort is as simple as:\n\n```bash\npip install isort\n```\n\n## Using isort\n\n**From the command line**:\n\nTo run on specific files:\n\n```bash\nisort mypythonfile.py mypythonfile2.py\n```\n\nTo apply recursively:\n\n```bash\nisort .\n```\n\nIf [globstar](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)\nis enabled, `isort .` is equivalent to:\n\n```bash\nisort **/*.py\n```\n\nTo view proposed changes without applying them:\n\n```bash\nisort mypythonfile.py --diff\n```\n\nFinally, to atomically run isort against a project, only applying\nchanges if they don't introduce syntax errors:\n\n```bash\nisort --atomic .\n```\n\n(Note: this is disabled by default, as it prevents isort from\nrunning against code written using a different version of Python.)\n\n**From within Python**:\n\n```python\nimport isort\n\nisort.file(\"pythonfile.py\")\n```\n\nor:\n\n```python\nimport isort\n\nsorted_code = isort.code(\"import b\\nimport a\\n\")\n```\n\n## Installing isort's for your preferred text editor\n\nSeveral plugins have been written that enable to use isort from within a\nvariety of text-editors. You can find a full list of them [on the isort\nwiki](https://github.com/pycqa/isort/wiki/isort-Plugins).\nAdditionally, I will enthusiastically accept pull requests that include\nplugins for other text editors and add documentation for them as I am\nnotified.\n\n## Multi line output modes\n\nYou will notice above the \\\"multi\\_line\\_output\\\" setting. This setting\ndefines how from imports wrap when they extend past the line\\_length\nlimit and has [12 possible settings](docs/configuration/multi_line_output_modes.md).\n\n## Indentation\n\nTo change the how constant indents appear - simply change the\nindent property with the following accepted formats:\n\n-   Number of spaces you would like. For example: 4 would cause standard\n    4 space indentation.\n-   Tab\n-   A verbatim string with quotes around it.\n\nFor example:\n\n```python\n\"    \"\n```\n\nis equivalent to 4.\n\nFor the import styles that use parentheses, you can control whether or\nnot to include a trailing comma after the last import with the\n`include_trailing_comma` option (defaults to `False`).\n\n## Intelligently Balanced Multi-line Imports\n\nAs of isort 3.1.0 support for balanced multi-line imports has been\nadded. With this enabled isort will dynamically change the import length\nto the one that produces the most balanced grid, while staying below the\nmaximum import length defined.\n\nExample:\n\n```python\nfrom __future__ import (absolute_import, division,\n                        print_function, unicode_literals)\n```\n\nWill be produced instead of:\n\n```python\nfrom __future__ import (absolute_import, division, print_function,\n                        unicode_literals)\n```\n\nTo enable this set `balanced_wrapping` to `True` in your config or pass\nthe `-e` option into the command line utility.\n\n## Custom Sections and Ordering\n\nisort provides configuration options to change almost every aspect of how\nimports are organized, ordered, or grouped together in sections.\n\n[Click here](docs/configuration/custom_sections_and_ordering.md) for an overview of all these options.\n\n## Skip processing of imports (outside of configuration)\n\nTo make isort ignore a single import simply add a comment at the end of\nthe import line containing the text `isort:skip`:\n\n```python\nimport module  # isort:skip\n```\n\nor:\n\n```python\nfrom xyz import (abc,  # isort:skip\n                 yo,\n                 hey)\n```\n\nTo make isort skip an entire file simply add `isort:skip_file` to the\nmodule's doc string:\n\n```python\n\"\"\" my_module.py\n    Best module ever\n\n   isort:skip_file\n\"\"\"\n\nimport b\nimport a\n```\n\n## Adding or removing an import from multiple files\n\nisort can be ran or configured to add / remove imports automatically.\n\n[See a complete guide here.](docs/configuration/add_or_remove_imports.md)\n\n## Using isort to verify code\n\nThe `--check-only` option\n-------------------------\n\nisort can also be used to verify that code is correctly formatted\nby running it with `-c`. Any files that contain incorrectly sorted\nand/or formatted imports will be outputted to `stderr`.\n\n```bash\nisort **/*.py -c -v\n\nSUCCESS: /home/timothy/Projects/Open_Source/isort/isort_kate_plugin.py Everything Looks Good!\nERROR: /home/timothy/Projects/Open_Source/isort/isort/isort.py Imports are incorrectly sorted.\n```\n\nOne great place this can be used is with a pre-commit git hook, such as\nthis one by \\@acdha:\n\n<https://gist.github.com/acdha/8717683>\n\nThis can help to ensure a certain level of code quality throughout a\nproject.\n\n## Git hook\n\nisort provides a hook function that can be integrated into your Git\npre-commit script to check Python code before committing.\n\n[More info here.](docs/configuration/git_hook.md)\n\n## Spread the word\n\n[![Imports: isort](https://img.shields.io/badge/imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://isort.readthedocs.io/)\n\nPlace this badge at the top of your repository to let others know your project uses isort.\n\nFor README.md:\n\n```markdown\n[![Imports: isort](https://img.shields.io/badge/imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://isort.readthedocs.io/)\n```\n\nOr README.rst:\n\n```rst\n.. image:: https://img.shields.io/badge/imports-isort-%231674b1?style=flat&labelColor=ef8336\n    :target: https://isort.readthedocs.io/\n```\n\n## Security contact information\n\nTo report a security vulnerability, please use the [Tidelift security\ncontact](https://tidelift.com/security). Tidelift will coordinate the\nfix and disclosure.\n\n## Why isort?\n\nisort simply stands for import sort. It was originally called\n\"sortImports\" however I got tired of typing the extra characters and\ncame to the realization camelCase is not pythonic.\n\nI wrote isort because in an organization I used to work in the manager\ncame in one day and decided all code must have alphabetically sorted\nimports. The code base was huge - and he meant for us to do it by hand.\nHowever, being a programmer - I\\'m too lazy to spend 8 hours mindlessly\nperforming a function, but not too lazy to spend 16 hours automating it.\nI was given permission to open source sortImports and here we are :)\n\n------------------------------------------------------------------------\n\n[Get professionally supported isort with the Tidelift\nSubscription](https://tidelift.com/subscription/pkg/pypi-isort?utm_source=pypi-isort&utm_medium=referral&utm_campaign=readme)\n\nProfessional support for isort is available as part of the [Tidelift\nSubscription](https://tidelift.com/subscription/pkg/pypi-isort?utm_source=pypi-isort&utm_medium=referral&utm_campaign=readme).\nTidelift gives software development teams a single source for purchasing\nand maintaining their software, with professional grade assurances from\nthe experts who know it best, while seamlessly integrating with existing\ntools.\n\n------------------------------------------------------------------------\n\nThanks and I hope you find isort useful!\n\n~Timothy Crosley\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T19:55:41+00:00",
+   "url": "https://github.com/PyCQA/isort/blob/131f4adcd5582bfc53928ab0d740eceb8b506b6c/README.md"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2647:opened",
+   "payload": {
+    "additions": 63,
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "changed_files": 4,
+    "deletions": 4,
+    "files": [
+     "isort/core.py",
+     "isort/literal.py",
+     "tests/unit/test_isort.py",
+     "tests/unit/test_literal.py"
+    ],
+    "title": "fix: preserve trailing comments when sorting literals"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T16:24:36+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2647"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2645:opened",
+   "payload": {
+    "additions": 131,
+    "author": "SemTiOne",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 2,
+    "files": [
+     "isort/wrap.py",
+     "isort/wrap_modes.py",
+     "tests/unit/test_regressions.py",
+     "tests/unit/test_wrap.py",
+     "tests/unit/test_wrap_modes.py"
+    ],
+    "title": "Keep long comments off the opening line"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T12:36:08+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2645"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2645:review:0",
+   "payload": {
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "body": "Verified locally on head 67213aa (tests/unit: 627 passed / 2 failed / 1 skipped \u2014 the 2 failures are the known pre-existing FileNotFoundError env noise (issue_909/938), byte-identical on main; main baseline is 623 passed, so the +4 are exactly this PR's new tests, zero regressions).\n\n**Fix behavior confirmed:**\n- Issue #2124 shape (black profile, long comment inside a multi-line from-import): the comment now moves to its own line under the opening paren instead of being merged onto `from ... import (` \u2014 `isort.code` output verified, and the result is idempotent (re-running produces identical output).\n- Functional comments are correctly exempt: `# noqa: F401` and `# type: ignore` stay on the opening line (verified end-to-end \u2014 moving them would break their meaning).\n- Short comments still stay on the opening line (existing behavior preserved, covered by `test_vertical_hanging_indent_short_comment_stays_on_opening_line`).\n- `wrap.import_statement(explode=True)` now passes the real `line_length` instead of `1`; checked the `vertical_hanging_indent` interface \u2014 `line_length` is only consumed by the new branch, so no other explode-mode behavior changes.\n- isort self-lint (`--profile hug --check --diff isort/ tests/`) and ruff on the changed files: clean.\n\n**Non-blocking nit:** the functional-comment detection uses a loose substring (`\"noqa\" in text or \"type:\" in text`). A comment that merely mentions these tokens (e.g. `# check type: int ...`) is treated as functional and stays on the over-long opening line. This errs in the safe direction (it's the old behavior), so not a blocker \u2014 but anchoring the check to a directive-shaped pattern (e.g. comment starting with `# noqa` / `# type: ignore`) would make it tighter. No change requested.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T16:27:23+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2645"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2645:review:1",
+   "payload": {
+    "author": "SemTiOne",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T00:41:20+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2645"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2645:review:2",
+   "payload": {
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "body": "Re-verified on 9683ad6 \u2014 my wrap_modes.py:178 nit is fully addressed.\n\n**Verification (local):**\n\n1. **Regression proven:** `test_vertical_hanging_indent_non_directive_type_comment_moves_off` FAILS on 67213aa (old substring `\"type:\" in _comment_text` kept a `check type: int` comment on the opening line) and PASSES on 9683ad6. Exactly the false-positive I flagged.\n2. **Functional exemptions intact (executed probes):** long `noqa: F401 ...` comment stays on the opening line (`from os.path import (  # noqa: ...`); long `type: ignore ...` stays as well. Non-directive `check type: int` and plain long comments move off to their own line under the paren.\n3. **No regressions:** full unit suite on head = 628 passed / 2 failed \u2014 the 2 failures (issue_909/938 FileNotFoundError) are the documented pre-existing env noise, byte-identical on base. Base = 627 passed / 3 failed (env noise + the new regression test). Zero new failures.\n\nThe `comment.strip().lower().startswith((\"noqa\", \"type: ignore\"))` per-comment check is a strictly better heuristic than the substring match, and the test pins the non-directive case so it can't regress.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-30T20:08:17+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2645"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2644:opened",
+   "payload": {
+    "additions": 93,
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 15,
+    "files": [
+     "isort/literal.py",
+     "tests/unit/test_regressions.py"
+    ],
+    "title": "fix: keep one-per-line layout of short multiline __all__ under trailing-comma profiles"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T19:08:39+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2644"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2644:closed",
+   "payload": {
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T00:44:46+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2644"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2644:comment:0",
+   "payload": {
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "body": "Closing as a duplicate of #2605, which implements the same fix for the same issue (#2578) with the same mechanism \u2014 a preserve-trailing-comma flag threaded through the collection sorters, gated on `include_trailing_comma`. #2605 predates this PR (Aug 17 vs Aug 28) and is already under maintainer review, and I verified its head passes the full literal + reexport test suite locally. Deferring to it \u2014 thanks @PSR94 for the cleaner `_has_trailing_comma` formulation."
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T00:44:45+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2644"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2643:opened",
+   "payload": {
+    "additions": 18,
+    "author": "copilot-swe-agent",
+    "author_is_bot": true,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "pyproject.toml",
+     "tests/unit/test_importable.py"
+    ],
+    "title": "Restore `python -m isort` by excluding `__main__` from mypyc compilation"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:21:43+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2643"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2643:merged",
+   "payload": {
+    "author": "copilot-swe-agent",
+    "author_is_bot": true,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T20:04:11+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2643"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2643:review:0",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "@Copilot Can we test that the CLI invocation works instead of the inclusion in pyproject?",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:28:09+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2643"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2643:review:1",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "@copilot Fix review",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:47:09+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2643"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2643:comment:0",
+   "payload": {
+    "author": "copilot-swe-agent",
+    "author_is_bot": true,
+    "body": "\n> @Copilot Can we test that the CLI invocation works instead of the inclusion in pyproject?\n\nUpdated in `90054d7`: the regression test now directly runs `python -m isort` via `subprocess` and asserts a successful exit code, instead of checking `pyproject.toml` contents."
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:29:46+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2643"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2643:comment:1",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2643?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.37%. Comparing base ([`037c2b2`](https://app.codecov.io/gh/PyCQA/isort/commit/037c2b210d65e1702cdaff872ab5ca2db44fc12c?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`a0e734c`](https://app.codecov.io/gh/PyCQA/isort/commit/a0e734c472465df67a0ccc684b68f4cbe3744068?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2643   +/-   ##\n=======================================\n  Coverage   99.37%   99.37%           \n=======================================\n  Files          41       41           \n  Lines        3181     3181           \n  Branches      686      686           \n=======================================\n  Hits         3161     3161           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:48:59+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2643"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2643:comment:2",
+   "payload": {
+    "author": "copilot-swe-agent",
+    "author_is_bot": true,
+    "body": "\n> @copilot Fix review\n\nAddressed in `a0e734c`."
+   },
+   "source": "github",
+   "timestamp": "2026-08-27T10:49:17+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2643"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2641:opened",
+   "payload": {
+    "additions": 60,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "CHANGELOG.md"
+    ],
+    "title": "Add changelog entries for last releases"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T21:41:49+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2641"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2641:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T21:50:45+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2641"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2641:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2641?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.37%. Comparing base ([`727d119`](https://app.codecov.io/gh/PyCQA/isort/commit/727d119442a3cc9c4184e45e14c74759b811cdb8?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`6f59d7e`](https://app.codecov.io/gh/PyCQA/isort/commit/6f59d7eed09a9131dcc79535249b955d99b9c860?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2641   +/-   ##\n=======================================\n  Coverage   99.37%   99.37%           \n=======================================\n  Files          41       41           \n  Lines        3181     3181           \n  Branches      686      686           \n=======================================\n  Hits         3161     3161           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T21:42:53+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2641"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2638:opened",
+   "payload": {
+    "additions": 0,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 17,
+    "files": [
+     ".cruft.json"
+    ],
+    "title": "Delete .cruft.json"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T20:40:42+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2638"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2638:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T20:50:03+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2638"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2638:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2638?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`dcdda58`](https://app.codecov.io/gh/PyCQA/isort/commit/dcdda58a9de78833658d47e8269b462136279e9b?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`c449214`](https://app.codecov.io/gh/PyCQA/isort/commit/c449214752dc48af9ca9387b11df28a57680a1cb?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2638   +/-   ##\n=======================================\n  Coverage   99.36%   99.36%           \n=======================================\n  Files          41       41           \n  Lines        3172     3172           \n  Branches      684      684           \n=======================================\n  Hits         3152     3152           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T20:41:33+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2638"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2637:opened",
+   "payload": {
+    "additions": 0,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/continuous-integration.yml"
+    ],
+    "title": "Fix check in CI"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:50:39+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2637"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2637:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T20:12:55+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2637"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2637:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2637?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`926a147`](https://app.codecov.io/gh/PyCQA/isort/commit/926a14790d793494f3be7e6c085d119621a0d30d?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`98620b6`](https://app.codecov.io/gh/PyCQA/isort/commit/98620b6effe772de55256fc444cba0a9d311905d?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2637   +/-   ##\n=======================================\n  Coverage   99.36%   99.36%           \n=======================================\n  Files          41       41           \n  Lines        3172     3172           \n  Branches      684      684           \n=======================================\n  Hits         3152     3152           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:52:47+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2637"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2636:opened",
+   "payload": {
+    "additions": 4,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 38,
+    "files": [
+     ".github/workflows/build.yml",
+     ".github/workflows/labeler.yml",
+     ".github/workflows/release-drafter.yml"
+    ],
+    "title": "Run less Builds"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:27:02+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2636"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2636:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:29:20+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2636"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2636:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2636?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.24%. Comparing base ([`d5f40fa`](https://app.codecov.io/gh/PyCQA/isort/commit/d5f40fa0553aa4bba71fcd73cf42933ae14d5116?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`904d9ec`](https://app.codecov.io/gh/PyCQA/isort/commit/904d9ec5fca77a19cc36b88fdc5cdbe08317e8f1?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n:warning: Report is 6 commits behind head on main.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##             main    #2636      +/-   ##\n==========================================\n- Coverage   99.36%   99.24%   -0.13%     \n==========================================\n  Files          41       41              \n  Lines        3165     3172       +7     \n  Branches      682      684       +2     \n==========================================\n+ Hits         3145     3148       +3     \n- Misses         12       14       +2     \n- Partials        8       10       +2     \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:30:22+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2636"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2635:opened",
+   "payload": {
+    "additions": 4,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 2,
+    "files": [
+     "tests/unit/test_importable.py"
+    ],
+    "title": "Fix `test_importable` for local dev"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:13:01+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2635"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2635:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:19:54+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2635"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2635:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2635?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`365c370`](https://app.codecov.io/gh/PyCQA/isort/commit/365c37001c98aec48003e8f83522b5943af7cb8e?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`904c47e`](https://app.codecov.io/gh/PyCQA/isort/commit/904c47ebcc8540ba1fb440280f7bd38ca4efc432?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n:warning: Report is 20 commits behind head on main.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##             main    #2635      +/-   ##\n==========================================\n- Coverage   99.39%   99.36%   -0.04%     \n==========================================\n  Files          41       41              \n  Lines        3163     3165       +2     \n  Branches      682      682              \n==========================================\n+ Hits         3144     3145       +1     \n- Misses         11       12       +1     \n  Partials        8        8              \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T19:15:49+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2635"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2634:opened",
+   "payload": {
+    "additions": 3,
+    "author": "amarisgreat",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "isort/main.py"
+    ],
+    "title": "Clarify src path help text"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T12:09:12+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2634"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2634:closed",
+   "payload": {
+    "author": "amarisgreat",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T15:56:44+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2634"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2634:comment:0",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "I don't see what is wrong with the old code to be honest."
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T15:56:44+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2634"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2633:opened",
+   "payload": {
+    "additions": 2,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/release.yml"
+    ],
+    "title": "Add `merge-multiple` when downloading release assets"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:58:22+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2633"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2633:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T23:14:26+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2633"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2633:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2633?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`eeff6ed`](https://app.codecov.io/gh/PyCQA/isort/commit/eeff6edb8cd0e349e7424cd5710c04305a5f929e?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`f5ece7a`](https://app.codecov.io/gh/PyCQA/isort/commit/f5ece7a941c8e9e912893f3a34df779be170af68?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2633   +/-   ##\n=======================================\n  Coverage   99.36%   99.36%           \n=======================================\n  Files          41       41           \n  Lines        3165     3165           \n  Branches      682      682           \n=======================================\n  Hits         3145     3145           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:59:16+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2633"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2632:opened",
+   "payload": {
+    "additions": 0,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/release.yml"
+    ],
+    "title": "Remove `name` from downloading assets steps in Release"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:17:24+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2632"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2632:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:29:23+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2632"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2632:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2632?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`915982d`](https://app.codecov.io/gh/PyCQA/isort/commit/915982dd051b862107464b51d23c2fdd0d433843?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`2c08b36`](https://app.codecov.io/gh/PyCQA/isort/commit/2c08b3669f377222d193543235ed83adc235ee34?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2632   +/-   ##\n=======================================\n  Coverage   99.36%   99.36%           \n=======================================\n  Files          41       41           \n  Lines        3165     3165           \n  Branches      682      682           \n=======================================\n  Hits         3145     3145           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:18:52+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2632"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2631:opened",
+   "payload": {
+    "additions": 4,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     ".github/workflows/build.yml"
+    ],
+    "title": "Use `uv` in Build workflow"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:05:32+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2631"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2631:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:51:40+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2631"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2631:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2631?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`915982d`](https://app.codecov.io/gh/PyCQA/isort/commit/915982dd051b862107464b51d23c2fdd0d433843?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`10d56c7`](https://app.codecov.io/gh/PyCQA/isort/commit/10d56c7a3792cb7027c6ea3d58d8e45d9661be0d?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n:warning: Report is 1 commits behind head on main.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2631   +/-   ##\n=======================================\n  Coverage   99.36%   99.36%           \n=======================================\n  Files          41       41           \n  Lines        3165     3165           \n  Branches      682      682           \n=======================================\n  Hits         3145     3145           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T22:06:45+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2631"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2630:opened",
+   "payload": {
+    "additions": 93,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 58,
+    "files": [
+     ".github/workflows/build.yml",
+     ".github/workflows/continuous-integration.yml",
+     ".github/workflows/release.yml"
+    ],
+    "title": "Use `cibuildwheel` to build wheels"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T12:44:53+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2630"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2630:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T21:50:13+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2630"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2630:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2630?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`5506b26`](https://app.codecov.io/gh/PyCQA/isort/commit/5506b263c3cb34bbe1eccd358d6743847d42f6d7?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`ab06e88`](https://app.codecov.io/gh/PyCQA/isort/commit/ab06e8892b15e8c1a326b81b28e935de8fe8acb7?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2630   +/-   ##\n=======================================\n  Coverage   99.36%   99.36%           \n=======================================\n  Files          41       41           \n  Lines        3165     3165           \n  Branches      682      682           \n=======================================\n  Hits         3145     3145           \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T12:46:12+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2630"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:opened",
+   "payload": {
+    "additions": 19,
+    "author": "Neallin-917",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "isort/core.py",
+     "tests/unit/test_regressions.py"
+    ],
+    "title": "Fix pylint disable-next comments at the start of imports"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T02:17:08+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:merged",
+   "payload": {
+    "author": "Neallin-917",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:35:08+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:review:0",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "Please rebase this as well to get the new CI setup!",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T20:59:33+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:review:1",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T16:06:58+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:review:2",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:26:52+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2628?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.36%. Comparing base ([`d5f40fa`](https://app.codecov.io/gh/PyCQA/isort/commit/d5f40fa0553aa4bba71fcd73cf42933ae14d5116?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`3bf67d5`](https://app.codecov.io/gh/PyCQA/isort/commit/3bf67d5c09c7b22af10051842f43704ed6cfe291?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n:warning: Report is 9 commits behind head on main.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2628   +/-   ##\n=======================================\n  Coverage   99.36%   99.36%           \n=======================================\n  Files          41       41           \n  Lines        3165     3173    +8     \n  Branches      682      684    +2     \n=======================================\n+ Hits         3145     3153    +8     \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-16T12:31:33+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:comment:1",
+   "payload": {
+    "author": "Neallin-917",
+    "author_is_bot": false,
+    "body": "Rebased onto current main in 47460eb to pick up the new CI setup. The targeted regression suite, Ruff checks, and the updated PR checks are green. Thanks!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-18T03:50:07+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2628:comment:2",
+   "payload": {
+    "author": "Neallin-917",
+    "author_is_bot": false,
+    "body": "Addressed in 3bf67d5. The two `pylint: disable-next` comments now use distinct valid Pylint codes, so the expected sorted output proves each comment remains attached to its respective import. `uv run pytest tests/unit/test_regressions.py` passes (94 tests), along with Ruff and formatting checks."
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T02:05:33+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2628"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:opened",
+   "payload": {
+    "additions": 115,
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 7,
+    "files": [
+     "isort/core.py",
+     "isort/literal.py",
+     "tests/unit/test_regressions.py"
+    ],
+    "title": "Stop swallowing a statement that immediately follows a sorted literal"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T10:58:46+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:review:0",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "Ci fails.\n\nAlso, this feels really really complex for such a small bug. Is there a solution that does not involve such a complex function?",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T21:09:01+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:review:1",
+   "payload": {
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "body": "Verified locally (head ecb32a2, isort from source): all 5 new `issue_2286` tests pass, and the original crash reproduces on `main` for both the `--sort-reexports` and `# isort: list` variants and is fixed here. Full CI matrix on this head is green.\n\nHowever, I found a related case this PR silently **corrupts**, which I think is worth resolving before merge (inline comment below):\n\n```python\n__all__ = [\"b\", \"a\"]\n# note\nx = 1\n```\n\n`isort.code(..., sort_reexports=True)` on `main` raises `ValueError: too many values to unpack`; on this head it returns:\n\n```python\n__all____all__ = [\"a\", \"b\"]\nx = 1\n```\n\ni.e. the standalone comment is silently dropped, the identifier is duplicated, and the real `__all__` no longer exists \u2014 so `from module import *` semantics silently change. Also reproduces with the comment at EOF (`__all__ = [\"b\", \"a\"]\\n# note\\n` -> `__all____all__ = [\"a\", \"b\"]\\n`). `isort.check_code(..., sort_reexports=True)` does return False for it, so `--check`/CI catches the change \u2014 but anyone running `isort file.py` gets a silently corrupted file.\n\nTwo related, milder observations from the same family:\n- `__all__ = [\"b\", \"a\"]  # exports\\nx = 1\\n` -> inline comment silently dropped (no corruption).\n- `# isort: list\\n__all__ = [\"b\", \"a\"]\\n# note\\nx = 1\\n` -> sorted correctly, but the comment is relocated above the literal.\n\nSuggested direction (happy to help): when a section contains comment lines, either bail out and leave the section unsorted, or exclude comments from both the literal section and the rollback accounting \u2014 with regression tests for the comment-in-section cases. This also speaks to the complexity concern raised on the PR: the AST-split needs to mirror exactly what was already emitted to the stream.\n\nOut of scope / pre-existing (unchanged by this PR): a literal containing `=` (e.g. `__all__ = [f\"{x}={y}\" for x in ...]`) still crashes at `isort/core.py:291` (`stripped_line.split(\"=\")`) on both `main` and this head.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T01:50:01+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:review:2",
+   "payload": {
+    "author": "Manny7717",
+    "author_is_bot": false,
+    "body": "Verified your fix locally on head 70f7eac8 \u2014 and yes, your correction to my diagnosis is right: on main (131f4adc), the EOF shape already corrupts (`__all____all__ = [\"a\", \"b\"]\\n`), while the statement shape crashed with `ValueError: too many values to unpack`. So this PR widened reachability of a pre-existing corruption and your fix closes it properly rather than just avoiding it. That's a better fix than my suggestion, and the relative-rollback-vs-absolute-position reasoning in the commit message is correct.\n\nWhat I re-ran:\n- All three shapes from my original finding now produce sorted output with the comment preserved in place: reexports+comment+stmt, reexports+comment at EOF, and `# isort: list`+comment.\n- The new check_code-agreement test: verified by hand that `check_code` returns True iff `code()` is a no-op on all three inputs (the ERROR lines it prints for unsorted inputs are the expected check failure output).\n- Full unit suite: 630 passed / 4 failed on head; the identical 4 fail on main (issue_909/938/970/1732, FileNotFoundError env noise) \u2014 zero new failures introduced.\n- ruff clean on changed files.\n\nBoth remaining gaps are confirmed pre-existing and correctly scoped out: the trailing inline comment (`__all__ = [...]  # exports`) is dropped identically on main, and a literal containing `=` still raises `LiteralParsingFailure` on both. Happy to look at the trailing-comment case separately if you open it as an issue.",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T14:14:55+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2627?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.37%. Comparing base ([`d5f40fa`](https://app.codecov.io/gh/PyCQA/isort/commit/d5f40fa0553aa4bba71fcd73cf42933ae14d5116?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`ecb32a2`](https://app.codecov.io/gh/PyCQA/isort/commit/ecb32a26698f9e09f8d8d2e628ba8693cd2a4bb0?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n:warning: Report is 6 commits behind head on main.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2627   +/-   ##\n=======================================\n  Coverage   99.36%   99.37%           \n=======================================\n  Files          41       41           \n  Lines        3165     3178   +13     \n  Branches      682      684    +2     \n=======================================\n+ Hits         3145     3158   +13     \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T21:00:35+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:comment:1",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "body": "Both fair. CI was Lint (`C901`, `process` went 93 > 91) and codecov/patch, not the test suite.\n\nDropped the bracket scanner for `ast.parse` \u2014 the split point is just where the second statement begins, so quotes, nesting and indentation come for free. 40 lines down to 8, and merging the two `write` calls keeps `process` under the complexity limit. `core.py` is back at 100%."
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T21:26:57+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:comment:2",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "body": "@Manny7717 thank you, this was a real defect and I reproduced all of it. Fixed, with one correction to the diagnosis.\n\n**The corruption was not introduced by this PR.** `__all____all__` already happens on `main`:\n\n```\nMAIN  __all__ = [\"b\", \"a\"]\\n# note\\n   ->  '__all____all__ = [\"a\", \"b\"]\\n'\n```\n\nWhat this PR did was widen the set of inputs that reach it, since inputs that used to crash on `code.split(\"=\")` now get far enough to hit the bad seek. So the corruption is pre-existing and this PR has to fix it rather than merely avoid it.\n\n**Root cause.** A comment line under the literal is matched by the top-of-file comment heuristic (`index in {1, 2} and not contains_imports`), so it is written straight to the output stream. `reexport_rollback` only covers the `__all__` line, so by the time of the seek the stream is 7 bytes longer than the rollback accounts for, and `seek(tell() - rollback)` lands inside `__all__`. Hence the duplicated identifier.\n\nI first tried the obvious repair, recording an absolute stream position instead of a relative rollback. That is wrong, and the test suite said so: isort buffers the import section, so the position when the `__all__` line is *seen* is not where it is *written*, and `test_reexport_not_first_line` and the three multiline reexport tests all failed. The relative rollback is correct as long as nothing else is written in between, which is the actual invariant to restore.\n\nSo: guard the top-comment heuristic with `not code_sorting`, and end the literal at a standalone comment so it is passed through instead of being rebuilt away by the sorter. Both are load-bearing, each fails the new tests on its own when reverted.\n\n| input (`sort_reexports=True`) | main | before | now |\n|---|---|---|---|\n| `__all__` + comment + stmt | `ValueError` | corrupts | `__all__` sorted, comment in place |\n| `__all__` + comment at EOF | **corrupts** | corrupts | sorted, comment in place |\n| `# isort: list` + comment | `ValueError` | comment moved above | comment in place |\n\nFour regression tests added, including one asserting `check_code` agrees with `code` on these inputs so `--check` can never call a file clean that `isort` would then rewrite.\n\nFull suite: 630 passed. The only failures are the 4 that already fail on `main` in my environment (`issue_909`, `issue_938`, `issue_970`, `issue_1732`, all `FileNotFoundError`/`SortingFunctionDoesNotExist`). ruff and mypy clean.\n\nStill dropped, and unchanged by this PR because `main` does the same in the `# isort: list` path: a **trailing** comment on the literal line itself (`__all__ = [...]  # exports`). Happy to take that separately rather than grow this PR.\n\nYour last point stands too: a literal containing `=` still crashes at `stripped_line.split(\"=\")`. Also pre-existing, also out of scope here.\n\n---\n\n@DanielNoord on both of your points:\n\nCI is green now, that was a stale run from before a rebase.\n\nOn complexity, `_split_code_sorting_section` is 15 lines and its whole job is \"find where the literal ends\". It ends at the next statement, or at a standalone comment. `ast.parse` gives the first exactly, via `body[1].lineno`. The alternative is counting brackets by hand while tracking strings and comments, which is what the surrounding code does today and is what made the original bug possible. I think this is the smaller and more boring of the two options, but if you would rather not carry it at all, the narrowest possible change that fixes the reported crash alone is the one-character `code.split(\"=\", 1)` in `literal.py`. That leaves the statement still swallowed, so it trades a crash for silent deletion, which is why I did not stop there. Happy to cut it down if you prefer.\n\nAI-assisted: written with Claude Code, reviewed and tested by me before sending.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T06:23:14+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2627:comment:3",
+   "payload": {
+    "author": "VXNCXNX",
+    "author_is_bot": false,
+    "body": "Thanks for re-running it, and for catching the original defect. Our numbers match: 630 / 4 on this head, the same 4 on `main`.\n\nFiled the trailing-comment case as #2646 since you offered to look at it. Two symptoms on that seam, both pre-existing and both untouched by this PR:\n\n- `# noqa: F401` and `# type: ignore` on an `__all__` line are silently deleted, so a suppressed lint error comes back or a clean mypy run starts failing\n- a trailing comment containing `=`, such as `# pylint: disable=invalid-name`, hits the `code.split(\"=\")` you mentioned and raises\n\nThe second is the same `=` bug you flagged, with a more ordinary trigger than a literal containing `=`.\n\n@DanielNoord one thing that is easy to miss from the checks list here: the CI run you saw failing was from before a rebase, and the current run is sitting at `action_required` waiting on workflow approval for a fork PR, so only DeepSource and readthedocs have reported. Locally on `70f7eac8` the unit suite is 630 passed with the same 4 environment failures `main` has, and ruff and mypy are clean. Happy to answer the complexity question further, or to cut this down to the one-character `split(\"=\", 1)` if you would rather not carry `_split_code_sorting_section`.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-29T14:18:42+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2627"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2626:opened",
+   "payload": {
+    "additions": 53,
+    "author": "Eljees",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "isort/core.py",
+     "tests/unit/test_regressions.py"
+    ],
+    "title": "Keep add_imports below a prefixed module docstring"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T07:38:49+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2626"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2626:merged",
+   "payload": {
+    "author": "Eljees",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:38:32+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2626"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2626:review:0",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T21:06:41+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2626"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2626:review:1",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-26T20:31:59+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2626"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2626:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2626?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.37%. Comparing base ([`0cba6f6`](https://app.codecov.io/gh/PyCQA/isort/commit/0cba6f6111a07cc05b167008dda0727ecca907c5?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`6436e6a`](https://app.codecov.io/gh/PyCQA/isort/commit/6436e6a3171afbfc68448fb41c997a4934e48b97?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2626   +/-   ##\n=======================================\n  Coverage   99.36%   99.37%           \n=======================================\n  Files          41       41           \n  Lines        3172     3180    +8     \n  Branches      684      686    +2     \n=======================================\n+ Hits         3152     3160    +8     \n  Misses         12       12           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T20:59:11+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2626"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2626:comment:1",
+   "payload": {
+    "author": "Eljees",
+    "author_is_bot": false,
+    "body": "Both done, thanks \u2014 and the branch is rebased onto current main.\r\n\r\n**The predicate has a name.** `_is_comment_or_string_start(line)` replaces the inline `_strip_string_prefix(line.lstrip()).startswith(COMMENT_INDICATORS)` at the call site in `process`, so the condition reads as the question it is asking. I did not fold the other `startswith(\"#\")` sites into it: those ask \"is this a comment\", while this one asks \"is this a comment *or* a string of any kind\", and the second is what the docstring case needs.\r\n\r\n**The test reuses `STRING_PREFIXES`.** It now iterates `sorted(STRING_PREFIXES)` and derives the case variants from each prefix rather than repeating a hand-written list, so the two cannot drift:\r\n\r\n```python\r\nfor prefix in sorted(STRING_PREFIXES):\r\n    for cased in sorted({prefix, prefix.upper(), prefix.capitalize()}):\r\n        for quote in ('\"\"\"', \"'''\"):\r\n```\r\n\r\n### Measured\r\n\r\nThe reported input, run against the two revisions of `core.py`:\r\n\r\n| `isort/core.py` | `isort.code(r-prefixed docstring + import, add_imports=[same import])` |\r\n| --- | --- |\r\n| current `main` | the import is emitted a second time above the docstring |\r\n| this branch | unchanged, as it should be |\r\n\r\n`pytest tests/unit`: **621 passed, 1 skipped, 2 failed** \u2014 and those two, `test_isort_supports_shared_profiles_issue_970` and `test_sort_configurable_sort_issue_1732`, fail identically on a clean checkout of `main` in this environment (they want an `example` profile and a `natural_plus` sort order that come from plugins that are not installed). `main` alone gives 620 passed, so the delta is exactly the one test this PR adds.\r\n\r\nOne thing the rebase fixed rather than the review: before it, `tests/unit/test_importable.py::test_importable` failed on the branch and passed on `main` \u2014 the branch simply predated the `pytest.raises(SystemExit)` change to that file. Worth knowing it was staleness and not this change.\r\n\r\n`ruff check` and `ruff format --check` are clean on both files."
+   },
+   "source": "github",
+   "timestamp": "2026-08-22T09:22:29+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2626"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2625:opened",
+   "payload": {
+    "additions": 51,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 32,
+    "files": [
+     "tests/unit/test_api.py",
+     "tests/unit/test_format.py",
+     "tests/unit/test_hooks.py"
+    ],
+    "title": "Small fixes in preparation for compiling with `mypyc`"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T19:32:41+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2625"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2625:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T19:38:04+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2625"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2625:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2625?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.39%. Comparing base ([`55f06c5`](https://app.codecov.io/gh/PyCQA/isort/commit/55f06c5fee8d5a418126fa25de7aa29efddb452d?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`8bb242e`](https://app.codecov.io/gh/PyCQA/isort/commit/8bb242e04c15baa4f96c8d5faa42162a350dc24b?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2625   +/-   ##\n=======================================\n  Coverage   99.39%   99.39%           \n=======================================\n  Files          41       41           \n  Lines        3156     3156           \n  Branches      682      682           \n=======================================\n  Hits         3137     3137           \n  Misses         11       11           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T19:34:26+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2625"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2623:opened",
+   "payload": {
+    "additions": 28,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 33,
+    "files": [
+     "isort/exceptions.py",
+     "isort/main.py",
+     "isort/settings.py",
+     "isort/wrap_modes.py",
+     "tests/unit/test_settings.py"
+    ],
+    "title": "Small fixes in preparation for `mypyc` compiled wheels"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:26:12+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2623"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2623:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:39:03+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2623"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2623:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2623?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.39%. Comparing base ([`365c370`](https://app.codecov.io/gh/PyCQA/isort/commit/365c37001c98aec48003e8f83522b5943af7cb8e?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`e351067`](https://app.codecov.io/gh/PyCQA/isort/commit/e351067150a2c0fe0cc7f3b93cb402fad5c332cd?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##             main    #2623      +/-   ##\n==========================================\n- Coverage   99.39%   99.39%   -0.01%     \n==========================================\n  Files          41       41              \n  Lines        3163     3156       -7     \n  Branches      682      682              \n==========================================\n- Hits         3144     3137       -7     \n  Misses         11       11              \n  Partials        8        8              \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T21:27:34+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2623"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2622:opened",
+   "payload": {
+    "additions": 3,
+    "author": "dependabot",
+    "author_is_bot": true,
+    "changed_files": 1,
+    "deletions": 3,
+    "files": [
+     "uv.lock"
+    ],
+    "title": "Bump gitpython from 3.1.57 to 3.1.58"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:28:52+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2622"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2622:closed",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T14:54:18+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2622"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2622:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2622?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.39%. Comparing base ([`8d8d49d`](https://app.codecov.io/gh/PyCQA/isort/commit/8d8d49d0f5ded46bb10bb860b0841be14ba42a65?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`f798488`](https://app.codecov.io/gh/PyCQA/isort/commit/f7984881b862e736e1529fc1f20f0fc493a5c1da?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@           Coverage Diff           @@\n##             main    #2622   +/-   ##\n=======================================\n  Coverage   99.39%   99.39%           \n=======================================\n  Files          41       41           \n  Lines        3163     3163           \n  Branches      682      682           \n=======================================\n  Hits         3144     3144           \n  Misses         11       11           \n  Partials        8        8           \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T09:29:40+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2622"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2622:comment:1",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "@dependabot recreate"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T14:53:06+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2622"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2622:comment:2",
+   "payload": {
+    "author": "dependabot",
+    "author_is_bot": true,
+    "body": "Looks like gitpython is no longer a dependency, so this is no longer needed."
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T14:54:17+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2622"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2621:opened",
+   "payload": {
+    "additions": 104,
+    "author": "Himanshuagrawal4",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "docs/configuration/comments.md",
+     "docs/index.rst"
+    ],
+    "title": "docs: explain comment handling during sorting"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T19:14:53+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2621"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2621:closed",
+   "payload": {
+    "author": "Himanshuagrawal4",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T20:55:50+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2621"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2621:comment:0",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "Not sure how helpful this is. It can always change and this is not tied to any tests. Closing for now."
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T20:55:50+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2621"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:opened",
+   "payload": {
+    "additions": 5,
+    "author": "nvuillam",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "docs/configuration/github_action.md"
+    ],
+    "title": "Docs: mention MegaLinter on the GitHub Action page"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T18:13:06+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:closed",
+   "payload": {
+    "author": "nvuillam",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T13:26:02+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:review:0",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "Not sure this belongs in `github_action.md` though. Do you think there are altneratives?",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T14:37:53+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:comment:0",
+   "payload": {
+    "author": "nvuillam",
+    "author_is_bot": false,
+    "body": "@DanielNoord you know better, any advice ? :)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-09T23:29:17+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:comment:1",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "I'm not sure we have a good place for this to be honest. We don't really advertise other tools in our documentation."
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T20:29:06+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:comment:2",
+   "payload": {
+    "author": "nvuillam",
+    "author_is_bot": false,
+    "body": "As you wish, feel free to close the PR, your repo = your rules :)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T21:35:38+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:comment:3",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "body": "Sorry!"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T13:26:02+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2620:comment:4",
+   "payload": {
+    "author": "nvuillam",
+    "author_is_bot": false,
+    "body": "No problem, have a nice day :)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-13T16:07:03+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2620"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2619:opened",
+   "payload": {
+    "additions": 83,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 69,
+    "files": [
+     "isort/output.py",
+     "tests/unit/test_regressions.py"
+    ],
+    "title": "Small clean up and fix inconsistency in handling of `*` imports"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T12:23:08+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2619"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2619:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T12:31:07+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2619"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2619:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2619?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.39%. Comparing base ([`256080c`](https://app.codecov.io/gh/PyCQA/isort/commit/256080c7938afb78a9a4b779af38d8afe39bf82e?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`8104ac6`](https://app.codecov.io/gh/PyCQA/isort/commit/8104ac612ae2c5c8472111d0897fe00901b5cb77?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##             main    #2619      +/-   ##\n==========================================\n- Coverage   99.40%   99.39%   -0.01%     \n==========================================\n  Files          41       41              \n  Lines        3173     3163      -10     \n  Branches      685      682       -3     \n==========================================\n- Hits         3154     3144      -10     \n  Misses         11       11              \n  Partials        8        8              \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T12:23:56+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2619"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2618:opened",
+   "payload": {
+    "additions": 253,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 236,
+    "files": [
+     "isort/output.py"
+    ],
+    "title": "Create `_with_from_imports_for_module`"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T11:36:46+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2618"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2618:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T11:41:14+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2618"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2618:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2618?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:x: Patch coverage is `98.88889%` with `1 line` in your changes missing coverage. Please review.\n:white_check_mark: Project coverage is 99.40%. Comparing base ([`e421b5c`](https://app.codecov.io/gh/PyCQA/isort/commit/e421b5ca9f359f05eaa9628ec7edb49faadc3add?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`b9aca23`](https://app.codecov.io/gh/PyCQA/isort/commit/b9aca23a795e41b21a55f60c3f3a610c972021db?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##             main    #2618      +/-   ##\n==========================================\n- Coverage   99.43%   99.40%   -0.04%     \n==========================================\n  Files          41       41              \n  Lines        3167     3173       +6     \n  Branches      684      685       +1     \n==========================================\n+ Hits         3149     3154       +5     \n  Misses         11       11              \n- Partials        7        8       +1     \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-08T11:37:35+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2618"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2617:opened",
+   "payload": {
+    "additions": 121,
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 89,
+    "files": [
+     "isort/output.py"
+    ],
+    "title": "Split out `_build_grouped_from_imports`"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T20:58:46+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2617"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2617:merged",
+   "payload": {
+    "author": "DanielNoord",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T21:06:33+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2617"
+  },
+  {
+   "evidence_id": "pr:PyCQA/isort#2617:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/PyCQA/isort/pull/2617?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 99.43%. Comparing base ([`3d01946`](https://app.codecov.io/gh/PyCQA/isort/commit/3d019460ad60fc331a4b3f89ddc1e53fb601c850?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)) to head ([`b5c67fa`](https://app.codecov.io/gh/PyCQA/isort/commit/b5c67fa042298ab1ab3566583237f246cb5108a0?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=PyCQA)).\n:warning: Report is 3 commits behind head on main.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##             main    #2617      +/-   ##\n==========================================\n- Coverage   99.43%   99.43%   -0.01%     \n==========================================\n  Files          41       41              \n  Lines        3169     3167       -2     \n  Branches      686      684       -2     \n==========================================\n- Hits         3151     3149       -2     \n  Misses         11       11              \n  Partials        7        7              \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-08-07T20:59:40+00:00",
+   "url": "https://github.com/PyCQA/isort/pull/2617"
+  }
+ ],
+ "repo": "PyCQA/isort",
+ "window": "pre_t"
+}

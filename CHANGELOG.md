@@ -1166,8 +1166,22 @@ synthetic threads (rubber-stamp, hostile, slow-against-budget, too-thin,
 archived), the same repository flips from rejected to survivor when the budget
 moves from 7 to 90 days, screening's signature admits no model client, and a
 recorded session replays end-to-end from fixtures with no credentials. 108
-passing overall. A recorded demo session for the no-credential replay path is
-next; its numbers go here when it exists.
+passing overall.
+
+**The recorded demo session** (`fixtures/discover/demo`, replayed by
+`holt discover` with no flags, no token, no key): 25 candidates from
+`language:python topic:cli pushed:>2026-07-02 archived:false fork:false
+stars:>=10`. Screening rejected 9 — 3 with no outsider landings, 2 hostile
+(`Textualize/textual`, `sherlock-project/sherlock` on their newest page), 2
+rubber-stamp, 2 too slow for 7 days — at $0.00. Five survivors analysed at full
+depth for $0.079 total: typer, click, beets and pipx viable; **tqdm/tqdm
+survived shallow screening and flipped to insufficient at full depth** (median
+first reply 1128 h against a 168 h budget), which is the screen-versus-full
+noise the output discloses doing exactly what the disclosure says.
+`yt-dlp/yt-dlp`'s full-depth crawl died on a GitHub server error and is listed
+as unanalysed rather than silently dropped. The contribution-type note fired on
+every analysed row: the user asked for `tests`, and each row shows where
+outsider test work actually merged (beets: 26 merged in `test`).
 
 ## Iteration 19 — `holt next`: the simple rule that won, shipped as measured (2026-08-31)
 

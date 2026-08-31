@@ -1,0 +1,913 @@
+{
+ "captured_at": "2026-08-31T01:07:12.649397+00:00",
+ "content_sha256": "8cf4849c13a512a8199d353e4781dabe184a8ac690f99d1df9dc59b2e62e5d6a",
+ "credentials_redacted": 0,
+ "cutoff": "2026-08-31T01:06:53.358758+00:00",
+ "records": [
+  {
+   "evidence_id": "repo:tqdm/tqdm:meta",
+   "payload": {
+    "_counters_are_as_of_fetch_not_cutoff": true,
+    "description": ":zap: A Fast, Extensible Progress Bar for Python and CLI",
+    "homepage_url": "https://tqdm.github.io",
+    "is_archived": false,
+    "is_fork": false,
+    "is_mirror": false,
+    "primary_language": "Python",
+    "pushed_at": "2026-08-17T21:24:27Z",
+    "stargazer_count": 31305
+   },
+   "source": "github",
+   "timestamp": "2015-06-03T13:13:14+00:00",
+   "url": "https://github.com/tqdm/tqdm"
+  },
+  {
+   "evidence_id": "repo:tqdm/tqdm:contributing",
+   "payload": {
+    "commit_oid": "96f2e60e4584cdab57a23602e27043d0465254ad",
+    "kind": "contributing",
+    "text": "# HOW TO CONTRIBUTE TO TQDM\n\n[![git-fame.cdcl.ml/gh/tqdm/tqdm](https://git-fame.cdcl.ml/gh/tqdm/tqdm?min=5&w=1&M=1&C=1&excl=(png|gif|jpg)$&enum=1)](https://git-fame.cdcl.ml/gh/tqdm/tqdm?w=1&M=1&C=1&excl=(png|gif|jpg)$&enum=1)\n\n**TL;DR: Skip to [QUICK DEV SUMMARY]**\n\nThis file describes how to:\n\n- contribute changes to the project, and\n- upload releases to the PyPI repository.\n\nMost of the management commands have been directly placed inside the\nMakefile:\n\n```\nmake [<alias>]  # on UNIX-like environments\npython -m pymake [<alias>]  # if make is unavailable\n```\n\nThe latter depends on [`py-make>=0.1.0`](https://github.com/tqdm/py-make).\n\nUse the alias `help` (or leave blank) to list all available aliases.\n\n\n## HOW TO COMMIT CONTRIBUTIONS\n\nContributions to the project are made using the \"Fork & Pull\" model. The\ntypical steps would be:\n\n1. create an account on [github](https://github.com)\n2. fork [`tqdm`](https://github.com/tqdm/tqdm)\n3. make a local clone: `git clone https://github.com/your_account/tqdm.git`\n4. make changes on the local copy\n5. test (see below) and commit changes `git commit -a -m \"my message\"`\n6. `push` to your GitHub account: `git push origin`\n7. create a Pull Request (PR) from your GitHub fork\n(go to your fork's webpage and click on \"Pull Request.\"\nYou can then add a message to describe your proposal.)\n\n\n## WHAT CODE LAYOUT SHOULD I FOLLOW?\n\nDon't worry too much - maintainers can help reorganise contributions.\nHowever it would be helpful to bear in mind:\n\n- The standard core of `tqdm`, i.e. [`tqdm.std.tqdm`](tqdm/std.py)\n    + must have no dependencies apart from pure python built-in standard libraries\n    + must have negligible impact on performance\n    + should have 100% coverage by unit tests\n    + should be appropriately commented\n    + should have well-formatted docstrings for functions\n        * under 76 chars (incl. initial spaces) to avoid linebreaks in terminal pagers\n        * use two spaces between variable name and colon, specify a type, and most likely state that it's optional: `VAR<space><space>:<space>TYPE[, optional]`\n        * use [default: ...] for default values of keyword arguments\n    + will not break backward compatibility unless there is a very good reason\n        * e.g. breaking py26 compatibility purely in favour of minor readability changes (such as converting `dict(a=1)` to `{'a': 1}`) is not a good enough reason\n    + API changes should be discussed carefully\n    + remember, with millions of downloads per month, `tqdm` must be extremely fast and reliable\n- Any other kind of change may be included in a (possibly new) submodule\n    + submodules are likely single python files under the main [tqdm/](tqdm/) directory\n    + submodules extending `tqdm.std.tqdm` or any other module (e.g. [`tqdm.notebook.tqdm`](tqdm/notebook.py), [`tqdm.gui.tqdm`](tqdm/gui.py))\n    + CLI wrapper `tqdm.cli`\n        * if a newly added `tqdm.std.tqdm` option is not supported by the CLI, append to `tqdm.cli.UNSUPPORTED_OPTS`\n    + can implement anything from experimental new features to support for third-party libraries such as `pandas`, `numpy`, etc.\n    + submodule maturity\n        * alpha: experimental; missing unit tests, comments, and/or feedback; raises `tqdm.TqdmExperimentalWarning`\n        * beta: well-used; commented, perhaps still missing tests\n        * stable: >10 users; commented, 80% coverage\n- `.meta/`\n    + A \"hidden\" folder containing helper utilities not strictly part of the `tqdm` distribution itself\n\n\n## TESTING\n\nOnce again, don't worry too much - tests are automated online, and maintainers\ncan also help.\n\nTo test functionality (such as before submitting a Pull\nRequest), there are a number of unit tests.\n\n### Standard unit tests\n\nThe standard way to run the tests:\n\n- install `tox`\n- `cd` to the root of the `tqdm` directory (in the same folder as this file)\n- run the following command:\n\n```\n[python -m py]make test\n# or:\ntox --skip-missing-interpreters\n```\n\nThis will build the module and run the tests in a virtual environment.\nErrors and coverage rates will be output to the console/log. (Ignore missing\ninterpreters errors - these are due to the local machine missing certain\nversions of Python.)\n\nNote: to install all versions of the Python interpreter that are specified\nin [pyproject.toml](https://github.com/tqdm/tqdm/blob/master/pyproject.toml),\nyou can use `MiniConda` to install a minimal setup. You must also ensure\nthat each distribution has an alias to call the Python interpreter\n(e.g. `python313` for Python 3.13's interpreter).\n\n### Alternative unit tests with pytest\n\nAlternatively, use `pytest` to run the tests just for the current Python version:\n\n- install test requirements: `[python -m py]make install_test`\n- run the following command:\n\n```\n[python -m py]make alltests\n```\n\n\n\n# MANAGE A NEW RELEASE\n\nThis section is intended for the project's maintainers and describes\nhow to build and upload a new release. Once again,\n`[python -m py]make [<alias>]` will help.\nAlso consider `pip install`ing development utilities:\n`[python -m py]make install_build` at a minimum, or a more thorough `conda env create`.\n\n\n## Pre-commit Hook\n\nIt's probably a good idea to use the `pre-commit` (`pip install pre-commit`) helper.\n\nRun `pre-commit install` for convenient local sanity-checking.\n\n\n## Semantic Versioning\n\nThe `tqdm` repository managers should:\n\n- follow the [Semantic Versioning](https://semver.org) convention for tagging\n\n\n## Checking `pyproject.toml`\n\nTo check that the `pyproject.toml` file is compliant with PyPI\nrequirements (e.g. version number; reStructuredText in `README.rst`) use:\n\n```\n[python -m py]make testsetup\n```\n\nTo upload just metadata (including overwriting mistakenly uploaded metadata)\nto PyPI, use:\n\n```\n[python -m py]make pypimeta\n```\n\n\n## Merging Pull Requests\n\nThis section describes how to cleanly merge PRs.\n\n### 1 Rebase\n\nFrom your project repository, merge and test\n(replace `pr-branch-name` as appropriate):\n\n```\ngit fetch origin\ngit checkout -b pr-branch-name origin/pr-branch-name\ngit rebase master\n```\n\nIf there are conflicts:\n\n```\ngit mergetool\ngit rebase --continue\n```\n\n### 2 Push\n\nUpdate branch with the rebased history:\n\n```\ngit push origin pr-branch-name --force\n```\n\nNon maintainers can stop here.\n\nNote: NEVER just `git push --force` (this will push all local branches,\noverwriting remotes).\n\n### 3 Merge\n\n```\ngit checkout master\ngit merge --no-ff pr-branch-name\n```\n\n### 4 Test\n\n```\n[python -m py]make alltests\n```\n\n### 5 Push to master\n\n```\ngit push origin master\n```\n\n\n## Building a Release and Uploading to PyPI\n\nFormally publishing requires additional steps: testing and tagging.\n\n### Test\n\nEnsure that all online CI tests have passed.\n\n### Tag\n\n- ensure the version has been tagged.\nThe tag format is `v{major}.{minor}.{patch}`, for example: `v4.4.1`.\nThe current commit's tag is used in the version checking process.\nIf the current commit is not tagged appropriately, the version will\ndisplay as `v{major}.{minor}.{patch}.dev{N}+g{commit_hash}`.\n\n### Upload\n\nGitHub Actions (GHA) CI should automatically do this after pushing tags.\nManual instructions are given below in case of failure.\n\nBuild `tqdm` into a distributable python package:\n\n```\n[python -m py]make build\n```\n\nThis will generate several builds in the `dist/` folder. On non-windows\nmachines the windows `exe` installer may fail to build. This is normal.\n\nFinally, upload everything to PyPI. This can be done easily using the\n[twine](https://github.com/pypa/twine) module:\n\n```\n[python -m py]make pypi\n```\n\nAlso, the new release can (should) be added to GitHub by creating a new\nrelease from the [web interface](https://github.com/tqdm/tqdm/releases);\nuploading packages from the `dist/` folder\ncreated by `[python -m py]make build`.\nThe [wiki] can be automatically updated with GitHub release notes by\nrunning `make` within the wiki repository.\n\n[wiki]: https://github.com/tqdm/tqdm/wiki\n\nDocker images may be uploaded to <https://hub.docker.com/r/tqdm/tqdm>.\nAssuming `docker` is\n[installed](https://docs.docker.com/install/linux/docker-ce/ubuntu/):\n\n```\nmake -B docker\ndocker login\ndocker push tqdm/tqdm:latest\ndocker push tqdm/tqdm:$(docker run -i --rm tqdm/tqdm -v)\n```\n\nSnaps may be uploaded to <https://snapcraft.io/tqdm>.\nAssuming `snapcraft` is installed (`snap install snapcraft --classic --beta`):\n\n```\nmake snap\nsnapcraft login\nsnapcraft push tqdm*.snap --release stable\n```\n\n### Notes\n\n- you can also test on the PyPI test servers `test.pypi.org`\nbefore the real deployment\n- in case of a mistake, you can delete an uploaded release on PyPI, but you\ncannot re-upload another with the same version number\n- in case of a mistake in the metadata on PyPI (e.g. bad README),\nupdating just the metadata is possible: `[python -m py]make pypimeta`\n\n\n## Updating Websites\n\nThe most important file is `.readme.rst`, which should always be kept up-to-date\nand in sync with the in-line source documentation. This will affect all of the\nfollowing:\n\n- `README.rst` (generated by `mkdocs.py` during `make build`)\n- The [main repository site](https://github.com/tqdm/tqdm) which automatically\n  serves the latest `README.rst` as well as links to all of GitHub's features.\n  This is the preferred online referral link for `tqdm`.\n- The [PyPI mirror](https://pypi.org/project/tqdm) which automatically\n  serves the latest release built from `README.rst` as well as links to past\n  releases.\n- Many external web crawlers.\n\nAdditionally (less maintained), there exists:\n\n- A [wiki] which is publicly editable.\n- The [gh-pages project] which is built from the\n  [gh-pages branch](https://github.com/tqdm/tqdm/tree/gh-pages), which is\n  built using [asv](https://github.com/airspeed-velocity/asv).\n- The [gh-pages root] which is built from a separate\n  [github.io repo](https://github.com/tqdm/tqdm.github.io).\n\n[gh-pages project]: https://tqdm.github.io/tqdm/\n[gh-pages root]: https://tqdm.github.io/\n\n\n## Helper Bots\n\nThere are some helpers in\n[.github/workflows](https://github.com/tqdm/tqdm/tree/master/.github/workflows)\nto assist with maintenance.\n\n- Comment Bot\n    + allows maintainers to write `/tag vM.m.p commit_hash` in an issue/PR to create a tag\n- Post Release\n    + automatically updates the [wiki]\n    + automatically updates the [gh-pages root]\n- Benchmark\n    + automatically updates the [gh-pages project]\n\n\n## QUICK DEV SUMMARY\n\nFor experienced devs, once happy with local master, follow the steps below.\nMuch is automated so really it's steps 1-5, then 11(a).\n\n1. test (`[python -m py]make alltests` or rely on `pre-commit`)\n2. `git commit [--amend]  # -m \"bump version\"`\n3. `git push`\n4. wait for tests to pass\n    a) in case of failure, fix and go back to (1)\n5. `git tag vM.m.p && git push --tags` or comment `/tag vM.m.p commit_hash`\n6. **`[AUTO:GHA]`** `[python -m py]make distclean`\n7. **`[AUTO:GHA]`** `[python -m py]make build`\n8. **`[AUTO:GHA]`** upload to PyPI. either:\n    a) `[python -m py]make pypi`, or\n    b) `twine upload -s -i $(git config user.signingkey) dist/tqdm-*`\n9. **`[AUTO:GHA]`** upload to docker hub:\n    a) `make -B docker`\n    b) `docker push tqdm/tqdm:latest`\n    c) `docker push tqdm/tqdm:$(docker run -i --rm tqdm/tqdm -v)`\n10. **`[AUTO:GHA]`** upload to snapcraft:\n    a) `make snap`, and\n    b) `snapcraft push tqdm*.snap --release stable`\n11. Wait for GHA to draft a new release on <https://github.com/tqdm/tqdm/releases>\n    a) replace the commit history with helpful release notes, and click publish\n    b) **`[AUTO:GHA]`** attach `dist/tqdm-*` binaries\n       (usually only `*.whl*`)\n12. **`[SUB][AUTO:GHA-rel]`** run `make` in the `wiki` submodule to update release notes\n13. **`[SUB][AUTO:GHA-rel]`** run `make deploy` in the `docs` submodule to update website\n14. **`[SUB][AUTO:GHA-rel]`** accept the automated PR in the `feedstock` submodule to update conda\n15. **`[AUTO:GHA-rel]`** update the [gh-pages project] benchmarks\n    a) `[python -m py]make testasvfull`\n    b) `asv gh-pages`\n\nKey:\n\n- **`[AUTO:GHA]`*",
+    "text_original_chars": 12262,
+    "text_truncated": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T11:23:27+00:00",
+   "url": "https://github.com/tqdm/tqdm/blob/96f2e60e4584cdab57a23602e27043d0465254ad/CONTRIBUTING.md"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1807:opened",
+   "payload": {
+    "additions": 46,
+    "author": "CAOShurong",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 20,
+    "files": [
+     "tests/tests_contrib_logging.py",
+     "tqdm/contrib/logging.py"
+    ],
+    "title": "fix(logging): don't add tqdm handler when logger has no console handler (#1501)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-28T17:23:14+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1807"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1805:opened",
+   "payload": {
+    "additions": 19,
+    "author": "CAOShurong",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "tests/tests_concurrent.py",
+     "tqdm/contrib/concurrent.py"
+    ],
+    "title": "fix(concurrent): handle all-unsized iterables in _min_map_len"
+   },
+   "source": "github",
+   "timestamp": "2026-08-25T18:48:43+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1805"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1804:opened",
+   "payload": {
+    "additions": 14,
+    "author": "fahadhewad",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "tests/tests_pandas.py",
+     "tqdm/std.py"
+    ],
+    "title": "pandas: drop broken (Series|DataFrame)GroupBy.progress_map"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T09:20:05+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1804"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1802:opened",
+   "payload": {
+    "additions": 19,
+    "author": "TheRodzz",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "tests/tests_concurrent.py",
+     "tqdm/contrib/concurrent.py"
+    ],
+    "title": "Fix process_map with unsized iterables"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T03:43:59+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1802"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1800:opened",
+   "payload": {
+    "additions": 28,
+    "author": "mayuriphad",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/tests_concurrent.py",
+     "tqdm/contrib/concurrent.py"
+    ],
+    "title": "fix: process_map progress bar undercounts with chunksize > 1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T12:40:55+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1800"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1800:review:0",
+   "payload": {
+    "author": "copilot-pull-request-reviewer",
+    "author_is_bot": true,
+    "body": "Copilot was unable to review this pull request because the user who requested the review has reached their quota limit.",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T12:41:01+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1800"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1799:opened",
+   "payload": {
+    "additions": 5,
+    "author": "2sumtech",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 3,
+    "files": [
+     "tests/tests_pandas.py",
+     "tqdm/std.py"
+    ],
+    "title": "pandas: fix DataFrame.progress_map total (elementwise)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T19:11:51+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1799"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1799:comment:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Reproduces and fixes. On `master` 96f2e60 a 10x4 frame gives `4/4` for `df.progress_map`, which is the column count, and stops there. On `5ea7206` it gives `40/40`.\n\nBoth symptoms in #1798 fall out of that one line. `total` fell through to `df.size // df.shape[axis]`, so 4, and the wrapper's `t.update(n=1 if not t.total or t.n < t.total else 0)` then no-ops every call past the fourth. That is the freeze at 100%: the remaining 36 calls still run, they just cannot advance the bar.\n\nNeighbouring paths are unchanged either side: `progress_apply` `4/4`, `Series.progress_map` `10/10`, `groupby.progress_apply` `10/10`.\n\n<details>\n<summary>Measurements: pandas 3.0.3, Python 3.13.13, Windows 11</summary>\n\nEvery render captured, `mininterval=0`, 10x4 frame:\n\n```\nmaster   0/4  1/4  2/4  3/4  4/4  4/4\n5ea7206  0/40 1/40 2/40 ... 39/40 40/40 40/40\n```\n\nFull path comparison:\n\n| call | master | 5ea7206 | expected |\n|---|---|---|---|\n| `DataFrame.progress_map` | `4/4` | `40/40` | `40/40` |\n| `DataFrame.progress_apply` | `4/4` | `4/4` | `4/4` |\n| `Series.progress_map` | `10/10` | `10/10` | `10/10` |\n| `groupby.progress_apply` | `10/10` | `10/10` | `10/10` |\n\nTwo notes, both unchanged by this PR and neither a blocker:\n\n- `DataFrame.progress_applymap` raises `AttributeError` on pandas 3, which dropped\n  `DataFrame.applymap`. The `'applymap'` half of the new tuple is therefore dead on pandas 3 and\n  only matters for older versions.\n- `DataFrameGroupBy.progress_map` (registered at `std.py:940`) raises\n  `AttributeError: 'DataFrameGroupBy' object has no attribute 'map'` on both sides. Pandas has no\n  `DataFrameGroupBy.map`, so that registration cannot work. Pre-existing and separate from this fix.\n\n</details>\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T03:58:31+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1799"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1797:opened",
+   "payload": {
+    "additions": 17,
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 0,
+    "files": [
+     "tests/tests_tqdm.py",
+     "tqdm/std.py"
+    ],
+    "title": "fix: don't crash when there is no output stream"
+   },
+   "source": "github",
+   "timestamp": "2026-08-19T10:09:56+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1797"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1796:opened",
+   "payload": {
+    "additions": 1,
+    "author": "FirmaSpring",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "examples/paper.bib"
+    ],
+    "title": "docs: update star-history URL in JOSS bibliography"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T09:20:54+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1796"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1795:opened",
+   "payload": {
+    "additions": 1,
+    "author": "FirmaSpring",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "examples/paper.md"
+    ],
+    "title": "docs: fix Codacy dashboard link in JOSS paper"
+   },
+   "source": "github",
+   "timestamp": "2026-08-17T09:12:48+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1795"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1793:opened",
+   "payload": {
+    "additions": 46,
+    "author": "alexchen-sys",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/tests_concurrent.py",
+     "tqdm/contrib/concurrent.py"
+    ],
+    "title": "fix(contrib): count chunk size for process_map progress (#1791)"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T17:45:56+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1793"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1793:review:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Reproduced #1791 independently and this fixes it. Windows 11, `range(101)`, `max_workers=2`, reading the final count off the rendered bar.\n\n<details>\n<summary>probe, master vs this branch, on both interpreters</summary>\n\n```\n                                    master        this PR\nprocess_map chunksize=1  (control)  101/101       101/101\nprocess_map chunksize=10            11/101        101/101\nthread_map  chunksize=10            101/101       101/101\n```\n\nSame result on 3.13.13 and 3.14.7. `thread_map` was already correct because `Executor.map` ignores `chunksize` and submits one future per item, which is exactly the asymmetry the new guard encodes.\n\n`tests/tests_concurrent.py`:\n\n```\n3.13.13   master 10 passed, 2 skipped   ->  PR 12 passed, 3 skipped\n3.14.7    master 12 passed, 0 skipped   ->  PR 15 passed, 0 skipped\n```\n</details>\n\nThe three skips on 3.13 are the `requires Python 3.14+` gates, so I ran the whole file on 3.14 as well to make sure `interpreter_map` was actually exercised rather than skipped past. It passes.\n\nWorth stating explicitly since #1777 landed recently: the guard does the right thing for `interpreter_map` by construction, not by luck.\n\n```\nissubclass(InterpreterPoolExecutor, ThreadPoolExecutor)  -> True\nInterpreterPoolExecutor.map is Executor.map              -> True\n```\n\nSo it takes the per-item branch and its behaviour is unchanged by this PR.\n\nOne robustness note, take it or leave it. `n=len(args[1])` reads the second positional of `Executor.map`'s internal `self.submit(fn, *args)`, so it assumes the chunked call shape. `_executor_map` accepts an arbitrary `PoolExecutor`, and a custom one that is not a `ThreadPoolExecutor` subclass but whose `map` submits one item per future would hit `len(<item>)` at submit time. A `getattr` with a fallback of 1, or a comment naming the assumption, would make that harmless.\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T12:49:22+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1793"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1792:opened",
+   "payload": {
+    "additions": 17,
+    "author": "DSeaStar",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/tests_concurrent.py",
+     "tqdm/contrib/concurrent.py"
+    ],
+    "title": "fix: count process_map items when chunksize > 1"
+   },
+   "source": "github",
+   "timestamp": "2026-08-14T16:41:10+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1792"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1792:review:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Ran this on Windows 11 (10.0.26200), Python 3.13.13, against `upstream/master` at `96f2e60`.\n\n**Test evidence (delta against base):** `tests/tests_concurrent.py` is **10 passed / 2 skipped** on master and **11 passed / 2 skipped** on this branch \u2014 the +1 is this PR's own `test_process_map_chunksize_progress`. No regressions. (The 2 skips are the `requires Python 3.14+` interpreter-pool tests, skipped on both sides here.)\n\n**Heads-up: #1793 fixes the same issue.** It also targets #1791, adds a near-identical test (`test_process_map_chunksize`, same `range(101)` / `chunksize=10` / `'101/101'` assertion), and patches the same callback. Flagging it because the two PRs were opened within a day of each other and only one can land \u2014 not to argue for either.\n\n**The one substantive difference between them is the executor test:**\n\n```python\n# this PR (#1792)\ncounts_chunks = PoolExecutor is ProcessPoolExecutor\n\n# #1793\nif chunksize > 1 and not issubclass(PoolExecutor, ThreadPoolExecutor):\n```\n\n`is` is an identity check, so it returns False for any *subclass* of `ProcessPoolExecutor` and such a caller would silently keep the old per-chunk undercount. `issubclass` doesn't have that hole. In fairness this is currently unreachable through the public API \u2014 `process_map` always passes `ProcessPoolExecutor` itself and `thread_map` passes `ThreadPoolExecutor` \u2014 so it's robustness, not a live bug.\n\n**I checked both against the interpreter pool merged in #1777, since that's the newest executor and the relevant tests skip below 3.14.** On Python 3.14.4:\n\n```\nInterpreterPoolExecutor.__mro__[:3] -> InterpreterPoolExecutor, ThreadPoolExecutor, Executor\nissubclass(InterpreterPoolExecutor, ThreadPoolExecutor) -> True\nInterpreterPoolExecutor is ProcessPoolExecutor            -> False\n```\n\nSo both approaches leave `interpreter_map` at `pbar.update(1)` per future, which is correct \u2014 `InterpreterPoolExecutor` inherits `ThreadPoolExecutor.map` and ignores `chunksize`. Neither PR regresses #1777.\n\n**One small thing in this PR specifically:** the `from concurrent.futures import ProcessPoolExecutor` is inside `_executor_map`, executed on every call. It's cached in `sys.modules` so the cost is negligible, but the module already imports from `concurrent.futures` at top level (`length_hint` aside), so a module-level import would match the surrounding style \u2014 unless it's deliberately local to dodge a circular import I haven't spotted.\n\n---\n\n*Disclosure: I used an AI assistant while reviewing. The suite runs, the 3.14 MRO check, and the comparison against #1793 above were all executed by me on the machine described.*\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-15T13:49:41+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1792"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1790:opened",
+   "payload": {
+    "additions": 12,
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "tests/tests_utils.py",
+     "tqdm/_utils.py"
+    ],
+    "title": "fix: drop tqdm._utils re-exports removed from tqdm.utils"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:14:13+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1790"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1790:comment:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "For context: this supersedes #1789, which I closed after opening this. Nothing about the change differs \u2014 same commit `5f1b624`, same two files."
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:14:51+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1790"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1789:opened",
+   "payload": {
+    "additions": 12,
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     "tests/tests_utils.py",
+     "tqdm/_utils.py"
+    ],
+    "title": "fix: drop tqdm._utils re-exports removed from tqdm.utils"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T11:25:14+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1789"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1789:closed",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:14:32+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1789"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1789:comment:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Superseded by #1790 \u2014 identical commit (`5f1b624`) and identical diff, reopened purely to correct the source branch name. Closing this one to keep the queue clean; please review #1790 instead. Sorry for the churn."
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T12:14:31+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1789"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1788:opened",
+   "payload": {
+    "additions": 19,
+    "author": "nyxst4ck",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 4,
+    "files": [
+     "tests/tests_concurrent.py",
+     "tqdm/contrib/concurrent.py"
+    ],
+    "title": "Fix concurrent maps for unsized iterables"
+   },
+   "source": "github",
+   "timestamp": "2026-08-10T02:44:19+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1788"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1788:review:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Reproduced this and the fix holds. Windows 11, Python 3.13.13.\n\n`thread_map` over inputs with no `__len__` and no `__length_hint__`:\n\n```\n                        master                                  this PR\nsized only (control)    [0, 1, 4, 9, 16]                        [0, 1, 4, 9, 16]\nunsized only            ValueError: min() iterable argument     [0, 1, 4, 9, 16]\n                        is empty\nmixed sized + unsized   [0, 1, 4, 9, 16]                        [0, 1, 4, 9, 16]\n```\n\nThe mixed row is the one worth having in the control set: it already worked on `master`, because one sized input is enough to keep the generator non-empty, so the bug only appears when **every** input is unsized. That is a narrower trigger than the title suggests and it is worth someone knowing when they read the fix.\n\nFull suite, and this branch is based on current `master` so the numbers compare directly:\n\n```\nmaster    149 passed, 11 skipped\nthis PR   153 passed, 11 skipped\n```\n\nZero failures either side. Of the four new tests, **three fail on unmodified source** with exactly `ValueError: min() iterable argument is empty`, checked by restoring only `tqdm/contrib/concurrent.py` from `master` and keeping the tests. The fourth passes on `master` too, which is right: it is the guard proving the sized path did not change.\n\nI went looking for consumers of `_min_map_len` that would now receive `None` and choke, since that is the usual way a `default=` fix leaks. There are two and both are fine:\n\n- line 127, `kwargs['total'] = _min_map_len(iterables)`. `total=None` is tqdm's own idiom for an unknown length, so this is the correct value rather than a papered-over one, and it is why the bar still renders for the unsized case.\n- line 252, guarded with `is not None` in this PR before the `> 1000` comparison.\n\nSo the change is complete for this module, not one instance of a pattern.\n\nNot a maintainer, just reporting what ran here.\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-20T14:30:52+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1788"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1788:comment:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Reproduces and fixes cleanly on Windows 11, Python 3.13.13.\n\nOn `master` 96f2e60, `thread_map(abs, (v for v in [-1, -2]))` raises `ValueError: min() iterable argument is empty`. On `d28f76a` it returns, and the bar renders `3it [00:00, 6135.01it/s]` for a 3-item generator: right count, no total, which is what an unsized input should give.\n\nBoth claims in the description hold. Mixed sized and unsized still takes the shortest known length, `range(5)` against a 100-item generator giving `5/5`. Sized-only is unchanged at `7/7`. An explicit `total=` on an unsized iterable still works.\n\n`tests/tests_concurrent.py`: 10 passed, 2 skipped on `master`; 14 passed, 2 skipped here, matching your numbers.\n"
+   },
+   "source": "github",
+   "timestamp": "2026-08-21T03:23:35+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1788"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1787:opened",
+   "payload": {
+    "additions": 17,
+    "author": "deepakganesh78",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/tests_notebook.py",
+     "tqdm/notebook.py"
+    ],
+    "title": "Fix notebook leave=False close on break"
+   },
+   "source": "github",
+   "timestamp": "2026-08-02T15:29:31+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1787"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1786:opened",
+   "payload": {
+    "additions": 8,
+    "author": "newchannelid432-code",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tqdm/rich.py"
+    ],
+    "title": "Fix: force final refresh() in tqdm.rich to prevent incomplete visual completion (#1266)"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T06:23:02+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1786"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1785:opened",
+   "payload": {
+    "additions": 2,
+    "author": "Zuhef",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 0,
+    "files": [
+     "tests/tests_main.py"
+    ],
+    "title": "tests: skip test_pipes when ls is unavailable"
+   },
+   "source": "github",
+   "timestamp": "2026-07-30T05:36:23+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1785"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1785:review:0",
+   "payload": {
+    "author": "MohammedAlkindi",
+    "author_is_bot": false,
+    "body": "Tested on Windows 11 / Python 3.13.13. Both halves of the claim hold, and the `IS_WIN`-vs-probe reasoning is the interesting part, so I checked that specifically.\n\n**The bug, on `upstream/master` with `ls` off `PATH`:**\n\n```\n$ python -m pytest tests/tests_main.py::test_pipes -q\nE   FileNotFoundError: [WinError 2] The system cannot find the file specified\n1 failed\n```\n\n**This branch, same environment \u2014 skipped, not errored:**\n\n```\n$ python -m pytest tests/tests_main.py::test_pipes -q -rs\nSKIPPED [1] tests\\tests_main.py:35: requires ls on PATH\n1 skipped\n```\n\n**And it does not over-skip.** With `ls` present the test still runs and passes, which is the part a blanket `IS_WIN` would have got wrong:\n\n```\n$ python -m pytest tests/tests_main.py::test_pipes -q\n1 passed in 0.41s\n\n$ python -m pytest tests/tests_main.py -q\n6 passed, 2 skipped\n```\n\n**On your `IS_WIN` point \u2014 confirmed independently here.** This machine has `ls` on `PATH` system-wide, not just inside a Git Bash shell:\n\n```\n>>> shutil.which(\"ls\")\n'C:\\Program Files\\Git\\usr\\bin\\ls.EXE'\n```\n\nand from PowerShell with no Git Bash involvement, `C:\\Program Files\\Git\\usr\\bin` is on the machine `PATH`. So a Windows developer with Git for Windows installed \u2014 which is most of them \u2014 gets a genuinely passing `test_pipes`, and `skipif(IS_WIN, ...)` would have silently dropped real coverage on exactly the platform the pipe handling is most likely to break on. The capability probe is the right shape.\n\nI generated the no-`ls` case by filtering `Git` out of `PATH` for that one invocation rather than editing the system environment, so the two runs differ only in that.\n\nNot checked: Linux and macOS, where `ls` is always present and the marker is a no-op either way, and whether any CI runner lacks `ls` \u2014 CI is the authority on that.\n",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-08-11T08:38:17+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1785"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1784:opened",
+   "payload": {
+    "additions": 75,
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "changed_files": 7,
+    "deletions": 10,
+    "files": [
+     "tests/tests_notebook.py",
+     "tests/tests_rich.py",
+     "tests/tests_tk.py",
+     "tqdm/notebook.py",
+     "tqdm/rich.py",
+     "tqdm/std.py",
+     "tqdm/tk.py"
+    ],
+    "title": "Fix reset() in the tk, notebook and rich subclasses"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T13:00:18+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1784"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1783:opened",
+   "payload": {
+    "additions": 26,
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 14,
+    "files": [
+     "tests/tests_tqdm.py",
+     "tqdm/std.py"
+    ],
+    "title": "Treat inf total as unknown in reset() too"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T08:18:27+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1783"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1783:merged",
+   "payload": {
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T10:26:31+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1783"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1783:review:0",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Thanks!",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T10:25:44+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1783"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1783:comment:0",
+   "payload": {
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "body": "happy to help if u need more feel free to ask \r\n"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T11:09:13+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1783"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1783:comment:1",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "well, might be worth checking & fixing subclass behaviour too."
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T11:28:40+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1783"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1783:comment:2",
+   "payload": {
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "body": "Good call \u2014 the rich one was worse than I thought (`reset()` raised `TypeError` for any total). Fixed all three in #1784."
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T13:00:37+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1783"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1783:comment:3",
+   "payload": {
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "body": "Thanks for the merge too! If there's anything else in tqdm you'd like a second pair of hands on, feel free to ping me."
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T13:57:27+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1783"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:opened",
+   "payload": {
+    "additions": 9,
+    "author": "ofekashery",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 2,
+    "files": [
+     ".github/workflows/check.yml",
+     "pyproject.toml"
+    ],
+    "title": "fix(packaging): exclude images/ from wheel build"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T21:33:16+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:merged",
+   "payload": {
+    "author": "ofekashery",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T08:53:35+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:review:0",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Oops, good spot!",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T21:50:47+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:review:1",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "",
+    "state": "COMMENTED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T08:16:57+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:comment:0",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/tqdm/tqdm/pull/1782?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=tqdm) Report\n:white_check_mark: All modified and coverable lines are covered by tests.\n:white_check_mark: Project coverage is 86.09%. Comparing base ([`e72fa15`](https://app.codecov.io/gh/tqdm/tqdm/commit/e72fa1536aab29e32b5804017c922d46caa2fcbd?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=tqdm)) to head ([`a9a7103`](https://app.codecov.io/gh/tqdm/tqdm/commit/a9a71035df7ba84c36551749ac60da0d0b9893b4?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=tqdm)).\n:warning: Report is 12 commits behind head on master.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##           master    #1782      +/-   ##\n==========================================\n- Coverage   88.69%   86.09%   -2.60%     \n==========================================\n  Files          26       26              \n  Lines        1804     1812       +8     \n  Branches      279      281       +2     \n==========================================\n- Hits         1600     1560      -40     \n- Misses        150      201      +51     \n+ Partials       54       51       -3     \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T22:14:12+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:comment:1",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "~No idea why, but CI seems to be failing with both `include` and `exclude` strategies~\r\n\r\nFailures are ~likely~ unrelated to this PR - ~probably some upstream test dependency changed~ due to https://github.com/horejsek/python-fastjsonschema/issues/211"
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T22:15:58+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:comment:2",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Given [the scary download scale](https://pepy.tech/projects/tqdm), this is ~10TB/day saved in global network bandwidth!\n"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T08:56:37+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1782:comment:3",
+   "payload": {
+    "author": "ofekashery",
+    "author_is_bot": false,
+    "body": "Awesome, thank you for your work @casperdcl!"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T09:01:35+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1782"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1781:opened",
+   "payload": {
+    "additions": 3,
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 1,
+    "files": [
+     "tests/tests_tqdm.py",
+     "tqdm/std.py"
+    ],
+    "title": "Fix format_meter OverflowError when total is inf"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T11:33:50+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1781"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1781:merged",
+   "payload": {
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T13:42:24+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1781"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1781:review:0",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Thanks!\r\n\r\nfixes/follow-up to #651",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T12:37:05+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1781"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1781:comment:0",
+   "payload": {
+    "author": "LuShadowX",
+    "author_is_bot": false,
+    "body": "Thanks for the quick review and merge!"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T15:51:52+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1781"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1780:opened",
+   "payload": {
+    "additions": 3,
+    "author": "LaRoyBot",
+    "author_is_bot": false,
+    "changed_files": 3,
+    "deletions": 3,
+    "files": [
+     ".meta/.readme.rst",
+     "DEMO.ipynb",
+     "README.rst"
+    ],
+    "title": "docs: Fix word order 'can be also used' -> 'can also be used'"
+   },
+   "source": "github",
+   "timestamp": "2026-07-22T17:58:31+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1780"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1780:merged",
+   "payload": {
+    "author": "LaRoyBot",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T13:42:24+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1780"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1780:review:0",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Thanks!",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T12:50:45+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1780"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1779:opened",
+   "payload": {
+    "additions": 66,
+    "author": "alexchen-sys",
+    "author_is_bot": false,
+    "changed_files": 5,
+    "deletions": 7,
+    "files": [
+     "README.rst",
+     "tests/tests_tqdm.py",
+     "tqdm/_monitor.py",
+     "tqdm/completion.sh",
+     "tqdm/std.py"
+    ],
+    "title": "feat: optional cpu_time / timer clocks for elapsed rates"
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T13:17:04+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1779"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1779:closed",
+   "payload": {
+    "author": "alexchen-sys",
+    "author_is_bot": false,
+    "merged": false
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T06:16:03+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1779"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1779:comment:0",
+   "payload": {
+    "author": "alexchen-sys",
+    "author_is_bot": false,
+    "body": "Sorry about this. I should've checked the issue thread more carefully before opening #1779.\n\nI see @eliotwrobson already said they implemented this on their fork in #1748, so I'm closing this PR to get out of the way. If any of the code is useful, take it. Sorry for the noise."
+   },
+   "source": "github",
+   "timestamp": "2026-07-19T13:29:23+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1779"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1778:opened",
+   "payload": {
+    "additions": 3,
+    "author": "deeferentleeg",
+    "author_is_bot": false,
+    "changed_files": 1,
+    "deletions": 1,
+    "files": [
+     "tqdm/std.py"
+    ],
+    "title": "Fix AttributeError in close() when __init__ fails before last_print_t is set"
+   },
+   "source": "github",
+   "timestamp": "2026-07-18T14:14:06+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1778"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1778:merged",
+   "payload": {
+    "author": "deeferentleeg",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T13:42:24+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1778"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1778:review:0",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Thanks!",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-24T13:18:03+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1778"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1777:opened",
+   "payload": {
+    "additions": 173,
+    "author": "shermansiu",
+    "author_is_bot": false,
+    "changed_files": 2,
+    "deletions": 10,
+    "files": [
+     "tests/tests_concurrent.py",
+     "tqdm/contrib/concurrent.py"
+    ],
+    "title": "add `tqdm.concurrent.intepreter_map`"
+   },
+   "source": "github",
+   "timestamp": "2026-07-17T23:44:48+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1777"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1777:merged",
+   "payload": {
+    "author": "shermansiu",
+    "author_is_bot": false,
+    "merged": true
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T11:23:27+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1777"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1777:review:0",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Thanks for this!",
+    "state": "APPROVED"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T11:22:54+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1777"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1777:comment:0",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "Thanks for this! (un)fortunately just merged in several related PRs so there are conflicts now."
+   },
+   "source": "github",
+   "timestamp": "2026-07-25T21:39:17+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1777"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1777:comment:1",
+   "payload": {
+    "author": "codecov",
+    "author_is_bot": true,
+    "body": "## [Codecov](https://app.codecov.io/gh/tqdm/tqdm/pull/1777?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=tqdm) Report\n:x: Patch coverage is `28.78788%` with `47 lines` in your changes missing coverage. Please review.\n:white_check_mark: Project coverage is 83.76%. Comparing base ([`31ab0f4`](https://app.codecov.io/gh/tqdm/tqdm/commit/31ab0f4b2509b21913216b33a116a69842d715f0?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=tqdm)) to head ([`4547352`](https://app.codecov.io/gh/tqdm/tqdm/commit/4547352a47563ff8879f7205837f7735af811f52?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=tqdm)).\n:warning: Report is 4 commits behind head on master.\n\n<details><summary>Additional details and impacted files</summary>\n\n\n\n```diff\n@@            Coverage Diff             @@\n##           master    #1777      +/-   ##\n==========================================\n- Coverage   86.12%   83.76%   -2.37%     \n==========================================\n  Files          26       26              \n  Lines        1824     1885      +61     \n  Branches      284      334      +50     \n==========================================\n+ Hits         1571     1579       +8     \n- Misses        200      252      +52     \n- Partials       53       54       +1     \n```\n</details>\n<details><summary> :rocket: New features to boost your workflow: </summary>\n\n- :snowflake: [Test Analytics](https://docs.codecov.com/docs/test-analytics): Detect flaky tests, report on failures, and find test suite problems.\n</details>"
+   },
+   "source": "github",
+   "timestamp": "2026-07-26T23:13:21+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1777"
+  },
+  {
+   "evidence_id": "pr:tqdm/tqdm#1777:comment:2",
+   "payload": {
+    "author": "casperdcl",
+    "author_is_bot": false,
+    "body": "/tag v4.70.0 96f2e60"
+   },
+   "source": "github",
+   "timestamp": "2026-07-27T11:24:33+00:00",
+   "url": "https://github.com/tqdm/tqdm/pull/1777"
+  }
+ ],
+ "repo": "tqdm/tqdm",
+ "window": "pre_t"
+}

@@ -237,7 +237,8 @@ def analyse_survivor(slug: str, provider: EvidenceProvider, client,
 
 def render(profile: Profile, queries: list[str], screened: list[Screened],
            rows: list[SurvivorRow], *, replayed: bool, as_of: datetime,
-           skipped: list[str], unanalysed: int) -> str:
+           skipped: list[str], unanalysed: int,
+           unanalysable: list[str] | None = None) -> str:
     lines = [f"# Discover — {profile.describe()}", ""]
     if replayed:
         lines += ["> Replaying a recorded discovery session captured "
@@ -278,6 +279,9 @@ def render(profile: Profile, queries: list[str], screened: list[Screened],
     if unanalysed:
         lines.append(f"{unanalysed} survivor(s) not analysed "
                      "(over the --max-analyze cap); nothing is claimed about them.")
+    if unanalysable:
+        lines.append(f"{len(unanalysable)} survivor(s) could not be analysed "
+                     f"({', '.join(unanalysable)}); nothing is claimed about them.")
     lines.append("")
 
     headers = ("repository", "verdict", "outsiders in", "first reply", "why")
@@ -326,12 +330,13 @@ def run_replay(name: str, days: int | None = None,
 
     survivors = [s for s in screened if not s.category]
     rows: list[SurvivorRow] = []
+    unanalysable: list[str] = []
     for s in survivors[:max_analyze]:
         provider = FixtureProvider(Window.PRE_T, root=full_root(name), cutoff=as_of)
         try:
             client = model.ReplayModel(trajectory_for(s.candidate.slug))
         except FileNotFoundError:
-            skipped.append(s.candidate.slug)
+            unanalysable.append(s.candidate.slug)
             continue
         row = analyse_survivor(s.candidate.slug, provider, client, profile.days, as_of)
         records = provider.fetch(s.candidate.slug)
@@ -341,7 +346,8 @@ def run_replay(name: str, days: int | None = None,
 
     return render(profile, manifest["queries"], screened, rows, replayed=True,
                   as_of=as_of, skipped=skipped,
-                  unanalysed=max(0, len(survivors) - max_analyze))
+                  unanalysed=max(0, len(survivors) - max_analyze),
+                  unanalysable=unanalysable)
 
 
 def run_live(profile: Profile, limit: int = 25, max_analyze: int = 8,
@@ -376,6 +382,7 @@ def run_live(profile: Profile, limit: int = 25, max_analyze: int = 8,
 
     survivors = [s for s in screened if not s.category]
     rows: list[SurvivorRow] = []
+    unanalysable: list[str] = []
     for s in survivors[:max_analyze]:
         slug = s.candidate.slug
         provider = LiveGitHubProvider(Window.PRE_T, cutoff=as_of,
@@ -383,7 +390,7 @@ def run_live(profile: Profile, limit: int = 25, max_analyze: int = 8,
         try:
             records = provider.fetch(slug)
         except Exception as err:
-            skipped.append(slug)
+            unanalysable.append(slug)
             progress(f"analyse {slug}: skipped ({err})")
             continue
         if record:
@@ -411,4 +418,5 @@ def run_live(profile: Profile, limit: int = 25, max_analyze: int = 8,
         }, indent=1, sort_keys=True) + "\n")
 
     return render(profile, queries, screened, rows, replayed=False, as_of=as_of,
-                  skipped=skipped, unanalysed=max(0, len(survivors) - max_analyze))
+                  skipped=skipped, unanalysed=max(0, len(survivors) - max_analyze),
+                  unanalysable=unanalysable)
