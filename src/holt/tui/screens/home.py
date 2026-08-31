@@ -19,10 +19,15 @@ Three behaviours worth stating, because they are the ones that make it usable:
 * **The mode is visible before you commit.** Replay is free and only works where
   there is a recording; live costs money and reads GitHub. You should never
   discover which one you were in by watching the bill.
+* **Runs still going sit at the top of the same list.** Starting an assessment
+  and coming back here does not stop it, so the list has to show it: enter
+  rejoins it, ctrl+x stops it after asking. A run you cannot see is one you
+  cannot get back to, and would be indistinguishable from one that died.
 * **Everything here is reachable from the keyboard.** The input holds focus the
   whole time — that is where you type — so ↑↓ are handled by the screen and
-  move the highlight through the recent list underneath it. Nothing on this
-  screen requires a mouse, and nothing requires guessing that tab exists.
+  move the highlight through the recent list underneath it, running rows
+  included. Nothing on this screen requires a mouse, and nothing requires
+  guessing that tab exists.
 """
 
 from __future__ import annotations
@@ -40,7 +45,7 @@ from holt.cli import normalise
 from holt.tui import animation, session as session_module, store, theme
 from holt.tui.visual import Line
 from holt.tui.widgets.masthead import Masthead
-from holt.tui.widgets.recent import RecentList, RecentRow
+from holt.tui.widgets.recent import RecentList, RecentRow, RunningRow
 
 #: Shown in the empty state. Must be a repository with a committed recording,
 #: because the empty state promises the suggestion costs nothing —
@@ -58,6 +63,11 @@ HINT = (
     "enter assess    ↑↓ one you already have    ctrl+f find one    "
     "ctrl+t mode    ctrl+l models"
 )
+
+#: How often the in-flight rows redraw. Slower than the event pump on purpose:
+#: this is an elapsed clock and a stage name, and nothing on it changes faster
+#: than a person reads.
+RUNNING_TICK_SECONDS = 0.5
 
 
 class HomeScreen(Screen):
@@ -78,6 +88,7 @@ class HomeScreen(Screen):
         ("ctrl+l", "models", "models"),
         ("ctrl+r", "rerun", "re-run"),
         ("ctrl+t", "toggle_mode", "mode"),
+        ("ctrl+x", "stop", "stop run"),
         ("escape", "clear", "clear"),
     ]
 
@@ -95,6 +106,9 @@ class HomeScreen(Screen):
         #: assessment you highlighted. Without it, arrowing to a row and
         #: pressing enter would run the text still sitting in the box.
         self._browsing = False
+        #: What is typed in the box, kept so a rebuild triggered by a run
+        #: starting or ending does not throw away the reader's filter.
+        self._filter = ""
 
     # ─── layout ─────────────────────────────────────────────────────────────
 
@@ -124,6 +138,30 @@ class HomeScreen(Screen):
         await self.refresh_entries()
         self.query_one("#repo-input", Input).focus()
         self._paint_chrome()
+        self.set_interval(RUNNING_TICK_SECONDS, self._tick_running)
+
+    def _tick_running(self) -> None:
+        """Keep the in-flight rows honest, and rebuild only when the set changes.
+
+        Redrawing the rows costs nothing; rebuilding the list moves the reader's
+        cursor. So the clock and the stage name are updated in place, and the
+        list is rebuilt only when a run appears or ends.
+        """
+        listing = self.query_one("#recent", RecentList)
+        shown = [row.session for row in listing.running_rows()]
+        if [s.options.repo for s in shown] != [
+            s.options.repo for s in self._in_flight()
+        ]:
+            self.call_later(self.refresh_entries, self._filter)
+            return
+        for row in listing.running_rows():
+            row.refresh_row()
+
+    def _in_flight(self) -> list:
+        """In-flight runs, in a stable order so the list does not shuffle."""
+        return sorted(
+            self.app.in_flight, key=lambda s: (s.started_at, s.options.repo)
+        )
 
     # ─── state ──────────────────────────────────────────────────────────────
 
@@ -141,14 +179,24 @@ class HomeScreen(Screen):
         the same text opened the stored answer. Both cannot be right.
         """
         needle = normalise(filter_text).lower()
+        self._filter = filter_text
         entries = [
             e for e in self.app.store.all() if not needle or needle in e.repo.lower()
         ]
         self._entries = entries
+        running = [
+            s
+            for s in self._in_flight()
+            if not needle or needle in s.options.repo.lower()
+        ]
 
         listing = self.query_one("#recent", RecentList)
         await listing.clear()
         listing.entries = entries
+        # In flight first: it is the only part of this list that is changing,
+        # and the only part with something you can still act on.
+        for session in running:
+            await listing.append(RunningRow(session))
         for index, stored in enumerate(entries):
             row = RecentRow(stored)
             await listing.append(row)
@@ -156,10 +204,12 @@ class HomeScreen(Screen):
 
         # Something is always highlighted when there is something to highlight.
         # A list with no highlight has no keyboard position to move from, which
-        # is what made the mouse the only way into it.
-        listing.index = 0 if entries else None
+        # is what made the mouse the only way into it. Running rows count — they
+        # are at the top, and rejoining one is the thing you are most likely to
+        # have come back here to do.
+        listing.index = 0 if (running or entries) else None
 
-        self._paint_empty(entries, bool(needle))
+        self._paint_empty(entries or running, bool(needle))
         self._paint_chrome()
 
     def _paint_empty(self, entries: list, filtered: bool) -> None:
@@ -210,22 +260,40 @@ class HomeScreen(Screen):
         self._describe_typed(event.value)
 
     def on_input_submitted(self, event: Input.Submitted) -> None:
-        selected = self.query_one("#recent", RecentList).selected
-        if self._browsing and selected is not None:
-            # ↑↓ moved the highlight, so enter belongs to the list.
-            self.app.open_stored(selected)
-            return
+        # Enter belongs to the list when ↑↓ put the cursor there, and to the box
+        # otherwise. Either way the row under the cursor may be a run in flight
+        # rather than a stored answer, in which case enter rejoins it.
+        if self._browsing or not event.value.strip():
+            if self._open_highlighted():
+                return
+            if self._browsing:
+                return
 
         typed = event.value.strip()
         if not typed:
-            # Enter on an empty box opens the highlighted recent, if there is
-            # one. Doing nothing at all would read as the key not working.
-            if selected is not None:
-                self.app.open_stored(selected)
+            # Nothing typed and nothing to open. Doing nothing at all would read
+            # as the key not working, but there is nothing honest to do here.
             return
         self.run_repo(typed)
 
+    def _open_highlighted(self) -> bool:
+        """Open whatever the cursor is on. False when it is on nothing."""
+        listing = self.query_one("#recent", RecentList)
+        session = listing.selected_session
+        if session is not None:
+            self.app.watch_run(session)
+            return True
+        selected = listing.selected
+        if selected is not None:
+            self.app.open_stored(selected)
+            return True
+        return False
+
     def on_list_view_selected(self, event) -> None:
+        session = getattr(event.item, "session", None)
+        if session is not None:
+            self.app.watch_run(session)
+            return
         entry = getattr(event.item, "entry", None)
         if entry is not None:
             self.app.open_stored(entry)
@@ -241,7 +309,10 @@ class HomeScreen(Screen):
     def _browse(self, delta: int) -> None:
         """Move the highlight without taking focus off the input."""
         listing = self.query_one("#recent", RecentList)
-        total = len(self._entries)
+        # The rows, not `self._entries`: runs in flight sit above the stored
+        # ones in the same list, and counting only the stored ones would make
+        # the last rows unreachable by keyboard.
+        total = len(listing.children)
         if not total:
             return
         current = listing.index
@@ -261,7 +332,18 @@ class HomeScreen(Screen):
         an interface that changes what a key does without saying so is one you
         have to learn by being surprised.
         """
-        entry = self.query_one("#recent", RecentList).selected
+        listing = self.query_one("#recent", RecentList)
+        session = listing.selected_session
+        if session is not None:
+            # A run in flight is not a stored answer, and enter does a different
+            # thing to it. Saying "assessed 2 min ago" about one would be wrong
+            # twice over: it is not finished, and it is not being reused.
+            self.notice(
+                f"enter rejoins the run on {session.options.repo}.    "
+                "ctrl+x stops it    esc back to the box"
+            )
+            return
+        entry = listing.selected
         if entry is None:
             return
         age = store.describe_age(entry.age_seconds)
@@ -326,6 +408,14 @@ class HomeScreen(Screen):
             )
             return
 
+        # Already being assessed: rejoin it. Checked before the cache, because
+        # a stored answer from this morning is not what someone asking for a
+        # repository they are watching right now is asking for.
+        in_flight = self.app.running_for(repo)
+        if in_flight is not None:
+            self.app.watch_run(in_flight)
+            return
+
         if not force:
             cached = self.app.store.fresh(repo, options.mode, options.contributor_days)
             if cached is not None:
@@ -336,7 +426,13 @@ class HomeScreen(Screen):
 
     def action_rerun(self) -> None:
         """Assess again, ignoring anything stored."""
-        selected = self.query_one("#recent", RecentList).selected
+        listing = self.query_one("#recent", RecentList)
+        if self._browsing and listing.selected_session is not None:
+            # Already running. Re-running it would be asking the same question
+            # twice and paying for both answers.
+            self.notice("That one is still running. ctrl+x stops it.")
+            return
+        selected = listing.selected
         if self._browsing and selected is not None:
             # The highlight is what you are looking at, so it is what ctrl+r
             # acts on — the same thing enter would open.
@@ -376,8 +472,25 @@ class HomeScreen(Screen):
         self._browsing = False
         self.notice("")
 
+    def action_stop(self) -> None:
+        """Stop the run under the cursor, after asking."""
+        session = self.query_one("#recent", RecentList).selected_session
+        if session is None:
+            running = self._in_flight()
+            if len(running) != 1:
+                self.notice(
+                    "Select a running assessment with ↑↓ to stop it."
+                    if running
+                    else "Nothing is running."
+                )
+                return
+            # Exactly one thing is running: there is no ambiguity to resolve.
+            session = running[0]
+        self.app.confirm_stop(session)
+
     def action_quit(self) -> None:
-        self.app.exit()
+        # Through the app, so a run still in flight is named before it dies.
+        self.app.action_quit()
 
 
 def _looks_like_repo(repo: str) -> bool:

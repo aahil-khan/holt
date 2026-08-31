@@ -299,3 +299,87 @@ def test_a_replayed_run_reports_the_holdout_boundary():
     assert loaded, "no evidence event was emitted"
     assert all(e.cutoff == T_CUTOFF for e in loaded)
 
+
+# ─── stopping a run ─────────────────────────────────────────────────────────
+
+
+def test_a_stopped_run_is_interrupted_at_its_next_chokepoint():
+    """A stop reaches the engine without the engine knowing about stopping.
+
+    Cancelling before the run starts means the very first evidence read raises,
+    which makes the test deterministic. What it pins is the mechanism: the run
+    ends, it ends as cancelled rather than failed, and nothing partial survives.
+    """
+    session = Session(RunOptions(repo=CLEAN, replay=True))
+    session.cancel()
+    session.start()
+    session.wait(60)
+
+    assert session.cancelled
+    assert session.error is None, "a deliberate stop must not report as a failure"
+    assert session.assessment is None
+    assert session.to_entry() is None, "a stopped run must not be stored"
+    assert [e for e in session.log if isinstance(e, events.RunCancelled)]
+    assert not [e for e in session.log if isinstance(e, events.RunFailed)]
+
+
+def test_stopping_part_way_keeps_no_report_and_names_what_finished():
+    """Stop after the first stage: the run ends, and says what it got through."""
+    session = Session(RunOptions(repo=CLEAN, replay=True))
+    stop_after = "classify"
+
+    original = session._emit
+
+    def emit(event):
+        original(event)
+        if isinstance(event, events.StageFinished) and event.stage == stop_after:
+            session.cancel()
+
+    session._emit = emit  # type: ignore[method-assign]
+    session.start()
+    session.wait(60)
+
+    assert session.cancelled, "the stop never landed"
+    assert session.assessment is None
+    cancelled = [e for e in session.log if isinstance(e, events.RunCancelled)]
+    assert len(cancelled) == 1
+    assert stop_after in cancelled[0].completed_stages
+
+
+def test_the_wrappers_raise_on_a_stop_without_reporting_a_failure():
+    """The stop is checked before the call, not around it.
+
+    Raising inside `complete`'s own try would emit `RunFailed` on the way out,
+    which would have the interface report a stop the reader asked for as a
+    defect in the run.
+    """
+    from holt.tui.observe import RunCancelled
+
+    seen: list = []
+
+    class _Boom:
+        def complete(self, **kwargs):
+            raise AssertionError("a stopped run must not call the model")
+
+        def fetch(self, request, /, **params):
+            raise AssertionError("a stopped run must not read evidence")
+
+        def resolve(self, evidence_id):
+            raise AssertionError("a stopped run must not resolve evidence")
+
+    model = ObservingModel(_Boom(), seen.append, CLEAN, lambda: True)
+    with pytest.raises(RunCancelled):
+        model.complete(label="classify", system="", prompt="", schema={})
+
+    provider = ObservingProvider(_Boom(), seen.append, lambda: True)
+    with pytest.raises(RunCancelled):
+        provider.fetch(CLEAN)
+
+    assert not [e for e in seen if isinstance(e, events.RunFailed)]
+    assert not [e for e in seen if isinstance(e, events.StageStarted)]
+
+
+def test_a_run_nobody_stopped_is_not_affected_by_the_check():
+    """The default is no cancellation, and the wrappers stay pure delegates."""
+    _, _, seen = _run(CLEAN)
+    assert not [e for e in seen if isinstance(e, events.RunCancelled)]

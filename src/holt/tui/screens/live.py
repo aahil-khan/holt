@@ -7,10 +7,18 @@ an event with no entry still renders, as a dim line, because a screen that
 raises on an unfamiliar event is a screen that breaks every time a stage learns
 something new.
 
-When the run finishes it does two things and gets out of the way: it stores the
-assessment so the next launch opens on it, and it moves to the report. A
-finished run has nothing left to watch, and making someone press a key to leave
-a screen that is done is a small insult repeated every time.
+The screen watches; it does not own. The events are drained by the app, which
+ticks whether or not this screen exists, and rendered here from the session's
+log. Two things follow. Leaving does not stop the run — escape means "stop
+looking", and stopping has its own key and its own confirmation. And coming
+back replays the log from the start, so a run rejoined half way through shows
+everything it did while nobody was watching.
+
+When a run finishes with this screen up, it moves to the report. A finished run
+has nothing left to watch, and making someone press a key to leave a screen that
+is done is a small insult repeated every time. Storing the result is the app's
+job, not this screen's: a screen that has been popped cannot store anything, and
+that is exactly how a completed assessment used to get lost.
 """
 
 from __future__ import annotations
@@ -55,13 +63,20 @@ def evidence_line(event: events.EvidenceLoaded) -> str:
 
 class LiveScreen(Screen):
     BINDINGS = [
-        ("escape", "home", "home"),
+        # Named "leave running" rather than "home" because that is the fact
+        # someone needs at the moment they press it.
+        ("escape", "home", "leave running"),
         ("a", "assessment", "report"),
+        ("ctrl+x", "stop", "stop"),
         ("q", "quit", "quit"),
     ]
 
     _spend = ""
     _handed_off = False
+    #: How far through the session's log this screen has rendered. Rendering
+    #: from the log rather than the queue is what lets a second visit replay a
+    #: run from its beginning: the cursor starts at zero on a fresh screen.
+    _cursor = 0
 
     def compose(self) -> ComposeResult:
         with Horizontal(id="chrome"):
@@ -90,7 +105,15 @@ class LiveScreen(Screen):
     # ─── event pump ─────────────────────────────────────────────────────────
 
     def _pump(self) -> None:
-        for event in self.app.session.drain():
+        """Render whatever the app has absorbed since the last tick.
+
+        Never drains the session itself. The app does that for every run at
+        once, so this screen can be absent for a minute and still catch up.
+        """
+        log = self.app.session.log
+        pending = log[self._cursor :]
+        self._cursor = len(log)
+        for event in pending:
             self._handle(event)
 
     def _handle(self, event: events.Event) -> None:
@@ -187,11 +210,21 @@ class LiveScreen(Screen):
         self._line(Text(event.error, style=theme.DROP))
         self._line(Text("escape to go back", style=theme.FAINT))
 
+    def _on_cancelled(self, event: events.RunCancelled) -> None:
+        # Not styled as a failure. Nothing went wrong: the run did what it was
+        # told. Naming the stages that had finished is the one useful thing to
+        # say, because on live those were paid for.
+        self.query_one("#stages", StageList).settle()
+        self._line(Text("stopped", style=theme.DIM))
+        if event.completed_stages:
+            done = ", ".join(dict.fromkeys(event.completed_stages))
+            self._line(Text(f"completed before stopping: {done}", style=theme.FAINT))
+        self._line(Text("escape to go back", style=theme.FAINT))
+
     def _on_finished(self, event: events.RunFinished) -> None:
         verdict = getattr(event.assessment, "verdict", None)
         self._mood(mascot.mood_for_verdict(getattr(verdict, "value", "")))
         self.query_one("#stages", StageList).settle()
-        self.app.remember(self.app.session)
         if self._handed_off:
             return
         self._handed_off = True
@@ -210,8 +243,12 @@ class LiveScreen(Screen):
     def action_home(self) -> None:
         self.app.go_home()
 
+    def action_stop(self) -> None:
+        self.app.confirm_stop(self.app.session)
+
     def action_quit(self) -> None:
-        self.app.exit()
+        # Through the app, so a run still in flight is named before it dies.
+        self.app.action_quit()
 
 
 #: Event type → renderer. The registry is the extension point: a new event class
@@ -227,6 +264,7 @@ HANDLERS: dict[type, Callable] = {
     events.UsageUpdated: LiveScreen._on_usage,
     events.Retry: LiveScreen._on_retry,
     events.RunFailed: LiveScreen._on_failed,
+    events.RunCancelled: LiveScreen._on_cancelled,
     events.RunFinished: LiveScreen._on_finished,
     # `ToolResponse` carries the raw payload for future use and is deliberately
     # not rendered: the findings read off it are shown instead, and printing

@@ -31,7 +31,7 @@ from holt.evidence.fixtures import FixtureProvider
 from holt.evidence.provider import EvidenceProvider
 from holt.report import EntryPoint
 from holt.tui import events, store
-from holt.tui.observe import ObservingModel, ObservingProvider
+from holt.tui.observe import ObservingModel, ObservingProvider, RunCancelled
 from holt.types import Window
 
 # Mirrors `holt.cli`. Imported from there rather than restated so that the TUI
@@ -100,8 +100,18 @@ class Session:
     #: sees exactly what Stage D saw — a new provider has fetched nothing and
     #: would report every id as unresolvable.
     provider: Any = None
+    #: The stage the run is in, for anything showing progress without showing
+    #: the stream. Set from the events, so it cannot disagree with them.
+    stage: str = ""
+    #: Set when the run was stopped on purpose. Distinct from `error`: a stop
+    #: is not a failure, and nothing about it should read like one.
+    cancelled: bool = False
     _queue: queue.Queue = field(default_factory=queue.Queue)
     _thread: threading.Thread | None = None
+    _cancel: threading.Event = field(default_factory=threading.Event)
+    #: Stages that finished before a stop landed. Recorded on the worker thread,
+    #: which is the only thread that writes it.
+    _completed: list[str] = field(default_factory=list)
 
     # ─── construction ───────────────────────────────────────────────────────
 
@@ -133,6 +143,25 @@ class Session:
         self._thread = threading.Thread(target=self._run, daemon=True)
         self._thread.start()
 
+    def cancel(self) -> None:
+        """Ask the run to stop. It stops at the next model call or evidence read.
+
+        Cannot be undone, and deliberately does not join: the caller is a key
+        binding, and blocking the interface until a live model call returns
+        would freeze the very screen that has to say `stopping`.
+        """
+        self._cancel.set()
+
+    @property
+    def running(self) -> bool:
+        """A worker is alive and has not yet produced an outcome."""
+        return self._thread is not None and self._thread.is_alive()
+
+    @property
+    def stopping(self) -> bool:
+        """Stopped by the reader, but the worker has not wound down yet."""
+        return self._cancel.is_set() and self.running
+
     def drain(self) -> list[events.Event]:
         """Every event that arrived since the last call. Never blocks."""
         out: list[events.Event] = []
@@ -148,6 +177,11 @@ class Session:
             elif isinstance(event, events.RunFailed):
                 self.error = event.error
                 self.finished_at = time.time()
+            elif isinstance(event, events.RunCancelled):
+                self.cancelled = True
+                self.finished_at = time.time()
+            elif isinstance(event, events.StageStarted):
+                self.stage = event.stage
             elif isinstance(event, events.UsageUpdated):
                 self.input_tokens = event.input_tokens
                 self.output_tokens = event.output_tokens
@@ -162,7 +196,8 @@ class Session:
 
     @property
     def finished(self) -> bool:
-        return self.assessment is not None or self.error is not None
+        """Nothing more will arrive: it produced a report, failed, or was stopped."""
+        return self.assessment is not None or self.error is not None or self.cancelled
 
     @property
     def duration(self) -> float:
@@ -206,15 +241,21 @@ class Session:
     # ─── the run ────────────────────────────────────────────────────────────
 
     def _emit(self, event: events.Event) -> None:
+        if isinstance(event, events.StageFinished):
+            self._completed.append(event.stage)
         self._queue.put(event)
 
     def _run(self) -> None:
         opts = self.options
         repo = normalise(opts.repo)
         try:
-            provider = ObservingProvider(_provider(opts.live), self._emit)
+            provider = ObservingProvider(
+                _provider(opts.live), self._emit, self._cancel.is_set
+            )
             self.provider = provider
-            client = ObservingModel(_client(repo, opts, "verdict"), self._emit, repo)
+            client = ObservingModel(
+                _client(repo, opts, "verdict"), self._emit, repo, self._cancel.is_set
+            )
             self._emit(events.RunStarted(repo=repo, replayed=opts.replay))
 
             assessment, trace = pipeline.analyze(
@@ -263,6 +304,10 @@ class Session:
                 self._rank(assessment, repo, provider, opts)
 
             self._emit(events.RunFinished(assessment=assessment, trace=trace))
+        except RunCancelled:
+            # Caught ahead of `Exception`: a stop the reader asked for must not
+            # be reported as a defect, and nothing partial is stored.
+            self._emit(events.RunCancelled(completed_stages=tuple(self._completed)))
         except Exception as exc:  # noqa: BLE001 - surfaced in the UI, not swallowed
             self._emit(events.RunFailed(error=readable(exc)))
 
