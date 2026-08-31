@@ -570,7 +570,7 @@ honest is that it is *severable*: `textual` is an optional extra
 (`pyproject.toml`), `holt tui` is the only entry point that imports it and does
 so lazily, and every reproduction command in `REPRODUCTION.md` runs after a
 plain `uv sync` on a machine that has never installed it. The test suite skips
-the TUI tests when the extra is absent and still runs 253 tests.
+the TUI tests when the extra is absent and still runs 281 tests.
 
 The number that decides whether the assessment is any good is the one below it:
 `agent/` + `evidence/` + `eval/` is 5,214 lines carrying every claim in the
