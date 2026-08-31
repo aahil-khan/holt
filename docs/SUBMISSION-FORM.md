@@ -123,7 +123,9 @@ then run inside the extracted `holt/`:
 | `fixtures/pre_t/` entries | 74 — what the headline result actually reads |
 | credential-shaped strings in the archive | none — only redacted placeholders (`sk-1af878XXX…`) and the deliberate test fixture |
 
-sha256 `bffe8234d297255c9df5bcc6644a0d39d32222fc4898283008ca2b843f8f3a96`.
+The archive's own checksum is recorded next to the archive rather than here:
+a file inside the zip cannot state the zip's hash without invalidating it on
+every rebuild.
 
 To rebuild it if anything changes — note the staging step, which is what puts
 everything under a top-level `holt/`:
