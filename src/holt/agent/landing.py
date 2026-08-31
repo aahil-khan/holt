@@ -80,7 +80,7 @@ def _tally(outsiders: list[Thread], depth: int) -> tuple[Counter, Counter]:
     for thread in outsiders:
         # Count each area once per pull request. A change touching forty files in
         # one directory is one attempt at that directory, not forty.
-        for area in {area_of(f, depth) for f in (thread.files or [])}:
+        for area in sorted({area_of(f, depth) for f in (thread.files or [])}):
             attempted[area] += 1
             if thread.merged:
                 landed[area] += 1
@@ -95,14 +95,23 @@ def compute(threads: dict[str, Thread]) -> Landing:
         depth = 1
         landed, attempted = _tally(outsiders, depth)
 
+    # `Counter.most_common` breaks ties by insertion order, and insertion order
+    # here was set-iteration order, which varies with the process hash seed. Two
+    # replays of the same recording printed different fourth rows -- a report
+    # this project claims is a function of the evidence quietly was not. Ordered
+    # explicitly instead: most merges first, then the better odds, then the
+    # larger sample, then alphabetically, so the order is total.
     got_in = [
         Area(a, landed[a], attempted[a])
-        for a, _ in landed.most_common(TOP_N)
+        for a in sorted(
+            landed,
+            key=lambda a: (-landed[a], -landed[a] / attempted[a], -attempted[a], a),
+        )[:TOP_N]
     ]
     never = [
-        Area(a, 0, n)
-        for a, n in attempted.most_common()
-        if landed.get(a, 0) == 0 and n >= MIN_ATTEMPTS
+        Area(a, 0, attempted[a])
+        for a in sorted(attempted, key=lambda a: (-attempted[a], a))
+        if landed.get(a, 0) == 0 and attempted[a] >= MIN_ATTEMPTS
     ][:TOP_N]
 
     return Landing(
