@@ -42,15 +42,23 @@ SUGGESTION = "astral-sh/uv"
 #: footer, because the question this screen has to answer immediately is "what
 #: do I press", and a keybinding you have to go looking for is one you do not
 #: know about.
-HINT = "⏎ assess    ↑↓ pick one you already have    ctrl+t mode    ctrl+r re-run"
+HINT = (
+    "⏎ assess    ↑↓ one you already have    ctrl+f find one    "
+    "ctrl+t mode    ctrl+r re-run"
+)
 
 
 class HomeScreen(Screen):
+    # Every key here has to survive a focused `Input`, which is where the
+    # cursor sits the whole time. `ctrl+d` is the input's own delete, `ctrl+p`
+    # is Textual's command palette, and a bare `q` never arrives at all — all
+    # three would have been keys the footer advertised and nothing did.
     BINDINGS = [
+        ("ctrl+f", "discover", "find a repository"),
+        ("ctrl+o", "profile", "profile"),
         ("ctrl+r", "rerun", "re-run"),
         ("ctrl+t", "toggle_mode", "mode"),
         ("escape", "clear", "clear"),
-        ("q", "quit", "quit"),
     ]
 
     def __init__(self, **kwargs) -> None:
@@ -221,6 +229,13 @@ class HomeScreen(Screen):
         selected = self.query_one("#recent", RecentList).selected
         if selected is not None:
             self.run_repo(selected.repo, force=True)
+
+    def action_discover(self) -> None:
+        """For when you cannot name a repository, which is the usual case."""
+        self.app.push_screen("discover")
+
+    def action_profile(self) -> None:
+        self.app.push_screen("profile")
 
     def action_toggle_mode(self) -> None:
         self.mode = "replay" if self.mode == "live" else "live"
