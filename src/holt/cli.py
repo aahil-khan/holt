@@ -77,7 +77,7 @@ def add_entry_points(assessment, repo: str, provider, args) -> None:
     # Recorded under its own directory, so the ranker's calls and the verdict's
     # calls replay independently and adding one never invalidated the other.
     path = model.TRAJECTORY_DIR / PATHFINDER_TRAJECTORIES / (repo.replace("/", "__") + ".jsonl")
-    client = model.ReplayModel(path) if args.replay else model.OpenAIModel(path)
+    client = model.ReplayModel(path) if args.replay else model.live_client(path)
     ranked = entry.rank(repo, list(issues), list(provider.fetch(repo)), client)
     assessment.entry_points = [
         EntryPoint(r["evidence_id"], r["first_step"], r.get("why", "")) for r in ranked
@@ -240,7 +240,69 @@ def cmd_discover(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_models(args: argparse.Namespace) -> int:
+    """Show or change which model answers, per provider. The default stays the
+    pinned OpenAI ids the benchmark was measured on."""
+    if args.reset:
+        path = model.models_config_path()
+        if path.exists():
+            path.unlink()
+        model.enable_user_models_config(model.ModelsConfig())
+        print("Model configuration reset to the defaults.")
+        return 0
+
+    if args.provider or args.model_id or args.base_url or args.api_key_env or args.stage:
+        current = model.load_models_config()
+        if args.provider:
+            if args.provider not in model.PROVIDER_PRESETS:
+                print(f"Unknown provider {args.provider!r}. One of: "
+                      f"{', '.join(sorted(model.PROVIDER_PRESETS))}", file=sys.stderr)
+                return 2
+            current.provider = args.provider
+        if args.model_id:
+            current.model = args.model_id
+        if args.base_url:
+            current.base_url = args.base_url
+        if args.api_key_env:
+            current.api_key_env = args.api_key_env
+        for spec in args.stage or []:
+            stage, _, model_id = spec.partition("=")
+            if not model_id or stage not in model.STAGE_MODELS:
+                print(f"--stage wants <stage>=<model> with stage one of: "
+                      f"{', '.join(sorted(model.STAGE_MODELS))}", file=sys.stderr)
+                return 2
+            current.stages[stage] = model_id
+        path = model.save_models_config(current)
+        model.enable_user_models_config(current)
+        print(f"Saved to {path}\n")
+
+    config = model.active_config()
+    print(f"provider     {config.provider}")
+    if config.resolved_base_url():
+        print(f"base_url     {config.resolved_base_url()}")
+    print(f"api key env  {config.resolved_key_env()}")
+    print()
+    print(f"{'stage':<18}{'model':<28}{'pricing':<10}")
+    for stage in model.STAGE_MODELS:
+        resolved = model.model_for(stage)
+        priced = "known" if resolved in model.PRICES else "unknown ($0 recorded)"
+        print(f"{stage:<18}{resolved:<28}{priced:<10}")
+    if not config.is_default():
+        print(
+            "\nNot the defaults. Committed trajectories and benchmark results "
+            "were recorded under the default models; `--replay` of those "
+            "recordings will fail loudly under this configuration rather than "
+            "serve another model's answers. `holt models --reset` restores the "
+            "defaults. Recordings you make now will replay under this "
+            "configuration."
+        )
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
+    # The one place the user's model configuration takes effect. Library and
+    # eval code resolve against the pinned defaults, always.
+    model.enable_user_models_config()
     parser = argparse.ArgumentParser(prog="holt", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
 
@@ -361,6 +423,27 @@ def main(argv: list[str] | None = None) -> int:
                             help="which recorded session to replay "
                                  "(default: demo)")
     discover_p.set_defaults(func=cmd_discover)
+
+    models_p = sub.add_parser(
+        "models",
+        help="show or change which model answers; defaults to the pinned ids "
+             "the benchmark was measured on",
+    )
+    models_p.add_argument("--provider",
+                          help="openai, anthropic, ollama, gemini, or "
+                               "openai-compatible")
+    models_p.add_argument("--model", dest="model_id",
+                          help="model id for every stage (e.g. claude-opus-5, "
+                               "llama3.3)")
+    models_p.add_argument("--base-url",
+                          help="endpoint for an openai-compatible server")
+    models_p.add_argument("--api-key-env",
+                          help="environment variable holding the API key")
+    models_p.add_argument("--stage", action="append",
+                          help="per-stage override, <stage>=<model>; repeatable")
+    models_p.add_argument("--reset", action="store_true",
+                          help="delete the configuration and restore defaults")
+    models_p.set_defaults(func=cmd_models)
 
     args = parser.parse_args(argv)
     return args.func(args)

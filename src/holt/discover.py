@@ -397,7 +397,7 @@ def run_live(profile: Profile, limit: int = 25, max_analyze: int = 8,
             write_fixture(slug, Window.PRE_T, records,
                           root=full_root(record), cutoff=as_of)
         cached = PrefetchedProvider(Window.PRE_T, as_of, records)
-        client = model.OpenAIModel(trajectory_for(slug))
+        client = model.live_client(trajectory_for(slug))
         row = analyse_survivor(slug, cached, client, profile.days, as_of)
         row.notes = contribution_notes(
             landing_mod.compute(build_threads(records)), profile.contributions)
