@@ -27,6 +27,10 @@ FAINT = "#585858"  # counts, timings, read only if you look for them
 RULE = "#444444"  # hairlines
 RAIL = "#767676"  # the measured-result rail: quiet, but meant to be seen
 
+#: The mascot, and nothing else. Deliberately outside the meaning-colours
+#: below: a decorative element wearing one of them would dilute all three.
+MASCOT = "#b07d62"
+
 VIABLE = "#5faf87"
 NOT_VIABLE = "#d7875f"
 INSUFFICIENT = "#8a8a8a"
@@ -198,6 +202,33 @@ ClaimList:focus > ListItem.--highlight {{
     scrollbar-size: 1 1;
 }}
 
+/* masthead ----------------------------------------------------------------- */
+
+Masthead {{
+    /* `auto`, not the widget default of `1fr`. As a fraction it filled the
+       screen and pushed the input, the hint and the whole recent list off the
+       bottom. */
+    height: auto;
+}}
+#masthead {{
+    height: auto;
+    padding: 1 1 0 1;
+}}
+#mascot {{
+    width: 14;
+    color: {MASCOT};
+}}
+#masthead-text {{
+    width: 1fr;
+    height: auto;
+}}
+.masthead-name {{
+    text-style: bold;
+}}
+.masthead-fact {{
+    color: {FAINT};
+}}
+
 /* home --------------------------------------------------------------------- */
 
 #home-body {{
@@ -206,7 +237,9 @@ ClaimList:focus > ListItem.--highlight {{
 }}
 #home-notice {{
     height: auto;
-    padding: 1 1 0 2;
+    /* No top padding: the input already carries a bottom margin, and both
+       together left two blank lines between the box and its own hint. */
+    padding: 0 1 0 2;
 }}
 #recent-scroll {{
     height: 1fr;

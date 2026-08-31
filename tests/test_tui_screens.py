@@ -527,3 +527,56 @@ def test_what_next_says_plainly_when_the_login_has_landed_nothing(tmp_path):
         assert "no merged pull request here" in text
 
     drive(body, tmp_path)
+
+
+# ─── masthead ───────────────────────────────────────────────────────────────
+
+
+def test_home_leads_with_the_masthead(tmp_path):
+    """An empty screen that says nothing is what this replaces."""
+    from holt.tui import mascot
+
+    async def body(app, pilot):
+        text = screen_text(app)
+        assert mascot.TAGLINE in text
+        # The mascot itself, by a row of its art.
+        assert mascot.OTTER[1] in text
+        # And the facts that make the space worth taking.
+        assert "read-only" in text
+        assert "dropped, not softened" in text
+
+    drive(body, tmp_path, size=(110, 44))
+
+
+def test_the_mascot_is_rectangular():
+    """Every row the same width, or it renders lopsided at some terminal size."""
+    from holt.tui import mascot
+
+    widths = {len(row) for row in mascot.OTTER}
+    assert len(widths) == 1, f"mascot rows have widths {sorted(widths)}"
+    assert mascot.WIDTH == widths.pop()
+
+
+def test_a_long_verdict_does_not_run_into_the_age(tmp_path):
+    """`Not enough evidence to say` is 26 characters; the column was 22, so it
+    rendered as "Not enough evidence to say8 hours ago"."""
+    from holt.report import Verdict
+    from holt.tui import store
+    from holt.tui.widgets.recent import HEADLINE_WIDTH
+
+    from holt.report import VERDICT_HEADLINES
+
+    assert HEADLINE_WIDTH > max(len(h) for h in VERDICT_HEADLINES.values())
+
+    keep = store.Store(root=tmp_path)
+    entry = fake_run.stored_entry(repo="inni918/warashi", mode="live", age=28800)
+    entry.assessment.verdict = Verdict.INSUFFICIENT_EVIDENCE
+    keep.save(entry)
+
+    async def body(app, pilot):
+        text = screen_text(app)
+        assert "Not enough evidence to say" in text
+        assert "8 hours ago" in text
+        assert "say8 hours" not in text
+
+    drive(body, tmp_path, size=(110, 44))
