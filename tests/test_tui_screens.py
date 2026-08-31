@@ -691,3 +691,218 @@ def test_the_model_screen_never_reaches_the_network_in_tests(tmp_path, monkeypat
         assert models_layer.NO_NETWORK_ENV in screen_text(app)
 
     drive(body, tmp_path, size=(110, 40))
+
+
+# ─── driving it without a mouse ─────────────────────────────────────────────
+
+
+def rail_colour(app, needle: str) -> str | None:
+    """The colour of the selection rail on the row containing `needle`.
+
+    Asserting on text cannot see a highlight, and the highlight is exactly the
+    thing that was broken: every rule in the stylesheet named `--highlight`,
+    Textual sets `-highlight`, so no list in the app showed a keyboard position
+    and all of them had to be clicked. A test that reads only characters would
+    have stayed green through all of it.
+    """
+    from holt.tui import theme
+
+    for strip in app.screen._compositor.render_strips():
+        text = "".join(segment.text for segment in strip)
+        # Every matching row, not the first: the notice under the input names
+        # the highlighted repository too, and it is above the list.
+        if needle not in text:
+            continue
+        for segment in strip:
+            colour = getattr(getattr(segment.style, "color", None), "triplet", None)
+            if colour is not None and colour.hex.lower() == theme.CITE.lower():
+                return theme.CITE
+    return None
+
+
+def test_the_recent_list_shows_where_the_keyboard_is(tmp_path):
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo="astral-sh/uv", age=120))
+    keep.save(fake_run.stored_entry(repo="home-assistant/core", age=180))
+
+    async def body(app, pilot):
+        listing = app.screen.query_one("#recent")
+        assert listing.index == 0, "something must be selected to move from"
+
+        # The newest is first, so it is the one carrying the rail.
+        assert rail_colour(app, "astral-sh/uv") is not None
+        assert rail_colour(app, "home-assistant/core") is None
+
+        await pilot.press("down")
+        await pilot.pause(0.3)
+        assert rail_colour(app, "home-assistant/core") is not None
+        assert rail_colour(app, "astral-sh/uv") is None
+
+    drive(body, tmp_path)
+
+
+def test_arrows_move_through_recent_without_taking_the_input(tmp_path):
+    """The input holds focus the whole time, so typing never stops working."""
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo="astral-sh/uv", age=120))
+    keep.save(fake_run.stored_entry(repo="home-assistant/core", age=180))
+
+    async def body(app, pilot):
+        home = app.screen
+        await pilot.press("down")
+        await pilot.pause(0.3)
+        assert app.focused.id == "repo-input"
+        assert home.query_one("#recent").selected.repo == "home-assistant/core"
+        # And it says what enter now means, because enter has changed meaning.
+        assert "enter opens home-assistant/core" in screen_text(app)
+
+        await pilot.press("up")
+        await pilot.pause(0.3)
+        assert home.query_one("#recent").selected.repo == "astral-sh/uv"
+
+        # Typing puts you back in the box.
+        await type_repo(pilot, "x")
+        await pilot.pause(0.3)
+        assert home._browsing is False
+
+    drive(body, tmp_path)
+
+
+def test_enter_opens_the_highlighted_one_and_nothing_is_run(tmp_path):
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo="astral-sh/uv", age=120))
+    keep.save(fake_run.stored_entry(repo="home-assistant/core", age=180))
+
+    async def body(app, pilot):
+        await pilot.press("down")
+        await pilot.press("enter")
+        await pilot.pause(0.5)
+        assert app.screen.__class__.__name__ == "AssessmentScreen"
+        assert app.session.assessment.repo == "home-assistant/core"
+        assert app.session._thread is None, "opening a stored answer must run nothing"
+
+    drive(body, tmp_path)
+
+
+def test_a_pasted_url_finds_the_repository_you_already_have(tmp_path):
+    """It filtered to nothing and announced "nothing matches that" about a
+    repository in the store, while enter on the same text opened it."""
+    from holt.tui import store
+
+    keep = store.Store(root=tmp_path)
+    keep.save(fake_run.stored_entry(repo="astral-sh/uv", age=120))
+
+    async def body(app, pilot):
+        app.screen.query_one("#repo-input", __import__(
+            "textual.widgets", fromlist=["Input"]
+        ).Input).value = "https://github.com/astral-sh/uv"
+        await pilot.pause(0.4)
+
+        assert [e.repo for e in app.screen._entries] == ["astral-sh/uv"]
+        text = screen_text(app)
+        assert "Nothing assessed matches that" not in text
+        # And it says so in words, not only as a row in a list.
+        assert "Already assessed" in text
+
+    drive(body, tmp_path)
+
+
+def test_discover_starts_on_the_candidates_not_the_scroll_box(tmp_path):
+    """Focus landed on the container, where ↑↓ scrolled past every candidate
+    and enter did nothing at all."""
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+f")
+        await pilot.pause(0.5)
+        if app.screen.error:
+            pytest.skip("no recorded discover session in this checkout")
+        assert app.focused.id == "candidates"
+        assert app.screen.query_one("#candidates").index == 0
+
+    drive(body, tmp_path, size=(110, 44))
+
+
+def test_enter_on_a_claim_you_tabbed_to_opens_its_record(tmp_path):
+    """`ListView` takes enter once it has focus, so the screen's own binding
+    never fires — without a handler for the message it posts instead, the list
+    is one you can move around in and never open."""
+
+    async def body(app, pilot):
+        await show_report(app, pilot)
+        await pilot.press("tab")
+        await pilot.press("down")
+        await pilot.pause(0.2)
+        assert app.focused.id == "claims"
+
+        await pilot.press("enter")
+        await pilot.pause(0.4)
+        assert app.screen.__class__.__name__ == "InspectorScreen"
+
+    drive(body, tmp_path)
+
+
+# ─── taking the report with you ─────────────────────────────────────────────
+
+
+def test_the_report_copies_as_the_markdown_the_engine_writes(tmp_path, monkeypatch):
+    """Not a transcription of the screen — the artefact itself, ids and all."""
+    from holt.tui import clipboard
+
+    copied: list[str] = []
+    # Patched, or a test run would overwrite the clipboard of whoever ran it.
+    monkeypatch.setattr(clipboard, "native", lambda text: copied.append(text) or "xclip")
+
+    async def body(app, pilot):
+        await show_report(app, pilot)
+        await pilot.press("c")
+        await pilot.pause(0.3)
+
+        assert copied == [app.session.assessment.render()]
+        assert "# " in copied[0], "markdown, not the rendered screen"
+        assert "Copied as markdown" in screen_text(app)
+
+    drive(body, tmp_path)
+
+
+def test_a_copy_that_cannot_be_confirmed_does_not_claim_it_was(tmp_path, monkeypatch):
+    """OSC 52 is unacknowledged. Saying "copied" when nothing may have happened
+    is the one thing this must not do."""
+    from holt.tui import clipboard
+
+    monkeypatch.setattr(clipboard, "native", lambda text: "")
+
+    async def body(app, pilot):
+        await show_report(app, pilot)
+        await pilot.press("c")
+        await pilot.pause(0.3)
+        text = screen_text(app)
+        assert "Asked your terminal" in text
+        assert "Copied as markdown" not in text
+
+    drive(body, tmp_path)
+
+
+def test_the_clipboard_never_shells_out_to_a_tool_that_has_nothing_to_talk_to(
+    monkeypatch,
+):
+    """`wl-copy` outside Wayland and `xclip` with no display both exist on a lot
+    of machines and fail on all of them."""
+    from holt.tui import clipboard
+
+    monkeypatch.delenv("WAYLAND_DISPLAY", raising=False)
+    monkeypatch.delenv("DISPLAY", raising=False)
+    monkeypatch.setattr(clipboard.shutil, "which", lambda name: f"/usr/bin/{name}")
+
+    ran: list[tuple] = []
+    monkeypatch.setattr(
+        clipboard.subprocess, "run", lambda argv, **kw: ran.append(argv)
+    )
+
+    clipboard.native("anything")
+    assert not any(argv[0] in ("wl-copy", "xclip", "xsel") for argv in ran)

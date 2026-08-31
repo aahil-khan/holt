@@ -84,10 +84,13 @@ class DiscoverScreen(Screen):
     def on_mount(self) -> None:
         if self.error:
             return
-        for index, row in enumerate(
-            self.query_one("#candidates", CandidateList).children
-        ):
+        candidates = self.query_one("#candidates", CandidateList)
+        for index, row in enumerate(candidates.children):
             animation.reveal(row, delay=animation.stagger(index))
+        # The list, not the scroll box around it. Focus landed on the container
+        # by default, where ↑↓ scrolled past the candidates and enter did
+        # nothing — the only way to assess one was to click it.
+        candidates.focus()
 
     def _counts(self) -> str:
         found = self.session
