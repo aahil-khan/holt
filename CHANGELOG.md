@@ -1523,3 +1523,70 @@ telling them nothing.
 checked, not assumed — so this is a guard for weak models and for repositories
 outside the pool, which is exactly where it was found. Two new tests
 (**227 passed**).
+
+## Iteration 26 — the field that could decide alone can now be contradicted (2026-08-31)
+
+**Tried.** `repo_kind` is the only model-derived input that decides a verdict by
+itself: `mirror` and the non-software kinds return `not_viable` before any
+arithmetic runs. Stage D cannot check it — it verifies that a cited id
+*resolves*, and a classification is not a quotation, so a model that answers
+`mirror` while citing a real README produces a claim that verifies perfectly and
+is false. That is exactly what happened under `llama3.2`: `pytorch/pytorch` was
+classified a mirror *of pytorch/pytorch*, and `aden-hive/hive`, a software
+project, a registry. Both produced a confident "not worth your time".
+
+The rule contests the *consequence*, never what a repository "really is". A
+catalogue entry lands in one directory; a mirror does not merge outsiders' pull
+requests while GitHub reports it is not a mirror. Where the evidence disagrees
+the field is **dropped** — no verdict asserted in its place, the arithmetic
+decides, and the disagreement is printed in "What decided it" where a reader can
+argue with it. That is `CLAUDE.md`'s standing rule for contradictory sources,
+finally applied to the one field that was exempt from it.
+
+**Pre-registered first** ([`eval/PREREGISTRATION-4.md`](eval/PREREGISTRATION-4.md)),
+with thresholds chosen on pool 1 and four predictions committed before anything
+was measured.
+
+**One of the four predictions failed, and it was the important one.** P2 said
+the rule would fire on 0 of 141 pool-2 classifications. It fired on four —
+every recording of `microsoft/winget-pkgs`, a **correctly** classified registry
+whose entries are three YAML manifests (installer, locale, version) in one
+package directory. The `merged_files_median >= 3` criterion cannot tell that
+from software. The pre-registered consequence was that the rule does not ship,
+and the file-count criterion did not: what shipped is the half that did not
+misfire, a catalogue entry being defined by landing in one place whatever it
+weighs.
+
+**That narrowing is fitted on both pools and is labelled as such.** It was
+chosen after seeing pool 2, so its 0-false-fire count over all 234 recorded
+classifications is in-sample for the choice and has no untouched holdout behind
+it. Two things keep it honest: the rule makes **no accuracy claim** — it fires
+nowhere in either pool, so not one cell of any confusion matrix moves, and its
+entire value is on repositories outside the pool, where the failures happened —
+and what was removed is a whole criterion rather than a tuned number, so there
+is no threshold left on that axis to fit.
+
+**Measured.**
+
+| | result |
+|---|---|
+| P1 in-sample specificity | 0 fired / 93 classifications |
+| P2 out-of-sample, as pre-registered | **failed**, 4 fired (all `winget-pkgs`) |
+| P2 after removing the failed criterion | 0 fired / 141 |
+| P3 frozen replays | pool 1 **0.61, 0.61, 0.61**; pool 2 **0.63, 0.63, 0.63** — unchanged |
+| P4 sensitivity | fires on 3-directory merges, not on `nixpkgs`' 1 |
+
+**A signals change nearly broke the ablation, silently.** The two new signals go
+into `Signals`, whose `as_dict()` is pasted wholesale into the
+`baseline_matched` prompt — so adding them would have turned every recorded
+comparison call into a replay miss and quietly changed what the baseline was
+shown. Both prompts now take an explicit field list. Nine new tests
+(**235 passed**), one of which is `winget-pkgs` as a regression: a registry of
+three-file manifests must stay a registry.
+
+**The limit this does not remove, stated rather than closed.** `NixOS/nixpkgs`
+merges one file in one directory and is real software. The rule stops a
+repository being *called* a catalogue when its merges are plainly not one; it
+cannot save a repository whose merges look like a catalogue's. And `portfolio`
+and `course_material` are deliberately never contested this way — their reason
+is whose project it is, which no file list can refute.
