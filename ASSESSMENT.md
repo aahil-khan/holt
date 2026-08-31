@@ -1,6 +1,8 @@
 # Holt — where we are and how we got here
 
-Written 2026-08-30, revised after the Fable audit and the shortlist work. 47 commits, 93 tests, ~$9 spent.
+Written 2026-08-30; last revised mid-morning 2026-08-31, after the discovery and
+progression features shipped and with the frozen benchmark in flight. 54 commits,
+115 tests, ~$10 spent (~$14.50 once the running benchmark batch lands).
 
 This is the orientation document. Read it if you have lost the thread.
 
@@ -74,6 +76,54 @@ thing Holt exists to do. Exploring pool 1 surfaced a rule: *contributions land
 easily and nobody reviews them*. It was pre-registered with three numeric
 predictions before pool 2 labels existed, then tested once.
 
+### Stage five — the product grows outward (2026-08-31)
+
+Three commands shipped in one night, each shaped by an earlier kill rather than
+repeating it.
+
+**`holt discover` — find repositories, from a stated profile.** The inferred
+profile was cut in iteration 15/16 (the median contributor has 1 merged PR and 5
+files; 98% of cross-repo overlap was generic-path collisions), so the profile is
+*asked*: `holt profile` stores four answers — languages, topics, contribution
+type, days — each of which demonstrably changes the output; experience level is
+deliberately not asked because nothing could map it to a threshold. The flow:
+GitHub repository search sources candidates (disclosed, unclaimed), a screening
+pass runs every arithmetic rule at **zero model cost** — possible because
+`verdict.py` needs exactly one model-derived input, `repo_kind` — and only the
+survivors are re-crawled at full depth and analysed (~$0.02 each). We claim the
+filter (the p = 0.048 trap rejection and the out-of-sample rubber-stamp rule),
+never the sourcing or the ordering; rows come out in screening order.
+
+**Live is the primary mode.** `holt discover --live` searches today's GitHub;
+`--record <name>` writes the whole session down; bare `holt discover` replays
+the committed demo with no token and no key. The recorded demo is a real live
+run from this morning: 25 python+cli candidates, 9 rejected across all four
+buckets at $0.00, five survivors analysed for $0.08 — and `tqdm/tqdm` survived
+shallow screening then flipped to insufficient at full depth (median first
+reply 1,128 h), the screen-versus-full noise disclosure demonstrating itself.
+
+**`holt next <repo> --as <login>` — the simple rule that won, shipped.** The
+weighted progression scorer was cut for losing to `path_overlap` (hit@10 0.234
+vs 0.211); the winning rule now ships, semantically identical to what the
+harness measured. The renderer prints the measurement — including the 95%
+interval [−0.003, +0.132] that spans zero — with every ranking, and each row
+says which path tokens overlapped or that none did. No model call in the path.
+
+**The narration no longer speaks evaluation jargon.** The prompt header
+"Measured before the cutoff:" leaked "before the cutoff" into user-facing
+prose; it now reads "Measured in the sampled window:" and the system prompt
+forbids the word "cutoff". That edit invalidated all trajectories by design
+(replay keys cover prompt text; exactly one test failed, with a replay miss),
+and the fifth full re-record is running via the new one-command
+`scripts/rerecord_trajectories.py`, which also covers the discover demo's
+survivors.
+
+**The frozen benchmark is running now**, batched deliberately after the wording
+fix so it measures the prompts that ship: three tagged runs per pool, both
+pools, ~$3 — the committed numbers it replaces predate both the rubber-stamp
+rule and the report rewrite, which is why the README still understates
+specificity as 0.50 against the 0.83 the shipped rule achieves out of sample.
+
 ---
 
 ## 3. Where the numbers stand
@@ -132,15 +182,21 @@ That is reproducibility, not accuracy, and we say so.
 | `holt compare` over a shortlist | **Built** — sorts nothing, for the same reason |
 | Viability analysis | **Built and validated twice, out of sample** |
 | The rubber-stamp rejection rule | **Built, pre-registered, validated out of sample** |
+| `holt discover` from a stated profile | **Built** — live GitHub search sourcing (disclosed, unclaimed), screening at zero model cost, recorded demo replays with no credentials |
+| `holt next` (path_overlap progression) | **Built** — the measured winner among five methods, its interval printed with every ranking |
 | Path Finder (generic issue ranking) | Measured, **cut** — tied GitHub's own label |
-| Personalised progression | Measured, **cut** — model changed 0 of 88 rankings |
-| Personalised discovery | Measured, **cut** — the lift was one programme cohort |
+| Personalised progression (weighted scorer) | Measured, **cut** — model changed 0 of 88 rankings; the simple rule that beat it is what `holt next` ships |
+| *Inferred*-profile discovery | Measured, **cut** — the lift was one programme cohort; the *stated*-profile `holt discover` is its replacement |
 | Star-based discovery | **Not built** — a 5-minute check said stars already do it |
 
-**Five experiments cut by their own pre-registered rules, one shipped.** That
-ratio is the project. Each cut is reproducible from a clean clone:
+**Six experiments cut by their own pre-registered rules, one rule shipped.**
+That ratio is the project. Each cut is reproducible from a clean clone:
 `eval/sensitivity.py`, `eval/pathfinder_harness.py`,
-`eval/progression_harness.py`, `eval/mover_controls.py`.
+`eval/progression_harness.py`, `eval/mover_controls.py`. Two of the cuts later
+produced shipped features by subtraction — `holt next` is the cheap rule the
+weighted scorer lost to, and `holt discover` is the stated-profile replacement
+for the inferred profile — which is the difference between abandoning a
+capability and abandoning a claim.
 
 ### The three things that measurably work
 
@@ -215,16 +271,18 @@ labels were not touched.
 | Criterion | Weight | Where we stand |
 |---|---|---|
 | **Agent Solution & Engineering** *(first tie-break)* | 30 | **Strong, with an honest asterisk.** The design choices are purposeful and each carries a measurement: a deterministic verdict (21/22 stable runs against the baseline's 13/22), a chokepoint that makes contamination structurally impossible, a rejection rule with written thresholds, reparameterisation at zero model cost. The asterisk is ours and we publish it: the *orchestration* buys none of the accuracy. The README now leads with what the split earns and states what it does not immediately after. |
-| **End-to-End Quality** | 20 | **Was our weakest; materially improved today.** The report was a 250-word wall opening "I'm marking this repository viable" — the model claiming a decision `verdict.py` makes. Now: a headline saying what the verdict means *for you* at *your* time budget, a two-sentence bottom line, short prose, **the deciding rule printed**, an explicit "what could not be determined", evidence with resolvable ids, and a section counting where outsider work actually landed. `holt compare` puts a shortlist side by side. Still unproven by anyone outside this project. |
+| **End-to-End Quality** | 20 | **Was our weakest; materially improved, twice.** The report was a 250-word wall opening "I'm marking this repository viable" — the model claiming a decision `verdict.py` makes. Now: a headline saying what the verdict means *for you* at *your* time budget, a two-sentence bottom line, short prose, **the deciding rule printed**, an explicit "what could not be determined", evidence with resolvable ids, and a section counting where outsider work actually landed. The journey is now covered end to end: `holt discover` finds the shortlist from a stated profile, `holt compare` puts it side by side, `holt analyze` reads one repository deeply, `holt next` ranks what to do after your first merge. The narration no longer says "cutoff" to a user. Still unproven by anyone outside this project. |
 | **Measured Improvement** | 15 | **Exceptional, and the likely differentiator.** Two hash-committed pools, out-of-sample replication with a widening margin, a metric we replaced on catching it reward a constant classifier, bootstrap intervals that span zero reported as spanning zero, and five documented kills. |
 | **Problem & User Value** | 15 | **Strong.** A concrete user, a real bottleneck, and a sampling decision (GH Archive over Search — three of thirty pool repos were deleted before the crawl) that a search-based sample would have hidden. |
-| **Reproducibility** *(second tie-break)* | 15 | **Strong and now verified end to end**, not merely designed: fresh clone, credentials stripped from the environment, `uv sync` → 83 passed → CLI renders → `--days 90` re-answers at zero model calls → the ranking harness reproduces published numbers. A credential scrub runs before the content hash, and a test fails on any credential-shaped string in any fixture. |
+| **Reproducibility** *(second tie-break)* | 15 | **Strong and now verified end to end**, not merely designed: fresh clone, credentials stripped from the environment, `uv sync` → 115 passed → CLI renders → `--days 90` re-answers at zero model calls → the ranking harness reproduces published numbers → `holt discover` replays a recorded live session with no token and no key. A credential scrub runs before the content hash, a test fails on any credential-shaped string in any fixture, and re-recording every trajectory after a prompt change is one committed command. |
 | **Hot Take** | 5 | **Have one, and it is true in the repo:** *Holt is not a smarter analyst. We measured four times that our model layer adds no accuracy over arithmetic. It is an evidence assembly nobody will do by hand, wrapped in properties a conversation cannot have.* |
 
-**The one gap that is ours to close:** the committed benchmark numbers predate
-both the rejection rule and the report rewrite, so the README currently
-*understates* what ships — specificity 0.50 against the 0.83 the shipped rule
-achieves. One frozen run fixes it.
+**The one gap that is ours to close is closing as this is written:** the
+committed benchmark numbers predate both the rejection rule and the report
+rewrite, so the README currently *understates* what ships — specificity 0.50
+against the 0.83 the shipped rule achieves. The frozen re-run (three tagged
+runs per pool, both pools, on the final prompts) is in flight; the doc pass
+that swaps the headline numbers follows it.
 
 **The one gap that is not ours:** nobody outside this project has read a report.
 
@@ -232,10 +290,10 @@ achieves. One frozen run fixes it.
 
 | | Effort | Why |
 |---|---|---|
-| **Final frozen benchmark, both pools** | ~1h, ~$3.50 | The one blocking item. Committed results predate the rejection rule, so the README's specificity of 0.50 understates the 0.83 that actually ships |
-| Doc pass on the headline numbers | ~30m | Mechanical once the benchmark lands; the structural pass is done |
-| Regenerate the rendered walkthroughs | ~5m | They predate both the report rewrite and the landing section |
-| **Video** | yours | Required deliverable |
+| **Frozen benchmark, both pools** | running now, ~$3 | Committed results predate the rejection rule; this run measures the shipped prompts |
+| Doc pass on the headline numbers | ~30m after it lands | Mechanical; the structural pass is done |
+| Verify + commit the fifth re-record | ~10m after it lands | 59 pool + 5 demo trajectories, new narration wording |
+| **Video** | yours | Required deliverable. `holt discover` → `compare` → `analyze` → `next` is the arc of one contributor's week |
 | **Human-time number** | yours, ~30m | The brief asks for it; only you can produce it |
 
 ## 6. The honest summary
@@ -258,5 +316,12 @@ the comparator does not exist on half the pool, and because the honest thing to
 do with a ranking that loses is to print the loss beside it. A tool that states
 its own negative result in its own output is the clearest expression of what this
 project is: the discipline is in the artifact, not in the description of it.
+`holt next` extends the same pattern: the ranking it prints carries its own
+interval, and the interval spans zero.
 
-What is left is one benchmark run, and then it is finished.
+The last day turned the measurement discipline back into product surface: the
+kills of the profile-inference and progression experiments dictated the shape
+of `holt discover` (ask, don't infer; claim the filter, not the order) and
+`holt next` (ship the winning rule, print its numbers). What is left is the
+benchmark batch finishing, one number-swap in the docs, and the two
+deliverables only the author can produce.
