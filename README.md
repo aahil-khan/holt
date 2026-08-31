@@ -186,8 +186,10 @@ The baseline calls `home-assistant/core` and `astral-sh/uv` *insufficient
 evidence*, because their READMEs do not advertise how contributable they are.
 That is the failure this project is about, in the positive direction.
 
-Full numbers, every iteration including the ones that were removed, and the
-results that went against us: [CHANGELOG.md](CHANGELOG.md).
+Every iteration including the ones that were removed, and the results that went
+against us: [CHANGELOG.md](CHANGELOG.md) — the story in one table at the top, the
+entries below it, and the unabridged working log in
+[docs/CHANGELOG-FULL.md](docs/CHANGELOG-FULL.md).
 Exact commands: [REPRODUCTION.md](REPRODUCTION.md).
 An honest self-assessment of what is weak: [ASSESSMENT.md](ASSESSMENT.md).
 
