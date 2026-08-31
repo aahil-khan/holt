@@ -54,9 +54,23 @@ def _slug(slug: str, width: int = 37) -> str:
 
 
 class CandidateList(ListView):
-    def __init__(self, rows: list, **kwargs) -> None:
+    def __init__(self, rows: list | None = None, **kwargs) -> None:
+        rows = list(rows or [])
         super().__init__(*[CandidateRow(r) for r in rows], **kwargs)
         self.rows = rows
+
+    def add(self, row: Any) -> CandidateRow:
+        """Append one candidate that has just been screened.
+
+        A live sweep reads a page of pull-request threads per candidate, so the
+        list is built a row at a time rather than handed over complete. The
+        widget's own `rows` is kept in step with what is on screen; a count
+        taken from a list that disagrees with the display is a count that lies.
+        """
+        item = CandidateRow(row)
+        self.rows.append(row)
+        self.append(item)
+        return item
 
     @property
     def selected(self) -> Any | None:

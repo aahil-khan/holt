@@ -1855,3 +1855,77 @@ now goes through `monkeypatch`.
 25 ids a stock OpenAI key actually returns — the alias pricing, the four
 ordering tiers, the six id families that are not chat models, the filter, and
 `ctrl+q` on home.
+
+---
+
+## Iteration 30 — `ctrl+f` was showing somebody else's search results (2026-08-31)
+
+**The report.** Pressing `ctrl+f` opened a page of twenty-five repositories.
+They were real, they were screened correctly, and they had nothing to do with
+the person looking at them: they came from the `demo` session committed to this
+repository — one profile, run once, on a date in the past. Nothing on the screen
+was false. The screen was still lying, because a list of repositories presented
+where a result goes reads as *your* result, and no caption undoes that.
+
+**Why it was built that way, and why that stopped being a good reason.** The
+recording exists so the interface demos with no token and no key, and so the
+screening rule can be exercised in tests without network. Both are still worth
+having. What was wrong was making the demo the default: it turned a feature that
+finds you repositories into a feature that shows you a canned list, and the
+better it looked the worse the problem was.
+
+**`ctrl+f` now opens on a choice.** Search GitHub, change what you are looking
+for, or replay the recorded example search — that last one described as what it
+is and offered only when the manifest is actually on disk. The recording is one
+keystroke away and still free. It is no longer what the feature claims to be.
+
+**Live search needs a token and nothing else, and the screen says exactly
+that.** `screen_records` runs no model, so a sweep costs GitHub API quota and
+about a minute of waiting. The check is on `GITHUB_TOKEN` alone; demanding an
+OpenAI key to *find* candidates would have made a free feature look paid. A
+missing token is reported on the start screen with the choice still under the
+cursor, not as a dead end.
+
+**Rows are drawn as they land.** Sourcing twenty-five repositories and reading a
+page of pull-request threads from each is a minute of network, and a minute of
+blank screen is indistinguishable from a hang. The engine grew `source_live`,
+which does the one search call and returns a `LiveSearch` whose `screen()`
+yields one `ScreenedStep` per candidate; `run_live` now walks that same
+generator, so the command line and the interface cannot drift on what survives.
+The interface wraps it in a worker thread that appends, with a cursor on the
+reading side — the arrangement the run stream already uses, no lock and no
+message schema.
+
+**Rows are not re-sorted as they arrive.** The recorded view puts survivors
+first because it has all of them before it draws anything. A live sweep does
+not, and rearranging the list under the cursor as each verdict landed would
+assert a ranking screening never computed. They stay in the order the search
+returned them, cut ones included, reasons attached.
+
+**"Could not read" is kept separate from "rejected".** A candidate GitHub
+refuses is listed as unread, never counted as a cut. A sweep that quietly merged
+the two would report a rejection it never made.
+
+**Stopping keeps what it already screened.** Those rows were free and they are
+still true; discarding them would punish impatience. Cancellation is checked
+between candidates, so `ctrl+x` returns within one candidate rather than at the
+end of the sweep.
+
+**Found while testing: the footer advertised a key that did nothing.** `ctrl+x
+stop searching` was listed on the start screen, where there is no search to
+stop, which made the choice look like a sweep already running. The binding is
+now conditional on a live search being alive.
+
+**Also corrected: the discovery tests were gated on the recording.** The whole
+module was skipped when `demo` was absent. That was defensible when the
+recording was the only path; it is not now that live search is the default. The
+skip applies to the seven tests that actually read the manifest, and the
+live-search tests run everywhere.
+
+**Evidence.** `pytest -q -rs` and `HOLT_NO_NETWORK=1 pytest -q -rs`:
+**315 passed**, no skips (was 305). 10 new tests — seven driving the search
+worker against a stubbed `source_live` with no token, network or recording
+(ordering, unread candidates, cancellation, thread failure, progress before the
+first row, the token check), and three driving the screen (it opens on the
+choice with no recorded slug on screen, it streams rows while the sweep runs,
+and a missing token is reported without leaving the choice).

@@ -183,6 +183,87 @@ def trajectory_for(slug: str) -> Path:
     return model.TRAJECTORY_DIR / DISCOVER_TRAJECTORIES / (slug.replace("/", "__") + ".jsonl")
 
 
+@dataclass(slots=True)
+class ScreenedStep:
+    """One candidate's turn through screening, reported as it lands."""
+
+    index: int
+    total: int
+    candidate: Candidate
+    result: Screened | None = None
+    #: Set when the candidate could not be read at all. Never a rejection —
+    #: "we could not look" and "we looked and it failed" are different answers.
+    error: str | None = None
+
+
+@dataclass(slots=True)
+class LiveSearch:
+    """A live search, cut at the point where a caller wants to see progress.
+
+    `source_live` is the one repository-search call, and carries everything
+    needed to say what was searched for. `screen` is the free pass over the
+    candidates, yielded one at a time so an interface can draw a row as it
+    lands rather than after the last one does.
+
+    Both `run_live` and the terminal interface walk this, so what survives is
+    decided in one place. Nothing here decides it: `screen_records` does.
+    """
+
+    profile: Profile
+    as_of: datetime
+    queries: list[str]
+    candidates: list[Candidate]
+    transport: Any
+    #: Session name to write fixtures under, or None. Recording is the caller's
+    #: choice and changes nothing about what is screened.
+    record: str | None = None
+
+    def screen(self, should_stop: Callable[[], bool] = lambda: False
+               ) -> Iterable[ScreenedStep]:
+        """Screen each candidate at reduced crawl depth. No model is called.
+
+        Stops between candidates when `should_stop` says so, which is how an
+        interface cancels a sweep without waiting for the rest of it.
+        """
+        from holt.evidence.github_graphql import LiveGitHubProvider
+
+        total = len(self.candidates)
+        for index, cand in enumerate(self.candidates, 1):
+            if should_stop():
+                return
+            provider = LiveGitHubProvider(Window.PRE_T, cutoff=self.as_of,
+                                          transport=self.transport,
+                                          max_pages=SCREEN_PAGES)
+            try:
+                records = provider.fetch(cand.slug)
+            except Exception as err:  # a dead candidate must not abort the sweep
+                yield ScreenedStep(index, total, cand, error=str(err))
+                continue
+            if self.record:
+                write_fixture(cand.slug, Window.PRE_T, records,
+                              root=screen_root(self.record), cutoff=self.as_of)
+            yield ScreenedStep(index, total, cand,
+                               result=screen_records(cand, records,
+                                                     self.profile.days))
+
+
+def source_live(profile: Profile, limit: int = 25, *,
+                as_of: datetime | None = None, transport: Any = None,
+                record: str | None = None) -> LiveSearch:
+    """GitHub repository search for the stated profile. Sourcing only.
+
+    One network call, before any screening, so a caller can say what it
+    searched for and how many it found while the slow half is still ahead.
+    """
+    from holt.evidence.github_graphql import GitHubGraphQL
+
+    as_of = as_of or datetime.now(UTC)
+    transport = transport or GitHubGraphQL()
+    candidates, queries = source(transport, profile, as_of, limit)
+    return LiveSearch(profile=profile, as_of=as_of, queries=queries,
+                      candidates=candidates, transport=transport, record=record)
+
+
 def contribution_notes(landing: landing_mod.Landing,
                        contributions: list[str]) -> list[str]:
     """Where the kind of work the user wants to do has actually merged.
@@ -356,30 +437,23 @@ def run_live(profile: Profile, limit: int = 25, max_analyze: int = 8,
              progress: Callable[[str], None] = lambda s: None) -> str:
     """Live discovery. With `record`, every fetch and every model call is
     written down so the session replays byte-for-byte with no credentials."""
-    from holt.evidence.github_graphql import GitHubGraphQL, LiveGitHubProvider
+    from holt.evidence.github_graphql import LiveGitHubProvider
 
-    as_of = datetime.now(UTC)
-    transport = GitHubGraphQL()
-    candidates, queries = source(transport, profile, as_of, limit)
+    search = source_live(profile, limit, record=record)
+    as_of, transport, queries = search.as_of, search.transport, search.queries
+    candidates = search.candidates
     progress(f"sourced {len(candidates)} candidates from GitHub repository search")
 
     screened, skipped = [], []
-    for i, cand in enumerate(candidates, 1):
-        provider = LiveGitHubProvider(Window.PRE_T, cutoff=as_of,
-                                      transport=transport, max_pages=SCREEN_PAGES)
-        try:
-            records = provider.fetch(cand.slug)
-        except Exception as err:  # a dead candidate must not abort the sweep
-            skipped.append(cand.slug)
-            progress(f"[{i}/{len(candidates)}] {cand.slug}: skipped ({err})")
+    for step in search.screen():
+        if step.result is None:
+            skipped.append(step.candidate.slug)
+            progress(f"[{step.index}/{step.total}] {step.candidate.slug}: "
+                     f"skipped ({step.error})")
             continue
-        if record:
-            write_fixture(cand.slug, Window.PRE_T, records,
-                          root=screen_root(record), cutoff=as_of)
-        result = screen_records(cand, records, profile.days)
-        screened.append(result)
-        progress(f"[{i}/{len(candidates)}] {cand.slug}: "
-                 f"{result.category or 'survived screening'}")
+        screened.append(step.result)
+        progress(f"[{step.index}/{step.total}] {step.candidate.slug}: "
+                 f"{step.result.category or 'survived screening'}")
 
     survivors = [s for s in screened if not s.category]
     rows: list[SurvivorRow] = []

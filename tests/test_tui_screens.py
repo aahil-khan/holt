@@ -436,8 +436,42 @@ def test_finishing_a_run_stores_it_and_home_lists_it(tmp_path):
 # ─── discover, profile, what next ────────────────────────────────────────────
 
 
+async def _choose_recording(app, pilot):
+    """Pick the recorded search off the start screen and wait for its rows."""
+    from holt.tui.screens.discover import ChoiceList
+
+    choices = app.screen.query_one("#choices", ChoiceList)
+    index = [c.action for c in choices.choices].index("replay")
+    choices.index = index
+    await pilot.press("enter")
+    await pilot.pause(0.6)
+
+
+def test_discover_opens_on_a_choice_not_on_a_canned_list(tmp_path):
+    """The recorded search is somebody else's result. Opening on it presented
+    twenty-five repositories as an answer to a question nobody had asked."""
+    from holt.tui import discovery
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+f")
+        await pilot.pause(0.6)
+        assert app.screen.__class__.__name__ == "DiscoverScreen"
+        text = screen_text(app)
+        assert "Search GitHub for repositories" in text
+        # Nothing from the recording is on screen until it is asked for.
+        assert "survived screening" not in text
+        if discovery.manifest_path_exists():
+            for row in discovery.load().rows[:3]:
+                assert row.slug not in text
+
+    drive(body, tmp_path, size=(100, 60))
+
+
 def test_discover_lists_survivors_and_what_it_cut(tmp_path):
-    """The rejected candidates are the interesting half. They stay on screen."""
+    """The rejected candidates are the interesting half. They stay on screen.
+
+    Reached by choosing the recording, which is now where it lives.
+    """
     from holt.tui import discovery
 
     if not discovery.manifest_path_exists():
@@ -446,12 +480,118 @@ def test_discover_lists_survivors_and_what_it_cut(tmp_path):
     async def body(app, pilot):
         await pilot.press("ctrl+f")
         await pilot.pause(0.6)
-        assert app.screen.__class__.__name__ == "DiscoverScreen"
+        await _choose_recording(app, pilot)
         text = screen_text(app)
         assert "screened at no model cost" in text
         assert "worth a closer look" in text
         assert "cut" in text
         assert "survived screening" in text
+
+    drive(body, tmp_path, size=(100, 60))
+
+
+def test_discover_says_a_live_search_needs_a_token(tmp_path, monkeypatch):
+    """Screening runs no model, so the only thing missing can be the token —
+    and it is said on the screen that asked, not as a traceback."""
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+f")
+        await pilot.pause(0.6)
+        app.screen.query_one("#choices").index = 0
+        await pilot.press("enter")
+        await pilot.pause(0.3)
+        assert "GITHUB_TOKEN" in screen_text(app)
+        # The choice is still there; a missing token is not a dead end.
+        assert "Search GitHub for repositories" in screen_text(app)
+        assert app.screen.search is None
+
+    drive(body, tmp_path, size=(100, 60))
+
+
+def test_discover_draws_live_rows_as_they_land(tmp_path, monkeypatch):
+    """A sweep is a minute of network. Drawing nothing until the last candidate
+    comes back is indistinguishable from a hang.
+
+    The search is faked at the `discovery.Search` seam: what the worker does
+    with the engine is pinned in `test_tui_discovery.py`, and what is checked
+    here is that the screen draws whatever the search is currently reporting.
+    """
+    from holt.tui import discovery
+
+    monkeypatch.setenv("GITHUB_TOKEN", "t")
+
+    def row(slug, category=None):
+        return discovery.Row(
+            slug=slug,
+            description="does things",
+            language="Python",
+            stars=10,
+            verdict="worth a look",
+            category=category,
+            reason="because",
+        )
+
+    class FakeSearch:
+        def __init__(self, **kwargs):
+            self.rows = []
+            self.skipped = []
+            self.queries = []
+            self.as_of = None
+            self.total = 2
+            self.error = None
+            self.finished = False
+            self.cancelled = False
+            self.started = False
+            self.running = True
+
+        def start(self):
+            self.started = True
+            self.rows.append(row("first/repo"))
+
+        def cancel(self):
+            self.cancelled = True
+
+        @property
+        def survivors(self):
+            return [r for r in self.rows if r.survived]
+
+        @property
+        def screened(self):
+            return len(self.rows)
+
+        def describe(self):
+            return f"screened {len(self.rows)} of {self.total} at no model cost"
+
+    monkeypatch.setattr(discovery, "Search", FakeSearch)
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+f")
+        await pilot.pause(0.6)
+        app.screen.query_one("#choices").index = 0
+        await pilot.press("enter")
+        await pilot.pause(0.4)
+
+        search = app.screen.search
+        assert search.started
+        text = screen_text(app)
+        # The first row is on screen while the search is still going.
+        assert "first/repo" in text
+        assert "screened 1 of 2" in text
+        assert "stop searching" in text  # offered in the footer while it runs
+
+        search.rows.append(row("second/repo", category="inactive"))
+        search.finished = True
+        search.running = False
+        await pilot.pause(0.4)
+
+        text = screen_text(app)
+        assert "second/repo" in text
+        assert "screened 2 of 2" in text
+        assert "not active enough" in text
+        # Nothing is running, so the key that stops a search is gone from the
+        # footer rather than sitting there doing nothing.
+        assert "stop searching" not in text
 
     drive(body, tmp_path, size=(100, 60))
 
@@ -821,12 +961,17 @@ def test_a_pasted_url_finds_the_repository_you_already_have(tmp_path):
 def test_discover_starts_on_the_candidates_not_the_scroll_box(tmp_path):
     """Focus landed on the container, where ↑↓ scrolled past every candidate
     and enter did nothing at all."""
+    from holt.tui import discovery
+
+    if not discovery.manifest_path_exists():
+        pytest.skip("no recorded discover session in this checkout")
 
     async def body(app, pilot):
         await pilot.press("ctrl+f")
         await pilot.pause(0.5)
-        if app.screen.error:
-            pytest.skip("no recorded discover session in this checkout")
+        # The choice takes focus first, or enter would do nothing on it either.
+        assert app.focused.id == "choices"
+        await _choose_recording(app, pilot)
         assert app.focused.id == "candidates"
         assert app.screen.query_one("#candidates").index == 0
 
