@@ -4,6 +4,8 @@
 
 **Is this repository worth an outside contributor's week?**
 
+[▶️ Watch the demo](https://youtu.be/U6z19FXlY9E)
+
 Holt reads a GitHub repository the way a careful developer would after an
 afternoon in its pull request threads, and produces an evidence-backed written
 assessment. Every claim it makes carries an evidence id that resolves to a real
