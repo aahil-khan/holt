@@ -22,6 +22,8 @@ ends for exactly one reason — it finished, it failed, or someone stopped it.
 from __future__ import annotations
 
 from textual.app import App
+from textual.await_complete import AwaitComplete
+from textual.screen import Screen
 
 from holt.cli import normalise
 from holt.tui import mascot, store, theme
@@ -110,6 +112,51 @@ class HoltApp(App):
         return self.runs.get(normalise(repo))
 
     # ─── navigation ─────────────────────────────────────────────────────────
+
+    def push_screen(self, screen, *args, **kwargs):
+        """Open a screen — or go back to it, when it is already open.
+
+        A screen opened by name is the *installed instance*: `push_screen(
+        "discover")` hands back the same object every time. Pushing one that is
+        already in the stack therefore puts a single `Screen` at two depths at
+        once, and that is not merely untidy. Every screen here is
+        `background: transparent`, so Textual renders the whole stack beneath
+        the current screen as its background — and a screen that appears twice
+        in that stack renders itself inside itself until Python runs out of
+        stack. The interface died with a `RecursionError` out of the
+        compositor, from a path as ordinary as ctrl+f, ctrl+o, and then "find a
+        repository" off the palette.
+
+        Going back to it is also what the key meant. `go_home` already pops
+        rather than pushing a second home, for the same reason: one screen, one
+        place in the stack.
+        """
+        open_already = self._open_already(screen)
+        if open_already is None:
+            return super().push_screen(screen, *args, **kwargs)
+        return self._return_to(open_already)
+
+    def _open_already(self, screen) -> Screen | None:
+        """The instance this push would open, if the stack already holds it.
+
+        Identity, not type. Two `AssessmentScreen`s are two reports and both
+        belong on the stack; what cannot happen is one object appearing twice.
+        """
+        if isinstance(screen, str):
+            try:
+                screen = self.get_screen(screen)
+            except KeyError:
+                return None
+        if not isinstance(screen, Screen):
+            return None
+        return screen if any(open_ is screen for open_ in self.screen_stack) else None
+
+    def _return_to(self, screen: Screen) -> AwaitComplete:
+        """Pop back down to a screen already open. A no-op if it is on top."""
+        popped: AwaitComplete | None = None
+        while self.screen is not screen and len(self.screen_stack) > 1:
+            popped = self.pop_screen()
+        return popped if popped is not None else AwaitComplete()
 
     def start_run(self, options: RunOptions) -> None:
         """Assess a repository, and watch it happen.

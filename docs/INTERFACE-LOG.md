@@ -698,3 +698,54 @@ holds a record for every id the report cites, fewer records than the run read,
 and storing it emits no new resolutions. On the screens: a reopened *live*
 assessment resolves a claim and says the record was stored with it, and an
 assessment stored before records were kept says that instead.
+
+---
+
+## Iteration 37 — one screen was in the stack twice, and it took the app down (2026-09-01)
+
+**The interface died with a `RecursionError` out of Textual's compositor.**
+Sometimes. The traceback was forty frames of framework and named nothing in
+this repository, and the report that came with it — *"it also happens when I
+press enter twice on a menu opening"* — turned out to be the whole diagnosis.
+
+**A screen opened by name is one object.** `push_screen("discover")` hands back
+the *installed instance*, every time. Push it while it is already somewhere
+below you and a single `Screen` occupies two positions in the stack.
+
+**That is fatal here specifically because nothing has a background.**
+`theme.py` sets `background: transparent` on every screen — a deliberate choice,
+made so holt sits on whatever ground the terminal already has and reads
+correctly on a light profile and a dark one without a theme switch. The
+consequence had never been followed through: Textual renders each screen
+*beneath* the current one to fill a transparent one in
+(`Screen.render` → `BackgroundScreen`), so the render walks the stack. A screen
+that appears twice in that walk renders itself inside itself, and Python runs
+out of stack before the picture is finished.
+
+**The way in was three ordinary keys.** `ctrl+f` opens discover, `ctrl+o` from
+there opens the profile, and the command palette — which is reachable from every
+screen — offers "find a repository", which pushes discover a second time. That
+is `[home, discover, profile, discover]`, and the second `discover` is the same
+object as the first. It reproduces every time; nothing about it is a race.
+
+**Opening something already open now goes back to it.** `HoltApp.push_screen`
+compares by identity against the stack and pops down to the screen when it finds
+it, rather than stacking a second copy of one object. Identity and not type: two
+`AssessmentScreen`s are two different reports and both belong on the stack. It
+is the rule `go_home` was already following — one screen, one place in the stack
+— applied at the one door every screen goes through.
+
+**Evidence.** `uv run pytest -q -rs`: **390 passed**, no skips (was 388). Two
+new tests, both of which fail with a `RecursionError` on the commit before this
+one: pushing `discover`, `profile`, `discover` leaves no duplicate instance in
+the stack and the compositor still renders; and the keystrokes as they were
+actually pressed — `ctrl+f`, `ctrl+o`, `ctrl+p`, "find", enter — leave a stack
+that renders. Both assert against `render_strips`, because the defect was never
+visible in the widget tree. It only ever existed in the composite.
+
+**What this does not fix.** The render still walks the whole stack, so its depth
+is still linear in how many screens are open — a measured ~20 Python frames per
+screen, which puts the ceiling somewhere near fifty. Nothing in the interface
+walks that deep by hand, and the fix for it would be to give a screen an opaque
+background, which is the design decision this file's iteration 22 made on
+purpose. Written down rather than pre-emptively changed.

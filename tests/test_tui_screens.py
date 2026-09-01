@@ -2275,3 +2275,67 @@ def test_the_front_screen_has_a_way_out_that_survives_the_input(tmp_path):
         assert app._exit or not app.is_running
 
     drive(body, tmp_path)
+
+
+# ─── one screen, one place in the stack ─────────────────────────────────────
+
+
+def test_opening_a_screen_already_open_returns_to_it(tmp_path):
+    """A named screen is one object, and one object cannot be in two places.
+
+    `push_screen("discover")` hands back the *installed instance*, so opening
+    discover a second time while it is still below you puts the same `Screen`
+    at two depths at once. Every screen in holt is `background: transparent`,
+    which means Textual renders each screen underneath the current one as its
+    background — and a screen that appears twice in that stack renders itself
+    inside itself, forever. It crashed the interface with a `RecursionError`
+    out of the compositor, and the way to it was ordinary: find a repository,
+    change what you want, then pick "find a repository" off the palette.
+
+    Opening something that is already open goes back to it, which is what the
+    person pressing the key meant by it.
+    """
+
+    async def body(app, pilot):
+        await app.push_screen("discover")
+        await app.push_screen("profile")
+        await app.push_screen("discover")
+        await pilot.pause(0.3)
+
+        stack = app.screen_stack
+        assert len({id(screen) for screen in stack}) == len(stack), [
+            type(screen).__name__ for screen in stack
+        ]
+        assert app.screen.__class__.__name__ == "DiscoverScreen"
+        # It renders. The defect was never visible in the widget tree; it was
+        # only ever visible in the compositor, which is what this touches.
+        assert screen_text(app)
+
+    drive(body, tmp_path)
+
+
+def test_the_palette_can_reopen_the_screen_you_are_already_under(tmp_path):
+    """The keystrokes that actually crashed it, in the order they were pressed."""
+
+    async def body(app, pilot):
+        await pilot.press("ctrl+f")  # home → discover
+        await pilot.pause(0.3)
+        await pilot.press("ctrl+o")  # discover → profile
+        await pilot.pause(0.3)
+        assert app.screen.__class__.__name__ == "ProfileScreen"
+
+        await pilot.press("ctrl+p")
+        await pilot.pause(0.5)
+        for char in "find":
+            await pilot.press(char)
+        await pilot.pause(0.5)
+        await pilot.press("enter")
+        await pilot.pause(0.5)
+
+        stack = app.screen_stack
+        assert len({id(screen) for screen in stack}) == len(stack), [
+            type(screen).__name__ for screen in stack
+        ]
+        assert screen_text(app)
+
+    drive(body, tmp_path)
